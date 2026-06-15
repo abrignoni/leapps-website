@@ -411,6 +411,14 @@
       </table>
     </div>
 
+    <div class="lp-section">
+      <span class="lp-section-label">Resource downloads</span>
+      <h2 class="lp-section-title">Guides</h2>
+      <div id="guides-content">
+        <p style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);">Loading…</p>
+      </div>
+    </div>
+
   </main>
 
     <footer class="lp-footer">
@@ -620,6 +628,30 @@
     }
 
     fetchStats();
+
+    // Guides download counts
+    const GUIDE_LABELS = {
+      'ileapp-module-contributor-guide.pdf': 'iLEAPP Module Contributor Guide',
+    };
+    async function fetchGuideCounts() {
+      const el = document.getElementById('guides-content');
+      try {
+        const res = await fetch('https://leapps-api.4n6-198.workers.dev/downloads/counts');
+        if (!res.ok) throw new Error();
+        const counts = await res.json();
+        const rows = Object.entries(counts).map(([file, count]) => {
+          const label = GUIDE_LABELS[file] || file;
+          return `<div style="display:flex;align-items:center;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--border);">
+            <span style="font-family:var(--font-mono);font-size:.75rem;color:var(--text);">${label}</span>
+            <span style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);">${count.toLocaleString()} downloads</span>
+          </div>`;
+        }).join('');
+        el.innerHTML = rows || '<p style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);">No data yet.</p>';
+      } catch (_) {
+        el.innerHTML = '<p style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);">—</p>';
+      }
+    }
+    fetchGuideCounts();
 
     // Download history section
     const TOOL_COLORS = { ileapp: '#E30613', aleapp: '#A4C639', rleapp: '#4BA3C7', vleapp: '#531dab', lava: '#F5C020' };
