@@ -50,6 +50,11 @@ export default {
       return handleBlogRequest(url, env);
     }
 
+    // Blog share route: /blog/share/:slug — OG-enriched redirect page for social cards
+    if (url.pathname.startsWith('/blog/share/')) {
+      return handleBlogShare(url, env);
+    }
+
     // Daily downloads route: /downloads/daily
     if (url.pathname === '/downloads/daily') {
       return handleDownloadsDaily(env);
@@ -339,6 +344,58 @@ async function handleChangelogFeed(env) {
   });
   await cache.put(cacheKey, responseToCache.clone());
   return responseToCache;
+}
+
+async function handleBlogShare(url, env) {
+  const slug = url.pathname.replace(/^\/blog\/share\//, '');
+  if (!slug.match(/^[\w-]+$/)) {
+    return new Response('Not found', { status: 404 });
+  }
+
+  const indexUrl = `https://raw.githubusercontent.com/${BLOG_REPO}/${BLOG_BRANCH}/blog/posts/index.json`;
+  let post = null;
+  try {
+    const res = await fetch(indexUrl, { headers: { 'User-Agent': 'LEAPPs-Worker/1.0' } });
+    if (res.ok) {
+      const index = await res.json();
+      post = index.find(p => p.slug === slug) || null;
+    }
+  } catch (_) {}
+
+  const title = post ? `${post.title} — LEAPPs Blog` : 'LEAPPs Blog';
+  const description = post ? post.excerpt : 'News, updates and forensics insights from the LEAPPs project.';
+  const image = 'https://images.squarespace-cdn.com/content/67588c6d2ecfa834463bf5ae/1778253329900-PD4YWMXV784IQU8LUW74/LEAPPs_logo_with_icons.png?content-type=image%2Fpng';
+  const destination = `https://leapps.org/blog-post?post=${encodeURIComponent(slug)}`;
+
+  const html = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>${title}</title>
+  <meta name="description" content="${description}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="${title}" />
+  <meta property="og:description" content="${description}" />
+  <meta property="og:url" content="${destination}" />
+  <meta property="og:image" content="${image}" />
+  <meta property="og:site_name" content="LEAPPs" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="${title}" />
+  <meta name="twitter:description" content="${description}" />
+  <meta name="twitter:image" content="${image}" />
+  <meta http-equiv="refresh" content="0;url=${destination}" />
+  <script>window.location.replace('${destination}');</script>
+</head>
+<body></body>
+</html>`;
+
+  return new Response(html, {
+    status: 200,
+    headers: {
+      'Content-Type': 'text/html; charset=utf-8',
+      'Cache-Control': `public, max-age=${BLOG_CACHE_TTL}`,
+    },
+  });
 }
 
 async function handleDownloadsDaily(env) {
