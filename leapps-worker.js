@@ -60,6 +60,14 @@ export default {
       return handleDownloadsDaily(env);
     }
 
+    // File download tracking: /downloads/counts or /downloads/:filename
+    if (url.pathname === '/downloads/counts') {
+      return handleDownloadCounts(env);
+    }
+    if (url.pathname.startsWith('/downloads/') && url.pathname !== '/downloads/') {
+      return handleTrackedDownload(url, env);
+    }
+
     // Parse the path — expected format: /repos/{owner}/{repo}/...
     const path = url.pathname + url.search;
 
@@ -396,6 +404,37 @@ async function handleBlogShare(url, env) {
       'Cache-Control': `public, max-age=${BLOG_CACHE_TTL}`,
     },
   });
+}
+
+const ALLOWED_DOWNLOADS = {
+  'ileapp-module-contributor-guide.pdf': `https://raw.githubusercontent.com/${BLOG_REPO}/main/downloads/ileapp-module-contributor-guide.pdf`,
+};
+
+async function handleTrackedDownload(url, env) {
+  const filename = url.pathname.replace(/^\/downloads\//, '');
+  const target = ALLOWED_DOWNLOADS[filename];
+  if (!target) return corsResponse(JSON.stringify({ error: 'Not found' }), 404);
+
+  try {
+    const key = `dl_count:${filename}`;
+    const current = parseInt(await env.CACHE?.get(key) || '0', 10);
+    await env.CACHE?.put(key, String(current + 1));
+  } catch (_) {}
+
+  return Response.redirect(target, 302);
+}
+
+async function handleDownloadCounts(env) {
+  const counts = {};
+  for (const filename of Object.keys(ALLOWED_DOWNLOADS)) {
+    try {
+      const val = await env.CACHE?.get(`dl_count:${filename}`);
+      counts[filename] = parseInt(val || '0', 10);
+    } catch (_) {
+      counts[filename] = 0;
+    }
+  }
+  return corsResponse(JSON.stringify(counts), 200);
 }
 
 async function handleDownloadsDaily(env) {

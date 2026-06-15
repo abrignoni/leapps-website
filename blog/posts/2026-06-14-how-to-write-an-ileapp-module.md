@@ -14,7 +14,7 @@ The guide below walks through everything: the module structure, the metadata blo
 
 One note before you dive in. This is a working guide, not a finished specification. The LEAPPs tools and LAVA are under active development, and the contributor workflow will continue to evolve. A dedicated documentation site is in progress that will house always-current documentation for iLEAPP, ALEAPP, RLEAPP, VLEAPP, and LAVA in one place. Until that site is live, this post is the best starting point. It reflects the current state of the codebase accurately, but check the repository for any changes that may have landed after publication.
 
-A downloadable PDF version of this guide is available here: [iLEAPP Module Contributor Guide (PDF)](https://github.com/abrignoni/leapps-website/raw/main/downloads/ileapp-module-contributor-guide.pdf)
+A downloadable PDF version of this guide is available here: [iLEAPP Module Contributor Guide (PDF)](https://leapps-api.4n6-198.workers.dev/downloads/ileapp-module-contributor-guide.pdf)
 
 With that said — pick an artifact, open a file, and write the module. The community benefits every time someone does.
 
