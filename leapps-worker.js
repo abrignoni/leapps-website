@@ -384,7 +384,6 @@ async function handleBlogShare(url, env) {
   <meta name="twitter:title" content="${title}" />
   <meta name="twitter:description" content="${description}" />
   <meta name="twitter:image" content="${image}" />
-  <meta http-equiv="refresh" content="0;url=${destination}" />
   <script>window.location.replace('${destination}');</script>
 </head>
 <body></body>
