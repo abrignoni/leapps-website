@@ -506,9 +506,13 @@
         if (idx === -1) return;
         const key = line.slice(0, idx).trim();
         let val = line.slice(idx + 1).trim();
-        // Parse array syntax: [a, b, c]
+        // Strip surrounding quotes from scalar values
+        if (val.length >= 2 && ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'")))) {
+          val = val.slice(1, -1);
+        }
+        // Parse array syntax: [a, b, c] or ["a", "b"]
         if (val.startsWith('[') && val.endsWith(']')) {
-          val = val.slice(1, -1).split(',').map(s => s.trim()).filter(Boolean);
+          val = val.slice(1, -1).split(',').map(s => s.trim().replace(/^["']|["']$/g, '')).filter(Boolean);
         }
         meta[key] = val;
       });
