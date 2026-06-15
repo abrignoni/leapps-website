@@ -1,9 +1,9 @@
 ---
-title: "How to Write an iLEAPP Module"
-date: "2026-06-14"
-author: "Alexis Brignoni"
-tags: ["iLEAPP", "ALEAPP", "RLEAPP", "VLEAPP", "contributing", "development"]
-excerpt: "The LEAPPs ecosystem runs on contributions. A module is a single Python file — and this guide walks through everything: module structure, SQLite and plist parsing, timestamp handling, LAVA conversation view, and submitting a pull request."
+title: How to Write an iLEAPP Module
+date: 2026-06-14
+author: Alexis Brignoni
+tags: [iLEAPP, ALEAPP, RLEAPP, VLEAPP, contributing, development]
+excerpt: The LEAPPs ecosystem runs on contributions. A module is a single Python file — and this guide walks through everything: module structure, SQLite and plist parsing, timestamp handling, LAVA conversation view, and submitting a pull request.
 ---
 
 The LEAPPs ecosystem runs on contributions. Every artifact module in iLEAPP, ALEAPP, RLEAPP, and VLEAPP was written by someone who looked at a data source, figured out what it contained, and wrote the code to surface it. That is how the tools grew from a handful of modules to the hundreds that exist today. It is also how they will keep growing.
