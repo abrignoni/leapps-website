@@ -220,6 +220,15 @@
       letter-spacing: .05em;
     }
     .post-card:hover .tag { border-color: #3a3a3a; }
+    .pin-badge {
+      font-family: var(--font-mono);
+      font-size: .65rem;
+      letter-spacing: .1em;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: .1rem .45rem;
+      text-transform: uppercase;
+    }
 
     /* Filter + pagination */
     .lp-filter-select { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; background: var(--surface); color: var(--text); border: 1px solid var(--border); padding: .4rem 2rem .4rem .75rem; cursor: pointer; outline: none; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .5rem center; transition: border-color .2s; }
@@ -476,6 +485,7 @@
         <div class="post-card-meta">
           <span class="date">${formatDate(post.date)}</span>
           <span>${post.author}</span>
+          ${post.pinned ? `<span class="pin-badge">Pinned</span>` : ''}
         </div>
         <h2>${post.title}</h2>
         <p>${post.excerpt}</p>
@@ -548,7 +558,11 @@
           return;
         }
 
-        allPosts = posts.sort((a, b) => b.date.localeCompare(a.date));
+        allPosts = posts.sort((a, b) => {
+          if (a.pinned && !b.pinned) return -1;
+          if (!a.pinned && b.pinned) return 1;
+          return b.date.localeCompare(a.date);
+        });
         buildTagFilter(allPosts);
         renderPosts();
       } catch (err) {
