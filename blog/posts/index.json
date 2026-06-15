@@ -1,5 +1,13 @@
 [
   {
+    "slug": "2026-06-14-how-to-write-an-ileapp-module",
+    "title": "How to Write an iLEAPP Module",
+    "date": "2026-06-14",
+    "author": "Alexis Brignoni",
+    "tags": ["iLEAPP", "ALEAPP", "RLEAPP", "VLEAPP", "contributing", "development"],
+    "excerpt": "The LEAPPs ecosystem runs on contributions. A module is a single Python file — and this guide walks through everything: module structure, SQLite and plist parsing, timestamp handling, LAVA conversation view, and submitting a pull request."
+  },
+  {
     "slug": "2026-06-10-leapping-with-lava",
     "title": "LEAPPing with LAVA",
     "date": "2026-06-10",
