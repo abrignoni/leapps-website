@@ -17,7 +17,7 @@ const ALLOWED_REPOS = [
 ];
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
     // Handle CORS preflight
@@ -65,7 +65,7 @@ export default {
       return handleDownloadCounts(env);
     }
     if (url.pathname.startsWith('/downloads/') && url.pathname !== '/downloads/') {
-      return handleTrackedDownload(url, env);
+      return handleTrackedDownload(url, env, ctx);
     }
 
     // Parse the path — expected format: /repos/{owner}/{repo}/...
@@ -410,16 +410,19 @@ const ALLOWED_DOWNLOADS = {
   'ileapp-module-contributor-guide.pdf': `https://raw.githubusercontent.com/${BLOG_REPO}/main/downloads/ileapp-module-contributor-guide.pdf`,
 };
 
-async function handleTrackedDownload(url, env) {
+async function handleTrackedDownload(url, env, ctx) {
   const filename = url.pathname.replace(/^\/downloads\//, '');
   const target = ALLOWED_DOWNLOADS[filename];
   if (!target) return corsResponse(JSON.stringify({ error: 'Not found' }), 404);
 
-  try {
-    const key = `dl_count:${filename}`;
-    const current = parseInt(await env.CACHE?.get(key) || '0', 10);
-    await env.CACHE?.put(key, String(current + 1));
-  } catch (_) {}
+  if (env.CACHE) {
+    const writePromise = (async () => {
+      const key = `dl_count:${filename}`;
+      const current = parseInt(await env.CACHE.get(key) || '0', 10);
+      await env.CACHE.put(key, String(current + 1));
+    })();
+    ctx.waitUntil(writePromise);
+  }
 
   return Response.redirect(target, 302);
 }
