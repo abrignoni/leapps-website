@@ -1,0 +1,7 @@
+/* ── Reset & Variables ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* THEME TOGGLE */
+    [data-theme="light"] { --off-black: #F5F2EC; --surface: #EAE6DE; --border: #C8C3B8; --text: #1C1A14; --muted: #6B6458; }
+
+[data-theme="light"] .lp-nav { background: rgba(245,242,236,0.96); }
