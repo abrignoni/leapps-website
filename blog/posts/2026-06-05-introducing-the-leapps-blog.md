@@ -38,7 +38,7 @@ Fork [abrignoni/leapps-website](https://github.com/abrignoni/leapps-website) on 
 Add a file to `blog/posts/` using this naming format:
 
 ```
-YYYY-MM-DD-your-post-title.md
+your-post-title.md
 ```
 
 Start the file with YAML frontmatter:
@@ -55,20 +55,19 @@ excerpt: A one or two sentence summary shown on the blog index.
 Your content starts here...
 ```
 
-### 3. Add your post to the index
+### 3. Let the index generate itself
 
-Open `blog/posts/index.json` and add an entry at the top of the array:
+You should not **not** edit `blog/posts/index.json`. The blog index is generated from each post's frontmatter header after posts are merged.
 
-```json
-{
-  "slug": "2026-06-05-your-post-title",
-  "title": "Your Post Title",
-  "date": "2026-06-05",
-  "author": "Your Name",
-  "tags": ["forensics", "android", "artifacts"],
-  "excerpt": "A one or two sentence summary shown on the blog index."
-}
-```
+The filename becomes the post slug, and these frontmatter fields become the blog listing:
+
+- `title`
+- `date`
+- `author`
+- `tags`
+- `excerpt`
+
+Maintainers can also add `pinned: true` to a post's frontmatter if it should stay at the top of the blog index.
 
 ### 4. Open a pull request
 

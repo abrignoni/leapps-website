@@ -1,10 +1,32 @@
 [
   {
+    "slug": "2026-06-14-how-to-write-an-ileapp-module",
+    "title": "How to Write an iLEAPP Module",
+    "date": "2026-06-14",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "iLEAPP",
+      "ALEAPP",
+      "RLEAPP",
+      "VLEAPP",
+      "contributing",
+      "development"
+    ],
+    "excerpt": "The LEAPPs ecosystem runs on contributions. A module is a single Python file — and this guide walks through everything: module structure, SQLite and plist parsing, timestamp handling, LAVA conversation view, and submitting a pull request.",
+    "pinned": true
+  },
+  {
     "slug": "2026-06-26-decoding-apple-atx-images",
     "title": "Decoding Apple ATX Images in iLEAPP",
     "date": "2026-06-26",
     "author": "James Habben",
-    "tags": ["iLEAPP", "iOS", "images", "artifacts", "research"],
+    "tags": [
+      "iLEAPP",
+      "iOS",
+      "images",
+      "artifacts",
+      "research"
+    ],
     "excerpt": "Wallpaper research led to a broader Apple image-cache problem: ATX texture files. Here is how iLEAPP now parses and decodes many of them, with a reusable parser that should be easy to port into other tools."
   },
   {
@@ -12,23 +34,27 @@
     "title": "Recovering Pre-iOS 16 Wallpaper from SpringBoard",
     "date": "2026-06-24",
     "author": "James Habben",
-    "tags": ["iLEAPP", "iOS", "SpringBoard", "artifacts", "media"],
+    "tags": [
+      "iLEAPP",
+      "iOS",
+      "SpringBoard",
+      "artifacts",
+      "media"
+    ],
     "excerpt": "A quick research note on extracting older iOS wallpaper files from SpringBoard, including legacy cpbitmap conversion and JPG thumbnail handling in iLEAPP."
-  },
-  {
-    "slug": "2026-06-14-how-to-write-an-ileapp-module",
-    "title": "How to Write an iLEAPP Module",
-    "date": "2026-06-14",
-    "author": "Alexis Brignoni",
-    "tags": ["iLEAPP", "ALEAPP", "RLEAPP", "VLEAPP", "contributing", "development"],
-    "excerpt": "The LEAPPs ecosystem runs on contributions. A module is a single Python file — and this guide walks through everything: module structure, SQLite and plist parsing, timestamp handling, LAVA conversation view, and submitting a pull request."
   },
   {
     "slug": "2026-06-10-leapping-with-lava",
     "title": "LEAPPing with LAVA",
     "date": "2026-06-10",
     "author": "Kevin Pagano",
-    "tags": ["LAVA", "iLEAPP", "ALEAPP", "RLEAPP", "VLEAPP"],
+    "tags": [
+      "LAVA",
+      "iLEAPP",
+      "ALEAPP",
+      "RLEAPP",
+      "VLEAPP"
+    ],
     "excerpt": "LAVA is another way to view reports created out of iLEAPP, ALEAPP, RLEAPP, and VLEAPP. Here is a look at the new features that make it stand out from the HTML reporting it is set to replace."
   },
   {
@@ -36,7 +62,11 @@
     "title": "Website Update - Search, Better Docs, and More",
     "date": "2026-06-07",
     "author": "Alexis Brignoni",
-    "tags": ["announcement", "website", "updates"],
+    "tags": [
+      "announcement",
+      "website",
+      "updates"
+    ],
     "excerpt": "The LEAPPs website got a big update. Here is a rundown of everything that changed, from site-wide search to improved docs and a more consistent footer across every page."
   },
   {
@@ -44,7 +74,11 @@
     "title": "Introducing the LEAPPs Blog",
     "date": "2026-06-05",
     "author": "Alexis Brignoni",
-    "tags": ["announcement", "community", "contributing"],
+    "tags": [
+      "announcement",
+      "community",
+      "contributing"
+    ],
     "excerpt": "The LEAPPs project now has a blog — a place for artifact deep dives, tool updates, and community write-ups. Here's how it works and how you can contribute."
   }
 ]
