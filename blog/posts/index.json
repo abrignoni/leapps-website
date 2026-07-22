@@ -1,5 +1,18 @@
 [
   {
+    "slug": "2026-07-22-astc-cython-and-bugs",
+    "title": "ASTC, Cython, and bugs!",
+    "date": "2026-07-22",
+    "author": "Bruno Constanzo",
+    "tags": [
+      "iLEAPP",
+      "iOS",
+      "artifacts",
+      "Cython"
+    ],
+    "excerpt": "What do texture decompression, C-extensions for python, and LEAPPs have in common? Read to find out!"
+  },
+  {
     "slug": "feature-leapps-recent-run-history",
     "title": "Feature Highlight: Recent Run History in LAVA",
     "date": "2026-07-20",
