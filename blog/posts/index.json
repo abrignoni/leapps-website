@@ -1,5 +1,20 @@
 [
   {
+    "slug": "2026-07-25-everybody-gets-a-release",
+    "title": "Everybody Gets a Release!",
+    "date": "2026-07-25",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "iLEAPP",
+      "ALEAPP",
+      "RLEAPP",
+      "VLEAPP",
+      "LAVA",
+      "releases"
+    ],
+    "excerpt": "iLEAPP, ALEAPP, RLEAPP, and VLEAPP are all at v2026.2.0, and LAVA is at v0.14.0. Biome artifacts, iOS 26 photos, AI image provenance, recovered clipboards, a Snapchat overhaul, row tagging in LAVA, and a lot more."
+  },
+  {
     "slug": "digital-forensics-now-en-espanol",
     "title": "Digital Forensics Now Ahora Habla Español",
     "date": "2026-07-25",
