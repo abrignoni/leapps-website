@@ -1,5 +1,19 @@
 [
   {
+    "slug": "digital-forensics-now-en-espanol",
+    "title": "Digital Forensics Now Ahora Habla Español",
+    "date": "2026-07-25",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "podcast",
+      "español",
+      "community",
+      "AI",
+      "Digital Forensics Now"
+    ],
+    "excerpt": "The Digital Forensics Now podcast now has a Spanish edition, in our own voices, built with open source AI models running locally and verified line by line by a native speaker. Para la comunidad DFIR de habla hispana."
+  },
+  {
     "slug": "2026-07-22-astc-cython-and-bugs",
     "title": "ASTC, Cython, and bugs!",
     "date": "2026-07-22",
