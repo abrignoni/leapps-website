@@ -28,7 +28,7 @@ Get it here: [iLEAPP](https://www.leapps.org/releases#section-ileapp)
 
 Samsung Honeyboard clipboard, reworked with WAL recovery. Read that again. Deleted clipboard entries, recovered from the write-ahead log, with SEFT support and dual-schema handling so it works across versions. Clipboards are where people paste the things they do not want to type twice, and now you can get at the ones they thought were gone.
 
-Mister Skinnylegs is in ALEAPP, contributed by software developer extraordinaire Alex Caithness. First contribution to the project, and what an entrance.
+Mister Skinnylegs is in ALEAPP, contributed by software developer extraordinaire Alex Caithness.
 
 C2PA Content Provenance landed here too, so AI image detection is not an iOS-only party. Same signer certificate parsing, same Media State column grouping manifests per file.
 
@@ -79,7 +79,7 @@ Get it here: [LAVA](https://www.leapps.org/releases#section-lava)
 
 None of this happens without the community. Thank you to Johann-PLW, James Habben, Kevin Pagano, Scott Koenig, Bruno Constanzo, Django Faiola, Alex Caithness, Maite, prosch88, Schramp, snoop168, Francisco Veron, Jamie Sharpe, mb4n6, and OneSixForensics.
 
-Special welcome to Alex Caithness, prosch88, Jamie Sharpe, and OneSixForensics, each of whom landed a first contribution to one of these repos in this cycle. Four new names in one release wave tells you the project is healthy.
+Special welcome to prosch88, Jamie Sharpe, and OneSixForensics, each of whom landed a first contribution to one of these repos in this cycle. Three new names in one release wave tells you the project is healthy.
 
 Free tools, open source, built by practitioners for practitioners. Download them, run them, and tell us what breaks so we can fix it.
 
