@@ -8,6 +8,8 @@ excerpt: The Digital Forensics Now podcast now has a Spanish edition, in our own
 
 # Digital Forensics Now Ahora Habla Español
 
+![Digital Forensics Now, ahora en Español. One waveform, two languages.](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/digital-forensics-now-en-espanol/banner.png)
+
 Para mi gente de habla hispana: el podcast Digital Forensics Now ya tiene su versión en español, con nuestras propias voces. Sí, la mía suena como yo. Y sí, Heather suena como Heather, pero en español.
 
 For everybody else: the Digital Forensics Now podcast now has a Spanish edition, and both of us sound like ourselves. If you have ever wondered how Heather Charpentier would sound if she spoke Spanish, well, today is your lucky day.
@@ -18,7 +20,7 @@ You can listen right now at [digitalforensicsnowespanol.buzzsprout.com](https://
 
 Full transparency, folks, because you know how I feel about AI hype: this is AI voice cloning, and nothing about it is hidden. That is the point.
 
-Every episode is transcribed, translated, and synthesized using open source models running locally on my own machine. No cloud services touch the audio. Heather does not speak Spanish, in case you had not noticed. Her voice is cloned from her own episode audio. Mine is cloned from a Spanish sample I recorded myself, so the Spanish pronunciation is actually mine.
+Every episode is transcribed, translated, and synthesized using open source models running locally on my own machine. The audio never leaves my machine; only the text passes through an API for translation, and I verify every line of what comes back. Heather does not speak Spanish, in case you had not noticed. Her voice is cloned from her own episode audio. Mine is cloned from a Spanish sample I recorded myself, so the Spanish pronunciation is actually mine.
 
 I have said it many times, on the show and everywhere else: I have no issue using stochastic procedures to get me to a deterministic output that I can verify and validate. That is exactly what this is. Before anything gets published, I review the complete translation line by line as a native speaker. The tooling does the heavy lifting. The verification is mine. If a term like iLEAPP or plist or SQLite gets mangled somewhere in the process, it gets caught, because a person who knows the field and knows the language is standing between the model and the publish button.
 
@@ -35,5 +37,3 @@ And a sincere thank you to Heather Charpentier for trusting me with her voice, l
 New Spanish episodes will follow the English ones. Subscribe here:
 
 **[digitalforensicsnowespanol.buzzsprout.com](https://digitalforensicsnowespanol.buzzsprout.com)**
-
-If Spanish is your first language, I want to hear from you. How do the voices sound? Does anything read wrong or sound off? Tell me. That feedback goes straight back into making the next episode better.
