@@ -3,6 +3,30 @@
   "window_days": 45,
   "items": [
     {
+      "name": "biomeSiriRemembersAudioHistory",
+      "query": "biomeSiriRemembersAudioHistory",
+      "tool": "iLEAPP",
+      "date": "2026-07-26"
+    },
+    {
+      "name": "biomeDiscoverabilitySignals",
+      "query": "biomeDiscoverabilitySignals",
+      "tool": "iLEAPP",
+      "date": "2026-07-26"
+    },
+    {
+      "name": "biomeSiriRemembersAssistantSuggestions",
+      "query": "biomeSiriRemembersAssistantSuggestions",
+      "tool": "iLEAPP",
+      "date": "2026-07-26"
+    },
+    {
+      "name": "biomeSiriUI",
+      "query": "biomeSiriUI",
+      "tool": "iLEAPP",
+      "date": "2026-07-26"
+    },
+    {
       "name": "biomeAppInstallation",
       "query": "biomeAppInstallation",
       "tool": "iLEAPP",
@@ -49,30 +73,6 @@
       "query": "biomeEmojiEngagement",
       "tool": "iLEAPP",
       "date": "2026-07-26"
-    },
-    {
-      "name": "notesPasswordProtected",
-      "query": "notesPasswordProtected",
-      "tool": "iLEAPP",
-      "date": "2026-07-26"
-    },
-    {
-      "name": "signalIOS",
-      "query": "signalIOS",
-      "tool": "iLEAPP",
-      "date": "2026-07-26"
-    },
-    {
-      "name": "signalAndroid",
-      "query": "signalAndroid",
-      "tool": "ALEAPP",
-      "date": "2026-07-26"
-    },
-    {
-      "name": "appCookies",
-      "query": "appCookies",
-      "tool": "iLEAPP",
-      "date": "2026-07-25"
     }
   ]
 }
