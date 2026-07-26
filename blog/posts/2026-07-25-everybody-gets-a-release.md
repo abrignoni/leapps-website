@@ -50,7 +50,7 @@ Get it here: [RLEAPP](https://www.leapps.org/releases#section-rleapp)
 
 Vehicle forensics finished its LAVA migration. All of it. Alfa Romeo, Chrysler, Ford, Hyundai with seven telematics artifacts, Nissan Altima, and Nuance VCA, plus the PAS debug-log parsers and the tar_checker and sal_data artifacts. The whole toolkit is on the modern pipeline.
 
-There is also a fix I love because it is so boring and so important: files with glob metacharacters in the name, like IMG_0347.jpg, now resolve properly. That bracket used to make a file invisible. Not anymore.
+There is also a fix I love because it is so boring and so important: files with glob metacharacters in the name, like `IMG_0347[1].jpg`, now resolve properly. That bracket used to make a file invisible. Not anymore.
 
 Cars are the most mobile data sources we have, and getting this toolkit current has been a long haul. Very happy to see it done.
 
