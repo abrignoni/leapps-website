@@ -3,6 +3,30 @@
   "window_days": 45,
   "items": [
     {
+      "name": "biomeBootSession",
+      "query": "biomeBootSession",
+      "tool": "iLEAPP",
+      "date": "2026-07-26"
+    },
+    {
+      "name": "biomeEmojiEngagement",
+      "query": "biomeEmojiEngagement",
+      "tool": "iLEAPP",
+      "date": "2026-07-26"
+    },
+    {
+      "name": "notesPasswordProtected",
+      "query": "notesPasswordProtected",
+      "tool": "iLEAPP",
+      "date": "2026-07-26"
+    },
+    {
+      "name": "signalIOS",
+      "query": "signalIOS",
+      "tool": "iLEAPP",
+      "date": "2026-07-26"
+    },
+    {
       "name": "signalAndroid",
       "query": "signalAndroid",
       "tool": "ALEAPP",
@@ -47,30 +71,6 @@
     {
       "name": "meWe",
       "query": "meWe",
-      "tool": "iLEAPP",
-      "date": "2026-07-25"
-    },
-    {
-      "name": "safariDownloads",
-      "query": "safariDownloads",
-      "tool": "iLEAPP",
-      "date": "2026-07-25"
-    },
-    {
-      "name": "truthSocial",
-      "query": "truthSocial",
-      "tool": "iLEAPP",
-      "date": "2026-07-25"
-    },
-    {
-      "name": "twitterX",
-      "query": "twitterX",
-      "tool": "iLEAPP",
-      "date": "2026-07-25"
-    },
-    {
-      "name": "biomeAppLocationActivity",
-      "query": "biomeAppLocationActivity",
       "tool": "iLEAPP",
       "date": "2026-07-25"
     }
