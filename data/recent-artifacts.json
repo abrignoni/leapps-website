@@ -3,6 +3,42 @@
   "window_days": 45,
   "items": [
     {
+      "name": "biomeAppInstallation",
+      "query": "biomeAppInstallation",
+      "tool": "iLEAPP",
+      "date": "2026-07-26"
+    },
+    {
+      "name": "biomeAppRelevantShortcuts",
+      "query": "biomeAppRelevantShortcuts",
+      "tool": "iLEAPP",
+      "date": "2026-07-26"
+    },
+    {
+      "name": "biomeAppleIntelligence",
+      "query": "biomeAppleIntelligence",
+      "tool": "iLEAPP",
+      "date": "2026-07-26"
+    },
+    {
+      "name": "biomePhotosSearchInsights",
+      "query": "biomePhotosSearchInsights",
+      "tool": "iLEAPP",
+      "date": "2026-07-26"
+    },
+    {
+      "name": "biomeShareSheetConversation",
+      "query": "biomeShareSheetConversation",
+      "tool": "iLEAPP",
+      "date": "2026-07-26"
+    },
+    {
+      "name": "biomeEmergencyVoiceCall",
+      "query": "biomeEmergencyVoiceCall",
+      "tool": "iLEAPP",
+      "date": "2026-07-26"
+    },
+    {
       "name": "biomeBootSession",
       "query": "biomeBootSession",
       "tool": "iLEAPP",
@@ -35,42 +71,6 @@
     {
       "name": "appCookies",
       "query": "appCookies",
-      "tool": "iLEAPP",
-      "date": "2026-07-25"
-    },
-    {
-      "name": "appStoreSearches",
-      "query": "appStoreSearches",
-      "tool": "iLEAPP",
-      "date": "2026-07-25"
-    },
-    {
-      "name": "clubhouse",
-      "query": "clubhouse",
-      "tool": "iLEAPP",
-      "date": "2026-07-25"
-    },
-    {
-      "name": "googleVoice",
-      "query": "googleVoice",
-      "tool": "iLEAPP",
-      "date": "2026-07-25"
-    },
-    {
-      "name": "groupMe",
-      "query": "groupMe",
-      "tool": "iLEAPP",
-      "date": "2026-07-25"
-    },
-    {
-      "name": "mastodon",
-      "query": "mastodon",
-      "tool": "iLEAPP",
-      "date": "2026-07-25"
-    },
-    {
-      "name": "meWe",
-      "query": "meWe",
       "tool": "iLEAPP",
       "date": "2026-07-25"
     }
