@@ -1,6 +1,6 @@
 # leapps-website
 
-Source for [leapps.org](https://leapps.org) — the website for the LEAPPs digital forensics tools: iLEAPP, ALEAPP, RLEAPP, VLEAPP, and LAVA.
+Source for [leapps.org](https://leapps.org) — the website for the LEAPPs digital forensics tools: iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, LAVA, and Batch LEAPP.
 
 The site is static HTML served from Cloudflare. It auto-deploys: pushing to `main` triggers a Cloudflare build that publishes the static files and the edge Worker. A second, separately deployed Worker (`leapps-api`) provides the dynamic data (GitHub stats, releases, RSS feeds, downloads).
 

@@ -372,6 +372,7 @@
       { name: 'ALEAPP', platform: 'Android',         repo: 'abrignoni/ALEAPP',         openSource: true,  color: '#A4C639' },
       { name: 'RLEAPP', platform: 'ISP Returns',     repo: 'abrignoni/RLEAPP',         openSource: true,  color: '#4BA3C7' },
       { name: 'VLEAPP', platform: 'Vehicle Systems', repo: 'abrignoni/VLEAPP',         openSource: true,  color: '#531dab' },
+      { name: 'DLEAPP', platform: 'Desktop · Other', repo: 'abrignoni/DLEAPP',         openSource: true,  color: '#B173A9' },
       { name: 'LAVA',   platform: 'All Platforms',   repo: 'leapps-org/LAVA-releases', openSource: false, color: '#F5C020' },
       { name: 'Batch LEAPP', platform: 'Automation',  repo: 'abrignoni/batch-leapp',    openSource: true,  color: '#E8762D' },
     ];
@@ -580,8 +581,8 @@
     fetchGuideCounts();
 
     // Download history section
-    const TOOL_COLORS = { ileapp: '#E30613', aleapp: '#A4C639', rleapp: '#4BA3C7', vleapp: '#531dab', lava: '#F5C020', batchleapp: '#E8762D' };
-    const TOOL_LABELS = { ileapp: 'iLEAPP', aleapp: 'ALEAPP', rleapp: 'RLEAPP', vleapp: 'VLEAPP', lava: 'LAVA', batchleapp: 'Batch LEAPP' };
+    const TOOL_COLORS = { ileapp: '#E30613', aleapp: '#A4C639', rleapp: '#4BA3C7', vleapp: '#531dab', dleapp: '#B173A9', lava: '#F5C020', batchleapp: '#E8762D' };
+    const TOOL_LABELS = { ileapp: 'iLEAPP', aleapp: 'ALEAPP', rleapp: 'RLEAPP', vleapp: 'VLEAPP', dleapp: 'DLEAPP', lava: 'LAVA', batchleapp: 'Batch LEAPP' };
     let dlHistoryChart = null;
     let dlSnapshots = [];
 
@@ -830,6 +831,7 @@
         { id: 'aleapp', name: 'ALEAPP', repo: 'abrignoni/ALEAPP' },
         { id: 'rleapp', name: 'RLEAPP', repo: 'abrignoni/RLEAPP' },
         { id: 'vleapp', name: 'VLEAPP', repo: 'abrignoni/VLEAPP' },
+        { id: 'dleapp', name: 'DLEAPP', repo: 'abrignoni/DLEAPP' },
       ];
       let cache = null, loading = false;
 

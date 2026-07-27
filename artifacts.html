@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Artifacts — LEAPPs</title>
-  <meta name="description" content="Browse all artifacts supported by iLEAPP, ALEAPP, RLEAPP, and VLEAPP — searchable and filterable by tool and category." />
+  <meta name="description" content="Browse all artifacts supported by iLEAPP, ALEAPP, RLEAPP, VLEAPP, and DLEAPP — searchable and filterable by tool and category." />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://leapps.org/artifacts" />
   <meta property="og:title" content="Artifacts — LEAPPs" />
-  <meta property="og:description" content="Browse all artifacts supported by iLEAPP, ALEAPP, RLEAPP, and VLEAPP." />
+  <meta property="og:description" content="Browse all artifacts supported by iLEAPP, ALEAPP, RLEAPP, VLEAPP, and DLEAPP." />
   <meta property="og:image" content="https://leapps.org/blog/og/default.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -18,7 +18,7 @@
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Artifacts — LEAPPs" />
-  <meta name="twitter:description" content="Browse all artifacts supported by iLEAPP, ALEAPP, RLEAPP, and VLEAPP." />
+  <meta name="twitter:description" content="Browse all artifacts supported by iLEAPP, ALEAPP, RLEAPP, VLEAPP, and DLEAPP." />
   <meta name="twitter:image" content="https://leapps.org/blog/og/default.png" />
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/logos/leapps-favicon-512.png" />
@@ -64,6 +64,7 @@
 .lp-tool-btn[data-tool="aleapp"].active { border-color: var(--color-aleapp); color: var(--color-aleapp); background: rgba(164,198,57,.08); }
 .lp-tool-btn[data-tool="rleapp"].active { border-color: var(--color-rleapp); color: var(--color-rleapp); background: rgba(75,163,199,.08); }
 .lp-tool-btn[data-tool="vleapp"].active { border-color: var(--color-vleapp); color: var(--color-vleapp); background: rgba(83,29,171,.08); }
+.lp-tool-btn[data-tool="dleapp"].active { border-color: #B173A9; color: #B173A9; background: rgba(177,115,169,.08); }
 .lp-results-meta { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .06em; color: var(--muted); margin-bottom: 1rem; min-height: 1.2rem; }
 .lp-results-meta span { color: var(--gold); }
 .lp-progress-bar-wrap { height: 2px; background: var(--border); margin-bottom: 1.5rem; overflow: hidden; }
@@ -88,6 +89,7 @@
 .lp-tool-tag.aleapp { color: var(--color-aleapp); border-color: rgba(164,198,57,.3); }
 .lp-tool-tag.rleapp { color: var(--color-rleapp); border-color: rgba(75,163,199,.3); }
 .lp-tool-tag.vleapp { color: var(--color-vleapp); border-color: rgba(83,29,171,.3); }
+.lp-tool-tag.dleapp { color: #B173A9; border-color: rgba(177,115,169,.3); }
 .lp-output-types { display: flex; gap: .3rem; flex-wrap: wrap; }
 .lp-output-badge { font-family: var(--font-mono); font-size: .55rem; letter-spacing: .08em; text-transform: uppercase; padding: .1rem .4rem; border: 1px solid var(--border); color: #666; white-space: nowrap; }
 .lp-output-badge.lava { border-color: rgba(245,192,32,.3); color: var(--gold); }
@@ -142,7 +144,7 @@
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Artifacts — LEAPPs",
-    "description": "Browse all artifacts supported by iLEAPP, ALEAPP, RLEAPP, and VLEAPP — searchable and filterable by tool and category.",
+    "description": "Browse all artifacts supported by iLEAPP, ALEAPP, RLEAPP, VLEAPP, and DLEAPP — searchable and filterable by tool and category.",
     "url": "https://leapps.org/artifacts",
     "isPartOf": { "@type": "WebSite", "name": "LEAPPs", "url": "https://leapps.org" }
   }
@@ -221,7 +223,7 @@
     <div class="lp-header-inner">
       <span class="lp-eyebrow">Live from GitHub</span>
       <h1>Artifact <span>Browser</span></h1>
-      <p>Browse and search every artifact supported across iLEAPP, ALEAPP, RLEAPP, and VLEAPP — pulled live from the source code.</p>
+      <p>Browse and search every artifact supported across iLEAPP, ALEAPP, RLEAPP, VLEAPP, and DLEAPP — pulled live from the source code.</p>
       <p class="lp-catalog-updated" id="catalog-updated"></p>
     </div>
   </header>
@@ -239,7 +241,7 @@
         <div class="lp-artifact-stat-lbl">Categories</div>
       </div>
       <div>
-        <div class="lp-artifact-stat-num" id="stat-tools">4</div>
+        <div class="lp-artifact-stat-num" id="stat-tools">5</div>
         <div class="lp-artifact-stat-lbl">Tools</div>
       </div>
       <div class="lp-stat-filtered" id="stat-filtered-label">Filtered view</div>
@@ -267,6 +269,7 @@
       <button class="lp-tool-btn" data-tool="aleapp">ALEAPP</button>
       <button class="lp-tool-btn" data-tool="rleapp">RLEAPP</button>
       <button class="lp-tool-btn" data-tool="vleapp">VLEAPP</button>
+      <button class="lp-tool-btn" data-tool="dleapp">DLEAPP</button>
     </div>
 
     <!-- SEARCH + CATEGORY -->
@@ -355,6 +358,7 @@
       { id: 'aleapp', name: 'ALEAPP', repo: 'abrignoni/ALEAPP' },
       { id: 'rleapp', name: 'RLEAPP', repo: 'abrignoni/RLEAPP' },
       { id: 'vleapp', name: 'VLEAPP', repo: 'abrignoni/VLEAPP' },
+      { id: 'dleapp', name: 'DLEAPP', repo: 'abrignoni/DLEAPP' },
     ];
 
     const API = 'https://leapps-api.4n6-198.workers.dev';

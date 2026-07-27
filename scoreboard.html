@@ -75,6 +75,7 @@
 .badge-rleapp { background: rgba(75,163,199,.15); color: #4BA3C7; border: 1px solid rgba(75,163,199,.3); }
 .badge-vleapp { background: rgba(83,29,171,.15); color: #531dab; border: 1px solid rgba(83,29,171,.3); }
 .badge-batch { background: rgba(232,118,45,.15); color: #E8762D; border: 1px solid rgba(232,118,45,.3); }
+.badge-dleapp { background: rgba(177,115,169,.15); color: #B173A9; border: 1px solid rgba(177,115,169,.3); }
 .rank-badge { display: inline-flex; align-items: center; gap: .35rem; font-family: var(--font-head); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: .25rem .65rem; border-radius: 2px; white-space: nowrap; }
 .rank-badge i { font-size: .85rem; }
 .rank-badge.rank-1 { background: rgba(108,180,228,.12); color: var(--rank-1); border: 1px solid rgba(108,180,228,.3); }
@@ -98,6 +99,7 @@
 .lp-sb-tool-btn[data-tool="RLEAPP"].active { border-color: #4BA3C7; color: #4BA3C7; background: rgba(75,163,199,.08); }
 .lp-sb-tool-btn[data-tool="VLEAPP"].active { border-color: #531dab; color: #531dab; background: rgba(83,29,171,.08); }
 .lp-sb-tool-btn[data-tool="Batch LEAPP"].active { border-color: #E8762D; color: #E8762D; background: rgba(232,118,45,.08); }
+.lp-sb-tool-btn[data-tool="DLEAPP"].active { border-color: #B173A9; color: #B173A9; background: rgba(177,115,169,.08); }
 .lp-sb-results { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .06em; color: var(--muted); margin-bottom: .75rem; min-height: 1.2rem; }
 .lp-sb-results span { color: var(--gold); }
 .lp-loading-row td { color: #555; font-family: var(--font-mono); font-size: .75rem; text-align: center !important; padding: 3rem; }
@@ -272,6 +274,7 @@
         <button class="lp-sb-tool-btn" data-tool="ALEAPP">ALEAPP</button>
         <button class="lp-sb-tool-btn" data-tool="RLEAPP">RLEAPP</button>
         <button class="lp-sb-tool-btn" data-tool="VLEAPP">VLEAPP</button>
+        <button class="lp-sb-tool-btn" data-tool="DLEAPP">DLEAPP</button>
         <button class="lp-sb-tool-btn" data-tool="Batch LEAPP">Batch LEAPP</button>
       </div>
       <div class="lp-sb-controls">
@@ -345,6 +348,7 @@
       { name: 'ALEAPP', repo: 'abrignoni/ALEAPP',  badgeClass: 'badge-aleapp'  },
       { name: 'RLEAPP', repo: 'abrignoni/RLEAPP',  badgeClass: 'badge-rleapp'  },
       { name: 'VLEAPP', repo: 'abrignoni/VLEAPP',  badgeClass: 'badge-vleapp'  },
+      { name: 'DLEAPP', repo: 'abrignoni/DLEAPP',  badgeClass: 'badge-dleapp'  },
       { name: 'Batch LEAPP', repo: 'abrignoni/batch-leapp', badgeClass: 'badge-batch' },
     ];
 
@@ -493,8 +497,8 @@
 
     function renderRows(contributors) {
       const tbody = document.getElementById('scoreboard-tbody');
-      const repoNames = ['iLEAPP','ALEAPP','RLEAPP','VLEAPP','Batch LEAPP'];
-      const badgeMap  = { iLEAPP: 'badge-ileapp', ALEAPP: 'badge-aleapp', RLEAPP: 'badge-rleapp', VLEAPP: 'badge-vleapp', 'Batch LEAPP': 'badge-batch' };
+      const repoNames = ['iLEAPP','ALEAPP','RLEAPP','VLEAPP','DLEAPP','Batch LEAPP'];
+      const badgeMap  = { iLEAPP: 'badge-ileapp', ALEAPP: 'badge-aleapp', RLEAPP: 'badge-rleapp', VLEAPP: 'badge-vleapp', DLEAPP: 'badge-dleapp', 'Batch LEAPP': 'badge-batch' };
       tbody.innerHTML = contributors.map((c, idx) => {
         const pos      = idx + 1;
         const rank     = getRank(c.prs);
@@ -655,6 +659,7 @@
         { id: 'aleapp', name: 'ALEAPP', repo: 'abrignoni/ALEAPP' },
         { id: 'rleapp', name: 'RLEAPP', repo: 'abrignoni/RLEAPP' },
         { id: 'vleapp', name: 'VLEAPP', repo: 'abrignoni/VLEAPP' },
+        { id: 'dleapp', name: 'DLEAPP', repo: 'abrignoni/DLEAPP' },
       ];
       let cache = null, loading = false;
 
