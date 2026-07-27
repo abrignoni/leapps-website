@@ -168,6 +168,18 @@
 .lp-asset-btn:hover { border-color: var(--gold); color: var(--gold); }
 .lp-asset-btn.primary { background: var(--gold); border-color: var(--gold); color: var(--off-black) !important; }
 .lp-asset-btn.primary:hover { background: var(--gold-dk); border-color: var(--gold-dk); }
+.lp-asset-btn .lp-flavor { font-weight: 700; letter-spacing: .1em; }
+.lp-asset-rows { display: flex; flex-direction: column; gap: .5rem; }
+.lp-asset-row { display: flex; align-items: flex-start; gap: .75rem; padding: .45rem 0; border-top: 1px solid rgba(44,44,44,.5); }
+.lp-asset-row:first-child { border-top: none; }
+.lp-asset-row-label { display: inline-flex; align-items: center; gap: .4rem; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text); min-width: 108px; padding-top: .45rem; flex-shrink: 0; }
+.lp-asset-row-label i { color: var(--muted); }
+.lp-asset-row-btns { display: flex; flex-wrap: wrap; gap: .45rem; }
+.lp-your-os { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(245,192,32,.35); padding: .08rem .4rem; border-radius: 3px; }
+@media (max-width: 640px) {
+  .lp-asset-row { flex-direction: column; gap: .3rem; }
+  .lp-asset-row-label { padding-top: 0; }
+}
 .lp-loading {
       padding: 2rem; text-align: center; border: 1px solid var(--border);
       background: var(--surface); font-family: var(--font-mono); font-size: .8rem; color: var(--muted);
@@ -777,6 +789,33 @@
       { id: 'batch-leapp', name: 'Batch LEAPP', repo: 'abrignoni/batch-leapp' },
     ];
 
+    // Classify an asset from its filename: OS, architecture, and GUI/CLI
+    // flavor. The LEAPP release naming is regular enough to parse; anything
+    // that doesn't match cleanly falls back to the flat filename rendering.
+    function parseAsset(name) {
+      const n = name.toLowerCase();
+      let os = null;
+      if (/win(dows)?[_.-]|\.exe$/.test(n) || n.includes('windows')) os = 'windows';
+      else if (n.includes('mac') || n.includes('darwin') || n.endsWith('.dmg')) os = 'macos';
+      else if (n.includes('linux') || n.endsWith('.appimage')) os = 'linux';
+      let arch = '';
+      if (/apple[_-]?silicon|arm64|aarch64/.test(n)) arch = os === 'macos' ? 'Apple Silicon' : 'arm64';
+      else if (/x86[_-]?64|x64|amd64|intel/.test(n)) arch = os === 'macos' ? 'Intel' : 'x64';
+      const gui = /gui/.test(n);
+      return { os, arch, gui };
+    }
+
+    // Best-effort OS detection for ordering the download rows. Architecture is
+    // deliberately not guessed (browsers hide it, especially on macOS).
+    function detectOS() {
+      const p = ((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || navigator.userAgent || '').toLowerCase();
+      if (p.includes('win')) return 'windows';
+      if (p.includes('mac')) return 'macos';
+      if (p.includes('linux') || p.includes('x11')) return 'linux';
+      return null;
+    }
+    const VISITOR_OS = detectOS();
+
     function getOSIcon(name) {
       const n = name.toLowerCase();
       if (n.includes('win') || n.endsWith('.exe') || n.endsWith('.zip') && n.includes('win')) return '<i class="ti ti-brand-windows"></i>';
@@ -825,15 +864,55 @@
 
       function buildCard(r, i) {
         const assets = (r.assets || []).filter(a => !a.name.includes('.blockmap') && !a.name.includes('latest'));
-        const assetBtns = assets.map((a, ai) => {
-          const isPrimary = ai === 0;
+
+        // One asset button. label=null renders the raw filename (older
+        // releases / unparseable assets); otherwise the friendly label with
+        // the filename in the tooltip. Copy-URL and SHA-256 buttons always kept.
+        function assetBtn(a, ai, label, primary) {
           const dlCount = a.download_count > 0 ? `<span style="opacity:.5;font-size:.65rem;margin-left:.35rem"><i class="ti ti-download" style="font-size:.6rem"></i>${formatStars(a.download_count)}</span>` : '';
           const copyId = `copy-${id}-${i}-${ai}`;
           const hashId = `hash-${id}-${i}-${ai}`;
           const digest = a.digest ? a.digest.replace(/^sha256:/, '') : '';
           const hashBtn = digest ? `<button class="lp-copy-btn" id="${hashId}" onclick="copySha('${digest}','${hashId}')" title="Copy SHA-256 hash"><i class="ti ti-fingerprint"></i></button>` : '';
-          return `<div style="display:inline-flex;align-items:center;gap:0"><a href="${a.browser_download_url}" class="lp-asset-btn ${isPrimary ? 'primary' : ''}" target="_blank" rel="noopener noreferrer">${getOSIcon(a.name)} ${a.name} ${a.size ? '<span style="opacity:.6;font-size:.65rem">' + formatBytes(a.size) + '</span>' : ''} ${dlCount}</a><button class="lp-copy-btn" id="${copyId}" onclick="copyUrl('${a.browser_download_url}','${copyId}')" title="Copy download URL"><i class="ti ti-clipboard"></i></button>${hashBtn}</div>`;
-        }).join('');
+          const text = label || `${getOSIcon(a.name)} ${a.name}`;
+          return `<div style="display:inline-flex;align-items:center;gap:0"><a href="${a.browser_download_url}" class="lp-asset-btn ${primary ? 'primary' : ''}" target="_blank" rel="noopener noreferrer" title="${a.name}">${text} ${a.size ? '<span style="opacity:.6;font-size:.65rem">' + formatBytes(a.size) + '</span>' : ''} ${dlCount}</a><button class="lp-copy-btn" id="${copyId}" onclick="copyUrl('${a.browser_download_url}','${copyId}')" title="Copy download URL"><i class="ti ti-clipboard"></i></button>${hashBtn}</div>`;
+        }
+
+        let assetBtns = '';
+        const parsed = assets.map((a, ai) => ({ a, ai, p: parseAsset(a.name) }));
+        const groupable = i === 0 && parsed.filter(x => x.p.os).length >= 3;
+        if (groupable) {
+          // Latest release: group by OS, visitor's platform first, GUI before
+          // CLI inside each row, GUI on the visitor's row styled primary.
+          const OS_META = { windows: ['ti-brand-windows', 'Windows'], macos: ['ti-brand-apple', 'macOS'], linux: ['ti-brand-ubuntu', 'Linux'] };
+          const order = ['windows', 'macos', 'linux'].sort((x, y) => (y === VISITOR_OS) - (x === VISITOR_OS));
+          const hasGui = parsed.some(x => x.p.gui);
+          const rows = order.map(os => {
+            const inRow = parsed.filter(x => x.p.os === os)
+              .sort((x, y) => (y.p.gui - x.p.gui) || String(x.p.arch).localeCompare(String(y.p.arch)));
+            if (!inRow.length) return '';
+            // If two assets in a row would get the same label (e.g. a .zip and
+            // a .tar.gz of the same build), append the file format.
+            const keyOf = x => `${x.p.gui}|${x.p.arch}`;
+            const dupes = new Set(inRow.map(keyOf).filter((k, idx, arr) => arr.indexOf(k) !== idx));
+            const extOf = n => n.toLowerCase().endsWith('.tar.gz') ? 'tar.gz' : n.split('.').pop().toLowerCase();
+            const btns = inRow.map(x => {
+              const flavor = hasGui ? (x.p.gui ? 'GUI' : 'CLI') : '';
+              const ext = dupes.has(keyOf(x)) ? ` · ${extOf(x.a.name)}` : '';
+              const label = `${flavor ? `<span class="lp-flavor">${flavor}</span> · ` : ''}${x.p.arch || 'download'}${ext}`;
+              return assetBtn(x.a, x.ai, label, os === VISITOR_OS && (x.p.gui || !hasGui));
+            }).join('');
+            const yourOS = os === VISITOR_OS ? ' <span class="lp-your-os">your system</span>' : '';
+            return `<div class="lp-asset-row"><span class="lp-asset-row-label"><i class="ti ${OS_META[os][0]}"></i>${OS_META[os][1]}${yourOS}</span><div class="lp-asset-row-btns">${btns}</div></div>`;
+          }).join('');
+          const leftover = parsed.filter(x => !x.p.os);
+          const leftoverHtml = leftover.length
+            ? `<div class="lp-asset-row"><span class="lp-asset-row-label"><i class="ti ti-package"></i>Other</span><div class="lp-asset-row-btns">${leftover.map(x => assetBtn(x.a, x.ai, null, false)).join('')}</div></div>`
+            : '';
+          assetBtns = `<div class="lp-asset-rows">${rows}${leftoverHtml}</div>`;
+        } else {
+          assetBtns = parsed.map((x, k) => assetBtn(x.a, x.ai, null, k === 0)).join('');
+        }
         const body = truncateBody(r.body);
         const releaseDlCount = assets.reduce((sum, a) => sum + (a.download_count || 0), 0);
         const releaseDlStr = releaseDlCount > 0 ? `<span class="lp-release-dl-count"><i class="ti ti-download"></i>${formatStars(releaseDlCount)}</span>` : '';
