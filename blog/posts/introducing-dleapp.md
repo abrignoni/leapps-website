@@ -25,7 +25,7 @@ Twenty-one modules covering four desktop messaging applications:
 
 The Discord work deserves a special mention. Discord Desktop keeps no message database of its own — the client renders from REST API responses, and those responses stay in the Chromium HTTP cache. DLEAPP reads that cache directly, which means messages, attachments, and the images themselves are recoverable **even after they were deleted server-side**. The approach follows Alex Caithness's excellent work at CCL Solutions on treating a web app's browser artifacts as an application in their own right. Thank you, Alex. 🙌
 
-Signal Desktop encrypts its database with SQLCipher and wraps the key with the OS credential store. DLEAPP handles the whole chain: pass it the credential, the raw key, or — on a dead-box macOS image — the account's login password, and it recovers the Signal credential from the extracted keychain offline and unwraps everything with no external tooling.
+Signal Desktop encrypts its database with SQLCipher and wraps the key with the OS credential store. DLEAPP handles the whole chain: pass it the credential, the raw key, or — on a dead-box macOS image — the account's login password, and it recovers the Signal credential from the extracted keychain offline and unwraps everything with no external tooling. One known limitation: the latest Signal Desktop version is not supported yet — its keychain handling is beyond what we can unwrap on our end for now.
 
 ## The numbers from our test data
 
