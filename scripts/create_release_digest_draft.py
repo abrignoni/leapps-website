@@ -40,6 +40,7 @@ TOOLS = (
     ("ALEAPP", "abrignoni/ALEAPP", "section-aleapp"),
     ("RLEAPP", "abrignoni/RLEAPP", "section-rleapp"),
     ("VLEAPP", "abrignoni/VLEAPP", "section-vleapp"),
+    ("DLEAPP", "abrignoni/DLEAPP", "section-dleapp"),
     ("LAVA", "leapps-org/LAVA-releases", "section-lava"),
     ("Batch LEAPP", "abrignoni/batch-leapp", "section-batch-leapp"),
 )
