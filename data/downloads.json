@@ -478,13 +478,13 @@
     {
       "date": "2026-07-27",
       "totals": {
-        "ileapp": 85072,
-        "aleapp": 63881,
-        "rleapp": 4205,
-        "vleapp": 1528,
-        "lava": 1220,
-        "dleapp": 0,
-        "batchleapp": 134
+        "ileapp": 85137,
+        "aleapp": 63928,
+        "rleapp": 4217,
+        "vleapp": 1536,
+        "lava": 1243,
+        "dleapp": 17,
+        "batchleapp": 142
       }
     }
   ]
