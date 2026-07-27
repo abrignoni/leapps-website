@@ -78,7 +78,25 @@ def main() -> None:
                             "date": date[:10],
                         }
 
-    ranked = sorted(items.values(), key=lambda i: i["date"], reverse=True)[:MAX_ITEMS]
+    # Round-robin across tools (each tool's additions newest-first, tools
+    # ordered by their newest addition) instead of a flat date sort: a bulk
+    # sweep that adds a dozen parsers to ONE repo must not evict every other
+    # tool from the strip. Every tool with recent additions gets represented;
+    # if only one tool has additions, it still fills all the slots.
+    by_tool: dict[str, list[dict]] = {}
+    for item in items.values():
+        by_tool.setdefault(item["tool"], []).append(item)
+    for lst in by_tool.values():
+        lst.sort(key=lambda i: i["date"], reverse=True)
+    tool_order = sorted(by_tool, key=lambda t: by_tool[t][0]["date"], reverse=True)
+
+    ranked: list[dict] = []
+    while len(ranked) < MAX_ITEMS and any(by_tool.values()):
+        for t in tool_order:
+            if by_tool[t]:
+                ranked.append(by_tool[t].pop(0))
+                if len(ranked) >= MAX_ITEMS:
+                    break
     OUT_PATH.write_text(
         json.dumps(
             {

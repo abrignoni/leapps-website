@@ -3,10 +3,34 @@
   "window_days": 45,
   "items": [
     {
+      "name": "whatsappCalls",
+      "query": "whatsappCalls",
+      "tool": "DLEAPP",
+      "date": "2026-07-27"
+    },
+    {
       "name": "biomeSiriRemembersAudioHistory",
       "query": "biomeSiriRemembersAudioHistory",
       "tool": "iLEAPP",
       "date": "2026-07-26"
+    },
+    {
+      "name": "signalAndroid",
+      "query": "signalAndroid",
+      "tool": "ALEAPP",
+      "date": "2026-07-26"
+    },
+    {
+      "name": "synchronoss",
+      "query": "synchronoss",
+      "tool": "RLEAPP",
+      "date": "2026-07-09"
+    },
+    {
+      "name": "whatsappContacts",
+      "query": "whatsappContacts",
+      "tool": "DLEAPP",
+      "date": "2026-07-27"
     },
     {
       "name": "biomeDiscoverabilitySignals",
@@ -15,64 +39,40 @@
       "date": "2026-07-26"
     },
     {
+      "name": "browserArtifactsViaMisterSkinnylegs",
+      "query": "browserArtifactsViaMisterSkinnylegs",
+      "tool": "ALEAPP",
+      "date": "2026-07-22"
+    },
+    {
+      "name": "chatGPTaccountInfo",
+      "query": "chatGPTaccountInfo",
+      "tool": "RLEAPP",
+      "date": "2026-07-09"
+    },
+    {
+      "name": "whatsappMedia",
+      "query": "whatsappMedia",
+      "tool": "DLEAPP",
+      "date": "2026-07-27"
+    },
+    {
       "name": "biomeSiriRemembersAssistantSuggestions",
       "query": "biomeSiriRemembersAssistantSuggestions",
       "tool": "iLEAPP",
       "date": "2026-07-26"
     },
     {
-      "name": "biomeSiriUI",
-      "query": "biomeSiriUI",
-      "tool": "iLEAPP",
-      "date": "2026-07-26"
+      "name": "samsung honeyboard clipboard",
+      "query": "samsung_honeyboard_clipboard",
+      "tool": "ALEAPP",
+      "date": "2026-07-14"
     },
     {
-      "name": "biomeAppInstallation",
-      "query": "biomeAppInstallation",
-      "tool": "iLEAPP",
-      "date": "2026-07-26"
-    },
-    {
-      "name": "biomeAppRelevantShortcuts",
-      "query": "biomeAppRelevantShortcuts",
-      "tool": "iLEAPP",
-      "date": "2026-07-26"
-    },
-    {
-      "name": "biomeAppleIntelligence",
-      "query": "biomeAppleIntelligence",
-      "tool": "iLEAPP",
-      "date": "2026-07-26"
-    },
-    {
-      "name": "biomePhotosSearchInsights",
-      "query": "biomePhotosSearchInsights",
-      "tool": "iLEAPP",
-      "date": "2026-07-26"
-    },
-    {
-      "name": "biomeShareSheetConversation",
-      "query": "biomeShareSheetConversation",
-      "tool": "iLEAPP",
-      "date": "2026-07-26"
-    },
-    {
-      "name": "biomeEmergencyVoiceCall",
-      "query": "biomeEmergencyVoiceCall",
-      "tool": "iLEAPP",
-      "date": "2026-07-26"
-    },
-    {
-      "name": "biomeBootSession",
-      "query": "biomeBootSession",
-      "tool": "iLEAPP",
-      "date": "2026-07-26"
-    },
-    {
-      "name": "biomeEmojiEngagement",
-      "query": "biomeEmojiEngagement",
-      "tool": "iLEAPP",
-      "date": "2026-07-26"
+      "name": "takeoutMyActivity",
+      "query": "takeoutMyActivity",
+      "tool": "RLEAPP",
+      "date": "2026-07-09"
     }
   ]
 }
