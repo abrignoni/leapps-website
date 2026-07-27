@@ -50,6 +50,9 @@ python dleapp.py -t fs -i /path/to/profile -o /path/to/output
 
 Or launch the GUI with `python dleappGUI.py`. Reports open in your browser or load straight into [LAVA](https://leapps.org/releases#section-lava).
 
+![The DLEAPP GUI showing the module list with all artifact views selected](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/introducing-dleapp/dleapp-gui.webp)
+*The DLEAPP GUI — those 21 modules expose 47 selectable artifact views. Pick your extraction, pick your modules, press Process.*
+
 ## Contribute
 
 The Chromium container readers (Simple Cache, Local Storage LevelDB) are reusable by any future Electron application parser — Slack, Teams, Telegram Desktop, and friends are all waiting for someone to take them on. If you have done research on a desktop application, DLEAPP is where it belongs. The [module writing guide](https://leapps.org/blog-post?post=2026-06-14-how-to-write-an-ileapp-module) applies here too.
