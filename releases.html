@@ -451,6 +451,7 @@
     <a href="#section-ileapp" onclick="closeMobileMenu()">iLEAPP</a>
     <a href="#section-rleapp" onclick="closeMobileMenu()">RLEAPP</a>
     <a href="#section-vleapp" onclick="closeMobileMenu()">VLEAPP</a>
+    <a href="#section-dleapp" onclick="closeMobileMenu()">DLEAPP</a>
     <a href="#section-batch-leapp" onclick="closeMobileMenu()">Batch LEAPP</a>
     <a href="https://leapps.org/stats" onclick="closeMobileMenu()">Stats</a>
     <a href="https://leapps.org/changelog" onclick="closeMobileMenu()">Changelog</a>
@@ -480,6 +481,7 @@
         <a href="#section-ileapp" class="lp-tool-pill">iLEAPP</a>
         <a href="#section-rleapp" class="lp-tool-pill">RLEAPP</a>
         <a href="#section-vleapp" class="lp-tool-pill">VLEAPP</a>
+        <a href="#section-dleapp" class="lp-tool-pill">DLEAPP</a>
         <a href="#section-batch-leapp" class="lp-tool-pill">Batch LEAPP</a>
       </div>
     </div>
@@ -497,6 +499,7 @@
         <li><a href="#section-ileapp"><i class="ti ti-brand-apple"></i>iLEAPP</a></li>
         <li><a href="#section-rleapp"><i class="ti ti-file-import"></i>RLEAPP</a></li>
         <li><a href="#section-vleapp"><i class="ti ti-car"></i>VLEAPP</a></li>
+        <li><a href="#section-dleapp"><i class="ti ti-device-desktop"></i>DLEAPP</a></li>
         <li><a href="#section-batch-leapp"><i class="ti ti-stack-2"></i>Batch LEAPP</a></li>
       </ul>
     </aside>
@@ -650,6 +653,40 @@
         <a href="https://github.com/abrignoni/VLEAPP/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all VLEAPP releases on GitHub</a>
       </section>
 
+      <!-- DLEAPP -->
+      <section class="lp-tool-section" id="section-dleapp">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Desktop &middot; Everything Else</div>
+            <h2>DLEAPP</h2>
+            <div class="lp-tool-fullname">Desktop Logs, Events and Protobuf Parser</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-dleapp"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-dleapp"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/DLEAPP" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What is DLEAPP?</h3>
+            <p>The newest LEAPP: parse desktop-application artifacts (Electron, Chromium, and friends) &mdash; plus any artifact that doesn't fit the platform-specific LEAPPs. If it doesn't belong in iLEAPP, ALEAPP, RLEAPP, or VLEAPP, it belongs here.</p>
+          </div>
+          <div>
+            <h3>Getting started</h3>
+            <ul>
+              <li>No packaged releases yet &mdash; run from source</li>
+              <li><code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">pip install -r requirements.txt</code>, then <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">python dleapp.py</code> (or <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">dleappGUI.py</code>)</li>
+              <li>Growing parser set &mdash; contributions welcome</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lp-status-bar">
+          <div class="lp-status-dot"></div>
+          <span class="lp-status-text">Live releases</span>
+        </div>
+        <div id="releases-dleapp" class="lp-releases-list">
+          <div class="lp-loading"><span>Fetching releases&hellip;</span></div>
+        </div>
+        <a href="https://github.com/abrignoni/DLEAPP/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all DLEAPP releases on GitHub</a>
+      </section>
+
       <!-- BATCH LEAPP -->
       <section class="lp-tool-section" id="section-batch-leapp">
         <div class="lp-tool-header">
@@ -736,6 +773,7 @@
       { id: 'ileapp', name: 'iLEAPP', repo: 'abrignoni/iLEAPP' },
       { id: 'rleapp', name: 'RLEAPP', repo: 'abrignoni/RLEAPP' },
       { id: 'vleapp', name: 'VLEAPP', repo: 'abrignoni/VLEAPP' },
+      { id: 'dleapp', name: 'DLEAPP', repo: 'abrignoni/DLEAPP' },
       { id: 'batch-leapp', name: 'Batch LEAPP', repo: 'abrignoni/batch-leapp' },
     ];
 
@@ -1120,6 +1158,7 @@
         { id: 'aleapp', name: 'ALEAPP', repo: 'abrignoni/ALEAPP' },
         { id: 'rleapp', name: 'RLEAPP', repo: 'abrignoni/RLEAPP' },
         { id: 'vleapp', name: 'VLEAPP', repo: 'abrignoni/VLEAPP' },
+        { id: 'dleapp', name: 'DLEAPP', repo: 'abrignoni/DLEAPP' },
       ];
       let cache = null, loading = false;
 

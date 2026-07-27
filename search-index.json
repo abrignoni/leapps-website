@@ -72,6 +72,12 @@
     "excerpt": "brew tap leapps-org/leapps — install the LEAPP command line tools, GUI apps, and LAVA with Homebrew."
   },
   {
+    "title": "DLEAPP — Desktop Logs Events and Protobuf Parser",
+    "url": "https://leapps.org/releases#section-dleapp",
+    "page": "Releases",
+    "excerpt": "Parse desktop application artifacts (Electron, Chromium) and any artifact that doesn't fit the platform-specific LEAPPs."
+  },
+  {
     "title": "About LEAPPs",
     "url": "https://leapps.org/about",
     "page": "About",

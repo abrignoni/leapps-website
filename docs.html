@@ -58,6 +58,7 @@
 .lp-decision-card-tag.aleapp { color: var(--color-aleapp); }
 .lp-decision-card-tag.rleapp { color: var(--color-rleapp); }
 .lp-decision-card-tag.vleapp { color: var(--color-vleapp); }
+.lp-decision-card-tag.dleapp { color: #B173A9; }
 .lp-decision-card-title { font-family: var(--font-head); font-size: 1rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: .2rem; }
 .lp-decision-card-sub { font-size: .78rem; color: var(--muted); }
 .lp-code { background: #0a0a0a; border: 1px solid var(--border); border-left: 3px solid var(--gold); padding: 1rem 1.25rem; font-family: var(--font-mono); font-size: .8rem; color: #c8c3b8; line-height: 1.8; overflow-x: auto; margin-bottom: .75rem; position: relative; }
@@ -240,6 +241,11 @@
             <div class="lp-decision-card-tag vleapp">VLEAPP</div>
             <div class="lp-decision-card-title">Vehicle Systems</div>
             <div class="lp-decision-card-sub">In-vehicle infotainment &amp; telematics data</div>
+          </a>
+          <a href="https://leapps.org/releases#section-dleapp" class="lp-decision-card">
+            <div class="lp-decision-card-tag dleapp">DLEAPP</div>
+            <div class="lp-decision-card-title">Desktop &amp; Other</div>
+            <div class="lp-decision-card-sub">Desktop app artifacts &amp; anything that doesn't fit the other LEAPPs</div>
           </a>
         </div>
         <p style="font-size:.78rem;color:var(--muted);font-family:var(--font-mono);">Not sure? Check the <a href="https://leapps.org/artifacts" style="color:var(--gold);text-decoration:none;">Artifacts page</a> to see which tool covers the data you need.</p>
@@ -552,6 +558,7 @@
         { id: 'aleapp', name: 'ALEAPP', repo: 'abrignoni/ALEAPP' },
         { id: 'rleapp', name: 'RLEAPP', repo: 'abrignoni/RLEAPP' },
         { id: 'vleapp', name: 'VLEAPP', repo: 'abrignoni/VLEAPP' },
+        { id: 'dleapp', name: 'DLEAPP', repo: 'abrignoni/DLEAPP' },
       ];
       let cache = null, loading = false;
 

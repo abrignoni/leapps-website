@@ -26,6 +26,7 @@ REPOS = {
     "ALEAPP": "abrignoni/ALEAPP",
     "RLEAPP": "abrignoni/RLEAPP",
     "VLEAPP": "abrignoni/VLEAPP",
+    "DLEAPP": "abrignoni/DLEAPP",
 }
 WINDOW_DAYS = 45
 # All commits in the window get a detail fetch (needed to see per-file add

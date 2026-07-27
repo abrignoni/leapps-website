@@ -12,6 +12,7 @@ const ALLOWED_REPOS = [
   'abrignoni/ALEAPP',
   'abrignoni/RLEAPP',
   'abrignoni/VLEAPP',
+  'abrignoni/DLEAPP',
   'abrignoni/batch-leapp',
   'leapps-org/LAVA-releases',
   'leapps-org/leapps-language-resources',

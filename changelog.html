@@ -56,6 +56,7 @@
 .lp-filter-btn[data-tool="vleapp"].active { border-color: var(--color-vleapp); color: var(--color-vleapp); background: rgba(83,29,171,.08); }
 .lp-filter-btn[data-tool="lava"].active { border-color: var(--color-lava); color: var(--color-lava); background: rgba(245,192,32,.08); }
 .lp-filter-btn[data-tool="batch"].active { border-color: #E8762D; color: #E8762D; background: rgba(232,118,45,.08); }
+.lp-filter-btn[data-tool="dleapp"].active { border-color: #B173A9; color: #B173A9; background: rgba(177,115,169,.08); }
 .lp-cl-loading { padding: 2rem; text-align: center; font-family: var(--font-mono); font-size: .8rem; color: var(--muted); border: 1px solid var(--border); background: var(--surface); }
 .lp-cl-loading span { color: var(--gold); }
 @keyframes shimmer { 0% { background-position: -400px 0; } 100% { background-position: 400px 0; } }
@@ -80,6 +81,7 @@
 .lp-cl-tool.vleapp { border-color: rgba(83,29,171,.3); color: var(--color-vleapp); }
 .lp-cl-tool.lava { border-color: rgba(245,192,32,.3); color: var(--color-lava); }
 .lp-cl-tool.batch { border-color: rgba(232,118,45,.3); color: #E8762D; }
+.lp-cl-tool.dleapp { border-color: rgba(177,115,169,.3); color: #B173A9; }
 .lp-cl-latest { font-family: var(--font-mono); font-size: .55rem; padding: .1rem .4rem; background: rgba(245,192,32,.15); border: 1px solid rgba(245,192,32,.3); color: var(--gold); letter-spacing: .1em; text-transform: uppercase; }
 .lp-cl-version { font-family: var(--font-head); font-size: 1.1rem; font-weight: 900; text-transform: uppercase; color: var(--text); margin-bottom: .3rem; }
 .lp-cl-body { font-size: .85rem; color: var(--muted); line-height: 1.6; }
@@ -100,6 +102,7 @@
 .lp-latest-chip-tool.vleapp { color: var(--color-vleapp); }
 .lp-latest-chip-tool.lava { color: var(--color-lava); }
 .lp-latest-chip-tool.batch { color: #E8762D; }
+.lp-latest-chip-tool.dleapp { color: #B173A9; }
 .lp-latest-chip-ver { font-family: var(--font-head); font-size: 1rem; font-weight: 900; text-transform: uppercase; color: var(--text); line-height: 1.1; }
 .lp-latest-chip-date { font-family: var(--font-mono); font-size: .58rem; color: var(--muted); letter-spacing: .04em; }
 @media (max-width: 600px) {
@@ -240,6 +243,7 @@
       <button class="lp-filter-btn" data-tool="aleapp" onclick="filterTool('aleapp', this)">ALEAPP</button>
       <button class="lp-filter-btn" data-tool="rleapp" onclick="filterTool('rleapp', this)">RLEAPP</button>
       <button class="lp-filter-btn" data-tool="vleapp" onclick="filterTool('vleapp', this)">VLEAPP</button>
+      <button class="lp-filter-btn" data-tool="dleapp" onclick="filterTool('dleapp', this)">DLEAPP</button>
       <button class="lp-filter-btn" data-tool="batch" onclick="filterTool('batch', this)">Batch LEAPP</button>
     </div>
 
@@ -302,6 +306,7 @@
       { id: 'aleapp', name: 'ALEAPP', repo: 'abrignoni/ALEAPP' },
       { id: 'rleapp', name: 'RLEAPP', repo: 'abrignoni/RLEAPP' },
       { id: 'vleapp', name: 'VLEAPP', repo: 'abrignoni/VLEAPP' },
+      { id: 'dleapp', name: 'DLEAPP', repo: 'abrignoni/DLEAPP' },
       { id: 'batch',  name: 'Batch LEAPP', repo: 'abrignoni/batch-leapp' },
     ];
 
@@ -404,7 +409,7 @@
           latestByTool[e.tool] = e;
         }
       });
-      const order = ['lava', 'ileapp', 'aleapp', 'rleapp', 'vleapp', 'batch'];
+      const order = ['lava', 'ileapp', 'aleapp', 'rleapp', 'vleapp', 'dleapp', 'batch'];
       document.getElementById('latest-row').innerHTML = order.map(id => {
         const e = latestByTool[id];
         if (!e) return '';
@@ -540,6 +545,7 @@
         { id: 'aleapp', name: 'ALEAPP', repo: 'abrignoni/ALEAPP' },
         { id: 'rleapp', name: 'RLEAPP', repo: 'abrignoni/RLEAPP' },
         { id: 'vleapp', name: 'VLEAPP', repo: 'abrignoni/VLEAPP' },
+        { id: 'dleapp', name: 'DLEAPP', repo: 'abrignoni/DLEAPP' },
       ];
       let cache = null, loading = false;
 
