@@ -172,7 +172,8 @@
 .lp-asset-rows { display: flex; flex-direction: column; gap: .5rem; }
 .lp-asset-row { display: flex; align-items: flex-start; gap: .75rem; padding: .45rem 0; border-top: 1px solid rgba(44,44,44,.5); }
 .lp-asset-row:first-child { border-top: none; }
-.lp-asset-row-label { display: inline-flex; align-items: center; gap: .4rem; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text); min-width: 108px; padding-top: .45rem; flex-shrink: 0; }
+.lp-asset-row-label { display: inline-flex; flex-direction: column; align-items: flex-start; gap: .3rem; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text); min-width: 108px; width: 108px; padding-top: .45rem; flex-shrink: 0; }
+.lp-asset-row-label .lp-os-name { display: inline-flex; align-items: center; gap: .4rem; }
 .lp-asset-row-label i { color: var(--muted); }
 .lp-asset-row-btns { display: flex; flex-wrap: wrap; gap: .45rem; }
 .lp-your-os { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(245,192,32,.35); padding: .08rem .4rem; border-radius: 3px; }
@@ -903,11 +904,11 @@
               return assetBtn(x.a, x.ai, label, os === VISITOR_OS && (x.p.gui || !hasGui));
             }).join('');
             const yourOS = os === VISITOR_OS ? ' <span class="lp-your-os">your system</span>' : '';
-            return `<div class="lp-asset-row"><span class="lp-asset-row-label"><i class="ti ${OS_META[os][0]}"></i>${OS_META[os][1]}${yourOS}</span><div class="lp-asset-row-btns">${btns}</div></div>`;
+            return `<div class="lp-asset-row"><span class="lp-asset-row-label"><span class="lp-os-name"><i class="ti ${OS_META[os][0]}"></i>${OS_META[os][1]}</span>${yourOS}</span><div class="lp-asset-row-btns">${btns}</div></div>`;
           }).join('');
           const leftover = parsed.filter(x => !x.p.os);
           const leftoverHtml = leftover.length
-            ? `<div class="lp-asset-row"><span class="lp-asset-row-label"><i class="ti ti-package"></i>Other</span><div class="lp-asset-row-btns">${leftover.map(x => assetBtn(x.a, x.ai, null, false)).join('')}</div></div>`
+            ? `<div class="lp-asset-row"><span class="lp-asset-row-label"><span class="lp-os-name"><i class="ti ti-package"></i>Other</span></span><div class="lp-asset-row-btns">${leftover.map(x => assetBtn(x.a, x.ai, null, false)).join('')}</div></div>`
             : '';
           assetBtns = `<div class="lp-asset-rows">${rows}${leftoverHtml}</div>`;
         } else {
