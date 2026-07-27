@@ -1,5 +1,19 @@
 [
   {
+    "slug": "introducing-dleapp",
+    "title": "Introducing DLEAPP",
+    "date": "2026-07-27",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "DLEAPP",
+      "desktop",
+      "Electron",
+      "artifacts",
+      "announcement"
+    ],
+    "excerpt": "The seventh LEAPP is here. DLEAPP parses desktop application artifacts — Discord, Signal, WhatsApp, and Wire so far — and gives a home to any artifact that does not fit the other LEAPPs. Packaged for Windows, macOS, and Linux."
+  },
+  {
     "slug": "2026-07-25-everybody-gets-a-release",
     "title": "Everybody Gets a Release!",
     "date": "2026-07-25",
