@@ -61,6 +61,15 @@ Your content starts here...
 
 You do **not** edit `blog/posts/index.json` — it's generated automatically from each post's frontmatter after your post is merged. The `title`, `date`, `author`, `tags`, and `excerpt` fields above become the blog listing. (Maintainers can also add `pinned: true` to keep a post at the top.)
 
+Two more optional fields affect the mailing-list announcement only. If the action you want readers to take lives somewhere other than the post itself, such as a podcast episode or a video, point the email's button at it:
+
+```yaml
+cta_url: https://example.buzzsprout.com
+cta_label: Listen now
+```
+
+Leave both out for a normal write-up and the button says "Read the post" and links to the post, which is what you want almost every time. When `cta_url` is set, the post is still linked from the email's headline and header image, so both destinations can be measured separately.
+
 ### 4. Open a pull request
 
 Submit your PR against the `main` branch. All posts are reviewed before merging.

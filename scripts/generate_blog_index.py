@@ -140,6 +140,21 @@ def validate(path: Path, meta, errors: list, warnings: list) -> None:
     if "pinned" in meta and not isinstance(meta["pinned"], bool):
         errors.append(f"{path.name}: \"pinned\" must be true or false.")
 
+    # Optional: send the mailing-list button somewhere other than the post, for
+    # announcements whose real destination is elsewhere (a podcast, a video).
+    cta_url = meta.get("cta_url")
+    if cta_url is not None:
+        if not isinstance(cta_url, str) or not cta_url.strip():
+            errors.append(f"{path.name}: \"cta_url\" must be a non-empty URL.")
+        elif not re.match(r"^https?://", cta_url.strip()):
+            errors.append(f"{path.name}: \"cta_url\" must start with http:// or https:// (got \"{cta_url}\").")
+    if "cta_label" in meta:
+        label = meta["cta_label"]
+        if not isinstance(label, str) or not label.strip():
+            errors.append(f"{path.name}: \"cta_label\" must be a non-empty string.")
+        elif cta_url is None:
+            warnings.append(f"{path.name}: \"cta_label\" has no effect without \"cta_url\".")
+
     m = re.match(r"^(\d{4}-\d{2}-\d{2})-", slug)
     if m and meta.get("date") and m.group(1) != meta["date"]:
         warnings.append(f"{path.name}: slug date prefix ({m.group(1)}) disagrees with the date field ({meta['date']}).")
