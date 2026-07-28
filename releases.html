@@ -802,8 +802,15 @@
       let arch = '';
       if (/apple[_-]?silicon|arm64|aarch64/.test(n)) arch = os === 'macos' ? 'Apple Silicon' : 'arm64';
       else if (/x86[_-]?64|x64|amd64|intel/.test(n)) arch = os === 'macos' ? 'Intel' : 'x64';
-      const gui = /gui/.test(n);
-      return { os, arch, gui };
+      // Flavor from the name. batch-leapp's assets carry no GUI token; their
+      // convention (documented in that repo's README download table) is:
+      // capital Batch-LEAPP = app, lowercase batch-leapp = CLI, and the
+      // Windows zip bundles both.
+      let flavor = null;
+      if (/gui/.test(n)) flavor = 'GUI';
+      else if (/^batch-leapp-/.test(name)) flavor = 'CLI';
+      else if (/^Batch-LEAPP-/.test(name)) flavor = os === 'windows' ? 'GUI + CLI' : 'GUI';
+      return { os, arch, flavor, gui: !!flavor && flavor.startsWith('GUI') };
     }
 
     // Best-effort OS detection for ordering the download rows. Architecture is
@@ -887,21 +894,21 @@
           // CLI inside each row, GUI on the visitor's row styled primary.
           const OS_META = { windows: ['ti-brand-windows', 'Windows'], macos: ['ti-brand-apple', 'macOS'], linux: ['ti-brand-ubuntu', 'Linux'] };
           const order = ['windows', 'macos', 'linux'].sort((x, y) => (y === VISITOR_OS) - (x === VISITOR_OS));
-          const hasGui = parsed.some(x => x.p.gui);
+          const hasFlavor = parsed.some(x => x.p.flavor);
           const rows = order.map(os => {
             const inRow = parsed.filter(x => x.p.os === os)
               .sort((x, y) => (y.p.gui - x.p.gui) || String(x.p.arch).localeCompare(String(y.p.arch)));
             if (!inRow.length) return '';
             // If two assets in a row would get the same label (e.g. a .zip and
             // a .tar.gz of the same build), append the file format.
-            const keyOf = x => `${x.p.gui}|${x.p.arch}`;
+            const keyOf = x => `${x.p.flavor}|${x.p.arch}`;
             const dupes = new Set(inRow.map(keyOf).filter((k, idx, arr) => arr.indexOf(k) !== idx));
             const extOf = n => n.toLowerCase().endsWith('.tar.gz') ? 'tar.gz' : n.split('.').pop().toLowerCase();
             const btns = inRow.map(x => {
-              const flavor = hasGui ? (x.p.gui ? 'GUI' : 'CLI') : '';
+              const flavor = hasFlavor ? (x.p.flavor || 'CLI') : '';
               const ext = dupes.has(keyOf(x)) ? ` · ${extOf(x.a.name)}` : '';
               const label = `${flavor ? `<span class="lp-flavor">${flavor}</span> · ` : ''}${x.p.arch || 'download'}${ext}`;
-              return assetBtn(x.a, x.ai, label, os === VISITOR_OS && (x.p.gui || !hasGui));
+              return assetBtn(x.a, x.ai, label, os === VISITOR_OS && (x.p.gui || !hasFlavor));
             }).join('');
             const yourOS = os === VISITOR_OS ? ' <span class="lp-your-os">your system</span>' : '';
             return `<div class="lp-asset-row"><span class="lp-asset-row-label"><span class="lp-os-name"><i class="ti ${OS_META[os][0]}"></i>${OS_META[os][1]}</span>${yourOS}</span><div class="lp-asset-row-btns">${btns}</div></div>`;
