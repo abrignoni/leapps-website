@@ -55,30 +55,13 @@ def mailjet_post(path: str, payload: dict, key: str, secret: str) -> dict:
 
 
 def build_email(meta: dict, slug: str) -> tuple[str, str]:
-    """Return (html_part, text_part) for the announcement email.
-
-    A post may redirect the button with optional frontmatter:
-
-        cta_url: https://example.com/listen
-        cta_label: Listen in Spanish
-
-    Use it when the action you actually want happens somewhere other than the
-    blog post, for example a podcast episode or a video. Without it the button
-    points at the post, which is the right default for a normal write-up. The
-    hero image and the headline always link to the post either way, so the post
-    stays reachable and the two destinations can be measured separately.
-    """
+    """Return (html_part, text_part) for the announcement email."""
     title = html.escape(meta["title"])
     author = html.escape(meta["author"])
     excerpt = html.escape(meta["excerpt"])
     date = meta["date"]
     post_url = f"{SITE}/blog-post?post={slug}"
     card_url = f"{SITE}/blog/og/{slug}.png"
-
-    cta_url = (meta.get("cta_url") or "").strip() or post_url
-    cta_label = (meta.get("cta_label") or "").strip() or "Read the post"
-    cta_url_attr = html.escape(cta_url, quote=True)
-    cta_label_html = html.escape(cta_label)
 
     html_part = f"""<!DOCTYPE html>
 <html lang="en">
@@ -103,10 +86,10 @@ def build_email(meta: dict, slug: str) -> tuple[str, str]:
         <p style="margin:0 0 24px; font-size:15px; line-height:1.6; color:#CFC9BE;">
           {excerpt}
         </p>
-        <a href="{cta_url_attr}"
+        <a href="{post_url}"
            style="display:inline-block; background:#F5C020; color:#0E0E0E; font-size:14px; font-weight:bold;
                   letter-spacing:1px; text-transform:uppercase; text-decoration:none; padding:12px 28px;">
-          {cta_label_html}
+          Read the post
         </a>
       </div>
     </div>
@@ -127,9 +110,8 @@ def build_email(meta: dict, slug: str) -> tuple[str, str]:
         f"\n"
         f"{meta['excerpt']}\n"
         f"\n"
-        f"{cta_label}: {cta_url}\n"
-        + (f"Read the post: {post_url}\n" if cta_url != post_url else "")
-        + f"\n"
+        f"Read the post: {post_url}\n"
+        f"\n"
         f"You are receiving this because you subscribed to the LEAPPs mailing "
         f"list at {SITE}/mailing\n"
     )
