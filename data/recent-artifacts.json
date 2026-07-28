@@ -3,16 +3,16 @@
   "window_days": 45,
   "items": [
     {
+      "name": "biomeNetworkingEdgeSelection",
+      "query": "biomeNetworkingEdgeSelection",
+      "tool": "iLEAPP",
+      "date": "2026-07-28"
+    },
+    {
       "name": "whatsappCalls",
       "query": "whatsappCalls",
       "tool": "DLEAPP",
       "date": "2026-07-27"
-    },
-    {
-      "name": "biomeSiriRemembersAudioHistory",
-      "query": "biomeSiriRemembersAudioHistory",
-      "tool": "iLEAPP",
-      "date": "2026-07-26"
     },
     {
       "name": "signalAndroid",
@@ -27,16 +27,16 @@
       "date": "2026-07-09"
     },
     {
+      "name": "duetNotificationSuggestions",
+      "query": "duetNotificationSuggestions",
+      "tool": "iLEAPP",
+      "date": "2026-07-28"
+    },
+    {
       "name": "whatsappContacts",
       "query": "whatsappContacts",
       "tool": "DLEAPP",
       "date": "2026-07-27"
-    },
-    {
-      "name": "biomeDiscoverabilitySignals",
-      "query": "biomeDiscoverabilitySignals",
-      "tool": "iLEAPP",
-      "date": "2026-07-26"
     },
     {
       "name": "browserArtifactsViaMisterSkinnylegs",
@@ -51,16 +51,16 @@
       "date": "2026-07-09"
     },
     {
+      "name": "biomeSiriRemembersAudioHistory",
+      "query": "biomeSiriRemembersAudioHistory",
+      "tool": "iLEAPP",
+      "date": "2026-07-26"
+    },
+    {
       "name": "whatsappMedia",
       "query": "whatsappMedia",
       "tool": "DLEAPP",
       "date": "2026-07-27"
-    },
-    {
-      "name": "biomeSiriRemembersAssistantSuggestions",
-      "query": "biomeSiriRemembersAssistantSuggestions",
-      "tool": "iLEAPP",
-      "date": "2026-07-26"
     },
     {
       "name": "samsung honeyboard clipboard",
