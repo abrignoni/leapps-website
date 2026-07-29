@@ -1,5 +1,19 @@
 [
   {
+    "slug": "2026-07-29-apple-unified-logs",
+    "title": "Extracting, Processing, and Querying Apple Unified Logs from an iOS Device",
+    "date": "2026-07-29",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "iLEAPP",
+      "iOS",
+      "Unified Logs",
+      "LAVA",
+      "DFIR"
+    ],
+    "excerpt": "Apple Unified Logs can show locks, app launches, connectivity, navigation, and more. Here is the updated workflow for acquiring them, processing them with iLEAPP, and working the results in LAVA."
+  },
+  {
     "slug": "introducing-dleapp",
     "title": "Introducing DLEAPP",
     "date": "2026-07-27",
