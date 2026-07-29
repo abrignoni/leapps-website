@@ -327,7 +327,7 @@ No one person owns this research, and the target keeps moving. These are the res
 - Use iLEAPP's dedicated artifacts for fast triage and the full table for context and novel research.
 - Validate important patterns; do not interpret an empty parser result as proof of absence.
 
-Apple Unified Logs are not an edge-case data source anymore. Acquire them. Preserve them. Query them.
+Apple Unified Logs are not an edge-case data source anymore. Acquire them. Preserve them. Query them. **Interpret them—as [Tim Korver](https://thesisfriday.com/) rightly suggested.**
 
 And when you find a pattern nobody has documented yet, write it down and send it back to the community. That is how this list grows.
 
