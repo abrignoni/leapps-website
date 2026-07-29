@@ -502,12 +502,12 @@
     {
       "date": "2026-07-29",
       "totals": {
-        "ileapp": 85264,
-        "aleapp": 64042,
-        "rleapp": 4225,
-        "vleapp": 1553,
-        "lava": 1265,
-        "dleapp": 33,
+        "ileapp": 85285,
+        "aleapp": 64068,
+        "rleapp": 4229,
+        "vleapp": 1554,
+        "lava": 1272,
+        "dleapp": 37,
         "batchleapp": 145
       }
     }
