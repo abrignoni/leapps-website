@@ -20,7 +20,7 @@ I first wrote about this workflow in [May 2025](https://abrignoni.blogspot.com/2
 
 **Long version:** keep reading.
 
-[Download the printable PDF edition](https://www.leapps.org/output/pdf/apple-unified-logs-ios-ileapp-2026.pdf).
+[Download the printable PDF edition](https://leapps-api.4n6-198.workers.dev/downloads/apple-unified-logs-ileapp-field-guide.pdf).
 
 One warning before we start: Unified Log messages change across devices and operating-system versions. A pattern that works on one iPhone is not automatically universal. Validate the findings that matter and correlate them with the rest of the case.
 
