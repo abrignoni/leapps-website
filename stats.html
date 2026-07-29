@@ -565,10 +565,14 @@
         const res = await fetch('https://leapps-api.4n6-198.workers.dev/downloads/counts');
         if (!res.ok) throw new Error();
         const counts = await res.json();
-        const rows = Object.entries(counts).map(([file, count]) => {
-          const label = GUIDE_LABELS[file] || file;
-          // The tracked download route serves the file AND increments this count.
-          const dlUrl = `https://leapps-api.4n6-198.workers.dev/downloads/${encodeURIComponent(file)}`;
+        const rows = Object.entries(GUIDE_LABELS).map(([file, label]) => {
+          const isTracked = Object.prototype.hasOwnProperty.call(counts, file);
+          const count = Number(counts[file] || 0);
+          // Use tracked delivery when the API knows the file. A direct static
+          // fallback keeps newly published guides available before API deploy.
+          const dlUrl = isTracked
+            ? `https://leapps-api.4n6-198.workers.dev/downloads/${encodeURIComponent(file)}`
+            : `/downloads/${encodeURIComponent(file)}`;
           return `<div style="display:flex;align-items:center;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--border);">
             <a href="${dlUrl}" target="_blank" rel="noopener noreferrer" style="font-family:var(--font-mono);font-size:.75rem;color:var(--text);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text)'">${label}</a>
             <span style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);">${count.toLocaleString()} downloads</span>
