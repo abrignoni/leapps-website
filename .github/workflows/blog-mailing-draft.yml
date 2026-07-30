@@ -21,6 +21,10 @@ on:
         description: 'Post file to create a test draft for'
         required: true
         default: 'blog/posts/2026-07-02-life360.md'
+      subject:
+        description: 'Optional subject override (for update announcements)'
+        required: false
+        default: ''
 
 permissions:
   contents: read
@@ -59,4 +63,11 @@ jobs:
           MAILJET_LIST_ID: ${{ vars.MAILJET_LIST_ID }}
           MAILJET_SENDER_EMAIL: ${{ vars.MAILJET_SENDER_EMAIL }}
           MAILJET_SENDER_NAME: ${{ vars.MAILJET_SENDER_NAME }}
-        run: python3 scripts/create_mailing_draft.py ${{ steps.added.outputs.files }}
+        # The subject override only exists on manual dispatch; push-triggered runs
+        # announce brand-new posts, where the default subject is the right one.
+        run: |
+          if [[ -n "${{ github.event.inputs.subject }}" ]]; then
+            python3 scripts/create_mailing_draft.py --subject "${{ github.event.inputs.subject }}" ${{ steps.added.outputs.files }}
+          else
+            python3 scripts/create_mailing_draft.py ${{ steps.added.outputs.files }}
+          fi

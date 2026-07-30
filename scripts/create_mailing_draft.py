@@ -7,7 +7,11 @@ Mailjet addressed to the mailing list — it never sends. Review the draft in
 the Mailjet dashboard (Campaigns) and send it from there.
 
 Usage:
-    python3 scripts/create_mailing_draft.py [--dry-run] blog/posts/<slug>.md ...
+    python3 scripts/create_mailing_draft.py [--dry-run] [--subject "..."] blog/posts/<slug>.md ...
+
+--subject overrides the default "New on the LEAPPs Blog: <title>" line. Use it when
+announcing an update to a post subscribers were already told about, so the second
+email does not arrive wearing the first one's subject.
 
 Environment (all required unless --dry-run):
     MAILJET_API_KEY / MAILJET_API_SECRET   API credentials (repo secrets)
@@ -119,8 +123,18 @@ def build_email(meta: dict, slug: str) -> tuple[str, str]:
 
 
 def main() -> int:
-    args = [a for a in sys.argv[1:] if a != "--dry-run"]
-    dry_run = "--dry-run" in sys.argv[1:]
+    argv = sys.argv[1:]
+    dry_run = "--dry-run" in argv
+    custom_subject = None
+    if "--subject" in argv:
+        index = argv.index("--subject")
+        try:
+            custom_subject = argv[index + 1]
+        except IndexError:
+            print("--subject requires a value", file=sys.stderr)
+            return 1
+        del argv[index:index + 2]
+    args = [a for a in argv if a != "--dry-run"]
     if not args:
         print("No post files given; nothing to do.")
         return 0
@@ -144,7 +158,7 @@ def main() -> int:
             continue
 
         slug = path.stem
-        subject = f"New on the LEAPPs Blog: {meta['title']}"
+        subject = custom_subject or f"New on the LEAPPs Blog: {meta['title']}"
         html_part, text_part = build_email(meta, slug)
 
         if dry_run:
