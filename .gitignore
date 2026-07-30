@@ -1,6 +1,10 @@
 .claude/launch.json
 .DS_Store
 
+# Python bytecode (scripts/ generators)
+__pycache__/
+*.py[cod]
+
 # wrangler / Cloudflare
 .wrangler
 .dev.vars*
