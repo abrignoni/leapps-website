@@ -781,7 +781,11 @@
 
   <script>
     const tools = [
-      { id: 'lava',   name: 'LAVA',   repo: 'leapps-org/LAVA-releases' },
+      // flavor: every asset is this kind. Set only where the tool ships one
+      // flavor and its filenames carry no GUI/CLI token — LAVA is a GUI-only
+      // viewer app. Do not infer from extensions: iLEAPP's CLI is an AppImage
+      // too, so a guess would mislabel it.
+      { id: 'lava',   name: 'LAVA',   repo: 'leapps-org/LAVA-releases', flavor: 'GUI' },
       { id: 'aleapp', name: 'ALEAPP', repo: 'abrignoni/ALEAPP' },
       { id: 'ileapp', name: 'iLEAPP', repo: 'abrignoni/iLEAPP' },
       { id: 'rleapp', name: 'RLEAPP', repo: 'abrignoni/RLEAPP' },
@@ -887,7 +891,11 @@
         }
 
         let assetBtns = '';
-        const parsed = assets.map((a, ai) => ({ a, ai, p: parseAsset(a.name) }));
+        const parsed = assets.map((a, ai) => {
+          const p = parseAsset(a.name);
+          if (!p.flavor && tool.flavor) { p.flavor = tool.flavor; p.gui = tool.flavor.startsWith('GUI'); }
+          return { a, ai, p };
+        });
         const groupable = i === 0 && parsed.filter(x => x.p.os).length >= 3;
         if (groupable) {
           // Latest release: group by OS, visitor's platform first, GUI before
