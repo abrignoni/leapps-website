@@ -11,7 +11,7 @@
       "LAVA",
       "DFIR"
     ],
-    "excerpt": "Apple Unified Logs can show locks, app launches, connectivity, navigation, and more. Here is the updated workflow for acquiring them, processing them with iLEAPP, and working the results in LAVA."
+    "excerpt": "Apple Unified Logs can show locks, app launches, connectivity, navigation, and more. iLEAPP now parses them natively on Windows, Linux, and macOS. No Mac and no JSON conversion required. Here is the updated workflow."
   },
   {
     "slug": "introducing-dleapp",

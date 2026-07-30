@@ -3,7 +3,7 @@ title: Extracting, Processing, and Querying Apple Unified Logs from an iOS Devic
 date: 2026-07-29
 author: Alexis Brignoni
 tags: [iLEAPP, iOS, Unified Logs, LAVA, DFIR]
-excerpt: Apple Unified Logs can show locks, app launches, connectivity, navigation, and more. Here is the updated workflow for acquiring them, processing them with iLEAPP, and working the results in LAVA.
+excerpt: Apple Unified Logs can show locks, app launches, connectivity, navigation, and more. iLEAPP now parses them natively on Windows, Linux, and macOS. No Mac and no JSON conversion required. Here is the updated workflow.
 ---
 
 # Extracting, Processing, and Querying Apple Unified Logs from an iOS Device
@@ -16,11 +16,13 @@ Not always. Not forever. But often enough, and with enough detail, that this evi
 
 I first wrote about this workflow in [May 2025](https://abrignoni.blogspot.com/2025/05/extraction-processing-querying-apple.html). At the time, LAVA was still coming, the dedicated iLEAPP artifacts were future work, and the native Apple tooling had fewer options. A lot has changed.
 
-**Short version:** acquire the complete logs, preserve the original archive, use Apple's own tooling to export a JSON working copy, let iLEAPP turn that monster file into SQLite and dedicated artifacts, and do the analysis in LAVA.
+**Short version:** acquire the complete logs, preserve the originals, and let iLEAPP read the tracev3 data straight out of the extraction. Starting with iLEAPP 2026.3.0 there is no Mac in the chain, no rebuilt `.logarchive`, no `Info.plist` surgery, and no monster JSON export unless you want one. Process, then do the analysis in LAVA.
 
 **Long version:** keep reading.
 
 [Download the printable PDF edition](https://leapps-api.4n6-198.workers.dev/downloads/apple-unified-logs-ileapp-field-guide.pdf).
+
+> **Updated 2026-07-30.** iLEAPP 2026.3.0 parses Apple Unified Logs natively on Windows, Linux, and macOS. The JSON workflow documented further down still works and is still valuable as Apple's own rendering of the data, but it is now the alternate route, not the toll booth everyone has to drive through. The new section below covers the native path and, in the spirit of full transparency, exactly where it differs from Apple's output.
 
 One warning before we start: Unified Log messages change across devices and operating-system versions. A pattern that works on one iPhone is not automatically universal. Validate the findings that matter and correlate them with the rest of the case.
 
@@ -144,9 +146,50 @@ Apple has also been quietly improving the `log` command:
 
 These options depend on the version of macOS doing the analysis. Record `sw_vers`, save `log help`, and keep the exact commands you ran. If you repack or filter an archive, keep the complete original. Always.
 
-## Convert the archive to JSON for iLEAPP
+## Process the extraction natively with iLEAPP
 
-This is the bridge from macOS to the rest of the workflow. Use Apple's own command to render the archive into JSON:
+This is the part I have wanted to write since the original article. Starting with iLEAPP 2026.3.0, the whole conversion detour is optional.
+
+iLEAPP now bundles [macos-UnifiedLogs](https://github.com/mandiant/macos-UnifiedLogs), Mandiant's open source Rust parser for the tracev3 format, and drives it directly against the log data in your extraction. Credit where credit is due: Mandiant built and maintains that parser, it is Apache-2.0 licensed, and it is the reason none of what follows needs a Mac.
+
+Here is the whole workflow now:
+
+1. Download [iLEAPP 2026.3.0 or later](https://www.leapps.org/releases#section-ileapp). Windows, Linux, or macOS. Any of them.
+2. Point it at your full file system extraction. Zip, tar, or directory.
+3. In **Available Modules**, check the **Unified Logs** module. It comes unchecked on purpose, and I will explain why in a second.
+4. Start processing.
+
+That is it. No `.logarchive` reconstruction, no `OSArchiveVersion` table, no `Info.plist` metadata generation, no 30 GB JSON file, and no second computer. iLEAPP finds the `diagnostics` and `uuidtext` data, assembles what the parser needs, and streams the records straight into the LAVA database without writing an intermediate file at all. It handles the Apple-native path layout, the Cellebrite UFED layout where the data partition lands in `filesystem2` with no `private/var` prefix, and a ready-made `.logarchive` folder if that is what you have.
+
+Why does the module come unchecked? Because this is the single biggest job in iLEAPP and I am not going to spend fifteen minutes of your life on every routine run without asking. Reading Unified Logs is a decision. Check the box and it is your decision.
+
+### How fast is it?
+
+I will give you the numbers I measured instead of adjectives.
+
+On a 1.16 GB log store holding about 29 million events, Apple's own `log show` took 5 minutes 55 seconds and wrote 26.7 GB of JSON. The native parser processed the same store in 4 minutes 10 seconds and wrote nothing in the middle. It also returned about 5.4 million more records, because `log show` quietly drops activity and statedump entries from its default rendering.
+
+On real evidence, end to end:
+
+| Image | Size | Records imported | Wall time | Peak RAM |
+|---|---|---|---|---|
+| iOS 17.1 full file system (zip) | 24 GB | 30,362,747 | 16 min | under 1 GB |
+| iOS 16.5 Cellebrite UFED (zip) | 18.8 GB | 19,419,414 | 9.5 min | under 1 GB |
+
+That last column matters. The import streams in batches now, so the memory cost is flat whether the archive holds one million records or thirty. Your laptop can do this.
+
+### What the native path does not give you
+
+Nobody tells you what their tools are missing, so let me tell you what mine is.
+
+- **The rendering is not byte-identical to Apple's.** Comparing the same records side by side, about 78 percent match Apple's output exactly, and nearly all of the rest differ only in formatting: pointer values as `1A2B3C` instead of `0x1a2b3c`, floats at full precision instead of rounded, whitespace. None of the message patterns the dedicated artifacts search for are affected by any of this. But if a specific message is going in a report, validate it, and remember `log show` remains Apple's own rendering of Apple's own data.
+- **The Trace ID column comes back empty** on native imports. The parser does not emit it. No current artifact queries it.
+- **A full file system extraction only holds what survived on the device.** I have an iOS 18.7 extraction where the `Persist` directory, which is where most of the good stuff lives, is simply empty. Native parsing cannot read what the extraction never captured. `log collect` against the device remains the most complete acquisition, which is why the acquisition section above is still the first thing in this article.
+One more thing that belongs on the record rather than in a limitations list: the parser version iLEAPP bundles is pinned and hash-verified at build time, and documented in the repository. When someone asks which parser produced a set of records, you can answer.
+
+## The JSON route still works
+
+Everything below is the original workflow, and it is still the right call in two situations: you are on an iLEAPP version before 2026.3.0, or you want Apple's own rendering as your working copy. Use Apple's command to render the archive into JSON:
 
 ```bash
 log show --archive "/path/to/case-device.logarchive" \
@@ -170,7 +213,7 @@ Now hand the giant JSON file to iLEAPP:
 1. Download the current [iLEAPP release](https://www.leapps.org/releases#section-ileapp).
 2. Select the directory containing the `logarchive*.json` file as the input.
 3. Select an output directory.
-4. In **Available Modules**, select the **Unified Logs** modules. The raw **logarchive** module must run before the artifacts that depend on it.
+4. In **Available Modules**, check the **Unified Logs** module. It comes unchecked by default; Unified Logs are opt-in now, on both the native and the JSON path. The dependent artifacts run automatically after the raw import.
 5. Start processing.
 
 The raw module streams the file instead of trying to load tens of gigabytes into memory. It writes the fields we care about into `_lava_artifacts.db`:
@@ -198,7 +241,7 @@ The future arrived.
 
 I went back to the query itself, because counting only the report names badly understates what is supported.
 
-As of July 29, 2026, the local `logarchive.py` query contains **134 `LIKE` clauses representing 132 unique message predicates**. Those predicates cover 23 evidentiary themes:
+As of July 30, 2026, the `logarchive.py` query contains **135 `LIKE` clauses representing 133 unique message predicates**. Those predicates cover 23 evidentiary themes:
 
 | Evidentiary theme | What the query looks for | Unique predicates |
 |---|---|---:|
@@ -222,7 +265,7 @@ As of July 29, 2026, the local `logarchive.py` query contains **134 `LIKE` claus
 | **Audio playback and volume** | Playback state, volume-button presses, volume changes, and playback queue invalidation | 7 |
 | **Physical controls, brightness, and ringer** | Volume control, Emergency SOS button gestures, brightness changes, and ringer/silent state | 6 |
 | **Executed applications** | Icon taps, application launches, and transitions | 3 |
-| **Flashlight** | Flashlight controller and AVFlashlight activity | 2 |
+| **Flashlight** | Flashlight controller and AVFlashlight activity | 3 |
 | **Personal Hotspot** | Tethering and wireless-modem state changes | 3 |
 | **Navigation** | Route start, maneuver guidance, distance prompts, arrival, and destination messages | 13 |
 
@@ -302,7 +345,8 @@ No one person owns this research, and the target keeps moving. These are the res
 
 - [Apple Logging documentation](https://developer.apple.com/documentation/os/logging) - Apple's overview of the unified logging system.
 - [Apple OSLog documentation](https://developer.apple.com/documentation/OSLog) - programmatic access to historical log data.
-- [iLEAPP](https://github.com/abrignoni/iLEAPP) - conversion of the Apple JSON export into LAVA/SQLite output and dedicated Unified Log artifacts.
+- [iLEAPP](https://github.com/abrignoni/iLEAPP) - native tracev3 parsing or conversion of the Apple JSON export into LAVA/SQLite output, plus the dedicated Unified Log artifacts.
+- [macos-UnifiedLogs](https://github.com/mandiant/macos-UnifiedLogs) - Mandiant's open source Rust parser for the tracev3 format. This is the engine behind iLEAPP's native support. Apache-2.0, actively maintained, good stuff.
 - [LAVA](https://www.leapps.org/releases#section-lava) - the LEAPPs viewer for large and standard artifact outputs.
 - [Lionel Notari's iOS Unified Logs](https://www.ios-unifiedlogs.com/) - extensive artifact research, articles, references, and “Unified Logs of the Week.”
 - [Lionel Notari's acquisition tool](https://www.ios-unifiedlogs.com/iosunifiedlogtool) - guided collection with reporting, statistics, and hashes.
@@ -322,7 +366,8 @@ No one person owns this research, and the target keeps moving. These are the res
 - Hash the original `.logarchive`, the exported JSON, and important derivatives.
 - Record the acquisition Mac, analysis Mac, OS versions, tool versions, commands, time zones, and filters.
 - Use the correct `OSArchiveVersion`; on macOS 26.4 and later, generate the additional evidence-specific plist metadata.
-- Export with `--info --debug` when the goal is a comprehensive JSON working copy.
+- On the native path, record the iLEAPP version; it pins the exact parser build that produced the records.
+- If you take the JSON route, export with `--info --debug` so the working copy is comprehensive.
 - Compare database counts and time bounds against native `log stats` where possible.
 - Use iLEAPP's dedicated artifacts for fast triage and the full table for context and novel research.
 - Validate important patterns; do not interpret an empty parser result as proof of absence.
