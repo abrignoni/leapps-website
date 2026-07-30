@@ -22,7 +22,7 @@ I first wrote about this workflow in [May 2025](https://abrignoni.blogspot.com/2
 
 [Download the printable PDF edition](https://leapps-api.4n6-198.workers.dev/downloads/apple-unified-logs-ileapp-field-guide.pdf).
 
-> **Updated 2026-07-30.** iLEAPP 2026.3.0 parses Apple Unified Logs natively on Windows, Linux, and macOS. The JSON workflow documented further down still works and is still valuable as Apple's own rendering of the data, but it is now the alternate route, not the toll booth everyone has to drive through. The new section below covers the native path and, in the spirit of full transparency, exactly where it differs from Apple's output.
+> **Updated 2026-07-30.** iLEAPP 2026.3.0 parses Apple Unified Logs natively on Windows, Linux, and macOS. The JSON workflow documented further down still works and is still valuable as Apple's own rendering of the data, but it is now the alternate route, not the toll booth everyone has to drive through. The new section below covers the native path and, in the spirit of full transparency, exactly where it differs from Apple's output. If 2026.3.0 is not on the releases page yet when you read this, the same section shows how to run it from source today.
 
 One warning before we start: Unified Log messages change across devices and operating-system versions. A pattern that works on one iPhone is not automatically universal. Validate the findings that matter and correlate them with the rest of the case.
 
@@ -158,6 +158,18 @@ Here is the whole workflow now:
 2. Point it at your full file system extraction. Zip, tar, or directory.
 3. In **Available Modules**, check the **Unified Logs** module. It comes unchecked on purpose, and I will explain why in a second.
 4. Start processing.
+
+Release not on the [releases page](https://www.leapps.org/releases#section-ileapp) yet, or you just do not want to wait? Everything in this section is on iLEAPP's main branch right now, and running from source gets you all of it today:
+
+```bash
+git clone https://github.com/abrignoni/iLEAPP.git
+cd iLEAPP
+pip install -r requirements.txt
+python admin/scripts/fetch_unifiedlog_iterator.py
+python ileapp.py -t zip -i /path/to/extraction.zip -o /path/to/output
+```
+
+Prefer the GUI? `python ileappGUI.py` works the same way. The fetch script downloads the parser build for your platform and verifies its hash before writing a single byte, so you know exactly what you are running. Same code the release will ship, and it costs you what the LEAPPs have always cost: nothing.
 
 That is it. No `.logarchive` reconstruction, no `OSArchiveVersion` table, no `Info.plist` metadata generation, no 30 GB JSON file, and no second computer. iLEAPP finds the `diagnostics` and `uuidtext` data, assembles what the parser needs, and streams the records straight into the LAVA database without writing an intermediate file at all. It handles the Apple-native path layout, the Cellebrite UFED layout where the data partition lands in `filesystem2` with no `private/var` prefix, and a ready-made `.logarchive` folder if that is what you have.
 
