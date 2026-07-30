@@ -3,10 +3,10 @@
   "window_days": 45,
   "items": [
     {
-      "name": "diagnosticLogd",
-      "query": "diagnosticLogd",
+      "name": "locationdCacheEncryptedB",
+      "query": "locationdCacheEncryptedB",
       "tool": "iLEAPP",
-      "date": "2026-07-29"
+      "date": "2026-07-30"
     },
     {
       "name": "windowsApps",
@@ -27,10 +27,10 @@
       "date": "2026-07-09"
     },
     {
-      "name": "fileSystemEvents",
-      "query": "fileSystemEvents",
+      "name": "threeBars",
+      "query": "threeBars",
       "tool": "iLEAPP",
-      "date": "2026-07-29"
+      "date": "2026-07-30"
     },
     {
       "name": "windowsSystem",
@@ -51,10 +51,10 @@
       "date": "2026-07-09"
     },
     {
-      "name": "installHistory",
-      "query": "installHistory",
+      "name": "safariCache",
+      "query": "safariCache",
       "tool": "iLEAPP",
-      "date": "2026-07-29"
+      "date": "2026-07-30"
     },
     {
       "name": "telegramAccounts",
