@@ -1,11 +1,17 @@
 {
-  "generated": "2026-07-30",
+  "generated": "2026-07-31",
   "window_days": 45,
   "items": [
     {
-      "name": "locationdCacheEncryptedB",
-      "query": "locationdCacheEncryptedB",
+      "name": "cnaAutocompleteFeedback",
+      "query": "cnaAutocompleteFeedback",
       "tool": "iLEAPP",
+      "date": "2026-07-30"
+    },
+    {
+      "name": "samsungMediaProvider",
+      "query": "samsungMediaProvider",
+      "tool": "ALEAPP",
       "date": "2026-07-30"
     },
     {
@@ -15,14 +21,32 @@
       "date": "2026-07-29"
     },
     {
-      "name": "signalAndroid",
-      "query": "signalAndroid",
-      "tool": "ALEAPP",
-      "date": "2026-07-26"
-    },
-    {
       "name": "synchronoss",
       "query": "synchronoss",
+      "tool": "RLEAPP",
+      "date": "2026-07-09"
+    },
+    {
+      "name": "locationdCacheEncryptedB",
+      "query": "locationdCacheEncryptedB",
+      "tool": "iLEAPP",
+      "date": "2026-07-30"
+    },
+    {
+      "name": "samsungStoryService",
+      "query": "samsungStoryService",
+      "tool": "ALEAPP",
+      "date": "2026-07-30"
+    },
+    {
+      "name": "windowsSystem",
+      "query": "windowsSystem",
+      "tool": "DLEAPP",
+      "date": "2026-07-29"
+    },
+    {
+      "name": "chatGPTaccountInfo",
+      "query": "chatGPTaccountInfo",
       "tool": "RLEAPP",
       "date": "2026-07-09"
     },
@@ -33,27 +57,9 @@
       "date": "2026-07-30"
     },
     {
-      "name": "windowsSystem",
-      "query": "windowsSystem",
-      "tool": "DLEAPP",
-      "date": "2026-07-29"
-    },
-    {
-      "name": "browserArtifactsViaMisterSkinnylegs",
-      "query": "browserArtifactsViaMisterSkinnylegs",
+      "name": "samsungLauncher",
+      "query": "samsungLauncher",
       "tool": "ALEAPP",
-      "date": "2026-07-22"
-    },
-    {
-      "name": "chatGPTaccountInfo",
-      "query": "chatGPTaccountInfo",
-      "tool": "RLEAPP",
-      "date": "2026-07-09"
-    },
-    {
-      "name": "safariCache",
-      "query": "safariCache",
-      "tool": "iLEAPP",
       "date": "2026-07-30"
     },
     {
@@ -61,12 +67,6 @@
       "query": "telegramAccounts",
       "tool": "DLEAPP",
       "date": "2026-07-29"
-    },
-    {
-      "name": "samsung honeyboard clipboard",
-      "query": "samsung_honeyboard_clipboard",
-      "tool": "ALEAPP",
-      "date": "2026-07-14"
     },
     {
       "name": "takeoutMyActivity",
