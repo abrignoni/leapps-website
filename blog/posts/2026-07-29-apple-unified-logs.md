@@ -57,7 +57,7 @@ Do not get clever and limit the acquisition to a narrow time range just because 
 
 If the native command is not your route, there are other good options:
 
-- [UFADE](https://github.com/prosch88/UFADE), Christian Peter's open-source Apple-device acquisition tool.
+- [UFADE](https://github.com/prosch88/UFADE), Christian Peter's open-source Apple-device acquisition tool. Its **Collect Unified Logs** option writes a finished `.logarchive`, and iLEAPP reads that bundle natively. No reconstruction, no `Info.plist` work, no Mac. More on that below.
 - [iOS Unified Logs Acquisition](https://www.ios-unifiedlogs.com/iosunifiedlogtool), Lionel Notari's macOS acquisition tool, which records device and case information, log statistics, and archive hashes.
 - Commercial forensic tools that explicitly preserve the Unified Log components.
 
@@ -172,6 +172,8 @@ python ileapp.py -t zip -i /path/to/extraction.zip -o /path/to/output
 Prefer the GUI? `python ileappGUI.py` works the same way. The fetch script downloads the parser build for your platform and verifies its hash before writing a single byte, so you know exactly what you are running. Same code the release will ship, and it costs you what the LEAPPs have always cost: nothing.
 
 That is it. No `.logarchive` reconstruction, no `OSArchiveVersion` table, no `Info.plist` metadata generation, no 30 GB JSON file, and no second computer. iLEAPP finds the `diagnostics` and `uuidtext` data, assembles what the parser needs, and streams the records straight into the LAVA database without writing an intermediate file at all. It handles the Apple-native path layout, the Cellebrite UFED layout where the data partition lands in `filesystem2` with no `private/var` prefix, and a ready-made `.logarchive` folder if that is what you have.
+
+That last case includes the bundle [UFADE](https://github.com/prosch88/UFADE) produces with **Collect Unified Logs**. Point iLEAPP straight at the `.logarchive` as your input and process it. You do not need to place it inside an extraction or rename anything first. iLEAPP recognizes the bundle by what is inside it, the `Persist`, `Special`, `Signpost`, and `HighVolume` stores sitting next to a `timesync` directory, rather than by the folder name. That matters more than it sounds: selecting the bundle itself as the input root strips the `.logarchive` name off every path underneath it, so name matching alone would find every file, copy them all, and still report no data. Content matching is what makes a bare UFADE archive work.
 
 Why does the module come unchecked? Because this is the single biggest job in iLEAPP and I am not going to spend fifteen minutes of your life on every routine run without asking. Reading Unified Logs is a decision. Check the box and it is your decision.
 
@@ -369,7 +371,7 @@ No one person owns this research, and the target keeps moving. These are the res
 - [Tim Korver's Apple Unified Log CLI cheatsheet](https://thesisfriday.com/wp-content/uploads/2025/06/CheatSheet_CLI_AUL_ENG-2.pdf) - collection, display, predicates, statistics, event types, and example queries.
 - [Johann Polewczyk's .logarchive Info.plist research](https://digital-forensics.polewczyk.fr/apple/unified-logs/info-plist/) - OSArchiveVersion mapping, the macOS 26.4 metadata requirements, and the reconstruction methodology.
 - [Johann Polewczyk's logarchive_info.py](https://github.com/Johann-PLW/logarchive_info) - generates the evidence-specific `Info.plist` required by current versions of macOS.
-- [UFADE](https://github.com/prosch88/UFADE) - open-source Apple-device acquisition by Christian Peter.
+- [UFADE](https://github.com/prosch88/UFADE) - open-source Apple-device acquisition by Christian Peter. Its **Collect Unified Logs** output is read natively by iLEAPP.
 - [DB Browser for SQLite](https://sqlitebrowser.org/) - a general-purpose SQLite query tool.
 
 ## Before you call it done
