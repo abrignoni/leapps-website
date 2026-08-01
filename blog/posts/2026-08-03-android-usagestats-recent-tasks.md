@@ -128,9 +128,9 @@ As part of this revisit, ALEAPP now exposes:
 - Last and total visible time
 - Last time a package component was used
 - App launch count
-- Event flags, including instant-app identification
+- Event flags as the stored, undecoded bitmask
 - Shortcut ID
-- App standby bucket and the separate reason value
+- The stored app-standby value split into its high and low 16-bit portions
 - Notification channel
 - Activity instance ID
 - Task-root package and class
@@ -243,6 +243,8 @@ Good forensic interpretation is not making the artifacts say less. It is refusin
 
 The updated artifacts are in ALEAPP's current source and will be included in the next packaged release.
 
+Before publication, we ran that merged source against real data from Samsung S20 and Pixel 8 Pro Android 16 full-file-system extractions. UsageStats produced 11,904 and 6,843 rows respectively, while Recent Activity recovered the matching snapshot metadata and both image resolutions. One Samsung task XML could not be parsed because the source file itself was empty.
+
 1. Process the full Android extraction with [ALEAPP](https://www.leapps.org/releases#section-aleapp).
 2. Open **Usage Stats** in the HTML report or LAVA.
 3. Filter `Usage Type` to `event-log` and begin with the `daily` interval for event-level work.
@@ -270,7 +272,7 @@ That is exactly why old research deserves a return visit. Sometimes the original
 
 ## Thank you
 
-Thank you to Jessica Hyde for the research that started this path and to Sarah Edwards for setting such a high bar for pattern-of-life analysis. The original work did what good research should do: it gave the community something useful and made the next questions possible.
+Thank you to [Jessica Hyde](https://www.sans.org/profiles/jessica-hyde) for the research that started this path and to [Sarah Edwards](https://www.sans.edu/profiles/sarah-edwards) for setting such a high bar for pattern-of-life analysis through work including [APOLLO](https://github.com/mac4n6/APOLLO). The original work did what good research should do: it gave the community something useful and made the next questions possible.
 
 And thank you to everyone contributing test extractions to ALEAPP. The artifact currently produces data across Android 10 through Android 16 samples in our test corpus. That breadth is how we catch changes before they catch an examiner.
 
