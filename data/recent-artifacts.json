@@ -3,16 +3,16 @@
   "window_days": 45,
   "items": [
     {
+      "name": "task snapshot pb2",
+      "query": "task_snapshot_pb2",
+      "tool": "ALEAPP",
+      "date": "2026-08-01"
+    },
+    {
       "name": "privacyAccounting",
       "query": "privacyAccounting",
       "tool": "iLEAPP",
       "date": "2026-07-31"
-    },
-    {
-      "name": "samsungMediaProvider",
-      "query": "samsungMediaProvider",
-      "tool": "ALEAPP",
-      "date": "2026-07-30"
     },
     {
       "name": "windowsApps",
@@ -27,15 +27,15 @@
       "date": "2026-07-09"
     },
     {
-      "name": "cnaAutocompleteFeedback",
-      "query": "cnaAutocompleteFeedback",
-      "tool": "iLEAPP",
+      "name": "samsungMediaProvider",
+      "query": "samsungMediaProvider",
+      "tool": "ALEAPP",
       "date": "2026-07-30"
     },
     {
-      "name": "samsungStoryService",
-      "query": "samsungStoryService",
-      "tool": "ALEAPP",
+      "name": "cnaAutocompleteFeedback",
+      "query": "cnaAutocompleteFeedback",
+      "tool": "iLEAPP",
       "date": "2026-07-30"
     },
     {
@@ -51,15 +51,15 @@
       "date": "2026-07-09"
     },
     {
-      "name": "locationdCacheEncryptedB",
-      "query": "locationdCacheEncryptedB",
-      "tool": "iLEAPP",
+      "name": "samsungStoryService",
+      "query": "samsungStoryService",
+      "tool": "ALEAPP",
       "date": "2026-07-30"
     },
     {
-      "name": "samsungLauncher",
-      "query": "samsungLauncher",
-      "tool": "ALEAPP",
+      "name": "locationdCacheEncryptedB",
+      "query": "locationdCacheEncryptedB",
+      "tool": "iLEAPP",
       "date": "2026-07-30"
     },
     {
