@@ -153,6 +153,8 @@ For a persisted snapshot, modern Android can create three related files using th
 123.proto
 ```
 
+Depending on the Android version, those files may sit directly in `snapshots/` or one level deeper under a per-snapshot-set identifier. Acquire the directory recursively and preserve that structure.
+
 The JPG is the high-resolution image. The reduced image is the smaller version Android can load quickly. The protobuf explains the snapshot.
 
 ALEAPP now parses that protobuf and reports:
