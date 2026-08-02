@@ -1,0 +1,41 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Config for the leapps-api Worker (https://leapps-api.4n6-198.workers.dev).
+  //
+  // Deliberately separate from wrangler.jsonc, which describes the *site* Worker
+  // (leapps-website / worker.js). A bare `wrangler deploy` picks that one up, so
+  // this Worker must always be deployed with an explicit config:
+  //
+  //     npx wrangler deploy -c wrangler.leapps-api.jsonc
+  //
+  // Values below were read from the running Worker (`wrangler versions view`),
+  // not chosen, so adopting this config does not change its behaviour.
+  "name": "leapps-api",
+  "main": "leapps-worker.js",
+
+  // Matches the date the Worker already runs under. Do not bump it casually:
+  // the compatibility date changes runtime semantics.
+  "compatibility_date": "2026-05-20",
+
+  // No "assets" block on purpose. This Worker serves only its own API routes;
+  // the static site belongs to leapps-website.
+
+  // Download counters (dl_count:* and downloads-daily keys) live in LEAPPS_KV.
+  // A KV binding exists only if the deploying config declares it, so leaving
+  // this out would silently detach CACHE on the next deploy: /downloads/counts
+  // would start failing while every other route looked healthy.
+  "kv_namespaces": [
+    {
+      "binding": "CACHE",
+      "id": "c6dff19f407e46ea892ba4e4394f180e"
+    }
+  ],
+
+  // GITHUB_TOKEN is intentionally absent. It is a Worker secret, it survives
+  // redeploys, and it must never be committed. Manage it with
+  // `wrangler secret put GITHUB_TOKEN --name leapps-api` or in the dashboard.
+
+  "observability": {
+    "enabled": true
+  }
+}
