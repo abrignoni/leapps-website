@@ -172,5 +172,11 @@
     "url": "https://leapps.org/docs#step-3",
     "page": "Docs",
     "excerpt": "Run from command line: python iLEAPP.py -t {fs,tar,zip,gz} -i INPUT_PATH -o OUTPUT_PATH. Each tool may have additional options."
+  },
+  {
+    "title": "Guides — Downloadable PDF guides",
+    "url": "https://leapps.org/guides",
+    "page": "Guides",
+    "excerpt": "Field guides, the module contributor guide, and community walkthroughs for the LEAPPs tools. Free PDF downloads."
   }
 ]
