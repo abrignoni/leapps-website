@@ -4,3 +4,4 @@
 node_modules/
 tools/
 worker.js
+leapps-worker.js
