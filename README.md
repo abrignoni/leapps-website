@@ -16,9 +16,10 @@ leapps-website/
 ├── analytics.js         # GA4 consent banner + download/outbound click tracking
 ├── worker.js            # Edge Worker — injects per-post OG tags for /blog-post
 ├── wrangler.jsonc       # Cloudflare config for the leapps-website Worker
+├── wrangler.leapps-api.jsonc  # Cloudflare config for the leapps-api Worker
 ├── _headers             # Cache-Control rules for static assets
 ├── .assetsignore        # Files excluded from the published asset bundle
-├── leapps-worker.js     # The leapps-api Worker (deployed separately — see below)
+├── leapps-worker.js     # The leapps-api Worker (its own config + build — see below)
 ├── search-index.json    # Static search index for all site pages
 ├── blog/
 │   ├── posts/
@@ -66,52 +67,66 @@ Defined by [`worker.js`](worker.js) and [`wrangler.jsonc`](wrangler.jsonc). **Ev
 
 `run_worker_first: ["/blog-post"]` in `wrangler.jsonc` is required — otherwise the static `blog-post.html` is served before the Worker runs and the OG tags are never rewritten. `.assetsignore` keeps `worker.js`, `tools/`, `node_modules/`, `.git/`, and `.github/` out of the published bundle.
 
-### 2. `leapps-api` — deployed manually
+### 2. `leapps-api` — auto-deployed from `main`
 
-Defined by [`leapps-worker.js`](leapps-worker.js) and served at `https://leapps-api.4n6-198.workers.dev`. This is **not** git-connected: merging a change to `leapps-worker.js` publishes nothing. Until you deploy it by hand, the live API keeps running the previous version. It provides the live-data endpoints the pages fetch.
+Defined by [`leapps-worker.js`](leapps-worker.js) and [`wrangler.leapps-api.jsonc`](wrangler.leapps-api.jsonc), served at `https://leapps-api.4n6-198.workers.dev`. It provides the live-data endpoints the pages fetch. Since 2026-08-02 it is connected to Workers Builds: **merging a change to either of those two files deploys it**, and nothing else does.
 
-> ⚠️ **`wrangler.jsonc` does not describe this Worker.** The config at the repo root declares `name: "leapps-website"` and `main: "worker.js"`, so a bare `wrangler deploy` from the root deploys the **site** Worker, not this one. Verified with `wrangler deploy --dry-run --outdir /tmp/wdry`: the bundle it produces is `worker.js` (the OG injector). If you edit `leapps-worker.js` and then run bare `wrangler deploy`, the API change silently does not ship.
+Its build configuration, all set in the Cloudflare dashboard under Workers & Pages → `leapps-api` → Settings → Build:
 
-To deploy it, either:
+| Setting | Value |
+|---|---|
+| Repository / production branch | `abrignoni/leapps-website` / `main` |
+| Build command | *(empty — no bundler step, and there is no root `package.json`)* |
+| Deploy command | `npx wrangler deploy -c wrangler.leapps-api.jsonc` |
+| Build watch paths (include) | `leapps-worker.js`, `wrangler.leapps-api.jsonc` |
+| Builds for non-production branches | Off |
 
-- **Cloudflare dashboard** → Workers → `leapps-api` → Edit / Deploy, pasting the current `leapps-worker.js`; or
-- **wrangler**, pointing explicitly at this Worker's entry point and name rather than relying on the root config.
+The watch paths are what keep ordinary site pushes from redeploying the API; without them every blog post would trigger a build. Non-production builds are off because the pages always call the production `workers.dev` hostname, so a preview version would have nothing exercising it.
 
-Whichever route you take, `leapps-api` depends on two bindings that must still be attached afterwards:
+> ⚠️ **Deploy this Worker only with `-c wrangler.leapps-api.jsonc`.** The root [`wrangler.jsonc`](wrangler.jsonc) describes the *site* Worker (`name: "leapps-website"`, `main: "worker.js"`), so a bare `wrangler deploy` from the root deploys that one instead and the API change silently does not ship. Verified with `wrangler deploy --dry-run`: the bare command bundles `worker.js`, the OG injector.
+
+`leapps-api` depends on two bindings that must survive every deploy:
 
 | Binding | Type | Used for |
 |---|---|---|
-| `CACHE` | KV namespace | Download counters (`dl_count:<file>` keys) behind `/downloads/counts` and `/downloads/daily` |
+| `CACHE` | KV namespace `LEAPPS_KV` | Download counters (`dl_count:<file>` keys) behind `/downloads/counts` and `/downloads/daily` |
 | `GITHUB_TOKEN` | Secret | Authenticated GitHub API calls in the `/repos/*` proxy |
 
-Secrets set with `wrangler secret put` survive a redeploy, but a **KV binding only exists if the deploy declares it**. Deploy this Worker with a config that omits `CACHE` and the download counters start throwing, so confirm the binding after any CLI deploy.
+Secrets survive a redeploy on their own, which is why `GITHUB_TOKEN` is not in the config and must never be committed. A **KV binding only exists if the deploying config declares it**, which is why `wrangler.leapps-api.jsonc` declares `CACHE` explicitly. Removing that line would detach the namespace on the next build and the counters would start failing while every other route looked healthy.
+
+Need to deploy by hand (Cloudflare outage, a build that will not run)? Either paste the file in the dashboard under Workers → `leapps-api` → Edit / Deploy, or run the deploy command above locally. Both reach the same place.
 
 #### Verify the deploy
 
 The endpoints answer for themselves, so check rather than assume:
 
 ```bash
-# 1. A known file still serves (302 -> raw.githubusercontent.com)
-curl -sIL https://leapps-api.4n6-198.workers.dev/downloads/apple-unified-logs-ileapp-field-guide.pdf | head -1
-
-# 2. The KV binding survived: counts come back as JSON, not an error
+# 1. The KV binding survived: counts come back as JSON, not an error
 curl -s https://leapps-api.4n6-198.workers.dev/downloads/counts
+
+# 2. A known file still downloads (302 -> raw.githubusercontent.com, then the PDF)
+curl -sL -o /dev/null -w '%{http_code}\n' \
+  https://leapps-api.4n6-198.workers.dev/downloads/apple-unified-logs-ileapp-field-guide.pdf
 
 # 3. Anything newly added to ALLOWED_DOWNLOADS resolves
 curl -sL -o /dev/null -w '%{http_code}\n' \
   https://leapps-api.4n6-198.workers.dev/downloads/<new-file>.pdf
+
+# 4. Which version is live, and whether it came from the git build
+npx wrangler deployments list --name leapps-api | tail -8
 ```
 
-A `{"error":"Not found"}` from step 3 means the file is not in `ALLOWED_DOWNLOADS`, or the Worker running in production predates your edit.
+A `{"error":"Not found"}` from step 3 means the file is not in `ALLOWED_DOWNLOADS`, or the Worker running in production predates your edit. Use `GET` rather than `curl -I` for the download checks: `HEAD` on `/downloads/*` returns 405, which is long-standing behaviour of the redirect and not a sign of a bad deploy.
 
 #### Adding a downloadable file
 
-`/downloads/<file>` serves from an explicit allowlist, so dropping a PDF into `downloads/` is not enough on its own. Four steps:
+`/downloads/<file>` serves from an explicit allowlist, so dropping a PDF into `downloads/` is not enough on its own. Three steps, all of which ship on merge:
 
 1. Commit the file to `downloads/` on `main` (the Worker redirects to it on `raw.githubusercontent.com`).
-2. Add it to `ALLOWED_DOWNLOADS` in [`leapps-worker.js`](leapps-worker.js).
+2. Add it to `ALLOWED_DOWNLOADS` in [`leapps-worker.js`](leapps-worker.js). This is the step that deploys the Worker, since that file is a build watch path.
 3. Add a label to `GUIDE_LABELS` in [`stats.html`](stats.html) so its counter renders with a readable name, and a card in [`guides.html`](guides.html) if it is a guide.
-4. **Deploy `leapps-api`** as above, then verify. Steps 1 through 3 go live on merge; step 4 does not.
+
+Then run the verify checks above. Before the Worker was git-connected, step 2 also needed a manual deploy, and forgetting it is what made a published PDF 404 while the page linking to it looked fine.
 
 #### `leapps-api` routes
 
