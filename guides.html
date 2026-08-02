@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mailing List — LEAPPs</title>
-  <meta name="description" content="Stay up to date with LEAPPs — get notified about new tool releases, parser updates, and forensics community news." />
+  <title>Guides — LEAPPs</title>
+  <meta name="description" content="Downloadable PDF guides and walkthroughs for the LEAPPs forensic tools — field guides, contributor guides, and community walkthroughs." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://leapps.org/mailing" />
-  <meta property="og:title" content="Mailing List — LEAPPs" />
-  <meta property="og:description" content="Stay up to date with LEAPPs — get notified about new tool releases, parser updates, and forensics community news." />
+  <meta property="og:url" content="https://leapps.org/guides" />
+  <meta property="og:title" content="Guides — LEAPPs" />
+  <meta property="og:description" content="Downloadable PDF guides and walkthroughs for the LEAPPs forensic tools — field guides, contributor guides, and community walkthroughs." />
   <meta property="og:image" content="https://leapps.org/blog/og/default.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -18,8 +18,8 @@
   <meta property="og:site_name" content="LEAPPs" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mailing List — LEAPPs" />
-  <meta name="twitter:description" content="Stay up to date with LEAPPs — no spam, just signal." />
+  <meta name="twitter:title" content="Guides — LEAPPs" />
+  <meta name="twitter:description" content="Downloadable PDF guides and walkthroughs for the LEAPPs forensic tools." />
   <meta name="twitter:image" content="https://leapps.org/blog/og/default.png" />
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/logos/leapps-favicon-512.png" />
@@ -27,7 +27,7 @@
   <meta name="theme-color" content="#F5C020" />
   <meta name="author" content="Alexis Brignoni" />
   <meta name="google-site-verification" content="4NRgfrYq66eJKZVReVwQNbH_cyJI4bLQXXnrm8WuW9A" />
-  <link rel="canonical" href="https://leapps.org/mailing" />
+  <link rel="canonical" href="https://leapps.org/guides" />
   <link rel="alternate" type="application/rss+xml" title="LEAPPs Blog" href="https://leapps-api.4n6-198.workers.dev/blog/feed" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,33 +35,48 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
   <link rel="stylesheet" href="/css/global.css?v=20260627" />
-  <style>
-.lp-header { padding: 4rem 2rem 3rem; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+    <style>
+.lp-header { padding: 3.5rem 2rem 3rem; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
 .lp-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(245,192,32,.06) 0%, transparent 70%); pointer-events: none; }
-.lp-header-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+.lp-header-inner { max-width: 1000px; margin: 0 auto; }
 .lp-eyebrow { display: inline-block; font-family: var(--font-mono); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-.lp-header h1 { font-family: var(--font-head); font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; text-transform: uppercase; line-height: .95; margin-bottom: 1rem; }
+.lp-header h1 { font-family: var(--font-head); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; text-transform: uppercase; line-height: .95; margin-bottom: 1rem; }
 .lp-header h1 span { color: var(--gold); }
-.lp-header p { color: var(--muted); font-size: 1rem; max-width: 520px; margin: 0 auto; line-height: 1.7; }
-.lp-main { max-width: 700px; margin: 0 auto; padding: 3rem 2rem 5rem; }
-.lp-perks { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
-.lp-perk { display: flex; align-items: center; gap: .5rem; font-family: var(--font-mono); font-size: .78rem; color: var(--muted); letter-spacing: .06em; }
-.lp-perk i { color: var(--gold); font-size: 1rem; }
-.lp-form-wrap { background: var(--surface); border: 1px solid var(--border); padding: 2rem; }
-.lp-form-wrap iframe { display: block; width: 100%; min-height: 160px; border: none; }
-.lp-note { text-align: center; font-size: .78rem; color: #555; margin-top: 1.25rem; font-family: var(--font-mono); letter-spacing: .06em; }
-#lp-root { margin: 0 8px; }
-[data-theme="light"] body, [data-theme="light"] #lp-root { background-color: #F5F2EC !important; }
+.lp-header p { color: var(--muted); font-size: 1rem; max-width: 620px; line-height: 1.7; }
+.lp-wrap { max-width: 1000px; margin: 0 auto; padding: 3.5rem 2rem 6rem; }
+.lp-gsection { margin-bottom: 3.5rem; }
+.lp-gsection:last-child { margin-bottom: 0; }
+.lp-gsection-label { display: flex; align-items: center; gap: .5rem; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: .5rem; }
+.lp-gsection-desc { color: var(--muted); font-size: .88rem; line-height: 1.65; margin-bottom: 1.5rem; max-width: 620px; }
+.lp-guide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.lp-guide-card { background: var(--surface); padding: 1.5rem; display: flex; flex-direction: column; }
+.lp-guide-icon { font-size: 1.5rem; color: var(--gold); margin-bottom: .85rem; }
+.lp-guide-kicker { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: .4rem; }
+.lp-guide-title { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: var(--text); margin-bottom: .5rem; line-height: 1.2; }
+.lp-guide-desc { color: var(--muted); font-size: .87rem; line-height: 1.6; margin-bottom: 1rem; flex: 1; }
+.lp-guide-meta { display: flex; flex-wrap: wrap; gap: .75rem; font-family: var(--font-mono); font-size: .64rem; letter-spacing: .06em; color: #666; margin-bottom: 1rem; }
+.lp-guide-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+.lp-guide-btn { display: inline-flex; align-items: center; gap: .4rem; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .06em; padding: .45rem .9rem; border: 1px solid var(--border); color: var(--muted); text-decoration: none !important; transition: border-color .2s, color .2s, background .2s; }
+.lp-guide-btn:hover { border-color: var(--gold); color: var(--gold); }
+.lp-guide-btn.primary { background: var(--gold); border-color: var(--gold); color: var(--off-black) !important; }
+.lp-guide-btn.primary:hover { background: var(--gold-dk); border-color: var(--gold-dk); }
+.lp-guide-dl { font-family: var(--font-mono); font-size: .62rem; color: #666; margin-left: .1rem; }
+.lp-guide-card.community { background: var(--off-black); }
+[data-theme="light"] .lp-guide-card.community { background: #EFECE5; }
   </style>
-  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>
+  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('lp-theme') || 'dark');</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Mailing List — LEAPPs",
-    "description": "Stay up to date with LEAPPs — get notified about new tool releases, parser updates, and forensics community news.",
-    "url": "https://leapps.org/mailing",
-    "isPartOf": { "@type": "WebSite", "name": "LEAPPs", "url": "https://leapps.org" }
+    "@type": "CollectionPage",
+    "name": "Design Reviews — LEAPPs",
+    "url": "https://leapps.org/designs",
+    "description": "Cross-LEAPP design reviews for larger feature proposals, shared architecture, and community feedback.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "LEAPPs",
+      "url": "https://leapps.org"
+    }
   }
   </script>
 </head>
@@ -91,9 +106,8 @@
           <a href="https://leapps.org#mentions"><i class="ti ti-award" aria-hidden="true"></i>Featured</a>
           <a href="https://leapps.org#contributors"><i class="ti ti-users" aria-hidden="true"></i>Contributors</a>
           <a href="https://leapps.org/scoreboard"><i class="ti ti-trophy" aria-hidden="true"></i>Scoreboard</a>
-          <a href="https://leapps.org/mailing" class="active"><i class="ti ti-mail" aria-hidden="true"></i>Mailing List</a>
-          <a href="https://leapps.org/designs"><i class="ti ti-notes" aria-hidden="true"></i>Design Reviews</a>
-          <a href="https://leapps.org/guides"><i class="ti ti-file-type-pdf" aria-hidden="true"></i>Guides</a>
+          <a href="https://leapps.org/mailing"><i class="ti ti-mail" aria-hidden="true"></i>Mailing List</a>
+          <a href="https://leapps.org/designs" class="active"><i class="ti ti-notes" aria-hidden="true"></i>Design Reviews</a>
           <a href="https://leapps.org/resources"><i class="ti ti-books" aria-hidden="true"></i>Resources</a>
         </div>
       </li>
@@ -141,29 +155,96 @@
     <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">GitHub</a>
   </div>
 
+  <!-- HEADER -->
   <header class="lp-header">
     <div class="lp-header-inner">
-      <span class="lp-eyebrow">Stay in the Loop</span>
-      <h1>Join the <span>Mailing List</span></h1>
-      <p>Get notified about new tool releases, parser updates, and forensics community news. No spam — just signal.</p>
+      <span class="lp-eyebrow">Community · Guides</span>
+      <h1>LEAPPs <span>Guides</span></h1>
+      <p>Downloadable guides for the LEAPPs tools — field guides for specific artifact types, contributor guides for writing your own modules, and walkthroughs from the wider forensics community. All free, all PDF.</p>
     </div>
   </header>
 
-  <main class="lp-main">
-    <div class="lp-perks">
-      <div class="lp-perk"><i class="ti ti-bell"></i>Release alerts</div>
-      <div class="lp-perk"><i class="ti ti-git-branch"></i>New parsers</div>
-      <div class="lp-perk"><i class="ti ti-news"></i>Community updates</div>
-    </div>
+  <div class="lp-wrap">
 
-    <div class="lp-form-wrap">
-      <iframe data-w-type="embedded" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-        title="LEAPPs mailing list signup form"
-        src="https://shv4k.mjt.lu/wgt/shv4k/0n0g/form?c=10409fc4"
-        width="100%" style="height: 0; min-height: 160px;"></iframe>
-    </div>
-    <p class="lp-note">No spam &middot; Unsubscribe anytime</p>
-  </main>
+    <!-- FIRST-PARTY GUIDES -->
+    <section class="lp-gsection">
+      <div class="lp-gsection-label"><i class="ti ti-file-type-pdf"></i> LEAPPs Guides</div>
+      <p class="lp-gsection-desc">Written and maintained by the LEAPPs project. Download counts are shown live on the <a href="https://leapps.org/stats" style="color:var(--gold);text-decoration:none;">stats page</a>.</p>
+      <div class="lp-guide-grid" id="leapps-guides">
+
+        <div class="lp-guide-card">
+          <div class="lp-guide-icon"><i class="ti ti-search"></i></div>
+          <div class="lp-guide-kicker">Field Guide · iLEAPP</div>
+          <div class="lp-guide-title">Apple Unified Logs</div>
+          <div class="lp-guide-desc">Extracting, processing, and querying Apple Unified Logs from an iOS device — capturing a sysdiagnose, converting the logarchive, and running predicate queries against the results in iLEAPP and LAVA.</div>
+          <div class="lp-guide-meta"><span><i class="ti ti-file-text"></i> PDF · 11 pages</span><span data-guide-size="apple-unified-logs-ileapp-field-guide.pdf"></span><span><i class="ti ti-calendar"></i> July 2026</span></div>
+          <div class="lp-guide-actions">
+            <a class="lp-guide-btn primary" href="https://leapps-api.4n6-198.workers.dev/downloads/apple-unified-logs-ileapp-field-guide.pdf" target="_blank" rel="noopener noreferrer"><i class="ti ti-download"></i> Download PDF<span class="lp-guide-dl" data-guide-count="apple-unified-logs-ileapp-field-guide.pdf"></span></a>
+            <a class="lp-guide-btn" href="https://leapps.org/blog-post?post=2026-07-29-apple-unified-logs"><i class="ti ti-article"></i> Read the post</a>
+          </div>
+        </div>
+
+        <div class="lp-guide-card">
+          <div class="lp-guide-icon"><i class="ti ti-puzzle"></i></div>
+          <div class="lp-guide-kicker">Contributor Guide · All tools</div>
+          <div class="lp-guide-title">iLEAPP Module Contributor Guide</div>
+          <div class="lp-guide-desc">Write your own artifact module: module structure and the v2 header, SQLite and plist parsing, timestamp handling, LAVA output including conversation view, and submitting the pull request. Applies to iLEAPP, ALEAPP, RLEAPP, VLEAPP, and DLEAPP.</div>
+          <div class="lp-guide-meta"><span><i class="ti ti-file-text"></i> PDF · 9 pages</span><span data-guide-size="ileapp-module-contributor-guide.pdf"></span><span><i class="ti ti-calendar"></i> June 2026</span></div>
+          <div class="lp-guide-actions">
+            <a class="lp-guide-btn primary" href="https://leapps-api.4n6-198.workers.dev/downloads/ileapp-module-contributor-guide.pdf" target="_blank" rel="noopener noreferrer"><i class="ti ti-download"></i> Download PDF<span class="lp-guide-dl" data-guide-count="ileapp-module-contributor-guide.pdf"></span></a>
+            <a class="lp-guide-btn" href="https://leapps.org/blog-post?post=2026-06-14-how-to-write-an-ileapp-module"><i class="ti ti-article"></i> Read the post</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMMUNITY GUIDES -->
+    <section class="lp-gsection">
+      <div class="lp-gsection-label"><i class="ti ti-users"></i> Community Guides</div>
+      <p class="lp-gsection-desc">Written by others in the DFIR community and hosted on their own sites. Thank you to everyone who documents these tools.</p>
+      <div class="lp-guide-grid">
+
+        <div class="lp-guide-card community">
+          <div class="lp-guide-icon"><i class="ti ti-brand-apple"></i></div>
+          <div class="lp-guide-kicker">Walkthrough · Hexordia</div>
+          <div class="lp-guide-title">iLEAPP Walkthrough</div>
+          <div class="lp-guide-desc">Step-by-step written guide to iLEAPP — installation, running an iOS extraction, and interpreting the parsed artifact reports.</div>
+          <div class="lp-guide-actions">
+            <a class="lp-guide-btn" href="https://www.hexordia.com/s/ILEAPP-Walkthrough.pdf" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Download PDF</a>
+          </div>
+        </div>
+
+        <div class="lp-guide-card community">
+          <div class="lp-guide-icon"><i class="ti ti-brand-android"></i></div>
+          <div class="lp-guide-kicker">Walkthrough · Hexordia</div>
+          <div class="lp-guide-title">ALEAPP Walkthrough</div>
+          <div class="lp-guide-desc">Step-by-step written guide to ALEAPP — installation, running an Android extraction, and interpreting the parsed artifact reports.</div>
+          <div class="lp-guide-actions">
+            <a class="lp-guide-btn" href="https://www.hexordia.com/s/ALEAPP_Walkthrough_Final.pdf" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Download PDF</a>
+          </div>
+        </div>
+
+        <div class="lp-guide-card community">
+          <div class="lp-guide-icon"><i class="ti ti-file-import"></i></div>
+          <div class="lp-guide-kicker">Walkthrough · Hexordia</div>
+          <div class="lp-guide-title">RLEAPP Walkthrough</div>
+          <div class="lp-guide-desc">Step-by-step written guide to RLEAPP — processing ISP and provider warrant returns and reviewing the parsed output.</div>
+          <div class="lp-guide-actions">
+            <a class="lp-guide-btn" href="https://www.hexordia.com/s/RLEAPP_Walkthrough.pdf" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i> Download PDF</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MORE -->
+    <section class="lp-gsection">
+      <div class="lp-gsection-label"><i class="ti ti-compass"></i> More learning</div>
+      <p class="lp-gsection-desc">Video walkthroughs, community links, and further reading live on the <a href="https://leapps.org/resources" style="color:var(--gold);text-decoration:none;">resources page</a>. New to the tools? Start with the <a href="https://leapps.org/docs" style="color:var(--gold);text-decoration:none;">quick start</a>.</p>
+    </section>
+
+  </div>
 
   <!-- FOOTER -->
     <footer class="lp-footer">
@@ -206,11 +287,162 @@
       <span>Built by the community</span>
     </div>
   </footer>
+  <script>
+    // Live download counts + file sizes for the first-party guides. Counts come
+    // from the same tracked-download route the buttons use, so the number next
+    // to a button is exactly what that button increments. Fails quiet: if the
+    // endpoint is unavailable the cards simply show no count.
+    (async function () {
+      try {
+        const res = await fetch('https://leapps-api.4n6-198.workers.dev/downloads/counts');
+        if (!res.ok) return;
+        const counts = await res.json();
+        document.querySelectorAll('[data-guide-count]').forEach(el => {
+          const n = counts[el.getAttribute('data-guide-count')];
+          if (typeof n === 'number' && n > 0) el.textContent = ` · ${n.toLocaleString()}`;
+        });
+      } catch (_) { /* no counts shown */ }
+    })();
+
+    (async function () {
+      const fmt = b => b > 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.round(b / 1024) + ' KB';
+      document.querySelectorAll('[data-guide-size]').forEach(async el => {
+        try {
+          const r = await fetch(`/downloads/${el.getAttribute('data-guide-size')}`, { method: 'HEAD' });
+          const len = r.ok && r.headers.get('content-length');
+          if (len) el.innerHTML = `<i class="ti ti-database"></i> ${fmt(+len)}`;
+        } catch (_) { /* size omitted */ }
+      });
+    })();
+  </script>
+
 
 </div>
 
-<script src="https://app.mailjet.com/pas-nc-embedded-v2.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+  <script>
+    function formatDesignDate(iso) {
+      if (!iso) return '';
+      const d = new Date(iso + 'T00:00:00');
+      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
 
+    function designUrl(slug) {
+      return `/designs?design=${encodeURIComponent(slug)}`;
+    }
+
+    function stripFrontmatter(md) {
+      return md.replace(/^---[\s\S]*?---\n?/, '');
+    }
+
+    function parseFrontmatter(md) {
+      const match = md.match(/^---\n([\s\S]*?)\n---/);
+      if (!match) return {};
+      const meta = {};
+      match[1].split('\n').forEach(line => {
+        const idx = line.indexOf(':');
+        if (idx === -1) return;
+        const key = line.slice(0, idx).trim();
+        let val = line.slice(idx + 1).trim();
+        if (val.length >= 2 && ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'")))) {
+          val = val.slice(1, -1);
+        }
+        if (val.startsWith('[') && val.endsWith(']')) {
+          val = val.slice(1, -1).split(',').map(s => s.trim().replace(/^["']|["']$/g, '')).filter(Boolean);
+        }
+        meta[key] = val;
+      });
+      return meta;
+    }
+
+    async function loadDesignIndex() {
+      const root = document.getElementById('design-root');
+      const res = await fetch('/designs/posts/index.json');
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const designs = await res.json();
+      root.innerHTML = `
+        <div class="lp-design-list">
+          ${designs.map(item => `
+            <a class="lp-design-card" href="${designUrl(item.slug)}">
+              <div class="lp-design-card-meta">
+                <span>${item.status || 'Draft'}</span>
+                ${item.author ? `<span>By ${item.author}</span>` : ''}
+                ${item.updated ? `<span>Updated ${formatDesignDate(item.updated)}</span>` : ''}
+                ${item.scope && item.scope.length ? `<span>${item.scope.join(' · ')}</span>` : ''}
+              </div>
+              <h2>${item.title}</h2>
+              <p>${item.excerpt || ''}</p>
+            </a>
+          `).join('')}
+        </div>`;
+    }
+
+    async function loadDesign(slug) {
+      const root = document.getElementById('design-root');
+      const res = await fetch(`/designs/posts/${encodeURIComponent(slug)}.md`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const raw = await res.text();
+      const meta = parseFrontmatter(raw);
+      const html = marked.parse(stripFrontmatter(raw));
+      const title = meta.title || slug;
+      const excerpt = meta.excerpt || '';
+      const canonical = designUrl(slug);
+
+      document.title = `${title} — LEAPPs Design Reviews`;
+      document.querySelector('meta[name="description"]').setAttribute('content', excerpt);
+      document.querySelector('meta[property="og:title"]').setAttribute('content', `${title} — LEAPPs Design Reviews`);
+      document.querySelector('meta[property="og:description"]').setAttribute('content', excerpt);
+      document.querySelector('meta[property="og:url"]').setAttribute('content', canonical);
+      document.querySelector('meta[name="twitter:title"]').setAttribute('content', `${title} — LEAPPs Design Reviews`);
+      document.querySelector('meta[name="twitter:description"]').setAttribute('content', excerpt);
+      document.querySelector('link[rel="canonical"]').setAttribute('href', canonical);
+
+      root.innerHTML = `
+        <div class="lp-review-meta">
+          <div class="lp-review-meta-item">
+            <div class="lp-review-meta-label">Review</div>
+            <div class="lp-review-meta-value">${title}</div>
+          </div>
+          <div class="lp-review-meta-item">
+            <div class="lp-review-meta-label">Status</div>
+            <div class="lp-review-meta-value"><span class="lp-review-status"><i class="ti ti-message-circle"></i> ${meta.status || 'Draft'}</span></div>
+          </div>
+          ${meta.author ? `<div class="lp-review-meta-item">
+            <div class="lp-review-meta-label">Author</div>
+            <div class="lp-review-meta-value">${meta.author}</div>
+          </div>` : ''}
+          <div class="lp-review-meta-item">
+            <div class="lp-review-meta-label">Scope</div>
+            <div class="lp-review-meta-value">${Array.isArray(meta.scope) ? meta.scope.join(', ') : (meta.scope || 'LEAPPs')}</div>
+          </div>
+          <div class="lp-review-meta-item">
+            <div class="lp-review-meta-label">Updated</div>
+            <div class="lp-review-meta-value">${formatDesignDate(meta.updated || meta.date)}</div>
+          </div>
+        </div>
+        <div class="lp-design-actions">
+          <a href="/designs" class="lp-btn-outline"><i class="ti ti-arrow-left"></i> All Designs</a>
+          ${meta.discussion && meta.discussion !== 'pending' ? `<a href="${meta.discussion}" class="lp-btn-primary" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i> Discussion</a>` : `<a href="https://github.com/abrignoni/iLEAPP/issues" class="lp-btn-outline" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i> Discussion Pending</a>`}
+        </div>
+        <article class="lp-design-body">${html}</article>`;
+    }
+
+    (async function initDesigns() {
+      const root = document.getElementById('design-root');
+      const params = new URLSearchParams(window.location.search);
+      const slug = (params.get('design') || '').replace(/\/+$/, '');
+      try {
+        if (slug) {
+          if (!slug.match(/^[\w-]+$/)) throw new Error('Invalid design slug');
+          await loadDesign(slug);
+        } else {
+          await loadDesignIndex();
+        }
+      } catch (error) {
+        root.innerHTML = `<div class="lp-review-card"><h3>Design Review Not Found</h3><p>The requested design review could not be loaded. <a href="/designs" style="color:var(--gold);text-decoration:none;">Back to all design reviews</a>.</p></div>`;
+      }
+    })();
+  </script>
 <script>
   // Mobile menu
   const hamburger = document.getElementById('lp-hamburger');
