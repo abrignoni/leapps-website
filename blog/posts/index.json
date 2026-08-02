@@ -1,5 +1,20 @@
 [
   {
+    "slug": "2026-08-01-unified-log-predicate-reference",
+    "title": "Apple Unified Log Predicates in iLEAPP: The Reference",
+    "date": "2026-08-01",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "iLEAPP",
+      "iOS",
+      "Unified Logs",
+      "LAVA",
+      "DFIR",
+      "Reference"
+    ],
+    "excerpt": "Every Unified Log message predicate iLEAPP searches for, artifact by artifact, with the processes involved, the iOS versions each pattern was observed on, the sources that documented them, and the caveats that keep you honest."
+  },
+  {
     "slug": "2026-07-29-apple-unified-logs",
     "title": "Extracting, Processing, and Querying Apple Unified Logs from an iOS Device",
     "date": "2026-07-29",
