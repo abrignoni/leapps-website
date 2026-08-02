@@ -10,6 +10,8 @@ excerpt: Every Unified Log message predicate iLEAPP searches for, artifact by ar
 
 This is the companion to the [Unified Logs workflow guide](https://www.leapps.org/blog-post?post=2026-07-29-apple-unified-logs). That article covers how to acquire, preserve, and process the logs. This one answers the question that comes right after processing: what exactly is iLEAPP looking for, and why should you trust any of it?
 
+[Download the printable PDF edition](https://leapps-api.4n6-198.workers.dev/downloads/apple-unified-logs-predicate-reference.pdf).
+
 As of iLEAPP's main branch on August 1, 2026, the Unified Logs module registers **34 artifacts** driven by **230 unique message predicates**. Every single one of them meets a standard I want to be transparent about, because nobody should take "the tool found it" as an answer:
 
 1. **Documented**: the pattern comes from published research that was fetched and verified, not from memory or folklore. The source is cited on the artifact, in the code, and here.
