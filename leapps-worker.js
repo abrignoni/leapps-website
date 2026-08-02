@@ -320,6 +320,7 @@ async function handleChangelogFeed(env) {
 const ALLOWED_DOWNLOADS = {
   'ileapp-module-contributor-guide.pdf': `https://raw.githubusercontent.com/${BLOG_REPO}/main/downloads/ileapp-module-contributor-guide.pdf`,
   'apple-unified-logs-ileapp-field-guide.pdf': `https://raw.githubusercontent.com/${BLOG_REPO}/main/downloads/apple-unified-logs-ileapp-field-guide.pdf`,
+  'apple-unified-logs-predicate-reference.pdf': `https://raw.githubusercontent.com/${BLOG_REPO}/main/downloads/apple-unified-logs-predicate-reference.pdf`,
 };
 
 async function handleTrackedDownload(url, env, ctx) {
