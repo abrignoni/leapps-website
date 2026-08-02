@@ -1,14 +1,18 @@
 // LEAPPs GitHub API Cache Worker  (Cloudflare Worker: leapps-api)
 // Caches GitHub API responses at the edge for 5 minutes
 //
-// DEPLOYMENT: this file is NOT auto-deployed. Merging it to main publishes
-// nothing; the live API keeps serving the previous version until someone
-// deploys it by hand. The root wrangler.jsonc describes the *other* Worker
-// (leapps-website / worker.js), so a bare `wrangler deploy` from the repo root
-// will not ship changes to this file. Deploy via the Cloudflare dashboard, or
-// with wrangler pointed explicitly at this entry point and Worker name, and
-// keep the CACHE (KV) and GITHUB_TOKEN bindings attached. See "leapps-api —
-// deployed manually" in README.md for the steps and the curl checks.
+// DEPLOYMENT: connected to Workers Builds. Merging a change to this file (or to
+// wrangler.leapps-api.jsonc) on main triggers a build that runs
+// `npx wrangler deploy -c wrangler.leapps-api.jsonc`. Those two paths are the
+// Worker's build watch paths, so ordinary site pushes do not redeploy the API.
+//
+// Deploy with that config, never a bare `wrangler deploy`: the root
+// wrangler.jsonc describes the *other* Worker (leapps-website / worker.js) and
+// would be picked up instead. The config declares the CACHE (KV) binding
+// because a KV binding exists only if the deploying config declares it;
+// GITHUB_TOKEN is a secret and survives redeploys. See "leapps-api" under
+// Hosting & deployment in README.md for the dashboard fallback and the curl
+// checks that confirm a deploy landed.
 
 const CACHE_TTL = 300; // seconds (5 minutes)
 const BLOG_CACHE_TTL = 600; // seconds (10 minutes) for blog content
