@@ -253,9 +253,9 @@ When I published the original article, dedicated Unified Log artifacts were some
 
 The future arrived, and then it kept arriving.
 
-> **Updated 2026-08-01.** This section originally counted 133 predicates across 13 artifacts. Three merged pull requests later, the module registers **34 artifacts driven by 230 unique message predicates**, every one of them documented in published research, validated against real extractions on iOS 16.5, 17.1, and 18.7, or both. The full catalog outgrew this article, so it now lives in its own companion piece: [Apple Unified Log Predicates in iLEAPP: The Reference](https://www.leapps.org/blog-post?post=2026-08-01-unified-log-predicate-reference). That is where every pattern, process, source citation, and validation status lives, artifact by artifact.
+> **Updated 2026-08-02.** This section originally counted 133 predicates across 13 artifacts. Four merged pull requests later, the module registers **35 artifacts driven by 235 unique message predicates**, every one of them documented in published research, validated against real extractions on iOS 16.5, 17.1, and 18.7, or both. Where a pattern is documented but has not been seen in our own images, the artifact says so in its notes. The full catalog outgrew this article, so it now lives in its own companion piece: [Apple Unified Log Predicates in iLEAPP: The Reference](https://www.leapps.org/blog-post?post=2026-08-01-unified-log-predicate-reference). That is where every pattern, process, source citation, and validation status lives, artifact by artifact.
 
-The short tour of what the 34 artifacts cover:
+The short tour of what the 35 artifacts cover:
 
 | Evidence area | Artifacts |
 |---|---|
@@ -265,7 +265,7 @@ The short tour of what the 34 artifacts cover:
 | **Connectivity** | Wi-Fi status, Bluetooth status, Bluetooth pairing, personal hotspot, SIM and cellular state, Airplane Mode, AirDrop |
 | **Device state and power** | power events (boot and shutdown markers), time change (including manual clock setting), battery state, USB and power connections |
 | **Media, audio, and camera** | media playback, audio status, audio routes, camera capture, flashlight |
-| **Motion and vehicle** | motion state transitions, driving state, navigation |
+| **Motion and vehicle** | motion state transitions, driving state, navigation, CarPlay session |
 | **Emergency** | Emergency SOS engine |
 | **The wide net** | the raw import plus the broad **logarchive artifacts** collection, which also carries screenshots, charging, CarPlay connections, orientation, Siri requests, and more without dedicated reports yet |
 
@@ -352,7 +352,7 @@ No one person owns this research, and the target keeps moving. These are the res
 - Use iLEAPP's dedicated artifacts for fast triage and the full table for context and novel research.
 - Validate important patterns; do not interpret an empty parser result as proof of absence.
 
-Apple Unified Logs are not an edge-case data source anymore. Acquire them. Preserve them. Query them. **Interpret them—as [Tim Korver](https://thesisfriday.com/) rightly suggested.**
+Apple Unified Logs are not an edge-case data source anymore. Acquire them. Preserve them. Query them. **Interpret them, as [Tim Korver](https://thesisfriday.com/) rightly suggested.**
 
 And when you find a pattern nobody has documented yet, write it down and send it back to the community. That is how this list grows.
 

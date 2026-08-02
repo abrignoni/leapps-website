@@ -12,14 +12,14 @@ This is the companion to the [Unified Logs workflow guide](https://www.leapps.or
 
 [Download the printable PDF edition](https://leapps-api.4n6-198.workers.dev/downloads/apple-unified-logs-predicate-reference.pdf).
 
-As of iLEAPP's main branch on August 1, 2026, the Unified Logs module registers **34 artifacts** driven by **230 unique message predicates**. Every single one of them meets a standard I want to be transparent about, because nobody should take "the tool found it" as an answer:
+As of iLEAPP's main branch on August 2, 2026, the Unified Logs module registers **35 artifacts** driven by **235 unique message predicates**. Every single one of them meets a standard I want to be transparent about, because nobody should take "the tool found it" as an answer:
 
 1. **Documented**: the pattern comes from published research that was fetched and verified, not from memory or folklore. The source is cited on the artifact, in the code, and here.
 2. **Observed**: the pattern was matched against real full file system extractions. Three images did the heavy lifting: an iPhone 8 Plus on iOS 16.5 (19.4 million log records), an iPhone 11 Pro on iOS 17.1 (30.4 million records), and an iPhone 12 on iOS 18.7 (20.5 million records).
 
 Most patterns meet both bars. Where a pattern is documented but the event never occurred in our images, the artifact notes say **documented-only**, and so does this guide. An empty artifact is not evidence of absence, and a populated one still deserves validation on your device and iOS version before it goes in a report.
 
-Three caveats apply to everything below, so I will say them once instead of two hundred and thirty times:
+Three caveats apply to everything below, so I will say them once instead of two hundred and thirty five times:
 
 - **Payloads redact.** On production devices the dynamic values in many messages render as `<private>`. The predicates anchor on the static message text on purpose. When a value does survive in the clear, treasure it.
 - **Strings drift.** Apple changes log messages between iOS versions. We already carry version-specific variants for several patterns, and iOS 26 changed others. A miss on your image may just mean a new spelling nobody has documented yet.
@@ -377,7 +377,9 @@ Source: [Notari's SQL queries post](https://www.ios-unifiedlogs.com/post/ios-uni
 - `%battery info changed to%`
 
 ### logarchive USB and power connections
-Cable attach and detach at two layers: powerexperienced plugin state changes and the kernel cable-detect shim. Fair warning from someone who processes his own evidence: your acquisition produces these too. The observed iOS 18.7 shim message is `AppleUSBCableDetect 1`, not the documented VBUS/CON_DET form, which is why the predicate matches on the shim name.
+Cable attach and detach at two layers: powerexperienced plugin state changes and the kernel cable-detect shim, including the VBUS power and CON_DET physical-connection states. `Present: 0` is the detach signal. Fair warning from someone who processes his own evidence: your acquisition produces these too.
+
+A note on why the VBUS pattern is here, since I got this one wrong first. The CarPlay research quotes that line without the shim prefix, so I expected we were missing it. We were not: on our images every VBUS line carried the `IOAccessoryUSBConnectShim` prefix the artifact already matched, 30 records on iOS 18.7 and 40 on iOS 17.1, none without it. The pattern is version insurance for a release that drops the prefix, not a gap that was closed. The artifact notes say the same thing.
 Observed: iOS 16.5, 17.1, 18.7.
 Sources: Thesis Friday [#9](https://thesisfriday.com/thesis-friday-9-aul-connecting-a-usb-cable/) and [#20](https://thesisfriday.com/thesis-friday-20-project-stark-forensic-reconstruction-of-the-carplay-handshake/).
 
@@ -385,6 +387,7 @@ Sources: Thesis Friday [#9](https://thesisfriday.com/thesis-friday-9-aul-connect
 
 - `%plugin state changed to%`
 - `%IOAccessoryUSBConnectShim%`
+- `%USB Power (VBUS) Present%`
 
 ## Media, audio, and camera
 
@@ -490,6 +493,24 @@ Apple Maps guidance prompts: route start, maneuvers, distance callouts, arrival.
 - `%At the light%`
 - `%Arrived\%`
 
+### logarchive CarPlay session
+The connection handshake: the airplayd DirectLink notice that marks a wired session rather than a wireless one, CarKit session authentication and activation state, CarPlayApp vehicle identifier entries, and the wifid record that carries the vehicle's reported model and manufacturer in the clear.
+
+**This one is documented-only, and I want to be blunt about it.** Every pattern comes from Tim Korver's handshake research, revised for iOS 26.6 on an iPhone 14. None of it has been seen in our images, because none of them contain a CarPlay session. I swept the full marker set across complete iOS 17.1 and 18.7 extractions and got zero for every pattern, and an earlier sweep of an iOS 16.5 extraction found nothing either. The `com.apple.carkit` and `CarPlayApp` matches that do appear are subsystem and process mentions in unrelated entries, the same trap as the thousands of `CARSession` hits that turned out to be thermalmonitord's `carSessionActive` flag. So treat anything this artifact returns as unconfirmed until you have seen it on a device you know used CarPlay, and if you do, please tell me.
+
+The source's caveats are worth repeating: the vehicle identifier is assigned by the device rather than read from the car, so it needs the surrounding session to attribute it to a vehicle; the CarKit line carries its meaning in the `isAuthenticated` and `isActivated` values rather than the message name, and fires around a thousand times per session; the FrontBoard bootstrap marker appeared in only one run of three, so its absence shows nothing; and the research covered one vehicle over wired USB, with first-time pairing and wireless sessions untested. The `Stark` subsystem the whole feature was built on no longer exists as of iOS 26.6.
+Source: [Thesis Friday #20](https://thesisfriday.com/thesis-friday-20-project-stark-forensic-reconstruction-of-the-carplay-handshake/).
+
+**Predicates:**
+
+- `%Found USB DirectLink%`
+- `%session isAuthenticated%`
+- `%vehicle ID%`
+- `%Persisting widget state%`
+- `%WiFiDeviceManagerSetCarPlaySessionState%`
+- `%CarPlay session vehicle inform%`
+- `%CarPlay Connection Event%`
+
 ## Emergency
 
 ### logarchive emergency SOS engine
@@ -511,7 +532,7 @@ Source: [Thesis Friday #19](https://thesisfriday.com/thesis-friday-19-emergency-
 
 Transparency section, because nobody tells you what their tool is missing:
 
-- **CarPlay session detail.** Thousands of promising "CARSession" matches turned out to be thermalmonitord's `carSessionActive` flag. The vehicle-UUID entries Thesis Friday documented did not appear in any of our images. CarPlay connection events remain covered; per-vehicle attribution waits for validation data.
+- **CarPlay per-vehicle attribution is in, but unproven.** The artifact above now collects the handshake, including the vehicle identifier and the model and manufacturer record, straight from the published research. Nothing in our corpus exercises it. Thousands of promising "CARSession" matches turned out to be thermalmonitord's `carSessionActive` flag.
 - **TCC permission changes.** On iOS those entries are volatile and never reach the logarchive. TCC.db is the durable source. This one is macOS-only evidence.
 - **evaluatePowerMode and the CoreTelephony airplane reads.** Present by the tens of thousands, but they are state polls, not events. Collecting them would bury signal in noise.
 - **Still hunting validation data for:** AirDrop transfer accept and decline, the Bluetooth pairing dialog sequence, watch-relayed call invites, manual clock setting, and Back Tap gestures. All documented, all in the module as documented-only patterns or noted in the research, all waiting for an image where the event actually happened.
