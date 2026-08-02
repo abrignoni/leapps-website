@@ -1,24 +1,28 @@
 #!/usr/bin/env python3
-"""Render the Apple Unified Logs field guide PDF from the blog post markdown.
+"""Render a printable guide PDF from a blog post's markdown.
 
-The first edition of the PDF was generated ad hoc, with no source in the repo, so the
-moment the post gained the native iLEAPP workflow the PDF silently went stale. This
-script makes the post the single source of truth: edit the markdown, run this, commit
-both.
+The first edition of the field guide PDF was generated ad hoc, with no source in the
+repo, so the moment the post gained the native iLEAPP workflow the PDF silently went
+stale. This script makes the post the single source of truth: edit the markdown, run
+this, commit both.
 
 Usage:
-    python3 scripts/generate_field_guide_pdf.py
+    python3 scripts/generate_field_guide_pdf.py            # the Unified Logs field guide
+    python3 scripts/generate_field_guide_pdf.py --post blog/posts/<slug>.md \
+        --output downloads/<name>.pdf --updated "Month D, YYYY" \
+        --footer-label "LEAPPs Reference - ..." --subject "..."
 
-Reads  blog/posts/2026-07-29-apple-unified-logs.md
-Writes downloads/apple-unified-logs-ileapp-field-guide.pdf
+With no arguments it builds the original field guide, so existing automation keeps
+working. The cover's live-version link is derived from the post filename.
 
-Handles the markdown subset the post actually uses: #/##/### headings, paragraphs,
+Handles the markdown subset the posts actually use: #/##/### headings, paragraphs,
 bulleted and numbered lists, fenced code blocks, pipe tables, blockquotes, and inline
-bold / italic / code / links. Anything fancier should stay out of the post anyway.
+bold / italic / code / links. Anything fancier should stay out of the posts anyway.
 """
 
 from __future__ import annotations
 
+import argparse
 import html
 import re
 import sys
@@ -38,9 +42,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from generate_blog_index import parse_frontmatter  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
-POST = ROOT / 'blog' / 'posts' / '2026-07-29-apple-unified-logs.md'
-OUTPUT = ROOT / 'downloads' / 'apple-unified-logs-ileapp-field-guide.pdf'
-UPDATED = 'July 30, 2026'
+DEFAULT_POST = ROOT / 'blog' / 'posts' / '2026-07-29-apple-unified-logs.md'
+DEFAULT_OUTPUT = ROOT / 'downloads' / 'apple-unified-logs-ileapp-field-guide.pdf'
+DEFAULT_UPDATED = 'August 1, 2026'
+DEFAULT_FOOTER = 'LEAPPs Field Guide - Apple Unified Logs'
+DEFAULT_SUBJECT = 'Apple Unified Logs acquisition and iLEAPP analysis workflow'
+DEFAULT_KICKER = 'LEAPPs FIELD GUIDE'
 
 ACCENT = colors.HexColor('#B8860B')   # readable on white, kin to the site's yellow
 INK = colors.HexColor('#1A1A1A')
@@ -143,7 +150,7 @@ def body_flowables(markdown: str) -> list:
     return story
 
 
-def cover(meta: dict) -> list:
+def cover(meta: dict, updated: str, slug: str, kicker: str) -> list:
     cover_title = ParagraphStyle('CoverTitle', fontName='Helvetica-Bold', fontSize=22,
                                  leading=27, textColor=INK, spaceAfter=10)
     cover_kicker = ParagraphStyle('CoverKicker', fontName='Helvetica-Bold', fontSize=11,
@@ -151,23 +158,36 @@ def cover(meta: dict) -> list:
     cover_sub = ParagraphStyle('CoverSub', parent=BODY, fontSize=11, leading=16,
                                textColor=MUTED, spaceAfter=22)
     cover_meta = ParagraphStyle('CoverMeta', parent=BODY, fontSize=10, textColor=MUTED)
+    live = f'leapps.org/blog-post?post={slug}'
     return [
         Spacer(1, 1.6 * inch),
-        Paragraph('LEAPPs FIELD GUIDE', cover_kicker),
+        Paragraph(html.escape(kicker), cover_kicker),
         Paragraph(html.escape(meta['title']), cover_title),
         HRFlowable(width='100%', thickness=1, color=ACCENT, spaceAfter=16),
         Paragraph(html.escape(meta['excerpt']), cover_sub),
-        Paragraph(f"{html.escape(meta['author'])}<br/>Updated {UPDATED}", cover_meta),
+        Paragraph(f"{html.escape(meta['author'])}<br/>Updated {updated}", cover_meta),
         Spacer(1, 0.5 * inch),
-        Paragraph('Live version: <a href="https://leapps.org/blog-post?post=2026-07-29-apple-unified-logs" '
-                  f'color="{ACCENT.hexval().replace("0x", "#")}">leapps.org/blog-post?post=2026-07-29-apple-unified-logs</a>',
+        Paragraph(f'Live version: <a href="https://{live}" '
+                  f'color="{ACCENT.hexval().replace("0x", "#")}">{live}</a>',
                   cover_meta),
         PageBreak(),
     ]
 
 
 def main() -> int:
-    raw = POST.read_text(encoding='utf-8-sig')
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument('--post', type=Path, default=DEFAULT_POST)
+    parser.add_argument('--output', type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument('--updated', default=DEFAULT_UPDATED)
+    parser.add_argument('--footer-label', default=DEFAULT_FOOTER)
+    parser.add_argument('--subject', default=DEFAULT_SUBJECT)
+    parser.add_argument('--kicker', default=DEFAULT_KICKER)
+    args = parser.parse_args()
+
+    post = args.post if args.post.is_absolute() else ROOT / args.post
+    output = args.output if args.output.is_absolute() else ROOT / args.output
+
+    raw = post.read_text(encoding='utf-8-sig')
     meta = parse_frontmatter(raw)
     if meta is None:
         print('Post frontmatter missing; refusing to build a guide with no title.', file=sys.stderr)
@@ -178,21 +198,21 @@ def main() -> int:
         canvas.saveState()
         canvas.setFont('Helvetica', 7.5)
         canvas.setFillColor(MUTED)
-        canvas.drawString(0.75 * inch, 0.5 * inch, 'LEAPPs Field Guide - Apple Unified Logs')
+        canvas.drawString(0.75 * inch, 0.5 * inch, args.footer_label)
         canvas.drawRightString(letter[0] - 0.75 * inch, 0.5 * inch, f'Page {doc.page}')
         canvas.restoreState()
 
     doc = BaseDocTemplate(
-        str(OUTPUT), pagesize=letter,
+        str(output), pagesize=letter,
         leftMargin=0.75 * inch, rightMargin=0.75 * inch,
         topMargin=0.7 * inch, bottomMargin=0.75 * inch,
         title=meta['title'], author=meta['author'],
-        subject='Apple Unified Logs acquisition and iLEAPP analysis workflow')
+        subject=args.subject)
     frame = Frame(doc.leftMargin, doc.bottomMargin, doc.width, doc.height, id='main')
     doc.addPageTemplates([PageTemplate(id='page', frames=[frame], onPage=footer)])
 
-    doc.build(cover(meta) + body_flowables(body))
-    print(f'Wrote {OUTPUT.relative_to(ROOT)}')
+    doc.build(cover(meta, args.updated, post.stem, args.kicker) + body_flowables(body))
+    print(f'Wrote {output.relative_to(ROOT)}')
     return 0
 
 
