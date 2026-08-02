@@ -251,63 +251,29 @@ The full table is a LAVA-only artifact. Open the completed project in [LAVA](htt
 
 When I published the original article, dedicated Unified Log artifacts were something we planned to build.
 
-The future arrived.
+The future arrived, and then it kept arriving.
 
-I went back to the query itself, because counting only the report names badly understates what is supported.
+> **Updated 2026-08-01.** This section originally counted 133 predicates across 13 artifacts. Three merged pull requests later, the module registers **34 artifacts driven by 230 unique message predicates**, every one of them documented in published research, validated against real extractions on iOS 16.5, 17.1, and 18.7, or both. The full catalog outgrew this article, so it now lives in its own companion piece: [Apple Unified Log Predicates in iLEAPP: The Reference](https://www.leapps.org/blog-post?post=2026-08-01-unified-log-predicate-reference). That is where every pattern, process, source citation, and validation status lives, artifact by artifact.
 
-As of July 30, 2026, the `logarchive.py` query contains **135 `LIKE` clauses representing 133 unique message predicates**. Those predicates cover 23 evidentiary themes:
+The short tour of what the 34 artifacts cover:
 
-| Evidentiary theme | What the query looks for | Unique predicates |
-|---|---|---:|
-| **Screenshots** | Screenshot capture messages | 1 |
-| **System time changes** | Clock-shift messages | 1 |
-| **Walking activity** | Potential walking bouts identified by BoutDetector | 1 |
-| **Contact details** | Messages indicating the presence of a contact name and phone number | 1 |
-| **Charging** | Charger connection-state changes | 1 |
-| **Motion state** | Motion-state transitions | 1 |
-| **CarPlay** | CarPlay connection events | 1 |
-| **Accessories** | Accessory connection and accessory-information changes | 2 |
-| **Siri speech requests** | The start of speech-request sessions | 1 |
-| **Device orientation** | Received and effective orientation messages | 2 |
-| **Authentication** | Match start, face, authentication, Apple Account authentication, and related state transitions | 5 |
-| **Screen, lock, and biometric state** | Screen state, lock/unlock, device lock status, and biometric match messages | 9 |
-| **Touch and process visibility** | SpringBoard icon touches and process-visibility changes | 2 |
-| **Wi-Fi** | Power state, association, reachability, SSIDs, forgotten or removed networks, scans, joins, and known-network activity | 24 |
-| **Driving mode** | Vehicular state, Driving Focus/Do Not Disturb While Driving, and related mode events | 7 |
-| **Airplane Mode** | Enabled, disabled, active, inactive, and state-change variants | 11 |
-| **Bluetooth, calls, and wireless audio links** | Bluetooth power and state, device connections, hands-free activity, call state, voice audio, A2DP streaming, and link quality | 28 |
-| **Audio playback and volume** | Playback state, volume-button presses, volume changes, and playback queue invalidation | 7 |
-| **Physical controls, brightness, and ringer** | Volume control, Emergency SOS button gestures, brightness changes, and ringer/silent state | 6 |
-| **Executed applications** | Icon taps, application launches, and transitions | 3 |
-| **Flashlight** | Flashlight controller and AVFlashlight activity | 3 |
-| **Personal Hotspot** | Tethering and wireless-modem state changes | 3 |
-| **Navigation** | Route start, maneuver guidance, distance prompts, arrival, and destination messages | 13 |
-
-That is the real supported-artifact surface of the broad **logarchive artifacts** query. It is a LAVA-only collection, so those themes do not all appear as separate HTML report names.
-
-The same script currently registers 13 iLEAPP outputs: the raw import, the broad artifact query, and 11 dedicated standard reports:
-
-| iLEAPP artifact | What it surfaces | Output |
-|---|---|---|
-| **logarchive** | The complete set of JSON records imported into SQLite | LAVA only |
-| **logarchive artifacts** | All 23 themes and 132 unique message predicates summarized above | LAVA only |
-| **logarchive time change** | Messages indicating that the system clock shifted | Standard |
-| **logarchive flashlight** | Flashlight on/off and controller activity | Standard |
-| **logarchive executed apps** | Application launch, icon-tap, and transition activity | Standard |
-| **logarchive personal hotspot** | Personal Hotspot and tethering state changes | Standard |
-| **logarchive airplane mode** | Airplane Mode state changes | Standard |
-| **logarchive lock status** | Screen lock/unlock and biometric match activity | Standard |
-| **logarchive WiFi status** | Wi-Fi state, association, scans, joins, known networks, and removal activity | Standard |
-| **logarchive Bluetooth status** | Bluetooth power, connection, disconnection, hands-free, A2DP, and related state activity | Standard |
-| **logarchive audio status** | Audio playback, volume-button, and volume-change activity | Standard |
-| **logarchive motion state transitions** | Motion-state transition messages | Standard |
-| **logarchive navigation** | Route start, turn guidance, arrival, and destination-related prompts | Standard |
+| Evidence area | Artifacts |
+|---|---|
+| **Human presence and handling** | biometric sensor events (Face ID frames, Touch ID finger events), touchscreen events, pocket state, lock status, unlock sessions and method |
+| **Communication and input** | call events (including keypad tone digits), keyboard activity, dictation, notification interactions |
+| **Application activity** | executed apps, app focus and lifecycle (cold starts, force-kills), interface navigation |
+| **Connectivity** | Wi-Fi status, Bluetooth status, Bluetooth pairing, personal hotspot, SIM and cellular state, Airplane Mode, AirDrop |
+| **Device state and power** | power events (boot and shutdown markers), time change (including manual clock setting), battery state, USB and power connections |
+| **Media, audio, and camera** | media playback, audio status, audio routes, camera capture, flashlight |
+| **Motion and vehicle** | motion state transitions, driving state, navigation |
+| **Emergency** | Emergency SOS engine |
+| **The wide net** | the raw import plus the broad **logarchive artifacts** collection, which also carries screenshots, charging, CarPlay connections, orientation, Siri requests, and more without dedicated reports yet |
 
 Read this part carefully: “supported” means iLEAPP knows how to look for the message patterns we have researched. It does not mean every iOS version emits the same message, and an empty artifact does not prove an event never happened.
 
 If the dedicated artifact is empty, go wider. Check **logarchive artifacts**, then search the raw **logarchive** table. That is also where the next artifact is waiting to be found.
 
-The live list is always available in the [iLEAPP source module](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/logarchive.py) and the [LEAPPs artifact browser](https://www.leapps.org/artifacts).
+The live list is always available in the [iLEAPP source module](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/logarchive.py), the [LEAPPs artifact browser](https://www.leapps.org/artifacts), and the [predicate reference](https://www.leapps.org/blog-post?post=2026-08-01-unified-log-predicate-reference).
 
 ## Querying the database
 
