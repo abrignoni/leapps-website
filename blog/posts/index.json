@@ -1,5 +1,20 @@
 [
   {
+    "slug": "2026-08-03-android-usagestats-recent-tasks",
+    "title": "Every Step You Take, Eight Years Later: Android UsageStats and Recent Tasks",
+    "date": "2026-08-03",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "ALEAPP",
+      "Android",
+      "UsageStats",
+      "Recent Tasks",
+      "Pattern of Life",
+      "DFIR"
+    ],
+    "excerpt": "Android's pattern-of-life evidence grew from readable XML into tokenized protobufs carrying app lifecycle, lock state, notifications, services, task roots, and more. We went back to the source, updated ALEAPP, and came away with better data—and better warnings about what it actually proves."
+  },
+  {
     "slug": "2026-08-01-unified-log-predicate-reference",
     "title": "Apple Unified Log Predicates in iLEAPP: The Reference",
     "date": "2026-08-01",
