@@ -80,7 +80,13 @@ The 2019 UsageStats article worked with readable XML. You could open a file, see
 
 Modern Android uses protobuf.
 
-Android 10 introduced a protobuf form with a shared string pool. Android 11 moved to a second protobuf generation that uses tokenized package mappings. The interval record may say package token `12` and class token `4`; the separate `mappings` file is what turns those values back into a package and class name.
+The first protobuf generation stores a shared string pool: [`usagestatsservice.proto`](https://android.googlesource.com/platform/frameworks/base/+/refs/heads/main/core/proto/android/server/usagestatsservice.proto) defines a `StringPool` message whose own comment says it "contains all the package and class names used by UsageStats and Event."
+
+The second generation replaced that with tokens. [`usagestatsservice_v2.proto`](https://android.googlesource.com/platform/frameworks/base/+/refs/heads/main/core/proto/android/server/usagestatsservice_v2.proto) is described in AOSP as the "obfuscated version" of the first, and its `EventObfuscatedProto` carries `package_token`, `class_token`, `task_root_package_token`, `task_root_class_token`, and more. So an interval record may say package token `12` and class token `4`, and nothing else.
+
+What turns those numbers back into names is a separate file literally named `mappings`. That is not a guess about the layout: [`UsageStatsDatabase.java`](https://android.googlesource.com/platform/frameworks/base/+/refs/heads/main/services/usage/java/com/android/server/usage/UsageStatsDatabase.java) creates it as `new File(dir, "mappings")`, comments it as "the obfuscated packages to tokens mappings file," and reads and writes it alongside the interval directories.
+
+In our own test corpus the string-pool form shows up on Android 10 extractions and the tokenized form from Android 11 onward, which matches the 2018 and 2019 copyright dates on those two schema files. Treat that as what we have observed rather than a released-in-this-version guarantee, and check the files in front of you.
 
 This is a good example of why searching a modern extraction for a package name can miss relevant evidence. The event file may not contain that name at all. It contains a number that only becomes meaningful after another file is parsed.
 
@@ -139,7 +145,7 @@ As part of this revisit, ALEAPP now exposes:
 
 Why do the task-root fields matter? Because the package generating an event is not always the package that started the task. Android stores both relationships. That can help separate an activity launched directly from one reached through another application.
 
-The current schemas are documented in AOSP's [UsageStats protobuf](https://android.googlesource.com/platform/frameworks/base/+/refs/heads/main/core/proto/android/server/usagestatsservice.proto) and [tokenized UsageStats v2 protobuf](https://android.googlesource.com/platform/frameworks/base/+/refs/heads/main/core/proto/android/server/usagestatsservice_v2.proto). We refreshed ALEAPP's bundled definitions from those sources instead of guessing at the wire format.
+These are the same two AOSP schemas linked earlier, and we refreshed ALEAPP's bundled definitions from them instead of guessing at the wire format.
 
 ## Recent Tasks had another file waiting for us
 
