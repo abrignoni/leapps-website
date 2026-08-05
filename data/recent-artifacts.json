@@ -3,6 +3,12 @@
   "window_days": 45,
   "items": [
     {
+      "name": "fritzboxSupportLog",
+      "query": "fritzboxSupportLog",
+      "tool": "RLEAPP",
+      "date": "2026-08-05"
+    },
+    {
       "name": "telegramAndroid",
       "query": "telegramAndroid",
       "tool": "ALEAPP",
@@ -67,12 +73,6 @@
       "query": "telegramAccounts",
       "tool": "DLEAPP",
       "date": "2026-07-29"
-    },
-    {
-      "name": "takeoutMyActivity",
-      "query": "takeoutMyActivity",
-      "tool": "RLEAPP",
-      "date": "2026-07-09"
     }
   ]
 }
