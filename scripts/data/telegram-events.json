@@ -1,0 +1,894 @@
+{
+ "ios_sha": "3344a18d3cdc8f4a56909c306d583ddb48763a15",
+ "android_sha": "9bcf3d2769c6d3f07105a992e5d9493e33ac3348",
+ "events": [
+  {
+   "ios": "groupCreated",
+   "ios_raw": 1,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L505",
+   "android": "ChatCreate",
+   "android_ctors": [
+    "0xbd47cbad",
+    "0xa6638b9a"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L218",
+   "purpose": "A basic group was created. Carries the title.",
+   "payload": "iOS/Android"
+  },
+  {
+   "ios": "addedMembers",
+   "ios_raw": 2,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L508",
+   "android": "ChatAddUser",
+   "android_ctors": [
+    "0x15cefd00",
+    "0x5e3cfc4b",
+    "0x488a7337"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L233",
+   "purpose": "One or more users were added to the chat.",
+   "payload": "iOS/Android"
+  },
+  {
+   "ios": "removedMembers",
+   "ios_raw": 3,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L513",
+   "android": "ChatDeleteUser",
+   "android_ctors": [
+    "0xa43f30cc",
+    "0xb2ae9b0c"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L246",
+   "purpose": "A user was removed from the chat.",
+   "payload": "iOS/Android"
+  },
+  {
+   "ios": "photoUpdated",
+   "ios_raw": 4,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L518",
+   "android": "ChatEditPhoto",
+   "android_ctors": [
+    "0x7fcb13a8"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L36",
+   "purpose": "The group or channel photo was changed.",
+   "payload": ""
+  },
+  {
+   "ios": "titleUpdated",
+   "ios_raw": 5,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L523",
+   "android": "ChatEditTitle",
+   "android_ctors": [
+    "0xb5a1ce5a"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L23",
+   "purpose": "The group or channel name was changed.",
+   "payload": "iOS/Android"
+  },
+  {
+   "ios": "pinnedMessageUpdated",
+   "ios_raw": 6,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L526",
+   "android": "PinMessage",
+   "android_ctors": [
+    "0x94bd38ed"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L62",
+   "purpose": "A message was pinned in the chat.",
+   "payload": ""
+  },
+  {
+   "ios": "joinedByLink",
+   "ios_raw": 7,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L528",
+   "android": "ChatJoinedByLink",
+   "android_ctors": [
+    "0x031224c3",
+    "0xf89cf5e8"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L259",
+   "purpose": "A user joined via an invite link. Names the inviter.",
+   "payload": "iOS/Android"
+  },
+  {
+   "ios": "channelMigratedFromGroup",
+   "ios_raw": 8,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L531",
+   "android": "ChannelMigrateFrom",
+   "android_ctors": [
+    "0xea3948e9",
+    "0xb055eaee"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L285",
+   "purpose": "This channel was converted from a basic group.",
+   "payload": ""
+  },
+  {
+   "ios": "groupMigratedToChannel",
+   "ios_raw": 9,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L535",
+   "android": "ChatMigrateTo",
+   "android_ctors": [
+    "0xe1037f92",
+    "0x51bdb021"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L272",
+   "purpose": "This group was upgraded to a supergroup.",
+   "payload": ""
+  },
+  {
+   "ios": "historyCleared",
+   "ios_raw": 10,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L538",
+   "android": "HistoryClear",
+   "android_ctors": [
+    "0x9fbab604"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L70",
+   "purpose": "The chat history was cleared.",
+   "payload": ""
+  },
+  {
+   "ios": "historyScreenshot",
+   "ios_raw": 11,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L540",
+   "android": "ScreenshotTaken",
+   "android_ctors": [
+    "0x4792929b"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L121",
+   "purpose": "A screenshot was taken in a secret chat.",
+   "payload": ""
+  },
+  {
+   "ios": "messageAutoremoveTimeoutUpdated",
+   "ios_raw": 12,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L542",
+   "android": "SetMessagesTTL",
+   "android_ctors": [
+    "0x3c134d7b",
+    "0xaa1afbfd"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L378",
+   "purpose": "The auto-delete timer was changed. Carries the new value.",
+   "payload": "iOS/Android"
+  },
+  {
+   "ios": "gameScore",
+   "ios_raw": 13,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L550",
+   "android": "GameScore",
+   "android_ctors": [
+    "0x92a72876"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L78",
+   "purpose": "A score was posted in a bot game.",
+   "payload": "iOS/Android"
+  },
+  {
+   "ios": "phoneCall",
+   "ios_raw": 14,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L565",
+   "android": "PhoneCall",
+   "android_ctors": [
+    "0x80e11a7f"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L93",
+   "purpose": "A one-to-one voice or video call. Carries call id, outcome and duration.",
+   "payload": "iOS/Android"
+  },
+  {
+   "ios": "paymentSent",
+   "ios_raw": 15,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L554",
+   "android": "PaymentSent",
+   "android_ctors": [
+    "0xc624b16e",
+    "0x40699cd0",
+    "0x96163f56"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L701",
+   "purpose": "A payment was completed. Carries currency and amount.",
+   "payload": "iOS/Android"
+  },
+  {
+   "ios": "customText",
+   "ios_raw": 16,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L579",
+   "android": "CustomAction",
+   "android_ctors": [
+    "0xfae69f56"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L129",
+   "purpose": "A server-supplied notice rendered as text.",
+   "payload": "iOS/Android"
+  },
+  {
+   "ios": "botDomainAccessGranted",
+   "ios_raw": 17,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L583",
+   "android": "BotAllowed",
+   "android_ctors": [
+    "0xc516d679",
+    "0xabe9affe"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L444",
+   "purpose": "The user granted a website access via the bot login.",
+   "payload": ""
+  },
+  {
+   "ios": "botSentSecureValues",
+   "ios_raw": 18,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L586",
+   "android": "SecureValuesSent",
+   "android_ctors": [
+    "0xd95c6154"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L142",
+   "purpose": "Telegram Passport data was shared with a bot.",
+   "payload": ""
+  },
+  {
+   "ios": "peerJoined",
+   "ios_raw": 19,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L589",
+   "android": "ContactSignUp",
+   "android_ctors": [
+    "0xf3f25f76",
+    "0x70ef8294"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L155",
+   "purpose": "A contact from the address book joined Telegram.",
+   "payload": ""
+  },
+  {
+   "ios": "phoneNumberRequest",
+   "ios_raw": 20,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L591",
+   "android": "",
+   "android_ctors": [],
+   "android_url": "",
+   "purpose": "A bot requested the user phone number.",
+   "payload": ""
+  },
+  {
+   "ios": "geoProximityReached",
+   "ios_raw": 21,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L593",
+   "android": "GeoProximityReached",
+   "android_ctors": [
+    "0x98e0d697"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L163",
+   "purpose": "A proximity alert fired. Carries the distance in metres.",
+   "payload": "iOS/Android"
+  },
+  {
+   "ios": "groupPhoneCall",
+   "ios_raw": 22,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L598",
+   "android": "GroupCall",
+   "android_ctors": [
+    "0x7a0d7f42"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L180",
+   "purpose": "A group voice chat. Carries the call id and duration.",
+   "payload": "iOS"
+  },
+  {
+   "ios": "inviteToGroupPhoneCall",
+   "ios_raw": 23,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L612",
+   "android": "InviteToGroupCall",
+   "android_ctors": [
+    "0x502f92f7",
+    "0x76b9f11a"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L300",
+   "purpose": "Users were invited to a group call.",
+   "payload": "Android"
+  },
+  {
+   "ios": "setChatTheme",
+   "ios_raw": 24,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L617",
+   "android": "SetChatTheme",
+   "android_ctors": [
+    "0xb91bbd3a",
+    "0xaa786345"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L923",
+   "purpose": "The chat theme was changed.",
+   "payload": ""
+  },
+  {
+   "ios": "joinedByRequest",
+   "ios_raw": 25,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L622",
+   "android": "ChatJoinedByRequest",
+   "android_ctors": [
+    "0xebbca3cb"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L315",
+   "purpose": "A user joined after an admin approved their request.",
+   "payload": ""
+  },
+  {
+   "ios": "webViewData",
+   "ios_raw": 26,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L624",
+   "android": "WebViewDataSent",
+   "android_ctors": [
+    "0xb4c38cb5"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L338",
+   "purpose": "Data was submitted from a bot web view.",
+   "payload": ""
+  },
+  {
+   "ios": "giftPremium",
+   "ios_raw": 27,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L627",
+   "android": "GiftPremium",
+   "android_ctors": [
+    "0x48e91302",
+    "0xaba0f5c6",
+    "0xc83d6aec",
+    "0x6c6274fa"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L949",
+   "purpose": "A Telegram Premium subscription was gifted.",
+   "payload": ""
+  },
+  {
+   "ios": "topicCreated",
+   "ios_raw": 28,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L646",
+   "android": "TopicCreate",
+   "android_ctors": [
+    "0x0d999256"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L351",
+   "purpose": "A forum topic was created.",
+   "payload": ""
+  },
+  {
+   "ios": "topicEdited",
+   "ios_raw": 29,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L655",
+   "android": "TopicEdit",
+   "android_ctors": [
+    "0xc0944820",
+    "0xb18a431c"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L401",
+   "purpose": "A forum topic was renamed or reconfigured.",
+   "payload": ""
+  },
+  {
+   "ios": "suggestedProfilePhoto",
+   "ios_raw": 30,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L658",
+   "android": "SuggestProfilePhoto",
+   "android_ctors": [
+    "0x57de635e"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L431",
+   "purpose": "A profile photo was suggested to the user.",
+   "payload": ""
+  },
+  {
+   "ios": "attachMenuBotAllowed",
+   "ios_raw": 31,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L663",
+   "android": "AttachMenuBotAllowed",
+   "android_ctors": [
+    "0xe7e75f97"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1664",
+   "purpose": "A bot was added to the attachment menu.",
+   "payload": ""
+  },
+  {
+   "ios": "requestedPeer",
+   "ios_raw": 32,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L665",
+   "android": "RequestedPeer",
+   "android_ctors": [
+    "0x31518e9b",
+    "0xfe77345d"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L472",
+   "purpose": "The user shared a peer with a bot on request.",
+   "payload": ""
+  },
+  {
+   "ios": "setChatWallpaper",
+   "ios_raw": 33,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L669",
+   "android": "SetChatWallPaper",
+   "android_ctors": [
+    "0x5060a3f4",
+    "0xbc44a927"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L487",
+   "purpose": "The chat wallpaper was changed.",
+   "payload": ""
+  },
+  {
+   "ios": "setSameChatWallpaper",
+   "ios_raw": 34,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L673",
+   "android": "SetSameChatWallPaper",
+   "android_ctors": [
+    "0xc0787d6d"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1733",
+   "purpose": "The peer applied the same wallpaper.",
+   "payload": ""
+  },
+  {
+   "ios": "botAppAccessGranted",
+   "ios_raw": 35,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L676",
+   "android": "BotAllowed",
+   "android_ctors": [
+    "0xc516d679",
+    "0xabe9affe"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L444",
+   "purpose": "The user granted a bot mini app access.",
+   "payload": ""
+  },
+  {
+   "ios": "giftCode",
+   "ios_raw": 36,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L688",
+   "android": "GiftCode",
+   "android_ctors": [
+    "0x31c48347",
+    "0x678c2e09",
+    "0xd2cfdb0e",
+    "0x56d03994"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L985",
+   "purpose": "A Premium gift code was issued.",
+   "payload": ""
+  },
+  {
+   "ios": "giveawayLaunched",
+   "ios_raw": 37,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L726",
+   "android": "GiveawayLaunch",
+   "android_ctors": [
+    "0xa80f51e4",
+    "0x332ba9ed"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L589",
+   "purpose": "A giveaway was started in the channel.",
+   "payload": ""
+  },
+  {
+   "ios": "joinedChannel",
+   "ios_raw": 38,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L733",
+   "android": "",
+   "android_ctors": [],
+   "android_url": "",
+   "purpose": "The user joined the channel.",
+   "payload": ""
+  },
+  {
+   "ios": "giveawayResults",
+   "ios_raw": 39,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L735",
+   "android": "GiveawayResults",
+   "android_ctors": [
+    "0x87e2f155",
+    "0x2a9fadc5"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L610",
+   "purpose": "Giveaway results were published.",
+   "payload": ""
+  },
+  {
+   "ios": "boostsApplied",
+   "ios_raw": 40,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L740",
+   "android": "BoostApply",
+   "android_ctors": [
+    "0xcc02aa6d"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L511",
+   "purpose": "Channel boosts were applied.",
+   "payload": ""
+  },
+  {
+   "ios": "paymentRefunded",
+   "ios_raw": 41,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L743",
+   "android": "PaymentRefunded",
+   "android_ctors": [
+    "0x41b3e202"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L524",
+   "purpose": "A payment was refunded.",
+   "payload": ""
+  },
+  {
+   "ios": "giftStars",
+   "ios_raw": 42,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L754",
+   "android": "GiftStars",
+   "android_ctors": [
+    "0x45d5b021"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L553",
+   "purpose": "Telegram Stars were gifted.",
+   "payload": ""
+  },
+  {
+   "ios": "prizeStars",
+   "ios_raw": 43,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L771",
+   "android": "PrizeStars",
+   "android_ctors": [
+    "0xb00c47a2"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L634",
+   "purpose": "Stars were awarded as a giveaway prize.",
+   "payload": ""
+  },
+  {
+   "ios": "starGift",
+   "ios_raw": 44,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L790",
+   "android": "StarGift",
+   "android_ctors": [
+    "0xea2c31d3",
+    "0x9bb3ef44",
+    "0x08557637",
+    "0xd8f4f0a7",
+    "0x4717e8a5",
+    "0xf24de7fa",
+    "0xdb596550"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1035",
+   "purpose": "A star gift was sent.",
+   "payload": ""
+  },
+  {
+   "ios": "starGiftUnique",
+   "ios_raw": 45,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L859",
+   "android": "StarGiftUnique",
+   "android_ctors": [
+    "0xe6c31522",
+    "0x26077b99",
+    "0xacdfcb81",
+    "0x2e3ae60e",
+    "0x34f762f3",
+    "0x95728543"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1169",
+   "purpose": "A unique (collectible) star gift changed hands.",
+   "payload": ""
+  },
+  {
+   "ios": "paidMessagesRefunded",
+   "ios_raw": 46,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L922",
+   "android": "PaidMessagesRefunded",
+   "android_ctors": [
+    "0xac1f1fcd"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L733",
+   "purpose": "Paid messages were refunded.",
+   "payload": ""
+  },
+  {
+   "ios": "paidMessagesPriceEdited",
+   "ios_raw": 47,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L926",
+   "android": "PaidMessagesPrice",
+   "android_ctors": [
+    "0x84b88578",
+    "0xbcd71419"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L780",
+   "purpose": "The price for paid messages was changed.",
+   "payload": ""
+  },
+  {
+   "ios": "conferenceCall",
+   "ios_raw": 48,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L930",
+   "android": "ConferenceCall",
+   "android_ctors": [
+    "0x2ffe2f7a"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L748",
+   "purpose": "A conference call. Carries duration and participants.",
+   "payload": "iOS"
+  },
+  {
+   "ios": "todoCompletions",
+   "ios_raw": 49,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L940",
+   "android": "TodoCompletions",
+   "android_ctors": [
+    "0xcc7c5c89"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L802",
+   "purpose": "To-do items were marked complete or incomplete.",
+   "payload": ""
+  },
+  {
+   "ios": "todoAppendTasks",
+   "ios_raw": 50,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L944",
+   "android": "TodoAppendTasks",
+   "android_ctors": [
+    "0xc7edbc83"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L817",
+   "purpose": "Tasks were appended to a to-do list.",
+   "payload": ""
+  },
+  {
+   "ios": "suggestedPostApprovalStatus",
+   "ios_raw": 51,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L947",
+   "android": "SuggestedPostApproval",
+   "android_ctors": [
+    "0xee7a1596"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L830",
+   "purpose": "A suggested post was approved or rejected.",
+   "payload": ""
+  },
+  {
+   "ios": "giftTon",
+   "ios_raw": 52,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L950",
+   "android": "GiftTon",
+   "android_ctors": [
+    "0xa8a3c699"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L894",
+   "purpose": "TON was gifted.",
+   "payload": ""
+  },
+  {
+   "ios": "suggestedPostSuccess",
+   "ios_raw": 53,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L966",
+   "android": "SuggestedPostSuccess",
+   "android_ctors": [
+    "0x95ddcf69"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L861",
+   "purpose": "A suggested post was published successfully.",
+   "payload": ""
+  },
+  {
+   "ios": "suggestedPostRefund",
+   "ios_raw": 54,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L969",
+   "android": "SuggestedPostRefund",
+   "android_ctors": [
+    "0x69f916f8"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L874",
+   "purpose": "A suggested post payment was refunded.",
+   "payload": ""
+  },
+  {
+   "ios": "suggestedBirthday",
+   "ios_raw": 55,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L972",
+   "android": "SuggestBirthday",
+   "android_ctors": [
+    "0x2c8f2a25"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L936",
+   "purpose": "A birthday was suggested to the user.",
+   "payload": "iOS"
+  },
+  {
+   "ios": "starGiftPurchaseOffer",
+   "ios_raw": 56,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L975",
+   "android": "StarGiftPurchaseOffer",
+   "android_ctors": [
+    "0x774278d4"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1109",
+   "purpose": "An offer was made to purchase a star gift.",
+   "payload": ""
+  },
+  {
+   "ios": "starGiftPurchaseOfferDeclined",
+   "ios_raw": 57,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L982",
+   "android": "StarGiftPurchaseOfferDeclined",
+   "android_ctors": [
+    "0x73ada76b"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1137",
+   "purpose": "A star gift purchase offer was declined.",
+   "payload": ""
+  },
+  {
+   "ios": "groupCreatorChange",
+   "ios_raw": 59,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L987",
+   "android": "ChangeCreator",
+   "android_ctors": [
+    "0xe188503b"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1251",
+   "purpose": "Chat ownership was transferred.",
+   "payload": ""
+  },
+  {
+   "ios": "copyProtectionToggle",
+   "ios_raw": 60,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L990",
+   "android": "NoForwardsToggle",
+   "android_ctors": [
+    "0xbf7d6572"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1264",
+   "purpose": "Content protection (restrict saving) was switched.",
+   "payload": "iOS"
+  },
+  {
+   "ios": "copyProtectionRequest",
+   "ios_raw": 61,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L994",
+   "android": "NoForwardsRequest",
+   "android_ctors": [
+    "0x3e2793ba"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1279",
+   "purpose": "Content protection was requested.",
+   "payload": ""
+  },
+  {
+   "ios": "managedBotCreated",
+   "ios_raw": 62,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L999",
+   "android": "ManagedBotCreated",
+   "android_ctors": [
+    "0x16605e3e"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1329",
+   "purpose": "A managed bot was created for the chat.",
+   "payload": "iOS"
+  },
+  {
+   "ios": "pollOptionAppended",
+   "ios_raw": 63,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L1002",
+   "android": "PollAppendAnswer",
+   "android_ctors": [
+    "0x9da1cd6c"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1303",
+   "purpose": "An option was added to a poll.",
+   "payload": ""
+  },
+  {
+   "ios": "pollOptionDeleted",
+   "ios_raw": 64,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L1005",
+   "android": "PollDeleteAnswer",
+   "android_ctors": [
+    "0x399674dc"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1316",
+   "purpose": "An option was removed from a poll.",
+   "payload": ""
+  },
+  {
+   "ios": "communityChanged",
+   "ios_raw": 65,
+   "ios_url": "https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L1008",
+   "android": "ChangeCommunity",
+   "android_ctors": [
+    "0x5d20bae8"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1342",
+   "purpose": "The chat was moved into or out of a community.",
+   "payload": ""
+  },
+  {
+   "ios": "",
+   "ios_raw": null,
+   "ios_url": "",
+   "android": "ChannelCreate",
+   "android_ctors": [
+    "0x95d2ac92"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L49",
+   "purpose": "A channel was created. Carries the title.",
+   "payload": ""
+  },
+  {
+   "ios": "",
+   "ios_raw": null,
+   "ios_url": "",
+   "android": "ChatDeletePhoto",
+   "android_ctors": [
+    "0x95e3fbef",
+    "0x95e3f807"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1161",
+   "purpose": "The group or channel photo was removed.",
+   "payload": ""
+  },
+  {
+   "ios": "",
+   "ios_raw": null,
+   "ios_url": "",
+   "android": "Empty",
+   "android_ctors": [
+    "0xb6aef7b0"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L15",
+   "purpose": "A placeholder action with no content.",
+   "payload": ""
+  },
+  {
+   "ios": "",
+   "ios_raw": null,
+   "ios_url": "",
+   "android": "GroupCallScheduled",
+   "android_ctors": [
+    "0xb3a07661"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L203",
+   "purpose": "A group call was scheduled for a future time.",
+   "payload": ""
+  },
+  {
+   "ios": "",
+   "ios_raw": null,
+   "ios_url": "",
+   "android": "NewCreatorPending",
+   "android_ctors": [
+    "0xb07ed085"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1238",
+   "purpose": "A transfer of chat ownership is pending confirmation.",
+   "payload": ""
+  },
+  {
+   "ios": "",
+   "ios_raw": null,
+   "ios_url": "",
+   "android": "PaymentSentMe",
+   "android_ctors": [
+    "0xffa00ccc",
+    "0x8f31b327"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L662",
+   "purpose": "Bot-side record of a payment received from a user.",
+   "payload": ""
+  },
+  {
+   "ios": "",
+   "ios_raw": null,
+   "ios_url": "",
+   "android": "WebViewDataSentMe",
+   "android_ctors": [
+    "0x47dd8079"
+   ],
+   "android_url": "https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L323",
+   "purpose": "Bot-side record of data submitted from a web view.",
+   "payload": ""
+  }
+ ]
+}

@@ -1,0 +1,1331 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R /F3 8 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://leapps.org/blog-post?post=2026-08-04-telegram-system-events-reference)
+>> /Border [ 0 0 0 ] /Rect [ 118.91 357.4 446.54 369.4 ] /Subtype /Link /Type /Annot
+>>
+endobj
+5 0 obj
+<<
+/Annots [ 4 0 R ] /Contents 153 0 R /MediaBox [ 0 0 612 792 ] /Parent 152 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+6 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.leapps.org/blog-post?post=2026-08-04-telegram-ios-android-coverage)
+>> /Border [ 0 0 0 ] /Rect [ 165.602 724.2 267.5085 735.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+7 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://leapps-api.4n6-198.workers.dev/downloads/telegram-system-events-reference.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 60 676.7 209.4255 688.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+8 0 obj
+<<
+/BaseFont /Courier /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+>>
+endobj
+9 0 obj
+<<
+/Annots [ 6 0 R 7 0 R ] /Contents 154 0 R /MediaBox [ 0 0 612 792 ] /Parent 152 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+10 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L505)
+>> /Border [ 0 0 0 ] /Rect [ 65 543.5 113.912 554 ] /Subtype /Link /Type /Annot
+>>
+endobj
+11 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L218)
+>> /Border [ 0 0 0 ] /Rect [ 248.126 543.5 289.03 554 ] /Subtype /Link /Type /Annot
+>>
+endobj
+12 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L49)
+>> /Border [ 0 0 0 ] /Rect [ 248.126 506 301.926 516.5 ] /Subtype /Link /Type /Annot
+>>
+endobj
+13 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L508)
+>> /Border [ 0 0 0 ] /Rect [ 65 468.5 120.576 479 ] /Subtype /Link /Type /Annot
+>>
+endobj
+14 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L233)
+>> /Border [ 0 0 0 ] /Rect [ 248.126 468.5 296.142 479 ] /Subtype /Link /Type /Annot
+>>
+endobj
+15 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L513)
+>> /Border [ 0 0 0 ] /Rect [ 65 420.5 129.456 431 ] /Subtype /Link /Type /Annot
+>>
+endobj
+16 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L246)
+>> /Border [ 0 0 0 ] /Rect [ 248.126 420.5 305.03 431 ] /Subtype /Link /Type /Annot
+>>
+endobj
+17 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L518)
+>> /Border [ 0 0 0 ] /Rect [ 65 383 115.256 393.5 ] /Subtype /Link /Type /Annot
+>>
+endobj
+18 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L36)
+>> /Border [ 0 0 0 ] /Rect [ 248.126 383 299.71 393.5 ] /Subtype /Link /Type /Annot
+>>
+endobj
+19 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1161)
+>> /Border [ 0 0 0 ] /Rect [ 248.126 345.5 309.046 356 ] /Subtype /Link /Type /Annot
+>>
+endobj
+20 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L523)
+>> /Border [ 0 0 0 ] /Rect [ 65 308 107.688 318.5 ] /Subtype /Link /Type /Annot
+>>
+endobj
+21 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L23)
+>> /Border [ 0 0 0 ] /Rect [ 248.126 308 293.918 318.5 ] /Subtype /Link /Type /Annot
+>>
+endobj
+22 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L528)
+>> /Border [ 0 0 0 ] /Rect [ 65 270.5 110.352 281 ] /Subtype /Link /Type /Annot
+>>
+endobj
+23 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L259)
+>> /Border [ 0 0 0 ] /Rect [ 248.126 270.5 312.598 281 ] /Subtype /Link /Type /Annot
+>>
+endobj
+24 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L622)
+>> /Border [ 0 0 0 ] /Rect [ 65 222.5 125.472 233 ] /Subtype /Link /Type /Annot
+>>
+endobj
+25 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L315)
+>> /Border [ 0 0 0 ] /Rect [ 248.126 222.5 327.718 233 ] /Subtype /Link /Type /Annot
+>>
+endobj
+26 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L589)
+>> /Border [ 0 0 0 ] /Rect [ 65 174.5 104.576 185 ] /Subtype /Link /Type /Annot
+>>
+endobj
+27 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L155)
+>> /Border [ 0 0 0 ] /Rect [ 248.126 174.5 301.926 185 ] /Subtype /Link /Type /Annot
+>>
+endobj
+28 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L733)
+>> /Border [ 0 0 0 ] /Rect [ 65 137 116.136 147.5 ] /Subtype /Link /Type /Annot
+>>
+endobj
+29 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L531)
+>> /Border [ 0 0 0 ] /Rect [ 65 110 165.032 120.5 ] /Subtype /Link /Type /Annot
+>>
+endobj
+30 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L285)
+>> /Border [ 0 0 0 ] /Rect [ 248.126 110 323.254 120.5 ] /Subtype /Link /Type /Annot
+>>
+endobj
+31 0 obj
+<<
+/Annots [ 10 0 R 11 0 R 12 0 R 13 0 R 14 0 R 15 0 R 16 0 R 17 0 R 18 0 R 19 0 R 
+  20 0 R 21 0 R 22 0 R 23 0 R 24 0 R 25 0 R 26 0 R 27 0 R 28 0 R 29 0 R 
+  30 0 R ] /Contents 155 0 R /MediaBox [ 0 0 612 792 ] /Parent 152 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+32 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L535)
+>> /Border [ 0 0 0 ] /Rect [ 65 696.6 155.704 707.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+33 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L272)
+>> /Border [ 0 0 0 ] /Rect [ 248.126 696.6 301.03 707.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+34 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L987)
+>> /Border [ 0 0 0 ] /Rect [ 65 659.1 140.144 669.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+35 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1251)
+>> /Border [ 0 0 0 ] /Rect [ 248.126 659.1 302.814 669.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+36 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1238)
+>> /Border [ 0 0 0 ] /Rect [ 248.126 632.1 320.15 642.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+37 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L1008)
+>> /Border [ 0 0 0 ] /Rect [ 65 584.1 136.136 594.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+38 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1342)
+>> /Border [ 0 0 0 ] /Rect [ 248.126 584.1 316.59 594.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+39 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L526)
+>> /Border [ 0 0 0 ] /Rect [ 65 546.6 151.712 557.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+40 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L62)
+>> /Border [ 0 0 0 ] /Rect [ 248.126 546.6 292.142 557.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+41 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L646)
+>> /Border [ 0 0 0 ] /Rect [ 65 509.1 110.352 519.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+42 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L351)
+>> /Border [ 0 0 0 ] /Rect [ 248.126 509.1 291.694 519.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+43 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L655)
+>> /Border [ 0 0 0 ] /Rect [ 65 482.1 104.576 492.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+44 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L401)
+>> /Border [ 0 0 0 ] /Rect [ 248.126 482.1 281.47 492.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+45 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L565)
+>> /Border [ 0 0 0 ] /Rect [ 65 378.6 101.016 389.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+46 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L93)
+>> /Border [ 0 0 0 ] /Rect [ 239.906 378.6 276.81 389.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+47 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L598)
+>> /Border [ 0 0 0 ] /Rect [ 65 320.1 122.36 330.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+48 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L180)
+>> /Border [ 0 0 0 ] /Rect [ 239.906 320.1 275.914 330.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+49 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L203)
+>> /Border [ 0 0 0 ] /Rect [ 239.906 272.1 313.714 282.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+50 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L612)
+>> /Border [ 0 0 0 ] /Rect [ 65 234.6 152.144 245.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+51 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L300)
+>> /Border [ 0 0 0 ] /Rect [ 239.906 234.6 304.37 245.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+52 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L930)
+>> /Border [ 0 0 0 ] /Rect [ 65 207.6 118.352 218.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+53 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L748)
+>> /Border [ 0 0 0 ] /Rect [ 239.906 207.6 295.034 218.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+54 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L540)
+>> /Border [ 0 0 0 ] /Rect [ 65 104.1 129.024 114.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+55 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L121)
+>> /Border [ 0 0 0 ] /Rect [ 273.364 104.1 336.06 114.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+56 0 obj
+<<
+/Annots [ 32 0 R 33 0 R 34 0 R 35 0 R 36 0 R 37 0 R 38 0 R 39 0 R 40 0 R 41 0 R 
+  42 0 R 43 0 R 44 0 R 45 0 R 46 0 R 47 0 R 48 0 R 49 0 R 50 0 R 51 0 R 
+  52 0 R 53 0 R 54 0 R 55 0 R ] /Contents 156 0 R /MediaBox [ 0 0 612 792 ] /Parent 152 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+57 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L538)
+>> /Border [ 0 0 0 ] /Rect [ 65 696.6 116.568 707.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+58 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L70)
+>> /Border [ 0 0 0 ] /Rect [ 273.364 696.6 317.364 707.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+59 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L542)
+>> /Border [ 0 0 0 ] /Rect [ 65 659.1 199.72 669.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+60 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L378)
+>> /Border [ 0 0 0 ] /Rect [ 273.364 659.1 336.052 669.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+61 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L990)
+>> /Border [ 0 0 0 ] /Rect [ 65 590.1 142.368 600.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+62 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1264)
+>> /Border [ 0 0 0 ] /Rect [ 273.364 590.1 341.38 600.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+63 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L994)
+>> /Border [ 0 0 0 ] /Rect [ 65 531.6 147.704 542.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+64 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1279)
+>> /Border [ 0 0 0 ] /Rect [ 273.364 531.6 346.716 542.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+65 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L586)
+>> /Border [ 0 0 0 ] /Rect [ 65 494.1 142.376 504.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+66 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L142)
+>> /Border [ 0 0 0 ] /Rect [ 273.364 494.1 339.62 504.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+67 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L583)
+>> /Border [ 0 0 0 ] /Rect [ 65 446.1 158.368 456.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+68 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L444)
+>> /Border [ 0 0 0 ] /Rect [ 273.364 446.1 313.38 456.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+69 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L676)
+>> /Border [ 0 0 0 ] /Rect [ 65 387.6 145.04 398.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+70 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L444)
+>> /Border [ 0 0 0 ] /Rect [ 273.364 387.6 313.38 398.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+71 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L663)
+>> /Border [ 0 0 0 ] /Rect [ 65 339.6 146.816 350.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+72 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1664)
+>> /Border [ 0 0 0 ] /Rect [ 273.364 339.6 356.068 350.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+73 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L591)
+>> /Border [ 0 0 0 ] /Rect [ 65 291.6 145.48 302.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+74 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L665)
+>> /Border [ 0 0 0 ] /Rect [ 65 243.6 117.472 254.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+75 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L472)
+>> /Border [ 0 0 0 ] /Rect [ 273.364 243.6 328.948 254.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+76 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L593)
+>> /Border [ 0 0 0 ] /Rect [ 65 129.6 143.248 140.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+77 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L163)
+>> /Border [ 0 0 0 ] /Rect [ 231.68 129.6 311.704 140.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+78 0 obj
+<<
+/Annots [ 57 0 R 58 0 R 59 0 R 60 0 R 61 0 R 62 0 R 63 0 R 64 0 R 65 0 R 66 0 R 
+  67 0 R 68 0 R 69 0 R 70 0 R 71 0 R 72 0 R 73 0 R 74 0 R 75 0 R 76 0 R 
+  77 0 R ] /Contents 157 0 R /MediaBox [ 0 0 612 792 ] /Parent 152 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+79 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L554)
+>> /Border [ 0 0 0 ] /Rect [ 65 696.6 112.136 707.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+80 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L701)
+>> /Border [ 0 0 0 ] /Rect [ 246.906 696.6 294.93 707.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+81 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L662)
+>> /Border [ 0 0 0 ] /Rect [ 246.906 627.6 306.042 638.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+82 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L743)
+>> /Border [ 0 0 0 ] /Rect [ 65 569.1 130.368 579.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+83 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L524)
+>> /Border [ 0 0 0 ] /Rect [ 246.906 569.1 313.162 579.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+84 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L922)
+>> /Border [ 0 0 0 ] /Rect [ 65 542.1 151.264 552.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+85 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L733)
+>> /Border [ 0 0 0 ] /Rect [ 246.906 542.1 334.058 552.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+86 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L926)
+>> /Border [ 0 0 0 ] /Rect [ 65 504.6 157.48 515.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+87 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L780)
+>> /Border [ 0 0 0 ] /Rect [ 246.906 504.6 317.594 515.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+88 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L627)
+>> /Border [ 0 0 0 ] /Rect [ 65 456.6 107.672 467.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+89 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L949)
+>> /Border [ 0 0 0 ] /Rect [ 246.906 456.6 291.354 467.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+90 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L688)
+>> /Border [ 0 0 0 ] /Rect [ 65 408.6 94.792 419.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+91 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L985)
+>> /Border [ 0 0 0 ] /Rect [ 246.906 408.6 278.474 419.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+92 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L754)
+>> /Border [ 0 0 0 ] /Rect [ 65 371.1 94.344 381.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+93 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L553)
+>> /Border [ 0 0 0 ] /Rect [ 246.906 371.1 278.026 381.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+94 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L950)
+>> /Border [ 0 0 0 ] /Rect [ 65 333.6 89.456 344.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+95 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L894)
+>> /Border [ 0 0 0 ] /Rect [ 246.906 333.6 273.138 344.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+96 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L771)
+>> /Border [ 0 0 0 ] /Rect [ 65 306.6 101.008 317.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+97 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L634)
+>> /Border [ 0 0 0 ] /Rect [ 246.906 306.6 283.802 317.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+98 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L790)
+>> /Border [ 0 0 0 ] /Rect [ 65 258.6 90.784 269.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+99 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1035)
+>> /Border [ 0 0 0 ] /Rect [ 246.906 258.6 274.026 269.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+100 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L859)
+>> /Border [ 0 0 0 ] /Rect [ 65 231.6 116.128 242.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+101 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1169)
+>> /Border [ 0 0 0 ] /Rect [ 246.906 231.6 299.37 242.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+102 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L975)
+>> /Border [ 0 0 0 ] /Rect [ 65 173.1 142.36 183.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+103 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1109)
+>> /Border [ 0 0 0 ] /Rect [ 246.906 173.1 325.602 183.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+104 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L982)
+>> /Border [ 0 0 0 ] /Rect [ 65 125.1 173.48 135.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+105 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1137)
+>> /Border [ 0 0 0 ] /Rect [ 246.906 125.1 356.722 135.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+106 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L726)
+>> /Border [ 0 0 0 ] /Rect [ 65 87.6 133.48 98.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+107 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L589)
+>> /Border [ 0 0 0 ] /Rect [ 246.906 87.6 308.266 98.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+108 0 obj
+<<
+/Annots [ 79 0 R 80 0 R 81 0 R 82 0 R 83 0 R 84 0 R 85 0 R 86 0 R 87 0 R 88 0 R 
+  89 0 R 90 0 R 91 0 R 92 0 R 93 0 R 94 0 R 95 0 R 96 0 R 97 0 R 98 0 R 
+  99 0 R 100 0 R 101 0 R 102 0 R 103 0 R 104 0 R 105 0 R 106 0 R 107 0 R ] /Contents 158 0 R /MediaBox [ 0 0 612 792 ] /Parent 152 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+109 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L735)
+>> /Border [ 0 0 0 ] /Rect [ 65 696.6 125.016 707.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+110 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L610)
+>> /Border [ 0 0 0 ] /Rect [ 246.906 696.6 308.698 707.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+111 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L740)
+>> /Border [ 0 0 0 ] /Rect [ 65 659.1 115.248 669.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+112 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L511)
+>> /Border [ 0 0 0 ] /Rect [ 246.906 659.1 287.37 669.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+113 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L617)
+>> /Border [ 0 0 0 ] /Rect [ 65 555.6 117.464 566.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+114 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L923)
+>> /Border [ 0 0 0 ] /Rect [ 234.68 555.6 288.48 566.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+115 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L669)
+>> /Border [ 0 0 0 ] /Rect [ 65 528.6 128.576 539.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+116 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L487)
+>> /Border [ 0 0 0 ] /Rect [ 234.68 528.6 300.48 539.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+117 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L673)
+>> /Border [ 0 0 0 ] /Rect [ 65 491.1 149.472 501.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+118 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1733)
+>> /Border [ 0 0 0 ] /Rect [ 234.68 491.1 321.376 501.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+119 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L658)
+>> /Border [ 0 0 0 ] /Rect [ 65 453.6 145.488 464.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+120 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L431)
+>> /Border [ 0 0 0 ] /Rect [ 234.68 453.6 307.608 464.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+121 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L972)
+>> /Border [ 0 0 0 ] /Rect [ 65 416.1 131.256 426.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+122 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L936)
+>> /Border [ 0 0 0 ] /Rect [ 234.68 416.1 293.376 426.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+123 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L550)
+>> /Border [ 0 0 0 ] /Rect [ 65 378.6 105.904 389.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+124 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L78)
+>> /Border [ 0 0 0 ] /Rect [ 234.68 378.6 277.36 389.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+125 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L579)
+>> /Border [ 0 0 0 ] /Rect [ 65 341.1 106.344 351.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+126 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L129)
+>> /Border [ 0 0 0 ] /Rect [ 234.68 341.1 284.472 351.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+127 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L624)
+>> /Border [ 0 0 0 ] /Rect [ 65 303.6 113.904 314.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+128 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L338)
+>> /Border [ 0 0 0 ] /Rect [ 234.68 303.6 301.816 314.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+129 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L323)
+>> /Border [ 0 0 0 ] /Rect [ 234.68 266.1 312.928 276.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+130 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L999)
+>> /Border [ 0 0 0 ] /Rect [ 65 228.6 138.816 239.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+131 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1329)
+>> /Border [ 0 0 0 ] /Rect [ 234.68 228.6 308.496 239.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+132 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L15)
+>> /Border [ 0 0 0 ] /Rect [ 234.68 191.1 257.352 201.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+133 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L1002)
+>> /Border [ 0 0 0 ] /Rect [ 65 87.6 137.488 98.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+134 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1303)
+>> /Border [ 0 0 0 ] /Rect [ 251.92 87.6 319.504 98.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+135 0 obj
+<<
+/Annots [ 109 0 R 110 0 R 111 0 R 112 0 R 113 0 R 114 0 R 115 0 R 116 0 R 117 0 R 118 0 R 
+  119 0 R 120 0 R 121 0 R 122 0 R 123 0 R 124 0 R 125 0 R 126 0 R 127 0 R 128 0 R 
+  129 0 R 130 0 R 131 0 R 132 0 R 133 0 R 134 0 R ] /Contents 159 0 R /MediaBox [ 0 0 612 792 ] /Parent 152 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+136 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L1005)
+>> /Border [ 0 0 0 ] /Rect [ 65 696.6 128.584 707.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+137 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L1316)
+>> /Border [ 0 0 0 ] /Rect [ 251.92 696.6 315.048 707.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+138 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L940)
+>> /Border [ 0 0 0 ] /Rect [ 65 659.1 125.024 669.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+139 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L802)
+>> /Border [ 0 0 0 ] /Rect [ 251.92 659.1 314.608 669.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+140 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L944)
+>> /Border [ 0 0 0 ] /Rect [ 65 611.1 129.48 621.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+141 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L817)
+>> /Border [ 0 0 0 ] /Rect [ 251.92 611.1 319.064 621.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+142 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L947)
+>> /Border [ 0 0 0 ] /Rect [ 65 573.6 172.168 584.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+143 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L830)
+>> /Border [ 0 0 0 ] /Rect [ 251.92 573.6 337.744 584.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+144 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L966)
+>> /Border [ 0 0 0 ] /Rect [ 65 525.6 148.152 536.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+145 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L861)
+>> /Border [ 0 0 0 ] /Rect [ 251.92 525.6 336.408 536.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+146 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/TelegramMessenger/Telegram-iOS/blob/3344a18d3cdc8f4a56909c306d583ddb48763a15/submodules/TelegramCore/Sources/SyncCore/SyncCore_TelegramMediaAction.swift#L969)
+>> /Border [ 0 0 0 ] /Rect [ 65 477.6 143.712 488.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+147 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/DrKLO/Telegram/blob/9bcf3d2769c6d3f07105a992e5d9493e33ac3348/TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgnet/model/generated/TlGen_MessageAction.kt#L874)
+>> /Border [ 0 0 0 ] /Rect [ 251.92 477.6 331.968 488.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+148 0 obj
+<<
+/Annots [ 136 0 R 137 0 R 138 0 R 139 0 R 140 0 R 141 0 R 142 0 R 143 0 R 144 0 R 145 0 R 
+  146 0 R 147 0 R ] /Contents 160 0 R /MediaBox [ 0 0 612 792 ] /Parent 152 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+149 0 obj
+<<
+/Contents 161 0 R /MediaBox [ 0 0 612 792 ] /Parent 152 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+150 0 obj
+<<
+/PageMode /UseNone /Pages 152 0 R /Type /Catalog
+>>
+endobj
+151 0 obj
+<<
+/Author (Alexis Brignoni) /CreationDate (D:20260804231753-04'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20260804231753-04'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (Telegram system event types across iOS and Android, for digital forensic examiners) /Title (Telegram System Events: The Cross-Platform Reference) /Trapped /False
+>>
+endobj
+152 0 obj
+<<
+/Count 9 /Kids [ 5 0 R 9 0 R 31 0 R 56 0 R 78 0 R 108 0 R 135 0 R 148 0 R 149 0 R ] /Type /Pages
+>>
+endobj
+153 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 685
+>>
+stream
+GasIdlYbE1'`QEWHp?:P6L7rj.SUR^U$@:f<mh4l',*Li6>a35DdUOV(o>$4fTqPYcZen6JS./UkHkA0&rbuVKHaQO"E&a#JQXaQ*csIW2f,q^/oD<U?fk&el,n\\r!5lNiF4]N/eoH&RS-t`*"ETfn6E73X#Hl#M:jD_[/,C8&!F+jdDJ;"i)62%ICUZI3QOMSDaUX&N]]_Z1M"r);r#!"j3IgO6:i$5E'kNJB(5qpplcp'bqOD&3<^SW$ed#sjim1+Md+t"hVZUBE&g5orFh6a4;(-ea6PI]:O?>]msn.amV1"MO_d"+aBC$*=YROlA_HYmmOc2pOG5ncJt3cDch[0O2lQ)R&j]49>%%$6?4`74imY#<,YhO"Upi7f&re14#1`#!NP9n5P-PFXVmX_k.PRY;VFRR84On`[nS8;/AXHMdX@5%a:717jjFFRYA+K=7$qnkq2/5(X0eY+Hj.nsh$4,J;ZtHh<SKh?a[h3HtAIiohY[p^PWK8!0))oe5-lLW1'^d:1"%%@455(OiL\T+U>I6#.NCsM"@Q5t7?_ME`7:+N0YW*EnELS]-N>4,BMp_l#TH9(FnaN=KjGWQGd#CijZc)i9E$8OJb_7ND=4a\OBAX_a"_ZSlEbh)(T8G[R[^FQ@S*=.phXR`g05u$b$r5P$NboBia>7[n_)jSc4!a~>endstream
+endobj
+154 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2914
+>>
+stream
+Gb!#]9lo&K'#!I0i&97?Rj1gqA7Z9USp\ao.bX?N23l?c9gL$M@8-eC!47L\IU>$)9"#FNZB`>I/kHiKdHH&XqDFFn$%>d$/SZGX=GcM(V'=1&C*V.hai3OtGe8:la,Br=,+6iRAcFmt`*^!M&S]#8//QdG=OlEmLUXa:G@(3I2TdII-ugh>W`!%KCN88-TPF#j;46AB,$+^ZX2!)W`sYW5,b&DP@C\J1<?aLCq[6(:#1"Z+^76Ju:(e"2a4!a]R\!9rq@@t8ANWMH:=A5d4aD6UnT)%d?Jmd/PULA(8>E:!_$]$`=_-c5^(e[?S)nmajO84^L_GOW@e^Hlm)6Ri<BT6:rN=(fVi)ShH;r2M%iL%4#7>0;E>q+\],-HK?4#?j@5ifp`a'7oL0LE,c0o?q3e<F==o9TFBU'*U'&!<j;dQhjcpe_tX1`WdYN"D&`^b#rnBd,f)u$.@_PtD`nqrFfM5@$h4&IMBrr+0Fcbm03PPLVcje%I^kC*?LmS.8(a_,I\2F4Jr-19X&'<9Q(hZ)m@jJ&V-V`4;?CHO[I:0,ue#8ka.J4OD5IU`s];g#q^lVqt8UMPPbKW\0`,2S+MbkL'e`'"12[Ugi[dL03DW[)7MZ$!Kl&ofFLiKQ*HB>YQ=)B.[h15$5c!#)FO="#OE*UQ6*A/jlX#nmCLco"'e"-]S63"&Q$2RHE8_i@K.D!T"L0:qkgA6"JWC`6ka7)ZUE%_PT>]uN`?,#4.@BR5o_]e+2/ksn0]UdtQWSoR"a;c_Ic4d%8V,e5A&5=:)F6OmaZPmS?eU$BYBBm><1O0F[lnhO]=FLDpi#VF?Ki=M(8+s:KUjjsQC)UXY'1kO\@U$udJ_%(!lBoBESh*V's_"c*BpFHO_p3?)UMr\K1IgbfErRW,u(nOfeI$rs,')-%iS#$,If:i)Jd"Y?6h?$QCM8RCq`llg9L9E#uL'n&lFOA5+E\c9i2RU8fd>?FjCB/uZ5JShJ+12fb$+c#aG6AU_C9n(5#5WJBYq@`QnE'&$0,]f9No)8h=q=l?'c%Y6pH1O:W:7^nhbD'a1cl3DW9Q5G]72f3kp9=BrUW0VE&.#B:3Bd,^L?0/'5pV0X=g,c![X3J?K$eR1J*X`4'oS_M#4)\npH?tCsL[VR("9r3BNY5@>PI,n_0Esph60,Wo0s@kGuHXh;(&$A[gDdSM#m:eKG.[XS\oDBAHmG'gB)2R<=o&npL;9"NPil65:$HappjhNFJb6/;a.I,Cl9NN[b/Z:koG\Bpg1;p#'RE>W1;Bb>@O2a.Z;MMHGS*ar*cUMFo>*o<J""MdnVq8Tf(=Nti>-&"G%X;AU+sXoZA6L<trjH@l>KZ<XPchJe@7_@ULG785)G`k'ko!jA^R6%]RI'jf;?d2Je<'T$o8DdsE\(TIa\,0J%t3dQ/!1*n>J+_/&Dmbl']?/t95/:f$Q%d%<t/L^Q>#Tlu+<P3ITX1gu!=NOGjT<?.IFgu84"Od-No)(>6-d+;bS_a3>C`7<D.!Ih-Z3M8@",5F%S.;iU.s<HMh[,+HUSr^*?%H+@$j%H3id&N'M=OKL[?6_eV)e[0QTSiKc4mIUP("M6eOO:;H-7b$pq>OSZIc#q#+?ekHUOb3mDVd1p2;*iTNkHAN[\&[O37D"0aa4qc\KsYHQ(I0(c79)6#ecu#EiRJ$0abE5si2m&Prpn+i=#CVEjCM"/D;Gb$@T=I.)._;<rei5mMseJ_G/,;K3XjiN']<IHNUE`3,>[6Neg5S4BE.#H<kTl%^(Q@Ht0_UkFA.hBqYX8UuJTDB;gHK2N/Z<aptnd9atKCmgj5D7YNai-LP[-HkWVU1A`Vj6TEHN;aJcO1L"4Yn%3U$o`\L/hdg+[6'PLi(^^o3"3G8!?@A9WAYTDH/T0[^9J)edbpkfa>:mI4%=*Sk+bmuT_gmP@ASm;^3QbhJL,/RPY,H(b0.G`:"-HJ)fueiD`YL%k>2'NKes?0]6T3Xhe6L(\`4W/k`%2CO)!V?=S<8boPkAk;P.]W.hW._l]<5c=<GW_VIc=:D2Hn\e.T_tC`B1Q3]*e_U!s'K;$n<Fq.2W45]'LV=rG;4<qPSj2%<_T]Sa_'dq#^#3%TE3%YZ&]FRq3fI%PIXXIY%V@RJ.s0pPY:Z'_=DO$:LV-\bBoGqRR8Ea"^HWPQp&N#+Ucb]7!*VId3'08oWDNr$+]->'G#YAW>AO`IUrZrT>^3HYeKI4Xes8IS46LfdmaXX/'J)SSk+9lKU-pjHj2:+u8cKsTVX$5G!3$=&(sdmt,H?qJd?9X0h\V1ipr4DpB^>D3,K67,n^]cJBed%dP:p;abNVIm=`e[:>&"6K$I<dX+U5EWN&dD@T4%Da&1FRTHeYTopGfKAX(UfKub'Cd\D.K/ZoTuJ[nBP9QQ\a82+W%H:Ml;s.aXWK#^c\9kmZs1s<q3B#Jg&0C"67'P\F?.Zo$E!BDV?,[DO'2NH'U!])]/o@@%LWg2*uD[P-'ck`^0sp)N";%G(/G[\=qqZ5h3_&]2i!:WK`Y5"S"YABA[-rk6mXp0A`alJ@9@a'\sK1T/X*A;TGRHDZsK!7B'[QCb[RMf2*n=IcW"X=DTID]aU[_G@qY](P+g(PR<k$Wki#1q$(I-@0peR)YB7&-Xe&ktVYM)\ISiDGmE9ae=$p6Zk'SQ:a!/hM"#hU>T#fr/&YkKW0g0/bT5;D&`c0BqXbWu##7eoG-/(/V=Xjh.rQs[:=/DuOFH&a^eg,ngkqJh.2PHm-[7=BaP$=L#pQG@PD]nIYa&fRC,(WX``h6C:Q1T/1?+%(s^)#c0^>q`b2D+ht_b(Z>Y!A,L.Tpo6NhHZ4<o)`'M*hB14[u1!=_;b,'9Q#KN#,lE:ED/na0,C\248jN=b'AYC7N'`9^O8YXW!!Wrl5#.%BurbBiqK#$^Z,.+&75\\,~>endstream
+endobj
+155 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2325
+>>
+stream
+GauHN>BcPr&:Vs/R(%4MVlhXW+4E(6fpqIgD;;HNH,1V>=rU_^M=^1[,X<]:0p$(4Up2BuRe^R0)+G5Q#_#_F4'Vl8R)/Yq'I\T:%+L_L0`(p<Za8P%onY];jcEjDj+Q\F?cX+l?I$!04"smVjNHZ\olU;m74`JAL'$5J9WZ/V&(Y^k:m>DuQZjW*M`3?e$+%*]dIoo^RPN1TB"@58+b7&aIRDYSaUS?<Ypi*eQ,:cG[D7rT::\mRMZVm>5c0cBhk<h0o*%g@<"+okdU4XNQuDLZAHA:Y@?h"Y)TYO<kLhMN6FJJDO7YK_N*'$AM.X/)b2u+FS4Nl[Bm!'S<sa1hWM^Td&<*rl-j6W7!eEdc'%\70(7IeWje>jDS7cUcZ>GV>S;TAM"ls.cOJE9*;CIk5JpF&[SAdI+/]oB"S[=:7P/]!->..iPi0D+q:o,6+,[-$,`$(87MK;lOb^k*\\2p+*%Xts-q"am[=fVI=%@5?0Es4KmetY,ABq5%,EHl?X`aKMq#E!:#3[FY-AL<D*j:I/-8Yqi[><nA:&Gi0#r@s"e6%Q1l[0S6`CfWiY/m?.JO?A4NgSUgg2aLce2N:*762Js\C*KLk?ZOREJosnEb:/sZ;4]'GG,@]rDo4?RX&TM+!\T/k9(isLc-#u^Pa"b*"tRbq;T(&0^u'>[0<hpI[#i`D'W*0,Vk)n)m<RF,/u,l8_pi;,Kce7mPe/:k;WY1+^42(6*&UkG)ha6UQ9g?3NCEURY/Dam4A3llD9$]W9RY)3$pU+tTa[/=a^Y(;,0N'&.LCpgSe8A$V;>X>X/r>m**=dA"0'3aE@RWQ>*h?\dd8=UH?8t\',a70'$cG.7Yu(#XL?sYV!(OqSGrb2c.E\sRHmUR9Gs.3NK[*4ERD0b:$5Q]FCue8PGq's>5hl#kG1N*KioI>bI/7[qSY+$Ja;T@W%ARS!g/:"'gSeRm`9q0W9Jm&7@n?T(V'go',!1M>B7cQqbT!6-b)1$([0T\A3[=.@O/R2A@^Y=CRs5%TCbNRBgQlRZuk.NrZ(&dObBBTXQakgO0c'2\:/0d/qQ2]n3J=l/nIq`7/$dPoA?470^HD:8-HtHc\N`in+s$_)R:9UCKW<gH('W@:o51a89V]fYor[A0>Y3fS"k10i<?%LrqTDi)er"2JMGZ'"m=p+b[[O@)qKumWlq_TC:E<='OS>e)fclc.C8ep'`BFJhFhaM+N]YtTnjp[A/](_dQ"`#aA%Y:>kD+QY2HHkNE\hGj=T@Ei*Ne%PlL(:c9;lf>l@ndBrGHSS9)jf,BC'7mRAn&5JLGc'[?NCD[r[Ur^YbLQ=:^,%H8YF^u@'r@5tWKiG(_t/BLPr5K`K'e#Ur^B+WpmEJ>'sq5tSRCmJ4lrRaMjMY4[4Q_Lj5WGW-<,l2):Ph-O^0@.m/,WdppkEH3X0>3c8o";)oh"&Z`($CtEgFQAoc),?0WbTS:7B:1lUprFsS>oq`m2HG/rdt'5Uc!gC8Mc[E#Emd`:g'.n*m[8;1jLnFR7lB]q->BA!W7B]/g/%L1W'7$mhhS)[FCOPZho#c$=T..B+eoCa,NA1]=As/:tS&u[E6Lar0bJugSaZ'o!U9Z$nG#MB<4GuR3ehg5!43adU0ZrV_:$<4V[8VEnhd0amuJU8/n:m6qVWU;oYo#%o)39k%;&qFVS4C)=A+XCm,uq,eZiCTl/ZZ#E&P[>I\j!?;8W?UVN\M#0&speC@A8Hl'Q,U+#n+i>Dm7SVJruq;*7BFtE9Ze_smI/_Q!V4:HHomuIQ+p5XDh*:./X0%Fem"OT8%pYD<5Xu<<F%_B&r<ONeW#6p01Wlc3-45@M6'dCD=A=H?NHfN;n/ud@hV7emF(KjoG@<n%fdN=rb^)KI3Fto&G*TQR/@.nfahp7fRCTi8h;jU!el9Q-GU*sE@Abp[SVa:9M76fH7>3ZgRosq/d1gf.LoTFXhBlNg?A,#L]6ZlnE]$8m3q\;N`HVlPa*mJR!Z-rSQ&slS#/,4S%^&i?1I9L6m>,1pU_+;NCk9g\rcg;\1mZ$GO(E>Ink\%"HX;?r%IVRuEm_,PJPZX"Mgp]E)%mDF$[i\>%j0t^bH7/9h3A'.?mB&;L#4+uWRHPLDYOLGq;m-d./\'E9LK/7+b*IFIY^+-J[!Ja]%?Jii^PSo?F(mE@>Ip.o1Y;T*h2H=1WV^7"pKEPWZDDm_k.4p-Rh=fR\mMmf0=UWPWniV1NLI<&:qOOg>Ip0*VAEH2Y@Hgn<E&5ImT"@O5=KF#oZQosp>1hZj!nHeB\hO+17+u-P+t`u5KYQ^d9_hkm?ZY.VoY`Sea6u@S,.lGrrDi&+B&~>endstream
+endobj
+156 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2497
+>>
+stream
+Gb!;fbBDVu&Dd46B'HZ[M\f_n2^cja:XV;3HFh4Q-6\;H7B.Wpa57[96'+u<J[-UdD44E8!-)r_(Vnr=.1l.oec/Fs!'`'na.FeW#)ad(i<`V6J9QpXJ'L_\kkT'oD!G#UmVd7&p7UPf^&T4i@L_KBhHaGneaS?!b"<GKKF:o'4*b$VCUehn)nC]IpTeJt2mE&YMsoATNZZ2na#N\fa'C"#'#^a;-T/9FF$N"cJJT^[Wn*+,+::)QZ%r]b+"S07QPsP2HF#:0&Mpq)+]K)?hjkAXPR`KB!RX)=ecU(h^]IlRTsI&lN<9ObT=b)!p0,55eUn`-qRNE(p]0Iq4a]H>J%u!\Ad?s*)Pt/<3((*T/AcgU\!>ECUWB2]pa15=Ml\E"li:W5L0dCq@/c:s.=^3]1"dL.:WoJMWbpIS<BW>LmLq7J\=W_9Pr+R]MKii<A^e'kj'GC\4:b[C:NpA*GT]oeaCI1h!(D#O=kFmmILq.p1LI'k+un]C1hsU7r3e)aRub*`qMi]7jkEd5'_9ODq9]J.Fo;4M@Q2j-n1&sJJ\*>d/4Y@b*[N*p>cRbioD/.Q^`'QGVW#qRq3:]o.^).a2EW7Nh<3OPnqCNl1aOEU[bbn4V)s%lFb&\NMaO9f'Tqs)/"*=fVWI^BJ\ALi]=!&:6@T3oZ%.#U$rT%9d4i"&O!:4c)^iU=9TCDp^PtFdZCuXoA6#i(NMWp)4#Br8e10%KA2](dBRVqZAf?PFDP_"7X4T2g*Gh9;hV[CH@IBC3ZFm\i&f;-+H+Y;obXgg,#qX`6"Qn]hX-]-M:bEnkFLEI'["`t\\i76MBd9Ne?EKD<0+0_`?\9&Mjt+<A6X$YEgELR-\kR$&3jPQjQ;>I99XDO?*XejuZ?rfncD.'YO+,*i9d1f@k6YTs+uRhn@ZkkZY6'm":a&E0f"uU;%[N3,V8<Y(UUfP!aWn1VFH`ch48UGl>$\--ggk7umUUWs(OlT`VW2*uapS=$a`9e&j=qE/)35:&[AS;#(k#c.]#2*HoPV5Te"Kpd@38S:_+ec7T,ck!NtdL1jX*drJNe_65#qg+VDkiQcr^8a"$e6+dI<8gP/VFbr98piZWWq)g6]#pX6ghtPjZKCBfEeEntJ/&i.Val'%Ju!Abd>.19@.+c+#,FiEPsLgfHnV!';L3&.p..[1JA-'2PmBP!uZWg[T5a5&[ho'ia(.kM7,mAOQKtqY0*qMZWQ!K`04]hRBNbK2p=N>"<L(GAuBgqFoG&SN>3LW0XSUs$lb;rH8!soX2+dZ#sU'b&0GDE9Xd(g[$lrF;j\0cWtntc*js?)9KF+\)2!`(Od`ul#ur@(d3k;@&q?!IiJ9>$KZOhDI)[7BGB0dY&%<e4LF=XD'?S'g/;8s$mpS2"[3d]_t/4.Og2q2NuB+&Z+k*jmiaI[Q>Q$f6cQhY(gt!D`h"rfTCus%1HVDUm-N?)'li#gaD0`^b@RhDakbd[&g+LP_n>t"3Lj:4D5Q7QaX+r52ml$f/g1enc:BL?EAue==D+Fp!j6dJn5B,20Eii/,cE(W9HVJR/(*!Z4@6Dknk.ic-d`dsrjjQefe-GUYm6Jj*gTbb)3'C>b)*;L1*/XM(_K>R&h]`VV>cTcOq?)NP!XKBPS`Tem`R^5m\aV"pN\)Y8<kE9<2B6QWlenTCE_#Q)#A0?Zs66pMG]CT>IeiJZQATUWHQ'!pGR`gecHAd'Fp[IE`9t1M36n`Y7Jjj..Dc$f,:u!b5r8#Gmk@LKhF.[eLlej(!C<N^.Y0fXpD/^5ed;B[%)"g]Ti;LhGW^4-XhJA*0DE@lPME7`tL!UbHKB[bdM^#NmsZgW5@X*:Il<*eB)l=iNa]@-Lt9NXEu>%pZ^)+"3YPVDTgDfC[!2@s%LATMu1/8Drgk:)`sX]admOoK)3Y-lE%*.;:P4E>K1Is3lN70GW]j7cWX@,4@mHLDR,%7]6utWZl%TZ7WXAIBYfi5>ICMY-$0p-d0)+B5c='hV+;0Tc@]d`Uj/%M>:u`rFlK2QU=M=ukX;f7#:$ZC74PN5W[:O59i<gUS*+H;H9O_W6MT%KO-/sSH!7.'dc[R\Nl\d&CIY&W\[lUR5/7+d>J_'Sj%uq`p@5">*YT!:Q0J/9\=NGXB!7L#9mPO><FFK89oFP!]]0ALo[J%>?rnE'T+M-=(j%goI_CQNj%cE5Kts`=^JE:U+/"qa[`Y);2PPpu2R41+pGn'aN97g$Xs`>M!o]%rq\SOMb-0b1M:1G75t8E*K+j:@Q]$Kd"<IlD'97>XD(ndM5:MdWTagFcRgs1d>g7hL9"]fGmQ&]U]ZP$OmAK9WP-V#fj`L4DE#n>5U!ks!T&`ur#BYmbD`PL*oaF?L2FOLP2\mK["kV*=1"rS@R`t3mgD5/5QHSIqF/c`/i-<ekd/?1l=.MCf]22s923&rrlF@jg9P"0VBGn!LpT?K%9H/Pi*7\]6.?BoXTpeUMBK,$mZRU`YqTkDH6YDO)\K7_!gZIqZLU2I2Zch\2~>endstream
+endobj
+157 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2252
+>>
+stream
+Gau`V>F1g=%"=gUTuXOP6Z"L]*n,#]4aX'^F=+Ws1+rd#KUr<E+ERAQ'fY/`!eeS\:1kIi3L1t@Z6^_&"TQm?s'Q6(Fq/FS:nT/ZQU$tT@"&4Hk?$QDC5ufV"j<t2fV/.9=%*X'%qd]&36\ic\TpE1bqcdD99G)k&9&)"Yn=%dhnn2jQA[?-Ih6Uk]n6&]R(k6X<<ogs@9TPa$odcZ!c4_%(S"[XR1h92@rTp#WJ5&,QWmjBbTeH`Ql\W.E2#)\[S7R*B>V(@5Up1;qMLN4<-jce+JfN@B`U4AYgG4L/VOi&E=0aYL\AN?'mA?k^a?SQ\>18&^nfI$mO-E>GPA9N'N8#,bVL5;X'cVI&,p/o3ea$P1+^_"MRq7r9Tpmk;;!/K+P[-iY]6tJF]rl=Z4T&&OuUY6I?5gjeiaD$L.;egS&Kkm5DLYRZUdNHUga!#R"^H+F+"^hq9PPKDp8jQ"@<]D:;@(r3cb0>PM4do__u@d+,!eHEk7U0*XQ1D)4LHuh+%0RO3AO1Wo1.t4-iR^+O2k0q59tM+Mr9$8Y3TV_I%9!"sM5N+"c(/Oum"Y#S>]&<qT)&US"q8="V$=#^2aS\aDhn:%YO]<b*'h:")8j/@NZQQq(ACm.5^MTq@qXF?,D?@;ZRm>aNl_,6(X,S^$=V__AR4Z&@?&@4tJq"k7"TZ]NhNTDV1U:6QUgQ8]^bFuSKYF<;=u3lJf\DeV3u+?d[Cg5f;Br[7141lXm-\M@,8*ijAX$ocQ<)[lr-*1`-<gr4<5*omIGmWk*F\HqaSM<Duq[HS/gC*./D?`GY!4pnZ2qDnA5UlR^2n,liP?D:4io!DL[+h+$1/O=]:jc'qr=I7N]8Xs:H-fM_%bH/3g.PUFNK!nbC5=G&,rmcS3A<0S/XNrm[oGJ)YU!Ea5;ceWkkQ86QgE(2ekQ?_?MnOWNH\"A'><`s&<B>_$?1GQ=VW1eeJ(PJAeJAsC42V*Ge&iqK+^LjCqB@05e[4h(,el\[gkfF2MLUP*XZP.6;;TI03#ZfB0s45J<Ppn0d5qB3:JLBoH?R*'4WO*`[P\gb(@-d+l?aKWj-cNN]-PW%@p\D5'*L@,CGjq;i4co0*tT@.JCeG1?F]#fl[o!UajuO4Bb4Zgr%[m)1ZJF8r5FJ9L(UU^f=+=8h/&7p*rRA8c-a(6GO-F(P_\&a`lA#-)``W?.&TU[pR.,RrFAn[1aojMM_%cS!P\a?4@K07\;u/k9sTZ91L*3b9);eD3j,VQ+*F(@G,%/cQ%#]uQ9FF>)O2?%%2AjADdQlsZ.+%+FF$9Y^J!iMMBhV7]-DM:#/*bsoYTH/\rbk5\K@n;M0OLS-5tYii\/=ME+H.LgZ]PlV$C[5QTPRE3;1ed55H2IHR%"p0$mB%C`e?"IMa9koAj:tYCNiW1B;gTT)j7tk32u]X"D*@Xclk7hJX2S4YrFIod)BUn:cllC#&u1d/@a52/f?]?@DHTqIN9F!9dmeLN9BKlcO7mLEZUhCgs/_\e$GF0GC2X*DUZ1oAaa[?gQXe2u*66]KJnZ)9)X6/'&CU1"<)'nA\hms.l<a8l.6SfdV)@nl/Gg05FscEEAnG'W3)R(]Jir10fi(%NKuTIOp@4*bDUo[OcVN=rXuPW.Z@[*7.5F5u'it^Jjhfr-%Tu)QN-u,`Nd83UB6jZ#Z:aRg1s^8_g?4TOc4naY.PqWks:<0:uE3BD!ePP2AC0F#VqONI!Ukk"2fZj2E<92=%9uE%I&A:=YXMM`5`o2,r%GAcJb^3AtS3A\6ntUf?u\-)lh\<,=EkY7^'-10Ls9bWW<l;62A$U9Q@KD(W;XFbsktQ<W+0W-3'`;d5Qd<j&u?Na/G4h4[j5c4QU.9U>=@\(f$ALUrGDEhSsJnC?,%0AO!t7@;IBVnM1Z]NG"<lA'h&nW7B$-=T91eD\OnlJPi\P^%Z-ONFK\&-crm!3N_H#j#"?#IIX,/fTDYEZp=0N)%jRj[(Y+-7#@=$Y,?b87lT,'Q'WCq,[:0)o*V1Nt"do1PtPL\]2!//O,9BZ2q?k29D'F$52pDPds9QaG?no?.]j7NP==h7,$cAbGZfrJlBW"@?fl&;)T?3YSDF5qJM7,k\IM&Io4/[i>6EB#-N[h08$)Nr),STERqsM/Z4Rq*(bA1dN+3`e4o$tP]NT`b3PqA1i6PcX:,3r[_fI(]0o#3dar>YR[BJpp"2uCZ;7"`(^\S'7m21N\?_%A-Tu?M`LTZq405/fSq.u=J1u;S?,P3:8LEO)~>endstream
+endobj
+158 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2154
+>>
+stream
+GauI9?#uJp'Sc)J.s1$!-a(/pE9VPPT%V5'h:ar;di/]>Tjo2KS0n.!=*t>@"9eC3S#2Ko</t;T*9g!Z&6;#kqU^c?HG;i9rZI"nZjRK)99+2)k[o&3mAdGD9<0n[9tb:<s39uS(8SL2`=Wbs(Set:c"aT,d:X?>9I@JAf4ZNBnh0NC[!g4-)5EZkR2#H9[/5`(Dp+(40?!XK12=4`gN[oTM-eq4WbZH]JWZTuU4fJfV/$B-0XPr4MlHQG/m#>X582RLfLuV1/k+CA7[Z['gFHN7VA<&=!j2`Yl64NF6:0VM$c0ar"J(%6%L5J1*4AsTQ6N6<.P<5hd@q87^+?">gFmJ?FS1n2b*Lf`FK=2j8+1D]__)t7FKtTI;HHGOV,8ojQXR/+.7Jj#lMo0#:>"mX)lKg]KqB];OWFBEc19hBfQ^!1EJNl#^\;&cU-eT!PCAr(_d21oJSK8I/o82`6gAe]&Z@;b1)TA0_O[sO[7uK(>dUl:`RP4UN%fSq!HR?!_0_1W"C(P7A6o)&bMB^-@[SBp'"F>P:t&/'O5A<+\+n&]PjaIUn\"Y&pl1;f=G+'Di45D_#.1R1F*i$O^3b,Yi8TNE/7c!7<?Jk)Me'$50e:k3BB1?ZSR.g-P@A59&27G?h"^;R\p,MJ/AZo8?(41>QagcSU%8F($%EDf12SRE(5%O!0_@'mID6j3A4eDONm-bik<nOlVo<d""nHK$7qmcA?$@>BWf;rYAUqWKNOo0Ua'<6=!;I:n.."48D\UE)TMi[;1:I1h;:+o^WBsA(JH.'>1Jt(\#!f$[M3C)d'N67Ug]`SN<u1q'ACpB"O:8(;N+HlgE%FMq?S]sXp*?7;FPm&95RSg`J8.#ae@&=Db/I/J:I5]j,Ap_c/UOp12C;Zr*B,4i;6I@;1GFS(OAX4^JVSW:7D?D@U1+2egAf-VgLeU%`,<l>RK7'-;sE6\`o29bZ#"&j%`@i'I3R^TG@GbLd6jlQKk]+2>$_L9FHYnGHcb*>!!!+2%"IC@mHs>9Yh3JANfL@Nq9J0"b,?2'0S/Nr!aF<F"1WX<NcYTn;Nqf;2?@tJ#ScVUI4V?ZEAeMhr4()O/:&_=1c`Zo8hd.3%S+Jdmi6#+04fQ&K97Cq#'LKaMD9/f"/]sQ;Q!*!*0,,1I."4V*Lf_`S\)EOb[FPN!P@@"G<Q\]PA*/%oA_*r_/B9$e[S94!4^l$hT36G$T=TK3Y&#>_tu*H2Oq^n;50p,:nsK#Xh`Y#3kW(BH)=1i=B>E1k,tMT1*+tHPNQVpnJL;Sg),k4?+1pcZ/#/e<0_#A),/i>+KhOX:7^*A3ZdmHl^A^"Ie]&L$\CVBI5:OlV%lc".'"?QnP9r!-RVX%S]cp=?=q1l9&IXi:D4*_&3oP:p:9RY:\Z==bElS(@_M5:(<?KTN7dHYr$[ih\_B?7@l/aQYjiSUS%(]kDQ\_(h+OZ#\0c:C=GOHL7]sSWD,';!WeghF.nbs"N!)1jb?S1DaHZcfYsRQ3XV0`Zq)Od?*_F6)lqrLk"3^0u8b?ld`K5gbmIk"Pc-PRh1iB4*e3)&A4<EHa.%Dl8ElqfbiL(%Oa-%rp4;"a-i2;?_oS[C4OBl3/)Z0,)4oJZ7%Isf[!/AU/%.m:XJYHOnb`q0nILJT3)1uAsWU"MPD*A('Pe3J4=2tK;?Mn?gSD$^l]V)Zp@*`@tn?=Q3BrU]7:63(RU*At;Q"EF1ac)7;$/>WCckuSl'@<?PrpS9"7#C^WchrFJ@K+M!hJf2r`SW(I^VL)O>"&J`!m_YZ$'0>hN_Xm,c:dZUr`i9jF9g(39R%QcDJ7&!VGO0=oetp_4!ss?RJ5CTZ%GR'B%iq8Y"pmCkBOd$Z9/AI(6Q8%qFl1'3Hkun_YK+LBZY<%J"a<P;>3>R\<j/<FV8teZ:k.QN;ol+^KrK4U&N^.r:BNkI/3bgmqqd.HCql'+4.I%?r`+\lH2#0Y\e5oCBPI0FfTOuZ#!WKlE[i0\#i`.[^Q*?f9X1_f&HNUF]hpfkIE4S(1oS\;O=eFP."\^g03c`@oJ`%`Thj#ASo8SO1O+MLdSPG/o(i+D7qF,[<C<Wme*n*3nB91+\k&&PW,9bp?tc@X.0PIF&VM])(&A1QM.b7@M`&[:mJ^CT27hE$L!@uVVKih<Bo^4J+&fm`W~>endstream
+endobj
+159 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2582
+>>
+stream
+Gb!#_9lo't(>\jh@&^T\/3ZUd>UjHVR5aBKNAN;XC`j@reWECfUi#5N56(gP;Ib0s\oF4X&I;4C3#;h<_<!O?=T'Q.s5\^W]/BHXGCg)hlRa<pkG.\toO31>pPj"r]g+Nq[U.cds"!O1*Q3+;pkWps5+olm&'MSs&q,mH=i`.VkSC;^?JZLXJ6(RN8fl?7-^dur:MB\C>5tZcm<6EqO"qV1h;*p7M8IQOJ#]2"2fjp;@ie]B<36rA4Q6cpYodJU5%s:5>\]q"^0=V50h&Q.7"n%`T5UsuV8cqkJ;k)<o7.bnMB_/9g'GM?joh6)p>(93eS[IIIOU.J[oc^Z643l:I9Z&%YJ0tb_pq1F..d?Bd]Tm2T#CV*%blrP(M!Fh^b2t#aEQkS@"u3.;Mr?T1=LoiCtW!.ln+A_/$%YaWUcc'*^kfIU>-59Lp%>`6G(ALU6%rQUr2nS7HP`b_<g'9n,$@s:.UZK<2P<A"2p%cqiHtka2eX%i2[CT1W%#fW@)>emrqQ*4H&Z8AGNa=L+uo0G77hN\oZ%GStn=cb`=Pg2Z+'+l_aC2/j;^tUg"H7DK`cHIN`2Ob`^`$(OMTFU$j\j\,eanLVKlP5&U)+nj0/0,kD%NE'$C-lGLjF-I9l8>TSt'h8ln-'R*$M7HWW%JjTQdVZCO[h^=g$"qR>h"B-K=YX]Wb1FOH^Ih5a0pPuQP`:dmrl=lh:0pj=pU@<Z_cX/V;`7:IkSUZ+aW"n$m;`k;[H$!b]<i.b`<$gs4@8ip>l3dJ!F'&CBq?kt\G;",>\8S'b(EnoI!2dSugO;^^$t\a*HdO`-9PS"/S"#=21Crb&gGIZCcCelNn#0hlp7dJ9Bmj1rf+`Q6`pJ"T/9Z]V1KrD_N":-Pg,@[4iQatuVq\K8c8]\$T4^"0WgAIJl92>kfW!hT/)Mc\HNLG:l$/Ge&6cf+/4E/n<D(=A&mncg$IC=EmaLt(3nu+!)[l0qpAC#()P3Y@6f6qO%m`:Z`+_b)(365b0!l'<`I7.XOUp^Z/'$&5%&[k%.Z/h'i,Tj`3espi\+!9rC3Q`0&+VEu3(n=9`S'_80(l.;%1$u3#@t_g8<inVM90@n14c=p[q.CCmHO&oZiZ-u:$J[9HLWOY?(Kf48ek!=86:`VD?b=EZ@)X$pA:UEb$pO_O@Mr%a_<`-WtspT-r@s"5c"/h@#bEFqQkGVH*D+ph-m^^DP['`DC)W7r^I,c#'KE5/746d]Su)_#7i`km"PSQl3!U!FND?H%\k]u4)?eXa'cq^:%+iVA/>-j_*U<-;(6feF$'1R3;u:kSM#!sENghdj8HYB/",6/q0'66G7Sta:Q`;*s(\!`"B'!'"/9)OBP1ajGRb$\4jh/HEY]&kUk\,u?S8np\\:JP)DX?s0cQ\C(k=XVH4<!&Eu5GPT(-c.%*\Kj]:sUB`GeeY@Crjn/\X,>4NMXnPa:Qt(`gf95iNGOU+I+%(p)aW]hjHE0mmK)p;BOhgfgJbL7.*,o?-LmC5gpNm[]Em\Q8!34aG?>g:S1ARFL;J#X;'.FJK+oLef`?+cSfP8S\q@Wph;a2:`hLO1CtV/jf\WnlDFL\Xu0&5d)S>s*>GbH@aq1"#*ZG4I/ur=Nf04*7V:+20h'gLF:kt)[tSM")jT,]0)Q.2]P/3g'Ys^D(pUr!LWje`0SB+/8iYO1BF*/eLlu_OBF&k:;%8jQ(%P`L;UQ6-GLFc6@G/hs6\n=Dk[l.'PDC-Mb]HU%cc.Vj(dqGL1<7e:jh!l$&atkZoTA6#^[)f?%Y:=-C_oUdZ<p8OWT[Sm=fkZ,K0`VUg,a/l@?SdPM\*Z&/mH9C&J7%/>Zi!XaS4P5Gj,@(e/oD__d?l31Op9d.u+OpFqrkjje4Y9;R&nKCWmV<^kKm;;5+&'Yf1LDa4BF7&ts]`4\3/k10>qMJD4[OsN+r.$W10T#9Ob@lDVel(I!S_Dr)ORgu#TL;B4tc>HEmRl<I;&(!4Yd8CW;d6[A<M?A0:ic+_R6]s'"nlCfhW6"^g_m,XD*._$1>f^cl)%Lu(82jrCD_Db!ORLXVWkT,-OFa!IeH<tJ\=_#$R1gJ6=6*HI9U7_\8=,)&U$D9Mp7?.G<VMusbLc<3#tf&`;O_gJ\p6r>`$NrcS%a$EWMQ,rqs1P'Trsuq[3TMaYKO'pB_p=,=%h9Hlgf!QfML!rm$i^1]=5c14+tY#l'\?J]%FGgcHSu/ND6s#ANhi=2Ha+igmJPe%AaI[>AdVOaL`W^r*nLt@2(!Ul7Uu_bQ"4b^J4=JUgCGp6lgLic<4"s#jJu1XMDRp!UK=$X]^%TrC%"W&cSf3jWVMtnulN^R:QX6G"2=n>&Bt:h_tItfiLK'q([Zs_#38od%`Y0(C:'&\Q=GM8_0Y?cC^/DZdT5GfpLHIk8iSaMt<(HGYN-:V#%o-@pEX-o@P"095d(cp_9WX,UlM9q0\m?)9TTqAgfmp)Q"0J&SYF`lOcZ`r0WMD.1YQol]d@^&aJ1S(&FrL<HL[Qfj0$6UNRA&-UO.n*?&\Eg!k/tF^]`-U$gVM>n`3rTo.OTD:pePJ=7?5gU\uGK2mhdg.^h0C`D\7*SpW8RB::@~>endstream
+endobj
+160 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2547
+>>
+stream
+GauHN>BAOW(4Q"]37F5*SX:^JkO+P'Un-pa-Z6#"B4q&BOc[MK,e*hf=o7OZ!5+,R6rD[bS&CVKgVNXC46HTO#h\p=R,:I9nFH^1qLnoh@'Kdm=WT+X_8jO>^Mhhpd.2<Zgm2H&k+>cA(8MtrpV75G;8DRsO7s.q'#(Rb'<FkEgqeU(Cb9<$O#s=C!?[q:WT4Sop^2p$oq93R>gIFqa7"b0TPFbZT^D2-[B=LWKBG<35pTQI`I8@%/m,@pgCAZlZ%oi.U*[6k+r?AdYlf2F#_KnX`uEcldi^@rfS0R-kFeF^32,/3+Z>/Z!f*DOq*9:q[fV>-+>T_G]&47W)YEOND>*eqY9.'O)aYbZiX2Ctm@lagVKpG+D8l]MHNU5@AL_qjSq62qTbVkp3.?g7YHgpYe&GUeS]TW>QVrZ$;-_2iH+8<:H#YM_#CgWiJkVlt&h_UPbFTANNYfs^^]WESSF.7cE=+-f8#LkepY=>AkR]t7_=AW(_[kLCM&VJM-3pCuT')^rQ1=DI3km^cZkn%,qHClLD$Spn_WQOHJ1qpmpSHY#0s0ot:tdR?*!`1(-IZFIS1BT1@oi%ki+?,#97&8J$<HY/QGQ8`!bbrB7:8gtIPsgdc7.NAHaijk79;V5ms.dhZ6KtA*o/>n@/=(NHL[f>k6&<*&83`b)1gKp8J3A!&rd"]j@qu03hri:LA*=^(opfEQSpl^K7\t.2U!G$'*c*nptMn:8hX$=N'*Z[4Rp<L21Jt5X@sF05##gAB_kpVqY$09B*>fU&88!;3J!pe6^B?gaIUnp)dI6'1oM@hTU"BWR2QDdUanV7kfPkUSk1dkni;Oe.rr\%BB<^<?8F^9U^p][P^q]%>CKONeJH<_q-UUh7q*j0@\4%tj!hdmJtELPrPDZ-M&utdEfZr1[58ZZn"F+O_*1;f=8NkMa?]D/!k_oJ=b==>;#Y8>S^W#N]RfDklQfnZ>4:FX)p2$gO,(;ImW7?7]EW!rp=XE=0<q.HaXW\7c?T'_<U3Yu`.5Q>1m&5-X#eRNdqYM7U9hIUmg[57KrsY2P(W"(>/0!#q?C,qJ@Rn4c6i3,?H"0l7?^Wap>@lY/0.Z87<\nceUBSU,mZlZ-'<R5:/5O#+8GI#`ejiq'>i_kQXBDclZR5i=d[CUk'IT!9oU6^)Z-2_DTYXi;eGm7XUiJ"cZWARk[X@`p6!>3[Y0<n\$Yi,o=tim!c'KLmW$UjM4F8XY\DNM&)+P-e(e]FD>NE=,4s^R19I*ap\^IC&pHn9>?=E`d['0:IAshcKB@M^'D['1q:_+G@:*od^?3NYE\uj^+iPMl1T9^9Y_V!Bl8pWb+YQ1tZolu.:AXhE&)9EWYBrQV]ma'Yp=J`!AuY3]P*d$m,Vkt]L!__-f:Y#1W8&*k;^,`3R9A:Qh*+11kT\`GcFD9,NfQYO_lIi2$2;0:05NKi[uX!/[KXB#T[pK55aT!O"=b7)\PO6<+>GA1f-B`laV%cMVAntt'AZ;jZY"lF*3(.E*)C9op4NNV>SE8,=Oq9?DHI4u5/_#G/l=LFltqKWEiN/F']\.I1U')>SqPd*e*GW&*G;CeH\W&b>@[B)?X/DUI^ec)Zn,AZ?8/B]>MG3b$a`Sn^T0mcP>LiDW&`f3el8htSk;PBYoqGHl"eDB`"T2+?"@`u'^5YMK%F#[Woo8-2c5)72om>o>QQE2V)7EN;EX/TAV(:eT"3D!m+KZgZ+&fZ:1brT@[jc,E'l,3*Rjo4UqB4qq'S8d::"rik>/Pa,@fI=<7-hWmndY"Z>!ZU1`E1o:.rr3U>@`Sk5#m0#%sfdA^?f=K^la/M@!GE.4T[V(As*BYg)`DY;*V@d65'l?8*oC"jI)(6=@9e4_Mn4'u44%Jq*5Hq*!SUjF8^1[6%D8HU0AW4hK["V:Wp`m?fn.fESa?HJ2upl6V4=CL:-Yr3h1tU=N^.ohN7:b)F8CLXnkqBU77Z!\?h.fu0b9ksu>p>T\2VZgurm"b+EZm^?.d^3ZgNI8s#6`'t[oBVdAL3kZVpoJ;MlkBqVcJ<?cQX#s>W/o)ml[23;tf3,0#+tGIb"$Y(8D7I[d@j8eIqanF14(Bd+Y.\j>RJb:@5ng"f3(Kh:7Pr+"c;)1K/T92[8GpPdY67;61>q?$=l:q,8AIbHG$s;]`ou"*'j]tC[WV_2-#$S70rEC`D]"c$L2T`F@3sE7:7!NXZ%Fn5TqGcT!Yn5W(g@cE=M<><cD<qR0[&H<FGrLqZGpa9pmVjhF!/j'9VUA&r,urB0!r=\lLLoBgY_[L>3eggJRWl\+#_];,![WH@m\dBdA]\JTC=t`9n:>7)"+uO9r?@p<k6ND)U_d5&ONR7<B%KS$`(=-IbP<u>(PgAZ$%-i@[_ZG?7W?&BjQ71CQh[bNeltpe2/t6i&BHBe9MB97o4_L<gf$r\/B:)Yg*1/$$*9-o^(V;NeXPLV4J6YJ<f9fH-)L$a!mig/KjhsToO^G$F`H>5TD1)j#Pa/-_BgZR<@0>?)MhO*B;5^(g]r,8]Q;+KjZ5VC-lu)STACqaGR^^RGm;CI<UN1~>endstream
+endobj
+161 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 542
+>>
+stream
+Gat$sd>j\M&:Df*b[[eJ\Mt-q4C4j`3[kSRb7D*n$#[Q@eqRH/^2&m2GEM<e!b&Ds43WX\=N[J;B@R%?8j%Q(:b.bf<0h&C\(HqOf@dS'PcSAq\CLh&\bQdKl:SP2OQIrQbdX))h9P%.e\kuK_H2uOdXcOr?Y:IZ_e(/5qub)+.)/0upI&_]XO>Yq7^phO6LbQ_6_rPRq%@tX:6[`#C8.#oa;+-pO%Pa0<Fh-HMMjEY`c[489+?ke)`ID?7eFTCSClN4!fh8D"-1s'&/mms"riAFblP4/SL(dlC@/EIa=koLUcfktgS,p+]>k:S7c%nO"qqW6%Ge,1kq0-BJoMR?@ag*H+S%7HL/,*GVu&YMqs?_&er6?L:'bc)K_8(uNmA)X-Vc/39G^1g+jL;f1t1bU5(L$LZ:o'2:P-$J:7G9tK:@ZeBD0H&o^DC$b*)]&o$9LXs&o8G'E8pgM9fRd\i'3FEE2&T^s\L:3"MspUft+j(=U[t*NTW^[,_i)GS$A#['(CJN\PDl@MFs*G@L.")J4I"gNMV2~>endstream
+endobj
+xref
+0 162
+0000000000 65535 f 
+0000000061 00000 n 
+0000000112 00000 n 
+0000000219 00000 n 
+0000000331 00000 n 
+0000000550 00000 n 
+0000000765 00000 n 
+0000000988 00000 n 
+0000001213 00000 n 
+0000001318 00000 n 
+0000001539 00000 n 
+0000001853 00000 n 
+0000002183 00000 n 
+0000002513 00000 n 
+0000002827 00000 n 
+0000003158 00000 n 
+0000003472 00000 n 
+0000003802 00000 n 
+0000004116 00000 n 
+0000004445 00000 n 
+0000004777 00000 n 
+0000005091 00000 n 
+0000005421 00000 n 
+0000005735 00000 n 
+0000006066 00000 n 
+0000006380 00000 n 
+0000006711 00000 n 
+0000007025 00000 n 
+0000007356 00000 n 
+0000007670 00000 n 
+0000007984 00000 n 
+0000008315 00000 n 
+0000008678 00000 n 
+0000008994 00000 n 
+0000009326 00000 n 
+0000009642 00000 n 
+0000009976 00000 n 
+0000010309 00000 n 
+0000010626 00000 n 
+0000010959 00000 n 
+0000011275 00000 n 
+0000011607 00000 n 
+0000011923 00000 n 
+0000012256 00000 n 
+0000012572 00000 n 
+0000012904 00000 n 
+0000013220 00000 n 
+0000013551 00000 n 
+0000013866 00000 n 
+0000014199 00000 n 
+0000014532 00000 n 
+0000014848 00000 n 
+0000015180 00000 n 
+0000015496 00000 n 
+0000015829 00000 n 
+0000016145 00000 n 
+0000016477 00000 n 
+0000016861 00000 n 
+0000017177 00000 n 
+0000017509 00000 n 
+0000017824 00000 n 
+0000018157 00000 n 
+0000018473 00000 n 
+0000018806 00000 n 
+0000019122 00000 n 
+0000019456 00000 n 
+0000019772 00000 n 
+0000020104 00000 n 
+0000020420 00000 n 
+0000020752 00000 n 
+0000021067 00000 n 
+0000021399 00000 n 
+0000021715 00000 n 
+0000022049 00000 n 
+0000022364 00000 n 
+0000022680 00000 n 
+0000023013 00000 n 
+0000023329 00000 n 
+0000023661 00000 n 
+0000024024 00000 n 
+0000024340 00000 n 
+0000024672 00000 n 
+0000025005 00000 n 
+0000025321 00000 n 
+0000025654 00000 n 
+0000025970 00000 n 
+0000026303 00000 n 
+0000026618 00000 n 
+0000026951 00000 n 
+0000027267 00000 n 
+0000027600 00000 n 
+0000027915 00000 n 
+0000028248 00000 n 
+0000028563 00000 n 
+0000028896 00000 n 
+0000029211 00000 n 
+0000029544 00000 n 
+0000029860 00000 n 
+0000030193 00000 n 
+0000030508 00000 n 
+0000030842 00000 n 
+0000031159 00000 n 
+0000031493 00000 n 
+0000031809 00000 n 
+0000032144 00000 n 
+0000032460 00000 n 
+0000032795 00000 n 
+0000033109 00000 n 
+0000033441 00000 n 
+0000033869 00000 n 
+0000034186 00000 n 
+0000034520 00000 n 
+0000034837 00000 n 
+0000035170 00000 n 
+0000035487 00000 n 
+0000035819 00000 n 
+0000036136 00000 n 
+0000036468 00000 n 
+0000036785 00000 n 
+0000037119 00000 n 
+0000037436 00000 n 
+0000037769 00000 n 
+0000038086 00000 n 
+0000038419 00000 n 
+0000038736 00000 n 
+0000039067 00000 n 
+0000039384 00000 n 
+0000039717 00000 n 
+0000040034 00000 n 
+0000040367 00000 n 
+0000040700 00000 n 
+0000041017 00000 n 
+0000041351 00000 n 
+0000041683 00000 n 
+0000041999 00000 n 
+0000042331 00000 n 
+0000042756 00000 n 
+0000043074 00000 n 
+0000043408 00000 n 
+0000043725 00000 n 
+0000044058 00000 n 
+0000044374 00000 n 
+0000044707 00000 n 
+0000045024 00000 n 
+0000045357 00000 n 
+0000045674 00000 n 
+0000046007 00000 n 
+0000046324 00000 n 
+0000046657 00000 n 
+0000046967 00000 n 
+0000047166 00000 n 
+0000047238 00000 n 
+0000047628 00000 n 
+0000047748 00000 n 
+0000048525 00000 n 
+0000051532 00000 n 
+0000053950 00000 n 
+0000056540 00000 n 
+0000058885 00000 n 
+0000061132 00000 n 
+0000063807 00000 n 
+0000066447 00000 n 
+trailer
+<<
+/ID 
+[<05ff9e462de64c23889a437829367615><05ff9e462de64c23889a437829367615>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 151 0 R
+/Root 150 0 R
+/Size 162
+>>
+startxref
+67081
+%%EOF

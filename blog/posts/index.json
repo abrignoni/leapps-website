@@ -1,5 +1,37 @@
 [
   {
+    "slug": "2026-08-04-telegram-system-events-reference",
+    "title": "Telegram System Events: The Cross-Platform Reference",
+    "date": "2026-08-04",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "iLEAPP",
+      "ALEAPP",
+      "Telegram",
+      "iOS",
+      "Android",
+      "Reference",
+      "DFIR"
+    ],
+    "excerpt": "Every system event Telegram can record in a chat, on both iOS and Android, with what each one means, what the clients call it on each platform, and which ones the LEAPPs parsers decode in detail."
+  },
+  {
+    "slug": "2026-08-04-telegram-ios-android-coverage",
+    "title": "Telegram on Both Sides: New iOS and Android Coverage in iLEAPP and ALEAPP",
+    "date": "2026-08-04",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "iLEAPP",
+      "ALEAPP",
+      "Telegram",
+      "iOS",
+      "Android",
+      "Settings",
+      "DFIR"
+    ],
+    "excerpt": "Telegram now has fifteen artifacts across iLEAPP and ALEAPP, covering accounts, chats, contacts, cached profiles, and the app settings that tell you whether media ever touched the device. Here is what we added, what it proves, and the parts we could not validate."
+  },
+  {
     "slug": "2026-08-03-android-usagestats-recent-tasks",
     "title": "Every Step You Take, Eight Years Later: Android UsageStats and Recent Tasks",
     "date": "2026-08-03",
