@@ -1,18 +1,18 @@
 {
-  "generated": "2026-08-04",
+  "generated": "2026-08-05",
   "window_days": 45,
   "items": [
+    {
+      "name": "telegramAndroid",
+      "query": "telegramAndroid",
+      "tool": "ALEAPP",
+      "date": "2026-08-04"
+    },
     {
       "name": "telegramAccounts",
       "query": "telegramAccounts",
       "tool": "iLEAPP",
       "date": "2026-08-03"
-    },
-    {
-      "name": "task snapshot pb2",
-      "query": "task_snapshot_pb2",
-      "tool": "ALEAPP",
-      "date": "2026-08-01"
     },
     {
       "name": "windowsApps",
@@ -27,16 +27,16 @@
       "date": "2026-07-09"
     },
     {
+      "name": "task snapshot pb2",
+      "query": "task_snapshot_pb2",
+      "tool": "ALEAPP",
+      "date": "2026-08-01"
+    },
+    {
       "name": "privacyAccounting",
       "query": "privacyAccounting",
       "tool": "iLEAPP",
       "date": "2026-07-31"
-    },
-    {
-      "name": "samsungMediaProvider",
-      "query": "samsungMediaProvider",
-      "tool": "ALEAPP",
-      "date": "2026-07-30"
     },
     {
       "name": "windowsSystem",
@@ -51,15 +51,15 @@
       "date": "2026-07-09"
     },
     {
-      "name": "cnaAutocompleteFeedback",
-      "query": "cnaAutocompleteFeedback",
-      "tool": "iLEAPP",
+      "name": "samsungMediaProvider",
+      "query": "samsungMediaProvider",
+      "tool": "ALEAPP",
       "date": "2026-07-30"
     },
     {
-      "name": "samsungStoryService",
-      "query": "samsungStoryService",
-      "tool": "ALEAPP",
+      "name": "cnaAutocompleteFeedback",
+      "query": "cnaAutocompleteFeedback",
+      "tool": "iLEAPP",
       "date": "2026-07-30"
     },
     {
