@@ -3,16 +3,16 @@
   "window_days": 45,
   "items": [
     {
+      "name": "intrusion logging",
+      "query": "intrusion_logging",
+      "tool": "ALEAPP",
+      "date": "2026-08-05"
+    },
+    {
       "name": "fritzboxSupportLog",
       "query": "fritzboxSupportLog",
       "tool": "RLEAPP",
       "date": "2026-08-05"
-    },
-    {
-      "name": "telegramAndroid",
-      "query": "telegramAndroid",
-      "tool": "ALEAPP",
-      "date": "2026-08-04"
     },
     {
       "name": "telegramAccounts",
@@ -27,16 +27,16 @@
       "date": "2026-07-29"
     },
     {
+      "name": "telegramAndroid",
+      "query": "telegramAndroid",
+      "tool": "ALEAPP",
+      "date": "2026-08-04"
+    },
+    {
       "name": "synchronoss",
       "query": "synchronoss",
       "tool": "RLEAPP",
       "date": "2026-07-09"
-    },
-    {
-      "name": "task snapshot pb2",
-      "query": "task_snapshot_pb2",
-      "tool": "ALEAPP",
-      "date": "2026-08-01"
     },
     {
       "name": "privacyAccounting",
@@ -51,16 +51,16 @@
       "date": "2026-07-29"
     },
     {
+      "name": "task snapshot pb2",
+      "query": "task_snapshot_pb2",
+      "tool": "ALEAPP",
+      "date": "2026-08-01"
+    },
+    {
       "name": "chatGPTaccountInfo",
       "query": "chatGPTaccountInfo",
       "tool": "RLEAPP",
       "date": "2026-07-09"
-    },
-    {
-      "name": "samsungMediaProvider",
-      "query": "samsungMediaProvider",
-      "tool": "ALEAPP",
-      "date": "2026-07-30"
     },
     {
       "name": "cnaAutocompleteFeedback",
