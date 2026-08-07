@@ -1,5 +1,18 @@
 [
   {
+    "slug": "2026-08-07-using-ai-effectively-in-digital-forensics",
+    "title": "Using AI Effectively in Digital Forensics",
+    "date": "2026-08-07",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "AI",
+      "LLM",
+      "DFIR",
+      "opinion"
+    ],
+    "excerpt": "A decent version of most digital forensics software can now be made at home, in a few hours, by a user that does not code. What does that mean for vendors and for us as users, and what actually makes someone an expert in the AI context? Five qualities."
+  },
+  {
     "slug": "2026-08-04-telegram-system-events-reference",
     "title": "Telegram System Events: The Cross-Platform Reference",
     "date": "2026-08-04",
