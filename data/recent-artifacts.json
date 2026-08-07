@@ -9,8 +9,8 @@
       "date": "2026-08-07"
     },
     {
-      "name": "what3words",
-      "query": "what3words",
+      "name": "dropbox",
+      "query": "dropbox",
       "tool": "ALEAPP",
       "date": "2026-08-07"
     },
@@ -33,8 +33,8 @@
       "date": "2026-08-07"
     },
     {
-      "name": "berealAndroid",
-      "query": "berealAndroid",
+      "name": "what3words",
+      "query": "what3words",
       "tool": "ALEAPP",
       "date": "2026-08-07"
     },
@@ -57,8 +57,8 @@
       "date": "2026-08-07"
     },
     {
-      "name": "kikMessenger",
-      "query": "kikMessenger",
+      "name": "berealAndroid",
+      "query": "berealAndroid",
       "tool": "ALEAPP",
       "date": "2026-08-07"
     },
