@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "allTrails",
-      "query": "allTrails",
+      "name": "breadWallet",
+      "query": "breadWallet",
       "tool": "ALEAPP",
       "date": "2026-08-08"
     },
@@ -27,8 +27,8 @@
       "date": "2026-07-29"
     },
     {
-      "name": "slack",
-      "query": "slack",
+      "name": "allTrails",
+      "query": "allTrails",
       "tool": "ALEAPP",
       "date": "2026-08-08"
     },
@@ -51,8 +51,8 @@
       "date": "2026-07-29"
     },
     {
-      "name": "weibo",
-      "query": "weibo",
+      "name": "slack",
+      "query": "slack",
       "tool": "ALEAPP",
       "date": "2026-08-08"
     },

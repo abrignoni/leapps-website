@@ -622,11 +622,11 @@
     {
       "date": "2026-08-08",
       "totals": {
-        "ileapp": 86422,
-        "aleapp": 64855,
+        "ileapp": 86430,
+        "aleapp": 64860,
         "rleapp": 4355,
         "vleapp": 1611,
-        "lava": 1546,
+        "lava": 1549,
         "dleapp": 141,
         "batchleapp": 186
       }
