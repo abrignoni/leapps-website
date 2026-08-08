@@ -1,17 +1,17 @@
 {
-  "generated": "2026-08-07",
+  "generated": "2026-08-08",
   "window_days": 45,
   "items": [
     {
-      "name": "dubox",
-      "query": "dubox",
-      "tool": "iLEAPP",
-      "date": "2026-08-07"
+      "name": "allTrails",
+      "query": "allTrails",
+      "tool": "ALEAPP",
+      "date": "2026-08-08"
     },
     {
-      "name": "dropbox",
-      "query": "dropbox",
-      "tool": "ALEAPP",
+      "name": "wickr",
+      "query": "wickr",
+      "tool": "iLEAPP",
       "date": "2026-08-07"
     },
     {
@@ -27,15 +27,15 @@
       "date": "2026-07-29"
     },
     {
-      "name": "what3words",
-      "query": "what3words",
-      "tool": "iLEAPP",
-      "date": "2026-08-07"
+      "name": "slack",
+      "query": "slack",
+      "tool": "ALEAPP",
+      "date": "2026-08-08"
     },
     {
-      "name": "what3words",
-      "query": "what3words",
-      "tool": "ALEAPP",
+      "name": "dubox",
+      "query": "dubox",
+      "tool": "iLEAPP",
       "date": "2026-08-07"
     },
     {
@@ -51,15 +51,15 @@
       "date": "2026-07-29"
     },
     {
-      "name": "duckduckgo",
-      "query": "duckduckgo",
-      "tool": "iLEAPP",
-      "date": "2026-08-07"
+      "name": "weibo",
+      "query": "weibo",
+      "tool": "ALEAPP",
+      "date": "2026-08-08"
     },
     {
-      "name": "berealAndroid",
-      "query": "berealAndroid",
-      "tool": "ALEAPP",
+      "name": "what3words",
+      "query": "what3words",
+      "tool": "iLEAPP",
       "date": "2026-08-07"
     },
     {
