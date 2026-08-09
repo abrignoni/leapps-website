@@ -634,11 +634,11 @@
     {
       "date": "2026-08-09",
       "totals": {
-        "ileapp": 86507,
-        "aleapp": 64913,
+        "ileapp": 86529,
+        "aleapp": 64916,
         "rleapp": 4365,
         "vleapp": 1620,
-        "lava": 1556,
+        "lava": 1558,
         "dleapp": 143,
         "batchleapp": 189
       }
