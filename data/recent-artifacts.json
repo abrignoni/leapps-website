@@ -3,14 +3,14 @@
   "window_days": 45,
   "items": [
     {
-      "name": "dubox",
-      "query": "dubox",
+      "name": "appCookies",
+      "query": "appCookies",
       "tool": "iLEAPP",
       "date": "2026-08-10"
     },
     {
-      "name": "allTrails",
-      "query": "allTrails",
+      "name": "WhatsAppLogFiles",
+      "query": "WhatsAppLogFiles",
       "tool": "ALEAPP",
       "date": "2026-08-10"
     },
@@ -27,14 +27,14 @@
       "date": "2026-07-29"
     },
     {
-      "name": "duckduckgo",
-      "query": "duckduckgo",
+      "name": "appStoreSearches",
+      "query": "appStoreSearches",
       "tool": "iLEAPP",
       "date": "2026-08-10"
     },
     {
-      "name": "breadWallet",
-      "query": "breadWallet",
+      "name": "allTrails",
+      "query": "allTrails",
       "tool": "ALEAPP",
       "date": "2026-08-10"
     },
@@ -51,14 +51,14 @@
       "date": "2026-07-29"
     },
     {
-      "name": "mega",
-      "query": "mega",
+      "name": "appleAccountDeviceList",
+      "query": "appleAccountDeviceList",
       "tool": "iLEAPP",
       "date": "2026-08-10"
     },
     {
-      "name": "calculatorLockVault",
-      "query": "calculatorLockVault",
+      "name": "bereal",
+      "query": "bereal",
       "tool": "ALEAPP",
       "date": "2026-08-10"
     },
