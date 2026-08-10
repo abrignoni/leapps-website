@@ -1,18 +1,18 @@
 {
-  "generated": "2026-08-09",
+  "generated": "2026-08-10",
   "window_days": 45,
   "items": [
     {
-      "name": "breadWallet",
-      "query": "breadWallet",
-      "tool": "ALEAPP",
-      "date": "2026-08-08"
+      "name": "dubox",
+      "query": "dubox",
+      "tool": "iLEAPP",
+      "date": "2026-08-10"
     },
     {
-      "name": "wickr",
-      "query": "wickr",
-      "tool": "iLEAPP",
-      "date": "2026-08-07"
+      "name": "allTrails",
+      "query": "allTrails",
+      "tool": "ALEAPP",
+      "date": "2026-08-10"
     },
     {
       "name": "fritzboxSupportLog",
@@ -27,16 +27,16 @@
       "date": "2026-07-29"
     },
     {
-      "name": "allTrails",
-      "query": "allTrails",
-      "tool": "ALEAPP",
-      "date": "2026-08-08"
+      "name": "duckduckgo",
+      "query": "duckduckgo",
+      "tool": "iLEAPP",
+      "date": "2026-08-10"
     },
     {
-      "name": "dubox",
-      "query": "dubox",
-      "tool": "iLEAPP",
-      "date": "2026-08-07"
+      "name": "berealAndroid",
+      "query": "berealAndroid",
+      "tool": "ALEAPP",
+      "date": "2026-08-10"
     },
     {
       "name": "synchronoss",
@@ -51,16 +51,16 @@
       "date": "2026-07-29"
     },
     {
-      "name": "slack",
-      "query": "slack",
-      "tool": "ALEAPP",
-      "date": "2026-08-08"
+      "name": "mega",
+      "query": "mega",
+      "tool": "iLEAPP",
+      "date": "2026-08-10"
     },
     {
-      "name": "what3words",
-      "query": "what3words",
-      "tool": "iLEAPP",
-      "date": "2026-08-07"
+      "name": "breadWallet",
+      "query": "breadWallet",
+      "tool": "ALEAPP",
+      "date": "2026-08-10"
     },
     {
       "name": "chatGPTaccountInfo",
