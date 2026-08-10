@@ -1,5 +1,20 @@
 [
   {
+    "slug": "2026-08-10-ios-app-snapshots-seven-years-later",
+    "title": "iOS App Snapshots, Seven Years Later: The Screen, the Scene, and Three Clocks",
+    "date": "2026-08-10",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "iLEAPP",
+      "iOS",
+      "App Snapshots",
+      "KTX",
+      "SplashBoard",
+      "DFIR"
+    ],
+    "excerpt": "iOS still keeps app-switcher snapshots, but the storage moved, scenes arrived, and that mysterious second timestamp finally has a name—not a license to overclaim. We went back to the files, joined the picture to its manifest, and tested the result from iOS 12 through iOS 26."
+  },
+  {
     "slug": "2026-08-07-using-ai-effectively-in-digital-forensics",
     "title": "Using AI Effectively in Digital Forensics",
     "date": "2026-08-07",
