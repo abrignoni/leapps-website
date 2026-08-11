@@ -56,6 +56,15 @@ img { max-width: 100%; display: block; }
 .breadcrumb a { color: var(--muted); text-decoration: none; transition: color .2s; }
 .breadcrumb a:hover { color: var(--gold); }
 .breadcrumb .sep { color: var(--border); }
+/* Keep the trail to one line: the post title sits right below as the h1,
+   so the breadcrumb copy truncates instead of wrapping. */
+.breadcrumb #breadcrumb-title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
+      flex: 0 1 auto;
+    }
 .post-header { margin-bottom: 2.5rem; }
 .post-header-meta {
       display: flex;
@@ -572,7 +581,11 @@ img { max-width: 100%; display: block; }
         const raw = await res.text();
 
         const meta = parseFrontmatter(raw);
-        const body = stripFrontmatter(raw);
+        // The header below renders meta.title as the page's <h1>, and nearly
+        // every post's markdown opens with the same title as a `# ` heading,
+        // so the title appeared again inside the article. Drop that one
+        // leading H1; anything after it (subtitles, `## `, prose) stays.
+        const body = stripFrontmatter(raw).replace(/^\s*#[ \t][^\n]*\n?/, '');
         const html = marked.parse(body);
 
         // Reading time — ~225 words/min, counted from rendered text
