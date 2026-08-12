@@ -3,10 +3,10 @@
   "window_days": 45,
   "items": [
     {
-      "name": "sessionIOS",
-      "query": "sessionIOS",
+      "name": "lidl plus",
+      "query": "lidl_plus",
       "tool": "iLEAPP",
-      "date": "2026-08-10"
+      "date": "2026-08-12"
     },
     {
       "name": "cmhTags",
@@ -30,7 +30,7 @@
       "name": "appCookies",
       "query": "appCookies",
       "tool": "iLEAPP",
-      "date": "2026-08-10"
+      "date": "2026-08-11"
     },
     {
       "name": "djiFlightRecords",
@@ -54,7 +54,7 @@
       "name": "appStoreSearches",
       "query": "appStoreSearches",
       "tool": "iLEAPP",
-      "date": "2026-08-10"
+      "date": "2026-08-11"
     },
     {
       "name": "WhatsAppLogFiles",
