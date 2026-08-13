@@ -682,12 +682,12 @@
     {
       "date": "2026-08-13",
       "totals": {
-        "ileapp": 86935,
-        "aleapp": 65217,
-        "rleapp": 4434,
+        "ileapp": 86961,
+        "aleapp": 65240,
+        "rleapp": 4436,
         "vleapp": 1668,
-        "lava": 1645,
-        "dleapp": 173,
+        "lava": 1654,
+        "dleapp": 175,
         "batchleapp": 217
       }
     }
