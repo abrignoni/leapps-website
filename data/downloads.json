@@ -694,12 +694,12 @@
     {
       "date": "2026-08-14",
       "totals": {
-        "ileapp": 87090,
-        "aleapp": 65158,
-        "rleapp": 4447,
-        "vleapp": 1677,
-        "lava": 1676,
-        "dleapp": 185,
+        "ileapp": 87097,
+        "aleapp": 65168,
+        "rleapp": 4448,
+        "vleapp": 1679,
+        "lava": 1678,
+        "dleapp": 188,
         "batchleapp": 221
       }
     }
