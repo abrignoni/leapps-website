@@ -253,14 +253,14 @@ When I published the original article, dedicated Unified Log artifacts were some
 
 The future arrived, and then it kept arriving.
 
-> **Updated 2026-08-02.** This section originally counted 133 predicates across 13 artifacts. Four merged pull requests later, the module registers **35 artifacts driven by 235 unique message predicates**, every one of them documented in published research, validated against real extractions on iOS 16.5, 17.1, and 18.7, or both. Where a pattern is documented but has not been seen in our own images, the artifact says so in its notes. The full catalog outgrew this article, so it now lives in its own companion piece: [Apple Unified Log Predicates in iLEAPP: The Reference](https://www.leapps.org/blog-post?post=2026-08-01-unified-log-predicate-reference). That is where every pattern, process, source citation, and validation status lives, artifact by artifact.
+> **Updated 2026-08-14.** This section originally counted 133 predicates across 13 artifacts. Five merged pull requests later, the module registers **36 artifacts driven by 235 unique message predicates and four log categories**, every one of them documented in published research, validated against real extractions on iOS 16.5, 17.1, 18.7, and 26.5.2, or both. Where a pattern is documented but has not been seen in our own images, the artifact says so in its notes. The full catalog outgrew this article, so it now lives in its own companion piece: [Apple Unified Log Predicates in iLEAPP: The Reference](https://www.leapps.org/blog-post?post=2026-08-01-unified-log-predicate-reference). That is where every pattern, process, source citation, and validation status lives, artifact by artifact.
 
-The short tour of what the 35 artifacts cover:
+The short tour of what the 36 artifacts cover:
 
 | Evidence area | Artifacts |
 |---|---|
 | **Human presence and handling** | biometric sensor events (Face ID frames, Touch ID finger events), touchscreen events, pocket state, lock status, unlock sessions and method |
-| **Communication and input** | call events (including keypad tone digits), keyboard activity, dictation, notification interactions |
+| **Communication and input** | call events (including keypad tone digits), dialed numbers (the number in the clear from CommCenter, plus the dial-field typing chain), keyboard activity, dictation, notification interactions |
 | **Application activity** | executed apps, app focus and lifecycle (cold starts, force-kills), interface navigation |
 | **Connectivity** | Wi-Fi status, Bluetooth status, Bluetooth pairing, personal hotspot, SIM and cellular state, Airplane Mode, AirDrop |
 | **Device state and power** | power events (boot and shutdown markers), time change (including manual clock setting), battery state, USB and power connections |
@@ -335,6 +335,7 @@ No one person owns this research, and the target keeps moving. These are the res
 - [Thesis Friday by Tim Korver](https://thesisfriday.com/) - ongoing Apple Unified Log artifact research across iOS, macOS, watchOS, CarPlay, physical interactions, and more.
 - [Tim Korver's Apple Unified Log repository](https://github.com/Ankan-42/Apple-Unified-Log) - acquisition/preservation process flow and CLI material.
 - [Tim Korver's Apple Unified Log CLI cheatsheet](https://thesisfriday.com/wp-content/uploads/2025/06/CheatSheet_CLI_AUL_ENG-2.pdf) - collection, display, predicates, statistics, event types, and example queries.
+- [Tim Korver on recovering a dialed number](https://thesisfriday.com/thesis-friday-24-recovering-a-dialed-number-from-the-unified-log/) - CommCenter's `kPhoneNumber` block, the `kUuid` pairing that separates a connected call from a dialed attempt, the `ContactSearchManager` typing chain, and the point that `<private>` is a property of one logging call rather than of the data. The basis for the **logarchive dialed numbers** artifact.
 - [Johann Polewczyk's .logarchive Info.plist research](https://digital-forensics.polewczyk.fr/apple/unified-logs/info-plist/) - OSArchiveVersion mapping, the macOS 26.4 metadata requirements, and the reconstruction methodology.
 - [Johann Polewczyk's logarchive_info.py](https://github.com/Johann-PLW/logarchive_info) - generates the evidence-specific `Info.plist` required by current versions of macOS.
 - [UFADE](https://github.com/prosch88/UFADE) - open-source Apple-device acquisition by Christian Peter. Its **Collect Unified Logs** output is read natively by iLEAPP.
