@@ -12,10 +12,10 @@ This is the companion to the [Unified Logs workflow guide](https://www.leapps.or
 
 [Download the printable PDF edition](https://leapps-api.4n6-198.workers.dev/downloads/apple-unified-logs-predicate-reference.pdf).
 
-As of iLEAPP's main branch on August 2, 2026, the Unified Logs module registers **35 artifacts** driven by **235 unique message predicates**. Every single one of them meets a standard I want to be transparent about, because nobody should take "the tool found it" as an answer:
+As of iLEAPP's main branch on August 14, 2026, the Unified Logs module registers **36 artifacts** driven by **235 unique message predicates** and four log categories. Every single one of them meets a standard I want to be transparent about, because nobody should take "the tool found it" as an answer:
 
 1. **Documented**: the pattern comes from published research that was fetched and verified, not from memory or folklore. The source is cited on the artifact, in the code, and here.
-2. **Observed**: the pattern was matched against real full file system extractions. Three images did the heavy lifting: an iPhone 8 Plus on iOS 16.5 (19.4 million log records), an iPhone 11 Pro on iOS 17.1 (30.4 million records), and an iPhone 12 on iOS 18.7 (20.5 million records).
+2. **Observed**: the pattern was matched against real full file system extractions. Four images did the heavy lifting: an iPhone 8 Plus on iOS 16.5 (19.4 million log records), an iPhone 11 Pro on iOS 17.1 (30.4 million records), an iPhone 12 on iOS 18.7 (20.5 million records), and an iPhone on iOS 26.5.2 (15.1 million records).
 
 Most patterns meet both bars. Where a pattern is documented but the event never occurred in our images, the artifact notes say **documented-only**, and so does this guide. An empty artifact is not evidence of absence, and a populated one still deserves validation on your device and iOS version before it goes in a report.
 
@@ -25,16 +25,16 @@ Three caveats apply to everything below, so I will say them once instead of two 
 - **Strings drift.** Apple changes log messages between iOS versions. We already carry version-specific variants for several patterns, and iOS 26 changed others. A miss on your image may just mean a new spelling nobody has documented yet.
 - **Retention is short and uneven.** Most entries live hours to days, not the mythical 30. Tim Korver and Lionel Notari have both published on this. Acquire early.
 
-The verbatim, always-current predicate list lives in the [iLEAPP source module](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/logarchive.py). The lists below were generated from that file, not retyped, which is the only honest way to publish two hundred plus strings.
+The verbatim, always-current predicate list lives in the [iLEAPP source module](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/logarchive.py). The lists below were generated from that file, not retyped, which is the only honest way to publish two hundred plus strings. The one exception is the dialed numbers artifact, whose clauses pair a category with a message pattern and so are written out here by hand.
 
 ## How the module is put together
 
 Two artifacts do the heavy lifting, and everything else filters their output:
 
 - **logarchive** imports every record into the LAVA database. On the iPhone 12 image that is 20.5 million rows. LAVA-only, for obvious reasons.
-- **logarchive artifacts** runs all 230 predicates in a single pass over that table and materializes the matches. Also LAVA-only.
+- **logarchive artifacts** runs every predicate in a single pass over that table and materializes the matches. Also LAVA-only.
 
-The remaining 32 artifacts each carve their slice out of that filtered set. Twenty-nine produce standard reports; the three highest-volume ones (keyboard activity, biometric sensor events, touchscreen events) are LAVA-only because a two-hundred-thousand-row HTML file helps nobody.
+The remaining 33 artifacts each carve their slice out of that filtered set. Thirty produce standard reports; the three highest-volume ones (keyboard activity, biometric sensor events, touchscreen events) are LAVA-only because a two-hundred-thousand-row HTML file helps nobody.
 
 Now the reference, grouped by what the evidence speaks to.
 
@@ -107,7 +107,7 @@ Sources: [Notari's unlock post](https://www.ios-unifiedlogs.com/post/ios-unified
 ## Communication and input
 
 ### logarchive call events
-Telephony from the OS side, independent of the call history database: callservicesd call tracking start and end, Phone app open requests that name the originating process (a touch, Siri, or a Bluetooth head unit, which matters enormously in distracted-driving cases), Phone tab navigation, and keypad tone requests where actionIDs 1200 through 1209 map to keypad digits 0 through 9. Yes, that means a hand-dialed number can sometimes be reconstructed from sound requests. Number payloads redact to `<private>`.
+Telephony from the OS side, independent of the call history database: callservicesd call tracking start and end, Phone app open requests that name the originating process (a touch, Siri, or a Bluetooth head unit, which matters enormously in distracted-driving cases), Phone tab navigation, and keypad tone requests where actionIDs 1200 through 1209 map to keypad digits 0 through 9. Yes, that means a hand-dialed number can sometimes be reconstructed from sound requests. The number payloads in these particular entries redact to `<private>`, which is not the end of the story: see the dialed numbers artifact below.
 Observed: iOS 16.5, 17.1, 18.7. The tone requests come from mediaserverd in the research and audiomxd on iOS 18.7, and only when keypad sounds are enabled.
 Sources: Notari on [making a call](https://www.ios-unifiedlogs.com/post/ios-unified-logs-making-a-call) and [watchOS calls](https://www.ios-unifiedlogs.com/post/watchos-unified-logs-introduction-and-calls).
 
@@ -121,6 +121,38 @@ Sources: Notari on [making a call](https://www.ios-unifiedlogs.com/post/ios-unif
 - `%Resuming to tab type%`
 - `%tab bar tab changed%`
 - `%Incoming Request : actionID 120%`
+
+### logarchive dialed numbers
+The number itself, in plain text, and the typing that produced it. Two separate families, and they are worth keeping straight.
+
+The first is CommCenter's `call.provider` transaction log. A call setup block carries `kActionType: 0` and a `kPhoneNumber` field holding the dialed number unredacted; a teardown block carries `kActionType: 2` and the same `kUuid`, which is what pairs the two. The artifact also collects the `Call(StatusUpdate)` state chain, because the research uses that chain to separate a call that connected from one that only dialed. The second is MobilePhone's `ContactSearchManager`, which logs `Searching for <digits>` and `Search cancelled for <digits>` on each change to the dial field, so the sequence reconstructs the digits going in one at a time.
+
+Tim Korver's finding underneath all of this is worth stating on its own, because it changes how you read a log: **`<private>` is a property of one logging call, not of the underlying data.** The same transaction arrives from callservicesd redacted and is written out in full by CommCenter microseconds later. Stopping at `<private>` is stopping too early.
+
+Observed, and this is the interesting part: each family showed up on exactly one of four images swept for both.
+
+| Image | iOS | Log records | `call.provider` | `kActionType` blocks | `ContactSearchManager` |
+|---|---|---:|---:|---:|---:|
+| iPhone 8 Plus | 16.5 | 19,419,414 | 1,534 | 0 | 0 |
+| iPhone 11 Pro | 17.1 | 30,362,747 | 172 | 0 | 0 |
+| iPhone 12 | 18.7 | 20,491,691 | 1,482 | 0 | 752 |
+| iPhone | 26.5.2 | 15,146,256 | 328 | 8 | 0 |
+
+On the iOS 26.5.2 image, three of those eight blocks are `kActionType: 0` and each carries a phone number in the clear in E.164 form, each followed by a `kActionType: 2` block sharing its `kUuid`. That reproduces the published structure on a different device, a different iOS version, and a different carrier region, which is the kind of corroboration I like. Of the remaining five blocks, three are those `kActionType: 2` teardowns and two carry values 1 and 7, which no source I read defines, so the artifact reports them as stored rather than guessing. On the iOS 18.7 image, 301 of the 752 `ContactSearchManager` entries are the `Searching for` and `Search cancelled for` pairs, and the digit strings lengthen one step at a time up to a ten-digit value, exactly as described.
+
+Say what that table does and does not show. Every image had telephony activity, so `call.provider` is not the variable. But four images is four images: no absence in that table shows a family is unavailable on that release, and I am not claiming a version boundary from it.
+
+Two caveats from the source that I will not soften. A setup block with no matching teardown is a dialed attempt; it does not establish that a call connected. And `ContactSearchManager` fires for digits entered on the device keypad but not for a number typed on a CarPlay screen, so its presence places entry on the handset while its absence only rules the handset keypad out. Contacts, Recents, and Siri were not tested.
+
+Two implementation notes, since this reference exists to show the workings. The whole `call.provider` category is collected rather than a message pattern, because the teardown block carries nothing but `kActionType` and `kUuid` and there is no distinctive text to anchor on; the volume stays small, as the table shows. Its sibling category `call` comes along for the same reason and is where the `Call(StatusUpdate)` chain actually lives, which cost me a run to find out: 199 records on the iOS 26.5.2 image, and worth reading for the surrounding call bookkeeping. And every clause is scoped to a category rather than left as a bare substring, because bare substrings over twenty million records find things you did not mean. `%kPhoneNumber%` on its own also matches locationd's `kPhoneNumberStatusNotification` under category `Emergency`, which carries no number at all: 7 of those on the iOS 16.5 image and 44 on the iOS 17.1 one, against 3 genuine setup blocks in the whole sweep. `%Searching for%` on its own matched 808 unrelated records on the iOS 26.5.2 image, not one of them a dial field. Scoping to the category drops both to zero false positives.
+Source: [Thesis Friday #24](https://thesisfriday.com/thesis-friday-24-recovering-a-dialed-number-from-the-unified-log/).
+
+**Predicates:**
+
+- category `call.provider` with `%kPhoneNumber%`
+- category `call.provider` with `%kActionType%`
+- category `call` with `%Call(StatusUpdate)%`
+- category `ContactSearchManager`
 
 ### logarchive keyboard activity
 Per-keystroke evidence of active typing, attributed to the app receiving it: keyboard touch signposts (documented under subsystem UIKitCore, logging under com.apple.TextInput on iOS 18.7) plus keyboard sound requests for character, delete, and modifier keys. Text content is not recorded; the typing activity is. Over 200,000 signpost rows on a single image, so this one is LAVA-only.
@@ -535,7 +567,8 @@ Transparency section, because nobody tells you what their tool is missing:
 - **CarPlay per-vehicle attribution is in, but unproven.** The artifact above now collects the handshake, including the vehicle identifier and the model and manufacturer record, straight from the published research. Nothing in our corpus exercises it. Thousands of promising "CARSession" matches turned out to be thermalmonitord's `carSessionActive` flag.
 - **TCC permission changes.** On iOS those entries are volatile and never reach the logarchive. TCC.db is the durable source. This one is macOS-only evidence.
 - **evaluatePowerMode and the CoreTelephony airplane reads.** Present by the tens of thousands, but they are state polls, not events. Collecting them would bury signal in noise.
-- **Still hunting validation data for:** AirDrop transfer accept and decline, the Bluetooth pairing dialog sequence, watch-relayed call invites, manual clock setting, and Back Tap gestures. All documented, all in the module as documented-only patterns or noted in the research, all waiting for an image where the event actually happened.
+- **The dialed-number families each sit on one image.** `kPhoneNumber` on iOS 26.5.2, `ContactSearchManager` on iOS 18.7, neither on the other. I would like an image where both appear together, and images that place the boundary of each. If you have a device you can dial from, this is a twenty-minute test.
+- **Still hunting validation data for:** AirDrop transfer accept and decline, the Bluetooth pairing dialog sequence, watch-relayed call invites, manual clock setting, Back Tap gestures, and a dialed number entered from Contacts, Recents, or Siri rather than the keypad. All documented, all in the module as documented-only patterns or noted in the research, all waiting for an image where the event actually happened.
 
 That last list is an invitation. If you have a test device and twenty minutes, generate one of those events, pull the logs, and check the patterns. If they hold, send a pull request or just tell me. If they drifted, definitely tell me. This module got its last two waves of artifacts exactly that way: published research plus somebody bothering to validate it against real extractions. The LEAPPs are free and open source, yesterday, today, tomorrow, and forever, and they grow when the community feeds them.
 
