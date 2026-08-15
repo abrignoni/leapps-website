@@ -25,7 +25,7 @@ Three caveats apply to everything below, so I will say them once instead of two 
 - **Strings drift.** Apple changes log messages between iOS versions. We already carry version-specific variants for several patterns, and iOS 26 changed others. A miss on your image may just mean a new spelling nobody has documented yet.
 - **Retention is short and uneven.** Most entries live hours to days, not the mythical 30. Tim Korver and Lionel Notari have both published on this. Acquire early.
 
-The verbatim, always-current predicate list lives in the [iLEAPP source module](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/logarchive.py). The lists below were generated from that file, not retyped, which is the only honest way to publish two hundred plus strings. The one exception is the dialed numbers artifact, whose clauses pair a category with a message pattern and so are written out here by hand.
+The verbatim, always-current predicate list lives in the [iLEAPP source module](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/logarchive.py). The lists below were generated from that file, not retyped, which is the only honest way to publish two hundred plus strings.
 
 ## How the module is put together
 
