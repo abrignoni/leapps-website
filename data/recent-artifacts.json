@@ -9,6 +9,12 @@
       "date": "2026-08-18"
     },
     {
+      "name": "chatgptComputerHistory",
+      "query": "chatgptComputerHistory",
+      "tool": "DLEAPP",
+      "date": "2026-08-18"
+    },
+    {
       "name": "chromePaymentsCustomerData",
       "query": "chromePaymentsCustomerData",
       "tool": "iLEAPP",
@@ -21,16 +27,16 @@
       "date": "2026-08-15"
     },
     {
-      "name": "windowsApps",
-      "query": "windowsApps",
-      "tool": "DLEAPP",
-      "date": "2026-07-29"
-    },
-    {
       "name": "reddit",
       "query": "reddit",
       "tool": "ALEAPP",
       "date": "2026-08-16"
+    },
+    {
+      "name": "chatgptRecordReplay",
+      "query": "chatgptRecordReplay",
+      "tool": "DLEAPP",
+      "date": "2026-08-18"
     },
     {
       "name": "chromeCreditCards",
@@ -45,16 +51,16 @@
       "date": "2026-08-05"
     },
     {
-      "name": "windowsSystem",
-      "query": "windowsSystem",
-      "tool": "DLEAPP",
-      "date": "2026-07-29"
-    },
-    {
       "name": "chromePaymentsCustomerData",
       "query": "chromePaymentsCustomerData",
       "tool": "ALEAPP",
       "date": "2026-08-16"
+    },
+    {
+      "name": "windowsApps",
+      "query": "windowsApps",
+      "tool": "DLEAPP",
+      "date": "2026-07-29"
     },
     {
       "name": "tinder",
@@ -67,12 +73,6 @@
       "query": "synchronoss",
       "tool": "RLEAPP",
       "date": "2026-07-09"
-    },
-    {
-      "name": "telegramAccounts",
-      "query": "telegramAccounts",
-      "tool": "DLEAPP",
-      "date": "2026-07-29"
     }
   ]
 }
