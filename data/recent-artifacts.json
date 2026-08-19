@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "primeVideo",
-      "query": "primeVideo",
+      "name": "outlook",
+      "query": "outlook",
       "tool": "ALEAPP",
       "date": "2026-08-19"
     },
@@ -27,10 +27,10 @@
       "date": "2026-08-15"
     },
     {
-      "name": "truecaller",
-      "query": "truecaller",
+      "name": "booking",
+      "query": "booking",
       "tool": "ALEAPP",
-      "date": "2026-08-18"
+      "date": "2026-08-19"
     },
     {
       "name": "chatgptRecordReplay",
@@ -51,10 +51,10 @@
       "date": "2026-08-05"
     },
     {
-      "name": "ryanair",
-      "query": "ryanair",
+      "name": "adobeReader",
+      "query": "adobeReader",
       "tool": "ALEAPP",
-      "date": "2026-08-18"
+      "date": "2026-08-19"
     },
     {
       "name": "windowsApps",
