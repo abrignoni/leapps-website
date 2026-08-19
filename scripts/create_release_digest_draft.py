@@ -250,7 +250,7 @@ def build_email(releases: list) -> tuple[str, str, str]:
 def main() -> int:
     argv = sys.argv[1:]
     dry_run = "--dry-run" in argv
-    hours = 24
+    hours = 30
     if "--hours" in argv:
         hours = int(argv[argv.index("--hours") + 1])
 

@@ -15,10 +15,19 @@ name: Release mailing list draft
 
 on:
   schedule:
-    # Daily at 13:30 UTC. The 25h lookback overlaps runs slightly so a
-    # delayed cron can't skip a release; a rare duplicate draft is harmless
-    # because drafts are reviewed before sending.
-    - cron: '30 13 * * *'
+    # Daily at 05:00 UTC, after the publishing day has ended in the
+    # maintainers' timezone, so every release of a given day lands in the
+    # same run and same digest. Running mid-day (the old 13:30 UTC) split
+    # release days in two: anything published after the cron fell into the
+    # next day's window while that morning's releases had already aged out.
+    #
+    # The 30h lookback covers a full day plus 6h of margin, so a delayed
+    # cron cannot skip a release. That margin is the only source of
+    # duplicate drafts, and only for releases published between 23:00 and
+    # 05:00 UTC. There is no dedupe in the script, so the window is kept
+    # just over 24h deliberately: widening it further would re-draft every
+    # release on the following day's run as well.
+    - cron: '0 5 * * *'
   # Manual test run: pick a wider window (e.g. 720 = last 30 days) to get a
   # draft without waiting for a fresh release. Still draft-only.
   workflow_dispatch:
@@ -26,7 +35,7 @@ on:
       hours:
         description: 'Lookback window in hours'
         required: true
-        default: '25'
+        default: '30'
 
 permissions:
   contents: read
