@@ -1,12 +1,12 @@
 {
-  "generated": "2026-08-18",
+  "generated": "2026-08-19",
   "window_days": 45,
   "items": [
     {
-      "name": "FCMQueuedMessagesGroupMe",
-      "query": "FCMQueuedMessagesGroupMe",
+      "name": "primeVideo",
+      "query": "primeVideo",
       "tool": "ALEAPP",
-      "date": "2026-08-18"
+      "date": "2026-08-19"
     },
     {
       "name": "chatgptComputerHistory",
@@ -27,10 +27,10 @@
       "date": "2026-08-15"
     },
     {
-      "name": "reddit",
-      "query": "reddit",
+      "name": "truecaller",
+      "query": "truecaller",
       "tool": "ALEAPP",
-      "date": "2026-08-16"
+      "date": "2026-08-18"
     },
     {
       "name": "chatgptRecordReplay",
@@ -51,10 +51,10 @@
       "date": "2026-08-05"
     },
     {
-      "name": "chromePaymentsCustomerData",
-      "query": "chromePaymentsCustomerData",
+      "name": "ryanair",
+      "query": "ryanair",
       "tool": "ALEAPP",
-      "date": "2026-08-16"
+      "date": "2026-08-18"
     },
     {
       "name": "windowsApps",
