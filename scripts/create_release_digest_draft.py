@@ -149,6 +149,11 @@ def generate_intro(releases: list) -> str:
                 "direct, warm, practical, enthusiastic about open source digital "
                 "forensics and the community behind it. Plain sentences, no "
                 "corporate fluff, no emoji, no hashtags, no markdown. "
+                "Never use em-dashes; use periods, commas, colons or "
+                "parentheses instead. Do not open with filler hooks that "
+                "delay the news, such as telling the reader to grab a "
+                "coffee, to buckle up, or to hold on to their hat. Lead "
+                "with what shipped. "
                 "Occasionally a rhetorical hook or a light touch of humor. "
                 "Credit contributors by name when the release notes name them.\n\n"
                 "Style samples of his writing:\n" + VOICE_SAMPLES
