@@ -3,14 +3,14 @@
   "window_days": 45,
   "items": [
     {
-      "name": "googleDocs",
-      "query": "googleDocs",
+      "name": "googleMaps",
+      "query": "googleMaps",
       "tool": "iLEAPP",
       "date": "2026-08-20"
     },
     {
-      "name": "ebay",
-      "query": "ebay",
+      "name": "payPal",
+      "query": "payPal",
       "tool": "ALEAPP",
       "date": "2026-08-20"
     },
@@ -27,14 +27,14 @@
       "date": "2026-08-15"
     },
     {
-      "name": "googleSheets",
-      "query": "googleSheets",
+      "name": "googleDocs",
+      "query": "googleDocs",
       "tool": "iLEAPP",
-      "date": "2026-08-19"
+      "date": "2026-08-20"
     },
     {
-      "name": "roblox",
-      "query": "roblox",
+      "name": "zoom",
+      "query": "zoom",
       "tool": "ALEAPP",
       "date": "2026-08-20"
     },
@@ -51,14 +51,14 @@
       "date": "2026-08-05"
     },
     {
-      "name": "pinterest",
-      "query": "pinterest",
+      "name": "googleSheets",
+      "query": "googleSheets",
       "tool": "iLEAPP",
       "date": "2026-08-19"
     },
     {
-      "name": "disneyPlus",
-      "query": "disneyPlus",
+      "name": "revolut",
+      "query": "revolut",
       "tool": "ALEAPP",
       "date": "2026-08-20"
     },
