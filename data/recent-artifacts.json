@@ -1,12 +1,18 @@
 {
-  "generated": "2026-08-19",
+  "generated": "2026-08-20",
   "window_days": 45,
   "items": [
     {
-      "name": "outlook",
-      "query": "outlook",
+      "name": "googleDocs",
+      "query": "googleDocs",
+      "tool": "iLEAPP",
+      "date": "2026-08-20"
+    },
+    {
+      "name": "ebay",
+      "query": "ebay",
       "tool": "ALEAPP",
-      "date": "2026-08-19"
+      "date": "2026-08-20"
     },
     {
       "name": "chatgptComputerHistory",
@@ -15,22 +21,22 @@
       "date": "2026-08-18"
     },
     {
-      "name": "chromePaymentsCustomerData",
-      "query": "chromePaymentsCustomerData",
-      "tool": "iLEAPP",
-      "date": "2026-08-16"
-    },
-    {
       "name": "robloxReturns",
       "query": "robloxReturns",
       "tool": "RLEAPP",
       "date": "2026-08-15"
     },
     {
-      "name": "booking",
-      "query": "booking",
-      "tool": "ALEAPP",
+      "name": "googleSheets",
+      "query": "googleSheets",
+      "tool": "iLEAPP",
       "date": "2026-08-19"
+    },
+    {
+      "name": "roblox",
+      "query": "roblox",
+      "tool": "ALEAPP",
+      "date": "2026-08-20"
     },
     {
       "name": "chatgptRecordReplay",
@@ -39,34 +45,28 @@
       "date": "2026-08-18"
     },
     {
-      "name": "chromeCreditCards",
-      "query": "chromeCreditCards",
-      "tool": "iLEAPP",
-      "date": "2026-08-16"
-    },
-    {
       "name": "fritzboxSupportLog",
       "query": "fritzboxSupportLog",
       "tool": "RLEAPP",
       "date": "2026-08-05"
     },
     {
-      "name": "adobeReader",
-      "query": "adobeReader",
-      "tool": "ALEAPP",
+      "name": "pinterest",
+      "query": "pinterest",
+      "tool": "iLEAPP",
       "date": "2026-08-19"
+    },
+    {
+      "name": "disneyPlus",
+      "query": "disneyPlus",
+      "tool": "ALEAPP",
+      "date": "2026-08-20"
     },
     {
       "name": "windowsApps",
       "query": "windowsApps",
       "tool": "DLEAPP",
       "date": "2026-07-29"
-    },
-    {
-      "name": "tinder",
-      "query": "tinder",
-      "tool": "iLEAPP",
-      "date": "2026-08-16"
     },
     {
       "name": "synchronoss",
