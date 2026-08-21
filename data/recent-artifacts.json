@@ -3,16 +3,16 @@
   "window_days": 45,
   "items": [
     {
-      "name": "fitbitIOS",
-      "query": "fitbitIOS",
+      "name": "firefoxIOS",
+      "query": "firefoxIOS",
       "tool": "iLEAPP",
-      "date": "2026-08-20"
+      "date": "2026-08-21"
     },
     {
-      "name": "simplexChat",
-      "query": "simplexChat",
+      "name": "dhl",
+      "query": "dhl",
       "tool": "ALEAPP",
-      "date": "2026-08-20"
+      "date": "2026-08-21"
     },
     {
       "name": "chatgptComputerHistory",
@@ -27,14 +27,14 @@
       "date": "2026-08-15"
     },
     {
-      "name": "grindr",
-      "query": "grindr",
+      "name": "coinbase",
+      "query": "coinbase",
       "tool": "iLEAPP",
-      "date": "2026-08-20"
+      "date": "2026-08-21"
     },
     {
-      "name": "payPal",
-      "query": "payPal",
+      "name": "simplexChat",
+      "query": "simplexChat",
       "tool": "ALEAPP",
       "date": "2026-08-20"
     },
@@ -51,14 +51,14 @@
       "date": "2026-08-05"
     },
     {
-      "name": "googleMaps",
-      "query": "googleMaps",
+      "name": "fitbitIOS",
+      "query": "fitbitIOS",
       "tool": "iLEAPP",
       "date": "2026-08-20"
     },
     {
-      "name": "zoom",
-      "query": "zoom",
+      "name": "payPal",
+      "query": "payPal",
       "tool": "ALEAPP",
       "date": "2026-08-20"
     },
