@@ -790,11 +790,11 @@
     {
       "date": "2026-08-22",
       "totals": {
-        "ileapp": 88247,
-        "aleapp": 66122,
-        "rleapp": 4568,
+        "ileapp": 88262,
+        "aleapp": 66136,
+        "rleapp": 4570,
         "vleapp": 1758,
-        "lava": 1967,
+        "lava": 1969,
         "dleapp": 286,
         "batchleapp": 266
       }
