@@ -802,11 +802,11 @@
     {
       "date": "2026-08-23",
       "totals": {
-        "ileapp": 88305,
-        "aleapp": 66169,
+        "ileapp": 88337,
+        "aleapp": 66186,
         "rleapp": 4570,
-        "vleapp": 1758,
-        "lava": 1975,
+        "vleapp": 1759,
+        "lava": 1979,
         "dleapp": 286,
         "batchleapp": 266
       }
