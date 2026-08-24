@@ -814,13 +814,13 @@
     {
       "date": "2026-08-24",
       "totals": {
-        "ileapp": 88427,
-        "aleapp": 66271,
-        "rleapp": 4571,
-        "vleapp": 1760,
-        "lava": 1990,
-        "dleapp": 290,
-        "batchleapp": 267
+        "ileapp": 88476,
+        "aleapp": 66299,
+        "rleapp": 4578,
+        "vleapp": 1764,
+        "lava": 1998,
+        "dleapp": 296,
+        "batchleapp": 269
       }
     }
   ]
