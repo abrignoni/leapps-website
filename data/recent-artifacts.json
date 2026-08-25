@@ -3,16 +3,16 @@
   "window_days": 45,
   "items": [
     {
-      "name": "firefoxIOS",
-      "query": "firefoxIOS",
+      "name": "KeepSafe",
+      "query": "KeepSafe",
       "tool": "iLEAPP",
-      "date": "2026-08-21"
+      "date": "2026-08-25"
     },
     {
-      "name": "dhl",
-      "query": "dhl",
+      "name": "OperaBrowser",
+      "query": "OperaBrowser",
       "tool": "ALEAPP",
-      "date": "2026-08-21"
+      "date": "2026-08-25"
     },
     {
       "name": "chatgptComputerHistory",
@@ -27,16 +27,16 @@
       "date": "2026-08-15"
     },
     {
-      "name": "coinbase",
-      "query": "coinbase",
+      "name": "amazonShopping",
+      "query": "amazonShopping",
       "tool": "iLEAPP",
-      "date": "2026-08-21"
+      "date": "2026-08-25"
     },
     {
-      "name": "simplexChat",
-      "query": "simplexChat",
+      "name": "Threema",
+      "query": "Threema",
       "tool": "ALEAPP",
-      "date": "2026-08-20"
+      "date": "2026-08-25"
     },
     {
       "name": "chatgptRecordReplay",
@@ -51,16 +51,16 @@
       "date": "2026-08-05"
     },
     {
-      "name": "fitbitIOS",
-      "query": "fitbitIOS",
+      "name": "coinbase",
+      "query": "coinbase",
       "tool": "iLEAPP",
-      "date": "2026-08-20"
+      "date": "2026-08-25"
     },
     {
-      "name": "payPal",
-      "query": "payPal",
+      "name": "PrivatePhotoVault",
+      "query": "PrivatePhotoVault",
       "tool": "ALEAPP",
-      "date": "2026-08-20"
+      "date": "2026-08-25"
     },
     {
       "name": "windowsApps",
@@ -69,10 +69,10 @@
       "date": "2026-07-29"
     },
     {
-      "name": "grindr",
-      "query": "grindr",
+      "name": "firefoxIOS",
+      "query": "firefoxIOS",
       "tool": "iLEAPP",
-      "date": "2026-08-20"
+      "date": "2026-08-25"
     }
   ]
 }
