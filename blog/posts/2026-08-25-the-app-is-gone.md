@@ -113,7 +113,7 @@ This property list can provide bundle IDs and deletion timestamps from:
 /private/var/installd/Library/MobileInstallation/UninstalledApplications.plist
 ```
 
-Prior research found that the file records the last observed deletion date for an app rather than every deletion in a reinstall cycle, and that it is not present in every extraction. We found it on two of 24 tested corpora, including an iOS 17 image and the iOS 26 image, with five rows on each. iLEAPP now has a dedicated artifact for it and reports the property list dates as UTC.
+Prior research found that the file records the last observed deletion date for an app rather than every deletion in a reinstall cycle, and that it is not present in every extraction. We found it on two of 24 tested corpora, the public Cellebrite CTF Otto image on iOS 17.5.1 and an iOS 26 image, with five rows on each. iLEAPP now has a dedicated artifact for it and reports the property list dates as UTC.
 
 That is useful evidence of what the file recorded. It is not a complete list of every app ever removed from the device.<sup><a href="#note-7">[7]</a></sup>
 
@@ -156,22 +156,22 @@ The installed count fell sharply because the old summary also contained app exte
 
 ## Real sources do not produce matching totals
 
-The focused rerun against the public iOS 12.4 CTF image, an iOS 18.7.8 image, and an iOS 26.5.2 image produced these current figures:
+The focused rerun against the public iOS 12.4 CTF image, the public iPhone 12 iOS 18.7 image, and an iOS 26.5.2 image produced these current figures:
 
 <div style="max-width:100%;overflow-x:auto;">
 <table>
 <thead>
-<tr><th>Source population</th><th>iOS 12.4</th><th>iOS 18.7.8</th><th>iOS 26.5.2</th></tr>
+<tr><th>Source population</th><th>iOS 12.4</th><th>iOS 18.7</th><th>iOS 26.5.2</th></tr>
 </thead>
 <tbody>
-<tr><td>Application State mappings</td><td>109</td><td>145</td><td>190</td></tr>
-<tr><td>Mobile Installation historical events</td><td>1,003</td><td>378</td><td>455</td></tr>
-<tr><td>Mobile Installation installed outcomes</td><td>49</td><td>36</td><td>61</td></tr>
-<tr><td>Mobile Installation container-only rows</td><td>92</td><td>136</td><td>160</td></tr>
-<tr><td><code>storeUser.db</code> current-app rows</td><td>Not present</td><td>30</td><td>76</td></tr>
-<tr><td><code>storeSystem.db</code> install rows</td><td>Not present</td><td>26</td><td>12</td></tr>
-<tr><td>Biome <code>App.InstalledApp</code> Set rows</td><td>Not present</td><td>76</td><td>85</td></tr>
-<tr><td>Biome App Install rows</td><td>Not present</td><td>200</td><td>266</td></tr>
+<tr><td>Application State mappings</td><td>109</td><td>187</td><td>190</td></tr>
+<tr><td>Mobile Installation historical events</td><td>1,003</td><td>591</td><td>455</td></tr>
+<tr><td>Mobile Installation installed outcomes</td><td>49</td><td>58</td><td>61</td></tr>
+<tr><td>Mobile Installation container-only rows</td><td>92</td><td>174</td><td>160</td></tr>
+<tr><td><code>storeUser.db</code> current-app rows</td><td>Not present</td><td>84</td><td>76</td></tr>
+<tr><td><code>storeSystem.db</code> install rows</td><td>Not present</td><td>19</td><td>12</td></tr>
+<tr><td>Biome <code>App.InstalledApp</code> Set rows</td><td>Not present</td><td>91</td><td>85</td></tr>
+<tr><td>Biome App Install rows</td><td>Not present</td><td>168</td><td>266</td></tr>
 <tr><td>Biome <code>App.Installation</code> rows</td><td>Not present</td><td>Not present</td><td>232</td></tr>
 <tr><td><code>UninstalledApplications.plist</code> rows</td><td>Not present</td><td>Not present</td><td>5</td></tr>
 </tbody>
@@ -200,22 +200,68 @@ The current mapping is gone. The uninstall sequence remains.
 
 That is the practical value of using both sources. If we searched only the current-state report, we could miss the bundle ID. If we searched only for leftover application data, we could miss it again because the data container was destroyed. The historical log preserves the lead.<sup><a href="#note-8">[8]</a></sup>
 
-## One install, two clocks, and a later uninstall
+## One install, three clocks
 
-The iOS 18.7.8 image gives us a richer sequence for `com.grindrguy.grindrx`.
+The public iPhone 12 image running iOS 18.7 gives us a clean sequence for `com.google.Keep`.
 
-The Mobile Installation logs show a placeholder installation followed by the customer application installation. The retained successful-install line is at `2026-05-12 08:38:35` in the log's unzoned, device-local presentation. The `_DKEvent.App.Install` record reports the event at `2026-05-12 12:38:00 UTC`. The four-hour difference is consistent with Eastern Daylight Time, and the Biome timestamp is rounded to the minute in this record.
+The Mobile Installation log shows the familiar pair: a placeholder installation at `2025-12-20 15:28:54`, then the customer application installation at `2025-12-20 15:29:12`, both in the log's unzoned, device-local presentation.
 
-On `2026-06-22 10:34:32` local time, the Mobile Installation log records the application uninstall and the destruction of its bundle, data, and notification-service containers. The bundle ID is absent from the `storeUser.db` current-app rows but remains in App Store purchase history.
+Two other sources recorded the same install in UTC. The `_DKEvent.App.Install` Biome record carries an event time of `2025-12-20 20:29:00 UTC` and a write time of `2025-12-20 20:29:12 UTC`. The `storeUser.db` current-app row carries an install timestamp of `1766262552`, which is `2025-12-20 20:29:12 UTC`.
 
-That sequence does not make one source right and the others wrong. It shows what each system kept:
+Apply the five-hour offset and all three agree to the second. December places the device in Eastern Standard Time. The Biome event time is rounded down to the minute while its write time is not, which is the reason to reach for the write time when you need precision.
 
-- Mobile Installation preserved local-time lifecycle and container events.
-- Biome preserved a recent UTC installation event.
-- The current App Store table no longer listed the app.
-- App Store purchase history still associated the bundle ID with the account history.
+The sibling `App.Install` stream holds one record for this bundle carrying a bundle ID and a single integer, reported as stored. Before this work those records were never decoded at all, because one layout had been applied to both streams.
 
-This is the answer we actually want in a case. Not a giant merged list with the source labels removed, but a sequence whose parts can be explained and verified.<sup><a href="#note-8">[8]</a></sup>
+The version strings line up too. The Mobile Installation log records `2.2025.50100` on the customer install, and the App Store cache records the same version for the current app.
+
+That is what corroboration looks like when each source is read with its own conventions. Nothing here required choosing a winner between them.<sup><a href="#note-8">[8]</a></sup>
+
+## The sources do not cover the same window
+
+Four bundle IDs on that same device sit in App Store purchase history and appear nowhere else. They are absent from the current-app table, and they have no rows in the retained Mobile Installation log at all, not even container activity.
+
+Purchase history reached back past the retained log window. If the examination had relied on the installation log alone, those four applications would not have appeared, and the reason would not have been that they were never there. It would have been that the log no longer went back that far.
+
+A retained log is a window, not a lifetime.<sup><a href="#note-8">[8]</a></sup>
+
+## What one removal actually looks like
+
+The Cellebrite CTF23 Felix image, an iPhone 8 Plus on iOS 16.5, shows why the installed count in that table fell so far.
+
+Its retained log holds eighteen uninstall rows. Seventeen of them land in a nine-second window on 2023-07-01. At `07:38:14`, ten rows: `com.facebook.Facebook` and nine of its app extensions, including the share, widget, notification-service and broadcast-upload extensions. At `07:38:23`, seven rows: `com.facebook.Messenger` and six of its extensions.
+
+Two applications were removed. The log recorded seventeen container destructions, because every extension owns a container of its own and each one is torn down separately.
+
+Count those rows as applications and this device looks like it shed seventeen apps in nine seconds. It shed two. That is the same arithmetic, running in the other direction, that made the old installed summary report 3,981 rows where the corrected one reports 791.
+
+The eighteenth row is older, from 2023-02-08, and its identifier is a long hexadecimal string followed by a UUID rather than a reverse-domain bundle ID. It is reported as stored. Not every container carries a name you can read.<sup><a href="#note-8">[8]</a></sup>
+
+## A deletion record that outlives the app
+
+The Cellebrite CTF Otto image, an iPhone 11 Pro on iOS 17.5.1, is the public image that carries `UninstalledApplications.plist`. It holds five rows.
+
+<div style="max-width:100%;overflow-x:auto;">
+<table>
+<thead>
+<tr><th>Deleted (UTC)</th><th>Bundle ID</th><th>In current apps</th><th>In purchase history</th></tr>
+</thead>
+<tbody>
+<tr><td>2024-06-20 01:26:17</td><td><code>com.kik.chat</code></td><td>no</td><td>yes</td></tr>
+<tr><td>2024-06-21 03:28:40</td><td><code>com.moxco.bumble</code></td><td>no</td><td>yes</td></tr>
+<tr><td>2024-06-21 03:28:48</td><td><code>com.cardify.tinder</code></td><td>no</td><td>yes</td></tr>
+<tr><td>2024-07-09 14:42:51</td><td><code>Pototskiy.PotoHEX</code></td><td>yes</td><td>yes</td></tr>
+<tr><td>2024-07-09 14:43:08</td><td><code>com.codespaceapps.aichat</code></td><td>yes</td><td>yes</td></tr>
+</tbody>
+</table>
+</div>
+
+Two things stand out.
+
+The first three are gone from the App Store current-app table and still sit in purchase history. The property list preserved when they went, and purchase history preserved that the account had them. Two of those removals are eight seconds apart, which reads as one cleanup session rather than two unrelated decisions.
+
+The last two carry a deletion date while still appearing in the current-app table, each with an install timestamp three days earlier than its own deletion. That is worth reporting as observed. The data here does not establish whether the App Store cache is simply not updated on deletion or whether something else accounts for it, and a report should not pick one.
+
+None of the five appears anywhere in the retained Mobile Installation log. It is the same window limitation seen from the other end: the deletions are recorded, and the installations they refer to fell out of the log long ago.<sup><a href="#note-8">[8]</a></sup>
 
 ## One dead end worth documenting
 
@@ -282,6 +328,6 @@ The app can be gone. The story can still be there.
 <li id="note-5">North Loop Consulting, <a href="https://northloopconsulting.com/blog/f/ready-sets-go">Apple Did Your Homework: Pre-Analyzed Data in Biome Databases</a>, and iLEAPP <a href="https://github.com/abrignoni/iLEAPP/blob/36a1c0ea66ca7192fb665abe4e865551e49ef6f0/scripts/artifacts/biomeSetsStores.py"><code>biomeSetsStores.py</code></a>. The iLEAPP artifact reports the Set record's modified or written timestamp and does not label it as an installation timestamp.</li>
 <li id="note-6">Mattia Epifani, <a href="https://blog.digital-forensics.it/2026/07/84-streams-later-part-2-inside-apple.html">84 Streams Later, Part 2: Inside Apple Biome</a> (2026). The article identifies <code>App.Installation</code>, describes it as apparently tracking updates, reports 28-day retention, and lists event timestamp, app timestamp, bundle ID, app UUID, version, build version, and two 16-byte values. LEAPPs testing independently decoded the same field groups from 232 records and leaves the undocumented event type raw.</li>
 <li id="note-7">Christopher Vance, <a href="https://blog.d204n6.com/2019/09/ios-tracking-traces-of-deleted.html">iOS: Tracking Traces of Deleted Applications</a> (2019). The article documents the property-list path, last-deletion behavior observed during reinstall cycles, and inconsistent presence across devices.</li>
-<li id="note-8">LEAPPs real-data validation completed August 25, 2026, for <a href="https://github.com/abrignoni/iLEAPP/pull/2059">iLEAPP PR #2059</a>. Raw-log census covered all 24 registered iOS corpora, and finished iLEAPP reports covered 16. Regression checks accounted for every prior Mobile Installation event, eliminated malformed bundle IDs and Biome decode skips in the tested populations, and left unrelated Application State and reboot outputs unchanged. All 10 CI checks passed before merge. A post-merge focused rerun against iOS 12.4, iOS 18.7.8, and iOS 26.5.2 reproduced the article's current counts and the two bundle-ID sequences.</li>
+<li id="note-8">LEAPPs real-data validation completed August 25, 2026, for <a href="https://github.com/abrignoni/iLEAPP/pull/2059">iLEAPP PR #2059</a>. Raw-log census covered all 24 registered iOS corpora, and finished iLEAPP reports covered 16. Regression checks accounted for every prior Mobile Installation event, eliminated malformed bundle IDs and Biome decode skips in the tested populations, and left unrelated Application State and reboot outputs unchanged. All 10 CI checks passed before merge. A post-merge focused rerun reproduced the article's current counts. The comparison table's iOS 18.7 column, the three-clock sequence and the purchase-history-only bundles come from the public iPhone 12 iOS 18.7 image (MSAB Mobile Forensics Digital Summit CTF 2026); the removal arithmetic from the public Cellebrite CTF23 Felix image on iOS 16.5; and the deletion property list from the public Cellebrite CTF Otto image on iOS 17.5.1. Each archive's SHA-256 was checked against the corpus registry before its run, and every run was confirmed complete with a clean sweep for SQLite error vocabulary.</li>
 <li id="note-9">Apple, <a href="https://developer.apple.com/documentation/bundleresources/information-property-list/cfbundleidentifier"><code>CFBundleIdentifier</code></a>. Apple defines it as the unique identifier for a bundle and uses “bundle ID” throughout its documentation.</li>
 </ol>
