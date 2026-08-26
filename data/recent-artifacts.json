@@ -3,16 +3,16 @@
   "window_days": 45,
   "items": [
     {
+      "name": "uninstalledApplications",
+      "query": "uninstalledApplications",
+      "tool": "iLEAPP",
+      "date": "2026-08-26"
+    },
+    {
       "name": "Spotify",
       "query": "Spotify",
       "tool": "ALEAPP",
       "date": "2026-08-26"
-    },
-    {
-      "name": "KeepSafe",
-      "query": "KeepSafe",
-      "tool": "iLEAPP",
-      "date": "2026-08-25"
     },
     {
       "name": "chatgptComputerHistory",
@@ -27,15 +27,15 @@
       "date": "2026-08-15"
     },
     {
-      "name": "samsungBixbyRoutines",
-      "query": "samsungBixbyRoutines",
-      "tool": "ALEAPP",
+      "name": "KeepSafe",
+      "query": "KeepSafe",
+      "tool": "iLEAPP",
       "date": "2026-08-25"
     },
     {
-      "name": "amazonShopping",
-      "query": "amazonShopping",
-      "tool": "iLEAPP",
+      "name": "samsungBixbyRoutines",
+      "query": "samsungBixbyRoutines",
+      "tool": "ALEAPP",
       "date": "2026-08-25"
     },
     {
@@ -51,15 +51,15 @@
       "date": "2026-08-05"
     },
     {
-      "name": "OperaBrowser",
-      "query": "OperaBrowser",
-      "tool": "ALEAPP",
+      "name": "amazonShopping",
+      "query": "amazonShopping",
+      "tool": "iLEAPP",
       "date": "2026-08-25"
     },
     {
-      "name": "coinbase",
-      "query": "coinbase",
-      "tool": "iLEAPP",
+      "name": "OperaBrowser",
+      "query": "OperaBrowser",
+      "tool": "ALEAPP",
       "date": "2026-08-25"
     },
     {
@@ -69,9 +69,9 @@
       "date": "2026-07-29"
     },
     {
-      "name": "PrivatePhotoVault",
-      "query": "PrivatePhotoVault",
-      "tool": "ALEAPP",
+      "name": "coinbase",
+      "query": "coinbase",
+      "tool": "iLEAPP",
       "date": "2026-08-25"
     }
   ]
