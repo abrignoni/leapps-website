@@ -1,5 +1,20 @@
 [
   {
+    "slug": "2026-08-25-the-app-is-gone",
+    "title": "The App Is Gone. The Story Isn't.",
+    "date": "2026-08-25",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "iLEAPP",
+      "iOS",
+      "Mobile Installation",
+      "Biome",
+      "app history",
+      "research"
+    ],
+    "excerpt": "A current app list answers one question. Installation logs, App Store databases, Biome streams, and deletion records answer several others. We went back to an iOS workflow from 2018, tested it from iOS 12 through iOS 26, fixed what the real data exposed, and found a much better way to tell the story."
+  },
+  {
     "slug": "2026-08-10-ios-app-snapshots-seven-years-later",
     "title": "iOS App Snapshots, Seven Years Later: The Screen, the Scene, and Three Clocks",
     "date": "2026-08-10",
