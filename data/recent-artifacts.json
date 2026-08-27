@@ -1,7 +1,13 @@
 {
-  "generated": "2026-08-26",
+  "generated": "2026-08-27",
   "window_days": 45,
   "items": [
+    {
+      "name": "ford positioning logs",
+      "query": "ford_positioning_logs",
+      "tool": "VLEAPP",
+      "date": "2026-08-27"
+    },
     {
       "name": "uninstalledApplications",
       "query": "uninstalledApplications",
@@ -25,6 +31,12 @@
       "query": "robloxReturns",
       "tool": "RLEAPP",
       "date": "2026-08-15"
+    },
+    {
+      "name": "ford hmi indexeddb",
+      "query": "ford_hmi_indexeddb",
+      "tool": "VLEAPP",
+      "date": "2026-08-27"
     },
     {
       "name": "KeepSafe",
@@ -51,26 +63,14 @@
       "date": "2026-08-05"
     },
     {
+      "name": "ford nav pim",
+      "query": "ford_nav_pim",
+      "tool": "VLEAPP",
+      "date": "2026-08-27"
+    },
+    {
       "name": "amazonShopping",
       "query": "amazonShopping",
-      "tool": "iLEAPP",
-      "date": "2026-08-25"
-    },
-    {
-      "name": "OperaBrowser",
-      "query": "OperaBrowser",
-      "tool": "ALEAPP",
-      "date": "2026-08-25"
-    },
-    {
-      "name": "windowsApps",
-      "query": "windowsApps",
-      "tool": "DLEAPP",
-      "date": "2026-07-29"
-    },
-    {
-      "name": "coinbase",
-      "query": "coinbase",
       "tool": "iLEAPP",
       "date": "2026-08-25"
     }
