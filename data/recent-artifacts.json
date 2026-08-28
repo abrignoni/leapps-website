@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27",
+  "generated": "2026-08-28",
   "window_days": 45,
   "items": [
     {
@@ -15,8 +15,8 @@
       "date": "2026-08-26"
     },
     {
-      "name": "Spotify",
-      "query": "Spotify",
+      "name": "Samsungwallet",
+      "query": "Samsungwallet",
       "tool": "ALEAPP",
       "date": "2026-08-26"
     },
@@ -45,10 +45,10 @@
       "date": "2026-08-25"
     },
     {
-      "name": "samsungBixbyRoutines",
-      "query": "samsungBixbyRoutines",
+      "name": "Spotify",
+      "query": "Spotify",
       "tool": "ALEAPP",
-      "date": "2026-08-25"
+      "date": "2026-08-26"
     },
     {
       "name": "chatgptRecordReplay",
