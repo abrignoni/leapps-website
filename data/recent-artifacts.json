@@ -1,7 +1,13 @@
 {
-  "generated": "2026-08-28",
+  "generated": "2026-08-29",
   "window_days": 45,
   "items": [
+    {
+      "name": "intrusionDetectionStore",
+      "query": "intrusionDetectionStore",
+      "tool": "ALEAPP",
+      "date": "2026-08-29"
+    },
     {
       "name": "ford positioning logs",
       "query": "ford_positioning_logs",
@@ -12,12 +18,6 @@
       "name": "uninstalledApplications",
       "query": "uninstalledApplications",
       "tool": "iLEAPP",
-      "date": "2026-08-26"
-    },
-    {
-      "name": "Samsungwallet",
-      "query": "Samsungwallet",
-      "tool": "ALEAPP",
       "date": "2026-08-26"
     },
     {
@@ -33,6 +33,12 @@
       "date": "2026-08-15"
     },
     {
+      "name": "Samsungwallet",
+      "query": "Samsungwallet",
+      "tool": "ALEAPP",
+      "date": "2026-08-26"
+    },
+    {
       "name": "ford hmi indexeddb",
       "query": "ford_hmi_indexeddb",
       "tool": "VLEAPP",
@@ -43,12 +49,6 @@
       "query": "KeepSafe",
       "tool": "iLEAPP",
       "date": "2026-08-25"
-    },
-    {
-      "name": "Spotify",
-      "query": "Spotify",
-      "tool": "ALEAPP",
-      "date": "2026-08-26"
     },
     {
       "name": "chatgptRecordReplay",
@@ -63,16 +63,16 @@
       "date": "2026-08-05"
     },
     {
+      "name": "Spotify",
+      "query": "Spotify",
+      "tool": "ALEAPP",
+      "date": "2026-08-26"
+    },
+    {
       "name": "ford nav pim",
       "query": "ford_nav_pim",
       "tool": "VLEAPP",
       "date": "2026-08-27"
-    },
-    {
-      "name": "amazonShopping",
-      "query": "amazonShopping",
-      "tool": "iLEAPP",
-      "date": "2026-08-25"
     }
   ]
 }
