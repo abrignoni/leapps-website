@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "linkbox",
-      "query": "linkbox",
+      "name": "bitwarden",
+      "query": "bitwarden",
       "tool": "ALEAPP",
       "date": "2026-08-30"
     },
@@ -33,8 +33,8 @@
       "date": "2026-08-15"
     },
     {
-      "name": "sleepAsAndroid",
-      "query": "sleepAsAndroid",
+      "name": "elementX",
+      "query": "elementX",
       "tool": "ALEAPP",
       "date": "2026-08-30"
     },
@@ -63,8 +63,8 @@
       "date": "2026-08-05"
     },
     {
-      "name": "miBrowser",
-      "query": "miBrowser",
+      "name": "jitsiMeet",
+      "query": "jitsiMeet",
       "tool": "ALEAPP",
       "date": "2026-08-30"
     },
