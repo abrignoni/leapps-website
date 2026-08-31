@@ -1,5 +1,20 @@
 [
   {
+    "slug": "2026-08-31-the-vleapp-revival",
+    "title": "The VLEAPP Revival. Reading the Whole Head Unit.",
+    "date": "2026-08-31",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "VLEAPP",
+      "vehicle forensics",
+      "QNX",
+      "qnxprobe",
+      "filesystems",
+      "raw images"
+    ],
+    "excerpt": "VLEAPP sat mostly still for twenty-one months because it could only take logical extractions, and vehicle evidence does not arrive that way. This month it came back. Raw head unit images and native Berla iVe exports now go straight in, read through seven filesystem families plus QNX boot images, most of which no mainstream open source tool could touch. Here is what landed, how it was validated, and what we need from you."
+  },
+  {
     "slug": "2026-08-25-the-app-is-gone",
     "title": "The App Is Gone. The Story Isn't.",
     "date": "2026-08-25",
