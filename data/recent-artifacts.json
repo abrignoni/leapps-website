@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-30",
+  "generated": "2026-08-31",
   "window_days": 45,
   "items": [
     {
@@ -9,10 +9,10 @@
       "date": "2026-08-30"
     },
     {
-      "name": "ford positioning logs",
-      "query": "ford_positioning_logs",
+      "name": "ford sync bluetooth",
+      "query": "ford_sync_bluetooth",
       "tool": "VLEAPP",
-      "date": "2026-08-27"
+      "date": "2026-08-30"
     },
     {
       "name": "uninstalledApplications",
@@ -39,10 +39,10 @@
       "date": "2026-08-30"
     },
     {
-      "name": "ford hmi indexeddb",
-      "query": "ford_hmi_indexeddb",
+      "name": "berla ive export",
+      "query": "berla_ive_export",
       "tool": "VLEAPP",
-      "date": "2026-08-27"
+      "date": "2026-08-30"
     },
     {
       "name": "KeepSafe",
@@ -69,8 +69,8 @@
       "date": "2026-08-30"
     },
     {
-      "name": "ford nav pim",
-      "query": "ford_nav_pim",
+      "name": "ford positioning logs",
+      "query": "ford_positioning_logs",
       "tool": "VLEAPP",
       "date": "2026-08-27"
     }
