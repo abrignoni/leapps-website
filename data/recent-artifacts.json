@@ -6,7 +6,7 @@
       "name": "bitwarden",
       "query": "bitwarden",
       "tool": "ALEAPP",
-      "date": "2026-08-30"
+      "date": "2026-08-31"
     },
     {
       "name": "ford sync bluetooth",
@@ -36,7 +36,7 @@
       "name": "elementX",
       "query": "elementX",
       "tool": "ALEAPP",
-      "date": "2026-08-30"
+      "date": "2026-08-31"
     },
     {
       "name": "berla ive export",
@@ -63,10 +63,10 @@
       "date": "2026-08-05"
     },
     {
-      "name": "jitsiMeet",
-      "query": "jitsiMeet",
+      "name": "fossifyCalendar",
+      "query": "fossifyCalendar",
       "tool": "ALEAPP",
-      "date": "2026-08-30"
+      "date": "2026-08-31"
     },
     {
       "name": "ford positioning logs",
