@@ -15,7 +15,7 @@
     "title": "Quick Start — Install & Run",
     "url": "https://leapps.org/docs#step-3",
     "page": "Docs",
-    "excerpt": "Install dependencies with pip, then run via GUI or command line. Requires Python 3.12 or later."
+    "excerpt": "Install dependencies with pip, then run via GUI or command line. Requires Python 3.10 or later."
   },
   {
     "title": "Quick Start — Read Your Report",
@@ -51,7 +51,7 @@
     "title": "VLEAPP — Vehicle Logs Events and Plists Parser",
     "url": "https://leapps.org/releases#section-vleapp",
     "page": "Releases",
-    "excerpt": "Parse vehicle system image artifacts and infotainment data from logical acquisitions."
+    "excerpt": "Parse vehicle system image artifacts and infotainment data from raw head unit images, Berla iVe exports, and logical extractions."
   },
   {
     "title": "LAVA — LEAPPs Artifact Viewer Application",
@@ -165,7 +165,7 @@
     "title": "Python Installation — Requirements",
     "url": "https://leapps.org/docs#step-3",
     "page": "Docs",
-    "excerpt": "Requires Python 3.12 or later. Install dependencies: pip install -r requirements.txt"
+    "excerpt": "Requires Python 3.10 or later. Install dependencies: pip install -r requirements.txt"
   },
   {
     "title": "Command Line Usage",

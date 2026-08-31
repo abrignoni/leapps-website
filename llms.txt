@@ -20,7 +20,7 @@ macOS (Homebrew tap: leapps-org/leapps):
     brew install ileapp              # CLI — or aleapp / rleapp / vleapp
     brew install --cask ileapp-gui   # GUI app — or aleapp-gui / rleapp-gui / vleapp-gui / lava
 
-Windows: pre-built executables on each tool's GitHub releases page. From source: Python 3.12+, `pip install -r requirements.txt`, then `python iLEAPP.py -t <fs|tar|zip|gz> -i <input> -o <output>`.
+Windows: pre-built executables on each tool's GitHub releases page. From source: Python 3.10+, `pip install -r requirements.txt`, then `python iLEAPP.py -t <fs|tar|zip|gz> -i <input> -o <output>`.
 
 ## Key pages
 
