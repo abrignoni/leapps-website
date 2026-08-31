@@ -898,13 +898,13 @@
     {
       "date": "2026-08-31",
       "totals": {
-        "ileapp": 89388,
-        "aleapp": 66970,
-        "rleapp": 4679,
-        "vleapp": 1811,
-        "lava": 2248,
-        "dleapp": 351,
-        "batchleapp": 300
+        "ileapp": 89460,
+        "aleapp": 67014,
+        "rleapp": 4691,
+        "vleapp": 1823,
+        "lava": 2263,
+        "dleapp": 362,
+        "batchleapp": 305
       }
     }
   ]
