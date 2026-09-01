@@ -1,5 +1,20 @@
 [
   {
+    "slug": "2026-09-01-powerlog-timestamps-and-the-1971-clock",
+    "title": "Powerlog Timestamps, Offsets, and a Clock That Thinks It's 1971",
+    "date": "2026-09-01",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "iLEAPP",
+      "iOS",
+      "PowerLog",
+      "timestamps",
+      "DFIR",
+      "research"
+    ],
+    "excerpt": "A powerlog row does not store the time. It stores a stopwatch, and a second table tells you how far off it is. Here is why the offset is 69 seconds on one phone and 54 years on another, why forensic tools disagree, and which columns actually need the correction."
+  },
+  {
     "slug": "2026-08-31-the-vleapp-revival",
     "title": "The VLEAPP Revival. Reading the Whole Head Unit.",
     "date": "2026-08-31",
