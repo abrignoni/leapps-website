@@ -1,0 +1,30 @@
+name: Validate search index
+
+# Checks search-index.json, which every page fetches to build site search, and
+# guards the one rule that keeps it correct: the leapps-api Worker serves that
+# file rather than carrying its own copy. The two used to be maintained by hand,
+# nothing compared them, and they drifted until the Worker copy was seven
+# entries behind. See scripts/check_search_index.py for the detail.
+
+on:
+  pull_request:
+    paths:
+      - 'search-index.json'
+      - 'leapps-worker.js'
+      - 'scripts/check_search_index.py'
+      - '.github/workflows/validate-search-index.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-search-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate search index and guard against a second copy
+        run: python3 scripts/check_search_index.py

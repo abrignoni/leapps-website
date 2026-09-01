@@ -16,6 +16,7 @@
 
 const CACHE_TTL = 300; // seconds (5 minutes)
 const BLOG_CACHE_TTL = 600; // seconds (10 minutes) for blog content
+const SEARCH_CACHE_TTL = 3600; // seconds (1 hour), the max-age this route already served
 
 const BLOG_REPO = 'abrignoni/leapps-website';
 const BLOG_BRANCH = 'main';
@@ -47,7 +48,7 @@ export default {
 
     // Search index route: /search-index
     if (url.pathname === '/search-index') {
-      return handleSearchIndex();
+      return handleSearchIndex(env);
     }
 
     // Changelog RSS feed route: /changelog/feed
@@ -151,37 +152,50 @@ export default {
   },
 };
 
-function handleSearchIndex() {
-  const index = [
-    { title: "Quick Start — Pick Your Tool", url: "https://leapps.org/docs#step-1", page: "Docs", excerpt: "Choose iLEAPP for iOS, ALEAPP for Android, RLEAPP for ISP and carrier returns, or VLEAPP for vehicle systems." },
-    { title: "Quick Start — Get Your Extraction", url: "https://leapps.org/docs#step-2", page: "Docs", excerpt: "Supported extraction types: full file system, iTunes backup, adb, GrayKey, Cellebrite, logical acquisitions." },
-    { title: "Quick Start — Install & Run", url: "https://leapps.org/docs#step-3", page: "Docs", excerpt: "Install dependencies with pip, then run via GUI or command line. Requires Python 3.10 or later." },
-    { title: "Quick Start — Read Your Report", url: "https://leapps.org/docs#step-4", page: "Docs", excerpt: "Open index.html in your output folder or load the report into LAVA for filtering and data export." },
-    { title: "Quick Start — Contribute a Parser", url: "https://leapps.org/docs#step-5", page: "Docs", excerpt: "Add a new Python file to scripts/artifacts/ and submit a pull request on GitHub." },
-    { title: "iLEAPP — iOS Logs Events and Plists Parser", url: "https://leapps.org/releases", page: "Releases", excerpt: "Parse iOS and iPadOS artifacts from iTunes backups and full file system extractions." },
-    { title: "ALEAPP — Android Logs Events and Plists Parser", url: "https://leapps.org/releases", page: "Releases", excerpt: "Parse Android device artifacts from adb backups, full file system, and Cellebrite extractions." },
-    { title: "RLEAPP — Returns Logs Events and Plists Parser", url: "https://leapps.org/releases", page: "Releases", excerpt: "Parse ISP and carrier records, warrant returns, and subscriber data exports." },
-    { title: "VLEAPP — Vehicle Logs Events and Plists Parser", url: "https://leapps.org/releases", page: "Releases", excerpt: "Parse vehicle system image artifacts and infotainment data from raw head unit images, Berla iVe exports, and logical extractions." },
-    { title: "DLEAPP — Desktop Logs Events and Protobuf Parser", url: "https://leapps.org/releases#section-dleapp", page: "Releases", excerpt: "Parse desktop application artifacts (Electron, Chromium) and any artifact that doesn't fit the platform-specific LEAPPs." },
-    { title: "LAVA — LEAPPs Artifact Viewer Application", url: "https://leapps.org/releases", page: "Releases", excerpt: "View and explore LEAPPs reports with filtering capabilities, data export options, and structured navigation." },
-    { title: "About LEAPPs", url: "https://leapps.org/about", page: "About", excerpt: "Free, open-source digital forensics tools built by practitioners for practitioners. Started by Alexis Brignoni while working as a Special Agent and digital forensic examiner with the FBI." },
-    { title: "Core Contributors", url: "https://leapps.org/about#collaborators", page: "About", excerpt: "Key collaborators: Johann-PLW, stark4n6, ydkhatri, JamesHabben, snoop168." },
-    { title: "How LEAPPs Fits in Your Workflow", url: "https://leapps.org/about#comparison", page: "About", excerpt: "LEAPPs vs commercial tools vs manual review — free, open source, community parsers, code auditable, offline use, custom artifacts." },
-    { title: "Artifacts — Browse All Supported Artifacts", url: "https://leapps.org/artifacts", page: "Artifacts", excerpt: "Searchable and filterable list of all artifacts supported by iLEAPP, ALEAPP, RLEAPP, and VLEAPP." },
-    { title: "Changelog — Release History", url: "https://leapps.org/changelog", page: "Changelog", excerpt: "Unified release history across all LEAPPs tools — iLEAPP, ALEAPP, RLEAPP, VLEAPP, and LAVA." },
-    { title: "Stats — Live Project Statistics", url: "https://leapps.org/stats", page: "Stats", excerpt: "Live download counts, GitHub stars, contributors, releases, and commits across all LEAPPs repositories." },
-    { title: "Scoreboard — Contributor Rankings", url: "https://leapps.org/scoreboard", page: "Scoreboard", excerpt: "Contributor rankings based on merged pull requests across iLEAPP, ALEAPP, RLEAPP, and VLEAPP." },
-    { title: "Resources — Guides, Videos, and Community", url: "https://leapps.org/resources", page: "Resources", excerpt: "Tutorials, conference talks, walkthroughs, training programs, and community resources for LEAPPs tools." },
-    { title: "Mailing List", url: "https://leapps.org/mailing", page: "Mailing", excerpt: "Subscribe for release alerts, new parser notifications, and forensics community news. No spam." },
-    { title: "Blog — Forensics Deep Dives", url: "https://leapps.org/blog", page: "Blog", excerpt: "Artifact write-ups, tool updates, and community contributions from the LEAPPs project." },
-    { title: "How to Write an iLEAPP Module", url: "https://leapps.org/blog-post?post=2026-06-14-how-to-write-an-ileapp-module", page: "Blog", excerpt: "A complete guide to writing artifact modules for iLEAPP, ALEAPP, RLEAPP, and VLEAPP — module structure, SQLite and plist parsing, LAVA conversation view, and submitting a pull request." },
-    { title: "LEAPPing with LAVA", url: "https://leapps.org/blog-post?post=2026-06-10-leapping-with-lava", page: "Blog", excerpt: "LAVA is another way to view reports created out of iLEAPP, ALEAPP, RLEAPP, and VLEAPP. A look at the new features that make it stand out from the HTML reporting it is set to replace." },
-    { title: "Community — Discord and RSS", url: "https://discord.gg/XaZaknENUR", page: "Community", excerpt: "Join the LEAPPs community on Discord. Subscribe to the RSS feed for blog posts and changelog updates." },
-    { title: "Principles — Always Free, Open Source, Community First", url: "https://leapps.org/about#philosophy", page: "About", excerpt: "LEAPPs is always free, source code is public and auditable, built by practitioners for practitioners." },
-    { title: "Python Installation — Requirements", url: "https://leapps.org/docs#step-3", page: "Docs", excerpt: "Requires Python 3.10 or later. Install dependencies: pip install -r requirements.txt" },
-    { title: "Command Line Usage", url: "https://leapps.org/docs#step-3", page: "Docs", excerpt: "Run from command line: python iLEAPP.py -t {fs,tar,zip,gz} -i INPUT_PATH -o OUTPUT_PATH. Each tool may have additional options." }
-  ];
-  return corsResponse(JSON.stringify(index), 200, { 'Cache-Control': 'public, max-age=3600' });
+async function handleSearchIndex(env) {
+  // Serves search-index.json from the repository rather than holding a second
+  // copy of it. The two used to be maintained by hand and drifted: the copy
+  // here fell seven entries behind the static one and both described VLEAPP as
+  // logical-only long after that stopped being true. The pages fetch
+  // /search-index.json directly, so this route exists for anything outside the
+  // site; it now answers with the same bytes those pages get.
+  //
+  // Same shape as handleBlogFeed: raw.githubusercontent, edge cached, and the
+  // token attached when present so the fetch is not rate limited.
+  const indexUrl = `https://raw.githubusercontent.com/${BLOG_REPO}/${BLOG_BRANCH}/search-index.json`;
+
+  const cache = caches.default;
+  const cacheKey = new Request(`${indexUrl}__search`);
+
+  const cached = await cache.match(cacheKey);
+  if (cached) {
+    const cachedResponse = new Response(cached.body, cached);
+    cachedResponse.headers.set('X-Cache', 'HIT');
+    cachedResponse.headers.set('Access-Control-Allow-Origin', '*');
+    return cachedResponse;
+  }
+
+  const headers = { 'User-Agent': 'LEAPPs-Worker/1.0' };
+  if (env && env.GITHUB_TOKEN) headers['Authorization'] = `Bearer ${env.GITHUB_TOKEN}`;
+
+  const upstream = await fetch(indexUrl, { headers });
+  if (!upstream.ok) {
+    return corsResponse(JSON.stringify({ error: 'Failed to load search index' }), 502);
+  }
+
+  const body = await upstream.text();
+  const responseToCache = new Response(body, {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': `public, max-age=${SEARCH_CACHE_TTL}`,
+      'Access-Control-Allow-Origin': '*',
+      'X-Cache': 'MISS',
+    },
+  });
+  await cache.put(cacheKey, responseToCache.clone());
+
+  return responseToCache;
 }
 
 async function handleBlogFeed(env) {
