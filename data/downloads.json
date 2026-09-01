@@ -910,13 +910,13 @@
     {
       "date": "2026-09-01",
       "totals": {
-        "ileapp": 89557,
-        "aleapp": 67103,
-        "rleapp": 4720,
-        "vleapp": 1849,
-        "lava": 2288,
-        "dleapp": 378,
-        "batchleapp": 311
+        "ileapp": 89603,
+        "aleapp": 67140,
+        "rleapp": 4736,
+        "vleapp": 1850,
+        "lava": 2313,
+        "dleapp": 383,
+        "batchleapp": 313
       }
     }
   ]

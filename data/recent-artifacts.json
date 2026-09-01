@@ -9,8 +9,8 @@
       "date": "2026-09-01"
     },
     {
-      "name": "loopHabits",
-      "query": "loopHabits",
+      "name": "seal",
+      "query": "seal",
       "tool": "ALEAPP",
       "date": "2026-09-01"
     },
@@ -39,8 +39,8 @@
       "date": "2026-09-01"
     },
     {
-      "name": "feeder",
-      "query": "feeder",
+      "name": "auroraStore",
+      "query": "auroraStore",
       "tool": "ALEAPP",
       "date": "2026-09-01"
     },
@@ -69,8 +69,8 @@
       "date": "2026-09-01"
     },
     {
-      "name": "cnn",
-      "query": "cnn",
+      "name": "rethinkDns",
+      "query": "rethinkDns",
       "tool": "ALEAPP",
       "date": "2026-09-01"
     }
