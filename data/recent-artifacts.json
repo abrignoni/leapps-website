@@ -1,7 +1,13 @@
 {
-  "generated": "2026-09-01",
+  "generated": "2026-09-02",
   "window_days": 45,
   "items": [
+    {
+      "name": "Keychains",
+      "query": "Keychains",
+      "tool": "DLEAPP",
+      "date": "2026-09-02"
+    },
     {
       "name": "realmUndecodedStores",
       "query": "realmUndecodedStores",
@@ -21,16 +27,16 @@
       "date": "2026-08-30"
     },
     {
-      "name": "chatgptComputerHistory",
-      "query": "chatgptComputerHistory",
-      "tool": "DLEAPP",
-      "date": "2026-08-18"
-    },
-    {
       "name": "robloxReturns",
       "query": "robloxReturns",
       "tool": "RLEAPP",
       "date": "2026-08-15"
+    },
+    {
+      "name": "safaribrowsing",
+      "query": "safaribrowsing",
+      "tool": "DLEAPP",
+      "date": "2026-09-02"
     },
     {
       "name": "lgThinq",
@@ -51,27 +57,21 @@
       "date": "2026-08-30"
     },
     {
-      "name": "chatgptRecordReplay",
-      "query": "chatgptRecordReplay",
-      "tool": "DLEAPP",
-      "date": "2026-08-18"
-    },
-    {
       "name": "fritzboxSupportLog",
       "query": "fritzboxSupportLog",
       "tool": "RLEAPP",
       "date": "2026-08-05"
     },
     {
+      "name": "SlackSession",
+      "query": "SlackSession",
+      "tool": "DLEAPP",
+      "date": "2026-09-02"
+    },
+    {
       "name": "cnn",
       "query": "cnn",
       "tool": "iLEAPP",
-      "date": "2026-09-01"
-    },
-    {
-      "name": "rethinkDns",
-      "query": "rethinkDns",
-      "tool": "ALEAPP",
       "date": "2026-09-01"
     }
   ]
