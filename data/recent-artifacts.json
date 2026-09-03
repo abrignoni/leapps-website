@@ -3,15 +3,15 @@
   "window_days": 45,
   "items": [
     {
+      "name": "orgzly",
+      "query": "orgzly",
+      "tool": "ALEAPP",
+      "date": "2026-09-03"
+    },
+    {
       "name": "familyHub",
       "query": "familyHub",
       "tool": "iLEAPP",
-      "date": "2026-09-02"
-    },
-    {
-      "name": "houseparty",
-      "query": "houseparty",
-      "tool": "ALEAPP",
       "date": "2026-09-02"
     },
     {
@@ -33,16 +33,16 @@
       "date": "2026-08-15"
     },
     {
+      "name": "breezyWeather",
+      "query": "breezyWeather",
+      "tool": "ALEAPP",
+      "date": "2026-09-03"
+    },
+    {
       "name": "ifttt",
       "query": "ifttt",
       "tool": "iLEAPP",
       "date": "2026-09-02"
-    },
-    {
-      "name": "seal",
-      "query": "seal",
-      "tool": "ALEAPP",
-      "date": "2026-09-01"
     },
     {
       "name": "safaribrowsing",
@@ -63,15 +63,15 @@
       "date": "2026-08-05"
     },
     {
+      "name": "houseparty",
+      "query": "houseparty",
+      "tool": "ALEAPP",
+      "date": "2026-09-02"
+    },
+    {
       "name": "realmUndecodedStores",
       "query": "realmUndecodedStores",
       "tool": "iLEAPP",
-      "date": "2026-09-01"
-    },
-    {
-      "name": "auroraStore",
-      "query": "auroraStore",
-      "tool": "ALEAPP",
       "date": "2026-09-01"
     }
   ]
