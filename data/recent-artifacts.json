@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "orgzly",
-      "query": "orgzly",
+      "name": "avesGallery",
+      "query": "avesGallery",
       "tool": "ALEAPP",
       "date": "2026-09-03"
     },
@@ -33,8 +33,8 @@
       "date": "2026-08-15"
     },
     {
-      "name": "breezyWeather",
-      "query": "breezyWeather",
+      "name": "redReader",
+      "query": "redReader",
       "tool": "ALEAPP",
       "date": "2026-09-03"
     },
@@ -63,10 +63,10 @@
       "date": "2026-08-05"
     },
     {
-      "name": "houseparty",
-      "query": "houseparty",
+      "name": "orgzly",
+      "query": "orgzly",
       "tool": "ALEAPP",
-      "date": "2026-09-02"
+      "date": "2026-09-03"
     },
     {
       "name": "realmUndecodedStores",
