@@ -5,14 +5,14 @@
     {
       "name": "chromeSessionTabs",
       "query": "chromeSessionTabs",
-      "tool": "ALEAPP",
+      "tool": "iLEAPP",
       "date": "2026-09-04"
     },
     {
-      "name": "familyHub",
-      "query": "familyHub",
-      "tool": "iLEAPP",
-      "date": "2026-09-02"
+      "name": "chromeSyncSessions",
+      "query": "chromeSyncSessions",
+      "tool": "ALEAPP",
+      "date": "2026-09-04"
     },
     {
       "name": "Keychains",
@@ -33,16 +33,16 @@
       "date": "2026-08-15"
     },
     {
-      "name": "installSessions",
-      "query": "installSessions",
-      "tool": "ALEAPP",
-      "date": "2026-09-04"
-    },
-    {
-      "name": "ifttt",
-      "query": "ifttt",
+      "name": "familyHub",
+      "query": "familyHub",
       "tool": "iLEAPP",
       "date": "2026-09-02"
+    },
+    {
+      "name": "nearbyDevices",
+      "query": "nearbyDevices",
+      "tool": "ALEAPP",
+      "date": "2026-09-04"
     },
     {
       "name": "safaribrowsing",
@@ -63,16 +63,16 @@
       "date": "2026-08-05"
     },
     {
-      "name": "packageRestrictions",
-      "query": "packageRestrictions",
-      "tool": "ALEAPP",
-      "date": "2026-09-04"
+      "name": "ifttt",
+      "query": "ifttt",
+      "tool": "iLEAPP",
+      "date": "2026-09-02"
     },
     {
-      "name": "realmUndecodedStores",
-      "query": "realmUndecodedStores",
-      "tool": "iLEAPP",
-      "date": "2026-09-01"
+      "name": "chromeSessionTabs",
+      "query": "chromeSessionTabs",
+      "tool": "ALEAPP",
+      "date": "2026-09-04"
     }
   ]
 }
