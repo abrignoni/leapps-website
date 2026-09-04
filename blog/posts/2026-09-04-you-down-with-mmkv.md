@@ -224,3 +224,18 @@ Go open an extraction. There's a folder called `mmkv` in it somewhere, and it ha
 **Brigs:** Will do. See you soon!
 
 **MMKV:** You will. Every phone, every app, right next to my neighbor. Bring the parser.
+
+---
+
+**PD:** Since this conversation the reader learned to do the two things MMKV asked
+for. Version 1.1.0 opens a locked store when you hand it the key, as text or as
+hex, from the command line or from code. It still never goes looking for a key, it
+ignores one for a store that is not locked, and a key that does not work is refused
+instead of printing gibberish. It also takes the length of the data region from the
+`.crc` file where that is the record, which is the value MMKV itself reads.
+
+```text
+$ python -m mmkv_parser dump --key 'the key the app uses' locked.mmkv
+```
+
+iLEAPP and ALEAPP both carry the new version.
