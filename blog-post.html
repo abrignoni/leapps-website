@@ -40,10 +40,33 @@
   <style>
 img { max-width: 100%; display: block; }
 .post-wrap {
-      max-width: 720px;
+      /* The page is wide so figures, tables and code can use a desktop screen.
+         The prose inside keeps its own narrower measure (see .post-body > *),
+         because the reading column was already ~94 characters per line at 720px
+         and longer lines read worse, not better. Capped so it never spans a
+         very large monitor edge to edge. */
+      max-width: 1080px;
       margin: 0 auto;
       padding: 3rem 2rem 5rem;
     }
+    /* Prose keeps a comfortable measure, centred inside the wider page. */
+    .post-header > *,
+    .post-body > p,
+    .post-body > h1, .post-body > h2, .post-body > h3, .post-body > h4,
+    .post-body > ul, .post-body > ol,
+    .post-body > blockquote, .post-body > hr,
+    .post-body > ol.blog-endnotes {
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* Media and code break out to the full page width. A paragraph holding
+       only an image is a figure, so it breaks out too. */
+    .post-body > p:has(> img) { max-width: 100%; }
+    .post-body > p > img { width: 100%; }
+    .post-body > pre,
+    .post-body > table,
+    .post-body > div { max-width: 100%; }
 .breadcrumb {
       font-family: var(--font-mono);
       font-size: .75rem;
@@ -106,7 +129,7 @@ img { max-width: 100%; display: block; }
       border-top: 1px solid var(--border);
       margin: 2rem 0;
     }
-.post-body { font-size: 1rem; line-height: 1.75; color: var(--text); }
+.post-body { font-size: 1.0625rem; line-height: 1.75; color: var(--text); }
 .post-body h1,
     .post-body h2,
     .post-body h3,
@@ -371,6 +394,11 @@ img { max-width: 100%; display: block; }
 [data-theme="light"] .post-header { border-color: #C8C3B8; }
 @media (max-width: 768px) {
   .post-header h1 { font-size: 2rem; }
+}
+/* Under the page width the wrap is already fluid, so the prose cap is the
+   only constraint and the media is simply as wide as the column. */
+@media (max-width: 800px) {
+  .post-header > *, .post-body > * { max-width: 100%; }
 }
   </style>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>
