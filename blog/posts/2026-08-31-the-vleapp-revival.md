@@ -14,9 +14,11 @@ The honest reason was the input. VLEAPP could only parse logical extractions: fi
 
 Twenty-one months is a long time for a tool to stand still. This is the revival.
 
-**Short version:** VLEAPP now takes a raw head unit disk image with `-t raw` and a native Berla iVe export with `-t iva`. It reads QNX6, QNX4, ETFS, EFS, ext2/3/4, FAT32 and exFAT volumes, and QNX IFS boot images, identifying each by its own on-disk structure. No mounting, no administrator rights, pure standard library Python, and the image is opened read-only. The reading is done by qnxprobe, a single-file MIT tool that VLEAPP vendors and that is well worth having on its own. Then VLEAPP runs its 103 artifact definitions against whatever it finds. New artifacts landed too, across Ford and BMW head units. And we need two things from you: test data and parsers.
+**Short version:** VLEAPP now takes a raw head unit disk image with `-t raw` and a native Berla iVe export with `-t iva`. It reads QNX6, QNX4, ETFS, EFS, ext2/3/4, FAT32 and exFAT volumes, and QNX IFS boot images, identifying each by its own on-disk structure. No mounting, no administrator rights, pure standard library Python, and the image is opened read-only. The reading is done by qnxprobe, a single-file MIT tool that VLEAPP vendors and that is well worth having on its own. Since 4 September it also joins the numbered segments of a split image, so a `.001` goes straight in. Then VLEAPP runs its 103 artifact definitions against whatever it finds. New artifacts landed too, across Ford and BMW head units. And we need two things from you: test data and parsers.
 
 **Long version:** keep reading.
+
+*Updated 4 September 2026: qnxprobe 1.13 now joins the numbered segments of a split raw image itself, and VLEAPP reads a `.001` straight in. See the new section, Split images, below, and the note at the end about which release carries what.*
 
 ## The revival started with parsers
 
@@ -57,7 +59,7 @@ Our test set holds no real ETFS, EFS, or QNX4 vehicle extraction yet. Those thre
 
 ## qnxprobe is useful on its own
 
-Worth saying plainly, because it is easy to miss: qnxprobe is a separate tool that VLEAPP vendors, not a part of VLEAPP. One Python file, about 3,500 lines, MIT licensed, no dependencies past the standard library. Grab it from [github.com/abrignoni/qnxprobe](https://github.com/abrignoni/qnxprobe) and run it. It opens the image read-only and never writes to it.
+Worth saying plainly, because it is easy to miss: qnxprobe is a separate tool that VLEAPP vendors, not a part of VLEAPP. One Python file, about 4,000 lines, MIT licensed, no dependencies past the standard library. Grab it from [github.com/abrignoni/qnxprobe](https://github.com/abrignoni/qnxprobe) and run it. It opens the image read-only and never writes to it.
 
 Even if you never run VLEAPP, it answers questions you have on any vehicle image.
 
@@ -88,6 +90,28 @@ python3 qnxprobe.py --extract storage.zip --only storage mmcblk0.img
 python3 qnxprobe.py --self-test
 ```
 
+## Split images: hand it any segment
+
+*Added 4 September 2026.*
+
+FTK Imager and its peers write a raw image as numbered segments (`.001`, `.002`, `.003`, ...) unless you tell them to write one file, and the first segment by itself is a trap. It carries the partition table and the boot volumes, so it identifies cleanly and its front volumes read correctly, while the volume holding the user data ends past the cut, where every read answers empty. Measured on a Ford Sync G4 image cut at 1,500 MB: the boot partitions extracted in full and the 28.8 GiB storage volume walked to 0 files, 0 bytes, exit 0, and nothing on screen said a word. A report built on that looks complete and is missing the vehicle.
+
+Two fixes landed on 4 September. qnxprobe 1.12 started saying so: an image shorter than its own partition table draws an `IMAGE IS SHORTER THAN ITS PARTITION TABLE` block, each affected volume is marked `INCOMPLETE` in the report and in `volumes.json`, and a file whose blocks lie past the cut is stored under a name ending `.SHORT-<here>-of-<size>-bytes` rather than as an extracted file. Then qnxprobe 1.13 removed the chore. Name any one segment and every segment beside it, same folder, same stem, same number of digits, is read as one image, in order, with nothing copied or concatenated on disk:
+
+```text
+python3 qnxprobe.py --extract case.zip mmcblk0.img.001
+```
+
+![qnxprobe report header on a split image: 20 segments joined, mmcblk0.img.001 through .020, 19 segments of 1,572,864,000 bytes then one of 1,384,120,320 bytes, 31,268,536,320 bytes in all, and the storage volume confirmed with 7,362 files.](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/2026-08-31-the-vleapp-revival/split-image-join.webp)
+
+*Figure 1: the same Ford Sync G4 image, handed over as its first segment. The report says what was joined, and the storage volume comes back whole.*
+
+The report names what it joined, and in `volumes.json` every volume's `image` field names the first segment while `image_segments` lists each segment with its byte count, so an extraction can be checked back against the set it came from. A set is joined only when it is whole from its first segment. A hole in the numbering (`.001` and `.003` with no `.002`), a set with no first segment, and segments numbered at two different widths are each refused by name, with exit status 1, because a set joined around a hole reads every volume past it at the wrong offset and answers wrong rather than empty. A set that simply ends early cannot be told from a small disk by its numbering; that case is caught the other way, by the partition table reaching past the joined size, which is the 1.12 warning.
+
+Validated the way the rest of this post was. The Ford Sync G4 image was cut into 20 segments of 1,500 MiB and extracted twice, from the segment set and from the one file, then compared entry by entry: 8,293 files and 15,712,841,658 bytes, identical by name, size and CRC, six volumes with identical counts, no warning. The self-test now cuts its own fixture into unaligned segments and requires byte-exact reads across every boundary through one open file handle at a time, plus each of the refusals.
+
+VLEAPP follows. `-t raw -i mmcblk0.img.001` reads the whole set, the window accepts a `.001`, and the run log says which segments the reader joined. Earlier the same day VLEAPP had started refusing a `.001` with a `.002` beside it, telling you to join them yourself with `cat` or `copy /b`. That message is gone because the reason for it is gone.<sup><a href="#note-6">[6]</a></sup>
+
 ## Does the old stuff still work?
 
 Yes, and we measured rather than assumed. After every filesystem landed, the Ford Sync Gen3 export was re-run end to end and reproduced its baseline extraction and its full artifact output at identical row counts, and the Ford Sync G4 image identified exactly as before, with no new filesystem claiming a volume that belongs to another. A detector that misfires on someone else's format is worse than no detector, so each new reader is also required to decline every other format's real bytes.
@@ -108,7 +132,7 @@ Thank you to JaysonU25 for the 2024 Chrysler and Ford parsers that closed out th
 
 A tool comes back when people give it something to work with. The head unit was always holding the data. Now the tools in your hands can read it.
 
-One practical note on getting your hands on this. Everything described here is merged into VLEAPP's main branch, so you can use it today by running VLEAPP from the source code. It is not in a packaged release yet. When the next release is cut it will show up on the [LEAPPs releases page](https://leapps.org/releases#section-vleapp) like always.
+One practical note on getting your hands on this. The raw image and iVe input shipped in VLEAPP v2026.3.2 on 2 September, on the [LEAPPs releases page](https://leapps.org/releases#section-vleapp) like always. The split-image join from 4 September is merged into VLEAPP's main branch and will be in the next release; until then it is there for anyone running VLEAPP from the source code, and qnxprobe 1.13 itself was [released on its own](https://github.com/abrignoni/qnxprobe/releases/tag/v1.13) the same day.
 
 ## Endnotes
 
@@ -118,4 +142,5 @@ One practical note on getting your hands on this. Everything described here is m
 <li id="note-3">qnxprobe lives at <a href="https://github.com/abrignoni/qnxprobe">github.com/abrignoni/qnxprobe</a> and is vendored verbatim into VLEAPP with a hash guard, so the copy in the tool is provably the reviewed upstream file. The design and validation detail for the raw image input is in VLEAPP's <a href="https://github.com/abrignoni/VLEAPP/blob/33296668d2f45e5a60a3c241eb20e1bdf7b3d676/admin/docs/raw_image_input.md"><code>admin/docs/raw_image_input.md</code></a> at the merged commit.</li>
 <li id="note-4">Netherlands Forensic Institute, <a href="https://github.com/NetherlandsForensicInstitute/qnxmount">qnxmount</a> (Apache-2.0). Its Kaitai specifications are themselves sourced to QNX's <code>fs/etfs.h</code> and <code>fs/f3s_spec.h</code> headers, and its committed test images and reference archives are what the ETFS and EFS readers were required to reproduce.</li>
 <li id="note-5">The Linux kernel's read-only <a href="https://github.com/torvalds/linux/tree/master/fs/qnx4"><code>fs/qnx4</code></a> driver served as both the format source and the validation oracle for the QNX4 reader. The IFS format was sourced from QNX's <code>dumpifs</code> and <code>sys/image.h</code> in the open QNX sources, with the NRV2B decompressor ported from <a href="https://www.oberhumer.com/opensource/ucl/">Markus Oberhumer's UCL</a>.</li>
+<li id="note-6">qnxprobe <a href="https://github.com/abrignoni/qnxprobe/pull/14">PR #14</a> (the short-image warning, 1.12) and <a href="https://github.com/abrignoni/qnxprobe/pull/16">PR #16</a> (the segment join, 1.13), released as <a href="https://github.com/abrignoni/qnxprobe/releases/tag/v1.13">v1.13</a>. On the VLEAPP side, <a href="https://github.com/abrignoni/VLEAPP/pull/183">PR #183</a> added the <code>.001</code> suffix, <a href="https://github.com/abrignoni/VLEAPP/pull/184">PR #184</a> refused a segment with its successor beside it and said in the run log when an image came up short, and <a href="https://github.com/abrignoni/VLEAPP/pull/185">PR #185</a> re-vendored 1.13 and hands the set to the reader. The segment sizes quoted above come from cutting the Ford Sync G4 image at 1,500 MiB.</li>
 </ol>
