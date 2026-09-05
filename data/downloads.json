@@ -958,12 +958,12 @@
     {
       "date": "2026-09-05",
       "totals": {
-        "ileapp": 90034,
-        "aleapp": 67507,
+        "ileapp": 90042,
+        "aleapp": 67515,
         "rleapp": 4798,
         "vleapp": 1900,
         "lava": 2433,
-        "dleapp": 420,
+        "dleapp": 421,
         "batchleapp": 336
       }
     }
