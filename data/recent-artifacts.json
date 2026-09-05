@@ -3,14 +3,14 @@
   "window_days": 45,
   "items": [
     {
-      "name": "iosDiagnosticReports",
-      "query": "iosDiagnosticReports",
+      "name": "signalLogs",
+      "query": "signalLogs",
       "tool": "iLEAPP",
       "date": "2026-09-05"
     },
     {
-      "name": "camScanner",
-      "query": "camScanner",
+      "name": "samsungImsService",
+      "query": "samsungImsService",
       "tool": "ALEAPP",
       "date": "2026-09-05"
     },
@@ -33,14 +33,14 @@
       "date": "2026-08-15"
     },
     {
-      "name": "houseparty",
-      "query": "houseparty",
+      "name": "whatsAppLogSessions",
+      "query": "whatsAppLogSessions",
       "tool": "iLEAPP",
-      "date": "2026-09-04"
+      "date": "2026-09-05"
     },
     {
-      "name": "musicolet",
-      "query": "musicolet",
+      "name": "exoplayerCaches",
+      "query": "exoplayerCaches",
       "tool": "ALEAPP",
       "date": "2026-09-05"
     },
@@ -63,14 +63,14 @@
       "date": "2026-08-05"
     },
     {
-      "name": "chromeSessionTabs",
-      "query": "chromeSessionTabs",
+      "name": "iosDiagnosticReports",
+      "query": "iosDiagnosticReports",
       "tool": "iLEAPP",
-      "date": "2026-09-04"
+      "date": "2026-09-05"
     },
     {
-      "name": "androidDropbox",
-      "query": "androidDropbox",
+      "name": "hereWeGo",
+      "query": "hereWeGo",
       "tool": "ALEAPP",
       "date": "2026-09-05"
     }
