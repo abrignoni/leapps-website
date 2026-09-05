@@ -253,7 +253,12 @@ a { color: inherit; }
     }
 .lp-mobile-menu a:last-child { border-bottom: none; }
 .lp-mobile-menu a:hover { color: var(--gold); }
-@media (max-width: 768px) {
+/* The desktop nav is 1047px of fixed-width children, so with the 2rem side
+   padding it needs 1111px to sit inside the viewport. Collapse to the
+   hamburger below that rather than at 768px, which left every width from 769
+   to 1110 overflowing to a fixed 1079px. Everything hidden here is in the
+   mobile menu, which carries its own search. */
+@media (max-width: 1120px) {
   .lp-nav-links { display: none; }
   .lp-hamburger { display: flex; }
   .lp-nav-cta { display: none; }
@@ -281,7 +286,7 @@ a { color: inherit; }
 .lp-search-item:hover { background: rgba(245,192,32,.06); color: var(--gold); }
 .lp-search-badge { font-family: var(--font-mono); font-size: .65rem; color: var(--muted); letter-spacing: .05em; margin-left: .75rem; white-space: nowrap; }
 .lp-search-empty { padding: .75rem; color: var(--muted); font-family: var(--font-mono); font-size: .75rem; text-align: center; }
-@media (max-width: 768px) {
+@media (max-width: 1120px) {
   .lp-search-wrap { display: none; }
 }
 .lp-mobile-search { padding: .5rem 0 .75rem; border-bottom: 1px solid var(--border); margin-bottom: .25rem; position: relative; }
