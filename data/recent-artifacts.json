@@ -1,17 +1,17 @@
 {
-  "generated": "2026-09-04",
+  "generated": "2026-09-05",
   "window_days": 45,
   "items": [
+    {
+      "name": "colorNote",
+      "query": "colorNote",
+      "tool": "ALEAPP",
+      "date": "2026-09-05"
+    },
     {
       "name": "houseparty",
       "query": "houseparty",
       "tool": "iLEAPP",
-      "date": "2026-09-04"
-    },
-    {
-      "name": "chromeSyncSessions",
-      "query": "chromeSyncSessions",
-      "tool": "ALEAPP",
       "date": "2026-09-04"
     },
     {
@@ -33,15 +33,15 @@
       "date": "2026-08-15"
     },
     {
+      "name": "easyVoiceRecorder",
+      "query": "easyVoiceRecorder",
+      "tool": "ALEAPP",
+      "date": "2026-09-05"
+    },
+    {
       "name": "chromeSessionTabs",
       "query": "chromeSessionTabs",
       "tool": "iLEAPP",
-      "date": "2026-09-04"
-    },
-    {
-      "name": "nearbyDevices",
-      "query": "nearbyDevices",
-      "tool": "ALEAPP",
       "date": "2026-09-04"
     },
     {
@@ -63,16 +63,16 @@
       "date": "2026-08-05"
     },
     {
+      "name": "flipboard",
+      "query": "flipboard",
+      "tool": "ALEAPP",
+      "date": "2026-09-05"
+    },
+    {
       "name": "familyHub",
       "query": "familyHub",
       "tool": "iLEAPP",
       "date": "2026-09-02"
-    },
-    {
-      "name": "chromeSessionTabs",
-      "query": "chromeSessionTabs",
-      "tool": "ALEAPP",
-      "date": "2026-09-04"
     }
   ]
 }
