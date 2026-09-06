@@ -3,16 +3,16 @@
   "window_days": 45,
   "items": [
     {
+      "name": "nytimes",
+      "query": "nytimes",
+      "tool": "iLEAPP",
+      "date": "2026-09-06"
+    },
+    {
       "name": "accuWeather",
       "query": "accuWeather",
       "tool": "ALEAPP",
       "date": "2026-09-06"
-    },
-    {
-      "name": "signalLogs",
-      "query": "signalLogs",
-      "tool": "iLEAPP",
-      "date": "2026-09-05"
     },
     {
       "name": "Keychains",
@@ -33,16 +33,16 @@
       "date": "2026-08-15"
     },
     {
+      "name": "gettr",
+      "query": "gettr",
+      "tool": "iLEAPP",
+      "date": "2026-09-06"
+    },
+    {
       "name": "cloudflareWarp",
       "query": "cloudflareWarp",
       "tool": "ALEAPP",
       "date": "2026-09-06"
-    },
-    {
-      "name": "whatsAppLogSessions",
-      "query": "whatsAppLogSessions",
-      "tool": "iLEAPP",
-      "date": "2026-09-05"
     },
     {
       "name": "safaribrowsing",
@@ -63,16 +63,16 @@
       "date": "2026-08-05"
     },
     {
+      "name": "coinbaseWallet",
+      "query": "coinbaseWallet",
+      "tool": "iLEAPP",
+      "date": "2026-09-06"
+    },
+    {
       "name": "fileManagerPlus",
       "query": "fileManagerPlus",
       "tool": "ALEAPP",
       "date": "2026-09-06"
-    },
-    {
-      "name": "iosDiagnosticReports",
-      "query": "iosDiagnosticReports",
-      "tool": "iLEAPP",
-      "date": "2026-09-05"
     }
   ]
 }
