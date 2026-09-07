@@ -3,14 +3,14 @@
   "window_days": 45,
   "items": [
     {
-      "name": "zoomChat",
-      "query": "zoomChat",
+      "name": "mmkvCarved",
+      "query": "mmkvCarved",
       "tool": "iLEAPP",
       "date": "2026-09-07"
     },
     {
-      "name": "vivaVideo",
-      "query": "vivaVideo",
+      "name": "mmkvCarved",
+      "query": "mmkvCarved",
       "tool": "ALEAPP",
       "date": "2026-09-07"
     },
@@ -33,14 +33,14 @@
       "date": "2026-08-15"
     },
     {
-      "name": "skout",
-      "query": "skout",
+      "name": "spotify",
+      "query": "spotify",
       "tool": "iLEAPP",
       "date": "2026-09-07"
     },
     {
-      "name": "permissionAccessState",
-      "query": "permissionAccessState",
+      "name": "vivaVideo",
+      "query": "vivaVideo",
       "tool": "ALEAPP",
       "date": "2026-09-07"
     },
@@ -63,14 +63,14 @@
       "date": "2026-08-05"
     },
     {
-      "name": "coverMe",
-      "query": "coverMe",
+      "name": "textNow",
+      "query": "textNow",
       "tool": "iLEAPP",
       "date": "2026-09-07"
     },
     {
-      "name": "appOpsModes",
-      "query": "appOpsModes",
+      "name": "permissionAccessState",
+      "query": "permissionAccessState",
       "tool": "ALEAPP",
       "date": "2026-09-07"
     }
