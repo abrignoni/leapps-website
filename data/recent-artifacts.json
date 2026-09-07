@@ -1,18 +1,18 @@
 {
-  "generated": "2026-09-06",
+  "generated": "2026-09-07",
   "window_days": 45,
   "items": [
     {
-      "name": "linePrivateStore",
-      "query": "linePrivateStore",
+      "name": "zoomChat",
+      "query": "zoomChat",
       "tool": "iLEAPP",
-      "date": "2026-09-06"
+      "date": "2026-09-07"
     },
     {
-      "name": "inshot",
-      "query": "inshot",
+      "name": "vivaVideo",
+      "query": "vivaVideo",
       "tool": "ALEAPP",
-      "date": "2026-09-06"
+      "date": "2026-09-07"
     },
     {
       "name": "Keychains",
@@ -33,16 +33,16 @@
       "date": "2026-08-15"
     },
     {
-      "name": "nytimes",
-      "query": "nytimes",
+      "name": "skout",
+      "query": "skout",
       "tool": "iLEAPP",
-      "date": "2026-09-06"
+      "date": "2026-09-07"
     },
     {
-      "name": "appLock",
-      "query": "appLock",
+      "name": "permissionAccessState",
+      "query": "permissionAccessState",
       "tool": "ALEAPP",
-      "date": "2026-09-06"
+      "date": "2026-09-07"
     },
     {
       "name": "safaribrowsing",
@@ -63,16 +63,16 @@
       "date": "2026-08-05"
     },
     {
-      "name": "gettr",
-      "query": "gettr",
+      "name": "coverMe",
+      "query": "coverMe",
       "tool": "iLEAPP",
-      "date": "2026-09-06"
+      "date": "2026-09-07"
     },
     {
-      "name": "fileCommander",
-      "query": "fileCommander",
+      "name": "appOpsModes",
+      "query": "appOpsModes",
       "tool": "ALEAPP",
-      "date": "2026-09-06"
+      "date": "2026-09-07"
     }
   ]
 }
