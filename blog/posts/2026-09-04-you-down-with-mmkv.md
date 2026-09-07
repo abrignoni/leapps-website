@@ -82,15 +82,15 @@ Unless someone locked me. Then those sixteen bytes aren't zeros anymore, and tha
 
 **MMKV:** The app locks me. Not against itself, against you. A developer who worries about my file walking off a phone can tell me to scramble everything on the wall with a secret only the app holds. Same wall, same notes, but every label and every value is gibberish until it's unscrambled.
 
-Those sixteen bytes in my neighbor's file aren't the secret. They're the random starting point for the scramble, and they change every time I clean house. Zeros means nobody locked me. Anything else means somebody did.
+Those sixteen bytes in my neighbor's file aren't the secret. They're the random starting point for the scramble, and here is the part that trips people up: I write a fresh set every time I clean house, locked or not, and nobody ever wipes them back to zero. So zeros means nobody has ever locked me. Anything else means somebody locked me, or I cleaned house once and kept the bytes. To tell those two apart you have to read the wall. If the notes account for every inch of it, the wall is in the clear.
 
-In your test phones, SHEIN, WeChat and TikTok lock some of their walls. Most don't bother: of the fifteen hundred files of mine you have, about a hundred are locked.
+In your test phones, SHEIN and WPS Office lock some of their walls. Most don't bother: of the eighteen hundred files of mine you have, fifty-nine are locked. WeChat carries those sixteen bytes on plenty of walls and locks none of them.
 
 And here's the trap. A locked wall doesn't look locked. It looks like a wall full of labels. Bad ones.
 
 ![The same three notes shown twice: readable on the left, and scrambled into hexadecimal on the right after AES encryption. Below, the .crc neighbor holds sixteen non-zero bytes.](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/2026-09-04-you-down-with-mmkv/you-down-with-mmkv-locked.webp)
 
-*Figure 3: a locked wall keeps its shape and loses its meaning. The sixteen bytes in the .crc file are the tell, and they are the starting point for the scramble, not the secret.*
+*Figure 3: a locked wall keeps its shape and loses its meaning. The sixteen bytes in the .crc file are the starting point for the scramble, not the secret, and on their own they are not proof of a lock.*
 
 **Brigs:** Oh, I guess snitches really do get... So in order to avoid it they can take all the information, recent or old, and just make it impossible to read. They put the data in a crypt, one might say, or like they say in Spanish, "en cripta." How can the information be unscrambled or taken out of the crypt? Decrypted?
 
@@ -239,3 +239,30 @@ $ python -m mmkv_parser dump --key 'the key the app uses' locked.mmkv
 ```
 
 iLEAPP and ALEAPP both carry the new version.
+
+---
+
+**Correction, 7 September 2026.** The first version of this post said a non-zero
+vector in the `.crc` file means the store is locked, and put the count at about a
+hundred of fifteen hundred. Both were wrong. A colleague caught it by sending over a
+WeChat store whose sixteen bytes were set and whose contents were sitting there in
+the clear.
+
+MMKV's `clearAll` fills those bytes with random data for every store it clears and
+only afterwards checks whether there is anything to encrypt
+([MMKV_IO.cpp](https://github.com/Tencent/MMKV/blob/c74d8b886abd87132c507ec17865a7fb4feb9679/Core/MMKV_IO.cpp#L1476-L1481)),
+and nothing anywhere zeroes them again. So a plaintext store that has been cleared
+once carries a vector for good. That block is the same in every release from v1.2.10
+to v2.2.2, checked tag by tag.
+
+Re-measured by reading each store instead of trusting the field, across all 91
+registered extractions: 1,840 stores, of which 106 carry a vector. Forty-seven of
+those 106 read as ordinary plaintext, 18 of them WeChat. Fifty-nine do not read, and
+those are the locked ones: SHEIN, WPS Office, Xiaohongshu, Mi Music and Mi Home.
+WeChat locks none of its stores on any device here.
+
+The reader now decides by reading the data region rather than by that field, and the
+sentences above are corrected. Worth noting where the mistake actually sat: the
+interview had the fact right and then drew the wrong conclusion from it one sentence
+later. MMKV says the bytes change every time it cleans house, and the next line
+claims they mean a lock.
