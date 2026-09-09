@@ -21,12 +21,14 @@ on:
     # release days in two: anything published after the cron fell into the
     # next day's window while that morning's releases had already aged out.
     #
-    # The 30h lookback covers a full day plus 6h of margin, so a delayed
-    # cron cannot skip a release. That margin is the only source of
-    # duplicate drafts, and only for releases published between 23:00 and
-    # 05:00 UTC. There is no dedupe in the script, so the window is kept
-    # just over 24h deliberately: widening it further would re-draft every
-    # release on the following day's run as well.
+    # The lookback has to cover the gap between two consecutive runs, and
+    # GitHub delays this cron by anywhere from 24 minutes to 12 hours. Over
+    # 35 scheduled runs the gap reached 34.6h and exceeded 25h four times,
+    # so a window sized just over a day leaves blind spots between runs.
+    # 36h covers the largest observed gap. The cost is that a release can
+    # appear in two consecutive drafts, which is the right trade: drafts are
+    # reviewed before sending, so a duplicate draft is deleted in a click
+    # while a missed release is never drafted at all.
     - cron: '0 5 * * *'
   # Manual test run: pick a wider window (e.g. 720 = last 30 days) to get a
   # draft without waiting for a fresh release. Still draft-only.
@@ -35,7 +37,7 @@ on:
       hours:
         description: 'Lookback window in hours'
         required: true
-        default: '30'
+        default: '36'
 
 permissions:
   contents: read
@@ -58,4 +60,4 @@ jobs:
           MAILJET_LIST_ID: ${{ vars.MAILJET_LIST_ID }}
           MAILJET_SENDER_EMAIL: ${{ vars.MAILJET_SENDER_EMAIL }}
           MAILJET_SENDER_NAME: ${{ vars.MAILJET_SENDER_NAME }}
-        run: python3 scripts/create_release_digest_draft.py --hours "${{ inputs.hours || 25 }}"
+        run: python3 scripts/create_release_digest_draft.py --hours "${{ inputs.hours || 36 }}"
