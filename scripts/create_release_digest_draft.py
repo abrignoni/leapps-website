@@ -8,8 +8,16 @@ digests them all — same-day releases of several tools become a single email.
 Like the blog announcement flow, it never sends: review the draft in the
 Mailjet dashboard (Campaigns) and send it from there.
 
+Two modes:
+    window   (default) releases published inside the lookback window, which is
+             what the daily schedule uses.
+    current  --current, the newest release of every tool regardless of age, for
+             a "where the suite stands" mailer that does not depend on several
+             tools happening to ship inside one window.
+
 Usage:
     python3 scripts/create_release_digest_draft.py [--dry-run] [--hours N]
+    python3 scripts/create_release_digest_draft.py [--dry-run] --current
 
 Environment:
     GITHUB_TOKEN                           optional, raises API rate limits
@@ -46,6 +54,7 @@ TOOLS = (
 )
 
 NOTES_MAX_CHARS = 700
+CURRENT_NOTES_MAX_CHARS = 280
 
 
 def github_releases(repo: str) -> list:
@@ -88,7 +97,42 @@ def recent_releases(hours: int) -> list:
     return found
 
 
-def notes_excerpt(markdown: str) -> str:
+def latest_release_per_tool() -> list:
+    """The newest published release of every tool, in suite order.
+
+    Unlike recent_releases() this ignores age entirely, so a tool that last
+    shipped months ago still appears with its current version. Tools with no
+    published release are skipped and named on stderr rather than silently
+    dropped.
+    """
+    found = []
+    for tool, repo, anchor_id in TOOLS:
+        published_releases = []
+        for release in github_releases(repo):
+            if release.get("draft") or release.get("prerelease"):
+                continue
+            published_releases.append((
+                datetime.fromisoformat(
+                    release["published_at"].replace("Z", "+00:00")),
+                release,
+            ))
+        if not published_releases:
+            print(f"warning: no published release found for {tool} ({repo})",
+                  file=sys.stderr)
+            continue
+        published, release = max(published_releases, key=lambda pair: pair[0])
+        found.append({
+            "tool": tool,
+            "anchor": anchor_id,
+            "tag": release.get("tag_name", ""),
+            "name": release.get("name") or release.get("tag_name", ""),
+            "notes": release.get("body") or "",
+            "published": published,
+        })
+    return found
+
+
+def notes_excerpt(markdown: str, max_chars: int = NOTES_MAX_CHARS) -> str:
     """Crude markdown -> short plain text for the email body."""
     text = re.sub(r"```.*?```", "", markdown, flags=re.DOTALL)      # code blocks
     text = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", text)                # images
@@ -96,14 +140,19 @@ def notes_excerpt(markdown: str) -> str:
     text = re.sub(r"^#{1,6}\s*", "", text, flags=re.MULTILINE)      # headings
     text = re.sub(r"[*_`]", "", text)                               # emphasis
     text = re.sub(r"\r\n", "\n", text).strip()
-    if len(text) > NOTES_MAX_CHARS:
-        text = text[:NOTES_MAX_CHARS].rsplit(None, 1)[0] + " …"
+    if len(text) > max_chars:
+        text = text[:max_chars].rsplit(None, 1)[0] + " …"
     return text
 
 
 FALLBACK_INTRO = (
     "Fresh releases are out for the LEAPP tools. Here is what shipped and "
     "where to get it."
+)
+
+CURRENT_FALLBACK_INTRO = (
+    "Here is where every LEAPP tool stands right now, with the current "
+    "version of each one and where to download it."
 )
 
 # Style reference for the generated intro: Alexis's own words, sampled from
@@ -124,7 +173,7 @@ through iLEAPP one at a time, this is for you."
 """
 
 
-def generate_intro(releases: list) -> str:
+def generate_intro(releases: list, mode: str = "window") -> str:
     """Ask Claude for a short intro in Alexis's voice; None-safe fallback.
 
     The result lands in a Mailjet DRAFT that is reviewed by a human before
@@ -135,10 +184,33 @@ def generate_intro(releases: list) -> str:
     try:
         import anthropic
 
+        cap = CURRENT_NOTES_MAX_CHARS if mode == "current" else NOTES_MAX_CHARS
         notes = "\n\n".join(
-            f"### {r['tool']} {r['tag']} — {r['name']}\n{notes_excerpt(r['notes'])}"
+            f"### {r['tool']} {r['tag']} — {r['name']}\n"
+            f"{notes_excerpt(r['notes'], cap)}"
             for r in releases
         )
+        if mode == "current":
+            task = (
+                "Write the intro paragraph for a mailing list email that lists "
+                "the current version of every tool in the LEAPP suite. This is "
+                "not an announcement of something that just shipped: it is a "
+                "snapshot of where the suite stands today, so a reader can "
+                "check what they are running against what is current. Say that "
+                "it covers every tool. Do not imply all of these are new. Keep "
+                "it to 2 to 4 sentences. Return only the paragraph, nothing "
+                "else.\n\n"
+            )
+        else:
+            task = (
+                "Write the intro paragraph for a mailing list email "
+                "announcing these releases. Mention every tool released by "
+                "name, with a brief note on what its update brings a "
+                "forensic examiner. Keep it to 2-3 sentences for a single "
+                "release, and up to 4-5 sentences when several tools "
+                "released together, and every tool must get a mention. "
+                "Return only the paragraph, nothing else.\n\n"
+            )
         client = anthropic.Anthropic()
         response = client.messages.create(
             model="claude-opus-4-8",
@@ -158,40 +230,47 @@ def generate_intro(releases: list) -> str:
                 "Credit contributors by name when the release notes name them.\n\n"
                 "Style samples of his writing:\n" + VOICE_SAMPLES
             ),
-            messages=[{
-                "role": "user",
-                "content": (
-                    "Write the intro paragraph for a mailing list email "
-                    "announcing these releases. Mention every tool released by "
-                    "name, with a brief note on what its update brings a "
-                    "forensic examiner. Keep it to 2-3 sentences for a single "
-                    "release, and up to 4-5 sentences when several tools "
-                    "released together — every tool must get a mention. Return "
-                    "only the paragraph, nothing else.\n\n" + notes
-                ),
-            }],
+            messages=[{"role": "user", "content": task + notes}],
         )
         if response.stop_reason == "refusal":
-            return FALLBACK_INTRO
+            return CURRENT_FALLBACK_INTRO if mode == "current" else FALLBACK_INTRO
         intro = next(
             (b.text.strip() for b in response.content if b.type == "text"), "")
-        return intro or FALLBACK_INTRO
+        return intro or CURRENT_FALLBACK_INTRO if mode == "current" else FALLBACK_INTRO
     except Exception as err:  # noqa: BLE001 — intro is best-effort by design
         print(f"warning: intro generation failed ({err}); using fallback.",
               file=sys.stderr)
-        return FALLBACK_INTRO
+        return CURRENT_FALLBACK_INTRO if mode == "current" else FALLBACK_INTRO
 
 
-def build_email(releases: list) -> tuple[str, str, str]:
+def build_email(releases: list, mode: str = "window") -> tuple[str, str, str]:
     """Return (subject, html_part, text_part) for the digest."""
-    versions = ", ".join(f"{r['tool']} {r['tag']}" for r in releases)
-    subject = f"New LEAPPs release{'s' if len(releases) > 1 else ''}: {versions}"
-    intro = generate_intro(releases)
+    current = mode == "current"
+    if current:
+        # Seven tools would make an unreadable subject line, so name the month
+        # instead of listing every version.
+        subject = ("Current LEAPPs versions: "
+                   f"{datetime.now(timezone.utc):%B %Y}")
+        heading = "Current Versions"
+        text_heading = "Current LEAPPs versions"
+    else:
+        versions = ", ".join(f"{r['tool']} {r['tag']}" for r in releases)
+        subject = (f"New LEAPPs release{'s' if len(releases) > 1 else ''}: "
+                   f"{versions}")
+        heading = f"New Release{'s' if len(releases) > 1 else ''}"
+        text_heading = "New LEAPPs releases"
+    notes_cap = CURRENT_NOTES_MAX_CHARS if current else NOTES_MAX_CHARS
+    intro = generate_intro(releases, mode)
 
     sections_html = []
     sections_text = []
     for r in releases:
-        notes = notes_excerpt(r["notes"])
+        notes = notes_excerpt(r["notes"], notes_cap)
+        # In current mode a tool may have shipped months ago, so the date is
+        # part of the answer rather than noise.
+        released = (f'<p style="margin:0 0 12px; font-size:12px; color:#8A8A8A;">'
+                    f'Released {r["published"]:%Y-%m-%d}</p>' if current else "")
+        released_text = f"Released {r['published']:%Y-%m-%d}\n" if current else ""
         notes_html = html.escape(notes).replace("\n", "<br />")
         link = f"{SITE}/releases#{r['anchor']}"
         sections_html.append(f"""
@@ -201,7 +280,7 @@ def build_email(releases: list) -> tuple[str, str, str]:
         </p>
         <h2 style="margin:0 0 12px; font-size:22px; line-height:1.2; color:#F0EDE6;">
           {html.escape(r["name"])}
-        </h2>
+        </h2>{released}
         <p style="margin:0 0 18px; font-size:14px; line-height:1.6; color:#CFC9BE;">
           {notes_html}
         </p>
@@ -212,7 +291,8 @@ def build_email(releases: list) -> tuple[str, str, str]:
         </a>
       </div>""")
         sections_text.append(
-            f"{r['tool']} — {r['name']}\n\n{notes}\n\nDownload: {link}\n")
+            f"{r['tool']}: {r['name']}\n{released_text}\n{notes}\n\n"
+            f"Download: {link}\n")
 
     html_part = f"""<!DOCTYPE html>
 <html lang="en">
@@ -225,7 +305,7 @@ def build_email(releases: list) -> tuple[str, str, str]:
           LEAPPs Project
         </p>
         <h1 style="margin:0 0 14px; font-size:28px; line-height:1.1; color:#F0EDE6;">
-          New Release{'s' if len(releases) > 1 else ''}
+          {heading}
         </h1>
         <p style="margin:0; font-size:15px; line-height:1.6; color:#CFC9BE;">
           {html.escape(intro)}
@@ -243,7 +323,7 @@ def build_email(releases: list) -> tuple[str, str, str]:
 </html>"""
 
     text_part = (
-        "New LEAPPs releases\n\n"
+        f"{text_heading}\n\n"
         f"{intro}\n\n"
         + "\n----------------------------------------\n\n".join(sections_text)
         + "\nYou are receiving this because you subscribed to the LEAPPs "
@@ -255,17 +335,26 @@ def build_email(releases: list) -> tuple[str, str, str]:
 def main() -> int:
     argv = sys.argv[1:]
     dry_run = "--dry-run" in argv
+    mode = "current" if "--current" in argv else "window"
     hours = 36
     if "--hours" in argv:
         hours = int(argv[argv.index("--hours") + 1])
 
-    releases = recent_releases(hours)
-    if not releases:
-        print(f"No releases published in the last {hours} hours; nothing to do.")
-        return 0
+    if mode == "current":
+        releases = latest_release_per_tool()
+        if not releases:
+            print("No published releases found for any tool; nothing to do.")
+            return 0
+    else:
+        releases = recent_releases(hours)
+        if not releases:
+            print(f"No releases published in the last {hours} hours; "
+                  "nothing to do.")
+            return 0
 
-    subject, html_part, text_part = build_email(releases)
-    print(f"Found {len(releases)} release(s): "
+    subject, html_part, text_part = build_email(releases, mode)
+    label = "current version" if mode == "current" else "release"
+    print(f"Found {len(releases)} {label}(s): "
           + ", ".join(f"{r['tool']} {r['tag']}" for r in releases))
 
     if dry_run:
@@ -283,12 +372,13 @@ def main() -> int:
         return 1
 
     today = datetime.now(timezone.utc).date().isoformat()
+    title_prefix = "Current versions" if mode == "current" else "Release digest"
     draft = mailjet_post(
         "/campaigndraft",
         {
             "Locale": "en_US",
             "Subject": subject,
-            "Title": f"Release digest: {today}",
+            "Title": f"{title_prefix}: {today}",
             "Sender": sender_name,
             "SenderName": sender_name,
             "SenderEmail": sender_email,
