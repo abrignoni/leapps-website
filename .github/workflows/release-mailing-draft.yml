@@ -30,12 +30,27 @@ on:
     # reviewed before sending, so a duplicate draft is deleted in a click
     # while a missed release is never drafted at all.
     - cron: '0 5 * * *'
-  # Manual test run: pick a wider window (e.g. 720 = last 30 days) to get a
-  # draft without waiting for a fresh release. Still draft-only.
+  # Manual run. Two modes:
+  #   window   the same thing the schedule does, over the hours given below.
+  #            A wider window (720 = last 30 days) gets a draft without
+  #            waiting for a fresh release.
+  #   current  the newest release of every tool whatever its age, for a
+  #            "where the suite stands" mailer. Use this when tools shipped
+  #            days apart and no single window can hold them all. 'hours' is
+  #            ignored in this mode.
+  # Still draft-only in both.
   workflow_dispatch:
     inputs:
+      mode:
+        description: 'Which digest to build'
+        required: true
+        type: choice
+        default: 'window'
+        options:
+          - window
+          - current
       hours:
-        description: 'Lookback window in hours'
+        description: 'Lookback window in hours (window mode only)'
         required: true
         default: '36'
 
@@ -60,4 +75,10 @@ jobs:
           MAILJET_LIST_ID: ${{ vars.MAILJET_LIST_ID }}
           MAILJET_SENDER_EMAIL: ${{ vars.MAILJET_SENDER_EMAIL }}
           MAILJET_SENDER_NAME: ${{ vars.MAILJET_SENDER_NAME }}
-        run: python3 scripts/create_release_digest_draft.py --hours "${{ inputs.hours || 36 }}"
+        run: |
+          # A scheduled run has no inputs, so it falls through to window mode.
+          if [ "${{ inputs.mode }}" = "current" ]; then
+            python3 scripts/create_release_digest_draft.py --current
+          else
+            python3 scripts/create_release_digest_draft.py --hours "${{ inputs.hours || 36 }}"
+          fi
