@@ -1026,6 +1026,18 @@
         "dleapp": 502,
         "batchleapp": 359
       }
+    },
+    {
+      "date": "2026-09-11",
+      "totals": {
+        "ileapp": 90758,
+        "aleapp": 68162,
+        "rleapp": 4910,
+        "vleapp": 1991,
+        "lava": 2580,
+        "dleapp": 510,
+        "batchleapp": 364
+      }
     }
   ]
 }
