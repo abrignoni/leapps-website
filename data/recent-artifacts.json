@@ -1,18 +1,18 @@
 {
-  "generated": "2026-09-11",
+  "generated": "2026-09-12",
   "window_days": 45,
   "items": [
     {
-      "name": "apple sms preview ktx atx",
-      "query": "apple_sms_preview_ktx_atx",
+      "name": "megaCloud",
+      "query": "megaCloud",
       "tool": "iLEAPP",
-      "date": "2026-09-09"
+      "date": "2026-09-12"
     },
     {
-      "name": "mmkvCarved",
-      "query": "mmkvCarved",
+      "name": "youCamPerfect",
+      "query": "youCamPerfect",
       "tool": "ALEAPP",
-      "date": "2026-09-07"
+      "date": "2026-09-12"
     },
     {
       "name": "Keychains",
@@ -33,16 +33,16 @@
       "date": "2026-08-15"
     },
     {
-      "name": "mmkvCarved",
-      "query": "mmkvCarved",
+      "name": "tutanota",
+      "query": "tutanota",
       "tool": "iLEAPP",
-      "date": "2026-09-07"
+      "date": "2026-09-12"
     },
     {
-      "name": "vivaVideo",
-      "query": "vivaVideo",
+      "name": "kwai",
+      "query": "kwai",
       "tool": "ALEAPP",
-      "date": "2026-09-07"
+      "date": "2026-09-12"
     },
     {
       "name": "safaribrowsing",
@@ -63,16 +63,16 @@
       "date": "2026-08-05"
     },
     {
-      "name": "spotify",
-      "query": "spotify",
+      "name": "garminConnect",
+      "query": "garminConnect",
       "tool": "iLEAPP",
-      "date": "2026-09-07"
+      "date": "2026-09-12"
     },
     {
-      "name": "permissionAccessState",
-      "query": "permissionAccessState",
+      "name": "megaCloud",
+      "query": "megaCloud",
       "tool": "ALEAPP",
-      "date": "2026-09-07"
+      "date": "2026-09-12"
     }
   ]
 }
