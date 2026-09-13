@@ -68,6 +68,7 @@
 .contrib-login { font-family: var(--font-head); font-size: 1rem; font-weight: 700; text-transform: none; letter-spacing: .02em; color: var(--text); text-decoration: none; transition: color .2s; }
 .contrib-login:hover { color: var(--gold); }
 .pr-count { font-family: var(--font-mono); font-size: .85rem; color: var(--text); text-align: right; }
+#sb-count-head { white-space: nowrap; }
 .repo-badges { display: flex; gap: .35rem; flex-wrap: wrap; justify-content: flex-end; }
 .repo-badge { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; padding: .2rem .5rem; border-radius: 2px; line-height: 1.4; }
 .badge-ileapp { background: rgba(227,6,19,.15); color: #E30613; border: 1px solid rgba(227,6,19,.3); }
@@ -119,6 +120,7 @@
 .lp-progress span { color: var(--gold); }
 @media (max-width: 768px) {
   .lp-table th:nth-child(4), .lp-table td:nth-child(4) { display: none; }
+  #sb-count-head { white-space: normal; }
   .rank-legend { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
 }
 #lp-root { margin: 0 8px; }
@@ -220,7 +222,7 @@
     <div class="lp-header-inner">
       <span class="lp-eyebrow">Community Recognition</span>
       <h1>Contributor <span>Scoreboard</span></h1>
-      <p>Rankings based on merged pull requests across iLEAPP, ALEAPP, RLEAPP, and VLEAPP. Every merged PR earns a rank.</p>
+      <p>Rankings are based on merged pull requests across iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP and Batch LEAPP. Selecting a tool ranks contributors by their merged pull requests to that tool alone. Every merged PR earns a rank.</p>
       <div class="lp-updated" id="lp-updated">Fetching data…</div>
     </div>
   </header>
@@ -291,7 +293,7 @@
           <tr>
             <th style="width:3rem">#</th>
             <th>Contributor</th>
-            <th style="text-align:right">Merged PRs</th>
+            <th id="sb-count-head" style="text-align:right">Merged PRs</th>
             <th>Repos</th>
             <th style="text-align:right">Rank</th>
           </tr>
@@ -441,9 +443,10 @@
         REPOS.forEach((repoInfo, i) => {
           for (const [login, data] of Object.entries(results[i])) {
             if (!merged[login]) {
-              merged[login] = { login, avatar: data.avatar, prs: 0, repos: new Set() };
+              merged[login] = { login, avatar: data.avatar, prs: 0, repos: new Set(), byRepo: {} };
             }
             merged[login].prs += data.prs;
+            merged[login].byRepo[repoInfo.name] = data.prs;
             data.repos.forEach(name => merged[login].repos.add(name));
           }
         });
@@ -504,7 +507,10 @@
       const badgeMap  = { iLEAPP: 'badge-ileapp', ALEAPP: 'badge-aleapp', RLEAPP: 'badge-rleapp', VLEAPP: 'badge-vleapp', DLEAPP: 'badge-dleapp', 'Batch LEAPP': 'badge-batch' };
       tbody.innerHTML = contributors.map((c, idx) => {
         const pos      = idx + 1;
-        const rank     = getRank(c.prs);
+        // The count the current view ranks by: merged PRs to the selected tool,
+        // or the overall total when All Tools is selected.
+        const count    = c.count ?? c.prs;
+        const rank     = getRank(count);
         const posClass = pos <= 3 ? ` pos-${pos}` : '';
         const repoBadges = repoNames
           .filter(name => c.repos.has(name))
@@ -523,7 +529,7 @@
               <a class="contrib-login" href="https://github.com/${safeLogin}" target="_blank" rel="noopener noreferrer">${safeLogin}</a>
             </div>
           </td>
-          <td class="pr-count">${c.prs}</td>
+          <td class="pr-count">${count}</td>
           <td><div class="repo-badges">${repoBadges}</div></td>
           <td style="text-align:right">${rankBadge}</td>
         </tr>`;
@@ -533,11 +539,16 @@
     function applyScoreboardFilters() {
       if (!allSorted.length) return;
       const q = searchQuery.toLowerCase();
-      const filtered = allSorted.filter(c => {
-        const toolMatch = activeToolFilter === 'all' || c.repos.has(activeToolFilter);
-        const searchMatch = !q || c.login.toLowerCase().includes(q);
-        return toolMatch && searchMatch;
-      });
+      const tool = activeToolFilter;
+      const ranked = tool === 'all'
+        ? allSorted
+        : allSorted
+            .filter(c => c.repos.has(tool))
+            .map(c => ({ ...c, count: c.byRepo[tool] || 0 }))
+            .sort((a, b) => b.count - a.count || a.login.localeCompare(b.login));
+      const filtered = ranked.filter(c => !q || c.login.toLowerCase().includes(q));
+      const countHead = document.getElementById('sb-count-head');
+      if (countHead) countHead.textContent = tool === 'all' ? 'Merged PRs' : `Merged ${tool} PRs`;
       renderRows(filtered);
       const resultsEl = document.getElementById('sb-results');
       if (activeToolFilter !== 'all' || q) {
