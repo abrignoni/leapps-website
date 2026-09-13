@@ -1054,12 +1054,12 @@
     {
       "date": "2026-09-13",
       "totals": {
-        "ileapp": 91320,
-        "aleapp": 68455,
+        "ileapp": 91347,
+        "aleapp": 68475,
         "rleapp": 4957,
-        "vleapp": 2029,
-        "lava": 2711,
-        "dleapp": 555,
+        "vleapp": 2031,
+        "lava": 2719,
+        "dleapp": 557,
         "batchleapp": 387
       }
     }
