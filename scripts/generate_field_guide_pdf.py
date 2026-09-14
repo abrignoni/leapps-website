@@ -10,13 +10,13 @@ Usage:
     python3 scripts/generate_field_guide_pdf.py            # the Unified Logs field guide
     python3 scripts/generate_field_guide_pdf.py --post blog/posts/<slug>.md \
         --output downloads/<name>.pdf --updated "Month D, YYYY" \
-        --footer-label "LEAPPs Reference - ..." --subject "..."
+        --footer-label "LEAPPs Reference - ..." --subject "..." [--logo logos/<file>.png]
 
 With no arguments it builds the original field guide, so existing automation keeps
 working. The cover's live-version link is derived from the post filename.
 
 Handles the markdown subset the posts actually use: #/##/### headings, paragraphs,
-bulleted and numbered lists, fenced code blocks, pipe tables, blockquotes, and inline
+bulleted and numbered lists, fenced code blocks, pipe tables, blockquotes, --- breaks, and inline
 bold / italic / code / links. Anything fancier should stay out of the posts anyway.
 """
 
@@ -33,8 +33,9 @@ from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.units import inch
+from reportlab.lib.utils import ImageReader
 from reportlab.platypus import (
-    BaseDocTemplate, Frame, HRFlowable, PageBreak, PageTemplate, Paragraph,
+    BaseDocTemplate, Frame, HRFlowable, Image, PageBreak, PageTemplate, Paragraph,
     Preformatted, Spacer, Table, TableStyle,
 )
 
@@ -143,6 +144,12 @@ def body_flowables(markdown: str) -> list:
             list_counter += 1
             story.append(Paragraph(inline(re.sub(r'^\d+\. ', '', stripped)),
                                    BULLET, bulletText=f'{list_counter}.'))
+        elif stripped == '---':
+            # A ## heading draws its own rule, so a break right before one would double it.
+            following = next((l.strip() for l in lines[i + 1:] if l.strip()), '')
+            if not following.startswith('## '):
+                story.append(HRFlowable(width='100%', thickness=0.6, color=RULE,
+                                        spaceBefore=6, spaceAfter=10))
         elif stripped:
             list_counter = 0
             story.append(Paragraph(inline(stripped), BODY))
@@ -150,7 +157,7 @@ def body_flowables(markdown: str) -> list:
     return story
 
 
-def cover(meta: dict, updated: str, slug: str, kicker: str) -> list:
+def cover(meta: dict, updated: str, slug: str, kicker: str, logo: Path | None = None) -> list:
     cover_title = ParagraphStyle('CoverTitle', fontName='Helvetica-Bold', fontSize=22,
                                  leading=27, textColor=INK, spaceAfter=10)
     cover_kicker = ParagraphStyle('CoverKicker', fontName='Helvetica-Bold', fontSize=11,
@@ -159,8 +166,15 @@ def cover(meta: dict, updated: str, slug: str, kicker: str) -> list:
                                textColor=MUTED, spaceAfter=22)
     cover_meta = ParagraphStyle('CoverMeta', parent=BODY, fontSize=10, textColor=MUTED)
     live = f'leapps.org/blog-post?post={slug}'
-    return [
-        Spacer(1, 1.6 * inch),
+    if logo:
+        image_width, image_height = ImageReader(str(logo)).getSize()
+        width = 2.2 * inch
+        top = [Spacer(1, 0.5 * inch),
+               Image(str(logo), width=width, height=width * image_height / image_width),
+               Spacer(1, 0.4 * inch)]
+    else:
+        top = [Spacer(1, 1.6 * inch)]
+    return top + [
         Paragraph(html.escape(kicker), cover_kicker),
         Paragraph(html.escape(meta['title']), cover_title),
         HRFlowable(width='100%', thickness=1, color=ACCENT, spaceAfter=16),
@@ -182,6 +196,7 @@ def main() -> int:
     parser.add_argument('--footer-label', default=DEFAULT_FOOTER)
     parser.add_argument('--subject', default=DEFAULT_SUBJECT)
     parser.add_argument('--kicker', default=DEFAULT_KICKER)
+    parser.add_argument('--logo', type=Path, default=None, help='image placed at the top of the cover')
     args = parser.parse_args()
 
     post = args.post if args.post.is_absolute() else ROOT / args.post
@@ -211,7 +226,10 @@ def main() -> int:
     frame = Frame(doc.leftMargin, doc.bottomMargin, doc.width, doc.height, id='main')
     doc.addPageTemplates([PageTemplate(id='page', frames=[frame], onPage=footer)])
 
-    doc.build(cover(meta, args.updated, post.stem, args.kicker) + body_flowables(body))
+    logo = None
+    if args.logo:
+        logo = args.logo if args.logo.is_absolute() else ROOT / args.logo
+    doc.build(cover(meta, args.updated, post.stem, args.kicker, logo) + body_flowables(body))
     print(f'Wrote {output.relative_to(ROOT)}')
     return 0
 
