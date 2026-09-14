@@ -400,10 +400,11 @@
       "ALEAPP",
       "RLEAPP",
       "VLEAPP",
+      "DLEAPP",
       "contributing",
       "development"
     ],
-    "excerpt": "The LEAPPs ecosystem runs on contributions. A module is a single Python file — and this guide walks through everything: module structure, SQLite and plist parsing, timestamp handling, LAVA conversation view, and submitting a pull request."
+    "excerpt": "The LEAPPs ecosystem runs on contributions. A module is a single Python file, and this guide walks through everything: module structure, SQLite and plist parsing, timestamps, media, LAVA conversation view, the checks pull requests run, and submitting one."
   },
   {
     "slug": "2026-06-10-leapping-with-lava",
