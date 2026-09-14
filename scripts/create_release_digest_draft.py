@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 """Create a Mailjet campaign draft digesting recent LEAPP tool releases.
 
-Runs daily from .github/workflows/release-mailing-draft.yml. Looks across all
-tool repos for releases published inside the lookback window; if there are
-none it exits quietly, otherwise it creates ONE Mailjet campaign DRAFT that
-digests them all — same-day releases of several tools become a single email.
+Run by hand from .github/workflows/release-mailing-draft.yml when a mailer is
+needed. Looks across all tool repos for releases published inside the lookback
+window; if there are none it exits quietly, otherwise it creates ONE Mailjet
+campaign DRAFT that digests them all, so same-day releases of several tools
+become a single email.
 Like the blog announcement flow, it never sends: review the draft in the
 Mailjet dashboard (Campaigns) and send it from there.
 
 Two modes:
-    window   (default) releases published inside the lookback window, which is
-             what the daily schedule uses.
+    window   (default) releases published inside the lookback window, set with
+             --hours (36 when omitted).
     current  --current, the newest release of every tool regardless of age, for
              a "where the suite stands" mailer that does not depend on several
              tools happening to ship inside one window.
@@ -236,7 +237,8 @@ def generate_intro(releases: list, mode: str = "window") -> str:
             return CURRENT_FALLBACK_INTRO if mode == "current" else FALLBACK_INTRO
         intro = next(
             (b.text.strip() for b in response.content if b.type == "text"), "")
-        return intro or CURRENT_FALLBACK_INTRO if mode == "current" else FALLBACK_INTRO
+        return intro or (CURRENT_FALLBACK_INTRO if mode == "current"
+                         else FALLBACK_INTRO)
     except Exception as err:  # noqa: BLE001 — intro is best-effort by design
         print(f"warning: intro generation failed ({err}); using fallback.",
               file=sys.stderr)

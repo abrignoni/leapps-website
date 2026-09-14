@@ -1,10 +1,9 @@
 name: Release mailing list draft
 
-# Daily check for new tool releases across the LEAPP repos (iLEAPP, ALEAPP,
-# RLEAPP, VLEAPP, LAVA, Batch LEAPP). If any were published in the lookback
-# window, creates ONE Mailjet campaign draft digesting them all — same-day
-# releases become a single email. The draft is NOT sent; review and send it
-# from the Mailjet dashboard (Campaigns → Drafts).
+# Creates ONE Mailjet campaign draft digesting releases across the LEAPP repos
+# (iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, LAVA, Batch LEAPP). It has no
+# schedule: start it by hand when a mailer is needed. The draft is NOT sent;
+# review and send it from the Mailjet dashboard (Campaigns → Drafts).
 #
 # Uses the same repo configuration as blog-mailing-draft.yml:
 #   Secrets:   MAILJET_API_KEY, MAILJET_API_SECRET
@@ -14,31 +13,15 @@ name: Release mailing list draft
 #              failure) the draft gets a static intro instead.
 
 on:
-  schedule:
-    # Daily at 05:00 UTC, after the publishing day has ended in the
-    # maintainers' timezone, so every release of a given day lands in the
-    # same run and same digest. Running mid-day (the old 13:30 UTC) split
-    # release days in two: anything published after the cron fell into the
-    # next day's window while that morning's releases had already aged out.
-    #
-    # The lookback has to cover the gap between two consecutive runs, and
-    # GitHub delays this cron by anywhere from 24 minutes to 12 hours. Over
-    # 35 scheduled runs the gap reached 34.6h and exceeded 25h four times,
-    # so a window sized just over a day leaves blind spots between runs.
-    # 36h covers the largest observed gap. The cost is that a release can
-    # appear in two consecutive drafts, which is the right trade: drafts are
-    # reviewed before sending, so a duplicate draft is deleted in a click
-    # while a missed release is never drafted at all.
-    - cron: '0 5 * * *'
-  # Manual run. Two modes:
-  #   window   the same thing the schedule does, over the hours given below.
-  #            A wider window (720 = last 30 days) gets a draft without
-  #            waiting for a fresh release.
+  # Two modes:
+  #   window   releases published in the last N hours, N given below. A dry
+  #            run lists what a window picks up without creating a draft:
+  #            python3 scripts/create_release_digest_draft.py --dry-run --hours N
   #   current  the newest release of every tool whatever its age, for a
   #            "where the suite stands" mailer. Use this when tools shipped
   #            days apart and no single window can hold them all. 'hours' is
   #            ignored in this mode.
-  # Still draft-only in both.
+  # Draft-only in both.
   workflow_dispatch:
     inputs:
       mode:
@@ -76,7 +59,6 @@ jobs:
           MAILJET_SENDER_EMAIL: ${{ vars.MAILJET_SENDER_EMAIL }}
           MAILJET_SENDER_NAME: ${{ vars.MAILJET_SENDER_NAME }}
         run: |
-          # A scheduled run has no inputs, so it falls through to window mode.
           if [ "${{ inputs.mode }}" = "current" ]; then
             python3 scripts/create_release_digest_draft.py --current
           else
