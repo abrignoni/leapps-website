@@ -236,7 +236,8 @@ def generate_intro(releases: list, mode: str = "window") -> str:
             return CURRENT_FALLBACK_INTRO if mode == "current" else FALLBACK_INTRO
         intro = next(
             (b.text.strip() for b in response.content if b.type == "text"), "")
-        return intro or CURRENT_FALLBACK_INTRO if mode == "current" else FALLBACK_INTRO
+        return intro or (CURRENT_FALLBACK_INTRO if mode == "current"
+                         else FALLBACK_INTRO)
     except Exception as err:  # noqa: BLE001 — intro is best-effort by design
         print(f"warning: intro generation failed ({err}); using fallback.",
               file=sys.stderr)
