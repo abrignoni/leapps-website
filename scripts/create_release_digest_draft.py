@@ -56,6 +56,13 @@ TOOLS = (
 
 NOTES_MAX_CHARS = 700
 CURRENT_NOTES_MAX_CHARS = 280
+# A tool's section in a release digest lists its release-note items and stops
+# at an item boundary once either limit is reached.
+SECTION_MAX_ITEMS = 8
+SECTION_MAX_CHARS = 1600
+# A generated intro longer than this reads as a wall of text, which the
+# per-tool sections exist to avoid, so the static intro is used instead.
+INTRO_MAX_CHARS = 600
 
 
 def github_releases(repo: str) -> list:
@@ -146,6 +153,179 @@ def notes_excerpt(markdown: str, max_chars: int = NOTES_MAX_CHARS) -> str:
     return text
 
 
+_HEADING = re.compile(r"^\s{0,3}(#{1,6})\s+(.*?)\s*#*\s*$")
+_BULLET = re.compile(r"^\s*(?:[-*+]|\d+[.)])\s+(.*\S)\s*$")
+_RULE = re.compile(r"^\s*([-*_])(\s*\1){2,}\s*$")
+_FIRST_CONTRIBUTION = re.compile(r"@([A-Za-z0-9-]+) made their first contribution")
+_BOLD_LEAD = re.compile(r"^\*\*(.+?)\*\*\s*(.*)$")
+_COLON_LEAD = re.compile(r"^([^:]{2,60}:)\s+(\S.*)$")
+# Headings that only announce the list below them.
+_QUIET_HEADINGS = {"what's changed", "what's new", "changes", "changelog"}
+
+
+def clean_inline(text: str) -> str:
+    """Markdown inline syntax to plain text, keeping names like raw_image intact."""
+    text = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", text)                # images
+    text = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", text)            # links -> text
+    text = re.sub(r"\s*\bin\s+<?https?://\S+", "", text)            # "... in <PR url>"
+    text = re.sub(r"<?https?://\S+", "", text)                      # other bare URLs
+    text = re.sub(r"(\*\*|__)(.+?)\1", r"\2", text)                 # bold
+    text = re.sub(r"(?<!\w)[*_](\S(?:.*?\S)?)[*_](?!\w)", r"\1", text)  # italics
+    return re.sub(r"\s{2,}", " ", text.replace("`", "")).strip()
+
+
+def shorten(text: str, limit: int) -> str:
+    """Cut text at a word boundary, marking the cut."""
+    if len(text) <= limit:
+        return text
+    return text[:limit].rsplit(None, 1)[0].rstrip(",;:") + " …"
+
+
+def split_label(item: str) -> tuple[str, str]:
+    """A release-note item's lead label, such as "GUI:" or **Coverage reports:**."""
+    bold = _BOLD_LEAD.match(item)
+    if bold:
+        return clean_inline(bold.group(1)), clean_inline(bold.group(2))
+    text = clean_inline(item)
+    colon = _COLON_LEAD.match(text)
+    if colon and len(colon.group(1).split()) <= 6:
+        return colon.group(1), colon.group(2)
+    return "", text
+
+
+def notes_blocks(markdown: str) -> tuple[list, list]:
+    """Split release notes into render blocks and first-time contributors.
+
+    Blocks are ("item", label, text) for list items, ("para", "", text) for
+    prose and ("head", "", text) for subheadings. The leading "# Tool vX"
+    title repeats the section heading and the "Full Changelog" line only
+    points at GitHub, so both are dropped, and "@user made their first
+    contribution" lines become handles rather than items.
+    """
+    text = re.sub(r"```.*?```", "", markdown or "", flags=re.DOTALL)
+    blocks, contributors, para = [], [], []
+
+    def flush():
+        joined = clean_inline(" ".join(para))
+        if joined:
+            blocks.append(("para", "", joined))
+        para.clear()
+
+    for line in text.replace("\r\n", "\n").split("\n"):
+        if not line.strip() or _RULE.match(line) or "Full Changelog" in line:
+            flush()
+            continue
+        handles = _FIRST_CONTRIBUTION.findall(line)
+        if handles:
+            flush()
+            contributors += [h for h in handles if h not in contributors]
+            continue
+        heading = _HEADING.match(line)
+        if heading:
+            flush()
+            title = clean_inline(heading.group(2))
+            name = title.lower().replace("’", "'")
+            is_title = len(heading.group(1)) == 1 and not blocks
+            if not (is_title or name in _QUIET_HEADINGS or "contributor" in name):
+                blocks.append(("head", "", title))
+            continue
+        bullet = _BULLET.match(line)
+        if bullet:
+            flush()
+            label, body = split_label(bullet.group(1))
+            if label or body:
+                blocks.append(("item", label, body))
+            continue
+        para.append(line.strip())
+    flush()
+    return blocks, contributors
+
+
+def select_blocks(blocks: list, current: bool) -> tuple[list, bool]:
+    """The blocks one tool's section shows, and whether any were left out.
+
+    A current-versions section shows only the first item or paragraph,
+    shortened. A release section shows blocks in order and stops at a block
+    boundary once SECTION_MAX_ITEMS items or about SECTION_MAX_CHARS
+    characters are in.
+    """
+    if current:
+        content = [b for b in blocks if b[0] != "head"]
+        if not content:
+            return [], False
+        kind, label, body = content[0]
+        short = shorten(body, max(CURRENT_NOTES_MAX_CHARS - len(label), 40))
+        return [(kind, label, short)], short != body or len(content) > 1
+    chosen, items, used, cut = [], 0, 0, False
+    for kind, label, body in blocks:
+        size = len(label) + len(body)
+        if (kind == "item" and items == SECTION_MAX_ITEMS) or (
+                chosen and used + size > SECTION_MAX_CHARS):
+            cut = True
+            break
+        if size > SECTION_MAX_CHARS:
+            body, cut = shorten(body, SECTION_MAX_CHARS - len(label)), True
+        chosen.append((kind, label, body))
+        used += size
+        items += 1 if kind == "item" else 0
+        if cut:
+            break
+    while chosen and chosen[-1][0] == "head":
+        chosen.pop()
+    return chosen, cut
+
+
+def welcome_line(handles: list) -> str:
+    """Credit line for first-time contributors, handles as the notes give them."""
+    names = [f"@{h}" for h in handles]
+    who = names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
+    plural = "s" if len(names) > 1 else ""
+    return f"A warm welcome to our first-time contributor{plural} {who}!"
+
+
+def render_notes(markdown: str, current: bool) -> tuple[str, str]:
+    """One tool's release notes as (html, text) for its section of the email."""
+    blocks, contributors = notes_blocks(markdown)
+    chosen, cut = select_blocks(blocks, current)
+    html_parts, text_parts, list_html, list_text = [], [], [], []
+
+    def close_list():
+        if list_html:
+            html_parts.append(
+                '<ul style="margin:0 0 16px; padding:0 0 0 20px; font-size:14px; '
+                'line-height:1.6; color:#CFC9BE;">' + "".join(list_html) + "</ul>")
+            text_parts.append("\n".join(list_text))
+            list_html.clear()
+            list_text.clear()
+
+    for kind, label, body in chosen:
+        if kind == "item":
+            lead = (f'<strong style="color:#F0EDE6;">{html.escape(label)}</strong> '
+                    if label else "")
+            list_html.append(
+                f'<li style="margin:0 0 8px;">{lead}{html.escape(body)}</li>')
+            list_text.append("- " + " ".join(part for part in (label, body) if part))
+            continue
+        close_list()
+        style = ("margin:0 0 8px; font-size:14px; font-weight:bold; color:#F0EDE6;"
+                 if kind == "head" else
+                 "margin:0 0 14px; font-size:14px; line-height:1.6; color:#CFC9BE;")
+        html_parts.append(f'<p style="{style}">{html.escape(body)}</p>')
+        text_parts.append(body)
+    close_list()
+
+    extras = []
+    if not current and cut:
+        extras.append("Plus more in the full release notes.")
+    if not current and contributors:
+        extras.append(welcome_line(contributors))
+    for line in extras:
+        html_parts.append('<p style="margin:0 0 16px; font-size:13px; line-height:1.6; '
+                          f'color:#8A8A8A;">{html.escape(line)}</p>')
+        text_parts.append(line)
+    return "\n        ".join(html_parts), "\n\n".join(text_parts)
+
+
 FALLBACK_INTRO = (
     "Fresh releases are out for the LEAPP tools. Here is what shipped and "
     "where to get it."
@@ -187,7 +367,7 @@ def generate_intro(releases: list, mode: str = "window") -> str:
 
         cap = CURRENT_NOTES_MAX_CHARS if mode == "current" else NOTES_MAX_CHARS
         notes = "\n\n".join(
-            f"### {r['tool']} {r['tag']} — {r['name']}\n"
+            f"### {r['tool']} {r['tag']}: {r['name']}\n"
             f"{notes_excerpt(r['notes'], cap)}"
             for r in releases
         )
@@ -205,12 +385,13 @@ def generate_intro(releases: list, mode: str = "window") -> str:
         else:
             task = (
                 "Write the intro paragraph for a mailing list email "
-                "announcing these releases. Mention every tool released by "
-                "name, with a brief note on what its update brings a "
-                "forensic examiner. Keep it to 2-3 sentences for a single "
-                "release, and up to 4-5 sentences when several tools "
-                "released together, and every tool must get a mention. "
-                "Return only the paragraph, nothing else.\n\n"
+                "announcing these releases. Keep it to 2 or 3 short "
+                "sentences: name the tools that shipped and the one or two "
+                "changes that matter most to a forensic examiner. Do not "
+                "walk through every tool's changes, artifacts or fixes: "
+                "each tool gets its own section with those details right "
+                "below this paragraph. Return only the paragraph, nothing "
+                "else.\n\n"
             )
         client = anthropic.Anthropic()
         response = client.messages.create(
@@ -233,10 +414,16 @@ def generate_intro(releases: list, mode: str = "window") -> str:
             ),
             messages=[{"role": "user", "content": task + notes}],
         )
-        if response.stop_reason == "refusal":
+        if response.stop_reason in ("refusal", "max_tokens"):
+            print(f"warning: intro not used (stop reason {response.stop_reason}); "
+                  "using fallback.", file=sys.stderr)
             return CURRENT_FALLBACK_INTRO if mode == "current" else FALLBACK_INTRO
         intro = next(
             (b.text.strip() for b in response.content if b.type == "text"), "")
+        if len(intro) > INTRO_MAX_CHARS:
+            print(f"warning: generated intro is {len(intro)} characters, over "
+                  f"{INTRO_MAX_CHARS}; using fallback.", file=sys.stderr)
+            intro = ""
         return intro or (CURRENT_FALLBACK_INTRO if mode == "current"
                          else FALLBACK_INTRO)
     except Exception as err:  # noqa: BLE001 — intro is best-effort by design
@@ -261,19 +448,17 @@ def build_email(releases: list, mode: str = "window") -> tuple[str, str, str]:
                    f"{versions}")
         heading = f"New Release{'s' if len(releases) > 1 else ''}"
         text_heading = "New LEAPPs releases"
-    notes_cap = CURRENT_NOTES_MAX_CHARS if current else NOTES_MAX_CHARS
     intro = generate_intro(releases, mode)
 
     sections_html = []
     sections_text = []
     for r in releases:
-        notes = notes_excerpt(r["notes"], notes_cap)
+        notes_html, notes_text = render_notes(r["notes"], current)
         # In current mode a tool may have shipped months ago, so the date is
         # part of the answer rather than noise.
         released = (f'<p style="margin:0 0 12px; font-size:12px; color:#8A8A8A;">'
                     f'Released {r["published"]:%Y-%m-%d}</p>' if current else "")
         released_text = f"Released {r['published']:%Y-%m-%d}\n" if current else ""
-        notes_html = html.escape(notes).replace("\n", "<br />")
         link = f"{SITE}/releases#{r['anchor']}"
         sections_html.append(f"""
       <div style="padding:24px 28px; border-top:1px solid #2C2C2C;">
@@ -283,17 +468,16 @@ def build_email(releases: list, mode: str = "window") -> tuple[str, str, str]:
         <h2 style="margin:0 0 12px; font-size:22px; line-height:1.2; color:#F0EDE6;">
           {html.escape(r["name"])}
         </h2>{released}
-        <p style="margin:0 0 18px; font-size:14px; line-height:1.6; color:#CFC9BE;">
-          {notes_html}
-        </p>
+        {notes_html}
         <a href="{link}"
            style="display:inline-block; background:#F5C020; color:#0E0E0E; font-size:13px; font-weight:bold;
                   letter-spacing:1px; text-transform:uppercase; text-decoration:none; padding:10px 22px;">
           Download {html.escape(r["tool"])}
         </a>
       </div>""")
+        notes_block = f"{notes_text}\n\n" if notes_text else ""
         sections_text.append(
-            f"{r['tool']}: {r['name']}\n{released_text}\n{notes}\n\n"
+            f"{r['tool']}: {r['name']}\n{released_text}\n{notes_block}"
             f"Download: {link}\n")
 
     html_part = f"""<!DOCTYPE html>
