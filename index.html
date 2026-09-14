@@ -1641,61 +1641,6 @@ img { max-width: 100%; display: block; }
         closeMobileMenu();
       }
     });
-  
-    // Back to top button — created via JS and appended to the page
-    (function() {
-      const btn = document.createElement('button');
-      btn.setAttribute('aria-label', 'Back to top');
-      btn.innerHTML = '<i class="ti ti-arrow-up" aria-hidden="true"></i>';
-      btn.style.cssText = [
-        'position:fixed',
-        'bottom:1.5rem',
-        'right:1.5rem',
-        'width:48px',
-        'height:48px',
-        'background:#F5C020',
-        'color:#0E0E0E',
-        'border:none',
-        'cursor:pointer',
-        'display:flex',
-        'align-items:center',
-        'justify-content:center',
-        'font-size:1.3rem',
-        'opacity:0',
-        'pointer-events:none',
-        'transition:opacity .3s, background .2s',
-        'z-index:9999',
-        'box-shadow:0 4px 16px rgba(0,0,0,.4)',
-      ].join(';');
-
-      document.body.appendChild(btn);
-
-      function getScrollTop() {
-        return window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
-      }
-
-      function onScroll() {
-        if (getScrollTop() > 200) {
-          btn.style.opacity = '1';
-          btn.style.pointerEvents = 'auto';
-        } else {
-          btn.style.opacity = '0';
-          btn.style.pointerEvents = 'none';
-        }
-      }
-
-      window.addEventListener('scroll', onScroll, { passive: true });
-      document.addEventListener('scroll', onScroll, { passive: true });
-
-      btn.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
-        document.body.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-
-      btn.addEventListener('mouseover', function() { btn.style.background = '#D4A010'; });
-      btn.addEventListener('mouseout', function() { btn.style.background = '#F5C020'; });
-    })();
   </script>
   <script>
     // Mobile fallback: if Mailjet script hasn't set iframe height after 2s, set a default

@@ -576,29 +576,6 @@
 
     fetchScoreboard();
 
-    // Back to top button
-    (function() {
-      var btn = document.createElement('button');
-      btn.setAttribute('aria-label', 'Back to top');
-      btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>';
-      btn.style.cssText = 'position:fixed;bottom:1.5rem;right:1.5rem;width:48px;height:48px;background:#F5C020;color:#0E0E0E;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s,background .2s;z-index:9999;box-shadow:0 4px 16px rgba(0,0,0,.4);';
-      document.body.appendChild(btn);
-      function getScrollTop() { return window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0; }
-      function onScroll() {
-        if (getScrollTop() > 200) { btn.style.opacity='1'; btn.style.pointerEvents='auto'; }
-        else { btn.style.opacity='0'; btn.style.pointerEvents='none'; }
-      }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      document.addEventListener('scroll', onScroll, { passive: true });
-      btn.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
-        document.body.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-      btn.addEventListener('mouseover', function() { btn.style.background='#D4A010'; });
-      btn.addEventListener('mouseout', function() { btn.style.background='#F5C020'; });
-    })();
-
     // Mobile menu
     const hamburger  = document.getElementById('lp-hamburger');
     const mobileMenu = document.getElementById('lp-mobile-menu');
