@@ -1,24 +1,24 @@
 {
-  "generated": "2026-09-14",
+  "generated": "2026-09-15",
   "window_days": 45,
   "items": [
     {
-      "name": "megaCloud",
-      "query": "megaCloud",
+      "name": "macosKnowledgeC",
+      "query": "macosKnowledgeC",
+      "tool": "DLEAPP",
+      "date": "2026-09-15"
+    },
+    {
+      "name": "garminConnect",
+      "query": "garminConnect",
       "tool": "iLEAPP",
-      "date": "2026-09-12"
+      "date": "2026-09-14"
     },
     {
       "name": "youCamPerfect",
       "query": "youCamPerfect",
       "tool": "ALEAPP",
       "date": "2026-09-12"
-    },
-    {
-      "name": "Keychains",
-      "query": "Keychains",
-      "tool": "DLEAPP",
-      "date": "2026-09-02"
     },
     {
       "name": "ford sync bluetooth",
@@ -33,22 +33,22 @@
       "date": "2026-08-15"
     },
     {
-      "name": "tutanota",
-      "query": "tutanota",
+      "name": "macosNetworkUsage",
+      "query": "macosNetworkUsage",
+      "tool": "DLEAPP",
+      "date": "2026-09-15"
+    },
+    {
+      "name": "megaCloud",
+      "query": "megaCloud",
       "tool": "iLEAPP",
-      "date": "2026-09-12"
+      "date": "2026-09-14"
     },
     {
       "name": "kwai",
       "query": "kwai",
       "tool": "ALEAPP",
       "date": "2026-09-12"
-    },
-    {
-      "name": "safaribrowsing",
-      "query": "safaribrowsing",
-      "tool": "DLEAPP",
-      "date": "2026-09-02"
     },
     {
       "name": "berla ive export",
@@ -63,16 +63,16 @@
       "date": "2026-08-05"
     },
     {
-      "name": "garminConnect",
-      "query": "garminConnect",
-      "tool": "iLEAPP",
-      "date": "2026-09-12"
+      "name": "Keychains",
+      "query": "Keychains",
+      "tool": "DLEAPP",
+      "date": "2026-09-02"
     },
     {
-      "name": "megaCloud",
-      "query": "megaCloud",
-      "tool": "ALEAPP",
-      "date": "2026-09-12"
+      "name": "tutanota",
+      "query": "tutanota",
+      "tool": "iLEAPP",
+      "date": "2026-09-14"
     }
   ]
 }
