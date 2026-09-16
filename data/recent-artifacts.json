@@ -3,10 +3,10 @@
   "window_days": 45,
   "items": [
     {
-      "name": "windowsSrum",
-      "query": "windowsSrum",
+      "name": "windowsAppCompatCache",
+      "query": "windowsAppCompatCache",
       "tool": "DLEAPP",
-      "date": "2026-09-15"
+      "date": "2026-09-16"
     },
     {
       "name": "garminConnect",
@@ -33,10 +33,10 @@
       "date": "2026-08-15"
     },
     {
-      "name": "windowsAccountManagement",
-      "query": "windowsAccountManagement",
+      "name": "windowsBamDam",
+      "query": "windowsBamDam",
       "tool": "DLEAPP",
-      "date": "2026-09-15"
+      "date": "2026-09-16"
     },
     {
       "name": "megaCloud",
@@ -63,10 +63,10 @@
       "date": "2026-08-05"
     },
     {
-      "name": "windowsSystemPowerEvents",
-      "query": "windowsSystemPowerEvents",
+      "name": "windowsWebcache",
+      "query": "windowsWebcache",
       "tool": "DLEAPP",
-      "date": "2026-09-15"
+      "date": "2026-09-16"
     },
     {
       "name": "tutanota",
