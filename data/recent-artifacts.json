@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "windowsAppCompatCache",
-      "query": "windowsAppCompatCache",
+      "name": "windowsSearchDb",
+      "query": "windowsSearchDb",
       "tool": "DLEAPP",
       "date": "2026-09-16"
     },
@@ -33,8 +33,8 @@
       "date": "2026-08-15"
     },
     {
-      "name": "windowsBamDam",
-      "query": "windowsBamDam",
+      "name": "windowsJumpLists",
+      "query": "windowsJumpLists",
       "tool": "DLEAPP",
       "date": "2026-09-16"
     },
@@ -63,8 +63,8 @@
       "date": "2026-08-05"
     },
     {
-      "name": "windowsWebcache",
-      "query": "windowsWebcache",
+      "name": "windowsLnk",
+      "query": "windowsLnk",
       "tool": "DLEAPP",
       "date": "2026-09-16"
     },
