@@ -177,7 +177,7 @@ We added regression tests for the path and manifest-join logic too. Real data te
 
 The update was merged into current iLEAPP source after the latest packaged release, so it is intended for the next release.<sup><a href="#note-11">[11]</a></sup> The merged artifact names and fields support this workflow:
 
-1. Process the complete iOS full-file-system extraction with [iLEAPP](https://www.leapps.org/releases#section-ileapp).
+1. Process the complete iOS full-file-system extraction with [iLEAPP](https://leapps.org/releases#section-ileapp).
 2. Open **App Snapshots** to review the image and its joined manifest context in one row.
 3. Compare **File Modified Date** and **Manifest Creation Date**. Record the source and time-zone handling if they differ.
 4. Treat **Manifest Last Used Date** as a stored SplashBoard field requiring corroboration, not as a synonym for app use.
@@ -231,5 +231,5 @@ Free tools. Real data. Careful conclusions. Go look at the pictures—and read t
 <li id="note-9">SQLite, <a href="https://sqlite.org/wal.html">Write-Ahead Logging</a>. SQLite explains that committed changes may exist only in the separate WAL until checkpointing and that the WAL is part of the database’s persistent state and should remain with the database when copied.</li>
 <li id="note-10">iLEAPP, <a href="https://github.com/abrignoni/iLEAPP/blob/295e60a31c680fb95cb372e1b1b6b127de34cf42/admin/test/scripts/test_app_snapshots.py">App Snapshots regression tests at merged commit <code>295e60a</code></a>. The fixtures cover scene paths, UUID suffixes, hyphenated bundle IDs, downscaled groups, and duplicate manifest-filename matching.</li>
 <li id="note-11"><a href="https://github.com/abrignoni/iLEAPP/pull/1888">iLEAPP PR #1888</a> merged the update on August 7, 2026. At publication, the latest packaged iLEAPP release was <a href="https://github.com/abrignoni/iLEAPP/releases/tag/v2026.2.1">v2026.2.1</a>, published July 27, 2026, so the merged snapshot changes were newer than the packaged release.</li>
-<li id="note-12">LEAPPs, <a href="https://www.leapps.org/releases#section-lava">LAVA releases</a>. The merged App Snapshots artifact declares standard output, which includes LAVA output, and checks converted snapshots into the shared media pipeline; see <a href="https://github.com/abrignoni/iLEAPP/blob/295e60a31c680fb95cb372e1b1b6b127de34cf42/scripts/artifacts/appSnapshots.py"><code>appSnapshots.py</code></a>.</li>
+<li id="note-12">LEAPPs, <a href="https://leapps.org/releases#section-lava">LAVA releases</a>. The merged App Snapshots artifact declares standard output, which includes LAVA output, and checks converted snapshots into the shared media pipeline; see <a href="https://github.com/abrignoni/iLEAPP/blob/295e60a31c680fb95cb372e1b1b6b127de34cf42/scripts/artifacts/appSnapshots.py"><code>appSnapshots.py</code></a>.</li>
 </ol>

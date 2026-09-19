@@ -8,7 +8,7 @@ excerpt: A decent version of most digital forensics software can now be made at 
 
 # Using AI Effectively in Digital Forensics
 
-In a [previous blog post](https://www.leapps.org/blog-post?post=2026-07-11-the-rules-keep-changing) I waxed a little about how the rules in our field are changing. This is because the industry that produces our source data, software development, is bearing the brunt of those changes right now.
+In a [previous blog post](https://leapps.org/blog-post?post=2026-07-11-the-rules-keep-changing) I waxed a little about how the rules in our field are changing. This is because the industry that produces our source data, software development, is bearing the brunt of those changes right now.
 
 Digital forensics software development is starting to feel the impact. Are you a mapping software developer? A company that sells artifact parsing? Do you sell a timelining tool, a fast triage solution, a log management suite? A decent version of any of these can now be made at home, in a few hours, by a user that does not code. Give that same user a few more tokens and a weekend, and what used to be your competitive advantage is gone.
 
@@ -18,7 +18,7 @@ Digital forensics software development is starting to feel the impact. Are you a
 
 **Users will use AI to build or reverse engineer what these companies used to do for them.** This carries a lot of risk, of course, but it will happen anyway. How are companies responding? There are already offerings in the market for AI tools that will parse those data structures for you. The pitch is to use their expensive AI to find artifacts so you don't have to point your own AI at the problem. I'll be transparent: I don't see it. There is no cost advantage in being an AI wrapper company, and the target market for these solutions is the non-expert. Folks that will go and generate all sorts of parsed artifacts with AI and have no way of knowing if any of it is true.
 
-Referencing my [previous blog post](https://www.leapps.org/blog-post?post=2026-07-11-the-rules-keep-changing) again, LLMs will have a role in our field as long as they are used properly. What seems like a risky proposition is continuing to hand AI tooling, be it a chat bot or an LLM powered artifact parser, to individuals that are not qualified in any sense to verify the output or validate the deterministic processes (like code) that come out of an LLM.
+Referencing my [previous blog post](https://leapps.org/blog-post?post=2026-07-11-the-rules-keep-changing) again, LLMs will have a role in our field as long as they are used properly. What seems like a risky proposition is continuing to hand AI tooling, be it a chat bot or an LLM powered artifact parser, to individuals that are not qualified in any sense to verify the output or validate the deterministic processes (like code) that come out of an LLM.
 
 The question then becomes: what makes a user an expert in this context?
 

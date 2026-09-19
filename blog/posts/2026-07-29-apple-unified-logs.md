@@ -154,12 +154,12 @@ iLEAPP now bundles [macos-UnifiedLogs](https://github.com/mandiant/macos-Unified
 
 Here is the whole workflow now:
 
-1. Download [iLEAPP 2026.3.0 or later](https://www.leapps.org/releases#section-ileapp). Windows, Linux, or macOS. Any of them.
+1. Download [iLEAPP 2026.3.0 or later](https://leapps.org/releases#section-ileapp). Windows, Linux, or macOS. Any of them.
 2. Point it at your full file system extraction. Zip, tar, or directory.
 3. In **Available Modules**, check the **Unified Logs** module. It comes unchecked on purpose, and I will explain why in a second.
 4. Start processing.
 
-Release not on the [releases page](https://www.leapps.org/releases#section-ileapp) yet, or you just do not want to wait? Everything in this section is on iLEAPP's main branch right now, and running from source gets you all of it today:
+Release not on the [releases page](https://leapps.org/releases#section-ileapp) yet, or you just do not want to wait? Everything in this section is on iLEAPP's main branch right now, and running from source gets you all of it today:
 
 ```bash
 git clone https://github.com/abrignoni/iLEAPP.git
@@ -224,7 +224,7 @@ If you already know the time of interest, `--start` and `--end` can make convers
 
 Now hand the giant JSON file to iLEAPP:
 
-1. Download the current [iLEAPP release](https://www.leapps.org/releases#section-ileapp).
+1. Download the current [iLEAPP release](https://leapps.org/releases#section-ileapp).
 2. Select the directory containing the `logarchive*.json` file as the input.
 3. Select an output directory.
 4. In **Available Modules**, check the **Unified Logs** module. It comes unchecked by default; Unified Logs are opt-in now, on both the native and the JSON path. The dependent artifacts run automatically after the raw import.
@@ -245,7 +245,7 @@ That database is the working set. The `.logarchive` and JSON still hold fields i
 
 And no, iLEAPP does not try to cram eighteen million rows into an HTML report. Good. That would be useless.
 
-The full table is a LAVA-only artifact. Open the completed project in [LAVA](https://www.leapps.org/releases#section-lava) to filter, tag, and export the records that matter. If you want to write SQL directly, [DB Browser for SQLite](https://sqlitebrowser.org/) works too.
+The full table is a LAVA-only artifact. Open the completed project in [LAVA](https://leapps.org/releases#section-lava) to filter, tag, and export the records that matter. If you want to write SQL directly, [DB Browser for SQLite](https://sqlitebrowser.org/) works too.
 
 ## Unified Log artifacts currently supported by iLEAPP
 
@@ -253,7 +253,7 @@ When I published the original article, dedicated Unified Log artifacts were some
 
 The future arrived, and then it kept arriving.
 
-> **Updated 2026-08-14.** This section originally counted 133 predicates across 13 artifacts. Five merged pull requests later, the module registers **36 artifacts driven by 235 unique message predicates and four log categories**, every one of them documented in published research, validated against real extractions on iOS 16.5, 17.1, 18.7, and 26.5.2, or both. Where a pattern is documented but has not been seen in our own images, the artifact says so in its notes. The full catalog outgrew this article, so it now lives in its own companion piece: [Apple Unified Log Predicates in iLEAPP: The Reference](https://www.leapps.org/blog-post?post=2026-08-01-unified-log-predicate-reference). That is where every pattern, process, source citation, and validation status lives, artifact by artifact.
+> **Updated 2026-08-14.** This section originally counted 133 predicates across 13 artifacts. Five merged pull requests later, the module registers **36 artifacts driven by 235 unique message predicates and four log categories**, every one of them documented in published research, validated against real extractions on iOS 16.5, 17.1, 18.7, and 26.5.2, or both. Where a pattern is documented but has not been seen in our own images, the artifact says so in its notes. The full catalog outgrew this article, so it now lives in its own companion piece: [Apple Unified Log Predicates in iLEAPP: The Reference](https://leapps.org/blog-post?post=2026-08-01-unified-log-predicate-reference). That is where every pattern, process, source citation, and validation status lives, artifact by artifact.
 
 The short tour of what the 36 artifacts cover:
 
@@ -273,7 +273,7 @@ Read this part carefully: “supported” means iLEAPP knows how to look for the
 
 If the dedicated artifact is empty, go wider. Check **logarchive artifacts**, then search the raw **logarchive** table. That is also where the next artifact is waiting to be found.
 
-The live list is always available in the [iLEAPP source module](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/logarchive.py), the [LEAPPs artifact browser](https://www.leapps.org/artifacts), and the [predicate reference](https://www.leapps.org/blog-post?post=2026-08-01-unified-log-predicate-reference).
+The live list is always available in the [iLEAPP source module](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/logarchive.py), the [LEAPPs artifact browser](https://leapps.org/artifacts), and the [predicate reference](https://leapps.org/blog-post?post=2026-08-01-unified-log-predicate-reference).
 
 ## Querying the database
 
@@ -327,7 +327,7 @@ No one person owns this research, and the target keeps moving. These are the res
 - [Apple OSLog documentation](https://developer.apple.com/documentation/OSLog) - programmatic access to historical log data.
 - [iLEAPP](https://github.com/abrignoni/iLEAPP) - native tracev3 parsing or conversion of the Apple JSON export into LAVA/SQLite output, plus the dedicated Unified Log artifacts.
 - [macos-UnifiedLogs](https://github.com/mandiant/macos-UnifiedLogs) - Mandiant's open source Rust parser for the tracev3 format. This is the engine behind iLEAPP's native support. Apache-2.0, actively maintained, good stuff.
-- [LAVA](https://www.leapps.org/releases#section-lava) - the LEAPPs viewer for large and standard artifact outputs.
+- [LAVA](https://leapps.org/releases#section-lava) - the LEAPPs viewer for large and standard artifact outputs.
 - [Lionel Notari's iOS Unified Logs](https://www.ios-unifiedlogs.com/) - extensive artifact research, articles, references, and “Unified Logs of the Week.”
 - [Lionel Notari's acquisition tool](https://www.ios-unifiedlogs.com/iosunifiedlogtool) - guided collection with reporting, statistics, and hashes.
 - [Lionel Notari's parsing-tool article](https://www.ios-unifiedlogs.com/post/ios-unified-logs-my-parsing-tool-is-out) - a macOS parser that builds complete and filtered databases, supports custom rules, and performs conversion quality checks.

@@ -251,7 +251,7 @@ The updated artifacts are in ALEAPP's current source and will be included in the
 
 Before publication, we ran that merged source against real data from Samsung S20 and Pixel 8 Pro Android 16 full-file-system extractions. UsageStats produced 11,904 and 6,843 rows respectively, while Recent Activity recovered the matching snapshot metadata and both image resolutions. One Samsung task XML could not be parsed because the source file itself was empty.
 
-1. Process the full Android extraction with [ALEAPP](https://www.leapps.org/releases#section-aleapp).
+1. Process the full Android extraction with [ALEAPP](https://leapps.org/releases#section-aleapp).
 2. Open **Usage Stats** in the HTML report or LAVA.
 3. Filter `Usage Type` to `event-log` and begin with the `daily` interval for event-level work.
 4. Filter by package, class, event type, or the time range that matters.

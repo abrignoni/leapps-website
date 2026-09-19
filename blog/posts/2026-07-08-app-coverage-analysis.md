@@ -61,7 +61,7 @@ Two things make this measurement trustworthy instead of naive. Modules that touc
 
 ## Get it
 
-- 🔗 Get Batch LEAPP here: [leapps.org/releases#section-batch-leapp](https://www.leapps.org/releases#section-batch-leapp)
+- 🔗 Get Batch LEAPP here: [leapps.org/releases#section-batch-leapp](https://leapps.org/releases#section-batch-leapp)
 - 📖 How to run it (both uses): [Batch LEAPP guide](https://github.com/abrignoni/batch-leapp/blob/main/docs/batch-leapp-guide.md)
 - 📊 How to read the reports in LAVA: [Coverage analysis guide](https://github.com/abrignoni/batch-leapp/blob/main/docs/coverage-analysis-lava.md)
 

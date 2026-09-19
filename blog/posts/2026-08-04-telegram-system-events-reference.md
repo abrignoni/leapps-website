@@ -8,7 +8,7 @@ excerpt: Every system event Telegram can record in a chat, on both iOS and Andro
 
 # Telegram System Events: The Cross-Platform Reference
 
-This is the companion to [Telegram on Both Sides](https://www.leapps.org/blog-post?post=2026-08-04-telegram-ios-android-coverage), which covers what iLEAPP and ALEAPP now parse out of Telegram. This one answers the narrower question that comes up in casework: what system events can Telegram even record, and what do they mean?
+This is the companion to [Telegram on Both Sides](https://leapps.org/blog-post?post=2026-08-04-telegram-ios-android-coverage), which covers what iLEAPP and ALEAPP now parse out of Telegram. This one answers the narrower question that comes up in casework: what system events can Telegram even record, and what do they mean?
 
 [Download the printable PDF edition](https://leapps-api.4n6-198.workers.dev/downloads/telegram-system-events-reference.pdf).
 
