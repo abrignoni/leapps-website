@@ -8,7 +8,7 @@ excerpt: Every Unified Log message predicate iLEAPP searches for, artifact by ar
 
 # Apple Unified Log Predicates in iLEAPP: The Reference
 
-This is the companion to the [Unified Logs workflow guide](https://www.leapps.org/blog-post?post=2026-07-29-apple-unified-logs). That article covers how to acquire, preserve, and process the logs. This one answers the question that comes right after processing: what exactly is iLEAPP looking for, and why should you trust any of it?
+This is the companion to the [Unified Logs workflow guide](https://leapps.org/blog-post?post=2026-07-29-apple-unified-logs). That article covers how to acquire, preserve, and process the logs. This one answers the question that comes right after processing: what exactly is iLEAPP looking for, and why should you trust any of it?
 
 [Download the printable PDF edition](https://leapps-api.4n6-198.workers.dev/downloads/apple-unified-logs-predicate-reference.pdf).
 

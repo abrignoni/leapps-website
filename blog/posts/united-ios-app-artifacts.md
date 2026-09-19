@@ -67,7 +67,7 @@ Account and loyalty fields were there, as expected: name, MileagePlus number, el
 
 This was the fun part.
 
-When you use an app, you get a feel for the features before you ever look at the database. Then, when you start digging, you can ask better questions. In my [Home Depot app post](https://leapps.org/blog/home-depot-ios-artifacts), for example, I knew the app showed purchase history, so I went looking for it locally. I did not find it, which was its own useful finding.
+When you use an app, you get a feel for the features before you ever look at the database. Then, when you start digging, you can ask better questions. In my [Home Depot app post](https://leapps.org/blog-post?post=home-depot-ios-artifacts), for example, I knew the app showed purchase history, so I went looking for it locally. I did not find it, which was its own useful finding.
 
 With United, saved traveler data was something I hoped would be local because it is available in multiple places in the app. It was. United keeps a **saved travelers** list on the user profile, stored in the `ZUACDUSER` table in a column named `ZSAVEDTRAVELERSJSON`.
 

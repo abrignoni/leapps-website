@@ -8,7 +8,7 @@ excerpt: LAVA is another way to view reports created out of iLEAPP, ALEAPP, RLEA
 
 # LEAPPing with LAVA
 
-As most of you already know I'm a big fan of the [LEAPPs project](https://www.leapps.org/), not only because I'm helping develop it but because what it stands for. There aren't many free mobile forensic tools out there that does what it does. Plus the community of helpers keep growing which in turn expands the capabilities of the products even more rapidly than before. With that expansion we were excited to announce the next step for reporting in LAVA a few weeks ago.
+As most of you already know I'm a big fan of the [LEAPPs project](https://leapps.org/), not only because I'm helping develop it but because what it stands for. There aren't many free mobile forensic tools out there that does what it does. Plus the community of helpers keep growing which in turn expands the capabilities of the products even more rapidly than before. With that expansion we were excited to announce the next step for reporting in LAVA a few weeks ago.
 
 **LAVA (LEAPPs Artifact Viewer App)** is just another way to view reports created out of iLEAPP/ALEAPP/RLEAPP/VLEAPP. The idea is that it will eventually replace the aging HTML reporting. While the interface remains mostly the same as the HTML report we get some performance boosts in loading larger parsed results such as Health or Logarchive data from Apple.
 
@@ -38,4 +38,4 @@ As most of you already know I'm a big fan of the [LEAPPs project](https://www.le
 
 There is much more to come and we are open to feedback and suggestions on improvements and new feature requests. We are working hard on getting all artifacts updated for LAVA compliance.
 
-If you'd like to help contribute join the [Discord server](https://discord.gg/PSczJqjpa), and check out the brand new [LEAPPs.org](http://LEAPPs.org) website for more info.
+If you'd like to help contribute join the [Discord server](https://discord.gg/PSczJqjpa), and check out the brand new [LEAPPs.org](https://leapps.org/) website for more info.

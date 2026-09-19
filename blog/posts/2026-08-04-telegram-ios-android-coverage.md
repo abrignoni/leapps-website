@@ -68,7 +68,7 @@ Before this work those all rendered as one flat, useless label. Every one of the
 
 We mapped all 107 action constructors, which cover 68 distinct event types, and read the detail fields for the ones that carry them. On one test image, five rows that previously said nothing at all became four phone calls with outcomes and durations, plus a contact joining Telegram.
 
-If you want the whole catalog, every system event Telegram can record on either platform is written up in the companion piece, [Telegram System Events: The Cross-Platform Reference](https://www.leapps.org/blog-post?post=2026-08-04-telegram-system-events-reference). It exists because the two clients name the same events differently, and matching the lists by name alone pairs only 27 of roughly seventy.
+If you want the whole catalog, every system event Telegram can record on either platform is written up in the companion piece, [Telegram System Events: The Cross-Platform Reference](https://leapps.org/blog-post?post=2026-08-04-telegram-system-events-reference). It exists because the two clients name the same events differently, and matching the lists by name alone pairs only 27 of roughly seventy.
 
 Here is why I trust that result. The decoded call outcomes lined up with the conversation happening around them in the chat. The participants discuss making an audio call, then failing to reach each other, then giving up on video, and the decoded records show a completed call, then a missed one, then two busy ones. Two unrelated parts of the same database telling the same story.
 
