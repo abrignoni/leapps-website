@@ -89,5 +89,3 @@ Location-visit history, resolved people and places and software, and a timeline 
 Grab the [module](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/intelligencePlatformGraph.py), point it at the Hickman image or your own data, and check its work. Verify and validate, always. If you find edges where a code does not map cleanly, or one the lookup file does not cover, that is exactly the kind of thing worth a pull request.
 
 Thanks to Josh Hickman for publishing the image and the documentation that make a check like this possible. Open source DFIR works because people share both the data and the notes behind it.
-
-iLEAPP is free and open source under the MIT license, and it stays that way.
