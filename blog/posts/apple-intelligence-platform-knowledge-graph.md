@@ -13,7 +13,7 @@ excerpt: Your iPhone quietly builds a knowledge graph about you: who you know, w
 
 Your iPhone runs a daemon called knowledged. It sits in the background and does exactly what the name suggests. It builds knowledge. Not files, not logs, but a graph of things the phone has decided are true about you. Who your contacts are. Where you have been. Which apps you run and who made them. It ties all of that together and stores it on the device.
 
-Until now, no iLEAPP artifact read it. It does now. Four artifacts read it: three in [intelligencePlatformGraph.py](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/intelligencePlatformGraph.py) and one in [intelligencePlatformBehaviors.py](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/intelligencePlatformBehaviors.py), across iLEAPP PRs #2260, #2262, and #2263.
+Until now, no iLEAPP artifact read it. It does now. Four artifacts read it: three in [intelligencePlatformGraph.py](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/intelligencePlatformGraph.py) and one in [intelligencePlatformBehaviors.py](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/intelligencePlatformBehaviors.py), across iLEAPP PRs #2260, #2262, #2263, and #2264.
 
 ## What the store looks like
 
@@ -35,7 +35,7 @@ That is where the second file earns its place. Sitting in the same folder is `on
 - `SB152` = place
 - `SB764` = location visit activity
 
-and so on down the list. Because that mapping is read from the same device that produced the graph, it is exact for whatever built that store. We are not guessing what a code means. We are asking the phone that wrote it, which is pretty neat. Working out what those codes mean is the core of 0x11 Forensics and Consulting's research on this store, which walks through the same resolution in detail.
+and so on down the list. Because that mapping is read from the same device that produced the graph, it is exact for whatever built that store. We are not guessing what a code means. We are asking the phone that wrote it, which is pretty neat. Reading that ontology to turn the codes into words is the heart of how these artifacts work.
 
 ## Four artifacts
 
@@ -49,7 +49,7 @@ and so on down the list. Because that mapping is read from the same device that 
 
 **Intelligence Platform Knowledge Graph - Interactions** reads a separate store in the same area, `view.db`, under `Artifacts/siri/remembers/`. This is the graph's own record of messages and calls: the contact handle or handles, the app bundle id, the direction (as stored), and the call duration. On the Hickman iOS 17 image it holds 559 messages and 20 calls, out of 2,835 interaction rows in all. It sits next to the per-app message and call databases, so it can back them up, and it can outlast them.
 
-**Intelligence Platform Knowledge Graph - Behaviors** reads a fourth store, `behaviors.db`, in the same folder. Its `behaviorEventsExtended` table is a timestamped log of device behaviors, one row per event: a `behaviorType` code, an identifier, and a time. The code resolves the way the graph's codes do, by matching the `histogramKey_` tables shipped in the same database, so again it is exact for the device. The categories that resolve include app launch (the identifier is a bundle id), app intent such as a call, a message, or Maps, Wi-Fi event (a connect or disconnect with the network name), charging (plugged or unplugged), device locked (locked or unlocked), CarPlay, focus mode, location visits, and person interaction. On the Hickman iOS 17 image that is 25,186 rows.
+**Intelligence Platform Knowledge Graph - Behaviors** reads a fourth store, `behaviors.db`, in the same folder. Its `behaviorEventsExtended` table is a timestamped log of device behaviors, one row per event: a `behaviorType` code, an identifier, and a time. The code resolves against the same database: the `behaviorType` number is the position of a category in the ordered set of `histogramKey_` tables the database ships, so 1 is the first table, 2 the second, and so on. That mapping is read from the device itself and it held exactly against every code that had data. The categories that resolve include app launch (the identifier is a bundle id), app intent such as a call, a message, or Maps, Wi-Fi event (a connect or disconnect with the network name), charging (plugged or unplugged), device locked (locked or unlocked), CarPlay, focus mode, location visits, and person interaction. On the Hickman iOS 17 image that is 25,186 rows.
 
 As a timeline, it shows how the device was used: which apps were opened and when, which Wi-Fi networks it joined, its charging and lock cycles, and where it went. Most of the rows are less legible than that. They carry `behaviorType` codes (19, 20, and 21) that no `histogramKey` table names, location-cluster entry events with an opaque cluster id, reported as stored rather than given a meaning they do not have. This store is also narrower in time than the graph. It shows up on iOS 17 and is not present on the iOS 18.3 and later images tested, so it covers that window only.
 
