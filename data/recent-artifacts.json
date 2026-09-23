@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "odnoklassniki",
-      "query": "odnoklassniki",
+      "name": "simplex",
+      "query": "simplex",
       "tool": "iLEAPP",
       "date": "2026-09-23"
     },
@@ -33,10 +33,10 @@
       "date": "2026-08-30"
     },
     {
-      "name": "vk",
-      "query": "vk",
+      "name": "odnoklassniki",
+      "query": "odnoklassniki",
       "tool": "iLEAPP",
-      "date": "2026-09-22"
+      "date": "2026-09-23"
     },
     {
       "name": "AIChatbotNovaHistory",
@@ -63,8 +63,8 @@
       "date": "2026-08-30"
     },
     {
-      "name": "kakaoTalk",
-      "query": "kakaoTalk",
+      "name": "vk",
+      "query": "vk",
       "tool": "iLEAPP",
       "date": "2026-09-22"
     },
