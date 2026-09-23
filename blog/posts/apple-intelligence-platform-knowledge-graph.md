@@ -8,6 +8,9 @@ excerpt: Your iPhone quietly builds a knowledge graph about you: who you know, w
 
 # Reading the iPhone Knowledge Graph, and Checking Its Work
 
+![A dark diagram. An iPhone running the knowledged daemon emits coded facts labeled SB104, PS33, SB152, and SB764. They pass through a glowing panel labeled ontology.db and come out as the words person, name, place, and location visit, which form a small graph of Person, Place, Location visit, and Software nodes. One place node carries a check mark reading confirmed against known data.](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/apple-intelligence-platform-knowledge-graph/knowledge-graph-header.webp)
+*Figure 1: The phone stores the graph as coded facts. The on-device ontology turns the codes into words, and the resolved places can be checked against known data.*
+
 Your iPhone runs a daemon called knowledged. It sits in the background and does exactly what the name suggests. It builds knowledge. Not files, not logs, but a graph of things the phone has decided are true about you. Who your contacts are. Where you have been. Which apps you run and who made them. It ties all of that together and stores it on the device.
 
 Until now, no iLEAPP artifact read it. It does now. Two new artifacts land it, in [intelligencePlatformGraph.py](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/intelligencePlatformGraph.py) (iLEAPP PR #2260).
