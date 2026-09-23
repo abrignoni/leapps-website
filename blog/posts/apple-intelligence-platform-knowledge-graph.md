@@ -35,7 +35,7 @@ That is where the second file earns its place. Sitting in the same folder is `on
 - `SB152` = place
 - `SB764` = location visit activity
 
-and so on down the list. Because that mapping is read from the same device that produced the graph, it is exact for whatever built that store. We are not guessing what a code means. We are asking the phone that wrote it, which is pretty neat. Working out what those codes mean is the core of 0x11 Forensics and Consulting's research on this store, and that research is what prompted these artifacts.
+and so on down the list. Because that mapping is read from the same device that produced the graph, it is exact for whatever built that store. We are not guessing what a code means. We are asking the phone that wrote it, which is pretty neat. Working out what those codes mean is the core of 0x11 Forensics and Consulting's research on this store, which walks through the same resolution in detail.
 
 ## Three artifacts
 
@@ -96,4 +96,4 @@ Location visits, resolved people and places and software, messages and calls, an
 
 Grab the [module](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/intelligencePlatformGraph.py), point it at the Hickman image or your own data, and check its work. Verify and validate, always. If you find edges where a code does not map cleanly, or one the lookup file does not cover, that is exactly the kind of thing worth a pull request.
 
-This all started with 0x11 Forensics and Consulting and their write-up, ["That is one smart Apple"](https://0x11forensicssc.com/f/that-is-one-smart-apple). They mapped the store, worked out how the ontology codes resolve, and pointed at both the expired tables and the `view.db` interactions. There is more in that folder than these artifacts read today, such as `lifeEventView.db` and `behaviors.db`, so consider this ongoing work. Thanks also to Josh Hickman, whose public image and documented activity make the check above possible. Open source DFIR works because people share both the data and the notes behind it.
+0x11 Forensics and Consulting reached this same store on their own and documented it well in ["That is one smart Apple"](https://0x11forensicssc.com/f/that-is-one-smart-apple): the ontology resolution, the expired tables, and the `view.db` interactions. I came across their write-up while this work was underway, and it lines up with what these artifacts pull, so read it alongside this. There is more in that folder than these artifacts read today, such as `lifeEventView.db` and `behaviors.db`, so consider this ongoing work. Thanks to them, and to Josh Hickman, whose public image and documented activity make the check above possible. Open source DFIR works because people share both the data and the notes behind it.
