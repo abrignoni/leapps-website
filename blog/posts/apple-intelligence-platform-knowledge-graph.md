@@ -13,7 +13,7 @@ excerpt: Your iPhone quietly builds a knowledge graph about you: who you know, w
 
 Your iPhone runs a daemon called knowledged. It sits in the background and does exactly what the name suggests. It builds knowledge. Not files, not logs, but a graph of things the phone has decided are true about you. Who your contacts are. Where you have been. Which apps you run and who made them. It ties all of that together and stores it on the device.
 
-Until now, no iLEAPP artifact read it. It does now. Two new artifacts land it, in [intelligencePlatformGraph.py](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/intelligencePlatformGraph.py) (iLEAPP PR #2260).
+Until now, no iLEAPP artifact read it. It does now. Three artifacts read it, in [intelligencePlatformGraph.py](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/intelligencePlatformGraph.py), added in iLEAPP PR #2260 and extended in PR #2262.
 
 ## What the store looks like
 
@@ -35,9 +35,9 @@ That is where the second file earns its place. Sitting in the same folder is `on
 - `SB152` = place
 - `SB764` = location visit activity
 
-and so on down the list. Because that mapping is read from the same device that produced the graph, it is exact for whatever built that store. We are not guessing what a code means. We are asking the phone that wrote it, which is pretty neat.
+and so on down the list. Because that mapping is read from the same device that produced the graph, it is exact for whatever built that store. We are not guessing what a code means. We are asking the phone that wrote it, which is pretty neat. Working out what those codes mean is the core of 0x11 Forensics and Consulting's research on this store, and that research is what prompted these artifacts.
 
-## Two artifacts
+## Three artifacts
 
 **Intelligence Platform Knowledge Graph - Entities** gives you one row per inferred entity. Entity types resolve to person, organization, place, and software.
 
@@ -46,6 +46,14 @@ and so on down the list. Because that mapping is read from the same device that 
 - Software carries a bundle id and a developer.
 
 **Intelligence Platform Knowledge Graph - Events** gives you a dated timeline of inferred events, mostly location-visit activities and calendar events, each with an estimated start and end time.
+
+**Intelligence Platform Knowledge Graph - Interactions** reads a separate store in the same area, `view.db`, under `Artifacts/siri/remembers/`. This is the graph's own record of messages and calls: the contact handle or handles, the app bundle id, the direction (as stored), and the call duration. On the Hickman iOS 17 image it holds 559 messages and 20 calls, out of 2,835 interaction rows in all. It sits next to the per-app message and call databases, so it can back them up, and it can outlast them.
+
+## What outlives the live record
+
+The graph does not only keep what it believes right now. It also keeps a set of expired tables, `expired_stable_graph` and `expired_event_graph`, holding entries it has retired or replaced. The Entities and Events artifacts read those tables too, and tag each row with an "Expired" column so you can tell a live entry from a retired one.
+
+That is where a full filesystem acquisition earns its keep. Across five public corpora the expired tables gave up 508 events and 40 entities the live tables no longer show, and one public iOS 18 image alone held 478 historical location visits in the expired set. Inferred people, places, and visits can survive there after the device has dropped them from what it shows today.
 
 ## Say the boundary out loud
 
@@ -84,8 +92,8 @@ A match backs up that the phone was at that place. It does not, on its own, prov
 
 ## Why this is worth having
 
-Location-visit history, resolved people and places and software, and a timeline of who and where and what, all inferred by the operating system and sitting in one store. That is a rich source, and it was going unread. Now it is not.
+Location visits, resolved people and places and software, messages and calls, and a set of retired entries a full acquisition can still reach. All of it inferred by the operating system, sitting in one store. That is a rich source, and it was going unread. Now it is not.
 
 Grab the [module](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/intelligencePlatformGraph.py), point it at the Hickman image or your own data, and check its work. Verify and validate, always. If you find edges where a code does not map cleanly, or one the lookup file does not cover, that is exactly the kind of thing worth a pull request.
 
-Thanks to Josh Hickman for publishing the image and the documentation that make a check like this possible. Open source DFIR works because people share both the data and the notes behind it.
+This all started with 0x11 Forensics and Consulting and their write-up, ["That is one smart Apple"](https://0x11forensicssc.com/f/that-is-one-smart-apple). They mapped the store, worked out how the ontology codes resolve, and pointed at both the expired tables and the `view.db` interactions. There is more in that folder than these artifacts read today, such as `lifeEventView.db` and `behaviors.db`, so consider this ongoing work. Thanks also to Josh Hickman, whose public image and documented activity make the check above possible. Open source DFIR works because people share both the data and the notes behind it.
