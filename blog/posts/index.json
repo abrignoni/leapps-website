@@ -1,5 +1,21 @@
 [
   {
+    "slug": "apple-intelligence-platform-knowledge-graph",
+    "title": "Reading the iPhone Knowledge Graph, and Checking Its Work",
+    "date": "2026-09-23",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "iLEAPP",
+      "iOS",
+      "knowledge graph",
+      "Intelligence Platform",
+      "location",
+      "DFIR",
+      "research"
+    ],
+    "excerpt": "Your iPhone quietly builds a knowledge graph about you: who you know, where you go, what you run. iLEAPP now reads it, and the inferred locations line up with a documented activity log on Josh Hickman's public iOS 17 image."
+  },
+  {
     "slug": "2026-09-04-you-down-with-mmkv",
     "title": "You down with MMKV?",
     "date": "2026-09-04",
