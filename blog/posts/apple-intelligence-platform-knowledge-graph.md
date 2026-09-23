@@ -57,7 +57,7 @@ As a timeline, it shows how the device was used: which apps were opened and when
 
 The graph does not only keep what it believes right now. It also keeps a set of expired tables, `expired_stable_graph` and `expired_event_graph`, holding entries it has retired or replaced. The Entities and Events artifacts read those tables too, and tag each row with an "Expired" column so you can tell a live entry from a retired one.
 
-That is where a full filesystem acquisition earns its keep. Across five public corpora the expired tables gave up 508 events and 40 entities the live tables no longer show, and one public iOS 18 image alone held 478 historical location visits in the expired set. Inferred people, places, and visits can survive there after the device has dropped them from what it shows today.
+That is where a full filesystem acquisition pays off. Across five public corpora the expired tables gave up 508 events and 40 entities the live tables no longer show, and one public iOS 18 image alone held 478 historical location visits in the expired set. Inferred people, places, and visits can survive there after the device has dropped them from what it shows today.
 
 ## Say the boundary out loud
 
