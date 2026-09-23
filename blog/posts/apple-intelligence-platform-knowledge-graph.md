@@ -13,7 +13,7 @@ excerpt: Your iPhone quietly builds a knowledge graph about you: who you know, w
 
 Your iPhone runs a daemon called knowledged. It sits in the background and does exactly what the name suggests. It builds knowledge. Not files, not logs, but a graph of things the phone has decided are true about you. Who your contacts are. Where you have been. Which apps you run and who made them. It ties all of that together and stores it on the device.
 
-Until now, no iLEAPP artifact read it. It does now. Three artifacts read it, in [intelligencePlatformGraph.py](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/intelligencePlatformGraph.py), added in iLEAPP PR #2260 and extended in PR #2262.
+Until now, no iLEAPP artifact read it. It does now. Four artifacts read it: three in [intelligencePlatformGraph.py](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/intelligencePlatformGraph.py) and one in [intelligencePlatformBehaviors.py](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/intelligencePlatformBehaviors.py), across iLEAPP PRs #2260, #2262, and #2263.
 
 ## What the store looks like
 
@@ -37,7 +37,7 @@ That is where the second file earns its place. Sitting in the same folder is `on
 
 and so on down the list. Because that mapping is read from the same device that produced the graph, it is exact for whatever built that store. We are not guessing what a code means. We are asking the phone that wrote it, which is pretty neat. Working out what those codes mean is the core of 0x11 Forensics and Consulting's research on this store, which walks through the same resolution in detail.
 
-## Three artifacts
+## Four artifacts
 
 **Intelligence Platform Knowledge Graph - Entities** gives you one row per inferred entity. Entity types resolve to person, organization, place, and software.
 
@@ -48,6 +48,10 @@ and so on down the list. Because that mapping is read from the same device that 
 **Intelligence Platform Knowledge Graph - Events** gives you a dated timeline of inferred events, mostly location-visit activities and calendar events, each with an estimated start and end time.
 
 **Intelligence Platform Knowledge Graph - Interactions** reads a separate store in the same area, `view.db`, under `Artifacts/siri/remembers/`. This is the graph's own record of messages and calls: the contact handle or handles, the app bundle id, the direction (as stored), and the call duration. On the Hickman iOS 17 image it holds 559 messages and 20 calls, out of 2,835 interaction rows in all. It sits next to the per-app message and call databases, so it can back them up, and it can outlast them.
+
+**Intelligence Platform Knowledge Graph - Behaviors** reads a fourth store, `behaviors.db`, in the same folder. Its `behaviorEventsExtended` table is a timestamped log of device behaviors, one row per event: a `behaviorType` code, an identifier, and a time. The code resolves the way the graph's codes do, by matching the `histogramKey_` tables shipped in the same database, so again it is exact for the device. The categories that resolve include app launch (the identifier is a bundle id), app intent such as a call, a message, or Maps, Wi-Fi event (a connect or disconnect with the network name), charging (plugged or unplugged), device locked (locked or unlocked), CarPlay, focus mode, location visits, and person interaction. On the Hickman iOS 17 image that is 25,186 rows.
+
+As a timeline, it shows how the device was used: which apps were opened and when, which Wi-Fi networks it joined, its charging and lock cycles, and where it went. Most of the rows are less legible than that. They carry `behaviorType` codes (19, 20, and 21) that no `histogramKey` table names, location-cluster entry events with an opaque cluster id, reported as stored rather than given a meaning they do not have. This store is also narrower in time than the graph. It shows up on iOS 17 and is not present on the iOS 18.3 and later images tested, so it covers that window only.
 
 ## What outlives the live record
 
@@ -92,8 +96,8 @@ A match backs up that the phone was at that place. It does not, on its own, prov
 
 ## Why this is worth having
 
-Location visits, resolved people and places and software, messages and calls, and a set of retired entries a full acquisition can still reach. All of it inferred by the operating system, sitting in one store. That is a rich source, and it was going unread. Now it is not.
+Location visits, resolved people and places and software, messages and calls, a behavior timeline of app launches, Wi-Fi joins, charging and lock cycles, and a set of retired entries a full acquisition can still reach. All of it inferred by the operating system, sitting in one folder. That is a rich source, and it was going unread. Now it is not.
 
 Grab the [module](https://github.com/abrignoni/iLEAPP/blob/main/scripts/artifacts/intelligencePlatformGraph.py), point it at the Hickman image or your own data, and check its work. Verify and validate, always. If you find edges where a code does not map cleanly, or one the lookup file does not cover, that is exactly the kind of thing worth a pull request.
 
-0x11 Forensics and Consulting reached this same store on their own and documented it well in ["That is one smart Apple"](https://0x11forensicssc.com/f/that-is-one-smart-apple): the ontology resolution, the expired tables, and the `view.db` interactions. I came across their write-up while this work was underway, and it lines up with what these artifacts pull, so read it alongside this. There is more in that folder than these artifacts read today, such as `lifeEventView.db` and `behaviors.db`, so consider this ongoing work. Thanks to them, and to Josh Hickman, whose public image and documented activity make the check above possible. Open source DFIR works because people share both the data and the notes behind it.
+0x11 Forensics and Consulting reached this same store on their own and documented it well in ["That is one smart Apple"](https://0x11forensicssc.com/f/that-is-one-smart-apple): the ontology resolution, the expired tables, the `view.db` interactions, and `behaviors.db`. I came across their write-up while this work was underway, and it lines up with what these artifacts pull, so read it alongside this. Not everything in that folder is worth parsing twice. `lifeEventView.db`, which they also name, is a redundant view: on the Hickman image its 345 subjects are all already in `graph.db`. Other stores in there are for another day. Thanks to them, and to Josh Hickman, whose public image and documented activity make the check above possible. Open source DFIR works because people share both the data and the notes behind it.
