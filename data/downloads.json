@@ -1186,11 +1186,11 @@
     {
       "date": "2026-09-24",
       "totals": {
-        "ileapp": 93569,
-        "aleapp": 70386,
-        "rleapp": 5330,
+        "ileapp": 93600,
+        "aleapp": 70421,
+        "rleapp": 5334,
         "vleapp": 2306,
-        "lava": 3270,
+        "lava": 3277,
         "dleapp": 884,
         "batchleapp": 486
       }

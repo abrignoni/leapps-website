@@ -3,8 +3,14 @@
   "window_days": 45,
   "items": [
     {
-      "name": "macosZsh",
-      "query": "macosZsh",
+      "name": "SamsungGalleryHiddenAlbum",
+      "query": "SamsungGalleryHiddenAlbum",
+      "tool": "ALEAPP",
+      "date": "2026-09-24"
+    },
+    {
+      "name": "threemaDesktop",
+      "query": "threemaDesktop",
       "tool": "DLEAPP",
       "date": "2026-09-24"
     },
@@ -13,12 +19,6 @@
       "query": "intelligencePlatformBehaviors",
       "tool": "iLEAPP",
       "date": "2026-09-23"
-    },
-    {
-      "name": "AIChatbotNovaConversations",
-      "query": "AIChatbotNovaConversations",
-      "tool": "ALEAPP",
-      "date": "2026-09-22"
     },
     {
       "name": "facebookArchive",
@@ -33,8 +33,14 @@
       "date": "2026-08-30"
     },
     {
-      "name": "macosBiome",
-      "query": "macosBiome",
+      "name": "AIChatbotNovaConversations",
+      "query": "AIChatbotNovaConversations",
+      "tool": "ALEAPP",
+      "date": "2026-09-22"
+    },
+    {
+      "name": "firefoxSettings",
+      "query": "firefoxSettings",
       "tool": "DLEAPP",
       "date": "2026-09-24"
     },
@@ -43,12 +49,6 @@
       "query": "intelligencePlatformGraph",
       "tool": "iLEAPP",
       "date": "2026-09-23"
-    },
-    {
-      "name": "AIChatbotNovaHistory",
-      "query": "AIChatbotNovaHistory",
-      "tool": "ALEAPP",
-      "date": "2026-09-22"
     },
     {
       "name": "fbigAccount",
@@ -63,16 +63,16 @@
       "date": "2026-08-30"
     },
     {
-      "name": "macosFSEvents",
-      "query": "macosFSEvents",
-      "tool": "DLEAPP",
-      "date": "2026-09-24"
+      "name": "AIChatbotNovaHistory",
+      "query": "AIChatbotNovaHistory",
+      "tool": "ALEAPP",
+      "date": "2026-09-22"
     },
     {
-      "name": "simplex",
-      "query": "simplex",
-      "tool": "iLEAPP",
-      "date": "2026-09-23"
+      "name": "firefoxBrowser",
+      "query": "firefoxBrowser",
+      "tool": "DLEAPP",
+      "date": "2026-09-24"
     }
   ]
 }
