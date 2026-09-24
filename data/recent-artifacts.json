@@ -1,7 +1,13 @@
 {
-  "generated": "2026-09-23",
+  "generated": "2026-09-24",
   "window_days": 45,
   "items": [
+    {
+      "name": "macosBiome",
+      "query": "macosBiome",
+      "tool": "DLEAPP",
+      "date": "2026-09-24"
+    },
     {
       "name": "intelligencePlatformBehaviors",
       "query": "intelligencePlatformBehaviors",
@@ -21,16 +27,16 @@
       "date": "2026-09-22"
     },
     {
-      "name": "windowsMountedDevices",
-      "query": "windowsMountedDevices",
-      "tool": "DLEAPP",
-      "date": "2026-09-17"
-    },
-    {
       "name": "ford sync bluetooth",
       "query": "ford_sync_bluetooth",
       "tool": "VLEAPP",
       "date": "2026-08-30"
+    },
+    {
+      "name": "macosFSEvents",
+      "query": "macosFSEvents",
+      "tool": "DLEAPP",
+      "date": "2026-09-24"
     },
     {
       "name": "intelligencePlatformGraph",
@@ -51,28 +57,22 @@
       "date": "2026-09-19"
     },
     {
-      "name": "windowsRun",
-      "query": "windowsRun",
-      "tool": "DLEAPP",
-      "date": "2026-09-17"
-    },
-    {
       "name": "berla ive export",
       "query": "berla_ive_export",
       "tool": "VLEAPP",
       "date": "2026-08-30"
     },
     {
+      "name": "macosUnifiedLogs",
+      "query": "macosUnifiedLogs",
+      "tool": "DLEAPP",
+      "date": "2026-09-24"
+    },
+    {
       "name": "simplex",
       "query": "simplex",
       "tool": "iLEAPP",
       "date": "2026-09-23"
-    },
-    {
-      "name": "AIChatbotNovaMediastore",
-      "query": "AIChatbotNovaMediastore",
-      "tool": "ALEAPP",
-      "date": "2026-09-22"
     }
   ]
 }
