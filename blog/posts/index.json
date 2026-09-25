@@ -1,5 +1,22 @@
 [
   {
+    "slug": "introducing-gleapp",
+    "title": "Meet GLEAPP, Media Triage Built for the Backlog",
+    "date": "2026-09-25",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "GLEAPP",
+      "media",
+      "triage",
+      "Project VIC",
+      "images",
+      "video",
+      "DFIR",
+      "open source"
+    ],
+    "excerpt": "A modern extraction can hold tens of thousands of images and videos. GLEAPP hashes and de-duplicates them, finds the same face across the case, puts geolocated files on an offline map, and gives you a gallery built for categorizing. Free and open source."
+  },
+  {
     "slug": "apple-intelligence-platform-knowledge-graph",
     "title": "Reading the iPhone Knowledge Graph, and Checking Its Work",
     "date": "2026-09-23",
