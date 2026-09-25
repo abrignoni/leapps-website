@@ -29,6 +29,7 @@ leapps-website/
 │   └── og/              # Auto-generated 1200×630 social cards (one per post)
 ├── scripts/             # generate_blog_index.py — builds blog/posts/index.json from frontmatter
 ├── tools/og-cards/      # OG-card generator (Satori + resvg); run by a GitHub Action
+├── tools/build_hero_logo.py  # Redraws the home-page hero logo when the tool set changes
 ├── data/downloads.json  # Daily download-count snapshot (committed by an Action)
 ├── downloads/           # Downloadable files served via the leapps-api Worker
 ├── img/ images/ logos/  # Image and logo assets
