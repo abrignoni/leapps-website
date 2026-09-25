@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LEAPPs — Digital Forensics Tools</title>
-  <meta name="description" content="Free digital forensics tools. iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, LAVA, and Batch LEAPP — parse and visualize artifacts from iOS, Android, Windows, and more." />
+  <meta name="description" content="Free digital forensics tools. iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP — parse and visualize artifacts from iOS, Android, Windows, and more." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://leapps.org/" />
   <meta property="og:title" content="LEAPPs — Digital Forensics Tools" />
-  <meta property="og:description" content="Free digital forensics tools. iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, LAVA, and Batch LEAPP — parse and visualize artifacts from iOS, Android, Windows, and more." />
+  <meta property="og:description" content="Free digital forensics tools. iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP — parse and visualize artifacts from iOS, Android, Windows, and more." />
   <meta property="og:image" content="https://leapps.org/blog/og/default.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -21,7 +21,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="LEAPPs — Digital Forensics Tools" />
-  <meta name="twitter:description" content="Free digital forensics tools. iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, LAVA, and Batch LEAPP — parse and visualize artifacts from iOS, Android, Windows, and more." />
+  <meta name="twitter:description" content="Free digital forensics tools. iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP — parse and visualize artifacts from iOS, Android, Windows, and more." />
   <meta name="twitter:image" content="https://leapps.org/blog/og/default.png" />
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/logos/leapps-favicon-512.png" />
@@ -351,10 +351,14 @@ img { max-width: 100%; display: block; }
 .lp-tool-card-dleapp .lp-tool-tag,
     .lp-tool-card-dleapp .lp-tool-name { color: #B173A9; }
 .lp-tool-card-dleapp .lp-tool-link { border-color: rgba(177,115,169,.3) !important; color: #B173A9 !important; }
-.lp-tool-card-batch { border-left: 2px solid #E8762D; }
+.lp-tool-card-gleapp { border-left: 2px solid #FD9B41; }
+.lp-tool-card-gleapp .lp-tool-tag,
+    .lp-tool-card-gleapp .lp-tool-name { color: #FD9B41; }
+.lp-tool-card-gleapp .lp-tool-link { border-color: rgba(253,155,65,.3) !important; color: #FD9B41 !important; }
+.lp-tool-card-batch { border-left: 2px solid #1FB8A6; }
 .lp-tool-card-batch .lp-tool-tag,
-    .lp-tool-card-batch .lp-tool-name { color: #E8762D; }
-.lp-tool-card-batch .lp-tool-link { border-color: rgba(232,118,45,.3) !important; color: #E8762D !important; }
+    .lp-tool-card-batch .lp-tool-name { color: #1FB8A6; }
+.lp-tool-card-batch .lp-tool-link { border-color: rgba(31,184,166,.3) !important; color: #1FB8A6 !important; }
 .lp-features {
       background: var(--surface);
       border-top: 1px solid var(--border);
@@ -509,8 +513,9 @@ img { max-width: 100%; display: block; }
 .lp-dl-btn-aleapp { border-color: rgba(164,198,57,.4) !important; color: #A4C639 !important; }
 .lp-dl-btn-rleapp { border-color: rgba(75,163,199,.4) !important; color: #4BA3C7 !important; }
 .lp-dl-btn-vleapp { border-color: rgba(83,29,171,.4) !important; color: #531dab !important; }
-.lp-dl-btn-batch { border-color: rgba(232,118,45,.4) !important; color: #E8762D !important; }
+.lp-dl-btn-batch { border-color: rgba(31,184,166,.4) !important; color: #1FB8A6 !important; }
 .lp-dl-btn-dleapp { border-color: rgba(177,115,169,.4) !important; color: #B173A9 !important; }
+.lp-dl-btn-gleapp { border-color: rgba(253,155,65,.4) !important; color: #FD9B41 !important; }
 .lp-dl-btn-lava {
       border-color: rgba(245,192,32,.4) !important;
       color: var(--gold) !important;
@@ -692,8 +697,9 @@ img { max-width: 100%; display: block; }
 .lp-contrib-tag-rleapp { background: rgba(75,163,199,.15); color: #4BA3C7; border: 1px solid rgba(75,163,199,.3); }
 .lp-contrib-tag-vleapp { background: rgba(83,29,171,.15); color: #531dab; border: 1px solid rgba(83,29,171,.3); }
 .lp-contrib-tag-lava { background: rgba(245,192,32,.15); color: var(--gold); border: 1px solid rgba(245,192,32,.3); }
-.lp-contrib-tag-batch { background: rgba(232,118,45,.15); color: #E8762D; border: 1px solid rgba(232,118,45,.3); }
+.lp-contrib-tag-batch { background: rgba(31,184,166,.15); color: #1FB8A6; border: 1px solid rgba(31,184,166,.3); }
 .lp-contrib-tag-dleapp { background: rgba(177,115,169,.15); color: #B173A9; border: 1px solid rgba(177,115,169,.3); }
+.lp-contrib-tag-gleapp { background: rgba(253,155,65,.15); color: #FD9B41; border: 1px solid rgba(253,155,65,.3); }
 .lp-contrib-tag-lang { background: rgba(48,58,106,.25); color: #6b7fd4; border: 1px solid rgba(48,58,106,.6); }
 .lp-contrib-loading { padding: 2rem; text-align: center; font-family: var(--font-mono); font-size: .8rem; color: var(--muted); background: var(--surface); border: 1px solid var(--border); }
 .lp-contrib-toggle {
@@ -822,7 +828,7 @@ img { max-width: 100%; display: block; }
         "name": "LEAPPs",
         "url": "https://leapps.org",
         "logo": "https://leapps.org/logos/LAVA_icon_1024.png",
-        "description": "Free, open-source digital forensics tools for mobile and digital forensics practitioners. Includes iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, LAVA, and Batch LEAPP.",
+        "description": "Free, open-source digital forensics tools for mobile and digital forensics practitioners. Includes iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP.",
         "founder": {
           "@type": "Person",
           "name": "Alexis Brignoni",
@@ -993,11 +999,11 @@ img { max-width: 100%; display: block; }
   <!-- TOOLS -->
   <section class="lp-section" id="tools">
     <span class="lp-section-label">The Suite</span>
-    <h2 class="lp-section-title">Seven Tools.<br>Every Platform.</h2>
+    <h2 class="lp-section-title">Eight Tools.<br>Every Platform.</h2>
     <div class="lp-tools-grid">
       <div class="lp-tool-card lp-tool-card-ileapp">
         <div class="lp-tool-tag">iOS · iPadOS</div>
-        <div class="lp-tool-name"><img src="https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/logos/iLEAPP_icon_1024.png" alt="iLEAPP logo" width="1024" height="1024" class="lp-tool-logo">iLEAPP</div>
+        <div class="lp-tool-name"><img src="/logos/iLEAPP_icon.png" alt="iLEAPP logo" width="354" height="356" class="lp-tool-logo">iLEAPP</div>
         <div class="lp-tool-full">iOS Logs, Events and Plists Parser</div>
         <div class="lp-tool-desc">Parse artifacts from iOS and iPadOS device extractions. Supports full file system, logical, and backup formats.</div>
         <div class="lp-tool-links">
@@ -1007,7 +1013,7 @@ img { max-width: 100%; display: block; }
       </div>
       <div class="lp-tool-card lp-tool-card-aleapp">
         <div class="lp-tool-tag">Android</div>
-        <div class="lp-tool-name"><img src="https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/logos/ALEAPP_icon_1024.png" alt="ALEAPP logo" width="1024" height="1024" class="lp-tool-logo">ALEAPP</div>
+        <div class="lp-tool-name"><img src="/logos/ALEAPP_icon.png" alt="ALEAPP logo" width="354" height="356" class="lp-tool-logo">ALEAPP</div>
         <div class="lp-tool-full">Android Logs, Events and Protobuf Parser</div>
         <div class="lp-tool-desc">Comprehensive artifact parsing for Android devices including databases, logs, and application data.</div>
         <div class="lp-tool-links">
@@ -1017,7 +1023,7 @@ img { max-width: 100%; display: block; }
       </div>
       <div class="lp-tool-card lp-tool-card-rleapp">
         <div class="lp-tool-tag">ISP Returns</div>
-        <div class="lp-tool-name"><img src="https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/logos/RLEAPP_icon_1024.png" alt="RLEAPP logo" width="1024" height="1024" class="lp-tool-logo">RLEAPP</div>
+        <div class="lp-tool-name"><img src="/logos/RLEAPP_icon.png" alt="RLEAPP logo" width="354" height="356" class="lp-tool-logo">RLEAPP</div>
         <div class="lp-tool-full">Returns, Logs, Events and Properties Parser</div>
         <div class="lp-tool-desc">ISP returns artifact parsing. Supports user generated data stores and ISP provided data from social media sites.</div>
         <div class="lp-tool-links">
@@ -1027,7 +1033,7 @@ img { max-width: 100%; display: block; }
       </div>
       <div class="lp-tool-card lp-tool-card-vleapp">
         <div class="lp-tool-tag">Vehicle Systems</div>
-        <div class="lp-tool-name"><img src="https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/logos/VLEAPP_icon_1024.png" alt="VLEAPP logo" width="1024" height="1024" class="lp-tool-logo">VLEAPP</div>
+        <div class="lp-tool-name"><img src="/logos/VLEAPP_icon.png" alt="VLEAPP logo" width="354" height="356" class="lp-tool-logo">VLEAPP</div>
         <div class="lp-tool-full">Vehicle Logs, Events and Plists Parser</div>
         <div class="lp-tool-desc">Emerging vehicle infotainment and telematics forensics. Parse data from connected car systems and IVI units.</div>
         <div class="lp-tool-links">
@@ -1037,7 +1043,7 @@ img { max-width: 100%; display: block; }
       </div>
       <div class="lp-tool-card lp-tool-card-dleapp">
         <div class="lp-tool-tag">Desktop &middot; Other</div>
-        <div class="lp-tool-name"><img src="/logos/DLEAPP_icon_1024.png" alt="DLEAPP logo" width="1024" height="1024" class="lp-tool-logo">DLEAPP</div>
+        <div class="lp-tool-name"><img src="/logos/DLEAPP_icon.png" alt="DLEAPP logo" width="354" height="356" class="lp-tool-logo">DLEAPP</div>
         <div class="lp-tool-full">Desktop Logs, Events and Protobuf Parser</div>
         <div class="lp-tool-desc">Parse desktop application artifacts — and anything that doesn't fit the other LEAPPs.</div>
         <div class="lp-tool-links">
@@ -1045,9 +1051,19 @@ img { max-width: 100%; display: block; }
           <a href="https://leapps.org/releases#section-dleapp" class="lp-tool-link"><i class="ti ti-download"></i>Download</a>
         </div>
       </div>
+      <div class="lp-tool-card lp-tool-card-gleapp">
+        <div class="lp-tool-tag">Images &middot; Video</div>
+        <div class="lp-tool-name"><img src="/logos/GLEAPP_icon.png" alt="GLEAPP logo" width="354" height="356" class="lp-tool-logo">GLEAPP</div>
+        <div class="lp-tool-full">Graphics, Logs, Examination, Automated Processing, Parsing</div>
+        <div class="lp-tool-desc">Triage large sets of images and video. Hash and de-duplicate, read metadata, pull video key frames, match known-hash lists, and review it all in a local gallery.</div>
+        <div class="lp-tool-links">
+          <a href="https://github.com/abrignoni/GLEAPP" class="lp-tool-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a>
+          <a href="https://leapps.org/releases#section-gleapp" class="lp-tool-link"><i class="ti ti-download"></i>Download</a>
+        </div>
+      </div>
       <div class="lp-tool-card lp-tool-card-lava">
         <div class="lp-tool-tag">Visualization</div>
-        <div class="lp-tool-name"><img src="https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/logos/LAVA_icon_1024.png" alt="LAVA logo" width="1024" height="1024" class="lp-tool-logo">LAVA</div>
+        <div class="lp-tool-name"><img src="/logos/LAVA_icon.png" alt="LAVA logo" width="354" height="356" class="lp-tool-logo">LAVA</div>
         <div class="lp-tool-full">LEAPP Artifact Viewer App</div>
         <div class="lp-tool-desc">Turn parsed data into clear visual reports.</div>
         <div class="lp-tool-links">
@@ -1125,7 +1141,7 @@ img { max-width: 100%; display: block; }
       <div>
         <div class="lp-version-badge">Latest Release</div>
         <h3>Full LEAPP Suite</h3>
-        <p>The full suite in one place. Visit the releases page for the latest stable versions of iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, LAVA, and Batch LEAPP.</p>
+        <p>The full suite in one place. Visit the releases page for the latest stable versions of iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP.</p>
         <div class="lp-dl-os">
           <a href="https://leapps.org/releases" class="lp-dl-btn"><i class="ti ti-download"></i>All Releases</a>
           <a href="https://github.com/abrignoni" class="lp-dl-btn" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a>
@@ -1137,6 +1153,7 @@ img { max-width: 100%; display: block; }
         <a href="https://github.com/abrignoni/RLEAPP" class="lp-dl-btn lp-dl-btn-rleapp" target="_blank" rel="noopener noreferrer">RLEAPP ↗</a>
         <a href="https://github.com/abrignoni/VLEAPP" class="lp-dl-btn lp-dl-btn-vleapp" target="_blank" rel="noopener noreferrer">VLEAPP ↗</a>
         <a href="https://github.com/abrignoni/DLEAPP" class="lp-dl-btn lp-dl-btn-dleapp" target="_blank" rel="noopener noreferrer">DLEAPP ↗</a>
+        <a href="https://github.com/abrignoni/GLEAPP" class="lp-dl-btn lp-dl-btn-gleapp" target="_blank" rel="noopener noreferrer">GLEAPP ↗</a>
         <a href="https://leapps.org/releases" class="lp-dl-btn lp-dl-btn-lava">LAVA ↗</a>
         <a href="https://leapps.org/releases#section-batch-leapp" class="lp-dl-btn lp-dl-btn-batch">Batch LEAPP ↗</a>
       </div>
@@ -1156,7 +1173,7 @@ img { max-width: 100%; display: block; }
             <span class="lp-faq-q">What are the LEAPPs tools?</span>
             <i class="ti ti-chevron-down lp-faq-chev" aria-hidden="true"></i>
           </button>
-          <div class="lp-faq-answer">LEAPPs is a family of free digital forensics tools — iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, LAVA, and Batch LEAPP — designed to parse and analyze artifacts from mobile devices, ISP data returns, vehicle systems, and more. They are widely used by law enforcement, examiners, and forensics researchers worldwide.</div>
+          <div class="lp-faq-answer">LEAPPs is a family of free digital forensics tools — iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP — designed to parse and analyze artifacts from mobile devices, ISP data returns, vehicle systems, and more. They are widely used by law enforcement, examiners, and forensics researchers worldwide.</div>
         </div>
 
         <div class="lp-faq-item">
@@ -1412,6 +1429,7 @@ img { max-width: 100%; display: block; }
         { name: 'RLEAPP',  repo: 'abrignoni/RLEAPP' },
         { name: 'VLEAPP',  repo: 'abrignoni/VLEAPP' },
         { name: 'DLEAPP',  repo: 'abrignoni/DLEAPP' },
+        { name: 'GLEAPP',  repo: 'abrignoni/GLEAPP' },
         { name: 'Batch LEAPP', repo: 'abrignoni/batch-leapp' },
       ];
 
@@ -1427,7 +1445,7 @@ img { max-width: 100%; display: block; }
       }
 
       function buildRow(c) {
-        const toolClass = { 'iLEAPP': 'ileapp', 'ALEAPP': 'aleapp', 'RLEAPP': 'rleapp', 'VLEAPP': 'vleapp', 'DLEAPP': 'dleapp', 'LAVA': 'lava', 'Batch LEAPP': 'batch' };
+        const toolClass = { 'iLEAPP': 'ileapp', 'ALEAPP': 'aleapp', 'RLEAPP': 'rleapp', 'VLEAPP': 'vleapp', 'DLEAPP': 'dleapp', 'GLEAPP': 'gleapp', 'LAVA': 'lava', 'Batch LEAPP': 'batch' };
         const tools = c.tools.map(t => {
           const cls = toolClass[t];
           return `<span class="lp-contrib-tag${cls ? ' lp-contrib-tag-' + cls : ''}">${t}</span>`;
@@ -1591,6 +1609,7 @@ img { max-width: 100%; display: block; }
         { name: 'RLEAPP',  repo: 'abrignoni/RLEAPP' },
         { name: 'VLEAPP',  repo: 'abrignoni/VLEAPP' },
         { name: 'DLEAPP',  repo: 'abrignoni/DLEAPP' },
+        { name: 'GLEAPP',  repo: 'abrignoni/GLEAPP' },
         { name: 'LAVA',    repo: 'leapps-org/LAVA-releases' },
       ];
       try {

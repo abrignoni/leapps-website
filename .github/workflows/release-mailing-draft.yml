@@ -1,7 +1,7 @@
 name: Release mailing list draft
 
 # Creates ONE Mailjet campaign draft digesting releases across the LEAPP repos
-# (iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, LAVA, Batch LEAPP). It has no
+# (iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, Batch LEAPP). It has no
 # schedule: start it by hand when a mailer is needed. The draft is NOT sent;
 # review and send it from the Mailjet dashboard (Campaigns → Drafts).
 #

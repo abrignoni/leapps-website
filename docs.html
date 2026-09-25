@@ -59,6 +59,7 @@
 .lp-decision-card-tag.rleapp { color: var(--color-rleapp); }
 .lp-decision-card-tag.vleapp { color: var(--color-vleapp); }
 .lp-decision-card-tag.dleapp { color: #B173A9; }
+.lp-decision-card-tag.gleapp { color: #FD9B41; }
 .lp-decision-card-title { font-family: var(--font-head); font-size: 1rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: .2rem; }
 .lp-decision-card-sub { font-size: .78rem; color: var(--muted); }
 .lp-code { background: #0a0a0a; border: 1px solid var(--border); border-left: 3px solid var(--gold); padding: 1rem 1.25rem; font-family: var(--font-mono); font-size: .8rem; color: #c8c3b8; line-height: 1.8; overflow-x: auto; margin-bottom: .75rem; position: relative; }
@@ -74,6 +75,7 @@
 .lp-pill.aleapp { color: var(--color-aleapp); border-color: rgba(164,198,57,.4); }
 .lp-pill.rleapp { color: var(--color-rleapp); border-color: rgba(75,163,199,.4); }
 .lp-pill.vleapp { color: var(--color-vleapp); border-color: rgba(83,29,171,.4); }
+.lp-pill.gleapp { color: #FD9B41; border-color: rgba(253,155,65,.4); }
 .lp-pill.lava { color: var(--color-lava);  border-color: rgba(245,192,32,.4); }
 .lp-lava-callout { background: var(--surface); border: 1px solid rgba(245,192,32,.3); border-left: 3px solid var(--gold); padding: 1.5rem; margin-top: 1.25rem; }
 .lp-lava-callout-head { display: flex; align-items: center; gap: .6rem; font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; }
@@ -117,7 +119,7 @@
     "url": "https://leapps.org/docs",
     "description": "Get started with LEAPPs digital forensics tools — pick your tool, run your first extraction, and read your report with LAVA.",
     "step": [
-      { "@type": "HowToStep", "position": 1, "name": "Pick Your Tool", "text": "Choose iLEAPP, ALEAPP, RLEAPP, or VLEAPP based on the device or data type you are analyzing." },
+      { "@type": "HowToStep", "position": 1, "name": "Pick Your Tool", "text": "Choose iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, or GLEAPP based on the device or data type you are analyzing." },
       { "@type": "HowToStep", "position": 2, "name": "Get Your Extraction", "text": "Acquire a supported extraction using your preferred forensic acquisition tool." },
       { "@type": "HowToStep", "position": 3, "name": "Install & Run", "text": "Install Python dependencies and run the tool against your extraction folder via GUI or command line." },
       { "@type": "HowToStep", "position": 4, "name": "Read Your Report", "text": "Open index.html in your output folder or load the report into LAVA for a richer experience." },
@@ -249,6 +251,11 @@
             <div class="lp-decision-card-title">Desktop &amp; Other</div>
             <div class="lp-decision-card-sub">Desktop app artifacts &amp; anything that doesn't fit the other LEAPPs</div>
           </a>
+          <a href="https://leapps.org/releases#section-gleapp" class="lp-decision-card">
+            <div class="lp-decision-card-tag gleapp">GLEAPP</div>
+            <div class="lp-decision-card-title">Images &amp; Video</div>
+            <div class="lp-decision-card-sub">Triage large media sets: hashing, de-duplication, known-hash matching &amp; a review gallery</div>
+          </a>
         </div>
         <p style="font-size:.78rem;color:var(--muted);font-family:var(--font-mono);">Not sure? Check the <a href="https://leapps.org/artifacts" style="color:var(--gold);text-decoration:none;">Artifacts page</a> to see which tool covers the data you need. Prefer a PDF? Browse the <a href="https://leapps.org/guides" style="color:var(--gold);text-decoration:none;">downloadable guides</a>.</p>
       </div>
@@ -288,6 +295,11 @@
               <td><span class="lp-pill vleapp">VLEAPP</span></td>
               <td>Vehicle system image</td>
               <td>Logical acquisitions</td>
+            </tr>
+            <tr>
+              <td><span class="lp-pill gleapp">GLEAPP</span></td>
+              <td>Folder of media, full file system extraction, E01 or raw disk image</td>
+              <td>Cellebrite UFED, GrayKey, EnCase/E01, raw dd images</td>
             </tr>
           </tbody>
         </table>
@@ -374,7 +386,7 @@
             <li><i class="ti ti-filter"></i>Filter artifacts by category, date, or keyword to zero in on relevant data</li>
             <li><i class="ti ti-file-export"></i>Export findings for reports and documentation</li>
           </ul>
-          <p>LAVA works with output from iLEAPP, ALEAPP, RLEAPP, and VLEAPP. <a href="https://github.com/leapps-org/LAVA-releases" target="_blank" rel="noopener noreferrer">View LAVA on GitHub →</a></p>
+          <p>LAVA works with output from iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, and GLEAPP. <a href="https://github.com/leapps-org/LAVA-releases" target="_blank" rel="noopener noreferrer">View LAVA on GitHub →</a></p>
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stats — LEAPPs</title>
-  <meta name="description" content="Live stats for the LEAPPs digital forensics tools — downloads, stars, contributors, releases, and commits across iLEAPP, ALEAPP, RLEAPP, and VLEAPP." />
+  <meta name="description" content="Live stats for the LEAPPs digital forensics tools — downloads, stars, contributors, releases, and commits across iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP." />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://leapps.org/stats" />
@@ -208,7 +208,7 @@
     <div class="lp-header-inner">
       <span class="lp-eyebrow">Project Health</span>
       <h1>LEAPP<span>s</span> Stats</h1>
-      <p>Live metrics across iLEAPP, ALEAPP, RLEAPP, and VLEAPP. Data pulled directly from GitHub.</p>
+      <p>Live metrics across iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP. Data pulled directly from GitHub.</p>
       <div class="lp-updated" id="lp-updated">Fetching data…</div>
     </div>
   </header>
@@ -377,8 +377,9 @@
       { name: 'RLEAPP', platform: 'ISP Returns',     repo: 'abrignoni/RLEAPP',         openSource: true,  color: '#4BA3C7' },
       { name: 'VLEAPP', platform: 'Vehicle Systems', repo: 'abrignoni/VLEAPP',         openSource: true,  color: '#531dab' },
       { name: 'DLEAPP', platform: 'Desktop · Other', repo: 'abrignoni/DLEAPP',         openSource: true,  color: '#B173A9' },
+      { name: 'GLEAPP', platform: 'Images · Video',   repo: 'abrignoni/GLEAPP',         openSource: true,  color: '#FD9B41' },
       { name: 'LAVA',   platform: 'All Platforms',   repo: 'leapps-org/LAVA-releases', openSource: false, color: '#F5C020' },
-      { name: 'Batch LEAPP', platform: 'Automation',  repo: 'abrignoni/batch-leapp',    openSource: true,  color: '#E8762D' },
+      { name: 'Batch LEAPP', platform: 'Automation',  repo: 'abrignoni/batch-leapp',    openSource: true,  color: '#1FB8A6' },
     ];
 
     function fmt(n) {
@@ -592,8 +593,8 @@
     fetchGuideCounts();
 
     // Download history section
-    const TOOL_COLORS = { ileapp: '#E30613', aleapp: '#A4C639', rleapp: '#4BA3C7', vleapp: '#531dab', dleapp: '#B173A9', lava: '#F5C020', batchleapp: '#E8762D' };
-    const TOOL_LABELS = { ileapp: 'iLEAPP', aleapp: 'ALEAPP', rleapp: 'RLEAPP', vleapp: 'VLEAPP', dleapp: 'DLEAPP', lava: 'LAVA', batchleapp: 'Batch LEAPP' };
+    const TOOL_COLORS = { ileapp: '#E30613', aleapp: '#A4C639', rleapp: '#4BA3C7', vleapp: '#531dab', dleapp: '#B173A9', gleapp: '#FD9B41', lava: '#F5C020', batchleapp: '#1FB8A6' };
+    const TOOL_LABELS = { ileapp: 'iLEAPP', aleapp: 'ALEAPP', rleapp: 'RLEAPP', vleapp: 'VLEAPP', dleapp: 'DLEAPP', gleapp: 'GLEAPP', lava: 'LAVA', batchleapp: 'Batch LEAPP' };
     let dlHistoryChart = null;
     let dlSnapshots = [];
 
