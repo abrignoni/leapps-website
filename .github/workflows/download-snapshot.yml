@@ -42,6 +42,7 @@ jobs:
             'vleapp': 'abrignoni/VLEAPP',
             'lava':   'leapps-org/LAVA-releases',
             'dleapp': 'abrignoni/DLEAPP',
+            'gleapp': 'abrignoni/GLEAPP',
             'batchleapp': 'abrignoni/batch-leapp',
           }
 

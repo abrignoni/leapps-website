@@ -466,6 +466,7 @@
     <a href="#section-rleapp" onclick="closeMobileMenu()">RLEAPP</a>
     <a href="#section-vleapp" onclick="closeMobileMenu()">VLEAPP</a>
     <a href="#section-dleapp" onclick="closeMobileMenu()">DLEAPP</a>
+    <a href="#section-gleapp" onclick="closeMobileMenu()">GLEAPP</a>
     <a href="#section-batch-leapp" onclick="closeMobileMenu()">Batch LEAPP</a>
     <a href="https://leapps.org/stats" onclick="closeMobileMenu()">Stats</a>
     <a href="https://leapps.org/changelog" onclick="closeMobileMenu()">Changelog</a>
@@ -497,6 +498,7 @@
         <a href="#section-rleapp" class="lp-tool-pill">RLEAPP</a>
         <a href="#section-vleapp" class="lp-tool-pill">VLEAPP</a>
         <a href="#section-dleapp" class="lp-tool-pill">DLEAPP</a>
+        <a href="#section-gleapp" class="lp-tool-pill">GLEAPP</a>
         <a href="#section-batch-leapp" class="lp-tool-pill">Batch LEAPP</a>
       </div>
     </div>
@@ -515,6 +517,7 @@
         <li><a href="#section-rleapp"><i class="ti ti-file-import"></i>RLEAPP</a></li>
         <li><a href="#section-vleapp"><i class="ti ti-car"></i>VLEAPP</a></li>
         <li><a href="#section-dleapp"><i class="ti ti-device-desktop"></i>DLEAPP</a></li>
+        <li><a href="#section-gleapp"><i class="ti ti-photo"></i>GLEAPP</a></li>
         <li><a href="#section-batch-leapp"><i class="ti ti-stack-2"></i>Batch LEAPP</a></li>
         <li><a href="#code-signing-policy"><i class="ti ti-shield-check"></i>Code signing policy</a></li>
       </ul>
@@ -545,6 +548,8 @@
               <li><a href="#section-ileapp">iLEAPP — iOS/iPadOS artifacts</a></li>
               <li><a href="#section-rleapp">RLEAPP — ISP Returns artifacts</a></li>
               <li><a href="#section-vleapp">VLEAPP — Vehicle artifacts</a></li>
+              <li><a href="#section-dleapp">DLEAPP — Desktop artifacts</a></li>
+              <li><a href="#section-gleapp">GLEAPP — Image and video triage</a></li>
             </ul>
           </div>
         </div>
@@ -703,6 +708,42 @@
         <a href="https://github.com/abrignoni/DLEAPP/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all DLEAPP releases on GitHub</a>
       </section>
 
+      <!-- GLEAPP -->
+      <section class="lp-tool-section" id="section-gleapp">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Images &middot; Video</div>
+            <h2>GLEAPP</h2>
+            <div class="lp-tool-fullname">Graphics, Logs, Examination, Automated Processing, Parsing</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-gleapp"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-gleapp"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/GLEAPP" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What is GLEAPP?</h3>
+            <p>Triage and analysis for large sets of images and video. GLEAPP ingests media from folders, full file system extractions and disk images, hashes and de-duplicates it, reads metadata, pulls video key frames, matches known-hash lists, and opens a local review gallery to work the backlog in.</p>
+            <p>It is a tool for authorized examiners. It ships no illegal-content hash database, downloads nothing, and performs no content classification: categorizing a file is always the examiner's decision.</p>
+          </div>
+          <div>
+            <h3>Highlights</h3>
+            <ul>
+              <li>Reads folders, full file system extractions, and E01 or raw disk images, walking each file system file by file, with optional recovery of deleted media</li>
+              <li>Exact and visual de-duplication, EXIF and GPS metadata, video key frames, and known-hash matching (Project VIC, CAID-style, CSV, and the NSRL RDS)</li>
+              <li>HTML contact sheet, CSV, JSON, KMZ, and a LAVA project as output</li>
+              <li>Installers for Windows, macOS (Apple silicon and Intel), and Linux, so no Python is needed</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lp-status-bar">
+          <div class="lp-status-dot"></div>
+          <span class="lp-status-text">Live releases</span>
+        </div>
+        <div id="releases-gleapp" class="lp-releases-list">
+          <div class="lp-loading"><span>Fetching releases&hellip;</span></div>
+        </div>
+        <a href="https://github.com/abrignoni/GLEAPP/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all GLEAPP releases on GitHub</a>
+      </section>
+
       <!-- BATCH LEAPP -->
       <section class="lp-tool-section" id="section-batch-leapp">
         <div class="lp-tool-header">
@@ -750,7 +791,7 @@
         <div class="lp-about-box">
           <div>
             <h3>Status</h3>
-            <p>The Windows builds are not signed yet. We are applying to SignPath Foundation's free code signing program for open source projects, and this policy applies to every Windows release of iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP signed under it.</p>
+            <p>The Windows builds are not signed yet. We are applying to SignPath Foundation's free code signing program for open source projects, and this policy applies to every Windows release of iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP and GLEAPP signed under it.</p>
             <p>Free code signing provided by <a href="https://about.signpath.io" target="_blank" rel="noopener noreferrer">SignPath.io</a>, certificate by <a href="https://signpath.org" target="_blank" rel="noopener noreferrer">SignPath Foundation</a>.</p>
             <p>Signed builds will be made from source by GitHub Actions in each tool's own repository, and each release will be signed only after an approver confirms it.</p>
           </div>
@@ -824,6 +865,7 @@
       { id: 'rleapp', name: 'RLEAPP', repo: 'abrignoni/RLEAPP' },
       { id: 'vleapp', name: 'VLEAPP', repo: 'abrignoni/VLEAPP' },
       { id: 'dleapp', name: 'DLEAPP', repo: 'abrignoni/DLEAPP' },
+      { id: 'gleapp', name: 'GLEAPP', repo: 'abrignoni/GLEAPP' },
       { id: 'batch-leapp', name: 'Batch LEAPP', repo: 'abrignoni/batch-leapp' },
     ];
 

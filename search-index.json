@@ -78,6 +78,12 @@
     "excerpt": "Parse desktop application artifacts (Electron, Chromium) and any artifact that doesn't fit the platform-specific LEAPPs."
   },
   {
+    "title": "GLEAPP — Graphics Logs Examination Automated Processing Parsing",
+    "url": "https://leapps.org/releases#section-gleapp",
+    "page": "Releases",
+    "excerpt": "Triage large sets of images and video: hashing, de-duplication, metadata, video key frames, known-hash matching, and a local review gallery."
+  },
+  {
     "title": "About LEAPPs",
     "url": "https://leapps.org/about",
     "page": "About",
