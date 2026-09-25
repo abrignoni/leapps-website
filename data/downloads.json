@@ -1198,13 +1198,13 @@
     {
       "date": "2026-09-25",
       "totals": {
-        "ileapp": 93639,
-        "aleapp": 70477,
-        "rleapp": 5342,
+        "ileapp": 93672,
+        "aleapp": 70515,
+        "rleapp": 5343,
         "vleapp": 2307,
-        "lava": 3282,
-        "dleapp": 887,
-        "batchleapp": 487
+        "lava": 3298,
+        "dleapp": 893,
+        "batchleapp": 488
       }
     }
   ]
