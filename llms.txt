@@ -1,6 +1,6 @@
 # LEAPPs
 
-> Free, open-source digital forensics tools for practitioners worldwide. The LEAPP family parses logs, events, plists, and app data from iOS, Android, ISP warrant returns, and vehicle systems, producing readable reports plus LAVA projects for interactive review. Created by Alexis Brignoni and maintained by a global community.
+> Free, open-source digital forensics tools for practitioners worldwide. The LEAPP family parses logs, events, plists, and app data from iOS, Android, ISP warrant returns, vehicle systems and desktop applications, and triages images and video, producing readable reports plus LAVA projects for interactive review. Created by Alexis Brignoni and maintained by a global community.
 
 ## Tools
 

@@ -3,7 +3,7 @@
     "title": "Quick Start — Pick Your Tool",
     "url": "https://leapps.org/docs#step-1",
     "page": "Docs",
-    "excerpt": "Choose iLEAPP for iOS, ALEAPP for Android, RLEAPP for ISP and carrier returns, or VLEAPP for vehicle systems."
+    "excerpt": "Choose iLEAPP for iOS, ALEAPP for Android, RLEAPP for ISP and carrier returns, VLEAPP for vehicle systems, DLEAPP for desktop apps, or GLEAPP for images and video."
   },
   {
     "title": "Quick Start — Get Your Extraction",
@@ -105,13 +105,13 @@
     "title": "Artifacts — Browse All Supported Artifacts",
     "url": "https://leapps.org/artifacts",
     "page": "Artifacts",
-    "excerpt": "Searchable and filterable list of all artifacts supported by iLEAPP, ALEAPP, RLEAPP, and VLEAPP."
+    "excerpt": "Searchable and filterable list of all artifacts supported by iLEAPP, ALEAPP, RLEAPP, VLEAPP, and DLEAPP."
   },
   {
     "title": "Changelog — Release History",
     "url": "https://leapps.org/changelog",
     "page": "Changelog",
-    "excerpt": "Unified release history across all LEAPPs tools — iLEAPP, ALEAPP, RLEAPP, VLEAPP, and LAVA."
+    "excerpt": "Unified release history across all LEAPPs tools — iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP."
   },
   {
     "title": "Stats — Live Project Statistics",
@@ -123,7 +123,7 @@
     "title": "Scoreboard — Contributor Rankings",
     "url": "https://leapps.org/scoreboard",
     "page": "Scoreboard",
-    "excerpt": "Contributor rankings based on merged pull requests across iLEAPP, ALEAPP, RLEAPP, and VLEAPP."
+    "excerpt": "Contributor rankings based on merged pull requests across iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, and Batch LEAPP."
   },
   {
     "title": "Resources — Guides, Videos, and Community",
