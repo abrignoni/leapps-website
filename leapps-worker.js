@@ -270,6 +270,9 @@ async function handleChangelogFeed(env) {
     { name: 'ALEAPP', repo: 'abrignoni/ALEAPP' },
     { name: 'RLEAPP', repo: 'abrignoni/RLEAPP' },
     { name: 'VLEAPP', repo: 'abrignoni/VLEAPP' },
+    { name: 'DLEAPP', repo: 'abrignoni/DLEAPP' },
+    { name: 'GLEAPP', repo: 'abrignoni/GLEAPP' },
+    { name: 'Batch LEAPP', repo: 'abrignoni/batch-leapp' },
     { name: 'LAVA',   repo: 'leapps-org/LAVA-releases' },
   ];
 
@@ -326,7 +329,7 @@ async function handleChangelogFeed(env) {
   <channel>
     <title>LEAPPs Changelog</title>
     <link>https://leapps.org/changelog</link>
-    <description>Unified release history across iLEAPP, ALEAPP, RLEAPP, VLEAPP, and LAVA.</description>
+    <description>Unified release history across iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP.</description>
     <language>en-us</language>
     <atom:link href="https://leapps-api.4n6-198.workers.dev/changelog/feed" rel="self" type="application/rss+xml" />
     ${items}

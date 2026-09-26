@@ -26,6 +26,9 @@ const TOOLS = {
   aleapp: { color: '#A4C639', label: 'ALEAPP' },
   rleapp: { color: '#4BA3C7', label: 'RLEAPP' },
   vleapp: { color: '#531dab', label: 'VLEAPP' },
+  dleapp: { color: '#B173A9', label: 'DLEAPP' },
+  gleapp: { color: '#FD9B41', label: 'GLEAPP' },
+  batch:  { color: '#1FB8A6', label: 'BATCH LEAPP' },
   lava:   { color: GOLD,      label: 'LAVA'   },
 };
 
@@ -129,7 +132,7 @@ async function main() {
   // site-wide card — used as the OG image for non-blog pages, and as the blog fallback
   await render(card({
     title: 'Leap ahead of the evidence',
-    footerLeft: 'iLEAPP · ALEAPP · RLEAPP · VLEAPP · LAVA',
+    footerLeft: 'iLEAPP·ALEAPP·RLEAPP·VLEAPP·DLEAPP·GLEAPP·LAVA',
     accent: GOLD,
     eyebrowMain: 'DIGITAL FORENSICS TOOLS',
     eyebrowAccent: null,
