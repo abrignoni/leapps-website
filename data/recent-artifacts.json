@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "windowsErrorReporting",
-      "query": "windowsErrorReporting",
+      "name": "macosSavedState",
+      "query": "macosSavedState",
       "tool": "DLEAPP",
       "date": "2026-09-26"
     },
@@ -33,8 +33,8 @@
       "date": "2026-08-30"
     },
     {
-      "name": "windowsPSReadLine",
-      "query": "windowsPSReadLine",
+      "name": "macosApplicationFirewall",
+      "query": "macosApplicationFirewall",
       "tool": "DLEAPP",
       "date": "2026-09-26"
     },
@@ -63,8 +63,8 @@
       "date": "2026-08-30"
     },
     {
-      "name": "firefoxProfiles",
-      "query": "firefoxProfiles",
+      "name": "windowsAnswerFiles",
+      "query": "windowsAnswerFiles",
       "tool": "DLEAPP",
       "date": "2026-09-26"
     },
