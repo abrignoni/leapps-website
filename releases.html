@@ -507,6 +507,7 @@
     <a href="#section-dleapp" onclick="closeMobileMenu()">DLEAPP</a>
     <a href="#section-gleapp" onclick="closeMobileMenu()">GLEAPP</a>
     <a href="#section-batch-leapp" onclick="closeMobileMenu()">Batch LEAPP</a>
+    <a href="#section-qnxprobe" onclick="closeMobileMenu()">qnxprobe</a>
     <a href="https://leapps.org/stats" onclick="closeMobileMenu()">Stats</a>
     <a href="https://leapps.org/changelog" onclick="closeMobileMenu()">Changelog</a>
     <a href="https://leapps.org/artifacts" onclick="closeMobileMenu()">Artifacts</a>
@@ -539,6 +540,7 @@
         <a href="#section-dleapp" class="lp-tool-pill">DLEAPP</a>
         <a href="#section-gleapp" class="lp-tool-pill">GLEAPP</a>
         <a href="#section-batch-leapp" class="lp-tool-pill">Batch LEAPP</a>
+        <a href="#section-qnxprobe" class="lp-tool-pill">qnxprobe</a>
       </div>
     </div>
   </header>
@@ -558,6 +560,7 @@
         <li><a href="#section-dleapp"><i class="ti ti-device-desktop"></i>DLEAPP</a></li>
         <li><a href="#section-gleapp"><i class="ti ti-photo"></i>GLEAPP</a></li>
         <li><a href="#section-batch-leapp"><i class="ti ti-stack-2"></i>Batch LEAPP</a></li>
+        <li><a href="#section-qnxprobe"><i class="ti ti-cpu"></i>qnxprobe</a></li>
         <li><a href="#code-signing-policy"><i class="ti ti-shield-check"></i>Code signing policy</a></li>
       </ul>
     </aside>
@@ -818,6 +821,42 @@
         <a href="https://github.com/abrignoni/batch-leapp/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all Batch LEAPP releases on GitHub</a>
       </section>
 
+      <!-- QNXPROBE -->
+      <section class="lp-tool-section" id="section-qnxprobe">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Disk images &middot; Flash dumps</div>
+            <h2>qnxprobe</h2>
+            <div class="lp-tool-fullname">Identify, list and extract filesystems out of raw images</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-qnxprobe"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-qnxprobe"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/qnxprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What is qnxprobe?</h3>
+            <p>A head unit image lands on your desk and the first question is what is actually in it. The partition table will call a qnx6 volume Linux, and the usual tools have no QNX support at all. qnxprobe identifies each volume by its own on-disk structure instead of the type byte, then lists it and extracts to a zip with a provenance manifest.</p>
+            <p>One Python file, standard library only. Nothing to install, no admin rights, and it never writes to the image.</p>
+          </div>
+          <div>
+            <h3>Highlights</h3>
+            <ul>
+              <li>QNX6, QNX4, ETFS, EFS and QNX IFS boot images, alongside ext2/3/4, F2FS, FAT32, exFAT, NTFS, HFS+ and APFS</li>
+              <li>Since v1.31, the filesystems embedded Linux keeps on flash: SquashFS, JFFS2, UBI with the UBIFS inside it, and YAFFS1 and YAFFS2</li>
+              <li>Finds them inside a raw chip dump that has no partition table, and reads NAND pages that still carry their spare bytes</li>
+              <li>Prebuilt executables for Windows, macOS and Linux, or run the Python file as it is</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lp-status-bar">
+          <div class="lp-status-dot"></div>
+          <span class="lp-status-text">Live releases</span>
+        </div>
+        <div id="releases-qnxprobe" class="lp-releases-list">
+          <div class="lp-loading"><span>Fetching releases&hellip;</span></div>
+        </div>
+        <a href="https://github.com/abrignoni/qnxprobe/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all qnxprobe releases on GitHub</a>
+      </section>
+
       <!-- CODE SIGNING POLICY -->
       <section class="lp-tool-section" id="code-signing-policy">
         <div class="lp-tool-header">
@@ -906,6 +945,7 @@
       { id: 'dleapp', name: 'DLEAPP', repo: 'abrignoni/DLEAPP' },
       { id: 'gleapp', name: 'GLEAPP', repo: 'abrignoni/GLEAPP' },
       { id: 'batch-leapp', name: 'Batch LEAPP', repo: 'abrignoni/batch-leapp' },
+      { id: 'qnxprobe', name: 'qnxprobe', repo: 'abrignoni/qnxprobe' },
     ];
 
     // Classify an asset from its filename: OS, architecture, and GUI/CLI
