@@ -3,15 +3,15 @@
   "window_days": 45,
   "items": [
     {
+      "name": "windowsErrorReporting",
+      "query": "windowsErrorReporting",
+      "tool": "DLEAPP",
+      "date": "2026-09-26"
+    },
+    {
       "name": "robinhoodReturns",
       "query": "robinhoodReturns",
       "tool": "RLEAPP",
-      "date": "2026-09-25"
-    },
-    {
-      "name": "macosFileProvider",
-      "query": "macosFileProvider",
-      "tool": "DLEAPP",
       "date": "2026-09-25"
     },
     {
@@ -33,16 +33,16 @@
       "date": "2026-08-30"
     },
     {
+      "name": "windowsPSReadLine",
+      "query": "windowsPSReadLine",
+      "tool": "DLEAPP",
+      "date": "2026-09-26"
+    },
+    {
       "name": "coinbaseComplianceReport",
       "query": "coinbaseComplianceReport",
       "tool": "RLEAPP",
       "date": "2026-09-23"
-    },
-    {
-      "name": "threemaDesktop",
-      "query": "threemaDesktop",
-      "tool": "DLEAPP",
-      "date": "2026-09-25"
     },
     {
       "name": "AIChatbotNovaConversations",
@@ -63,16 +63,16 @@
       "date": "2026-08-30"
     },
     {
+      "name": "firefoxProfiles",
+      "query": "firefoxProfiles",
+      "tool": "DLEAPP",
+      "date": "2026-09-26"
+    },
+    {
       "name": "facebookArchive",
       "query": "facebookArchive",
       "tool": "RLEAPP",
       "date": "2026-09-22"
-    },
-    {
-      "name": "potatoDesktop",
-      "query": "potatoDesktop",
-      "tool": "DLEAPP",
-      "date": "2026-09-25"
     }
   ]
 }
