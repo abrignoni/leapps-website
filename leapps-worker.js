@@ -29,6 +29,7 @@ const ALLOWED_REPOS = [
   'abrignoni/DLEAPP',
   'abrignoni/GLEAPP',
   'abrignoni/batch-leapp',
+  'abrignoni/qnxprobe',
   'leapps-org/LAVA-releases',
   'leapps-org/leapps-language-resources',
 ];

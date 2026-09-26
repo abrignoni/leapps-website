@@ -66,6 +66,12 @@
     "excerpt": "Run iLEAPP, ALEAPP, RLEAPP, or VLEAPP across a whole folder of extractions with one report index, SHA-256 manifest, and GUI or CLI."
   },
   {
+    "title": "qnxprobe — filesystem identification and extraction",
+    "url": "https://leapps.org/releases#section-qnxprobe",
+    "page": "Releases",
+    "excerpt": "Identify, list and extract QNX6, QNX4, ETFS, EFS, ext2/3/4, F2FS, FAT32, exFAT, NTFS, HFS+, APFS and the Linux flash filesystems SquashFS, JFFS2, UBI/UBIFS and YAFFS out of raw disk images and flash dumps."
+  },
+  {
     "title": "Install with Homebrew (macOS)",
     "url": "https://leapps.org/releases",
     "page": "Releases",
