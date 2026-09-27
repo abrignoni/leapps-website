@@ -67,9 +67,27 @@
   },
   {
     "title": "qnxprobe — filesystem identification and extraction",
-    "url": "https://leapps.org/releases#section-qnxprobe",
-    "page": "Releases",
+    "url": "https://leapps.org/probes#section-qnxprobe",
+    "page": "Probes",
     "excerpt": "Identify, list and extract QNX6, QNX4, ETFS, EFS, ext2/3/4, F2FS, FAT32, exFAT, NTFS, HFS+, APFS and the Linux flash filesystems SquashFS, JFFS2, UBI/UBIFS and YAFFS out of raw disk images and flash dumps."
+  },
+  {
+    "title": "ewfprobe — EnCase/EWF (.E01) image reader",
+    "url": "https://leapps.org/probes#section-ewfprobe",
+    "page": "Probes",
+    "excerpt": "Read-only reader for E01 forensic images: joins segment sets, verifies the stored MD5 and SHA-1, and exports to raw. One Python file, standard library only."
+  },
+  {
+    "title": "exoprobe — ExoPlayer cached media",
+    "url": "https://leapps.org/probes#section-exoprobe",
+    "page": "Probes",
+    "excerpt": "Rejoins the media Android apps cached through ExoPlayer, joining DASH and HLS streams in the order their cached manifests list them, and puts video and audio into one MP4 without re-encoding."
+  },
+  {
+    "title": "Probes — standalone forensic readers",
+    "url": "https://leapps.org/probes",
+    "page": "Probes",
+    "excerpt": "Single-purpose readers that sit beside the LEAPPs: qnxprobe, ewfprobe and exoprobe. One Python file each, standard library only, never writing to the evidence they read."
   },
   {
     "title": "Install with Homebrew (macOS)",

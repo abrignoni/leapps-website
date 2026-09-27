@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Releases — LEAPPs</title>
-  <meta name="description" content="Download the latest releases of iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP — free open-source digital forensics tools." />
+  <title>Probes — LEAPPs</title>
+  <meta name="description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for E01 images, exoprobe for media Android apps cached through ExoPlayer. One Python file each, standard library only." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://leapps.org/releases" />
-  <meta property="og:title" content="Releases — LEAPPs" />
-  <meta property="og:description" content="Download the latest releases of iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP — free open-source digital forensics tools." />
+  <meta property="og:url" content="https://leapps.org/probes" />
+  <meta property="og:title" content="Probes — LEAPPs" />
+  <meta property="og:description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for E01 images, exoprobe for media Android apps cached through ExoPlayer. One Python file each, standard library only." />
   <meta property="og:image" content="https://leapps.org/blog/og/default.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -20,8 +20,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Releases — LEAPPs" />
-  <meta name="twitter:description" content="Download the latest releases of iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP — free open-source digital forensics tools." />
+  <meta name="twitter:title" content="Probes — LEAPPs" />
+  <meta name="twitter:description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for E01 images, exoprobe for media Android apps cached through ExoPlayer. One Python file each, standard library only." />
   <meta name="twitter:image" content="https://leapps.org/blog/og/default.png" />
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/logos/leapps-favicon-512.png" />
@@ -29,7 +29,7 @@
   <meta name="theme-color" content="#F5C020" />
   <meta name="author" content="Alexis Brignoni" />
   <meta name="google-site-verification" content="4NRgfrYq66eJKZVReVwQNbH_cyJI4bLQXXnrm8WuW9A" />
-  <link rel="canonical" href="https://leapps.org/releases" />
+  <link rel="canonical" href="https://leapps.org/probes" />
   <link rel="alternate" type="application/rss+xml" title="LEAPPs Blog" href="https://leapps-api.4n6-198.workers.dev/blog/feed" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -309,7 +309,7 @@
   .lp-about-box h3 { font-size: 9pt; color: #333 !important; }
   .lp-about-box p, .lp-about-box ul a { font-size: 9pt; color: #555 !important; }
   .lp-page-header-inner::before {
-        content: "LEAPPs Tool Releases — leapps.org/releases — Printed: " attr(data-print-date);
+        content: "LEAPPs Probes · leapps.org/probes · Printed: " attr(data-print-date);
         display: block; font-size: 8pt; color: #666 !important; margin-bottom: .5rem;
       }
   @page { margin: 1.5cm; }
@@ -329,19 +329,19 @@
     "@graph": [
       {
         "@type": "WebPage",
-        "name": "Releases — LEAPPs",
-        "description": "Download the latest releases of iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP — free open-source digital forensics tools.",
-        "url": "https://leapps.org/releases",
+        "name": "Probes — LEAPPs",
+        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for E01 images, exoprobe for media Android apps cached through ExoPlayer. One Python file each, standard library only.",
+        "url": "https://leapps.org/probes",
         "isPartOf": { "@type": "WebSite", "name": "LEAPPs", "url": "https://leapps.org" }
       },
       {
         "@type": "SoftwareApplication",
-        "name": "iLEAPP",
+        "name": "qnxprobe",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Windows, macOS, Linux",
-        "description": "iOS Logs, Events and Plists Parser — free open-source tool for parsing artifacts from iOS and iPadOS device extractions.",
-        "url": "https://leapps.org/releases",
-        "downloadUrl": "https://github.com/abrignoni/iLEAPP/releases",
+        "description": "Identifies, lists and extracts QNX, Linux, Windows and Apple filesystems and the Linux flash filesystems out of raw disk images and flash dumps, and recovers deleted files from YAFFS2, JFFS2 and UBIFS.",
+        "url": "https://leapps.org/probes#section-qnxprobe",
+        "downloadUrl": "https://github.com/abrignoni/qnxprobe/releases",
         "isAccessibleForFree": true,
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "license": "https://opensource.org/licenses/MIT",
@@ -349,12 +349,12 @@
       },
       {
         "@type": "SoftwareApplication",
-        "name": "ALEAPP",
+        "name": "ewfprobe",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Windows, macOS, Linux",
-        "description": "Android Logs, Events and Protobuf Parser — free open-source tool for parsing artifacts from Android device extractions.",
-        "url": "https://leapps.org/releases",
-        "downloadUrl": "https://github.com/abrignoni/ALEAPP/releases",
+        "description": "A read-only reader for EnCase/EWF (.E01) forensic images that presents the acquired disk as an ordinary seekable file.",
+        "url": "https://leapps.org/probes#section-ewfprobe",
+        "downloadUrl": "https://github.com/abrignoni/ewfprobe/releases",
         "isAccessibleForFree": true,
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "license": "https://opensource.org/licenses/MIT",
@@ -362,79 +362,12 @@
       },
       {
         "@type": "SoftwareApplication",
-        "name": "RLEAPP",
+        "name": "exoprobe",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Windows, macOS, Linux",
-        "description": "Returns, Logs, Events and Properties Parser — free open-source tool for parsing ISP returns and social media data.",
-        "url": "https://leapps.org/releases",
-        "downloadUrl": "https://github.com/abrignoni/RLEAPP/releases",
-        "isAccessibleForFree": true,
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "license": "https://opensource.org/licenses/MIT",
-        "author": { "@type": "Person", "name": "Alexis Brignoni", "url": "https://github.com/abrignoni" }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "VLEAPP",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Windows, macOS, Linux",
-        "description": "Vehicle Logs, Events and Plists Parser — free open-source tool for parsing artifacts from vehicle infotainment and telematics systems.",
-        "url": "https://leapps.org/releases",
-        "downloadUrl": "https://github.com/abrignoni/VLEAPP/releases",
-        "isAccessibleForFree": true,
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "license": "https://opensource.org/licenses/MIT",
-        "author": { "@type": "Person", "name": "Alexis Brignoni", "url": "https://github.com/abrignoni" }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "DLEAPP",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Windows, macOS, Linux",
-        "description": "Desktop Logs, Events and Protobuf Parser. Free open-source tool for parsing desktop application artifacts and anything that does not fit the platform-specific LEAPPs.",
-        "url": "https://leapps.org/releases",
-        "downloadUrl": "https://github.com/abrignoni/DLEAPP/releases",
-        "isAccessibleForFree": true,
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "license": "https://opensource.org/licenses/MIT",
-        "author": { "@type": "Person", "name": "Alexis Brignoni", "url": "https://github.com/abrignoni" }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "GLEAPP",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Windows, macOS, Linux",
-        "description": "Graphics, Logs, Examination, Automated Processing, Parsing. Free open-source tool for triaging large sets of images and video: hashing, de-duplication, metadata, video key frames, known-hash matching and a local review gallery.",
-        "url": "https://leapps.org/releases",
-        "downloadUrl": "https://github.com/abrignoni/GLEAPP/releases",
-        "isAccessibleForFree": true,
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "license": "https://opensource.org/licenses/MIT",
-        "author": [
-          { "@type": "Person", "name": "Heather Charpentier" },
-          { "@type": "Person", "name": "Alexis Brignoni", "url": "https://github.com/abrignoni" }
-        ]
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "Batch LEAPP",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Windows, macOS",
-        "description": "Runs iLEAPP, ALEAPP, RLEAPP or VLEAPP across a whole folder of extractions, with one report index and a SHA-256 manifest.",
-        "url": "https://leapps.org/releases",
-        "downloadUrl": "https://github.com/abrignoni/batch-leapp/releases",
-        "isAccessibleForFree": true,
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "author": { "@type": "Person", "name": "Alexis Brignoni", "url": "https://github.com/abrignoni" }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "LAVA",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Windows, macOS, Linux",
-        "description": "LEAPP Artifact Viewer App — free open-source visualization tool for exploring and presenting LEAPPs forensic report data.",
-        "url": "https://leapps.org/releases",
-        "downloadUrl": "https://github.com/leapps-org/LAVA-releases/releases",
+        "description": "Rejoins the media Android apps cached through ExoPlayer, joining DASH and HLS streams in the order their cached manifests list them.",
+        "url": "https://leapps.org/probes#section-exoprobe",
+        "downloadUrl": "https://github.com/abrignoni/exoprobe/releases",
         "isAccessibleForFree": true,
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "license": "https://opensource.org/licenses/MIT",
@@ -456,8 +389,8 @@
         <div class="lp-nav-dropdown-menu">
           <a href="https://leapps.org#tools"><i class="ti ti-layout-grid" aria-hidden="true"></i>All Tools</a>
           <a href="https://leapps.org#lava"><i class="ti ti-eye" aria-hidden="true"></i>LAVA</a>
-          <a href="https://leapps.org/releases" class="active"><i class="ti ti-download" aria-hidden="true"></i>Releases</a>
-          <a href="https://leapps.org/probes"><i class="ti ti-zoom-scan" aria-hidden="true"></i>Probes</a>
+          <a href="https://leapps.org/releases"><i class="ti ti-download" aria-hidden="true"></i>Releases</a>
+          <a href="https://leapps.org/probes" class="active"><i class="ti ti-zoom-scan" aria-hidden="true"></i>Probes</a>
           <a href="https://leapps.org/artifacts"><i class="ti ti-database" aria-hidden="true"></i>Artifacts</a>
           <a href="https://leapps.org/docs"><i class="ti ti-book" aria-hidden="true"></i>Docs</a>
         </div>
@@ -486,7 +419,7 @@
       <input class="lp-search-input" id="lp-search-input" type="text" placeholder="Search artifacts, posts…" autocomplete="off" />
       <div class="lp-search-results" id="lp-search-results"></div>
     </div>
-    <a href="#section-lava" class="lp-nav-cta">Download</a>
+    <a href="https://leapps.org/releases" class="lp-nav-cta">Download</a>
     <button class="lp-theme-toggle" id="lp-theme-toggle" aria-label="Toggle theme"><i class="ti ti-sun" id="lp-theme-icon" aria-hidden="true"></i></button>
     <button class="lp-hamburger" id="lp-hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -502,14 +435,9 @@
     <a href="https://leapps.org#tools" onclick="closeMobileMenu()">Tools</a>
     <a href="https://leapps.org#lava" onclick="closeMobileMenu()">LAVA</a>
     <a href="https://leapps.org/probes" onclick="closeMobileMenu()">Probes</a>
-    <a href="#section-lava" onclick="closeMobileMenu()">LAVA Releases</a>
-    <a href="#section-aleapp" onclick="closeMobileMenu()">ALEAPP</a>
-    <a href="#section-ileapp" onclick="closeMobileMenu()">iLEAPP</a>
-    <a href="#section-rleapp" onclick="closeMobileMenu()">RLEAPP</a>
-    <a href="#section-vleapp" onclick="closeMobileMenu()">VLEAPP</a>
-    <a href="#section-dleapp" onclick="closeMobileMenu()">DLEAPP</a>
-    <a href="#section-gleapp" onclick="closeMobileMenu()">GLEAPP</a>
-    <a href="#section-batch-leapp" onclick="closeMobileMenu()">Batch LEAPP</a>
+    <a href="#section-qnxprobe" onclick="closeMobileMenu()">qnxprobe</a>
+    <a href="#section-ewfprobe" onclick="closeMobileMenu()">ewfprobe</a>
+    <a href="#section-exoprobe" onclick="closeMobileMenu()">exoprobe</a>
     <a href="https://leapps.org/stats" onclick="closeMobileMenu()">Stats</a>
     <a href="https://leapps.org/changelog" onclick="closeMobileMenu()">Changelog</a>
     <a href="https://leapps.org/artifacts" onclick="closeMobileMenu()">Artifacts</a>
@@ -530,18 +458,13 @@
   <!-- PAGE HEADER -->
   <header class="lp-page-header">
     <div class="lp-page-header-inner">
-      <span class="lp-eyebrow">Latest Builds</span>
-      <h1>Tool <span>Releases</span></h1>
-      <p>Download the latest versions of the LEAPPs forensic tools. All tools are free and open-source.</p>
+      <span class="lp-eyebrow">Standalone tools</span>
+      <h1>The <span>Probes</span></h1>
+      <p>Single-purpose readers that sit beside the LEAPPs rather than inside them. Each one reads one kind of evidence the way its format defines it, runs from one Python file with the standard library alone, and never writes to the evidence it reads. Free and open source under the MIT license.</p>
       <div class="lp-tool-nav">
-        <a href="#section-lava" class="lp-tool-pill lava">LAVA</a>
-        <a href="#section-aleapp" class="lp-tool-pill">ALEAPP</a>
-        <a href="#section-ileapp" class="lp-tool-pill">iLEAPP</a>
-        <a href="#section-rleapp" class="lp-tool-pill">RLEAPP</a>
-        <a href="#section-vleapp" class="lp-tool-pill">VLEAPP</a>
-        <a href="#section-dleapp" class="lp-tool-pill">DLEAPP</a>
-        <a href="#section-gleapp" class="lp-tool-pill">GLEAPP</a>
-        <a href="#section-batch-leapp" class="lp-tool-pill">Batch LEAPP</a>
+        <a href="#section-qnxprobe" class="lp-tool-pill">qnxprobe</a>
+        <a href="#section-ewfprobe" class="lp-tool-pill">ewfprobe</a>
+        <a href="#section-exoprobe" class="lp-tool-pill">exoprobe</a>
       </div>
     </div>
   </header>
@@ -551,192 +474,41 @@
 
     <!-- SIDEBAR -->
     <aside class="lp-sidebar">
-      <div class="lp-sidebar-title">Jump to tool</div>
+      <div class="lp-sidebar-title">Jump to probe</div>
       <ul class="lp-sidebar-links">
-        <li><a href="#section-lava" class="lava-link"><i class="ti ti-eye"></i>LAVA</a></li>
-        <li><a href="#section-aleapp"><i class="ti ti-brand-android"></i>ALEAPP</a></li>
-        <li><a href="#section-ileapp"><i class="ti ti-brand-apple"></i>iLEAPP</a></li>
-        <li><a href="#section-rleapp"><i class="ti ti-file-import"></i>RLEAPP</a></li>
-        <li><a href="#section-vleapp"><i class="ti ti-car"></i>VLEAPP</a></li>
-        <li><a href="#section-dleapp"><i class="ti ti-device-desktop"></i>DLEAPP</a></li>
-        <li><a href="#section-gleapp"><i class="ti ti-photo"></i>GLEAPP</a></li>
-        <li><a href="#section-batch-leapp"><i class="ti ti-stack-2"></i>Batch LEAPP</a></li>
-        <li><a href="#code-signing-policy"><i class="ti ti-shield-check"></i>Code signing policy</a></li>
+        <li><a href="#section-qnxprobe"><i class="ti ti-cpu"></i>qnxprobe</a></li>
+        <li><a href="#section-ewfprobe"><i class="ti ti-file-zip"></i>ewfprobe</a></li>
+        <li><a href="#section-exoprobe"><i class="ti ti-movie"></i>exoprobe</a></li>
+        <li><a href="#about-the-builds"><i class="ti ti-package"></i>About the builds</a></li>
       </ul>
     </aside>
 
     <!-- CONTENT -->
     <main>
 
-      <!-- LAVA -->
-      <section class="lp-tool-section" id="section-lava">
+      <!-- QNXPROBE -->
+      <section class="lp-tool-section" id="section-qnxprobe">
         <div class="lp-tool-header">
           <div class="lp-tool-header-left">
-            <div class="lp-tool-platform">Visualization · All Platforms</div>
-            <h2 class="lava">LAVA</h2>
-            <div class="lp-tool-fullname">LEAPP Artifact Viewer App</div>
+            <div class="lp-tool-platform">Disk images &middot; Flash dumps</div>
+            <h2>qnxprobe</h2>
+            <div class="lp-tool-fullname">Identify, list and extract filesystems out of raw images</div>
           </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-lava"><i class="ti ti-star"></i>…</span><span class="lp-dl-count-badge loading" id="dlcount-releases-lava"><i class="ti ti-download"></i>…</span><a href="https://github.com/leapps-org/LAVA-releases" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-qnxprobe"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-qnxprobe"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/qnxprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
         </div>
         <div class="lp-about-box">
           <div>
-            <h3>What is LAVA?</h3>
-            <p>LAVA lets investigators and analysts browse and explore output reports generated by the *LEAPP family of forensic tools.</p>
-          </div>
-          <div>
-            <h3>Supported Tools</h3>
-            <ul>
-              <li><a href="#section-aleapp">ALEAPP — Android artifacts</a></li>
-              <li><a href="#section-ileapp">iLEAPP — iOS/iPadOS artifacts</a></li>
-              <li><a href="#section-rleapp">RLEAPP — ISP Returns artifacts</a></li>
-              <li><a href="#section-vleapp">VLEAPP — Vehicle artifacts</a></li>
-              <li><a href="#section-dleapp">DLEAPP — Desktop artifacts</a></li>
-              <li><a href="#section-gleapp">GLEAPP — Image and video triage</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="lp-install-box">
-          <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
-          <div class="lp-install-row"><span class="lp-install-tag">GUI</span><code>brew tap leapps-org/leapps &amp;&amp; brew install --cask lava</code><button class="lp-brew-copy" data-copy="brew tap leapps-org/leapps &amp;&amp; brew install --cask lava" data-tool="LAVA" aria-label="Copy LAVA GUI install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
-        </div>
-        <div class="lp-status-bar">
-          <div class="lp-status-dot"></div>
-          <span class="lp-status-text">Live releases</span>
-          <span class="lp-status-sep">·</span>
-          <span class="lp-status-sub">Windows · macOS · Linux</span>
-        </div>
-        <div id="releases-lava" class="lp-releases-list">
-          <div class="lp-loading"><span>Fetching releases…</span></div>
-        </div>
-        <a href="https://github.com/leapps-org/LAVA-releases/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all LAVA releases on GitHub</a>
-      </section>
-
-      <!-- ALEAPP -->
-      <section class="lp-tool-section" id="section-aleapp">
-        <div class="lp-tool-header">
-          <div class="lp-tool-header-left">
-            <div class="lp-tool-platform">Android</div>
-            <h2>ALEAPP</h2>
-            <div class="lp-tool-fullname">Android Logs, Events &amp; Protobuf Parser</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-aleapp"><i class="ti ti-star"></i>…</span><span class="lp-dl-count-badge loading" id="dlcount-releases-aleapp"><i class="ti ti-download"></i>…</span><a href="https://github.com/abrignoni/ALEAPP" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
-        </div>
-        <div class="lp-install-box">
-          <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
-          <div class="lp-install-row"><span class="lp-install-tag">CLI</span><code>brew tap leapps-org/leapps &amp;&amp; brew install aleapp</code><button class="lp-brew-copy" data-copy="brew tap leapps-org/leapps &amp;&amp; brew install aleapp" data-tool="ALEAPP" aria-label="Copy ALEAPP CLI install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-row"><span class="lp-install-tag">GUI</span><code>brew tap leapps-org/leapps &amp;&amp; brew install --cask aleapp-gui</code><button class="lp-brew-copy" data-copy="brew tap leapps-org/leapps &amp;&amp; brew install --cask aleapp-gui" data-tool="ALEAPP" aria-label="Copy ALEAPP GUI install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
-        </div>
-        <div class="lp-status-bar">
-          <div class="lp-status-dot"></div>
-          <span class="lp-status-text">Live releases</span>
-        </div>
-        <div id="releases-aleapp" class="lp-releases-list">
-          <div class="lp-loading"><span>Fetching releases…</span></div>
-        </div>
-        <a href="https://github.com/abrignoni/ALEAPP/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all ALEAPP releases on GitHub</a>
-      </section>
-
-      <!-- iLEAPP -->
-      <section class="lp-tool-section" id="section-ileapp">
-        <div class="lp-tool-header">
-          <div class="lp-tool-header-left">
-            <div class="lp-tool-platform">iOS · iPadOS</div>
-            <h2>iLEAPP</h2>
-            <div class="lp-tool-fullname">iOS Logs, Events &amp; Plists Parser</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-ileapp"><i class="ti ti-star"></i>…</span><span class="lp-dl-count-badge loading" id="dlcount-releases-ileapp"><i class="ti ti-download"></i>…</span><a href="https://github.com/abrignoni/iLEAPP" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
-        </div>
-        <div class="lp-install-box">
-          <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
-          <div class="lp-install-row"><span class="lp-install-tag">CLI</span><code>brew tap leapps-org/leapps &amp;&amp; brew install ileapp</code><button class="lp-brew-copy" data-copy="brew tap leapps-org/leapps &amp;&amp; brew install ileapp" data-tool="iLEAPP" aria-label="Copy iLEAPP CLI install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-row"><span class="lp-install-tag">GUI</span><code>brew tap leapps-org/leapps &amp;&amp; brew install --cask ileapp-gui</code><button class="lp-brew-copy" data-copy="brew tap leapps-org/leapps &amp;&amp; brew install --cask ileapp-gui" data-tool="iLEAPP" aria-label="Copy iLEAPP GUI install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
-        </div>
-        <div class="lp-status-bar">
-          <div class="lp-status-dot"></div>
-          <span class="lp-status-text">Live releases</span>
-        </div>
-        <div id="releases-ileapp" class="lp-releases-list">
-          <div class="lp-loading"><span>Fetching releases…</span></div>
-        </div>
-        <a href="https://github.com/abrignoni/iLEAPP/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all iLEAPP releases on GitHub</a>
-      </section>
-
-      <!-- RLEAPP -->
-      <section class="lp-tool-section" id="section-rleapp">
-        <div class="lp-tool-header">
-          <div class="lp-tool-header-left">
-            <div class="lp-tool-platform">ISP Returns</div>
-            <h2>RLEAPP</h2>
-            <div class="lp-tool-fullname">Returns, Logs, Events &amp; Properties Parser</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-rleapp"><i class="ti ti-star"></i>…</span><span class="lp-dl-count-badge loading" id="dlcount-releases-rleapp"><i class="ti ti-download"></i>…</span><a href="https://github.com/abrignoni/RLEAPP" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
-        </div>
-        <div class="lp-install-box">
-          <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
-          <div class="lp-install-row"><span class="lp-install-tag">CLI</span><code>brew tap leapps-org/leapps &amp;&amp; brew install rleapp</code><button class="lp-brew-copy" data-copy="brew tap leapps-org/leapps &amp;&amp; brew install rleapp" data-tool="RLEAPP" aria-label="Copy RLEAPP CLI install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-row"><span class="lp-install-tag">GUI</span><code>brew tap leapps-org/leapps &amp;&amp; brew install --cask rleapp-gui</code><button class="lp-brew-copy" data-copy="brew tap leapps-org/leapps &amp;&amp; brew install --cask rleapp-gui" data-tool="RLEAPP" aria-label="Copy RLEAPP GUI install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
-        </div>
-        <div class="lp-status-bar">
-          <div class="lp-status-dot"></div>
-          <span class="lp-status-text">Live releases</span>
-        </div>
-        <div id="releases-rleapp" class="lp-releases-list">
-          <div class="lp-loading"><span>Fetching releases…</span></div>
-        </div>
-        <a href="https://github.com/abrignoni/RLEAPP/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all RLEAPP releases on GitHub</a>
-      </section>
-
-      <!-- VLEAPP -->
-      <section class="lp-tool-section" id="section-vleapp">
-        <div class="lp-tool-header">
-          <div class="lp-tool-header-left">
-            <div class="lp-tool-platform">Vehicle Systems</div>
-            <h2>VLEAPP</h2>
-            <div class="lp-tool-fullname">Vehicle Logs, Events &amp; Plists Parser</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-vleapp"><i class="ti ti-star"></i>…</span><span class="lp-dl-count-badge loading" id="dlcount-releases-vleapp"><i class="ti ti-download"></i>…</span><a href="https://github.com/abrignoni/VLEAPP" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
-        </div>
-        <div class="lp-install-box">
-          <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
-          <div class="lp-install-row"><span class="lp-install-tag">CLI</span><code>brew tap leapps-org/leapps &amp;&amp; brew install vleapp</code><button class="lp-brew-copy" data-copy="brew tap leapps-org/leapps &amp;&amp; brew install vleapp" data-tool="VLEAPP" aria-label="Copy VLEAPP CLI install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-row"><span class="lp-install-tag">GUI</span><code>brew tap leapps-org/leapps &amp;&amp; brew install --cask vleapp-gui</code><button class="lp-brew-copy" data-copy="brew tap leapps-org/leapps &amp;&amp; brew install --cask vleapp-gui" data-tool="VLEAPP" aria-label="Copy VLEAPP GUI install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
-        </div>
-        <div class="lp-status-bar">
-          <div class="lp-status-dot"></div>
-          <span class="lp-status-text">Live releases</span>
-        </div>
-        <div id="releases-vleapp" class="lp-releases-list">
-          <div class="lp-loading"><span>Fetching releases…</span></div>
-        </div>
-        <a href="https://github.com/abrignoni/VLEAPP/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all VLEAPP releases on GitHub</a>
-      </section>
-
-      <!-- DLEAPP -->
-      <section class="lp-tool-section" id="section-dleapp">
-        <div class="lp-tool-header">
-          <div class="lp-tool-header-left">
-            <div class="lp-tool-platform">Desktop &middot; Everything Else</div>
-            <h2>DLEAPP</h2>
-            <div class="lp-tool-fullname">Desktop Logs, Events and Protobuf Parser</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-dleapp"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-dleapp"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/DLEAPP" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
-        </div>
-        <div class="lp-about-box">
-          <div>
-            <h3>What is DLEAPP?</h3>
-            <p>Parse desktop-application artifacts (Electron, Chromium, and friends) &mdash; plus any artifact that doesn't fit the platform-specific LEAPPs. If it doesn't belong in iLEAPP, ALEAPP, RLEAPP, or VLEAPP, it belongs here.</p>
+            <h3>What is qnxprobe?</h3>
+            <p>A head unit image lands on your desk and the first question is what is actually in it. The partition table will call a qnx6 volume Linux, and the usual tools have no QNX support at all. qnxprobe identifies each volume by its own on-disk structure instead of the type byte, then lists it and extracts to a zip with a provenance manifest.</p>
+            <p>Nothing to install, no admin rights, and it never writes to the image.</p>
           </div>
           <div>
             <h3>Highlights</h3>
             <ul>
-              <li>Prebuilt CLI and GUI packages for Windows, macOS, and Linux &mdash; no Python required</li>
-              <li>Apple Silicon and Intel builds for macOS; x64 and arm64 for Windows and Linux</li>
-              <li>Growing parser set &mdash; contributions welcome</li>
+              <li>QNX6, QNX4, ETFS, EFS and QNX IFS boot images, alongside ext2/3/4, F2FS, FAT32, exFAT, NTFS, HFS+ and APFS</li>
+              <li>The flash filesystems embedded Linux keeps on routers, cameras and drones: SquashFS, JFFS2, UBI with the UBIFS inside it, and YAFFS1 and YAFFS2, found inside a raw chip dump with or without its NAND spare bytes</li>
+              <li>Deleted files recovered from YAFFS2, JFFS2 and UBIFS, and refused rather than filled with zeros when part of a file is already gone</li>
+              <li>E01 acquisitions read through ewfprobe</li>
             </ul>
           </div>
         </div>
@@ -744,35 +516,36 @@
           <div class="lp-status-dot"></div>
           <span class="lp-status-text">Live releases</span>
         </div>
-        <div id="releases-dleapp" class="lp-releases-list">
+        <div id="releases-qnxprobe" class="lp-releases-list">
           <div class="lp-loading"><span>Fetching releases&hellip;</span></div>
         </div>
-        <a href="https://github.com/abrignoni/DLEAPP/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all DLEAPP releases on GitHub</a>
+        <a href="https://github.com/abrignoni/qnxprobe/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all qnxprobe releases on GitHub</a>
       </section>
 
-      <!-- GLEAPP -->
-      <section class="lp-tool-section" id="section-gleapp">
+      <!-- EWFPROBE -->
+      <section class="lp-tool-section" id="section-ewfprobe">
         <div class="lp-tool-header">
           <div class="lp-tool-header-left">
-            <div class="lp-tool-platform">Images &middot; Video</div>
-            <h2>GLEAPP</h2>
-            <div class="lp-tool-fullname">Graphics, Logs, Examination, Automated Processing, Parsing</div>
+            <div class="lp-tool-platform">E01 images</div>
+            <h2>ewfprobe</h2>
+            <div class="lp-tool-fullname">A read-only reader for EnCase/EWF (.E01) forensic images</div>
           </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-gleapp"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-gleapp"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/GLEAPP" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-ewfprobe"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-ewfprobe"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/ewfprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
         </div>
         <div class="lp-about-box">
           <div>
-            <h3>What is GLEAPP?</h3>
-            <p>Triage and analysis for large sets of images and video. GLEAPP ingests media from folders, full file system extractions and disk images, hashes and de-duplicates it, reads metadata, pulls video key frames, matches known-hash lists, and opens a local review gallery to work the backlog in.</p>
-            <p>It is a tool for authorized examiners. It ships no illegal-content hash database, downloads nothing, and performs no content classification: categorizing a file is always the examiner's decision.</p>
+            <h3>What is ewfprobe?</h3>
+            <p>It opens an acquisition, joins its segments, and presents the acquired disk as an ordinary seekable file, so anything that can read a raw image can read an E01 with a one-line change at the point the image is opened.</p>
+            <p>It is written from the public format documentation, with no libewf and no C extension, so a tool can take an E01 with no copyleft dependency and nothing to build.</p>
           </div>
           <div>
             <h3>Highlights</h3>
             <ul>
-              <li>Reads folders, full file system extractions, and E01 or raw disk images, walking each file system file by file, with optional recovery of deleted media</li>
-              <li>Exact and visual de-duplication, EXIF and GPS metadata, video key frames, and known-hash matching (Project VIC, CAID-style, CSV, and the NSRL RDS)</li>
-              <li>HTML contact sheet, CSV, JSON, KMZ, and a LAVA project as output</li>
-              <li>Installers for Windows, macOS (Apple silicon and Intel), and Linux, so no Python is needed</li>
+              <li>EWF-E01 as EnCase 6 and 7, FTK Imager and <code>ewfacquire</code> write it, with multi-segment sets joined from any member of the set</li>
+              <li><code>info</code>, <code>verify</code> (recomputes MD5 and SHA-1 against the hashes stored in the image) and <code>export</code> to raw</li>
+              <li>An incomplete segment set is refused, not read as a smaller image that reports its missing data as empty</li>
+              <li>Checked against libewf's <code>ewfacquire</code> in nine variants, and against FTK Imager acquisitions up to 238 GiB whose full-image MD5 and SHA-1 match the hashes the acquisition tool recorded</li>
+              <li>Ex01 (EWF2), SMART <code>.s01</code> and logical <code>.L01</code> are not read</li>
             </ul>
           </div>
         </div>
@@ -780,34 +553,35 @@
           <div class="lp-status-dot"></div>
           <span class="lp-status-text">Live releases</span>
         </div>
-        <div id="releases-gleapp" class="lp-releases-list">
+        <div id="releases-ewfprobe" class="lp-releases-list">
           <div class="lp-loading"><span>Fetching releases&hellip;</span></div>
         </div>
-        <a href="https://github.com/abrignoni/GLEAPP/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all GLEAPP releases on GitHub</a>
+        <a href="https://github.com/abrignoni/ewfprobe/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all ewfprobe releases on GitHub</a>
       </section>
 
-      <!-- BATCH LEAPP -->
-      <section class="lp-tool-section" id="section-batch-leapp">
+      <!-- EXOPROBE -->
+      <section class="lp-tool-section" id="section-exoprobe">
         <div class="lp-tool-header">
           <div class="lp-tool-header-left">
-            <div class="lp-tool-platform">Automation &middot; macOS &middot; Windows</div>
-            <h2>Batch LEAPP</h2>
-            <div class="lp-tool-fullname">Run any LEAPP tool across a folder of extractions</div>
+            <div class="lp-tool-platform">Android &middot; Cached media</div>
+            <h2>exoprobe</h2>
+            <div class="lp-tool-fullname">Rejoin the media Android apps cached through ExoPlayer</div>
           </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-batch-leapp"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-batch-leapp"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/batch-leapp" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-exoprobe"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-exoprobe"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/exoprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
         </div>
         <div class="lp-about-box">
           <div>
-            <h3>What is Batch LEAPP?</h3>
-            <p>Point it at a directory and it finds every extraction inside, runs iLEAPP, ALEAPP, RLEAPP, or VLEAPP against each one in parallel, and builds a single report index linking every result &mdash; with SHA-256 hashing and a manifest for your case file.</p>
+            <h3>What is exoprobe?</h3>
+            <p>ExoPlayer, now androidx.media3, caches what an app plays, but not as one file: a cached video is split into pieces named for the byte offset they start at, and the address it came from is kept in a separate index. Opened on its own, a piece is a truncated file at best.</p>
+            <p>exoprobe reads the index, joins each item's pieces back into the file the app downloaded, and joins a DASH or HLS stream's segments in the order its cached manifest or playlist lists them. It writes only into the output folder you give it.</p>
           </div>
           <div>
             <h3>Highlights</h3>
             <ul>
-              <li>One index.html linking every report and LAVA project</li>
-              <li>SHA-256 manifest (CSV &amp; JSON) for casework</li>
-              <li>GUI and CLI &mdash; prebuilt for macOS and Windows</li>
-              <li><a href="https://leapps.org/blog-post?post=2026-06-28-batch-leapp">Read the announcement post</a></li>
+              <li>Reads the <code>cached_content_index.exi</code> index or the <code>ExoPlayerCacheIndex</code> table in <code>exoplayer_internal.db</code>, the database from a temporary copy</li>
+              <li>Puts a video and its audio into one MP4 without re-encoding</li>
+              <li>Reports every item: which index named it, how many pieces were joined, the bytes joined against the length the index recorded, and whether the join is complete</li>
+              <li>A <code>SegmentTemplate</code> DASH stream, an encrypted index without its key and encrypted media tracks are not joined, and a video already evicted from the cache is gone</li>
             </ul>
           </div>
         </div>
@@ -815,36 +589,30 @@
           <div class="lp-status-dot"></div>
           <span class="lp-status-text">Live releases</span>
         </div>
-        <div id="releases-batch-leapp" class="lp-releases-list">
+        <div id="releases-exoprobe" class="lp-releases-list">
           <div class="lp-loading"><span>Fetching releases&hellip;</span></div>
         </div>
-        <a href="https://github.com/abrignoni/batch-leapp/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all Batch LEAPP releases on GitHub</a>
+        <a href="https://github.com/abrignoni/exoprobe/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all exoprobe releases on GitHub</a>
       </section>
 
-      <!-- CODE SIGNING POLICY -->
-      <section class="lp-tool-section" id="code-signing-policy">
+      <!-- ABOUT THE BUILDS -->
+      <section class="lp-tool-section" id="about-the-builds">
         <div class="lp-tool-header">
           <div class="lp-tool-header-left">
-            <div class="lp-tool-platform">Windows builds</div>
-            <h2>Code signing policy</h2>
-            <div class="lp-tool-fullname">How the Windows builds of the LEAPPs are signed</div>
+            <div class="lp-tool-platform">Windows &middot; macOS &middot; Linux</div>
+            <h2>About the builds</h2>
+            <div class="lp-tool-fullname">What each release carries</div>
           </div>
         </div>
         <div class="lp-about-box">
           <div>
-            <h3>Status</h3>
-            <p>The Windows builds are not signed yet. We are applying to SignPath Foundation's free code signing program for open source projects, and this policy applies to every Windows release of iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP and GLEAPP signed under it.</p>
-            <p>Free code signing provided by <a href="https://about.signpath.io" target="_blank" rel="noopener noreferrer">SignPath.io</a>, certificate by <a href="https://signpath.org" target="_blank" rel="noopener noreferrer">SignPath Foundation</a>.</p>
-            <p>Signed builds will be made from source by GitHub Actions in each tool's own repository, and each release will be signed only after an approver confirms it.</p>
+            <h3>Executables</h3>
+            <p>Every release carries standalone executables for Windows, macOS and Linux, each on x64 and arm64, built by the probe's own GitHub Actions workflow from the tagged commit, with a <code>SHA256SUMS.txt</code> covering them.</p>
+            <p>They are not code signed yet, so Windows SmartScreen and macOS Gatekeeper will each ask once. Unzip to a local folder rather than running from a network share.</p>
           </div>
           <div>
-            <h3>Team roles</h3>
-            <ul>
-              <li>Committers and reviewers: <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer">abrignoni</a>, <a href="https://github.com/Johann-PLW" target="_blank" rel="noopener noreferrer">Johann-PLW</a>, <a href="https://github.com/stark4n6" target="_blank" rel="noopener noreferrer">stark4n6</a>, <a href="https://github.com/JamesHabben" target="_blank" rel="noopener noreferrer">JamesHabben</a></li>
-              <li>Approvers: <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer">abrignoni</a>, <a href="https://github.com/Johann-PLW" target="_blank" rel="noopener noreferrer">Johann-PLW</a></li>
-            </ul>
-            <h3>Privacy</h3>
-            <p>This program will not transfer any information to other networked systems unless specifically requested by the user or the person installing or operating it.</p>
+            <h3>Or run the Python file</h3>
+            <p>Each probe is one Python file that needs the standard library and nothing else, so <code>python3 &lt;probe&gt;.py</code> works on Windows, macOS and Linux. ewfprobe and exoprobe attach that file to every release as well.</p>
           </div>
         </div>
       </section>
@@ -898,18 +666,9 @@
 
   <script>
     const tools = [
-      // flavor: every asset is this kind. Set only where the tool ships one
-      // flavor and its filenames carry no GUI/CLI token — LAVA is a GUI-only
-      // viewer app. Do not infer from extensions: iLEAPP's CLI is an AppImage
-      // too, so a guess would mislabel it.
-      { id: 'lava',   name: 'LAVA',   repo: 'leapps-org/LAVA-releases', flavor: 'GUI' },
-      { id: 'aleapp', name: 'ALEAPP', repo: 'abrignoni/ALEAPP' },
-      { id: 'ileapp', name: 'iLEAPP', repo: 'abrignoni/iLEAPP' },
-      { id: 'rleapp', name: 'RLEAPP', repo: 'abrignoni/RLEAPP' },
-      { id: 'vleapp', name: 'VLEAPP', repo: 'abrignoni/VLEAPP' },
-      { id: 'dleapp', name: 'DLEAPP', repo: 'abrignoni/DLEAPP' },
-      { id: 'gleapp', name: 'GLEAPP', repo: 'abrignoni/GLEAPP' },
-      { id: 'batch-leapp', name: 'Batch LEAPP', repo: 'abrignoni/batch-leapp' },
+      { id: 'qnxprobe', name: 'qnxprobe', repo: 'abrignoni/qnxprobe' },
+      { id: 'ewfprobe', name: 'ewfprobe', repo: 'abrignoni/ewfprobe' },
+      { id: 'exoprobe', name: 'exoprobe', repo: 'abrignoni/exoprobe' },
     ];
 
     // Classify an asset from its filename: OS, architecture, and GUI/CLI
