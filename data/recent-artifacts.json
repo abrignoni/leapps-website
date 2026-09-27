@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "googleDriveFS",
-      "query": "googleDriveFS",
+      "name": "macosCoreSpotlight",
+      "query": "macosCoreSpotlight",
       "tool": "DLEAPP",
       "date": "2026-09-27"
     },
@@ -33,8 +33,8 @@
       "date": "2026-08-30"
     },
     {
-      "name": "macosReminders",
-      "query": "macosReminders",
+      "name": "macosSpotlightStore",
+      "query": "macosSpotlightStore",
       "tool": "DLEAPP",
       "date": "2026-09-27"
     },
@@ -63,8 +63,8 @@
       "date": "2026-08-30"
     },
     {
-      "name": "macosQuickLook",
-      "query": "macosQuickLook",
+      "name": "googleDriveFS",
+      "query": "googleDriveFS",
       "tool": "DLEAPP",
       "date": "2026-09-27"
     },
