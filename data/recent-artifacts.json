@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "macosUtmpx",
-      "query": "macosUtmpx",
+      "name": "macosNotarizationTickets",
+      "query": "macosNotarizationTickets",
       "tool": "DLEAPP",
       "date": "2026-09-27"
     },
@@ -33,8 +33,8 @@
       "date": "2026-08-30"
     },
     {
-      "name": "macosSpotlightShortcuts",
-      "query": "macosSpotlightShortcuts",
+      "name": "macosFinderDSStore",
+      "query": "macosFinderDSStore",
       "tool": "DLEAPP",
       "date": "2026-09-27"
     },
@@ -63,8 +63,8 @@
       "date": "2026-08-30"
     },
     {
-      "name": "macosWebKitCache",
-      "query": "macosWebKitCache",
+      "name": "macosTrash",
+      "query": "macosTrash",
       "tool": "DLEAPP",
       "date": "2026-09-27"
     },
