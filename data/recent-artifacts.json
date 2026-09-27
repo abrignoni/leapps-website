@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "macosNotarizationTickets",
-      "query": "macosNotarizationTickets",
+      "name": "googleDriveFS",
+      "query": "googleDriveFS",
       "tool": "DLEAPP",
       "date": "2026-09-27"
     },
@@ -33,8 +33,8 @@
       "date": "2026-08-30"
     },
     {
-      "name": "macosFinderDSStore",
-      "query": "macosFinderDSStore",
+      "name": "macosReminders",
+      "query": "macosReminders",
       "tool": "DLEAPP",
       "date": "2026-09-27"
     },
@@ -63,8 +63,8 @@
       "date": "2026-08-30"
     },
     {
-      "name": "macosTrash",
-      "query": "macosTrash",
+      "name": "macosQuickLook",
+      "query": "macosQuickLook",
       "tool": "DLEAPP",
       "date": "2026-09-27"
     },
