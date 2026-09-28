@@ -108,6 +108,12 @@
     "excerpt": "Triage large sets of images and video: hashing, de-duplication, metadata, video key frames, known-hash matching, and a local review gallery."
   },
   {
+    "title": "GLEAPP Map Downloader: offline maps for GLEAPP",
+    "url": "https://leapps.org/releases#section-gleapp-map-downloader",
+    "page": "Releases",
+    "excerpt": "Cut an area of the Protomaps planet basemap into one .pmtiles file on a machine with internet access, then import it into GLEAPP for offline maps. One Python file, with a window and a command line."
+  },
+  {
     "title": "About LEAPPs",
     "url": "https://leapps.org/about",
     "page": "About",

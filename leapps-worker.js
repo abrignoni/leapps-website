@@ -28,6 +28,7 @@ const ALLOWED_REPOS = [
   'abrignoni/VLEAPP',
   'abrignoni/DLEAPP',
   'abrignoni/GLEAPP',
+  'abrignoni/GLEAPP-MapDownloader',
   'abrignoni/batch-leapp',
   'abrignoni/qnxprobe',
   'abrignoni/ewfprobe',

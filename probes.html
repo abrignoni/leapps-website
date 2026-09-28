@@ -258,7 +258,7 @@
 .lp-older-releases { display: none; flex-direction: column; gap: .75rem; margin-top: .5rem; }
 .lp-older-toggle.open + .lp-older-releases { display: flex; }
 @media (max-width: 768px) {
-  .lp-main { grid-template-columns: 1fr; }
+  .lp-main { grid-template-columns: minmax(0, 1fr); }
   .lp-sidebar { position: static; }
   .lp-sidebar-links { flex-direction: row; flex-wrap: wrap; }
   .lp-sidebar-links a { border-left: none; border-bottom: 2px solid transparent; padding: .4rem .6rem; }

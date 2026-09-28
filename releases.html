@@ -258,7 +258,7 @@
 .lp-older-releases { display: none; flex-direction: column; gap: .75rem; margin-top: .5rem; }
 .lp-older-toggle.open + .lp-older-releases { display: flex; }
 @media (max-width: 768px) {
-  .lp-main { grid-template-columns: 1fr; }
+  .lp-main { grid-template-columns: minmax(0, 1fr); }
   .lp-sidebar { position: static; }
   .lp-sidebar-links { flex-direction: row; flex-wrap: wrap; }
   .lp-sidebar-links a { border-left: none; border-bottom: 2px solid transparent; padding: .4rem .6rem; }
@@ -320,7 +320,8 @@
     [data-theme="light"] #page, [data-theme="light"] #content, [data-theme="light"] .page-section,
     [data-theme="light"] .page-section-wrapper,
     [data-theme="light"] .sqs-layout { background-color: #F5F2EC !important; }
-  </style>
+  .lp-companion-logo { width: 1.1em; height: 1.1em; vertical-align: -0.15em; margin-right: .4rem; }
+</style>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>
   <script>if (location.hash === '#section-qnxprobe') location.replace('/probes#section-qnxprobe');</script>
   <script type="application/ld+json">
@@ -417,6 +418,19 @@
       },
       {
         "@type": "SoftwareApplication",
+        "name": "GLEAPP Map Downloader",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Windows, macOS, Linux",
+        "description": "Companion to GLEAPP: cuts an area of the Protomaps planet basemap into one .pmtiles file for GLEAPP's offline maps.",
+        "url": "https://leapps.org/releases#section-gleapp-map-downloader",
+        "downloadUrl": "https://github.com/abrignoni/GLEAPP-MapDownloader/releases",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "license": "https://opensource.org/licenses/MIT",
+        "author": { "@type": "Person", "name": "Alexis Brignoni", "url": "https://github.com/abrignoni" }
+      },
+      {
+        "@type": "SoftwareApplication",
         "name": "Batch LEAPP",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Windows, macOS",
@@ -509,6 +523,7 @@
     <a href="#section-vleapp" onclick="closeMobileMenu()">VLEAPP</a>
     <a href="#section-dleapp" onclick="closeMobileMenu()">DLEAPP</a>
     <a href="#section-gleapp" onclick="closeMobileMenu()">GLEAPP</a>
+    <a href="#section-gleapp-map-downloader" onclick="closeMobileMenu()">GLEAPP Map Downloader</a>
     <a href="#section-batch-leapp" onclick="closeMobileMenu()">Batch LEAPP</a>
     <a href="https://leapps.org/stats" onclick="closeMobileMenu()">Stats</a>
     <a href="https://leapps.org/changelog" onclick="closeMobileMenu()">Changelog</a>
@@ -560,6 +575,7 @@
         <li><a href="#section-vleapp"><i class="ti ti-car"></i>VLEAPP</a></li>
         <li><a href="#section-dleapp"><i class="ti ti-device-desktop"></i>DLEAPP</a></li>
         <li><a href="#section-gleapp"><i class="ti ti-photo"></i>GLEAPP</a></li>
+        <li><a href="#section-gleapp-map-downloader"><i class="ti ti-map"></i>Map Downloader</a></li>
         <li><a href="#section-batch-leapp"><i class="ti ti-stack-2"></i>Batch LEAPP</a></li>
         <li><a href="#code-signing-policy"><i class="ti ti-shield-check"></i>Code signing policy</a></li>
       </ul>
@@ -772,6 +788,7 @@
               <li>Reads folders, full file system extractions, and E01 or raw disk images, walking each file system file by file, with optional recovery of deleted media</li>
               <li>Exact and visual de-duplication, EXIF and GPS metadata, video key frames, and known-hash matching (Project VIC, CAID-style, CSV, and the NSRL RDS)</li>
               <li>HTML contact sheet, CSV, JSON, KMZ, and a LAVA project as output</li>
+              <li>Offline maps: import an area cut by the <a href="#section-gleapp-map-downloader">GLEAPP Map Downloader</a> under Maps, Import, and GLEAPP itself never goes online</li>
               <li>Installers for Windows, macOS (Apple silicon and Intel), and Linux, so no Python is needed</li>
             </ul>
           </div>
@@ -784,6 +801,43 @@
           <div class="lp-loading"><span>Fetching releases&hellip;</span></div>
         </div>
         <a href="https://github.com/abrignoni/GLEAPP/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all GLEAPP releases on GitHub</a>
+      </section>
+
+      <!-- GLEAPP MAP DOWNLOADER -->
+      <section class="lp-tool-section" id="section-gleapp-map-downloader">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Companion to GLEAPP &middot; Offline maps</div>
+            <h2><img src="/logos/GLEAPP-MapDownloader_icon.png" alt="" width="256" height="256" class="lp-companion-logo">GLEAPP Map Downloader</h2>
+            <div class="lp-tool-fullname">Cut an area of the planet map into one file for GLEAPP's offline maps</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-gleapp-map-downloader"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-gleapp-map-downloader"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/GLEAPP-MapDownloader" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What is it?</h3>
+            <p>GLEAPP never goes online, so its maps have to come from somewhere. The Map Downloader is the part that does: run it on a machine with internet access, pick an area and a level of detail, and it saves that area of the <a href="https://protomaps.com" target="_blank" rel="noopener noreferrer">Protomaps</a> planet basemap as one <code>.pmtiles</code> file. Copy the file to the offline machine and import it in GLEAPP under Maps, Import. Any viewer that reads PMTiles opens it too.</p>
+            <p>Privacy: Protomaps' server sees which part of the planet you read, which is the area you ask for. When the area itself is sensitive, cut a larger one around it, or cut it on a machine that is not tied to the case.</p>
+          </div>
+          <div>
+            <h3>Highlights</h3>
+            <ul>
+              <li>Pick a named region or an exact box, and a detail level from zoom 0 to 15: 10 shows highways and towns, 15 every street and building. Check the size first, then download</li>
+              <li>Downloads only the tiles inside the area, read from the planet file with HTTP range requests, and an area too large for one file is refused before anything is downloaded</li>
+              <li>A stopped or failed download leaves no file that looks whole</li>
+              <li>The map data is OpenStreetMap's, under the Open Database License. The file carries the &copy; OpenStreetMap credit, and a map shown anywhere else must credit it too. Not affiliated with Protomaps or the OpenStreetMap Foundation</li>
+              <li>One Python file, standard library only, with a window and a command line. Executables for Windows, macOS and Linux (x64 and arm64). The v0.1.0 builds are not code signed; from the next release, the macOS build is a signed, notarized app in a disk image</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lp-status-bar">
+          <div class="lp-status-dot"></div>
+          <span class="lp-status-text">Live releases</span>
+        </div>
+        <div id="releases-gleapp-map-downloader" class="lp-releases-list">
+          <div class="lp-loading"><span>Fetching releases&hellip;</span></div>
+        </div>
+        <a href="https://github.com/abrignoni/GLEAPP-MapDownloader/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all GLEAPP Map Downloader releases on GitHub</a>
       </section>
 
       <!-- BATCH LEAPP -->
@@ -909,6 +963,7 @@
       { id: 'vleapp', name: 'VLEAPP', repo: 'abrignoni/VLEAPP' },
       { id: 'dleapp', name: 'DLEAPP', repo: 'abrignoni/DLEAPP' },
       { id: 'gleapp', name: 'GLEAPP', repo: 'abrignoni/GLEAPP' },
+      { id: 'gleapp-map-downloader', name: 'GLEAPP Map Downloader', repo: 'abrignoni/GLEAPP-MapDownloader' },
       { id: 'batch-leapp', name: 'Batch LEAPP', repo: 'abrignoni/batch-leapp' },
     ];
 
