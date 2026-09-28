@@ -69,7 +69,7 @@
     "title": "qnxprobe — filesystem identification and extraction",
     "url": "https://leapps.org/probes#section-qnxprobe",
     "page": "Probes",
-    "excerpt": "Identify, list and extract QNX6, QNX4, ETFS, EFS, ext2/3/4, F2FS, FAT32, exFAT, NTFS, HFS+, APFS and the Linux flash filesystems SquashFS, JFFS2, UBI/UBIFS and YAFFS out of raw disk images, flash dumps and forensic containers, and open BitLocker volumes with their key."
+    "excerpt": "Identify, list and extract QNX6, QNX4, ETFS, EFS, ext2/3/4, F2FS, FAT32, exFAT, NTFS, HFS+, APFS and the Linux flash filesystems SquashFS, JFFS2, UBI/UBIFS and YAFFS out of raw disk images, flash dumps and forensic containers, and open BitLocker and encrypted APFS volumes with their key."
   },
   {
     "title": "ewfprobe: forensic, Apple and virtual disk image reader",

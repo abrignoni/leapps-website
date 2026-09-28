@@ -342,7 +342,7 @@
         "name": "qnxprobe",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Windows, macOS, Linux",
-        "description": "Identifies, lists and extracts QNX, Linux, Windows and Apple filesystems and the Linux flash filesystems out of raw disk images, flash dumps and forensic containers, opens BitLocker volumes with their key, and recovers deleted files from YAFFS2, JFFS2 and UBIFS.",
+        "description": "Identifies, lists and extracts QNX, Linux, Windows and Apple filesystems and the Linux flash filesystems out of raw disk images, flash dumps and forensic containers, opens BitLocker and encrypted APFS volumes with their key, and recovers deleted files from YAFFS2, JFFS2 and UBIFS.",
         "url": "https://leapps.org/probes#section-qnxprobe",
         "downloadUrl": "https://github.com/abrignoni/qnxprobe/releases",
         "isAccessibleForFree": true,
@@ -510,7 +510,7 @@
           <div>
             <h3>What is qnxprobe?</h3>
             <p>A head unit image lands on your desk and the first question is what is actually in it. The partition table will call a qnx6 volume Linux, and the usual tools have no QNX support at all. qnxprobe identifies each volume by its own on-disk structure instead of the type byte, then lists it and extracts to a zip with a provenance manifest.</p>
-            <p>Nothing to install, no admin rights, and it never writes to the image. Decryption (BitLocker and encrypted containers) uses the <code>pycryptodome</code> package, which the release executables carry.</p>
+            <p>Nothing to install, no admin rights, and it never writes to the image. Decryption (BitLocker, encrypted APFS and encrypted containers) uses the <code>pycryptodome</code> package, which the release executables carry.</p>
           </div>
           <div>
             <h3>Highlights</h3>
@@ -519,6 +519,7 @@
               <li>The flash filesystems embedded Linux keeps on routers, cameras and drones: SquashFS, JFFS2, UBI with the UBIFS inside it, and YAFFS1 and YAFFS2, found inside a raw chip dump with or without its NAND spare bytes</li>
               <li>Deleted files recovered from YAFFS2, JFFS2 and UBIFS, and refused rather than filled with zeros when part of a file is already gone</li>
               <li>BitLocker volumes opened with their password, recovery password or startup key (<code>.BEK</code>); without a key, the report names the volume, its protectors and what would open it</li>
+              <li>Encrypted APFS volumes opened with their password or personal recovery key; without one, the volume is named as locked, with the password hint it stores, rather than left out of the listing</li>
               <li>Every container ewfprobe opens, from E01 and AFF4 to <code>.dmg</code>, VHDX and VMDK, read directly, so a walk starts from the file you were handed</li>
             </ul>
           </div>
