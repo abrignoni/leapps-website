@@ -8,6 +8,11 @@
 /logos/*
   Cache-Control: public, max-age=2592000
 
+# Promo videos and their posters: 7 days. Replace a video under a new file
+# name so a week-old cached copy never shadows it.
+/videos/*
+  Cache-Control: public, max-age=604800
+
 # Per-post social cards — 1 hour. Short on purpose: this rule also lands on
 # a 404 if a card is ever requested before it deploys, so a brief cache keeps
 # a stray 404 from sticking for a day.
