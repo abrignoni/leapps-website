@@ -18,7 +18,7 @@
 
 Standalone single-purpose readers, separate from the LEAPPs: https://leapps.org/probes
 
-- [qnxprobe](https://github.com/abrignoni/qnxprobe): identifies, lists and extracts QNX, Linux, Windows and Apple filesystems and the Linux flash filesystems (SquashFS, JFFS2, UBI/UBIFS, YAFFS) out of raw disk images, flash dumps and forensic containers, opens BitLocker volumes with their key, and recovers deleted files from YAFFS2, JFFS2 and UBIFS
+- [qnxprobe](https://github.com/abrignoni/qnxprobe): identifies, lists and extracts QNX, Linux, Windows and Apple filesystems and the Linux flash filesystems (SquashFS, JFFS2, UBI/UBIFS, YAFFS) out of raw disk images, flash dumps and forensic containers, opens BitLocker and encrypted APFS volumes with their key, and recovers deleted files from YAFFS2, JFFS2 and UBIFS
 - [ewfprobe](https://github.com/abrignoni/ewfprobe): read-only reader for forensic images (E01, Ex01, SMART, AFF, AFF4), Apple disk images, virtual machine disks (VHD, VHDX, VMDK, QCOW) and logical evidence (L01, AD1) that presents the acquired disk as a seekable file; pure Python, no libewf
 - [exoprobe](https://github.com/abrignoni/exoprobe): rejoins the media Android apps cached through ExoPlayer, including DASH and HLS streams
 
