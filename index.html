@@ -817,7 +817,16 @@ img { max-width: 100%; display: block; }
 @media (max-width: 768px) {
   .lp-back-top { bottom: 1rem; right: 1rem; width: 44px; height: 44px; }
 }
-  </style>
+  .lp-video { margin: 3rem auto 0; max-width: 860px; }
+.lp-video video { width: 100%; height: auto; display: block; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--border); border-radius: 8px; }
+.lp-video figcaption { margin-top: .6rem; font-size: .85rem; color: var(--muted); text-align: center; }
+.lp-video-dialog { margin: auto; padding: 0; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text); width: min(960px, 94vw); max-width: 94vw; }
+.lp-video-dialog::backdrop { background: rgba(0,0,0,.75); }
+.lp-video-dialog-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .5rem .5rem .5rem 1rem; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.lp-video-close { background: none; border: 1px solid var(--border); color: var(--text); cursor: pointer; width: 2rem; height: 2rem; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; }
+.lp-video-close:hover { border-color: var(--gold); color: var(--gold); }
+.lp-video-dialog video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; }
+</style>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>
   <script type="application/ld+json">
   {
@@ -1059,6 +1068,7 @@ img { max-width: 100%; display: block; }
         <div class="lp-tool-links">
           <a href="https://github.com/abrignoni/GLEAPP" class="lp-tool-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a>
           <a href="https://leapps.org/releases#section-gleapp" class="lp-tool-link"><i class="ti ti-download"></i>Download</a>
+          <a href="/videos/gleapp-intro.mp4" class="lp-tool-link lp-video-open" data-video="gleapp" data-title="GLEAPP in under a minute"><i class="ti ti-player-play"></i>Watch</a>
         </div>
       </div>
       <div class="lp-tool-card lp-tool-card-lava">
@@ -1068,6 +1078,7 @@ img { max-width: 100%; display: block; }
         <div class="lp-tool-desc">Turn parsed data into clear visual reports.</div>
         <div class="lp-tool-links">
           <a href="https://leapps.org/releases" class="lp-tool-link"><i class="ti ti-download"></i>Download</a>
+          <a href="/videos/lava-intro.mp4" class="lp-tool-link lp-video-open" data-video="lava" data-title="LAVA in under a minute"><i class="ti ti-player-play"></i>Watch</a>
         </div>
       </div>
       <div class="lp-tool-card lp-tool-card-batch">
@@ -1081,6 +1092,13 @@ img { max-width: 100%; display: block; }
         </div>
       </div>
     </div>
+    <figure class="lp-video">
+      <video controls preload="none" playsinline poster="/videos/leapps-intro.jpg" width="1280" height="720" aria-label="The LEAPPs in under a minute">
+        <source src="/videos/leapps-intro.mp4" type="video/mp4">
+        <a href="/videos/leapps-intro.mp4">Watch the LEAPPs video (MP4)</a>
+      </video>
+      <figcaption>The LEAPPs in under a minute: what iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP parse, the extractions they take, and the reports they write.</figcaption>
+    </figure>
   </section>
 
   <!-- FEATURES -->
@@ -1973,5 +1991,33 @@ img { max-width: 100%; display: block; }
     })();
   </script>
   <script src="/analytics.js?v=20260707" defer></script>
+  <dialog class="lp-video-dialog" id="lp-video-dialog" aria-labelledby="lp-video-dialog-title">
+    <div class="lp-video-dialog-bar">
+      <span id="lp-video-dialog-title"></span>
+      <button type="button" class="lp-video-close" aria-label="Close video"><i class="ti ti-x"></i></button>
+    </div>
+    <video controls playsinline preload="none" width="1280" height="720"></video>
+  </dialog>
+  <script>
+  (function () {
+    var dlg = document.getElementById('lp-video-dialog');
+    if (!dlg || typeof dlg.showModal !== 'function') return; // links fall back to the MP4
+    var v = dlg.querySelector('video'), title = document.getElementById('lp-video-dialog-title');
+    document.querySelectorAll('.lp-video-open').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var k = a.getAttribute('data-video');
+        title.textContent = a.getAttribute('data-title') || '';
+        v.poster = '/videos/' + k + '-intro.jpg';
+        v.src = '/videos/' + k + '-intro.mp4';
+        dlg.showModal();
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+      });
+    });
+    dlg.addEventListener('close', function () { v.pause(); v.removeAttribute('src'); v.load(); });
+    dlg.querySelector('.lp-video-close').addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+  })();
+  </script>
 </body>
 </html>
