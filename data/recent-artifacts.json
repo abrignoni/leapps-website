@@ -3,10 +3,10 @@
   "window_days": 45,
   "items": [
     {
-      "name": "windowsProcessCreation",
-      "query": "windowsProcessCreation",
+      "name": "linuxLogind",
+      "query": "linuxLogind",
       "tool": "DLEAPP",
-      "date": "2026-09-27"
+      "date": "2026-09-28"
     },
     {
       "name": "exoplayerCachedMedia",
@@ -33,10 +33,10 @@
       "date": "2026-08-30"
     },
     {
-      "name": "windowsTimeChanges",
-      "query": "windowsTimeChanges",
+      "name": "linuxTrash",
+      "query": "linuxTrash",
       "tool": "DLEAPP",
-      "date": "2026-09-27"
+      "date": "2026-09-28"
     },
     {
       "name": "SamsungGalleryHiddenAlbum",
@@ -63,10 +63,10 @@
       "date": "2026-08-30"
     },
     {
-      "name": "macosCoreSpotlight",
-      "query": "macosCoreSpotlight",
+      "name": "linuxPamSessions",
+      "query": "linuxPamSessions",
       "tool": "DLEAPP",
-      "date": "2026-09-27"
+      "date": "2026-09-28"
     },
     {
       "name": "AIChatbotNovaConversations",
