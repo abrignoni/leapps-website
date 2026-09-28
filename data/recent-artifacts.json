@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "linuxLogind",
-      "query": "linuxLogind",
+      "name": "linuxSystemdUnits",
+      "query": "linuxSystemdUnits",
       "tool": "DLEAPP",
       "date": "2026-09-28"
     },
@@ -33,8 +33,8 @@
       "date": "2026-08-30"
     },
     {
-      "name": "linuxTrash",
-      "query": "linuxTrash",
+      "name": "linuxSystemInfo",
+      "query": "linuxSystemInfo",
       "tool": "DLEAPP",
       "date": "2026-09-28"
     },
@@ -63,8 +63,8 @@
       "date": "2026-08-30"
     },
     {
-      "name": "linuxPamSessions",
-      "query": "linuxPamSessions",
+      "name": "linuxCron",
+      "query": "linuxCron",
       "tool": "DLEAPP",
       "date": "2026-09-28"
     },
