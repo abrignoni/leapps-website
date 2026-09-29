@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "wgetHsts",
-      "query": "wgetHsts",
+      "name": "belkinWemo",
+      "query": "belkinWemo",
       "tool": "DLEAPP",
       "date": "2026-09-29"
     },
@@ -33,8 +33,8 @@
       "date": "2026-08-30"
     },
     {
-      "name": "lessHistory",
-      "query": "lessHistory",
+      "name": "ubootEnvironment",
+      "query": "ubootEnvironment",
       "tool": "DLEAPP",
       "date": "2026-09-29"
     },
@@ -63,8 +63,8 @@
       "date": "2026-08-30"
     },
     {
-      "name": "pythonReplHistory",
-      "query": "pythonReplHistory",
+      "name": "wgetHsts",
+      "query": "wgetHsts",
       "tool": "DLEAPP",
       "date": "2026-09-29"
     },
