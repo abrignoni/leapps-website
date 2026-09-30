@@ -3,10 +3,10 @@
   "window_days": 45,
   "items": [
     {
-      "name": "sqliteShellHistory",
-      "query": "sqliteShellHistory",
+      "name": "linuxSyslog",
+      "query": "linuxSyslog",
       "tool": "DLEAPP",
-      "date": "2026-09-29"
+      "date": "2026-09-30"
     },
     {
       "name": "tikTokReturnPdf",
@@ -33,10 +33,10 @@
       "date": "2026-08-30"
     },
     {
-      "name": "belkinWemo",
-      "query": "belkinWemo",
+      "name": "sshConfig",
+      "query": "sshConfig",
       "tool": "DLEAPP",
-      "date": "2026-09-29"
+      "date": "2026-09-30"
     },
     {
       "name": "robinhoodReturns",
@@ -63,10 +63,10 @@
       "date": "2026-08-30"
     },
     {
-      "name": "ubootEnvironment",
-      "query": "ubootEnvironment",
+      "name": "linuxAutostart",
+      "query": "linuxAutostart",
       "tool": "DLEAPP",
-      "date": "2026-09-29"
+      "date": "2026-09-30"
     },
     {
       "name": "coinbaseComplianceReport",
