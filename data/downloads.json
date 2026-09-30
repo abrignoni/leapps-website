@@ -1262,14 +1262,14 @@
     {
       "date": "2026-09-30",
       "totals": {
-        "ileapp": 94661,
-        "aleapp": 71321,
-        "rleapp": 5441,
-        "vleapp": 2383,
-        "lava": 3503,
-        "dleapp": 999,
-        "gleapp": 233,
-        "batchleapp": 525
+        "ileapp": 94723,
+        "aleapp": 71382,
+        "rleapp": 5443,
+        "vleapp": 2386,
+        "lava": 3518,
+        "dleapp": 1004,
+        "gleapp": 250,
+        "batchleapp": 526
       }
     }
   ]
