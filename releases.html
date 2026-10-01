@@ -728,9 +728,9 @@
         <div class="lp-install-box">
           <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
           <div class="lp-install-row"><span class="lp-install-tag">Tap</span><code>brew trust leapps-org/leapps; brew tap leapps-org/leapps</code><button class="lp-brew-copy" data-copy="brew trust leapps-org/leapps; brew tap leapps-org/leapps" data-tool="VLEAPP" aria-label="Copy VLEAPP tap command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-row"><span class="lp-install-tag">CLI</span><code>brew install vleapp</code><button class="lp-brew-copy" data-copy="brew install vleapp" data-tool="VLEAPP" aria-label="Copy VLEAPP CLI install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-row"><span class="lp-install-tag">GUI</span><code>brew install --cask vleapp-gui</code><button class="lp-brew-copy" data-copy="brew install --cask vleapp-gui" data-tool="VLEAPP" aria-label="Copy VLEAPP GUI install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-row"><span class="lp-install-tag">App</span><code>brew install --cask vleapp-gui</code><button class="lp-brew-copy" data-copy="brew install --cask vleapp-gui" data-tool="VLEAPP" aria-label="Copy VLEAPP app install command"><i class="ti ti-copy"></i></button></div>
           <div class="lp-install-note">Run the Tap line once. Homebrew 6 will not load a tap outside its own until you trust it, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
+          <div class="lp-install-note">VLEAPP is one program now. The <code>vleapp-gui</code> cask installs VLEAPP.app and links its command line as <code>vleapp</code>: started with no arguments it opens the window, and given arguments it runs as the command line. The separate <code>brew install vleapp</code> formula is deprecated and stays at its last release.</div>
           <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
         </div>
         <div class="lp-status-bar">
@@ -761,11 +761,19 @@
           <div>
             <h3>Highlights</h3>
             <ul>
-              <li>Prebuilt CLI and GUI packages for Windows, macOS, and Linux &mdash; no Python required</li>
+              <li>Prebuilt packages for Windows, macOS, and Linux, one program that is both the window and the command line, so no Python is needed</li>
               <li>Apple Silicon and Intel builds for macOS; x64 and arm64 for Windows and Linux</li>
               <li>Growing parser set &mdash; contributions welcome</li>
             </ul>
           </div>
+        </div>
+        <div class="lp-install-box">
+          <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
+          <div class="lp-install-row"><span class="lp-install-tag">Tap</span><code>brew trust leapps-org/leapps; brew tap leapps-org/leapps</code><button class="lp-brew-copy" data-copy="brew trust leapps-org/leapps; brew tap leapps-org/leapps" data-tool="DLEAPP" aria-label="Copy DLEAPP tap command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-row"><span class="lp-install-tag">App</span><code>brew install --cask dleapp-gui</code><button class="lp-brew-copy" data-copy="brew install --cask dleapp-gui" data-tool="DLEAPP" aria-label="Copy DLEAPP app install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-note">Run the Tap line once. Homebrew 6 will not load a tap outside its own until you trust it, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
+          <div class="lp-install-note">DLEAPP is one program now. The <code>dleapp-gui</code> cask installs DLEAPP.app and links its command line as <code>dleapp</code>: started with no arguments it opens the window, and given arguments it runs as the command line.</div>
+          <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
         </div>
         <div class="lp-status-bar">
           <div class="lp-status-dot"></div>
@@ -803,6 +811,14 @@
               <li>Installers for Windows, macOS (Apple silicon and Intel), and Linux, so no Python is needed</li>
             </ul>
           </div>
+        </div>
+        <div class="lp-install-box">
+          <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
+          <div class="lp-install-row"><span class="lp-install-tag">Tap</span><code>brew trust leapps-org/leapps; brew tap leapps-org/leapps</code><button class="lp-brew-copy" data-copy="brew trust leapps-org/leapps; brew tap leapps-org/leapps" data-tool="GLEAPP" aria-label="Copy GLEAPP tap command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-row"><span class="lp-install-tag">App</span><code>brew install --cask gleapp</code><button class="lp-brew-copy" data-copy="brew install --cask gleapp" data-tool="GLEAPP" aria-label="Copy GLEAPP app install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-note">Run the Tap line once. Homebrew 6 will not load a tap outside its own until you trust it, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
+          <div class="lp-install-note">The <code>gleapp</code> cask installs GLEAPP.app. It does not link a command line.</div>
+          <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
         </div>
         <div class="lp-status-bar">
           <div class="lp-status-dot"></div>
