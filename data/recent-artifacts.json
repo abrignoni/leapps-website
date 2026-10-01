@@ -9,8 +9,14 @@
       "date": "2026-10-01"
     },
     {
-      "name": "linuxEvolution",
-      "query": "linuxEvolution",
+      "name": "swiftkeyLanguageModel",
+      "query": "swiftkeyLanguageModel",
+      "tool": "ALEAPP",
+      "date": "2026-10-01"
+    },
+    {
+      "name": "windowsWinlogonEvents",
+      "query": "windowsWinlogonEvents",
       "tool": "DLEAPP",
       "date": "2026-10-01"
     },
@@ -19,12 +25,6 @@
       "query": "tikTokReturnPdf",
       "tool": "RLEAPP",
       "date": "2026-09-28"
-    },
-    {
-      "name": "exoplayerCachedMedia",
-      "query": "exoplayerCachedMedia",
-      "tool": "ALEAPP",
-      "date": "2026-09-26"
     },
     {
       "name": "ford sync bluetooth",
@@ -39,8 +39,14 @@
       "date": "2026-09-23"
     },
     {
-      "name": "linuxGnomeScreenTime",
-      "query": "linuxGnomeScreenTime",
+      "name": "exoplayerCachedMedia",
+      "query": "exoplayerCachedMedia",
+      "tool": "ALEAPP",
+      "date": "2026-09-26"
+    },
+    {
+      "name": "windowsProfileList",
+      "query": "windowsProfileList",
       "tool": "DLEAPP",
       "date": "2026-10-01"
     },
@@ -49,12 +55,6 @@
       "query": "robinhoodReturns",
       "tool": "RLEAPP",
       "date": "2026-09-25"
-    },
-    {
-      "name": "SamsungGalleryHiddenAlbum",
-      "query": "SamsungGalleryHiddenAlbum",
-      "tool": "ALEAPP",
-      "date": "2026-09-24"
     },
     {
       "name": "berla ive export",
@@ -69,10 +69,10 @@
       "date": "2026-09-23"
     },
     {
-      "name": "linuxGvfsMetadata",
-      "query": "linuxGvfsMetadata",
-      "tool": "DLEAPP",
-      "date": "2026-10-01"
+      "name": "SamsungGalleryHiddenAlbum",
+      "query": "SamsungGalleryHiddenAlbum",
+      "tool": "ALEAPP",
+      "date": "2026-09-24"
     }
   ]
 }
