@@ -3,10 +3,12 @@ title: Installing LEAPPs and LAVA on macOS with Homebrew
 date: 2026-06-28
 author: James Habben
 tags: [LEAPPs, LAVA, macOS, Homebrew, installation]
-excerpt: Mac users can install iLEAPP, ALEAPP, RLEAPP, VLEAPP, their GUI apps, and LAVA with a few Homebrew commands from the LEAPPs tap.
+excerpt: Mac users can install the LEAPPs, GLEAPP and LAVA with a few Homebrew commands from the LEAPPs tap.
 ---
 
 # Installing LEAPPs and LAVA on macOS with Homebrew
+
+*Updated October 1, 2026: iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP are now one program each, so their casks install the app and the command line together. DLEAPP and GLEAPP have joined the tap, and Homebrew 6 asks you to trust the tap before adding it. The commands below reflect these changes.*
 
 If you use a Mac for forensic work, you probably already have a small pile of tools installed through Homebrew. It is one of those quiet utilities that makes a workstation feel civilized: install the thing, update the thing, move on with your day.
 
@@ -18,44 +20,49 @@ One quick reality check before the commands: a lot of forensic workstations are 
 
 ## Add the tap
 
-First, add the LEAPPs tap:
+Homebrew 6 will not load a tap that is not one of its own until you trust it, so trust the LEAPPs tap first and then add it:
 
 ```bash
+brew trust leapps-org/leapps
 brew tap leapps-org/leapps
 ```
 
+If your Homebrew is older and has no `brew trust` command, skip that first line.
+
 You only need to do this once. Homebrew will remember the tap until you remove it.
 
-## Install the command line tools
+## Install iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP
 
-If you like running parsers from the terminal, install whichever tools you need:
-
-```bash
-brew install ileapp
-brew install aleapp
-brew install rleapp
-brew install vleapp
-```
-
-That gives you the command line versions of:
-
-- `ileapp` for iOS
-- `aleapp` for Android
-- `rleapp` for warrant returns
-- `vleapp` for vehicle systems
-
-## Install the GUI apps
-
-If you prefer the desktop apps, those are available as casks:
+Each of these is now a single program. The cask installs the app and links its command line as `ileapp`, `aleapp`, `rleapp`, `vleapp` or `dleapp`. Started without arguments it opens the window. Given arguments it runs as the command line.
 
 ```bash
 brew install --cask ileapp-gui
 brew install --cask aleapp-gui
 brew install --cask rleapp-gui
 brew install --cask vleapp-gui
+brew install --cask dleapp-gui
 ```
 
-And for reviewing LEAPPs output in LAVA:
+The older `ileapp`, `aleapp`, `rleapp` and `vleapp` formulae are deprecated and stay at the last release that had a separate command line download. If you have one installed and want the command line that comes inside the app instead:
+
+```bash
+brew uninstall ileapp
+brew reinstall --cask ileapp-gui
+```
+
+## Install GLEAPP
+
+For image and video triage:
+
+```bash
+brew install --cask gleapp
+```
+
+This cask installs the app only. It does not link a command line.
+
+## Install LAVA
+
+For reviewing LEAPPs output in LAVA:
 
 ```bash
 brew install --cask lava
@@ -76,7 +83,7 @@ brew upgrade
 If you only want to update specific LEAPPs tools, name them:
 
 ```bash
-brew upgrade ileapp aleapp
+brew upgrade ileapp-gui aleapp-gui
 ```
 
 For casks, Homebrew will also handle upgrades through the normal upgrade flow.
@@ -85,16 +92,16 @@ One more quick note: the Homebrew packages track *packaged releases*. They are n
 
 ## Removing tools
 
-If you need to uninstall a command line tool:
+If you still have one of the deprecated command line formulae installed, uninstall it by name:
 
 ```bash
 brew uninstall ileapp
 ```
 
-For GUI apps:
+For the apps:
 
 ```bash
-brew uninstall --cask ileapp-gui aleapp-gui vleapp-gui rleapp-gui lava
+brew uninstall --cask ileapp-gui aleapp-gui vleapp-gui rleapp-gui dleapp-gui gleapp lava
 ```
 
 And if you ever want to remove the tap itself:

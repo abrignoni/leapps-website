@@ -316,10 +316,13 @@
         <p style="font-size:.85rem;margin-bottom:1rem;padding:.6rem .9rem;background:var(--surface);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;">💡 <strong>Prefer not to run Python scripts directly?</strong> The <a href="https://leapps.org/releases" style="color:var(--gold);text-decoration:none;">Releases page</a> provides pre-built executables — no Python installation required.</p>
 
         <div class="lp-code-label">Fastest install — macOS (Homebrew)</div>
-        <div class="lp-code" style="white-space:pre;"><span class="kw">brew</span> tap leapps-org/leapps
-<span class="kw">brew</span> install ileapp                <span class="cm"># CLI — or aleapp / rleapp / vleapp</span>
-<span class="kw">brew</span> install --cask ileapp-gui    <span class="cm"># GUI app — or aleapp-gui / rleapp-gui / vleapp-gui / lava</span></div>
-        <p style="font-size:.82rem;color:var(--muted);margin:.5rem 0 1.25rem;">A Homebrew install handles Python and dependencies for you — skip the pip steps below and run the tool directly. Full walkthrough in the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew" style="color:var(--gold);text-decoration:none;">Homebrew guide</a>. On Windows, use the pre-built executables or the manual steps below.</p>
+        <div class="lp-code" style="white-space:pre;"><span class="kw">brew</span> trust leapps-org/leapps      <span class="cm"># Homebrew 6: trust the tap before adding it</span>
+<span class="kw">brew</span> tap leapps-org/leapps
+<span class="kw">brew</span> install --cask ileapp-gui    <span class="cm"># iLEAPP: app and command line together</span>
+<span class="kw">brew</span> install --cask aleapp-gui    <span class="cm"># same for rleapp-gui, vleapp-gui, dleapp-gui</span>
+<span class="kw">brew</span> install --cask gleapp        <span class="cm"># GLEAPP (app only)</span>
+<span class="kw">brew</span> install --cask lava          <span class="cm"># LAVA</span></div>
+        <p style="font-size:.82rem;color:var(--muted);margin:.5rem 0 1.25rem;">A Homebrew install handles Python and dependencies for you, so skip the pip steps below and run the tool directly. Homebrew 6 will not load a tap outside its own until you trust it; an older Homebrew that has no <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">brew trust</code> command can skip that line. For iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP the cask installs the app and links its command line (<code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">ileapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">aleapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">rleapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">vleapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">dleapp</code>): started with no arguments it opens the window, and given arguments it runs as the command line. Full walkthrough in the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew" style="color:var(--gold);text-decoration:none;">Homebrew guide</a>. On Windows, use the pre-built executables or the manual steps below.</p>
 
         <div class="lp-tabs" id="run-tabs">
           <div class="lp-tab active" data-tab="gui">GUI</div>
@@ -358,7 +361,7 @@
         </ul>
 
         <div class="lp-code-label" style="margin-top:1.75rem;">Your first run — end to end (macOS)</div>
-        <div class="lp-code" style="white-space:pre;"><span class="kw">brew</span> tap leapps-org/leapps &amp;&amp; brew install ileapp
+        <div class="lp-code" style="white-space:pre;"><span class="kw">brew</span> trust leapps-org/leapps; brew tap leapps-org/leapps &amp;&amp; brew install --cask ileapp-gui
 <span class="kw">ileapp</span> <span class="kw">-t</span> <span class="st">zip</span> <span class="kw">-i</span> <span class="st">~/Cases/ios_extraction.zip</span> <span class="kw">-o</span> <span class="st">~/Cases/reports</span>
 <span class="kw">open</span> <span class="st">~/Cases/reports</span>    <span class="cm"># open index.html in the newest folder, or load the LAVA project</span></div>
         <p style="font-size:.82rem;color:var(--muted);margin-top:.5rem;">Three commands: install, parse, review. No extraction to test with yet? Explore a pre-processed report in the <a href="https://github.com/leapps-org/LAVA-sample-projects" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:none;">LAVA sample projects</a> to see what the output looks like.</p>
