@@ -34,7 +34,7 @@ macOS (Homebrew tap: leapps-org/leapps):
 
 iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP are one program each: no arguments opens the window, arguments run the command line. The `ileapp`, `aleapp`, `rleapp` and `vleapp` formulae are deprecated.
 
-Windows: pre-built executables on each tool's GitHub releases page. From source: Python 3.10+, `pip install -r requirements.txt`, then `python iLEAPP.py -t <fs|tar|zip|gz> -i <input> -o <output>`.
+Windows and Linux: pre-built downloads on each tool's GitHub releases page (Windows installer or portable zip, Linux AppImage). From source: Python 3.10+, `pip install -r requirements.txt`, then `python ileapp.py -t <fs|tar|zip|gz|raw> -i <input> -o <output>` (or `aleapp.py`, `rleapp.py`, `vleapp.py`, `dleapp.py`).
 
 ## Key pages
 

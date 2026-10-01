@@ -313,7 +313,7 @@
       <div class="lp-step-body">
         <div class="lp-step-title">Install &amp; Run</div>
         <p class="lp-step-desc">LEAPPs tools run on Python 3.10+. Download the latest release, install dependencies, and run against your extraction folder.</p>
-        <p style="font-size:.85rem;margin-bottom:1rem;padding:.6rem .9rem;background:var(--surface);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;">💡 <strong>Prefer not to run Python scripts directly?</strong> The <a href="https://leapps.org/releases" style="color:var(--gold);text-decoration:none;">Releases page</a> provides pre-built executables — no Python installation required.</p>
+        <p style="font-size:.85rem;margin-bottom:1rem;padding:.6rem .9rem;background:var(--surface);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;">💡 <strong>Prefer not to run Python scripts directly?</strong> The <a href="https://leapps.org/releases" style="color:var(--gold);text-decoration:none;">Releases page</a> provides pre-built downloads for Windows, macOS and Linux, so no Python installation is needed. For iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP each download is one program: started with no arguments it opens the window, and given arguments it runs as the command line.</p>
 
         <div class="lp-code-label">Fastest install — macOS (Homebrew)</div>
         <div class="lp-code" style="white-space:pre;"><span class="kw">brew</span> trust leapps-org/leapps      <span class="cm"># Homebrew 6: trust the tap before adding it</span>
@@ -333,7 +333,7 @@
           <div class="lp-code-label">Step 1 — Install dependencies</div>
           <div class="lp-code"><span class="kw">pip</span> install -r requirements.txt</div>
           <div class="lp-code-label">Step 2 — Launch the GUI</div>
-          <div class="lp-code"><span class="kw">python</span> iLEAPPGUI.py  <span class="cm"># or ALEAPPGUI.py / RLEAPPGUI.py / VLEAPPGUI.py / dleappGUI.py</span></div>
+          <div class="lp-code"><span class="kw">python</span> ileappGUI.py  <span class="cm"># or aleappGUI.py / rleappGUI.py / vleappGUI.py / dleappGUI.py</span></div>
           <p style="font-size:.82rem;color:var(--muted);margin-top:.5rem;">Select your input folder (extraction source) and output folder, then click <strong style="color:var(--text);">Process</strong>. The GUI will show progress per module.</p>
           <p style="font-size:.78rem;color:var(--muted);margin-top:.5rem;">GLEAPP does not share this command line. It opens with <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">python gleappGUI.py</code> for the desktop window, or <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">python gleapp.py web</code> for the same interface in a browser.</p>
         </div>
@@ -342,14 +342,15 @@
           <div class="lp-code-label">Step 1 — Install dependencies</div>
           <div class="lp-code"><span class="kw">pip</span> install -r requirements.txt</div>
           <div class="lp-code-label">Step 2 — Run from the command line</div>
-          <div class="lp-code"><span class="kw">python</span> iLEAPP.py <span class="kw">-t</span> <span class="st">fs</span> <span class="kw">-i</span> <span class="st">/path/to/extraction</span> <span class="kw">-o</span> <span class="st">/path/to/output</span></div>
+          <div class="lp-code"><span class="kw">python</span> ileapp.py <span class="kw">-t</span> <span class="st">fs</span> <span class="kw">-i</span> <span class="st">/path/to/extraction</span> <span class="kw">-o</span> <span class="st">/path/to/output</span></div>
           <div class="lp-code-label">General options</div>
-          <div class="lp-code"><span class="kw">-h</span>, <span class="kw">--help</span>                        <span class="cm"># show help message and exit</span>
-<span class="kw">-t</span> <span class="st">{fs,tar,zip,gz}</span>                 <span class="cm"># input type: 'fs' for a folder of extracted files,</span>
-                                   <span class="cm">#   'tar', 'zip', or 'gz' for compressed packages</span>
+          <div class="lp-code" style="white-space:pre;"><span class="kw">-h</span>, <span class="kw">--help</span>                        <span class="cm"># show help message and exit</span>
+<span class="kw">-t</span> <span class="st">{fs,tar,zip,gz,raw}</span>            <span class="cm"># input type: 'fs' for a folder of extracted files,</span>
+                                  <span class="cm">#   'tar', 'zip', or 'gz' for compressed packages,</span>
+                                  <span class="cm">#   'raw' for a disk image</span>
 <span class="kw">-o</span>, <span class="kw">--output_path</span> <span class="st">OUTPUT_PATH</span>     <span class="cm"># path to base output folder (must exist)</span>
 <span class="kw">-i</span>, <span class="kw">--input_path</span>  <span class="st">INPUT_PATH</span>      <span class="cm"># path to extraction source</span></div>
-          <p style="font-size:.78rem;color:var(--muted);margin-top:.75rem;">Each tool may have additional options. Run <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">python iLEAPP.py -h</code> (or the equivalent for ALEAPP, RLEAPP, VLEAPP, DLEAPP) to see the full list of options for that tool.</p>
+          <p style="font-size:.78rem;color:var(--muted);margin-top:.75rem;">Each tool may have additional options. Run <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">python ileapp.py -h</code> (or <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">aleapp.py</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">rleapp.py</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">vleapp.py</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">dleapp.py</code>) to see the full list of options for that tool.</p>
           <p style="font-size:.78rem;color:var(--muted);margin-top:.5rem;">GLEAPP does not share this command line. It opens with <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">python gleappGUI.py</code> for the desktop window, or <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">python gleapp.py web</code> for the same interface in a browser.</p>
         </div>
 

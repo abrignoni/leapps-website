@@ -207,7 +207,7 @@
     "title": "Command Line Usage",
     "url": "https://leapps.org/docs#step-3",
     "page": "Docs",
-    "excerpt": "Run from command line: python iLEAPP.py -t {fs,tar,zip,gz} -i INPUT_PATH -o OUTPUT_PATH. Each tool may have additional options."
+    "excerpt": "Run from command line: python ileapp.py -t {fs,tar,zip,gz,raw} -i INPUT_PATH -o OUTPUT_PATH. Each tool may have additional options."
   },
   {
     "title": "Guides — Downloadable PDF guides",
