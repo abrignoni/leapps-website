@@ -140,6 +140,7 @@
 .lp-brew-copy:hover, .lp-brew-copy.copied { color: var(--gold); border-color: var(--gold); }
 .lp-install-note { font-size: .75rem; color: var(--muted); margin-top: .5rem; }
 .lp-install-note a { color: var(--gold); text-decoration: none; }
+.lp-install-note code { font-family: var(--font-mono); font-size: .72rem; color: var(--text); }
 .lp-releases-list { display: flex; flex-direction: column; gap: .75rem; }
 .lp-release-card {
       background: var(--surface); border: 1px solid var(--border);
@@ -613,7 +614,9 @@
         </div>
         <div class="lp-install-box">
           <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
-          <div class="lp-install-row"><span class="lp-install-tag">GUI</span><code>brew tap leapps-org/leapps &amp;&amp; brew install --cask lava</code><button class="lp-brew-copy" data-copy="brew tap leapps-org/leapps &amp;&amp; brew install --cask lava" data-tool="LAVA" aria-label="Copy LAVA GUI install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-row"><span class="lp-install-tag">Tap</span><code>brew trust leapps-org/leapps; brew tap leapps-org/leapps</code><button class="lp-brew-copy" data-copy="brew trust leapps-org/leapps; brew tap leapps-org/leapps" data-tool="LAVA" aria-label="Copy LAVA tap command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-row"><span class="lp-install-tag">GUI</span><code>brew install --cask lava</code><button class="lp-brew-copy" data-copy="brew install --cask lava" data-tool="LAVA" aria-label="Copy LAVA GUI install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-note">Run the Tap line once. Homebrew 6 will not load a tap outside its own until you trust it, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
           <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
         </div>
         <div class="lp-status-bar">
@@ -640,8 +643,10 @@
         </div>
         <div class="lp-install-box">
           <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
-          <div class="lp-install-row"><span class="lp-install-tag">CLI</span><code>brew tap leapps-org/leapps &amp;&amp; brew install aleapp</code><button class="lp-brew-copy" data-copy="brew tap leapps-org/leapps &amp;&amp; brew install aleapp" data-tool="ALEAPP" aria-label="Copy ALEAPP CLI install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-row"><span class="lp-install-tag">GUI</span><code>brew tap leapps-org/leapps &amp;&amp; brew install --cask aleapp-gui</code><button class="lp-brew-copy" data-copy="brew tap leapps-org/leapps &amp;&amp; brew install --cask aleapp-gui" data-tool="ALEAPP" aria-label="Copy ALEAPP GUI install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-row"><span class="lp-install-tag">Tap</span><code>brew trust leapps-org/leapps; brew tap leapps-org/leapps</code><button class="lp-brew-copy" data-copy="brew trust leapps-org/leapps; brew tap leapps-org/leapps" data-tool="ALEAPP" aria-label="Copy ALEAPP tap command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-row"><span class="lp-install-tag">App</span><code>brew install --cask aleapp-gui</code><button class="lp-brew-copy" data-copy="brew install --cask aleapp-gui" data-tool="ALEAPP" aria-label="Copy ALEAPP app install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-note">Run the Tap line once. Homebrew 6 will not load a tap outside its own until you trust it, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
+          <div class="lp-install-note">ALEAPP is one program now. The <code>aleapp-gui</code> cask installs ALEAPP.app and links its command line as <code>aleapp</code>: started with no arguments it opens the window, and given arguments it runs as the command line. The separate <code>brew install aleapp</code> formula is deprecated and stays at its last release.</div>
           <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
         </div>
         <div class="lp-status-bar">
@@ -666,8 +671,10 @@
         </div>
         <div class="lp-install-box">
           <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
-          <div class="lp-install-row"><span class="lp-install-tag">CLI</span><code>brew tap leapps-org/leapps &amp;&amp; brew install ileapp</code><button class="lp-brew-copy" data-copy="brew tap leapps-org/leapps &amp;&amp; brew install ileapp" data-tool="iLEAPP" aria-label="Copy iLEAPP CLI install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-row"><span class="lp-install-tag">GUI</span><code>brew tap leapps-org/leapps &amp;&amp; brew install --cask ileapp-gui</code><button class="lp-brew-copy" data-copy="brew tap leapps-org/leapps &amp;&amp; brew install --cask ileapp-gui" data-tool="iLEAPP" aria-label="Copy iLEAPP GUI install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-row"><span class="lp-install-tag">Tap</span><code>brew trust leapps-org/leapps; brew tap leapps-org/leapps</code><button class="lp-brew-copy" data-copy="brew trust leapps-org/leapps; brew tap leapps-org/leapps" data-tool="iLEAPP" aria-label="Copy iLEAPP tap command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-row"><span class="lp-install-tag">App</span><code>brew install --cask ileapp-gui</code><button class="lp-brew-copy" data-copy="brew install --cask ileapp-gui" data-tool="iLEAPP" aria-label="Copy iLEAPP app install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-note">Run the Tap line once. Homebrew 6 will not load a tap outside its own until you trust it, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
+          <div class="lp-install-note">iLEAPP is one program now. The <code>ileapp-gui</code> cask installs iLEAPP.app and links its command line as <code>ileapp</code>: started with no arguments it opens the window, and given arguments it runs as the command line. The separate <code>brew install ileapp</code> formula is deprecated and stays at its last release.</div>
           <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
         </div>
         <div class="lp-status-bar">
@@ -692,8 +699,10 @@
         </div>
         <div class="lp-install-box">
           <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
-          <div class="lp-install-row"><span class="lp-install-tag">CLI</span><code>brew tap leapps-org/leapps &amp;&amp; brew install rleapp</code><button class="lp-brew-copy" data-copy="brew tap leapps-org/leapps &amp;&amp; brew install rleapp" data-tool="RLEAPP" aria-label="Copy RLEAPP CLI install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-row"><span class="lp-install-tag">GUI</span><code>brew tap leapps-org/leapps &amp;&amp; brew install --cask rleapp-gui</code><button class="lp-brew-copy" data-copy="brew tap leapps-org/leapps &amp;&amp; brew install --cask rleapp-gui" data-tool="RLEAPP" aria-label="Copy RLEAPP GUI install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-row"><span class="lp-install-tag">Tap</span><code>brew trust leapps-org/leapps; brew tap leapps-org/leapps</code><button class="lp-brew-copy" data-copy="brew trust leapps-org/leapps; brew tap leapps-org/leapps" data-tool="RLEAPP" aria-label="Copy RLEAPP tap command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-row"><span class="lp-install-tag">App</span><code>brew install --cask rleapp-gui</code><button class="lp-brew-copy" data-copy="brew install --cask rleapp-gui" data-tool="RLEAPP" aria-label="Copy RLEAPP app install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-note">Run the Tap line once. Homebrew 6 will not load a tap outside its own until you trust it, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
+          <div class="lp-install-note">RLEAPP is one program now. The <code>rleapp-gui</code> cask installs RLEAPP.app and links its command line as <code>rleapp</code>: started with no arguments it opens the window, and given arguments it runs as the command line. The separate <code>brew install rleapp</code> formula is deprecated and stays at its last release.</div>
           <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
         </div>
         <div class="lp-status-bar">
@@ -718,8 +727,10 @@
         </div>
         <div class="lp-install-box">
           <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
-          <div class="lp-install-row"><span class="lp-install-tag">CLI</span><code>brew tap leapps-org/leapps &amp;&amp; brew install vleapp</code><button class="lp-brew-copy" data-copy="brew tap leapps-org/leapps &amp;&amp; brew install vleapp" data-tool="VLEAPP" aria-label="Copy VLEAPP CLI install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-row"><span class="lp-install-tag">GUI</span><code>brew tap leapps-org/leapps &amp;&amp; brew install --cask vleapp-gui</code><button class="lp-brew-copy" data-copy="brew tap leapps-org/leapps &amp;&amp; brew install --cask vleapp-gui" data-tool="VLEAPP" aria-label="Copy VLEAPP GUI install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-row"><span class="lp-install-tag">Tap</span><code>brew trust leapps-org/leapps; brew tap leapps-org/leapps</code><button class="lp-brew-copy" data-copy="brew trust leapps-org/leapps; brew tap leapps-org/leapps" data-tool="VLEAPP" aria-label="Copy VLEAPP tap command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-row"><span class="lp-install-tag">CLI</span><code>brew install vleapp</code><button class="lp-brew-copy" data-copy="brew install vleapp" data-tool="VLEAPP" aria-label="Copy VLEAPP CLI install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-row"><span class="lp-install-tag">GUI</span><code>brew install --cask vleapp-gui</code><button class="lp-brew-copy" data-copy="brew install --cask vleapp-gui" data-tool="VLEAPP" aria-label="Copy VLEAPP GUI install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-note">Run the Tap line once. Homebrew 6 will not load a tap outside its own until you trust it, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
           <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
         </div>
         <div class="lp-status-bar">

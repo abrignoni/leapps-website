@@ -93,7 +93,7 @@
     "title": "Install with Homebrew (macOS)",
     "url": "https://leapps.org/releases",
     "page": "Releases",
-    "excerpt": "brew tap leapps-org/leapps — install the LEAPP command line tools, GUI apps, and LAVA with Homebrew."
+    "excerpt": "brew trust and brew tap leapps-org/leapps, then install the LEAPP apps, their command lines, and LAVA with Homebrew."
   },
   {
     "title": "DLEAPP — Desktop Logs Events and Protobuf Parser",

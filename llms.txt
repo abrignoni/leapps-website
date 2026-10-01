@@ -26,9 +26,13 @@ Standalone single-purpose readers, separate from the LEAPPs: https://leapps.org/
 
 macOS (Homebrew tap: leapps-org/leapps):
 
+    brew trust leapps-org/leapps     # Homebrew 6 will not load a third-party tap until it is trusted; older Homebrew without `brew trust` skips this
     brew tap leapps-org/leapps
-    brew install ileapp              # CLI — or aleapp / rleapp / vleapp
-    brew install --cask ileapp-gui   # GUI app — or aleapp-gui / rleapp-gui / vleapp-gui / lava
+    brew install --cask ileapp-gui   # iLEAPP.app plus the `ileapp` command line, or aleapp-gui / rleapp-gui
+    brew install vleapp              # VLEAPP command line; its GUI app is the vleapp-gui cask
+    brew install --cask lava         # LAVA
+
+iLEAPP, ALEAPP and RLEAPP are one program each: no arguments opens the window, arguments run the command line. The `ileapp`, `aleapp` and `rleapp` formulae are deprecated. DLEAPP and GLEAPP are not in the tap.
 
 Windows: pre-built executables on each tool's GitHub releases page. From source: Python 3.10+, `pip install -r requirements.txt`, then `python iLEAPP.py -t <fs|tar|zip|gz> -i <input> -o <output>`.
 
