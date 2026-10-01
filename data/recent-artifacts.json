@@ -1,12 +1,18 @@
 {
-  "generated": "2026-09-30",
+  "generated": "2026-10-01",
   "window_days": 45,
   "items": [
     {
-      "name": "linuxSyslog",
-      "query": "linuxSyslog",
+      "name": "sdl wifi status",
+      "query": "sdl_wifi_status",
+      "tool": "iLEAPP",
+      "date": "2026-10-01"
+    },
+    {
+      "name": "linuxEvolution",
+      "query": "linuxEvolution",
       "tool": "DLEAPP",
-      "date": "2026-09-30"
+      "date": "2026-10-01"
     },
     {
       "name": "tikTokReturnPdf",
@@ -21,22 +27,22 @@
       "date": "2026-09-26"
     },
     {
-      "name": "intelligencePlatformBehaviors",
-      "query": "intelligencePlatformBehaviors",
-      "tool": "iLEAPP",
-      "date": "2026-09-23"
-    },
-    {
       "name": "ford sync bluetooth",
       "query": "ford_sync_bluetooth",
       "tool": "VLEAPP",
       "date": "2026-08-30"
     },
     {
-      "name": "sshConfig",
-      "query": "sshConfig",
+      "name": "intelligencePlatformBehaviors",
+      "query": "intelligencePlatformBehaviors",
+      "tool": "iLEAPP",
+      "date": "2026-09-23"
+    },
+    {
+      "name": "linuxGnomeScreenTime",
+      "query": "linuxGnomeScreenTime",
       "tool": "DLEAPP",
-      "date": "2026-09-30"
+      "date": "2026-10-01"
     },
     {
       "name": "robinhoodReturns",
@@ -51,28 +57,22 @@
       "date": "2026-09-24"
     },
     {
-      "name": "intelligencePlatformGraph",
-      "query": "intelligencePlatformGraph",
-      "tool": "iLEAPP",
-      "date": "2026-09-23"
-    },
-    {
       "name": "berla ive export",
       "query": "berla_ive_export",
       "tool": "VLEAPP",
       "date": "2026-08-30"
     },
     {
-      "name": "linuxAutostart",
-      "query": "linuxAutostart",
-      "tool": "DLEAPP",
-      "date": "2026-09-30"
+      "name": "intelligencePlatformGraph",
+      "query": "intelligencePlatformGraph",
+      "tool": "iLEAPP",
+      "date": "2026-09-23"
     },
     {
-      "name": "coinbaseComplianceReport",
-      "query": "coinbaseComplianceReport",
-      "tool": "RLEAPP",
-      "date": "2026-09-23"
+      "name": "linuxGvfsMetadata",
+      "query": "linuxGvfsMetadata",
+      "tool": "DLEAPP",
+      "date": "2026-10-01"
     }
   ]
 }
