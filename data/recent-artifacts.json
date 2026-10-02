@@ -1,7 +1,13 @@
 {
-  "generated": "2026-10-01",
+  "generated": "2026-10-02",
   "window_days": 45,
   "items": [
+    {
+      "name": "windowsDriverInstallEvents",
+      "query": "windowsDriverInstallEvents",
+      "tool": "DLEAPP",
+      "date": "2026-10-02"
+    },
     {
       "name": "sdl wifi status",
       "query": "sdl_wifi_status",
@@ -12,12 +18,6 @@
       "name": "swiftkeyLanguageModel",
       "query": "swiftkeyLanguageModel",
       "tool": "ALEAPP",
-      "date": "2026-10-01"
-    },
-    {
-      "name": "windowsWinlogonEvents",
-      "query": "windowsWinlogonEvents",
-      "tool": "DLEAPP",
       "date": "2026-10-01"
     },
     {
@@ -33,6 +33,12 @@
       "date": "2026-08-30"
     },
     {
+      "name": "windowsSecurityAccessEvents",
+      "query": "windowsSecurityAccessEvents",
+      "tool": "DLEAPP",
+      "date": "2026-10-02"
+    },
+    {
       "name": "intelligencePlatformBehaviors",
       "query": "intelligencePlatformBehaviors",
       "tool": "iLEAPP",
@@ -43,12 +49,6 @@
       "query": "exoplayerCachedMedia",
       "tool": "ALEAPP",
       "date": "2026-09-26"
-    },
-    {
-      "name": "windowsProfileList",
-      "query": "windowsProfileList",
-      "tool": "DLEAPP",
-      "date": "2026-10-01"
     },
     {
       "name": "robinhoodReturns",
@@ -63,16 +63,16 @@
       "date": "2026-08-30"
     },
     {
+      "name": "windowsServiceEvents",
+      "query": "windowsServiceEvents",
+      "tool": "DLEAPP",
+      "date": "2026-10-02"
+    },
+    {
       "name": "intelligencePlatformGraph",
       "query": "intelligencePlatformGraph",
       "tool": "iLEAPP",
       "date": "2026-09-23"
-    },
-    {
-      "name": "SamsungGalleryHiddenAlbum",
-      "query": "SamsungGalleryHiddenAlbum",
-      "tool": "ALEAPP",
-      "date": "2026-09-24"
     }
   ]
 }
