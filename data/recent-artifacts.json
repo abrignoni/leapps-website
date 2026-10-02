@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "windowsDriverInstallEvents",
-      "query": "windowsDriverInstallEvents",
+      "name": "windowsBitLockerEvents",
+      "query": "windowsBitLockerEvents",
       "tool": "DLEAPP",
       "date": "2026-10-02"
     },
@@ -33,8 +33,8 @@
       "date": "2026-08-30"
     },
     {
-      "name": "windowsSecurityAccessEvents",
-      "query": "windowsSecurityAccessEvents",
+      "name": "windowsBootPerformanceEvents",
+      "query": "windowsBootPerformanceEvents",
       "tool": "DLEAPP",
       "date": "2026-10-02"
     },
@@ -63,8 +63,8 @@
       "date": "2026-08-30"
     },
     {
-      "name": "windowsServiceEvents",
-      "query": "windowsServiceEvents",
+      "name": "windowsServicingEvents",
+      "query": "windowsServicingEvents",
       "tool": "DLEAPP",
       "date": "2026-10-02"
     },
