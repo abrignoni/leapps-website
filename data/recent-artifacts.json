@@ -3,8 +3,14 @@
   "window_days": 45,
   "items": [
     {
-      "name": "windowsBitLockerEvents",
-      "query": "windowsBitLockerEvents",
+      "name": "googleQuickSearchboxKeyValueCache",
+      "query": "googleQuickSearchboxKeyValueCache",
+      "tool": "ALEAPP",
+      "date": "2026-10-02"
+    },
+    {
+      "name": "windowsAppModelRuntimeEvents",
+      "query": "windowsAppModelRuntimeEvents",
       "tool": "DLEAPP",
       "date": "2026-10-02"
     },
@@ -12,12 +18,6 @@
       "name": "sdl wifi status",
       "query": "sdl_wifi_status",
       "tool": "iLEAPP",
-      "date": "2026-10-01"
-    },
-    {
-      "name": "swiftkeyLanguageModel",
-      "query": "swiftkeyLanguageModel",
-      "tool": "ALEAPP",
       "date": "2026-10-01"
     },
     {
@@ -33,8 +33,14 @@
       "date": "2026-08-30"
     },
     {
-      "name": "windowsBootPerformanceEvents",
-      "query": "windowsBootPerformanceEvents",
+      "name": "googleQuickSearchboxZeroPrefix",
+      "query": "googleQuickSearchboxZeroPrefix",
+      "tool": "ALEAPP",
+      "date": "2026-10-02"
+    },
+    {
+      "name": "windowsGroupPolicyEvents",
+      "query": "windowsGroupPolicyEvents",
       "tool": "DLEAPP",
       "date": "2026-10-02"
     },
@@ -43,12 +49,6 @@
       "query": "intelligencePlatformBehaviors",
       "tool": "iLEAPP",
       "date": "2026-09-23"
-    },
-    {
-      "name": "exoplayerCachedMedia",
-      "query": "exoplayerCachedMedia",
-      "tool": "ALEAPP",
-      "date": "2026-09-26"
     },
     {
       "name": "robinhoodReturns",
@@ -63,16 +63,16 @@
       "date": "2026-08-30"
     },
     {
-      "name": "windowsServicingEvents",
-      "query": "windowsServicingEvents",
-      "tool": "DLEAPP",
-      "date": "2026-10-02"
+      "name": "swiftkeyLanguageModel",
+      "query": "swiftkeyLanguageModel",
+      "tool": "ALEAPP",
+      "date": "2026-10-01"
     },
     {
-      "name": "intelligencePlatformGraph",
-      "query": "intelligencePlatformGraph",
-      "tool": "iLEAPP",
-      "date": "2026-09-23"
+      "name": "windowsTimeServiceOperational",
+      "query": "windowsTimeServiceOperational",
+      "tool": "DLEAPP",
+      "date": "2026-10-02"
     }
   ]
 }
