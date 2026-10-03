@@ -1,17 +1,17 @@
 {
-  "generated": "2026-10-02",
+  "generated": "2026-10-03",
   "window_days": 45,
   "items": [
+    {
+      "name": "windowsLiveIdEvents",
+      "query": "windowsLiveIdEvents",
+      "tool": "DLEAPP",
+      "date": "2026-10-03"
+    },
     {
       "name": "googleQuickSearchboxKeyValueCache",
       "query": "googleQuickSearchboxKeyValueCache",
       "tool": "ALEAPP",
-      "date": "2026-10-02"
-    },
-    {
-      "name": "windowsAppModelRuntimeEvents",
-      "query": "windowsAppModelRuntimeEvents",
-      "tool": "DLEAPP",
       "date": "2026-10-02"
     },
     {
@@ -33,15 +33,15 @@
       "date": "2026-08-30"
     },
     {
+      "name": "windowsCodeIntegrityEvents",
+      "query": "windowsCodeIntegrityEvents",
+      "tool": "DLEAPP",
+      "date": "2026-10-03"
+    },
+    {
       "name": "googleQuickSearchboxZeroPrefix",
       "query": "googleQuickSearchboxZeroPrefix",
       "tool": "ALEAPP",
-      "date": "2026-10-02"
-    },
-    {
-      "name": "windowsGroupPolicyEvents",
-      "query": "windowsGroupPolicyEvents",
-      "tool": "DLEAPP",
       "date": "2026-10-02"
     },
     {
@@ -63,16 +63,16 @@
       "date": "2026-08-30"
     },
     {
+      "name": "windowsUpdateOperationalEvents",
+      "query": "windowsUpdateOperationalEvents",
+      "tool": "DLEAPP",
+      "date": "2026-10-02"
+    },
+    {
       "name": "swiftkeyLanguageModel",
       "query": "swiftkeyLanguageModel",
       "tool": "ALEAPP",
       "date": "2026-10-01"
-    },
-    {
-      "name": "windowsTimeServiceOperational",
-      "query": "windowsTimeServiceOperational",
-      "tool": "DLEAPP",
-      "date": "2026-10-02"
     }
   ]
 }
