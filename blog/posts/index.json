@@ -1,5 +1,21 @@
 [
   {
+    "slug": "2026-10-03-unified-log-artifacts-ileapp-dleapp",
+    "title": "Nineteen New Unified Log Artifacts for iLEAPP and DLEAPP",
+    "date": "2026-10-03",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "iLEAPP",
+      "DLEAPP",
+      "iOS",
+      "macOS",
+      "unified logs",
+      "artifacts",
+      "research"
+    ],
+    "excerpt": "Six new unified log artifacts for iOS in iLEAPP and thirteen for macOS in DLEAPP, what each one was measured on, and what none of them can tell you. Also why the iOS queries could not simply be copied over to the Mac."
+  },
+  {
     "slug": "introducing-gleapp",
     "title": "Meet GLEAPP, Media Triage Built for the Backlog",
     "date": "2026-09-25",
