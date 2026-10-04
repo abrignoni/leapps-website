@@ -3,10 +3,10 @@
   "window_days": 45,
   "items": [
     {
-      "name": "windowsNtfsDeletionSummaries",
-      "query": "windowsNtfsDeletionSummaries",
+      "name": "vimViminfo",
+      "query": "vimViminfo",
       "tool": "DLEAPP",
-      "date": "2026-10-03"
+      "date": "2026-10-04"
     },
     {
       "name": "googleQuickSearchboxKeyValueCache",
@@ -33,8 +33,8 @@
       "date": "2026-08-30"
     },
     {
-      "name": "windowsNtfsUsnJournalEvents",
-      "query": "windowsNtfsUsnJournalEvents",
+      "name": "windowsNtfsDeletionSummaries",
+      "query": "windowsNtfsDeletionSummaries",
       "tool": "DLEAPP",
       "date": "2026-10-03"
     },
@@ -63,8 +63,8 @@
       "date": "2026-08-30"
     },
     {
-      "name": "windowsNtfsVolumeMounts",
-      "query": "windowsNtfsVolumeMounts",
+      "name": "windowsNtfsUsnJournalEvents",
+      "query": "windowsNtfsUsnJournalEvents",
       "tool": "DLEAPP",
       "date": "2026-10-03"
     },
