@@ -1327,14 +1327,14 @@
     {
       "date": "2026-10-05",
       "totals": {
-        "ileapp": 96010,
-        "aleapp": 72605,
-        "rleapp": 5725,
-        "vleapp": 2608,
-        "lava": 3708,
-        "dleapp": 1227,
-        "gleapp": 443,
-        "batchleapp": 577
+        "ileapp": 96102,
+        "aleapp": 72696,
+        "rleapp": 5740,
+        "vleapp": 2617,
+        "lava": 3740,
+        "dleapp": 1248,
+        "gleapp": 464,
+        "batchleapp": 584
       }
     }
   ]
