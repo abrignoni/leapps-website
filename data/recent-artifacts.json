@@ -1,18 +1,18 @@
 {
-  "generated": "2026-10-05",
+  "generated": "2026-10-06",
   "window_days": 45,
   "items": [
+    {
+      "name": "novaMediaCandidates",
+      "query": "novaMediaCandidates",
+      "tool": "ALEAPP",
+      "date": "2026-10-05"
+    },
     {
       "name": "vimViminfo",
       "query": "vimViminfo",
       "tool": "DLEAPP",
       "date": "2026-10-04"
-    },
-    {
-      "name": "googleQuickSearchboxKeyValueCache",
-      "query": "googleQuickSearchboxKeyValueCache",
-      "tool": "ALEAPP",
-      "date": "2026-10-02"
     },
     {
       "name": "sdl wifi status",
@@ -33,16 +33,16 @@
       "date": "2026-08-30"
     },
     {
+      "name": "googleQuickSearchboxKeyValueCache",
+      "query": "googleQuickSearchboxKeyValueCache",
+      "tool": "ALEAPP",
+      "date": "2026-10-02"
+    },
+    {
       "name": "windowsNtfsDeletionSummaries",
       "query": "windowsNtfsDeletionSummaries",
       "tool": "DLEAPP",
       "date": "2026-10-03"
-    },
-    {
-      "name": "googleQuickSearchboxZeroPrefix",
-      "query": "googleQuickSearchboxZeroPrefix",
-      "tool": "ALEAPP",
-      "date": "2026-10-02"
     },
     {
       "name": "intelligencePlatformBehaviors",
@@ -63,16 +63,16 @@
       "date": "2026-08-30"
     },
     {
+      "name": "googleQuickSearchboxZeroPrefix",
+      "query": "googleQuickSearchboxZeroPrefix",
+      "tool": "ALEAPP",
+      "date": "2026-10-02"
+    },
+    {
       "name": "windowsNtfsUsnJournalEvents",
       "query": "windowsNtfsUsnJournalEvents",
       "tool": "DLEAPP",
       "date": "2026-10-03"
-    },
-    {
-      "name": "swiftkeyLanguageModel",
-      "query": "swiftkeyLanguageModel",
-      "tool": "ALEAPP",
-      "date": "2026-10-01"
     }
   ]
 }
