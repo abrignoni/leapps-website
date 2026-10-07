@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-06",
+  "generated": "2026-10-07",
   "window_days": 45,
   "items": [
     {
@@ -33,12 +33,6 @@
       "date": "2026-10-03"
     },
     {
-      "name": "intelligencePlatformBehaviors",
-      "query": "intelligencePlatformBehaviors",
-      "tool": "iLEAPP",
-      "date": "2026-09-23"
-    },
-    {
       "name": "robinhoodReturns",
       "query": "robinhoodReturns",
       "tool": "RLEAPP",
@@ -57,12 +51,6 @@
       "date": "2026-10-03"
     },
     {
-      "name": "intelligencePlatformGraph",
-      "query": "intelligencePlatformGraph",
-      "tool": "iLEAPP",
-      "date": "2026-09-23"
-    },
-    {
       "name": "coinbaseComplianceReport",
       "query": "coinbaseComplianceReport",
       "tool": "RLEAPP",
@@ -73,6 +61,18 @@
       "query": "ford_positioning_logs",
       "tool": "VLEAPP",
       "date": "2026-08-27"
+    },
+    {
+      "name": "windowsNtfsVolumeMounts",
+      "query": "windowsNtfsVolumeMounts",
+      "tool": "DLEAPP",
+      "date": "2026-10-03"
+    },
+    {
+      "name": "facebookArchive",
+      "query": "facebookArchive",
+      "tool": "RLEAPP",
+      "date": "2026-09-22"
     }
   ]
 }
