@@ -1353,14 +1353,14 @@
     {
       "date": "2026-10-07",
       "totals": {
-        "ileapp": 96457,
-        "aleapp": 73019,
-        "rleapp": 5798,
-        "vleapp": 2655,
-        "lava": 3850,
-        "dleapp": 1302,
-        "gleapp": 513,
-        "batchleapp": 602
+        "ileapp": 96534,
+        "aleapp": 73119,
+        "rleapp": 5825,
+        "vleapp": 2670,
+        "lava": 3880,
+        "dleapp": 1320,
+        "gleapp": 543,
+        "batchleapp": 610
       }
     }
   ]
