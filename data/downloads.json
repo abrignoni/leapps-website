@@ -1366,14 +1366,14 @@
     {
       "date": "2026-10-08",
       "totals": {
-        "ileapp": 96671,
-        "aleapp": 73280,
-        "rleapp": 5856,
-        "vleapp": 2687,
-        "lava": 3907,
-        "dleapp": 1341,
-        "gleapp": 574,
-        "batchleapp": 612
+        "ileapp": 96732,
+        "aleapp": 73350,
+        "rleapp": 5862,
+        "vleapp": 2694,
+        "lava": 3946,
+        "dleapp": 1350,
+        "gleapp": 584,
+        "batchleapp": 619
       }
     }
   ]
