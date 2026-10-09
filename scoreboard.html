@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20260905" />
+  <link rel="stylesheet" href="/css/global.css?v=20261009" />
   <style>
 .lp-header { padding: 3.5rem 2rem 3rem; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
 .lp-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(245,192,32,.06) 0%, transparent 70%); pointer-events: none; }
@@ -71,13 +71,13 @@
 #sb-count-head { white-space: nowrap; }
 .repo-badges { display: flex; gap: .35rem; flex-wrap: wrap; justify-content: flex-end; }
 .repo-badge { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; padding: .2rem .5rem; border-radius: 2px; line-height: 1.4; }
-.badge-ileapp { background: rgba(227,6,19,.15); color: #E30613; border: 1px solid rgba(227,6,19,.3); }
-.badge-aleapp { background: rgba(164,198,57,.15);  color: #A4C639; border: 1px solid rgba(164,198,57,.3); }
-.badge-rleapp { background: rgba(75,163,199,.15); color: #4BA3C7; border: 1px solid rgba(75,163,199,.3); }
-.badge-vleapp { background: rgba(83,29,171,.15); color: #531dab; border: 1px solid rgba(83,29,171,.3); }
+.badge-ileapp { background: rgba(var(--color-ileapp-rgb),.15); color: var(--color-ileapp); border: 1px solid rgba(var(--color-ileapp-rgb),.3); }
+.badge-aleapp { background: rgba(var(--color-aleapp-rgb),.15);  color: var(--color-aleapp); border: 1px solid rgba(var(--color-aleapp-rgb),.3); }
+.badge-rleapp { background: rgba(var(--color-rleapp-rgb),.15); color: var(--color-rleapp); border: 1px solid rgba(var(--color-rleapp-rgb),.3); }
+.badge-vleapp { background: rgba(var(--color-vleapp-rgb),.15); color: var(--color-vleapp); border: 1px solid rgba(var(--color-vleapp-rgb),.3); }
 .badge-batch { background: rgba(31,184,166,.15); color: #1FB8A6; border: 1px solid rgba(31,184,166,.3); }
-.badge-dleapp { background: rgba(177,115,169,.15); color: #B173A9; border: 1px solid rgba(177,115,169,.3); }
-.badge-gleapp { background: rgba(253,155,65,.15); color: #FD9B41; border: 1px solid rgba(253,155,65,.3); }
+.badge-dleapp { background: rgba(var(--color-dleapp-rgb),.15); color: var(--color-dleapp); border: 1px solid rgba(var(--color-dleapp-rgb),.3); }
+.badge-gleapp { background: rgba(var(--color-gleapp-rgb),.15); color: var(--color-gleapp); border: 1px solid rgba(var(--color-gleapp-rgb),.3); }
 .rank-badge { display: inline-flex; align-items: center; gap: .35rem; font-family: var(--font-head); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: .25rem .65rem; border-radius: 2px; white-space: nowrap; }
 .rank-badge i { font-size: .85rem; }
 .rank-badge.rank-1 { background: rgba(108,180,228,.12); color: var(--rank-1); border: 1px solid rgba(108,180,228,.3); }
@@ -96,13 +96,13 @@
 .lp-sb-tool-btn { font-family: var(--font-mono); font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; padding: .35rem .85rem; border: 1px solid var(--border); color: var(--muted); background: none; cursor: pointer; transition: border-color .2s, color .2s, background .2s; }
 .lp-sb-tool-btn:hover { border-color: #444; color: var(--text); }
 .lp-sb-tool-btn.active { border-color: var(--gold); color: var(--gold); background: rgba(245,192,32,.08); }
-.lp-sb-tool-btn[data-tool="iLEAPP"].active { border-color: #E30613; color: #E30613; background: rgba(227,6,19,.08); }
-.lp-sb-tool-btn[data-tool="ALEAPP"].active { border-color: #A4C639; color: #A4C639; background: rgba(164,198,57,.08); }
-.lp-sb-tool-btn[data-tool="RLEAPP"].active { border-color: #4BA3C7; color: #4BA3C7; background: rgba(75,163,199,.08); }
-.lp-sb-tool-btn[data-tool="VLEAPP"].active { border-color: #531dab; color: #531dab; background: rgba(83,29,171,.08); }
+.lp-sb-tool-btn[data-tool="iLEAPP"].active { border-color: var(--color-ileapp); color: var(--color-ileapp); background: rgba(var(--color-ileapp-rgb),.08); }
+.lp-sb-tool-btn[data-tool="ALEAPP"].active { border-color: var(--color-aleapp); color: var(--color-aleapp); background: rgba(var(--color-aleapp-rgb),.08); }
+.lp-sb-tool-btn[data-tool="RLEAPP"].active { border-color: var(--color-rleapp); color: var(--color-rleapp); background: rgba(var(--color-rleapp-rgb),.08); }
+.lp-sb-tool-btn[data-tool="VLEAPP"].active { border-color: var(--color-vleapp); color: var(--color-vleapp); background: rgba(var(--color-vleapp-rgb),.08); }
 .lp-sb-tool-btn[data-tool="Batch LEAPP"].active { border-color: #1FB8A6; color: #1FB8A6; background: rgba(31,184,166,.08); }
-.lp-sb-tool-btn[data-tool="DLEAPP"].active { border-color: #B173A9; color: #B173A9; background: rgba(177,115,169,.08); }
-.lp-sb-tool-btn[data-tool="GLEAPP"].active { border-color: #FD9B41; color: #FD9B41; background: rgba(253,155,65,.08); }
+.lp-sb-tool-btn[data-tool="DLEAPP"].active { border-color: var(--color-dleapp); color: var(--color-dleapp); background: rgba(var(--color-dleapp-rgb),.08); }
+.lp-sb-tool-btn[data-tool="GLEAPP"].active { border-color: var(--color-gleapp); color: var(--color-gleapp); background: rgba(var(--color-gleapp-rgb),.08); }
 .lp-sb-results { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .06em; color: var(--muted); margin-bottom: .75rem; min-height: 1.2rem; }
 .lp-sb-results span { color: var(--gold); }
 .lp-loading-row td { color: #555; font-family: var(--font-mono); font-size: .75rem; text-align: center !important; padding: 3rem; }

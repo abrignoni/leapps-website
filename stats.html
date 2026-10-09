@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20260905" />
+  <link rel="stylesheet" href="/css/global.css?v=20261009" />
   <style>
 .lp-header { padding: 3.5rem 2rem 3rem; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
 .lp-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(245,192,32,.06) 0%, transparent 70%); pointer-events: none; }
@@ -373,13 +373,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
   <script>
     const tools = [
-      { name: 'iLEAPP', platform: 'iOS · iPadOS',   repo: 'abrignoni/iLEAPP',         openSource: true,  color: '#E30613' },
-      { name: 'ALEAPP', platform: 'Android',         repo: 'abrignoni/ALEAPP',         openSource: true,  color: '#A4C639' },
-      { name: 'RLEAPP', platform: 'ISP Returns',     repo: 'abrignoni/RLEAPP',         openSource: true,  color: '#4BA3C7' },
-      { name: 'VLEAPP', platform: 'Vehicle Systems', repo: 'abrignoni/VLEAPP',         openSource: true,  color: '#531dab' },
-      { name: 'DLEAPP', platform: 'Desktop · Other', repo: 'abrignoni/DLEAPP',         openSource: true,  color: '#B173A9' },
+      { name: 'iLEAPP', platform: 'iOS · iPadOS',   repo: 'abrignoni/iLEAPP',         openSource: true,  color: '#F5161F' },
+      { name: 'ALEAPP', platform: 'Android',         repo: 'abrignoni/ALEAPP',         openSource: true,  color: '#6FD127' },
+      { name: 'RLEAPP', platform: 'ISP Returns',     repo: 'abrignoni/RLEAPP',         openSource: true,  color: '#FDEC30' },
+      { name: 'VLEAPP', platform: 'Vehicle Systems', repo: 'abrignoni/VLEAPP',         openSource: true,  color: '#27CFFC' },
+      { name: 'DLEAPP', platform: 'Desktop · Other', repo: 'abrignoni/DLEAPP',         openSource: true,  color: '#CF7BFB' },
       { name: 'GLEAPP', platform: 'Images · Video',   repo: 'abrignoni/GLEAPP',         openSource: true,  color: '#FD9B41' },
-      { name: 'LAVA',   platform: 'All Platforms',   repo: 'leapps-org/LAVA-releases', openSource: false, color: '#F5C020' },
+      { name: 'LAVA',   platform: 'All Platforms',   repo: 'leapps-org/LAVA-releases', openSource: false, color: '#0F6CA4' },
       { name: 'Batch LEAPP', platform: 'Automation',  repo: 'abrignoni/batch-leapp',    openSource: true,  color: '#1FB8A6' },
     ];
 
@@ -414,7 +414,7 @@
     function initCharts(labels, dlData, starData) {
       dlChart = new Chart(document.getElementById('dlChart'), {
         type: 'bar',
-        data: { labels, datasets: [{ data: dlData, backgroundColor: ['#E30613', '#A4C639', '#4BA3C7', '#531dab', '#F5C020'], borderRadius: 3 }] },
+        data: { labels, datasets: [{ data: dlData, backgroundColor: tools.map(t => t.color), borderRadius: 3 }] },
         options: buildChartOptions()
       });
       starChart = new Chart(document.getElementById('starChart'), {
@@ -594,7 +594,7 @@
     fetchGuideCounts();
 
     // Download history section
-    const TOOL_COLORS = { ileapp: '#E30613', aleapp: '#A4C639', rleapp: '#4BA3C7', vleapp: '#531dab', dleapp: '#B173A9', gleapp: '#FD9B41', lava: '#F5C020', batchleapp: '#1FB8A6' };
+    const TOOL_COLORS = { ileapp: '#F5161F', aleapp: '#6FD127', rleapp: '#FDEC30', vleapp: '#27CFFC', dleapp: '#CF7BFB', gleapp: '#FD9B41', lava: '#0F6CA4', batchleapp: '#1FB8A6' };
     const TOOL_LABELS = { ileapp: 'iLEAPP', aleapp: 'ALEAPP', rleapp: 'RLEAPP', vleapp: 'VLEAPP', dleapp: 'DLEAPP', gleapp: 'GLEAPP', lava: 'LAVA', batchleapp: 'Batch LEAPP' };
     let dlHistoryChart = null;
     let dlSnapshots = [];
