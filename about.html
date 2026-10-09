@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20260905" />
+  <link rel="stylesheet" href="/css/global.css?v=20261009" />
   <style>
 .lp-header { padding: 3.5rem 2rem 3rem; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
 .lp-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(245,192,32,.06) 0%, transparent 70%); pointer-events: none; }
@@ -193,11 +193,11 @@
 #lp-root { margin: 0 8px; }
 [data-theme="light"] body, [data-theme="light"] #lp-root { background-color: #F5F2EC !important; }
 .lp-tool-badge { font-family: var(--font-mono); font-size: .55rem; letter-spacing: .08em; padding: .15rem .45rem; border: 1px solid var(--border); color: var(--muted); display: inline-block; margin-right: .25rem; margin-bottom: .15rem; }
-.lp-tool-badge-ileapp { background: rgba(227,6,19,.15); color: #E30613; border: 1px solid rgba(227,6,19,.3); }
-.lp-tool-badge-aleapp { background: rgba(164,198,57,.15); color: #A4C639; border: 1px solid rgba(164,198,57,.3); }
-.lp-tool-badge-rleapp { background: rgba(75,163,199,.15); color: #4BA3C7; border: 1px solid rgba(75,163,199,.3); }
-.lp-tool-badge-vleapp { background: rgba(83,29,171,.15); color: #531dab; border: 1px solid rgba(83,29,171,.3); }
-.lp-tool-badge-lava { background: rgba(245,192,32,.15); color: var(--gold); border: 1px solid rgba(245,192,32,.3); }
+.lp-tool-badge-ileapp { background: rgba(var(--color-ileapp-rgb),.15); color: var(--color-ileapp); border: 1px solid rgba(var(--color-ileapp-rgb),.3); }
+.lp-tool-badge-aleapp { background: rgba(var(--color-aleapp-rgb),.15); color: var(--color-aleapp); border: 1px solid rgba(var(--color-aleapp-rgb),.3); }
+.lp-tool-badge-rleapp { background: rgba(var(--color-rleapp-rgb),.15); color: var(--color-rleapp); border: 1px solid rgba(var(--color-rleapp-rgb),.3); }
+.lp-tool-badge-vleapp { background: rgba(var(--color-vleapp-rgb),.15); color: var(--color-vleapp); border: 1px solid rgba(var(--color-vleapp-rgb),.3); }
+.lp-tool-badge-lava { background: rgba(var(--color-lava-rgb),.15); color: var(--color-lava); border: 1px solid rgba(var(--color-lava-rgb),.3); }
 .lp-tool-badge-lang { background: rgba(48,58,106,.2); color: #303A6A; border: 1px solid rgba(48,58,106,.4); }
   </style>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>

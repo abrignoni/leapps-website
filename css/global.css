@@ -13,12 +13,14 @@
   --font-head: 'Barlow Condensed', sans-serif;
   --font-body: 'Barlow', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
-  --color-ileapp: #E30613;
-  --color-aleapp: #A4C639;
-  --color-rleapp: #4BA3C7;
-  --color-vleapp: #531dab;
-  --color-dleapp: #B173A9;
-  --color-lava: #F5C020;
+  /* Tool colors, from each tool's brand palette. The -rgb twin feeds rgba(). */
+  --color-ileapp: #F5161F; --color-ileapp-rgb: 245,22,31;
+  --color-aleapp: #6FD127; --color-aleapp-rgb: 111,209,39;
+  --color-rleapp: #FDEC30; --color-rleapp-rgb: 253,236,48;
+  --color-vleapp: #27CFFC; --color-vleapp-rgb: 39,207,252;
+  --color-dleapp: #CF7BFB; --color-dleapp-rgb: 207,123,251;
+  --color-gleapp: #FD9B41; --color-gleapp-rgb: 253,155,65;
+  --color-lava: #0F6CA4; --color-lava-rgb: 15,108,164;
   --rank-1: #6CB4E4;
   --rank-2: #4A90D9;
   --rank-3: #9B59B6;
@@ -267,6 +269,15 @@ a { color: inherit; }
   .lp-nav { padding: 1rem; }
 }
 [data-theme="light"] { --off-black: #F5F2EC; --surface: #EAE6DE; --border: #C8C3B8; --text: #1C1A14; --muted: #6B6458; }
+/* On the light ground each tool uses the darker member of its palette. */
+[data-theme="light"] {
+  --color-ileapp: #C90005; --color-ileapp-rgb: 201,0,5;
+  --color-aleapp: #398A11; --color-aleapp-rgb: 57,138,17;
+  --color-rleapp: #FDA915; --color-rleapp-rgb: 253,169,21;
+  --color-vleapp: #69717E; --color-vleapp-rgb: 105,113,126;
+  --color-dleapp: #933EDC; --color-dleapp-rgb: 147,62,220;
+  --color-gleapp: #A4530F; --color-gleapp-rgb: 164,83,15;
+}
 [data-theme="light"] body, [data-theme="light"] #lp-root, [data-theme="light"] section,
     [data-theme="light"] main, [data-theme="light"] footer { background-color: #F5F2EC !important; }
 [data-theme="light"] body { color: #1C1A14 !important; }

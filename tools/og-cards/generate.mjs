@@ -22,14 +22,14 @@ const RULE = '#2C2C2C';
 
 // tool tag -> accent color + display label. Non-tool posts fall back to gold.
 const TOOLS = {
-  ileapp: { color: '#E30613', label: 'iLEAPP' },
-  aleapp: { color: '#A4C639', label: 'ALEAPP' },
-  rleapp: { color: '#4BA3C7', label: 'RLEAPP' },
-  vleapp: { color: '#531dab', label: 'VLEAPP' },
-  dleapp: { color: '#B173A9', label: 'DLEAPP' },
+  ileapp: { color: '#F5161F', label: 'iLEAPP' },
+  aleapp: { color: '#6FD127', label: 'ALEAPP' },
+  rleapp: { color: '#FDEC30', label: 'RLEAPP' },
+  vleapp: { color: '#27CFFC', label: 'VLEAPP' },
+  dleapp: { color: '#CF7BFB', label: 'DLEAPP' },
   gleapp: { color: '#FD9B41', label: 'GLEAPP' },
   batch:  { color: '#1FB8A6', label: 'BATCH LEAPP' },
-  lava:   { color: GOLD,      label: 'LAVA'   },
+  lava:   { color: '#0F6CA4', label: 'LAVA'   },
 };
 
 const fonts = [
