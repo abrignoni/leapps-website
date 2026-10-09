@@ -5,9 +5,10 @@ The card, the arc, the leaping figure and the LEAPPs wordmark are kept exactly
 as they were: this only replaces the strip that names the parsers and shows
 their icons, which is the part that goes stale every time a tool is added.
 
-The names are set in Arial Rounded MT Bold, the closest match on macOS to the
-lettering in the original artwork. It is a system font, so this script runs on
-macOS only.
+The positions below were measured on the 2528x1768 artwork. The names are set in
+Arial Rounded MT Bold, the closest system font on macOS to the artwork's
+lettering, so a redrawn strip will not match the hand-set names exactly. It is
+a system font, so this script runs on macOS only.
 
 Usage:  python3 tools/build_hero_logo.py [--out PATH]
 """
@@ -27,19 +28,20 @@ FONT = "/System/Library/Fonts/Supplemental/Arial Rounded Bold.ttf"
 TOOLS = ("ALEAPP", "DLEAPP", "GLEAPP", "iLEAPP", "RLEAPP", "VLEAPP")
 
 # The strip being replaced, comfortably inside the card's rounded border.
-STRIP = (80, 596, 1170, 878)
-NAMES_CENTER_Y = 640          # was 611..669 in the original
-NAMES_MAX_WIDTH = 1060
-ICON_TOP = 697                # was 695..849
-ICON_WIDTH = 150
-ICON_GAP = 32
+STRIP = (150, 1170, 2378, 1600)
+NAMES_CENTER_Y = 1225         # 1187..1262 in the artwork
+NAMES_MAX_WIDTH = 2013        # 257..2269 in the artwork
+NAMES_MAX_SIZE = 120
+ICON_TOP = 1293               # 1293..1576 in the artwork
+ICON_WIDTH = 284
+ICON_GAP = 59
 SEPARATOR = " | "
 
 
 def fitted_font(text: str, max_width: int) -> ImageFont.FreeTypeFont:
-    """Largest size that keeps `text` within max_width, capped at the original 58px."""
+    """Largest size that keeps `text` within max_width, capped at NAMES_MAX_SIZE."""
     probe = ImageDraw.Draw(Image.new("RGB", (1, 1)))
-    for size in range(58, 15, -1):
+    for size in range(NAMES_MAX_SIZE, 15, -1):
         font = ImageFont.truetype(FONT, size)
         if probe.textlength(text, font=font) <= max_width:
             return font
