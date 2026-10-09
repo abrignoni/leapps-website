@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "ford sync policy table",
-      "query": "ford_sync_policy_table",
+      "name": "qnx mmsync",
+      "query": "qnx_mmsync",
       "tool": "VLEAPP",
       "date": "2026-10-09"
     },
@@ -21,8 +21,8 @@
       "date": "2026-09-28"
     },
     {
-      "name": "ford sync wince registry",
-      "query": "ford_sync_wince_registry",
+      "name": "ford sync4 web app storage",
+      "query": "ford_sync4_web_app_storage",
       "tool": "VLEAPP",
       "date": "2026-10-09"
     },
@@ -39,8 +39,8 @@
       "date": "2026-09-25"
     },
     {
-      "name": "ford sync wince events",
-      "query": "ford_sync_wince_events",
+      "name": "ford sync4 platform log",
+      "query": "ford_sync4_platform_log",
       "tool": "VLEAPP",
       "date": "2026-10-09"
     },
@@ -57,8 +57,8 @@
       "date": "2026-09-23"
     },
     {
-      "name": "gm onstar flash image",
-      "query": "gm_onstar_flash_image",
+      "name": "ford sync4 power logs",
+      "query": "ford_sync4_power_logs",
       "tool": "VLEAPP",
       "date": "2026-10-09"
     },
