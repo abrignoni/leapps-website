@@ -1,12 +1,12 @@
 {
-  "generated": "2026-10-09",
+  "generated": "2026-10-10",
   "window_days": 45,
   "items": [
     {
-      "name": "qnx mmsync",
-      "query": "qnx_mmsync",
+      "name": "siriusxm app storage",
+      "query": "siriusxm_app_storage",
       "tool": "VLEAPP",
-      "date": "2026-10-09"
+      "date": "2026-10-10"
     },
     {
       "name": "vimViminfo",
@@ -21,8 +21,8 @@
       "date": "2026-09-28"
     },
     {
-      "name": "ford sync4 web app storage",
-      "query": "ford_sync4_web_app_storage",
+      "name": "gnss receiver files",
+      "query": "gnss_receiver_files",
       "tool": "VLEAPP",
       "date": "2026-10-09"
     },
@@ -39,8 +39,8 @@
       "date": "2026-09-25"
     },
     {
-      "name": "ford sync4 platform log",
-      "query": "ford_sync4_platform_log",
+      "name": "bmw mgu request documents",
+      "query": "bmw_mgu_request_documents",
       "tool": "VLEAPP",
       "date": "2026-10-09"
     },
@@ -57,8 +57,8 @@
       "date": "2026-09-23"
     },
     {
-      "name": "ford sync4 power logs",
-      "query": "ford_sync4_power_logs",
+      "name": "sdl policy db",
+      "query": "sdl_policy_db",
       "tool": "VLEAPP",
       "date": "2026-10-09"
     },
