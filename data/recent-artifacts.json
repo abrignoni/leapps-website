@@ -3,16 +3,22 @@
   "window_days": 45,
   "items": [
     {
-      "name": "bluetooth hci snoop",
-      "query": "bluetooth_hci_snoop",
+      "name": "appleWatchMailRegistry",
+      "query": "appleWatchMailRegistry",
+      "tool": "iLEAPP",
+      "date": "2026-10-10"
+    },
+    {
+      "name": "ford sync wince voice cache",
+      "query": "ford_sync_wince_voice_cache",
       "tool": "VLEAPP",
       "date": "2026-10-10"
     },
     {
-      "name": "vimViminfo",
-      "query": "vimViminfo",
+      "name": "windowsMonitorEdid",
+      "query": "windowsMonitorEdid",
       "tool": "DLEAPP",
-      "date": "2026-10-04"
+      "date": "2026-10-10"
     },
     {
       "name": "tikTokReturnPdf",
@@ -21,16 +27,22 @@
       "date": "2026-09-28"
     },
     {
-      "name": "siriusxm app storage",
-      "query": "siriusxm_app_storage",
+      "name": "appleWatchWeatherCities",
+      "query": "appleWatchWeatherCities",
+      "tool": "iLEAPP",
+      "date": "2026-10-10"
+    },
+    {
+      "name": "bluetooth hci snoop",
+      "query": "bluetooth_hci_snoop",
       "tool": "VLEAPP",
       "date": "2026-10-10"
     },
     {
-      "name": "windowsNtfsDeletionSummaries",
-      "query": "windowsNtfsDeletionSummaries",
+      "name": "linuxMonitorsXml",
+      "query": "linuxMonitorsXml",
       "tool": "DLEAPP",
-      "date": "2026-10-03"
+      "date": "2026-10-10"
     },
     {
       "name": "robinhoodReturns",
@@ -39,40 +51,28 @@
       "date": "2026-09-25"
     },
     {
-      "name": "gnss receiver files",
-      "query": "gnss_receiver_files",
-      "tool": "VLEAPP",
-      "date": "2026-10-09"
+      "name": "hashtagImages",
+      "query": "hashtagImages",
+      "tool": "iLEAPP",
+      "date": "2026-10-10"
     },
     {
-      "name": "windowsNtfsUsnJournalEvents",
-      "query": "windowsNtfsUsnJournalEvents",
+      "name": "siriusxm app storage",
+      "query": "siriusxm_app_storage",
+      "tool": "VLEAPP",
+      "date": "2026-10-10"
+    },
+    {
+      "name": "windowsSecuritySettings",
+      "query": "windowsSecuritySettings",
       "tool": "DLEAPP",
-      "date": "2026-10-03"
+      "date": "2026-10-10"
     },
     {
       "name": "coinbaseComplianceReport",
       "query": "coinbaseComplianceReport",
       "tool": "RLEAPP",
       "date": "2026-09-23"
-    },
-    {
-      "name": "bmw mgu request documents",
-      "query": "bmw_mgu_request_documents",
-      "tool": "VLEAPP",
-      "date": "2026-10-09"
-    },
-    {
-      "name": "windowsNtfsVolumeMounts",
-      "query": "windowsNtfsVolumeMounts",
-      "tool": "DLEAPP",
-      "date": "2026-10-03"
-    },
-    {
-      "name": "facebookArchive",
-      "query": "facebookArchive",
-      "tool": "RLEAPP",
-      "date": "2026-09-22"
     }
   ]
 }
