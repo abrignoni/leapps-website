@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "windowsSmbClientEvents",
-      "query": "windowsSmbClientEvents",
+      "name": "macosRecents",
+      "query": "macosRecents",
       "tool": "DLEAPP",
       "date": "2026-10-11"
     },
@@ -27,8 +27,8 @@
       "date": "2026-09-28"
     },
     {
-      "name": "linuxFstab",
-      "query": "linuxFstab",
+      "name": "windowsSmbClientEvents",
+      "query": "windowsSmbClientEvents",
       "tool": "DLEAPP",
       "date": "2026-10-11"
     },
@@ -51,8 +51,8 @@
       "date": "2026-09-25"
     },
     {
-      "name": "linuxNetworkProfiles",
-      "query": "linuxNetworkProfiles",
+      "name": "linuxFstab",
+      "query": "linuxFstab",
       "tool": "DLEAPP",
       "date": "2026-10-11"
     },
