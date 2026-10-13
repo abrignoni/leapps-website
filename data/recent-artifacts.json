@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "windowsSevenZip",
-      "query": "windowsSevenZip",
+      "name": "windowsNtfsLogFile",
+      "query": "windowsNtfsLogFile",
       "tool": "DLEAPP",
       "date": "2026-10-13"
     },
@@ -33,8 +33,8 @@
       "date": "2026-09-28"
     },
     {
-      "name": "macosHomeKit",
-      "query": "macosHomeKit",
+      "name": "linuxFirewalld",
+      "query": "linuxFirewalld",
       "tool": "DLEAPP",
       "date": "2026-10-13"
     },
@@ -57,10 +57,10 @@
       "date": "2026-09-25"
     },
     {
-      "name": "macosSiriAnalytics",
-      "query": "macosSiriAnalytics",
+      "name": "linuxRpmPackages",
+      "query": "linuxRpmPackages",
       "tool": "DLEAPP",
-      "date": "2026-10-12"
+      "date": "2026-10-13"
     },
     {
       "name": "appleWatchPhotoCollections",
