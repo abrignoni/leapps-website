@@ -1,18 +1,24 @@
 {
-  "generated": "2026-10-12",
+  "generated": "2026-10-13",
   "window_days": 45,
   "items": [
     {
-      "name": "macosRecents",
-      "query": "macosRecents",
+      "name": "macosHomeKit",
+      "query": "macosHomeKit",
       "tool": "DLEAPP",
-      "date": "2026-10-11"
+      "date": "2026-10-13"
     },
     {
-      "name": "appleWatchPhotoCollections",
-      "query": "appleWatchPhotoCollections",
+      "name": "appleMusicSearch",
+      "query": "appleMusicSearch",
       "tool": "iLEAPP",
-      "date": "2026-10-10"
+      "date": "2026-10-12"
+    },
+    {
+      "name": "chromeDownloadMediaStore",
+      "query": "chromeDownloadMediaStore",
+      "tool": "ALEAPP",
+      "date": "2026-10-12"
     },
     {
       "name": "ford sync wince voice cache",
@@ -27,16 +33,16 @@
       "date": "2026-09-28"
     },
     {
-      "name": "windowsSmbClientEvents",
-      "query": "windowsSmbClientEvents",
+      "name": "macosSiriAnalytics",
+      "query": "macosSiriAnalytics",
       "tool": "DLEAPP",
-      "date": "2026-10-11"
+      "date": "2026-10-12"
     },
     {
-      "name": "appleWatchRegistryHistory",
-      "query": "appleWatchRegistryHistory",
+      "name": "appleWatchMailRegistry",
+      "query": "appleWatchMailRegistry",
       "tool": "iLEAPP",
-      "date": "2026-10-10"
+      "date": "2026-10-12"
     },
     {
       "name": "bluetooth hci snoop",
@@ -51,28 +57,22 @@
       "date": "2026-09-25"
     },
     {
-      "name": "linuxFstab",
-      "query": "linuxFstab",
+      "name": "macosContainerCodeSigning",
+      "query": "macosContainerCodeSigning",
       "tool": "DLEAPP",
-      "date": "2026-10-11"
+      "date": "2026-10-12"
     },
     {
-      "name": "appleWatchMailRegistry",
-      "query": "appleWatchMailRegistry",
+      "name": "appleWatchPhotoCollections",
+      "query": "appleWatchPhotoCollections",
       "tool": "iLEAPP",
-      "date": "2026-10-10"
+      "date": "2026-10-12"
     },
     {
       "name": "siriusxm app storage",
       "query": "siriusxm_app_storage",
       "tool": "VLEAPP",
       "date": "2026-10-10"
-    },
-    {
-      "name": "coinbaseComplianceReport",
-      "query": "coinbaseComplianceReport",
-      "tool": "RLEAPP",
-      "date": "2026-09-23"
     }
   ]
 }
