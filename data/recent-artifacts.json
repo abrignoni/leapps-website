@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "macosHomeKit",
-      "query": "macosHomeKit",
+      "name": "windowsSevenZip",
+      "query": "windowsSevenZip",
       "tool": "DLEAPP",
       "date": "2026-10-13"
     },
@@ -33,10 +33,10 @@
       "date": "2026-09-28"
     },
     {
-      "name": "macosSiriAnalytics",
-      "query": "macosSiriAnalytics",
+      "name": "macosHomeKit",
+      "query": "macosHomeKit",
       "tool": "DLEAPP",
-      "date": "2026-10-12"
+      "date": "2026-10-13"
     },
     {
       "name": "appleWatchMailRegistry",
@@ -57,8 +57,8 @@
       "date": "2026-09-25"
     },
     {
-      "name": "macosContainerCodeSigning",
-      "query": "macosContainerCodeSigning",
+      "name": "macosSiriAnalytics",
+      "query": "macosSiriAnalytics",
       "tool": "DLEAPP",
       "date": "2026-10-12"
     },
