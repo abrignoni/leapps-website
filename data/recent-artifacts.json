@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "photosGraphMoments",
-      "query": "photosGraphMoments",
+      "name": "appleMusicSearch",
+      "query": "appleMusicSearch",
       "tool": "iLEAPP",
       "date": "2026-10-14"
     },
@@ -33,8 +33,8 @@
       "date": "2026-09-28"
     },
     {
-      "name": "routinedParkedCar",
-      "query": "routinedParkedCar",
+      "name": "appleWatchMailRegistry",
+      "query": "appleWatchMailRegistry",
       "tool": "iLEAPP",
       "date": "2026-10-14"
     },
@@ -63,8 +63,8 @@
       "date": "2026-09-25"
     },
     {
-      "name": "routinedVisits",
-      "query": "routinedVisits",
+      "name": "appleWatchPhotoCollections",
+      "query": "appleWatchPhotoCollections",
       "tool": "iLEAPP",
       "date": "2026-10-14"
     },
