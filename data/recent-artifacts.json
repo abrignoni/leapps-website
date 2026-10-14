@@ -1,12 +1,12 @@
 {
-  "generated": "2026-10-13",
+  "generated": "2026-10-14",
   "window_days": 45,
   "items": [
     {
-      "name": "windowsNtfsLogFile",
-      "query": "windowsNtfsLogFile",
+      "name": "windowsUserAccessLogging",
+      "query": "windowsUserAccessLogging",
       "tool": "DLEAPP",
-      "date": "2026-10-13"
+      "date": "2026-10-14"
     },
     {
       "name": "appleMusicSearch",
@@ -33,10 +33,10 @@
       "date": "2026-09-28"
     },
     {
-      "name": "linuxFirewalld",
-      "query": "linuxFirewalld",
+      "name": "windowsRecentFileCache",
+      "query": "windowsRecentFileCache",
       "tool": "DLEAPP",
-      "date": "2026-10-13"
+      "date": "2026-10-14"
     },
     {
       "name": "appleWatchMailRegistry",
@@ -57,10 +57,10 @@
       "date": "2026-09-25"
     },
     {
-      "name": "linuxRpmPackages",
-      "query": "linuxRpmPackages",
+      "name": "windowsNtfsIndexSlack",
+      "query": "windowsNtfsIndexSlack",
       "tool": "DLEAPP",
-      "date": "2026-10-13"
+      "date": "2026-10-14"
     },
     {
       "name": "appleWatchPhotoCollections",
