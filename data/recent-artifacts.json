@@ -3,6 +3,12 @@
   "window_days": 45,
   "items": [
     {
+      "name": "shortcut service",
+      "query": "shortcut_service",
+      "tool": "ALEAPP",
+      "date": "2026-10-14"
+    },
+    {
       "name": "windowsUserAccessLogging",
       "query": "windowsUserAccessLogging",
       "tool": "DLEAPP",
@@ -12,12 +18,6 @@
       "name": "appleMusicSearch",
       "query": "appleMusicSearch",
       "tool": "iLEAPP",
-      "date": "2026-10-12"
-    },
-    {
-      "name": "chromeDownloadMediaStore",
-      "query": "chromeDownloadMediaStore",
-      "tool": "ALEAPP",
       "date": "2026-10-12"
     },
     {
@@ -31,6 +31,12 @@
       "query": "tikTokReturnPdf",
       "tool": "RLEAPP",
       "date": "2026-09-28"
+    },
+    {
+      "name": "chromeDownloadMediaStore",
+      "query": "chromeDownloadMediaStore",
+      "tool": "ALEAPP",
+      "date": "2026-10-12"
     },
     {
       "name": "windowsRecentFileCache",
@@ -67,12 +73,6 @@
       "query": "appleWatchPhotoCollections",
       "tool": "iLEAPP",
       "date": "2026-10-12"
-    },
-    {
-      "name": "siriusxm app storage",
-      "query": "siriusxm_app_storage",
-      "tool": "VLEAPP",
-      "date": "2026-10-10"
     }
   ]
 }
