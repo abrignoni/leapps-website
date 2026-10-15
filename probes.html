@@ -397,7 +397,7 @@
         "operatingSystem": "Windows, macOS, Linux",
         "description": "Recovers images and video from any stream of bytes by signature, with each file's length parsed from its own structure rather than guessed.",
         "url": "https://leapps.org/probes#section-mediacarve",
-        "downloadUrl": "https://github.com/abrignoni/mediacarve",
+        "downloadUrl": "https://github.com/abrignoni/mediacarve/releases",
         "isAccessibleForFree": true,
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "license": "https://opensource.org/licenses/MIT",
@@ -630,7 +630,7 @@
               <li>Puts a video and its audio into one MP4 without re-encoding</li>
               <li>Reports every item: which index named it, how many pieces were joined, the bytes joined against the length the index recorded, and whether the join is complete</li>
               <li>A <code>SegmentTemplate</code> DASH stream, an encrypted index without its key and encrypted media tracks are not joined, and a video already evicted from the cache is gone</li>
-              <li>New: an optional window, <code>exoprobe_gui.py</code>, to scan an evidence folder as a tree, rejoin into an output folder and put a video and its audio together. It is in the repository now and ships as an executable with the next release</li>
+              <li>A window, <code>exoprobe_gui</code>, to scan an evidence folder as a tree, rejoin into an output folder and put a video and its audio together. The release executables carry it from v0.2.0</li>
             </ul>
           </div>
         </div>
@@ -691,7 +691,7 @@
             <h2>mediacarve</h2>
             <div class="lp-tool-fullname">Recover images and video by signature, with lengths parsed rather than guessed</div>
           </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-mediacarve"><i class="ti ti-star"></i>&hellip;</span><a href="https://github.com/abrignoni/mediacarve" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-mediacarve"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-mediacarve"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/mediacarve" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
         </div>
         <div class="lp-about-box">
           <div>
@@ -706,17 +706,19 @@
               <li>Each file's length comes from its own structure where the format allows it: JPEG markers are walked, so an EXIF thumbnail is neither cut short nor reported twice. Every hit says whether its length came from the file's header, was parsed from its structure, or was capped at a limit</li>
               <li>Files found inside another file are set aside by default, so an MJPG AVI is one video and not a pile of JPEG frames</li>
               <li>Only contiguous files: a fragmented file comes back as far as its first fragment, and there are no names, paths or timestamps, because carving reads no filesystem</li>
-              <li>An optional window, <code>mediacarve_gui.py</code>, to count or carve with a progress bar</li>
+              <li>An optional window, <code>mediacarve_gui</code>, to count or carve with a progress bar</li>
+              <li>The release executables carry ewfprobe, so they read <code>.E01</code> images directly. With the Python file, put <code>ewfprobe.py</code> beside it</li>
             </ul>
           </div>
         </div>
-        <div class="lp-install-box">
-          <div class="lp-install-head"><i class="ti ti-file-code"></i>No executable releases yet: run the Python file</div>
-          <div class="lp-install-row"><span class="lp-install-tag">List</span><code>python3 mediacarve.py list disk.raw</code></div>
-          <div class="lp-install-row"><span class="lp-install-tag">Carve</span><code>python3 mediacarve.py carve disk.raw -o out/</code></div>
-          <div class="lp-install-row"><span class="lp-install-tag">Window</span><code>python3 mediacarve_gui.py</code></div>
-          <div class="lp-install-note">Get <a href="https://github.com/abrignoni/mediacarve/blob/main/mediacarve.py" target="_blank" rel="noopener noreferrer">mediacarve.py</a> and <a href="https://github.com/abrignoni/mediacarve/blob/main/mediacarve_gui.py" target="_blank" rel="noopener noreferrer">mediacarve_gui.py</a> from the repository. They need Python 3 and nothing else.</div>
+        <div class="lp-status-bar">
+          <div class="lp-status-dot"></div>
+          <span class="lp-status-text">Live releases</span>
         </div>
+        <div id="releases-mediacarve" class="lp-releases-list">
+          <div class="lp-loading"><span>Fetching releases&hellip;</span></div>
+        </div>
+        <a href="https://github.com/abrignoni/mediacarve/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all mediacarve releases on GitHub</a>
       </section>
 
       <!-- ABOUT THE BUILDS -->
@@ -731,12 +733,12 @@
         <div class="lp-about-box">
           <div>
             <h3>Executables</h3>
-            <p>Every release carries standalone executables for Windows, macOS and Linux, each on x64 and arm64, built by the probe's own GitHub Actions workflow from the tagged commit, with a <code>SHA256SUMS.txt</code> covering them. qnxprobe and chromiumcacheprobe ship the window as a second executable beside the command line; ewfprobe and exoprobe will from their next release. mediacarve has no executable releases yet.</p>
+            <p>Every release carries standalone executables for Windows, macOS and Linux, each on x64 and arm64, built by the probe's own GitHub Actions workflow from the tagged commit, with a <code>SHA256SUMS.txt</code> covering them. qnxprobe, exoprobe, chromiumcacheprobe and mediacarve ship the window as a second executable beside the command line; ewfprobe will from its next release.</p>
             <p>They are not code signed yet, so Windows SmartScreen and macOS Gatekeeper will each ask once. Unzip to a local folder rather than running from a network share.</p>
           </div>
           <div>
             <h3>Or run the Python file</h3>
-            <p>Each probe is one Python file that needs the standard library and nothing else, so <code>python3 &lt;probe&gt;.py</code> works on Windows, macOS and Linux, and its window is a second file, <code>&lt;probe&gt;_gui.py</code>. ewfprobe, exoprobe and chromiumcacheprobe attach the Python file to every release as well.</p>
+            <p>Each probe is one Python file that needs the standard library and nothing else, so <code>python3 &lt;probe&gt;.py</code> works on Windows, macOS and Linux, and its window is a second file, <code>&lt;probe&gt;_gui.py</code>. ewfprobe, exoprobe, chromiumcacheprobe and mediacarve attach the Python file to every release as well.</p>
           </div>
         </div>
       </section>
@@ -794,6 +796,7 @@
       { id: 'ewfprobe', name: 'ewfprobe', repo: 'abrignoni/ewfprobe' },
       { id: 'exoprobe', name: 'exoprobe', repo: 'abrignoni/exoprobe' },
       { id: 'chromiumcacheprobe', name: 'chromiumcacheprobe', repo: 'abrignoni/chromiumcacheprobe' },
+      { id: 'mediacarve', name: 'mediacarve', repo: 'abrignoni/mediacarve' },
     ];
 
     // Classify an asset from its filename: OS, architecture, and GUI/CLI
@@ -1165,7 +1168,6 @@
     }
 
     tools.forEach(fetchStars);
-    fetchStars({ id: 'mediacarve', name: 'mediacarve', repo: 'abrignoni/mediacarve' });
     tools.forEach(fetchTotalDownloads);
 
     // Set print date on page header

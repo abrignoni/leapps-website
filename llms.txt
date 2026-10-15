@@ -22,7 +22,7 @@ Standalone single-purpose readers, separate from the LEAPPs: https://leapps.org/
 - [ewfprobe](https://github.com/abrignoni/ewfprobe): read-only reader for forensic images (E01, Ex01, SMART, AFF, AFF4), Apple disk images, virtual machine disks (VHD, VHDX, VMDK, QCOW) and logical evidence (L01, AD1) that presents the acquired disk as a seekable file; pure Python, no libewf
 - [exoprobe](https://github.com/abrignoni/exoprobe): rejoins the media Android apps cached through ExoPlayer, including DASH and HLS streams
 - [chromiumcacheprobe](https://github.com/abrignoni/chromiumcacheprobe): reads the Chromium Simple Cache as Chrome keeps it on Android, with its HTTP times and headers, and rebuilds the H.264 video it holds as MP4 files, copying the sample bytes as stored; recovery engine by Forensik.IT GmbH
-- [mediacarve](https://github.com/abrignoni/mediacarve): recovers images and video from any stream of bytes by signature, with lengths parsed from each file's own structure; MIT, standard library only, no executable releases yet
+- [mediacarve](https://github.com/abrignoni/mediacarve): recovers images and video from any stream of bytes by signature, with lengths parsed from each file's own structure; MIT, standard library only
 
 ## Install
 
