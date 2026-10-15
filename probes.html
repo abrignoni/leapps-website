@@ -331,6 +331,12 @@
   .lp-video { margin: 1.75rem 0 0; max-width: 760px; }
 .lp-video video { width: 100%; height: auto; display: block; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--border); border-radius: 8px; }
 .lp-video figcaption { margin-top: .6rem; font-size: .85rem; color: var(--muted); }
+.lp-video-dialog { margin: auto; padding: 0; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text); width: min(960px, 94vw); max-width: 94vw; }
+.lp-video-dialog::backdrop { background: rgba(0,0,0,.75); }
+.lp-video-dialog-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .5rem .5rem .5rem 1rem; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.lp-video-close { background: none; border: 1px solid var(--border); color: var(--text); cursor: pointer; width: 2rem; height: 2rem; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; }
+.lp-video-close:hover { border-color: var(--gold); color: var(--gold); }
+.lp-video-dialog video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; }
 </style>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>
   <script>if (location.hash === '#section-qnxprobe') location.replace('/probes#section-qnxprobe');</script>
@@ -545,7 +551,7 @@
             <h2>qnxprobe</h2>
             <div class="lp-tool-fullname">Identify, list and extract filesystems out of raw images</div>
           </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-qnxprobe"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-qnxprobe"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/qnxprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-qnxprobe"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-qnxprobe"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/qnxprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a><a href="/videos/qnxprobe-intro.mp4?v=20261015" class="lp-gh-link lp-video-open" data-video="qnxprobe" data-title="qnxprobe in under a minute"><i class="ti ti-player-play"></i>Watch</a></div>
         </div>
         <div class="lp-about-box">
           <div>
@@ -584,7 +590,7 @@
             <h2>ewfprobe</h2>
             <div class="lp-tool-fullname">A read-only reader for forensic images, Apple and virtual disks, and logical evidence</div>
           </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-ewfprobe"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-ewfprobe"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/ewfprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-ewfprobe"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-ewfprobe"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/ewfprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a><a href="/videos/ewfprobe-intro.mp4?v=20261015" class="lp-gh-link lp-video-open" data-video="ewfprobe" data-title="ewfprobe in under a minute"><i class="ti ti-player-play"></i>Watch</a></div>
         </div>
         <div class="lp-about-box">
           <div>
@@ -623,7 +629,7 @@
             <h2>exoprobe</h2>
             <div class="lp-tool-fullname">Rejoin the media Android apps cached through ExoPlayer</div>
           </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-exoprobe"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-exoprobe"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/exoprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-exoprobe"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-exoprobe"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/exoprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a><a href="/videos/exoprobe-intro.mp4?v=20261015" class="lp-gh-link lp-video-open" data-video="exoprobe" data-title="exoprobe in under a minute"><i class="ti ti-player-play"></i>Watch</a></div>
         </div>
         <div class="lp-about-box">
           <div>
@@ -660,7 +666,7 @@
             <h2>chromiumcacheprobe</h2>
             <div class="lp-tool-fullname">Read Chrome's cache on Android and rebuild the video it holds</div>
           </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-chromiumcacheprobe"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-chromiumcacheprobe"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/chromiumcacheprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-chromiumcacheprobe"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-chromiumcacheprobe"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/chromiumcacheprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a><a href="/videos/chromiumcacheprobe-intro.mp4?v=20261015" class="lp-gh-link lp-video-open" data-video="chromiumcacheprobe" data-title="chromiumcacheprobe in under a minute"><i class="ti ti-player-play"></i>Watch</a></div>
         </div>
         <div class="lp-about-box">
           <div>
@@ -699,7 +705,7 @@
             <h2>mediacarve</h2>
             <div class="lp-tool-fullname">Recover images and video by signature, with lengths parsed rather than guessed</div>
           </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-mediacarve"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-mediacarve"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/mediacarve" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-mediacarve"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-mediacarve"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/mediacarve" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a><a href="/videos/mediacarve-intro.mp4?v=20261015" class="lp-gh-link lp-video-open" data-video="mediacarve" data-title="mediacarve in under a minute"><i class="ti ti-player-play"></i>Watch</a></div>
         </div>
         <div class="lp-about-box">
           <div>
@@ -1380,5 +1386,33 @@
     })();
   </script>
   <script src="/analytics.js?v=20260707" defer></script>
+  <dialog class="lp-video-dialog" id="lp-video-dialog" aria-labelledby="lp-video-dialog-title">
+    <div class="lp-video-dialog-bar">
+      <span id="lp-video-dialog-title"></span>
+      <button type="button" class="lp-video-close" aria-label="Close video"><i class="ti ti-x"></i></button>
+    </div>
+    <video controls playsinline preload="none" width="1280" height="720"></video>
+  </dialog>
+  <script>
+  (function () {
+    var dlg = document.getElementById('lp-video-dialog');
+    if (!dlg || typeof dlg.showModal !== 'function') return; // links fall back to the MP4
+    var v = dlg.querySelector('video'), title = document.getElementById('lp-video-dialog-title');
+    document.querySelectorAll('.lp-video-open').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var k = a.getAttribute('data-video');
+        title.textContent = a.getAttribute('data-title') || '';
+        v.poster = '/videos/' + k + '-intro.jpg?v=20261015';
+        v.src = '/videos/' + k + '-intro.mp4?v=20261015';
+        dlg.showModal();
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+      });
+    });
+    dlg.addEventListener('close', function () { v.pause(); v.removeAttribute('src'); v.load(); });
+    dlg.querySelector('.lp-video-close').addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+  })();
+  </script>
 </body>
 </html>
