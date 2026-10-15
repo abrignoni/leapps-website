@@ -593,7 +593,7 @@
               <li>Encrypted Apple disk images, FTK Imager AD encryption and encrypted AFF opened with their password or the certificate's private key. The password comes from a file, an environment variable or the terminal, never the command line</li>
               <li>Checked against the tools that write these formats (libewf, AFFLIB, <code>hdiutil</code>, FTK Imager, Windows 11 and qemu-img); on five EnCase L01s from Digital Corpora, all 55,599 exported files match libewf byte for byte</li>
               <li>An incomplete set is refused, not read as a smaller image that reports its missing data as empty. Encrypted Ex01, Lx01, encrypted AFF4 and encrypted QCOW are not read</li>
-              <li>New: an optional window, <code>ewfprobe_gui.py</code>, for Info, Verify, listing and Export. A password typed into it reaches ewfprobe in an environment variable, not on its command line. It is in the repository now and ships as an executable with the next release</li>
+              <li>A window, <code>ewfprobe_gui</code>, for Info, Verify, listing and Export. A password typed into it reaches ewfprobe in an environment variable, not on its command line. The release executables carry it from v0.13.0</li>
             </ul>
           </div>
         </div>
@@ -733,12 +733,12 @@
         <div class="lp-about-box">
           <div>
             <h3>Executables</h3>
-            <p>Every release carries standalone executables for Windows, macOS and Linux, each on x64 and arm64, built by the probe's own GitHub Actions workflow from the tagged commit, with a <code>SHA256SUMS.txt</code> covering them. qnxprobe, exoprobe, chromiumcacheprobe and mediacarve ship the window as a second executable beside the command line; ewfprobe will from its next release.</p>
+            <p>Every release carries standalone executables for Windows, macOS and Linux, each on x64 and arm64, built by the probe's own GitHub Actions workflow from the tagged commit, with a <code>SHA256SUMS.txt</code> covering them. Each archive holds the command line tool and its window as two executables.</p>
             <p>They are not code signed yet, so Windows SmartScreen and macOS Gatekeeper will each ask once. Unzip to a local folder rather than running from a network share.</p>
           </div>
           <div>
             <h3>Or run the Python file</h3>
-            <p>Each probe is one Python file that needs the standard library and nothing else, so <code>python3 &lt;probe&gt;.py</code> works on Windows, macOS and Linux, and its window is a second file, <code>&lt;probe&gt;_gui.py</code>. ewfprobe, exoprobe, chromiumcacheprobe and mediacarve attach the Python file to every release as well.</p>
+            <p>Each probe is one Python file that needs the standard library and nothing else, so <code>python3 &lt;probe&gt;.py</code> works on Windows, macOS and Linux, and its window is a second file, <code>&lt;probe&gt;_gui.py</code>. ewfprobe, exoprobe, chromiumcacheprobe and mediacarve attach the Python files to every release as well.</p>
           </div>
         </div>
       </section>
