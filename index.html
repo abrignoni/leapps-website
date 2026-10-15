@@ -1068,7 +1068,7 @@ img { max-width: 100%; display: block; }
         <div class="lp-tool-links">
           <a href="https://github.com/abrignoni/GLEAPP" class="lp-tool-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a>
           <a href="https://leapps.org/releases#section-gleapp" class="lp-tool-link"><i class="ti ti-download"></i>Download</a>
-          <a href="/videos/gleapp-intro.mp4" class="lp-tool-link lp-video-open" data-video="gleapp" data-title="GLEAPP in under a minute"><i class="ti ti-player-play"></i>Watch</a>
+          <a href="/videos/gleapp-intro.mp4?v=20261015" class="lp-tool-link lp-video-open" data-video="gleapp" data-title="GLEAPP in under a minute"><i class="ti ti-player-play"></i>Watch</a>
           <a href="https://leapps.org/releases#section-gleapp-map-downloader" class="lp-tool-link"><i class="ti ti-map"></i>Offline maps</a>
         </div>
       </div>
@@ -1079,7 +1079,7 @@ img { max-width: 100%; display: block; }
         <div class="lp-tool-desc">Turn parsed data into clear visual reports.</div>
         <div class="lp-tool-links">
           <a href="https://leapps.org/releases" class="lp-tool-link"><i class="ti ti-download"></i>Download</a>
-          <a href="/videos/lava-intro.mp4" class="lp-tool-link lp-video-open" data-video="lava" data-title="LAVA in under a minute"><i class="ti ti-player-play"></i>Watch</a>
+          <a href="/videos/lava-intro.mp4?v=20261015" class="lp-tool-link lp-video-open" data-video="lava" data-title="LAVA in under a minute"><i class="ti ti-player-play"></i>Watch</a>
         </div>
       </div>
       <div class="lp-tool-card lp-tool-card-batch">
@@ -1094,9 +1094,9 @@ img { max-width: 100%; display: block; }
       </div>
     </div>
     <figure class="lp-video">
-      <video controls preload="none" playsinline poster="/videos/leapps-intro.jpg" width="1280" height="720" aria-label="The LEAPPs in under a minute">
-        <source src="/videos/leapps-intro.mp4" type="video/mp4">
-        <a href="/videos/leapps-intro.mp4">Watch the LEAPPs video (MP4)</a>
+      <video controls preload="none" playsinline poster="/videos/leapps-intro.jpg?v=20261015" width="1280" height="720" aria-label="The LEAPPs in under a minute">
+        <source src="/videos/leapps-intro.mp4?v=20261015" type="video/mp4">
+        <a href="/videos/leapps-intro.mp4?v=20261015">Watch the LEAPPs video (MP4)</a>
       </video>
       <figcaption>The LEAPPs in under a minute: what iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP parse, the extractions they take, and the reports they write.</figcaption>
     </figure>
@@ -2009,8 +2009,8 @@ img { max-width: 100%; display: block; }
         e.preventDefault();
         var k = a.getAttribute('data-video');
         title.textContent = a.getAttribute('data-title') || '';
-        v.poster = '/videos/' + k + '-intro.jpg';
-        v.src = '/videos/' + k + '-intro.mp4';
+        v.poster = '/videos/' + k + '-intro.jpg?v=20261015';
+        v.src = '/videos/' + k + '-intro.mp4?v=20261015';
         dlg.showModal();
         var p = v.play(); if (p && p.catch) p.catch(function () {});
       });
