@@ -551,7 +551,7 @@
             <h2>qnxprobe</h2>
             <div class="lp-tool-fullname">Identify, list and extract filesystems out of raw images</div>
           </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-qnxprobe"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-qnxprobe"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/qnxprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a><a href="/videos/qnxprobe-intro.mp4?v=20261015" class="lp-gh-link lp-video-open" data-video="qnxprobe" data-title="qnxprobe in under a minute"><i class="ti ti-player-play"></i>Watch</a></div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-qnxprobe"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-qnxprobe"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/qnxprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a><a href="/videos/qnxprobe-intro.mp4?v=20261015b" class="lp-gh-link lp-video-open" data-video="qnxprobe" data-v="20261015b" data-title="qnxprobe in under a minute"><i class="ti ti-player-play"></i>Watch</a></div>
         </div>
         <div class="lp-about-box">
           <div>
@@ -1401,10 +1401,10 @@
     document.querySelectorAll('.lp-video-open').forEach(function (a) {
       a.addEventListener('click', function (e) {
         e.preventDefault();
-        var k = a.getAttribute('data-video');
+        var k = a.getAttribute('data-video'), ver = a.getAttribute('data-v') || '20261015';
         title.textContent = a.getAttribute('data-title') || '';
-        v.poster = '/videos/' + k + '-intro.jpg?v=20261015';
-        v.src = '/videos/' + k + '-intro.mp4?v=20261015';
+        v.poster = '/videos/' + k + '-intro.jpg?v=' + ver;
+        v.src = '/videos/' + k + '-intro.mp4?v=' + ver;
         dlg.showModal();
         var p = v.play(); if (p && p.catch) p.catch(function () {});
       });
