@@ -9,10 +9,10 @@
       "date": "2026-10-15"
     },
     {
-      "name": "shortcut service",
-      "query": "shortcut_service",
+      "name": "chromeCacheVideos",
+      "query": "chromeCacheVideos",
       "tool": "ALEAPP",
-      "date": "2026-10-14"
+      "date": "2026-10-15"
     },
     {
       "name": "windowsUserAccessLogging",
@@ -39,10 +39,10 @@
       "date": "2026-10-14"
     },
     {
-      "name": "chromeDownloadMediaStore",
-      "query": "chromeDownloadMediaStore",
+      "name": "shortcut service",
+      "query": "shortcut_service",
       "tool": "ALEAPP",
-      "date": "2026-10-12"
+      "date": "2026-10-14"
     },
     {
       "name": "windowsRecentFileCache",
@@ -69,10 +69,10 @@
       "date": "2026-10-14"
     },
     {
-      "name": "windowsNtfsIndexSlack",
-      "query": "windowsNtfsIndexSlack",
-      "tool": "DLEAPP",
-      "date": "2026-10-14"
+      "name": "chromeDownloadMediaStore",
+      "query": "chromeDownloadMediaStore",
+      "tool": "ALEAPP",
+      "date": "2026-10-12"
     }
   ]
 }
