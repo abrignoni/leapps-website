@@ -1,12 +1,12 @@
 {
-  "generated": "2026-10-14",
+  "generated": "2026-10-15",
   "window_days": 45,
   "items": [
     {
-      "name": "appleMusicSearch",
-      "query": "appleMusicSearch",
+      "name": "anonymousChat",
+      "query": "anonymousChat",
       "tool": "iLEAPP",
-      "date": "2026-10-14"
+      "date": "2026-10-15"
     },
     {
       "name": "shortcut service",
@@ -33,8 +33,8 @@
       "date": "2026-09-28"
     },
     {
-      "name": "appleWatchMailRegistry",
-      "query": "appleWatchMailRegistry",
+      "name": "appleMusicSearch",
+      "query": "appleMusicSearch",
       "tool": "iLEAPP",
       "date": "2026-10-14"
     },
@@ -63,8 +63,8 @@
       "date": "2026-09-25"
     },
     {
-      "name": "appleWatchPhotoCollections",
-      "query": "appleWatchPhotoCollections",
+      "name": "appleWatchMailRegistry",
+      "query": "appleWatchMailRegistry",
       "tool": "iLEAPP",
       "date": "2026-10-14"
     },
