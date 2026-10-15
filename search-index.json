@@ -84,10 +84,22 @@
     "excerpt": "Rejoins the media Android apps cached through ExoPlayer, joining DASH and HLS streams in the order their cached manifests list them, and puts video and audio into one MP4 without re-encoding."
   },
   {
+    "title": "chromiumcacheprobe: Chrome cache and cached video on Android",
+    "url": "https://leapps.org/probes#section-chromiumcacheprobe",
+    "page": "Probes",
+    "excerpt": "Reads the Chromium Simple Cache as Chrome keeps it on Android, with HTTP request, response and last-used times, and rebuilds the H.264 video it holds as MP4 files, copying the sample bytes as stored."
+  },
+  {
+    "title": "mediacarve: carve images and video by signature",
+    "url": "https://leapps.org/probes#section-mediacarve",
+    "page": "Probes",
+    "excerpt": "Recovers JPEG, PNG, GIF, WebP, AVI, MP4, MOV and HEIC files from any stream of bytes by signature, with each length parsed from the file's own structure. MIT, standard library only."
+  },
+  {
     "title": "Probes — standalone forensic readers",
     "url": "https://leapps.org/probes",
     "page": "Probes",
-    "excerpt": "Single-purpose readers that sit beside the LEAPPs: qnxprobe, ewfprobe and exoprobe. One Python file each, built on the standard library, never writing to the evidence they read."
+    "excerpt": "Single-purpose readers that sit beside the LEAPPs: qnxprobe, ewfprobe, exoprobe, chromiumcacheprobe and mediacarve. One Python file each, built on the standard library, never writing to the evidence they read."
   },
   {
     "title": "Install with Homebrew (macOS)",
