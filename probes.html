@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261009" />
+  <link rel="stylesheet" href="/css/global.css?v=20261015" />
   <style>
 .lp-page-header {
       padding: 3.5rem 2rem 3rem; border-bottom: 1px solid var(--border);
@@ -43,10 +43,18 @@
     }
 .lp-page-header::before {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(245,192,32,.06) 0%, transparent 70%);
+      background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(var(--color-probes-rgb),.06) 0%, transparent 70%);
       pointer-events: none;
     }
 .lp-page-header-inner { max-width: 1100px; margin: 0 auto; }
+/* The probes' family color stands in for the site gold on this page's header and content.
+   The download button keeps the site gold, as it does on the releases page. */
+:root { --site-gold: var(--gold); --site-gold-dk: var(--gold-dk); }
+.lp-page-header, .lp-main { --gold: var(--color-probes); }
+.lp-tool-nav .lp-tool-pill { border-color: rgba(var(--color-probes-rgb),.4); color: var(--color-probes); }
+.lp-sidebar .lp-sidebar-links a { border-left-color: rgba(var(--color-probes-rgb),.35); }
+.lp-sidebar .lp-sidebar-links a:hover { border-left-color: var(--color-probes); }
+.lp-sidebar .lp-sidebar-links a i { color: var(--color-probes); }
 .lp-eyebrow { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
 .lp-page-header h1 { font-family: var(--font-head); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; text-transform: uppercase; line-height: .95; margin-bottom: 1rem; }
 .lp-page-header h1 span { color: var(--gold); }
@@ -70,7 +78,7 @@
       transition: color .2s, border-color .2s, background .2s;
     }
 .lp-sidebar-links a:hover { color: var(--text); background: var(--surface); border-left-color: var(--border); }
-.lp-sidebar-links a.lava-link { color: var(--gold); border-left-color: rgba(245,192,32,.4); }
+.lp-sidebar-links a.lava-link { color: var(--gold); border-left-color: rgba(var(--color-probes-rgb),.4); }
 .lp-sidebar-links a.lava-link:hover { border-left-color: var(--gold); background: rgba(245,192,80,.05); }
 .lp-sidebar-links i { font-size: 1rem; }
 .lp-tool-section { margin-bottom: 3rem; scroll-margin-top: 90px; }
@@ -146,12 +154,12 @@
       padding: 1.25rem 1.5rem; transition: border-color .2s;
     }
 .lp-release-card:hover { border-color: #444; }
-.lp-release-card.latest { border-color: rgba(245,192,32,.3); }
+.lp-release-card.latest { border-color: rgba(var(--color-probes-rgb),.3); }
 .lp-release-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: .75rem; flex-wrap: wrap; }
 .lp-release-version { font-family: var(--font-head); font-size: 1.3rem; font-weight: 900; text-transform: uppercase; color: var(--text); }
 .lp-release-date { font-family: var(--font-mono); font-size: .7rem; color: var(--muted); letter-spacing: .08em; }
 .lp-latest-badge {
-      background: rgba(245,192,32,.15); border: 1px solid rgba(245,192,32,.3);
+      background: rgba(var(--color-probes-rgb),.15); border: 1px solid rgba(var(--color-probes-rgb),.3);
       color: var(--gold); font-family: var(--font-mono); font-size: .65rem;
       padding: .2rem .6rem; letter-spacing: .1em; text-transform: uppercase;
     }
@@ -166,8 +174,8 @@
       text-decoration: none !important; transition: border-color .2s, color .2s, background .2s;
     }
 .lp-asset-btn:hover { border-color: var(--gold); color: var(--gold); }
-.lp-asset-btn.primary { background: var(--gold); border-color: var(--gold); color: var(--off-black) !important; }
-.lp-asset-btn.primary:hover { background: var(--gold-dk); border-color: var(--gold-dk); }
+.lp-asset-btn.primary { background: var(--site-gold); border-color: var(--site-gold); color: var(--off-black) !important; }
+.lp-asset-btn.primary:hover { background: var(--site-gold-dk); border-color: var(--site-gold-dk); }
 .lp-asset-btn .lp-flavor { font-weight: 700; letter-spacing: .1em; }
 .lp-asset-rows { display: flex; flex-direction: column; gap: .5rem; }
 .lp-asset-row { display: flex; align-items: flex-start; gap: .75rem; padding: .45rem 0; border-top: 1px solid rgba(44,44,44,.5); }
@@ -176,7 +184,7 @@
 .lp-asset-row-label .lp-os-name { display: inline-flex; align-items: center; gap: .4rem; }
 .lp-asset-row-label i { color: var(--muted); }
 .lp-asset-row-btns { display: flex; flex-wrap: wrap; gap: .45rem; }
-.lp-your-os { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(245,192,32,.35); padding: .08rem .4rem; border-radius: 3px; }
+.lp-your-os { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(var(--color-probes-rgb),.35); padding: .08rem .4rem; border-radius: 3px; }
 @media (max-width: 640px) {
   .lp-asset-row { flex-direction: column; gap: .3rem; }
   .lp-asset-row-label { padding-top: 0; }
@@ -197,7 +205,7 @@
       display: inline-flex; align-items: center; gap: .4rem;
       font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em;
       padding: .35rem .75rem; border: 1px solid var(--border);
-      color: var(--gold); background: rgba(245,192,32,.08);
+      color: var(--gold); background: rgba(var(--color-probes-rgb),.08);
       white-space: nowrap;
     }
 .lp-star-badge i { font-size: .85rem; }
@@ -251,7 +259,7 @@
       user-select: none;
     }
 .lp-older-toggle:hover { border-color: #444; background: var(--surface2); }
-.lp-older-toggle.open { border-color: rgba(245,192,32,.3); }
+.lp-older-toggle.open { border-color: rgba(var(--color-probes-rgb),.3); }
 .lp-older-label { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; color: var(--muted); display: flex; align-items: center; gap: .5rem; }
 .lp-older-toggle.open .lp-older-label { color: var(--gold); }
 .lp-older-toggle.open .lp-chevron { transform: rotate(180deg); color: var(--gold); }

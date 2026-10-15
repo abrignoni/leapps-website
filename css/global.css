@@ -21,6 +21,8 @@
   --color-dleapp: #CF7BFB; --color-dleapp-rgb: 207,123,251;
   --color-gleapp: #FD9B41; --color-gleapp-rgb: 253,155,65;
   --color-lava: #0F6CA4; --color-lava-rgb: 15,108,164;
+  /* The probes share one family color: a steel blue-grey that sits clear of every tool hue. */
+  --color-probes: #8FA9BF; --color-probes-rgb: 143,169,191;
   --rank-1: #6CB4E4;
   --rank-2: #4A90D9;
   --rank-3: #9B59B6;
@@ -277,6 +279,7 @@ a { color: inherit; }
   --color-vleapp: #69717E; --color-vleapp-rgb: 105,113,126;
   --color-dleapp: #933EDC; --color-dleapp-rgb: 147,62,220;
   --color-gleapp: #A4530F; --color-gleapp-rgb: 164,83,15;
+  --color-probes: #46627A; --color-probes-rgb: 70,98,122;
 }
 [data-theme="light"] body, [data-theme="light"] #lp-root, [data-theme="light"] section,
     [data-theme="light"] main, [data-theme="light"] footer { background-color: #F5F2EC !important; }
