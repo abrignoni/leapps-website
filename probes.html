@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Probes — LEAPPs</title>
-  <meta name="description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer. One Python file each, built on the standard library." />
+  <meta name="description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for images and video carved by signature. One Python file each, built on the standard library." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://leapps.org/probes" />
   <meta property="og:title" content="Probes — LEAPPs" />
-  <meta property="og:description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer. One Python file each, built on the standard library." />
+  <meta property="og:description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for images and video carved by signature. One Python file each, built on the standard library." />
   <meta property="og:image" content="https://leapps.org/blog/og/default.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -21,7 +21,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Probes — LEAPPs" />
-  <meta name="twitter:description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer. One Python file each, built on the standard library." />
+  <meta name="twitter:description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for images and video carved by signature. One Python file each, built on the standard library." />
   <meta name="twitter:image" content="https://leapps.org/blog/og/default.png" />
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/logos/leapps-favicon-512.png" />
@@ -333,7 +333,7 @@
       {
         "@type": "WebPage",
         "name": "Probes — LEAPPs",
-        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer. One Python file each, built on the standard library.",
+        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for images and video carved by signature. One Python file each, built on the standard library.",
         "url": "https://leapps.org/probes",
         "isPartOf": { "@type": "WebSite", "name": "LEAPPs", "url": "https://leapps.org" }
       },
@@ -371,6 +371,33 @@
         "description": "Rejoins the media Android apps cached through ExoPlayer, joining DASH and HLS streams in the order their cached manifests list them.",
         "url": "https://leapps.org/probes#section-exoprobe",
         "downloadUrl": "https://github.com/abrignoni/exoprobe/releases",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "license": "https://opensource.org/licenses/MIT",
+        "author": { "@type": "Person", "name": "Alexis Brignoni", "url": "https://github.com/abrignoni" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "chromiumcacheprobe",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Windows, macOS, Linux",
+        "description": "Reads the Chromium Simple Cache as Chrome keeps it on Android, with its HTTP request and response times, and rebuilds the H.264 video it holds as MP4 files, copying the sample bytes as stored.",
+        "url": "https://leapps.org/probes#section-chromiumcacheprobe",
+        "downloadUrl": "https://github.com/abrignoni/chromiumcacheprobe/releases",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "license": "https://opensource.org/licenses/MIT",
+        "author": { "@type": "Person", "name": "Alexis Brignoni", "url": "https://github.com/abrignoni" },
+        "contributor": { "@type": "Organization", "name": "Forensik.IT GmbH", "url": "https://github.com/ForensikITGmbH" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "mediacarve",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Windows, macOS, Linux",
+        "description": "Recovers images and video from any stream of bytes by signature, with each file's length parsed from its own structure rather than guessed.",
+        "url": "https://leapps.org/probes#section-mediacarve",
+        "downloadUrl": "https://github.com/abrignoni/mediacarve",
         "isAccessibleForFree": true,
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "license": "https://opensource.org/licenses/MIT",
@@ -441,6 +468,8 @@
     <a href="#section-qnxprobe" onclick="closeMobileMenu()">qnxprobe</a>
     <a href="#section-ewfprobe" onclick="closeMobileMenu()">ewfprobe</a>
     <a href="#section-exoprobe" onclick="closeMobileMenu()">exoprobe</a>
+    <a href="#section-chromiumcacheprobe" onclick="closeMobileMenu()">chromiumcacheprobe</a>
+    <a href="#section-mediacarve" onclick="closeMobileMenu()">mediacarve</a>
     <a href="https://leapps.org/stats" onclick="closeMobileMenu()">Stats</a>
     <a href="https://leapps.org/changelog" onclick="closeMobileMenu()">Changelog</a>
     <a href="https://leapps.org/artifacts" onclick="closeMobileMenu()">Artifacts</a>
@@ -463,11 +492,13 @@
     <div class="lp-page-header-inner">
       <span class="lp-eyebrow">Standalone tools</span>
       <h1>The <span>Probes</span></h1>
-      <p>Single-purpose readers that sit beside the LEAPPs rather than inside them. Each one reads one kind of evidence the way its format defines it, runs from one Python file built on the standard library, and never writes to the evidence it reads. Free and open source under the MIT license.</p>
+      <p>Single-purpose readers that sit beside the LEAPPs rather than inside them. Each one reads one kind of evidence the way its format defines it, runs from one Python file built on the standard library, and never writes to the evidence it reads. Each has an optional window that runs its own command line, for anyone who would rather not use a terminal. Free and open source under the MIT license.</p>
       <div class="lp-tool-nav">
         <a href="#section-qnxprobe" class="lp-tool-pill">qnxprobe</a>
         <a href="#section-ewfprobe" class="lp-tool-pill">ewfprobe</a>
         <a href="#section-exoprobe" class="lp-tool-pill">exoprobe</a>
+        <a href="#section-chromiumcacheprobe" class="lp-tool-pill">chromiumcacheprobe</a>
+        <a href="#section-mediacarve" class="lp-tool-pill">mediacarve</a>
       </div>
       <figure class="lp-video">
         <video controls preload="none" playsinline poster="/videos/probes-intro.jpg" width="1280" height="720" aria-label="The probe family in under a minute">
@@ -489,6 +520,8 @@
         <li><a href="#section-qnxprobe"><i class="ti ti-cpu"></i>qnxprobe</a></li>
         <li><a href="#section-ewfprobe"><i class="ti ti-file-zip"></i>ewfprobe</a></li>
         <li><a href="#section-exoprobe"><i class="ti ti-movie"></i>exoprobe</a></li>
+        <li><a href="#section-chromiumcacheprobe"><i class="ti ti-brand-chrome"></i>chromiumcacheprobe</a></li>
+        <li><a href="#section-mediacarve"><i class="ti ti-photo-search"></i>mediacarve</a></li>
         <li><a href="#about-the-builds"><i class="ti ti-package"></i>About the builds</a></li>
       </ul>
     </aside>
@@ -521,6 +554,7 @@
               <li>BitLocker volumes opened with their password, recovery password or startup key (<code>.BEK</code>); without a key, the report names the volume, its protectors and what would open it</li>
               <li>Encrypted APFS volumes opened with their password or personal recovery key; without one, the volume is named as locked, with the password hint it stores, rather than left out of the listing</li>
               <li>Every container ewfprobe opens, from E01 and AFF4 to <code>.dmg</code>, VHDX and VMDK, read directly, so a walk starts from the file you were handed</li>
+              <li>A window, <code>qnxprobe_gui</code>, that runs the same report and extraction and browses an image's contents without extracting it. The release executables carry it</li>
             </ul>
           </div>
         </div>
@@ -559,6 +593,7 @@
               <li>Encrypted Apple disk images, FTK Imager AD encryption and encrypted AFF opened with their password or the certificate's private key. The password comes from a file, an environment variable or the terminal, never the command line</li>
               <li>Checked against the tools that write these formats (libewf, AFFLIB, <code>hdiutil</code>, FTK Imager, Windows 11 and qemu-img); on five EnCase L01s from Digital Corpora, all 55,599 exported files match libewf byte for byte</li>
               <li>An incomplete set is refused, not read as a smaller image that reports its missing data as empty. Encrypted Ex01, Lx01, encrypted AFF4 and encrypted QCOW are not read</li>
+              <li>New: an optional window, <code>ewfprobe_gui.py</code>, for Info, Verify, listing and Export. A password typed into it reaches ewfprobe in an environment variable, not on its command line. It is in the repository now and ships as an executable with the next release</li>
             </ul>
           </div>
         </div>
@@ -595,6 +630,7 @@
               <li>Puts a video and its audio into one MP4 without re-encoding</li>
               <li>Reports every item: which index named it, how many pieces were joined, the bytes joined against the length the index recorded, and whether the join is complete</li>
               <li>A <code>SegmentTemplate</code> DASH stream, an encrypted index without its key and encrypted media tracks are not joined, and a video already evicted from the cache is gone</li>
+              <li>New: an optional window, <code>exoprobe_gui.py</code>, to scan an evidence folder as a tree, rejoin into an output folder and put a video and its audio together. It is in the repository now and ships as an executable with the next release</li>
             </ul>
           </div>
         </div>
@@ -606,6 +642,81 @@
           <div class="lp-loading"><span>Fetching releases&hellip;</span></div>
         </div>
         <a href="https://github.com/abrignoni/exoprobe/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all exoprobe releases on GitHub</a>
+      </section>
+
+      <!-- CHROMIUMCACHEPROBE -->
+      <section class="lp-tool-section" id="section-chromiumcacheprobe">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Android &middot; Chrome cache</div>
+            <h2>chromiumcacheprobe</h2>
+            <div class="lp-tool-fullname">Read Chrome's cache on Android and rebuild the video it holds</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-chromiumcacheprobe"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-chromiumcacheprobe"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/chromiumcacheprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What is chromiumcacheprobe?</h3>
+            <p>Video players fetch video in pieces, and Chrome on Android can keep those pieces in its cache as MP4 fragments, often without the header a player needs to open them. chromiumcacheprobe reads the Simple Cache, groups the fragments by the address they came from, and writes each run of them out as a regular MP4.</p>
+            <p>The sample bytes are copied exactly as stored and only the container around them is written. No decoder is run. Its times describe the HTTP exchange and the cache entry, not playback: cached video does not show that anyone watched it.</p>
+            <p>The recovery engine was written by Forensik.IT GmbH and first submitted to ALEAPP, which now uses chromiumcacheprobe for its Chrome Cache - Videos artifact. Thank you for the work.</p>
+          </div>
+          <div>
+            <h3>Highlights</h3>
+            <ul>
+              <li>Lists every cache entry with its URL, HTTP status, content type, and request, response and last-used times, from the entry files and the cache index</li>
+              <li>Decodes gzip and deflate bodies, and Brotli where the <code>brotli</code> package is present. A body it cannot decode is reported as not decodable, not skipped quietly</li>
+              <li>A clip starts at a key frame, and a gap, overlap or configuration change starts a new clip. Nothing is filled in. When the original header is gone, the H.264 settings come from the samples and the clip is marked as having a rebuilt header</li>
+              <li>Every run writes <code>provenance.json</code>: the source file hashes, the offset and size of every sample, the original timing values, and what was skipped and why</li>
+              <li>On the public DFRWS 2021 Galaxy S10 extraction it rebuilt 12 clips, and all 170 samples in them are byte-identical to the cache bytes they came from</li>
+              <li>H.264 video and AAC audio only. Encrypted media and audio without its original header are not handled</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lp-status-bar">
+          <div class="lp-status-dot"></div>
+          <span class="lp-status-text">Live releases</span>
+        </div>
+        <div id="releases-chromiumcacheprobe" class="lp-releases-list">
+          <div class="lp-loading"><span>Fetching releases&hellip;</span></div>
+        </div>
+        <a href="https://github.com/abrignoni/chromiumcacheprobe/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all chromiumcacheprobe releases on GitHub</a>
+      </section>
+
+      <!-- MEDIACARVE -->
+      <section class="lp-tool-section" id="section-mediacarve">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Any stream of bytes &middot; Carving</div>
+            <h2>mediacarve</h2>
+            <div class="lp-tool-fullname">Recover images and video by signature, with lengths parsed rather than guessed</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-mediacarve"><i class="ti ti-star"></i>&hellip;</span><a href="https://github.com/abrignoni/mediacarve" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What is mediacarve?</h3>
+            <p>When no filesystem parser can name a file, carving still finds it by its signature. mediacarve reads anything that can seek and read: a raw image, a disk, a file inside an archive, or an E01 opened with ewfprobe. It counts what is recoverable, or writes it to a folder or a zip, and never writes to what it reads.</p>
+            <p>The established carvers, PhotoRec and Scalpel, are GPL. mediacarve exists so an MIT-licensed tool can carve without a copyleft dependency or a build toolchain. GLEAPP carves with it.</p>
+          </div>
+          <div>
+            <h3>Highlights</h3>
+            <ul>
+              <li>JPEG, PNG, GIF, WebP, AVI, MP4, MOV, 3GP, HEIC, HEIF and AVIF</li>
+              <li>Each file's length comes from its own structure where the format allows it: JPEG markers are walked, so an EXIF thumbnail is neither cut short nor reported twice. Every hit says whether its length came from the file's header, was parsed from its structure, or was capped at a limit</li>
+              <li>Files found inside another file are set aside by default, so an MJPG AVI is one video and not a pile of JPEG frames</li>
+              <li>Only contiguous files: a fragmented file comes back as far as its first fragment, and there are no names, paths or timestamps, because carving reads no filesystem</li>
+              <li>An optional window, <code>mediacarve_gui.py</code>, to count or carve with a progress bar</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lp-install-box">
+          <div class="lp-install-head"><i class="ti ti-file-code"></i>No executable releases yet: run the Python file</div>
+          <div class="lp-install-row"><span class="lp-install-tag">List</span><code>python3 mediacarve.py list disk.raw</code></div>
+          <div class="lp-install-row"><span class="lp-install-tag">Carve</span><code>python3 mediacarve.py carve disk.raw -o out/</code></div>
+          <div class="lp-install-row"><span class="lp-install-tag">Window</span><code>python3 mediacarve_gui.py</code></div>
+          <div class="lp-install-note">Get <a href="https://github.com/abrignoni/mediacarve/blob/main/mediacarve.py" target="_blank" rel="noopener noreferrer">mediacarve.py</a> and <a href="https://github.com/abrignoni/mediacarve/blob/main/mediacarve_gui.py" target="_blank" rel="noopener noreferrer">mediacarve_gui.py</a> from the repository. They need Python 3 and nothing else.</div>
+        </div>
       </section>
 
       <!-- ABOUT THE BUILDS -->
@@ -620,12 +731,12 @@
         <div class="lp-about-box">
           <div>
             <h3>Executables</h3>
-            <p>Every release carries standalone executables for Windows, macOS and Linux, each on x64 and arm64, built by the probe's own GitHub Actions workflow from the tagged commit, with a <code>SHA256SUMS.txt</code> covering them.</p>
+            <p>Every release carries standalone executables for Windows, macOS and Linux, each on x64 and arm64, built by the probe's own GitHub Actions workflow from the tagged commit, with a <code>SHA256SUMS.txt</code> covering them. qnxprobe and chromiumcacheprobe ship the window as a second executable beside the command line; ewfprobe and exoprobe will from their next release. mediacarve has no executable releases yet.</p>
             <p>They are not code signed yet, so Windows SmartScreen and macOS Gatekeeper will each ask once. Unzip to a local folder rather than running from a network share.</p>
           </div>
           <div>
             <h3>Or run the Python file</h3>
-            <p>Each probe is one Python file that needs the standard library and nothing else, so <code>python3 &lt;probe&gt;.py</code> works on Windows, macOS and Linux. ewfprobe and exoprobe attach that file to every release as well.</p>
+            <p>Each probe is one Python file that needs the standard library and nothing else, so <code>python3 &lt;probe&gt;.py</code> works on Windows, macOS and Linux, and its window is a second file, <code>&lt;probe&gt;_gui.py</code>. ewfprobe, exoprobe and chromiumcacheprobe attach the Python file to every release as well.</p>
           </div>
         </div>
       </section>
@@ -682,6 +793,7 @@
       { id: 'qnxprobe', name: 'qnxprobe', repo: 'abrignoni/qnxprobe' },
       { id: 'ewfprobe', name: 'ewfprobe', repo: 'abrignoni/ewfprobe' },
       { id: 'exoprobe', name: 'exoprobe', repo: 'abrignoni/exoprobe' },
+      { id: 'chromiumcacheprobe', name: 'chromiumcacheprobe', repo: 'abrignoni/chromiumcacheprobe' },
     ];
 
     // Classify an asset from its filename: OS, architecture, and GUI/CLI
@@ -1053,6 +1165,7 @@
     }
 
     tools.forEach(fetchStars);
+    fetchStars({ id: 'mediacarve', name: 'mediacarve', repo: 'abrignoni/mediacarve' });
     tools.forEach(fetchTotalDownloads);
 
     // Set print date on page header
