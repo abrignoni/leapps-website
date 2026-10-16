@@ -9,10 +9,10 @@
       "date": "2026-10-16"
     },
     {
-      "name": "chromeCacheVideos",
-      "query": "chromeCacheVideos",
+      "name": "googlePay",
+      "query": "googlePay",
       "tool": "ALEAPP",
-      "date": "2026-10-15"
+      "date": "2026-10-16"
     },
     {
       "name": "windowsUserAccessLogging",
@@ -39,10 +39,10 @@
       "date": "2026-10-15"
     },
     {
-      "name": "shortcut service",
-      "query": "shortcut_service",
+      "name": "djiFlightRecordTxt",
+      "query": "djiFlightRecordTxt",
       "tool": "ALEAPP",
-      "date": "2026-10-14"
+      "date": "2026-10-16"
     },
     {
       "name": "windowsRecentFileCache",
@@ -69,10 +69,10 @@
       "date": "2026-10-15"
     },
     {
-      "name": "chromeDownloadMediaStore",
-      "query": "chromeDownloadMediaStore",
+      "name": "chromeCacheVideos",
+      "query": "chromeCacheVideos",
       "tool": "ALEAPP",
-      "date": "2026-10-12"
+      "date": "2026-10-15"
     }
   ]
 }
