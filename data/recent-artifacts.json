@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "windowsNtdsAccounts",
-      "query": "windowsNtdsAccounts",
+      "name": "webServerLogs",
+      "query": "webServerLogs",
       "tool": "DLEAPP",
       "date": "2026-10-17"
     },
@@ -33,8 +33,8 @@
       "date": "2026-09-28"
     },
     {
-      "name": "windowsDomainAuthEvents",
-      "query": "windowsDomainAuthEvents",
+      "name": "googleBackupAndSync",
+      "query": "googleBackupAndSync",
       "tool": "DLEAPP",
       "date": "2026-10-17"
     },
@@ -63,8 +63,8 @@
       "date": "2026-09-25"
     },
     {
-      "name": "windowsSearchAppCache",
-      "query": "windowsSearchAppCache",
+      "name": "windowsShimEngineEvents",
+      "query": "windowsShimEngineEvents",
       "tool": "DLEAPP",
       "date": "2026-10-17"
     },
