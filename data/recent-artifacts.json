@@ -3,6 +3,12 @@
   "window_days": 45,
   "items": [
     {
+      "name": "windowsNtdsAccounts",
+      "query": "windowsNtdsAccounts",
+      "tool": "DLEAPP",
+      "date": "2026-10-17"
+    },
+    {
       "name": "webkitMediaCache",
       "query": "webkitMediaCache",
       "tool": "iLEAPP",
@@ -13,12 +19,6 @@
       "query": "googlePay",
       "tool": "ALEAPP",
       "date": "2026-10-16"
-    },
-    {
-      "name": "windowsUserAccessLogging",
-      "query": "windowsUserAccessLogging",
-      "tool": "DLEAPP",
-      "date": "2026-10-14"
     },
     {
       "name": "ford sync wince voice cache",
@@ -33,6 +33,12 @@
       "date": "2026-09-28"
     },
     {
+      "name": "windowsDomainAuthEvents",
+      "query": "windowsDomainAuthEvents",
+      "tool": "DLEAPP",
+      "date": "2026-10-17"
+    },
+    {
       "name": "anonymousChat",
       "query": "anonymousChat",
       "tool": "iLEAPP",
@@ -43,12 +49,6 @@
       "query": "djiFlightRecordTxt",
       "tool": "ALEAPP",
       "date": "2026-10-16"
-    },
-    {
-      "name": "windowsRecentFileCache",
-      "query": "windowsRecentFileCache",
-      "tool": "DLEAPP",
-      "date": "2026-10-14"
     },
     {
       "name": "bluetooth hci snoop",
@@ -63,15 +63,15 @@
       "date": "2026-09-25"
     },
     {
+      "name": "windowsSearchAppCache",
+      "query": "windowsSearchAppCache",
+      "tool": "DLEAPP",
+      "date": "2026-10-17"
+    },
+    {
       "name": "photosGraphMoments",
       "query": "photosGraphMoments",
       "tool": "iLEAPP",
-      "date": "2026-10-15"
-    },
-    {
-      "name": "chromeCacheVideos",
-      "query": "chromeCacheVideos",
-      "tool": "ALEAPP",
       "date": "2026-10-15"
     }
   ]
