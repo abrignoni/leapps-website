@@ -1483,13 +1483,13 @@
     {
       "date": "2026-10-17",
       "totals": {
-        "ileapp": 98434,
-        "aleapp": 75034,
-        "rleapp": 6222,
-        "vleapp": 2985,
-        "lava": 4333,
-        "dleapp": 1689,
-        "gleapp": 811,
+        "ileapp": 98476,
+        "aleapp": 75053,
+        "rleapp": 6225,
+        "vleapp": 2986,
+        "lava": 4338,
+        "dleapp": 1690,
+        "gleapp": 815,
         "batchleapp": 702
       }
     }
