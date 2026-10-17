@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Probes — LEAPPs</title>
-  <meta name="description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for images and video carved by signature. One Python file each, built on the standard library." />
+  <meta name="description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for media, databases, plists, archives and PDFs carved by signature. One Python file each, built on the standard library." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://leapps.org/probes" />
   <meta property="og:title" content="Probes — LEAPPs" />
-  <meta property="og:description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for images and video carved by signature. One Python file each, built on the standard library." />
+  <meta property="og:description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for media, databases, plists, archives and PDFs carved by signature. One Python file each, built on the standard library." />
   <meta property="og:image" content="https://leapps.org/blog/og/default.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -21,7 +21,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Probes — LEAPPs" />
-  <meta name="twitter:description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for images and video carved by signature. One Python file each, built on the standard library." />
+  <meta name="twitter:description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for media, databases, plists, archives and PDFs carved by signature. One Python file each, built on the standard library." />
   <meta name="twitter:image" content="https://leapps.org/blog/og/default.png" />
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/logos/leapps-favicon-512.png" />
@@ -347,7 +347,7 @@
       {
         "@type": "WebPage",
         "name": "Probes — LEAPPs",
-        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for images and video carved by signature. One Python file each, built on the standard library.",
+        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for media, databases, plists, archives and PDFs carved by signature. One Python file each, built on the standard library.",
         "url": "https://leapps.org/probes",
         "isPartOf": { "@type": "WebSite", "name": "LEAPPs", "url": "https://leapps.org" }
       },
@@ -409,7 +409,7 @@
         "name": "mediacarve",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Windows, macOS, Linux",
-        "description": "Recovers images and video from any stream of bytes by signature, with each file's length parsed from its own structure rather than guessed.",
+        "description": "Recovers images, video, audio and, when asked, SQLite databases, binary plists, ZIP archives and PDFs from any stream of bytes by signature, with each file's length parsed from its own structure rather than guessed.",
         "url": "https://leapps.org/probes#section-mediacarve",
         "downloadUrl": "https://github.com/abrignoni/mediacarve/releases",
         "isAccessibleForFree": true,
@@ -703,9 +703,9 @@
           <div class="lp-tool-header-left">
             <div class="lp-tool-platform">Any stream of bytes &middot; Carving</div>
             <h2>mediacarve</h2>
-            <div class="lp-tool-fullname">Recover images and video by signature, with lengths parsed rather than guessed</div>
+            <div class="lp-tool-fullname">Recover media, databases, plists, archives and PDFs by signature, with lengths parsed rather than guessed</div>
           </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-mediacarve"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-mediacarve"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/mediacarve" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a><a href="/videos/mediacarve-intro.mp4?v=20261015" class="lp-gh-link lp-video-open" data-video="mediacarve" data-title="mediacarve in under a minute"><i class="ti ti-player-play"></i>Watch</a></div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-mediacarve"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-mediacarve"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/mediacarve" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a><a href="/videos/mediacarve-intro.mp4?v=20261017" class="lp-gh-link lp-video-open" data-video="mediacarve" data-v="20261017" data-title="mediacarve in under a minute"><i class="ti ti-player-play"></i>Watch</a></div>
         </div>
         <div class="lp-about-box">
           <div>
@@ -716,7 +716,8 @@
           <div>
             <h3>Highlights</h3>
             <ul>
-              <li>JPEG, PNG, GIF, WebP, AVI, MP4, MOV, 3GP, HEIC, HEIF and AVIF</li>
+              <li>Images (JPEG, PNG, GIF, WebP, HEIC, AVIF, TIFF, BMP), video (AVI, MP4, MOV, 3GP, Ogg Theora, Matroska, WebM) and audio (M4A, Ogg, AMR, SILK, WAV, AIFF, CAF, MP3) by default</li>
+              <li>When asked for with <code>-k</code>: icons, SQLite and encrypted SQLite databases, binary plists, ZIP archives (APK, IPA, JAR, Office and OpenDocument among them) and PDFs. An encrypted database is found, not decrypted</li>
               <li>Each file's length comes from its own structure where the format allows it: JPEG markers are walked, so an EXIF thumbnail is neither cut short nor reported twice. Every hit says whether its length came from the file's header, was parsed from its structure, or was capped at a limit</li>
               <li>Files found inside another file are set aside by default, so an MJPG AVI is one video and not a pile of JPEG frames</li>
               <li>Only contiguous files: a fragmented file comes back as far as its first fragment, and there are no names, paths or timestamps, because carving reads no filesystem</li>
