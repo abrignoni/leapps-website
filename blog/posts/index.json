@@ -1,5 +1,20 @@
 [
   {
+    "slug": "2026-10-18-dropbox-dbx-decryption-revisited",
+    "title": "Dropbox DBX Decryption, Nine Years Later",
+    "date": "2026-10-18",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "DLEAPP",
+      "Windows",
+      "Dropbox",
+      "cloud",
+      "artifacts",
+      "research"
+    ],
+    "excerpt": "An update to the 2017 Zena Forensics post on decrypting Dropbox DBX files. The key moved out of DPAPI and into a file next to the databases. Heather and I built DLEAPP artifacts that read it, plus the sync history, file trees, thumbnails and more."
+  },
+  {
     "slug": "2026-10-03-unified-log-artifacts-ileapp-dleapp",
     "title": "Nineteen New Unified Log Artifacts for iLEAPP and DLEAPP",
     "date": "2026-10-03",
