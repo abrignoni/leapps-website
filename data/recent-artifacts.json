@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "windowsSysmonEvents",
-      "query": "windowsSysmonEvents",
+      "name": "dropboxDesktop",
+      "query": "dropboxDesktop",
       "tool": "DLEAPP",
       "date": "2026-10-18"
     },
@@ -33,8 +33,8 @@
       "date": "2026-09-28"
     },
     {
-      "name": "windowsSmbServerEvents",
-      "query": "windowsSmbServerEvents",
+      "name": "windowsSysmonEvents",
+      "query": "windowsSysmonEvents",
       "tool": "DLEAPP",
       "date": "2026-10-18"
     },
@@ -63,10 +63,10 @@
       "date": "2026-09-25"
     },
     {
-      "name": "webServerLogs",
-      "query": "webServerLogs",
+      "name": "windowsSmbServerEvents",
+      "query": "windowsSmbServerEvents",
       "tool": "DLEAPP",
-      "date": "2026-10-17"
+      "date": "2026-10-18"
     },
     {
       "name": "photosGraphMoments",
