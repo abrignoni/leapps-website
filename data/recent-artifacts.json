@@ -1,12 +1,12 @@
 {
-  "generated": "2026-10-17",
+  "generated": "2026-10-18",
   "window_days": 45,
   "items": [
     {
-      "name": "webServerLogs",
-      "query": "webServerLogs",
+      "name": "windowsSysmonEvents",
+      "query": "windowsSysmonEvents",
       "tool": "DLEAPP",
-      "date": "2026-10-17"
+      "date": "2026-10-18"
     },
     {
       "name": "webkitMediaCache",
@@ -33,10 +33,10 @@
       "date": "2026-09-28"
     },
     {
-      "name": "googleBackupAndSync",
-      "query": "googleBackupAndSync",
+      "name": "windowsSmbServerEvents",
+      "query": "windowsSmbServerEvents",
       "tool": "DLEAPP",
-      "date": "2026-10-17"
+      "date": "2026-10-18"
     },
     {
       "name": "anonymousChat",
@@ -63,8 +63,8 @@
       "date": "2026-09-25"
     },
     {
-      "name": "windowsShimEngineEvents",
-      "query": "windowsShimEngineEvents",
+      "name": "webServerLogs",
+      "query": "webServerLogs",
       "tool": "DLEAPP",
       "date": "2026-10-17"
     },
