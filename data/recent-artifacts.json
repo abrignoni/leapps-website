@@ -3,16 +3,16 @@
   "window_days": 45,
   "items": [
     {
-      "name": "windowsDefenderDetectionHistory",
-      "query": "windowsDefenderDetectionHistory",
+      "name": "whatsappWeb",
+      "query": "whatsappWeb",
       "tool": "DLEAPP",
       "date": "2026-10-19"
     },
     {
-      "name": "webkitMediaCache",
-      "query": "webkitMediaCache",
+      "name": "containerManagerState",
+      "query": "containerManagerState",
       "tool": "iLEAPP",
-      "date": "2026-10-16"
+      "date": "2026-10-18"
     },
     {
       "name": "googlePay",
@@ -33,16 +33,16 @@
       "date": "2026-09-28"
     },
     {
-      "name": "windowsAppLockerEvents",
-      "query": "windowsAppLockerEvents",
+      "name": "windowsUsbHidDevices",
+      "query": "windowsUsbHidDevices",
       "tool": "DLEAPP",
-      "date": "2026-10-18"
+      "date": "2026-10-19"
     },
     {
-      "name": "anonymousChat",
-      "query": "anonymousChat",
+      "name": "webkitMediaCache",
+      "query": "webkitMediaCache",
       "tool": "iLEAPP",
-      "date": "2026-10-15"
+      "date": "2026-10-16"
     },
     {
       "name": "djiFlightRecordTxt",
@@ -63,14 +63,14 @@
       "date": "2026-09-25"
     },
     {
-      "name": "vlcDesktop",
-      "query": "vlcDesktop",
+      "name": "windowsDefenderDetectionHistory",
+      "query": "windowsDefenderDetectionHistory",
       "tool": "DLEAPP",
-      "date": "2026-10-18"
+      "date": "2026-10-19"
     },
     {
-      "name": "photosGraphMoments",
-      "query": "photosGraphMoments",
+      "name": "anonymousChat",
+      "query": "anonymousChat",
       "tool": "iLEAPP",
       "date": "2026-10-15"
     }

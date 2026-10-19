@@ -1509,21 +1509,21 @@
     {
       "date": "2026-10-19",
       "totals": {
-        "ileapp": 99051,
-        "aleapp": 75476,
-        "rleapp": 6312,
-        "vleapp": 3058,
-        "lava": 4395,
-        "dleapp": 1776,
-        "gleapp": 840,
-        "batchleapp": 712
+        "ileapp": 99146,
+        "aleapp": 75578,
+        "rleapp": 6330,
+        "vleapp": 3072,
+        "lava": 4417,
+        "dleapp": 1793,
+        "gleapp": 859,
+        "batchleapp": 716
       },
       "probes": {
-        "qnxprobe": 617,
-        "ewfprobe": 222,
-        "exoprobe": 76,
+        "qnxprobe": 625,
+        "ewfprobe": 225,
+        "exoprobe": 77,
         "chromiumcacheprobe": 16,
-        "mediacarve": 30
+        "mediacarve": 33
       }
     }
   ]
