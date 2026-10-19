@@ -1,0 +1,29 @@
+name: Validate GitHub stats collector
+
+# Runs the merge-rule tests for scripts/collect_github_stats.py: overlapping 14-day windows,
+# duplicate runs, values that drop, 403 and 202 responses, empty referrer lists, the asset
+# classifier, and that the repo lists still come from the Download Snapshot workflow.
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/collect_github_stats.py'
+      - 'scripts/tests/**'
+      - '.github/workflows/download-snapshot.yml'
+      - '.github/workflows/traffic-snapshot.yml'
+      - '.github/workflows/validate-github-stats.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Collector tests
+        run: python3 -m unittest discover -s scripts/tests -v

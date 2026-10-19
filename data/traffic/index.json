@@ -1,0 +1,308 @@
+{
+ "schema_version": 1,
+ "repos": {
+  "ileapp": {
+   "repo": "abrignoni/iLEAPP",
+   "group": "tool",
+   "status": {
+    "views": "ok",
+    "clones": "ok",
+    "referrers": "ok",
+    "paths": "ok"
+   },
+   "window": {
+    "views": {
+     "count": 6078,
+     "uniques": 2175,
+     "as_of": "2026-10-19"
+    },
+    "clones": {
+     "count": 34698,
+     "uniques": 1716,
+     "as_of": "2026-10-19"
+    }
+   },
+   "last_success": "2026-10-19T23:15:40Z"
+  },
+  "aleapp": {
+   "repo": "abrignoni/ALEAPP",
+   "group": "tool",
+   "status": {
+    "views": "ok",
+    "clones": "ok",
+    "referrers": "ok",
+    "paths": "ok"
+   },
+   "window": {
+    "views": {
+     "count": 4648,
+     "uniques": 1811,
+     "as_of": "2026-10-19"
+    },
+    "clones": {
+     "count": 13584,
+     "uniques": 1991,
+     "as_of": "2026-10-19"
+    }
+   },
+   "last_success": "2026-10-19T23:15:40Z"
+  },
+  "rleapp": {
+   "repo": "abrignoni/RLEAPP",
+   "group": "tool",
+   "status": {
+    "views": "ok",
+    "clones": "ok",
+    "referrers": "ok",
+    "paths": "ok"
+   },
+   "window": {
+    "views": {
+     "count": 626,
+     "uniques": 176,
+     "as_of": "2026-10-19"
+    },
+    "clones": {
+     "count": 2323,
+     "uniques": 561,
+     "as_of": "2026-10-19"
+    }
+   },
+   "last_success": "2026-10-19T23:15:40Z"
+  },
+  "vleapp": {
+   "repo": "abrignoni/VLEAPP",
+   "group": "tool",
+   "status": {
+    "views": "ok",
+    "clones": "ok",
+    "referrers": "ok",
+    "paths": "ok"
+   },
+   "window": {
+    "views": {
+     "count": 445,
+     "uniques": 102,
+     "as_of": "2026-10-19"
+    },
+    "clones": {
+     "count": 3639,
+     "uniques": 744,
+     "as_of": "2026-10-19"
+    }
+   },
+   "last_success": "2026-10-19T23:15:40Z"
+  },
+  "lava": {
+   "repo": "leapps-org/LAVA-releases",
+   "group": "tool",
+   "status": {
+    "views": "ok",
+    "clones": "ok",
+    "referrers": "ok",
+    "paths": "ok"
+   },
+   "window": {
+    "views": {
+     "count": 100,
+     "uniques": 45,
+     "as_of": "2026-10-19"
+    },
+    "clones": {
+     "count": 6,
+     "uniques": 6,
+     "as_of": "2026-10-19"
+    }
+   },
+   "last_success": "2026-10-19T23:15:40Z"
+  },
+  "dleapp": {
+   "repo": "abrignoni/DLEAPP",
+   "group": "tool",
+   "status": {
+    "views": "ok",
+    "clones": "ok",
+    "referrers": "ok",
+    "paths": "ok"
+   },
+   "window": {
+    "views": {
+     "count": 688,
+     "uniques": 191,
+     "as_of": "2026-10-19"
+    },
+    "clones": {
+     "count": 5595,
+     "uniques": 887,
+     "as_of": "2026-10-19"
+    }
+   },
+   "last_success": "2026-10-19T23:15:40Z"
+  },
+  "gleapp": {
+   "repo": "abrignoni/GLEAPP",
+   "group": "tool",
+   "status": {
+    "views": "ok",
+    "clones": "ok",
+    "referrers": "ok",
+    "paths": "ok"
+   },
+   "window": {
+    "views": {
+     "count": 492,
+     "uniques": 144,
+     "as_of": "2026-10-19"
+    },
+    "clones": {
+     "count": 927,
+     "uniques": 254,
+     "as_of": "2026-10-19"
+    }
+   },
+   "last_success": "2026-10-19T23:15:40Z"
+  },
+  "batchleapp": {
+   "repo": "abrignoni/batch-leapp",
+   "group": "tool",
+   "status": {
+    "views": "ok",
+    "clones": "ok",
+    "referrers": "ok",
+    "paths": "ok"
+   },
+   "window": {
+    "views": {
+     "count": 100,
+     "uniques": 42,
+     "as_of": "2026-10-19"
+    },
+    "clones": {
+     "count": 59,
+     "uniques": 57,
+     "as_of": "2026-10-19"
+    }
+   },
+   "last_success": "2026-10-19T23:15:40Z"
+  },
+  "qnxprobe": {
+   "repo": "abrignoni/qnxprobe",
+   "group": "probe",
+   "status": {
+    "views": "ok",
+    "clones": "ok",
+    "referrers": "ok",
+    "paths": "ok"
+   },
+   "window": {
+    "views": {
+     "count": 246,
+     "uniques": 76,
+     "as_of": "2026-10-19"
+    },
+    "clones": {
+     "count": 797,
+     "uniques": 261,
+     "as_of": "2026-10-19"
+    }
+   },
+   "last_success": "2026-10-19T23:15:40Z"
+  },
+  "ewfprobe": {
+   "repo": "abrignoni/ewfprobe",
+   "group": "probe",
+   "status": {
+    "views": "ok",
+    "clones": "ok",
+    "referrers": "ok",
+    "paths": "ok"
+   },
+   "window": {
+    "views": {
+     "count": 68,
+     "uniques": 14,
+     "as_of": "2026-10-19"
+    },
+    "clones": {
+     "count": 389,
+     "uniques": 80,
+     "as_of": "2026-10-19"
+    }
+   },
+   "last_success": "2026-10-19T23:15:40Z"
+  },
+  "exoprobe": {
+   "repo": "abrignoni/exoprobe",
+   "group": "probe",
+   "status": {
+    "views": "ok",
+    "clones": "ok",
+    "referrers": "ok",
+    "paths": "ok"
+   },
+   "window": {
+    "views": {
+     "count": 67,
+     "uniques": 33,
+     "as_of": "2026-10-19"
+    },
+    "clones": {
+     "count": 218,
+     "uniques": 58,
+     "as_of": "2026-10-19"
+    }
+   },
+   "last_success": "2026-10-19T23:15:40Z"
+  },
+  "chromiumcacheprobe": {
+   "repo": "abrignoni/chromiumcacheprobe",
+   "group": "probe",
+   "status": {
+    "views": "ok",
+    "clones": "ok",
+    "referrers": "ok",
+    "paths": "ok"
+   },
+   "window": {
+    "views": {
+     "count": 3,
+     "uniques": 3,
+     "as_of": "2026-10-19"
+    },
+    "clones": {
+     "count": 181,
+     "uniques": 38,
+     "as_of": "2026-10-19"
+    }
+   },
+   "last_success": "2026-10-19T23:15:40Z"
+  },
+  "mediacarve": {
+   "repo": "abrignoni/mediacarve",
+   "group": "probe",
+   "status": {
+    "views": "ok",
+    "clones": "ok",
+    "referrers": "ok",
+    "paths": "ok"
+   },
+   "window": {
+    "views": {
+     "count": 34,
+     "uniques": 10,
+     "as_of": "2026-10-19"
+    },
+    "clones": {
+     "count": 817,
+     "uniques": 144,
+     "as_of": "2026-10-19"
+    }
+   },
+   "last_success": "2026-10-19T23:15:40Z"
+  }
+ },
+ "months": [
+  "2026-10"
+ ],
+ "updated_at": "2026-10-19T23:15:40Z"
+}

@@ -31,6 +31,9 @@ leapps-website/
 ├── tools/og-cards/      # OG-card generator (Satori + resvg); run by a GitHub Action
 ├── tools/build_hero_logo.py  # Redraws the home-page hero logo when the tool set changes
 ├── data/downloads.json  # Daily download-count snapshot (committed by an Action)
+├── data/traffic/        # GitHub repository traffic, one file per month + index.json (Traffic Snapshot Action)
+├── data/assets.json     # Release downloads by OS, processor and release (Traffic Snapshot Action)
+├── data/community.json  # Stars over time and weekly commit activity (Traffic Snapshot Action)
 ├── downloads/           # Downloadable files served via the leapps-api Worker
 ├── img/ images/ logos/  # Image and logo assets
 ├── sitemap.xml          # Sitemap for all pages
@@ -275,6 +278,59 @@ python3 scripts/generate_design_index.py --check
 ```
 
 ---
+
+## Traffic statistics
+
+The stats page's Reach, Downloads by Platform, Where Visits Come From and Stars Over Time
+sections, the two 14-day KPI tiles, and each tool's Details row read data collected once a day
+by [`scripts/collect_github_stats.py`](scripts/collect_github_stats.py), run by
+[`.github/workflows/traffic-snapshot.yml`](.github/workflows/traffic-snapshot.yml) at 05:00 UTC.
+`data/downloads.json` and the Download Snapshot workflow are separate and unchanged; the two
+workflows share a concurrency group so they never push to `main` at the same time.
+
+**What it collects**, for the 8 tools and 5 probes listed in `download-snapshot.yml` (the
+collector reads its `REPOS` and `PROBES`, so that file stays the one list):
+
+| Data | Source | Kept as |
+|---|---|---|
+| Views and unique visitors, clones and unique cloners | GitHub traffic API, `per=day` and `per=week` | One point per repo per UTC day (and per week), upserted, never summed |
+| Top 10 referring sites and top 10 pages | GitHub traffic API | One dated snapshot per day; never added together |
+| 14-day totals | GitHub traffic API | Latest only, in `index.json` (the KPI tiles) |
+| Downloads by OS, by OS and processor, by release | Release asset names and `download_count` | Per day by OS; latest by processor and release. Checksum files left out |
+| Stars over time | Stargazers with their star dates | Rebuilt each run from the current stargazers |
+| Commits per week, last year | `stats/commit_activity` | Latest; a `202` keeps the previous weeks with status `computing` |
+
+A failure is stored as a status (`forbidden`, `not_found`, `computing`, `error`,
+`not_configured`), never as a zero, and the page names any repo not collected on the last run.
+After the commit, a final step fails the run if traffic is configured and any repo has had no
+successful collection for 3 days.
+
+**Credential.** Traffic needs repository Administration (read). `GITHUB_TOKEN` cannot read it
+for other repositories, and a fine-grained token covers only one owner, while the repos sit under
+`abrignoni` and `leapps-org`. A read-only GitHub App is installed on both, and the workflow mints
+one short-lived token per owner with `actions/create-github-app-token`. It needs:
+
+| Where | Name | Value |
+|---|---|---|
+| Repository variable | `STATS_APP_ID` | The App's ID |
+| Repository secret | `STATS_APP_PRIVATE_KEY` | The App's private key (`.pem` contents) |
+
+Until both exist, the run still collects downloads by platform, stars and commit activity, and
+records traffic as `not_configured`. Which repos the tokens can read is set by the App
+installation's repository selection, nothing else.
+
+**Never give the `leapps-api` Worker's token Administration permission.** The Worker forwards any
+`/repos/{owner}/{repo}/...` path for its allowed repos, so it would publish traffic and every other
+Administration-read endpoint for them.
+
+**Limits.** GitHub keeps traffic for 14 days, so history starts the day collection starts and a
+missed fortnight is gone for good. Unique visitors and cloners cannot be added across days or
+repos; sums across repos are labelled as such. Clones include automated ones (CI, mirrors).
+Referrers describe repository visits only, and only GitHub's top 10. Nothing here measures who
+downloads a release or from where.
+
+**Tests:** `python3 -m unittest discover -s scripts/tests`, also run on pull requests by
+`validate-github-stats.yml`.
 
 ## Development
 

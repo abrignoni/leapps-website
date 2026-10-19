@@ -44,12 +44,12 @@
 .lp-header p { color: var(--muted); font-size: 1rem; max-width: 520px; line-height: 1.7; }
 .lp-updated { font-family: var(--font-mono); font-size: .7rem; color: #555; margin-top: 1rem; letter-spacing: .08em; }
 .lp-main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
-.lp-metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 3rem; }
+.lp-metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 3rem; }
 .lp-metric-card { background: var(--off-black); padding: 1.5rem; position: relative; transition: background .2s; }
 .lp-metric-card:hover { background: var(--surface); }
 .lp-metric-icon { font-size: 1.1rem; color: var(--gold); margin-bottom: .75rem; display: block; }
 .lp-metric-label { font-family: var(--font-mono); font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: .5rem; }
-.lp-metric-value { font-family: var(--font-head); font-size: 2.2rem; font-weight: 900; color: var(--text); line-height: 1; }
+.lp-metric-value { font-family: var(--font-head); font-size: clamp(1.7rem, 2.6vw, 2.2rem); font-weight: 900; color: var(--text); line-height: 1; }
 .lp-metric-value.loading { font-size: 1.5rem; color: transparent !important; background: linear-gradient(90deg, var(--border) 25%, var(--surface) 50%, var(--border) 75%); background-size: 800px 100%; animation: shimmer 1.5s infinite; border-radius: 2px; min-width: 80px; display: inline-block; }
 .lp-metric-sub { font-size: .75rem; color: #555; margin-top: .4rem; }
 @keyframes shimmer { 0% { background-position: -400px 0; } 100% { background-position: 400px 0; } }
@@ -122,6 +122,24 @@
     [data-theme="light"] #page, [data-theme="light"] #content, [data-theme="light"] .page-section,
     [data-theme="light"] .page-section-wrapper,
     [data-theme="light"] .sqs-layout { background-color: #F5F2EC !important; }
+.lp-footnote { font-size: .75rem; color: var(--muted); line-height: 1.6; margin: -2rem 0 3rem; max-width: 760px; }
+.lp-note { font-size: .82rem; color: var(--muted); line-height: 1.6; max-width: 760px; margin-bottom: 1.25rem; }
+.lp-fresh { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .06em; color: #666; margin-top: .75rem; }
+.lp-picker { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: 1.25rem; }
+.lp-picker button { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .08em; padding: .3rem .7rem; border: 1px solid var(--border); color: var(--muted); background: none; cursor: pointer; transition: color .2s, border-color .2s; }
+.lp-picker button.active { color: var(--gold); border-color: rgba(245,192,32,.45); }
+.lp-picker-label { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); align-self: center; margin-right: .35rem; }
+.lp-ref-table td:first-child { font-family: var(--font-mono); font-size: .78rem; word-break: break-all; }
+.lp-drill-btn { background: none; border: none; color: var(--muted); font-family: var(--font-mono); font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; padding: .25rem 0 0; }
+.lp-drill-btn:hover, .lp-drill-btn[aria-expanded="true"] { color: var(--gold); }
+.lp-table tr.lp-drill td { text-align: left !important; font-family: var(--font-body, inherit); background: var(--off-black); padding: 1.25rem 1rem 1.5rem; }
+.lp-table tr.lp-drill:hover td { background: var(--off-black); }
+.lp-drill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+.lp-drill-grid h4 { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); font-weight: 400; margin-bottom: .6rem; }
+.lp-drill-list { list-style: none; margin: 0; padding: 0; font-family: var(--font-mono); font-size: .72rem; }
+.lp-drill-list li { display: flex; justify-content: space-between; gap: 1rem; padding: .3rem 0; border-bottom: 1px solid var(--surface); }
+.lp-drill-list li span:first-child { color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lp-drill-list li span:last-child { color: var(--muted); flex-shrink: 0; }
 .lp-share-btn { position: absolute; top: .75rem; right: .75rem; background: none; border: none; color: var(--border); cursor: pointer; font-size: .85rem; padding: 2px 4px; transition: color .2s; line-height: 1; }
 .lp-share-btn:hover { color: var(--gold); }
 .lp-share-btn.copied { color: var(--gold); }
@@ -262,7 +280,22 @@
         <div class="lp-metric-value loading" id="m-commits">—</div>
         <div class="lp-metric-sub">across all repos</div>
       </div>
+      <div class="lp-metric-card">
+        <button class="lp-share-btn" aria-label="Copy stat" onclick="copyMetric(this,'Unique visitors (14 days)','m-visitors')"><i class="ti ti-copy" aria-hidden="true"></i></button>
+        <i class="ti ti-eye lp-metric-icon" aria-hidden="true"></i>
+        <div class="lp-metric-label">Unique visitors</div>
+        <div class="lp-metric-value loading" id="m-visitors">&mdash;</div>
+        <div class="lp-metric-sub">GitHub repos, last 14 days</div>
+      </div>
+      <div class="lp-metric-card">
+        <button class="lp-share-btn" aria-label="Copy stat" onclick="copyMetric(this,'Unique cloners (14 days)','m-cloners')"><i class="ti ti-copy" aria-hidden="true"></i></button>
+        <i class="ti ti-git-fork lp-metric-icon" aria-hidden="true"></i>
+        <div class="lp-metric-label">Unique cloners</div>
+        <div class="lp-metric-value loading" id="m-cloners">&mdash;</div>
+        <div class="lp-metric-sub">GitHub repos, last 14 days</div>
+      </div>
     </div>
+    <p class="lp-footnote">Download totals include checksum file downloads (under 1% for iLEAPP and ALEAPP). Unique visitors and cloners are GitHub&rsquo;s 14-day figures added across the tool repositories, so a person who visits two repositories counts twice.</p>
 
     <!-- CHARTS -->
     <div class="lp-section">
@@ -298,6 +331,64 @@
       <div id="dl-history-content">
         <div class="lp-dl-pending">Loading download history…</div>
       </div>
+    </div>
+
+    <!-- REACH: repository traffic. The picker here also drives the next three sections. -->
+    <div class="lp-section" id="reach">
+      <span class="lp-section-label">Repository traffic</span>
+      <h2 class="lp-section-title">Reach</h2>
+      <p class="lp-note">Visits to and clones of the tools&rsquo; GitHub repositories, from GitHub&rsquo;s traffic data. These are repository visits, not downloads. Clones include automated ones, such as CI systems and mirrors, so they are not a count of people.</p>
+      <div class="lp-picker" id="tool-picker" role="group" aria-label="Choose a tool"></div>
+      <div class="lp-dl-chart-card">
+        <div class="lp-dl-chart-header">
+          <div class="lp-dl-chart-title" id="reach-title">Daily repository visits</div>
+          <div style="display:flex;gap:.75rem;flex-wrap:wrap">
+            <div class="lp-dl-toggle" id="reach-kind">
+              <button class="active" data-kind="views">Visits</button>
+              <button data-kind="clones">Clones</button>
+            </div>
+            <div class="lp-dl-toggle" id="reach-range">
+              <button data-range="30">30d</button>
+              <button class="active" data-range="90">90d</button>
+              <button data-range="all">All</button>
+            </div>
+          </div>
+        </div>
+        <div style="position:relative;height:220px"><canvas id="reachChart" role="img" aria-label="Daily repository visits or clones"></canvas></div>
+        <div id="reach-empty" class="lp-dl-pending" style="display:none"></div>
+      </div>
+      <div class="lp-fresh" id="reach-fresh"></div>
+    </div>
+
+    <div class="lp-section" id="platforms">
+      <span class="lp-section-label">Release downloads</span>
+      <h2 class="lp-section-title">Downloads by Platform</h2>
+      <p class="lp-note">All-time release downloads by operating system, read from each release file&rsquo;s name. Checksum files are left out. Older releases name no processor type, so the arm64 and x64 split is in each tool&rsquo;s details below, not here.</p>
+      <div class="lp-chart-card" style="border:1px solid var(--border)">
+        <div style="position:relative;height:300px"><canvas id="platformChart" role="img" aria-label="Share of downloads by operating system for each tool"></canvas></div>
+      </div>
+      <div class="lp-fresh" id="platform-fresh"></div>
+    </div>
+
+    <div class="lp-section" id="referrers">
+      <span class="lp-section-label">Discovery</span>
+      <h2 class="lp-section-title">Where Visits Come From</h2>
+      <p class="lp-note">GitHub&rsquo;s top 10 sites that sent people to the repository over the last 14 days, for <strong id="ref-tool">all tools</strong>. These describe repository visits, not downloads. &ldquo;Seen&rdquo; counts how many of the recent daily snapshots listed the site.</p>
+      <table class="lp-table lp-ref-table">
+        <thead><tr><th>Site</th><th>Visits</th><th>Unique visitors</th><th>Seen</th></tr></thead>
+        <tbody id="ref-tbody"><tr class="lp-loading-row"><td colspan="4">Loading&hellip;</td></tr></tbody>
+      </table>
+      <div class="lp-fresh" id="ref-fresh"></div>
+    </div>
+
+    <div class="lp-section" id="community">
+      <span class="lp-section-label">Community</span>
+      <h2 class="lp-section-title">Stars Over Time</h2>
+      <p class="lp-note">Built from the date each current star was given, for <strong id="star-tool">all tools</strong>. Stars that were later removed are not in the history.</p>
+      <div class="lp-chart-card" style="border:1px solid var(--border)">
+        <div style="position:relative;height:220px"><canvas id="starHistoryChart" role="img" aria-label="Cumulative stars over time"></canvas></div>
+      </div>
+      <div class="lp-fresh" id="star-fresh"></div>
     </div>
 
     <!-- TABLE -->
@@ -381,6 +472,21 @@
           <tr class="lp-loading-row"><td colspan="6">Loading&hellip;</td></tr>
         </tbody>
       </table>
+      <div class="lp-probes-history">
+        <h3>Repository visits</h3>
+        <div class="lp-picker" id="probe-picker" role="group" aria-label="Choose a probe"></div>
+        <div class="lp-chart-card">
+          <div style="position:relative;height:180px"><canvas id="probeReachChart" role="img" aria-label="Daily repository visits for the probes"></canvas></div>
+          <div id="probe-reach-empty" class="lp-dl-pending" style="display:none"></div>
+        </div>
+        <div class="lp-fresh" id="probe-reach-fresh"></div>
+      </div>
+      <div class="lp-probes-history">
+        <h3>Downloads by platform</h3>
+        <div class="lp-chart-card">
+          <div style="position:relative;height:200px"><canvas id="probePlatformChart" role="img" aria-label="Share of probe downloads by operating system"></canvas></div>
+        </div>
+      </div>
       <div class="lp-probes-history">
         <h3>Download history</h3>
         <div id="probes-history"><div class="lp-dl-pending">Loading&hellip;</div></div>
@@ -584,6 +690,7 @@
             <td>
               <div class="lp-tool-name">${r.name}</div>
               <div class="lp-tool-platform">${r.platform}</div>
+              <button class="lp-drill-btn" aria-expanded="false" aria-controls="drill-${toolKey(r.name)}" onclick="toggleDrill('${toolKey(r.name)}', this)">Details &#9662;</button>
             </td>
             <td class="lp-td-with-bar">
               ${fmt(r.downloads)}
@@ -598,7 +705,8 @@
             <td>${r.openSource ? fmt(r.contributors) + '+' : '—'}</td>
             <td>${fmt(r.releases)}</td>
             <td>${r.openSource ? fmt(r.commits) : '—'}</td>
-          </tr>`).join('');
+          </tr>
+          <tr class="lp-drill" id="drill-${toolKey(r.name)}" hidden><td colspan="8"></td></tr>`).join('');
 
       } catch(e) {
         document.getElementById('lp-updated').textContent = 'Could not load data. Please try again later.';
@@ -912,6 +1020,328 @@
       probeChart.options.scales.y.ticks.color = c.tick;
       probeChart.options.scales.y.grid.color = c.grid;
       probeChart.update();
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+    // ---------------------------------------------------------------------------------------
+    // GitHub statistics collected daily by scripts/collect_github_stats.py (traffic, platforms,
+    // stars, commit activity). Repository visits, clones and downloads are kept apart on purpose:
+    // nothing here turns a visit into a download.
+    // ---------------------------------------------------------------------------------------
+    const STATS_BASE = /^(localhost|127\.0\.0\.1)$/.test(location.hostname)
+      ? '/data/'
+      : 'https://raw.githubusercontent.com/abrignoni/leapps-website/main/data/';
+    const OS_LABELS = { windows: 'Windows', macos: 'macOS', linux: 'Linux', script: 'Python script', other: 'Other' };
+    const OS_COLORS = { windows: '#378ADD', macos: '#B4B2A9', linux: '#F5C020', script: '#8FA9BF', other: '#555555' };
+    const GH = { index: null, months: {}, assets: null, community: null };
+    let ghTool = 'all', ghKind = 'views', ghRange = '90', ghProbe = 'all';
+    let reachChart = null, platformChart = null, starHistoryChart = null, probeReachChart = null, probePlatformChart = null;
+    const drillCharts = {};
+
+    function esc(v) {
+      return String(v == null ? '' : v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+    function toolKey(name) {
+      return Object.keys(TOOL_LABELS).find(k => TOOL_LABELS[k] === name) || name.toLowerCase().replace(/\s+/g, '');
+    }
+    function labelFor(key) {
+      if (TOOL_LABELS[key]) return TOOL_LABELS[key];
+      const probe = PROBES.find(p => p.key === key);
+      return probe ? probe.name : key;
+    }
+    function groupKeys(group) {
+      return group === 'probe' ? PROBES.map(p => p.key) : Object.keys(TOOL_LABELS);
+    }
+    function fmtDate(day) {
+      return new Date(day + 'T00:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+    }
+    function fmtStamp(iso) {
+      if (!iso) return 'never';
+      const d = new Date(iso);
+      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' }) + ' ' +
+        d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' }) + ' UTC';
+    }
+    async function getJson(name) {
+      const res = await fetch(STATS_BASE + name, { cache: 'no-cache' });
+      if (!res.ok) throw new Error(name + ' ' + res.status);
+      return res.json();
+    }
+
+    async function loadGitHubStats() {
+      const results = await Promise.allSettled([getJson('traffic/index.json'), getJson('assets.json'), getJson('community.json')]);
+      GH.index = results[0].status === 'fulfilled' ? results[0].value : null;
+      GH.assets = results[1].status === 'fulfilled' ? results[1].value : null;
+      GH.community = results[2].status === 'fulfilled' ? results[2].value : null;
+      if (GH.index) {
+        const months = await Promise.allSettled((GH.index.months || []).map(m => getJson(`traffic/${m}.json`)));
+        months.forEach(r => { if (r.status === 'fulfilled') GH.months[r.value.month] = r.value; });
+      }
+      renderKpiTraffic();
+      buildPicker('tool-picker', ['all', ...groupKeys('tool')], () => ghTool, k => { ghTool = k; renderToolPanels(); });
+      buildPicker('probe-picker', ['all', ...groupKeys('probe')], () => ghProbe, k => { ghProbe = k; renderProbeReach(); });
+      wireToggle('reach-kind', 'kind', v => { ghKind = v; renderReach(); });
+      wireToggle('reach-range', 'range', v => { ghRange = v; renderReach(); });
+      renderToolPanels();
+      renderPlatforms();
+      renderProbeReach();
+    }
+
+    function buildPicker(id, keys, current, onPick) {
+      const el = document.getElementById(id);
+      el.innerHTML = keys.map(k => `<button data-key="${esc(k)}" class="${k === current() ? 'active' : ''}">${esc(k === 'all' ? 'All' : labelFor(k))}</button>`).join('');
+      el.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+        el.querySelectorAll('button').forEach(x => x.classList.toggle('active', x === b));
+        onPick(b.dataset.key);
+      }));
+    }
+    function wireToggle(id, attr, onPick) {
+      const el = document.getElementById(id);
+      el.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+        el.querySelectorAll('button').forEach(x => x.classList.toggle('active', x === b));
+        onPick(b.dataset[attr]);
+      }));
+    }
+
+    function trafficStatusLine(keys) {
+      if (!GH.index) return 'Repository traffic is not collected yet.';
+      const repos = GH.index.repos || {};
+      const configured = keys.filter(k => repos[k] && Object.values(repos[k].status || {}).some(s => s !== 'not_configured'));
+      if (!configured.length) return 'Repository traffic starts once the stats GitHub App is installed.';
+      const missing = keys.filter(k => !repos[k] || Object.values(repos[k].status || {}).some(s => s !== 'ok'))
+        .map(k => `${labelFor(k)} (${esc(Object.values((repos[k] || {}).status || {}).find(s => s !== 'ok') || 'missing')})`);
+      return `Traffic collected ${fmtStamp(GH.index.updated_at)}.` + (missing.length ? ` Not collected on the last run: ${missing.join(', ')}.` : '');
+    }
+
+    function dailySeries(keys, kind) {
+      const field = `${kind}_daily`, days = {};
+      Object.values(GH.months).forEach(m => keys.forEach(k => {
+        const points = ((m.repos || {})[k] || {})[field] || {};
+        Object.entries(points).forEach(([day, v]) => {
+          if (!days[day]) days[day] = { count: 0, uniques: 0, repos: 0 };
+          days[day].count += v.count || 0;
+          days[day].uniques += v.uniques || 0;
+          days[day].repos += 1;
+        });
+      }));
+      return Object.keys(days).sort().map(day => ({ day, ...days[day] }));
+    }
+
+    function renderKpiTraffic() {
+      const set = (id, v) => { const el = document.getElementById(id); el.textContent = v == null ? '—' : fmt(v); el.classList.remove('loading'); };
+      if (!GH.index) { set('m-visitors', null); set('m-cloners', null); return; }
+      const keys = groupKeys('tool');
+      const sum = kind => {
+        const vals = keys.map(k => (((GH.index.repos || {})[k] || {}).window || {})[kind]).filter(w => w && Number.isFinite(w.uniques));
+        return vals.length ? vals.reduce((s, w) => s + w.uniques, 0) : null;
+      };
+      set('m-visitors', sum('views'));
+      set('m-cloners', sum('clones'));
+    }
+
+    function lineChart(canvasId, existing, labels, datasets) {
+      if (existing) existing.destroy();
+      const c = getChartColors();
+      return new Chart(document.getElementById(canvasId), {
+        type: 'line',
+        data: { labels, datasets },
+        options: {
+          responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
+          plugins: { legend: { display: datasets.length > 1, labels: { color: c.tick, boxWidth: 10, font: { size: 11 } } } },
+          elements: { point: { radius: 0, hitRadius: 6 }, line: { tension: 0.2, borderWidth: 2 } },
+          scales: {
+            x: { grid: { display: false }, ticks: { color: c.tick, font: { size: 10 }, maxRotation: 0, autoSkip: true, maxTicksLimit: 8 } },
+            y: { beginAtZero: true, grid: { color: c.grid }, ticks: { color: c.tick, font: { size: 10 }, callback: v => fmt(v) } }
+          }
+        }
+      });
+    }
+
+    function renderReach() {
+      const keys = ghTool === 'all' ? groupKeys('tool') : [ghTool];
+      let series = dailySeries(keys, ghKind);
+      if (ghRange !== 'all') series = series.slice(-Number(ghRange));
+      const word = ghKind === 'views' ? 'visits' : 'clones';
+      document.getElementById('reach-title').textContent = `Daily repository ${word}` + (ghTool === 'all' ? ', all tools' : `, ${labelFor(ghTool)}`);
+      const empty = document.getElementById('reach-empty');
+      const canvas = document.getElementById('reachChart');
+      if (!series.length) {
+        canvas.style.display = 'none'; empty.style.display = 'block';
+        empty.textContent = 'No repository traffic recorded yet.';
+      } else {
+        canvas.style.display = ''; empty.style.display = 'none';
+        const color = ghTool === 'all' ? '#F5C020' : (TOOL_COLORS[ghTool] || '#F5C020');
+        reachChart = lineChart('reachChart', reachChart, series.map(p => fmtDate(p.day)), [
+          { label: ghKind === 'views' ? 'Visits' : 'Clones', data: series.map(p => p.count), borderColor: color, backgroundColor: color },
+          { label: ghTool === 'all' ? 'Unique, summed per repo' : 'Unique', data: series.map(p => p.uniques), borderColor: '#888', backgroundColor: '#888', borderDash: [4, 3] },
+        ]);
+      }
+      const first = series.length ? fmtDate(series[0].day) : null;
+      document.getElementById('reach-fresh').textContent = trafficStatusLine(keys) + (first ? ` Shown from ${first}; GitHub keeps 14 days, so the history starts when collection began.` : '');
+    }
+
+    function stackedShareChart(canvasId, existing, keys) {
+      if (existing) existing.destroy();
+      const repos = (GH.assets && GH.assets.repos) || {};
+      const rows = keys.filter(k => repos[k] && repos[k].by_os);
+      const oses = Object.keys(OS_LABELS).filter(os => rows.some(k => repos[k].by_os[os]));
+      const totals = rows.map(k => Object.values(repos[k].by_os).reduce((s, v) => s + v, 0) || 1);
+      const c = getChartColors();
+      return new Chart(document.getElementById(canvasId), {
+        type: 'bar',
+        data: {
+          labels: rows.map(labelFor),
+          datasets: oses.map(os => ({
+            label: OS_LABELS[os], backgroundColor: OS_COLORS[os], borderWidth: 0,
+            data: rows.map((k, i) => Math.round(((repos[k].by_os[os] || 0) / totals[i]) * 1000) / 10),
+            counts: rows.map(k => repos[k].by_os[os] || 0),
+          })),
+        },
+        options: {
+          indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+          plugins: {
+            legend: { labels: { color: c.tick, boxWidth: 10, font: { size: 11 } } },
+            tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.raw}% (${ctx.dataset.counts[ctx.dataIndex].toLocaleString()})` } }
+          },
+          scales: {
+            x: { stacked: true, max: 100, grid: { color: c.grid }, ticks: { color: c.tick, font: { size: 10 }, callback: v => v + '%' } },
+            y: { stacked: true, grid: { display: false }, ticks: { color: c.tick, font: { size: 11 } } }
+          }
+        }
+      });
+    }
+
+    function renderPlatforms() {
+      platformChart = stackedShareChart('platformChart', platformChart, groupKeys('tool'));
+      probePlatformChart = stackedShareChart('probePlatformChart', probePlatformChart, groupKeys('probe'));
+      document.getElementById('platform-fresh').textContent = GH.assets
+        ? `Release files read ${fmtStamp(GH.assets.updated_at)}.`
+        : 'Downloads by platform are not collected yet.';
+    }
+
+    function latestSnapshot(key, field) {
+      const all = {};
+      Object.values(GH.months).forEach(m => Object.assign(all, (((m.repos || {})[key] || {})[field]) || {}));
+      const days = Object.keys(all).sort();
+      return { days, all, latest: days.length ? all[days[days.length - 1]] : null };
+    }
+
+    function renderReferrers() {
+      const keys = ghTool === 'all' ? groupKeys('tool') : [ghTool];
+      document.getElementById('ref-tool').textContent = ghTool === 'all' ? 'all tools' : labelFor(ghTool);
+      const merged = {}, seen = {};
+      let snapshotsCounted = 0;
+      keys.forEach(k => {
+        const snap = latestSnapshot(k, 'referrers');
+        (snap.latest || []).forEach(item => {
+          const m = merged[item.referrer] || (merged[item.referrer] = { count: 0, uniques: 0 });
+          m.count += item.count || 0; m.uniques += item.uniques || 0;
+        });
+        const recent = snap.days.slice(-30);
+        snapshotsCounted = Math.max(snapshotsCounted, recent.length);
+        recent.forEach(day => (snap.all[day] || []).forEach(item => {
+          seen[item.referrer] = seen[item.referrer] || new Set();
+          seen[item.referrer].add(day);
+        }));
+      });
+      const rows = Object.entries(merged).sort((a, b) => b[1].count - a[1].count).slice(0, 10);
+      const tbody = document.getElementById('ref-tbody');
+      tbody.innerHTML = rows.length ? rows.map(([site, v]) => `
+          <tr><td>${esc(site)}</td><td>${fmt(v.count)}</td><td>${fmt(v.uniques)}</td>
+          <td>${seen[site] ? seen[site].size : 0} of ${snapshotsCounted}</td></tr>`).join('')
+        : '<tr class="lp-loading-row"><td colspan="4">No referring sites recorded yet.</td></tr>';
+      document.getElementById('ref-fresh').textContent = trafficStatusLine(keys) + (ghTool === 'all' && rows.length ? ' Unique visitors are summed per repository.' : '');
+    }
+
+    function renderStars() {
+      const keys = ghTool === 'all' ? groupKeys('tool') : [ghTool];
+      document.getElementById('star-tool').textContent = ghTool === 'all' ? 'all tools' : labelFor(ghTool);
+      const stars = (GH.community && GH.community.stars) || {};
+      const changes = {};
+      keys.forEach(k => {
+        let prev = 0;
+        ((stars[k] || {}).series || []).forEach(([day, total]) => { changes[day] = (changes[day] || 0) + (total - prev); prev = total; });
+      });
+      let running = 0;
+      const series = Object.keys(changes).sort().map(day => { running += changes[day]; return { day, total: running }; });
+      const color = ghTool === 'all' ? '#F5C020' : (TOOL_COLORS[ghTool] || '#F5C020');
+      const labels = series.map(p => new Date(p.day + 'T00:00:00Z').toLocaleDateString('en-US', { year: 'numeric', month: 'short', timeZone: 'UTC' }));
+      starHistoryChart = lineChart('starHistoryChart', starHistoryChart, labels,
+        [{ label: 'Stars', data: series.map(p => p.total), borderColor: color, backgroundColor: color, stepped: true }]);
+      document.getElementById('star-fresh').textContent = GH.community ? `Stars read ${fmtStamp(GH.community.updated_at)}.` : 'Stars over time are not collected yet.';
+    }
+
+    function renderToolPanels() {
+      renderReach();
+      renderReferrers();
+      renderStars();
+    }
+
+    function renderProbeReach() {
+      const keys = ghProbe === 'all' ? groupKeys('probe') : [ghProbe];
+      const series = dailySeries(keys, 'views').slice(-90);
+      const empty = document.getElementById('probe-reach-empty');
+      const canvas = document.getElementById('probeReachChart');
+      if (!series.length) {
+        canvas.style.display = 'none'; empty.style.display = 'block'; empty.textContent = 'No repository traffic recorded yet.';
+      } else {
+        canvas.style.display = ''; empty.style.display = 'none';
+        const color = probeColor();
+        probeReachChart = lineChart('probeReachChart', probeReachChart, series.map(p => fmtDate(p.day)), [
+          { label: 'Visits', data: series.map(p => p.count), borderColor: color, backgroundColor: color },
+          { label: ghProbe === 'all' ? 'Unique, summed per repo' : 'Unique', data: series.map(p => p.uniques), borderColor: '#888', backgroundColor: '#888', borderDash: [4, 3] },
+        ]);
+      }
+      document.getElementById('probe-reach-fresh').textContent = trafficStatusLine(keys);
+    }
+
+    function toggleDrill(key, btn) {
+      const row = document.getElementById('drill-' + key);
+      if (!row) return;
+      const open = row.hidden;
+      row.hidden = !open;
+      btn.setAttribute('aria-expanded', String(open));
+      btn.innerHTML = open ? 'Details &#9652;' : 'Details &#9662;';
+      if (open && !row.dataset.rendered) {
+        renderDrill(key, row.firstElementChild);
+        if (GH.assets || GH.index) row.dataset.rendered = '1';  // render again once the data has loaded
+      }
+    }
+
+    function renderDrill(key, cell) {
+      const repo = ((GH.assets && GH.assets.repos) || {})[key] || {};
+      const arch = Object.entries(repo.by_os_arch || {}).sort((a, b) => b[1] - a[1]);
+      const releases = (repo.releases || []).slice(0, 10);
+      const paths = latestSnapshot(key, 'paths').latest || [];
+      const activity = ((GH.community && GH.community.commit_activity) || {})[key] || {};
+      const list = items => items.length ? `<ul class="lp-drill-list">${items.join('')}</ul>` : '<p class="lp-fresh">Not recorded yet.</p>';
+      cell.innerHTML = `<div class="lp-drill-grid">
+        <div><h4>Downloads by platform and processor</h4>${list(arch.map(([k, v]) => {
+          const [os, a] = k.split('/');
+          return `<li><span>${esc(OS_LABELS[os] || os)}${a ? ' &middot; ' + esc(a) : ''}</span><span>${fmt(v)}</span></li>`;
+        }))}</div>
+        <div><h4>Downloads by release (latest 10)</h4>${list(releases.map(r =>
+          `<li><span>${esc(r.tag)}${r.prerelease ? ' (pre)' : ''}</span><span>${fmt(r.downloads)}</span></li>`))}</div>
+        <div><h4>Most visited pages, last 14 days</h4>${list(paths.map(p =>
+          `<li><span title="${esc(p.path)}">${esc(p.title || p.path)}</span><span>${fmt(p.count || 0)}</span></li>`))}</div>
+        <div><h4>Commits per week, last year</h4>${activity.weeks && activity.weeks.length
+          ? `<div style="position:relative;height:90px"><canvas id="drill-activity-${esc(key)}" role="img" aria-label="Commits per week over the last year"></canvas></div>`
+          : `<p class="lp-fresh">${activity.status === 'computing' ? 'GitHub is still computing this; it appears after the next daily run.' : 'Not recorded yet.'}</p>`}</div>
+      </div>
+      <div class="lp-fresh">${esc(repo.checksum_downloads_excluded ? `Checksum file downloads left out: ${repo.checksum_downloads_excluded.toLocaleString()}.` : '')}</div>`;
+      if (activity.weeks && activity.weeks.length) {
+        const c = getChartColors();
+        drillCharts[key] = new Chart(document.getElementById('drill-activity-' + key), {
+          type: 'bar',
+          data: { labels: activity.weeks.map(w => fmtDate(w[0])), datasets: [{ data: activity.weeks.map(w => w[1]), backgroundColor: TOOL_COLORS[key] || '#F5C020', borderRadius: 1 }] },
+          options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+            scales: { x: { display: false }, y: { beginAtZero: true, grid: { color: c.grid }, ticks: { color: c.tick, font: { size: 9 }, maxTicksLimit: 3 } } } }
+        });
+      }
+    }
+
+    loadGitHubStats();
+    new MutationObserver(() => {
+      if (!GH.index && !GH.assets) return;
+      renderToolPanels(); renderPlatforms(); renderProbeReach();
     }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
     // Mobile menu

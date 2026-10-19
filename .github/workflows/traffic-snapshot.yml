@@ -1,0 +1,102 @@
+name: Traffic Snapshot
+
+# Daily GitHub statistics for /stats: repository traffic (views, clones, referrers, popular
+# paths), downloads by platform and release, stars over time and commit activity. Written by
+# scripts/collect_github_stats.py to data/traffic/, data/assets.json and data/community.json.
+# data/downloads.json is not touched; the Download Snapshot workflow keeps owning it.
+#
+# GitHub keeps traffic for 14 days, so a missed week of runs loses that week for good.
+#
+# Traffic needs repository Administration read, which GITHUB_TOKEN cannot give for other
+# repositories. A read-only GitHub App mints one token per owner below. Until the App exists
+# (repository variable STATS_APP_ID and secret STATS_APP_PRIVATE_KEY), the run still collects
+# everything except traffic, and records traffic as "not_configured". Setup: README, "Traffic
+# statistics".
+#
+# The tokens cover the repositories the App installation was given; that selection is the
+# only place to manage which repos it can read.
+#
+# This token never goes to the leapps-api Worker. The Worker forwards any /repos/... path for
+# its allowed repos, so a token with Administration read there would publish it.
+
+on:
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+# Same group as Download Snapshot: both commit to main, so they must never push at once.
+concurrency:
+  group: download-snapshot
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    if: github.repository == 'abrignoni/leapps-website'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Pull latest
+        run: git pull --rebase origin main
+
+      - name: Token for abrignoni repositories
+        id: app_abrignoni
+        if: vars.STATS_APP_ID != ''
+        # A failed token (App not installed on this owner yet) must not stop the other stats.
+        continue-on-error: true
+        uses: actions/create-github-app-token@v3.2.0
+        with:
+          app-id: ${{ vars.STATS_APP_ID }}
+          private-key: ${{ secrets.STATS_APP_PRIVATE_KEY }}
+          owner: abrignoni
+          permission-administration: read
+          permission-metadata: read
+          permission-contents: read
+
+      - name: Token for leapps-org repositories
+        id: app_leapps_org
+        if: vars.STATS_APP_ID != ''
+        # A failed token (App not installed on this owner yet) must not stop the other stats.
+        continue-on-error: true
+        uses: actions/create-github-app-token@v3.2.0
+        with:
+          app-id: ${{ vars.STATS_APP_ID }}
+          private-key: ${{ secrets.STATS_APP_PRIVATE_KEY }}
+          owner: leapps-org
+          permission-administration: read
+          permission-metadata: read
+          permission-contents: read
+
+      - name: Collect statistics
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN_ABRIGNONI: ${{ steps.app_abrignoni.outputs.token }}
+          GH_TOKEN_LEAPPS_ORG: ${{ steps.app_leapps_org.outputs.token }}
+        run: python3 scripts/collect_github_stats.py
+
+      - name: Commit statistics
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/traffic data/assets.json data/community.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: daily traffic snapshot $(date -u +%Y-%m-%d)"
+            git fetch origin main
+            git rebase origin/main
+            git push origin main
+          fi
+
+      # Runs after the commit, so a stale repo never costs the data the run did collect.
+      - name: Fail when traffic has gone stale
+        env:
+          GH_TOKEN_ABRIGNONI: ${{ steps.app_abrignoni.outputs.token }}
+          GH_TOKEN_LEAPPS_ORG: ${{ steps.app_leapps_org.outputs.token }}
+        run: python3 scripts/collect_github_stats.py --check-stale
