@@ -1,12 +1,12 @@
 {
-  "generated": "2026-10-18",
+  "generated": "2026-10-19",
   "window_days": 45,
   "items": [
     {
-      "name": "dropboxDesktop",
-      "query": "dropboxDesktop",
+      "name": "windowsDefenderDetectionHistory",
+      "query": "windowsDefenderDetectionHistory",
       "tool": "DLEAPP",
-      "date": "2026-10-18"
+      "date": "2026-10-19"
     },
     {
       "name": "webkitMediaCache",
@@ -33,8 +33,8 @@
       "date": "2026-09-28"
     },
     {
-      "name": "windowsSysmonEvents",
-      "query": "windowsSysmonEvents",
+      "name": "windowsAppLockerEvents",
+      "query": "windowsAppLockerEvents",
       "tool": "DLEAPP",
       "date": "2026-10-18"
     },
@@ -63,8 +63,8 @@
       "date": "2026-09-25"
     },
     {
-      "name": "windowsSmbServerEvents",
-      "query": "windowsSmbServerEvents",
+      "name": "vlcDesktop",
+      "query": "vlcDesktop",
       "tool": "DLEAPP",
       "date": "2026-10-18"
     },
