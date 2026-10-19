@@ -56,6 +56,16 @@
 .lp-skel { display: block; border-radius: 2px; background: linear-gradient(90deg, var(--border) 25%, var(--surface) 50%, var(--border) 75%); background-size: 800px 100%; animation: shimmer 1.5s infinite; }
 .lp-loading-row td .lp-skel { height: 14px; }
 .lp-section { margin-bottom: 3rem; }
+/* Probes: counted on their own, in the probes' family color, never in the totals above. */
+.lp-probes { --gold: var(--color-probes); padding-top: 2.5rem; border-top: 1px solid var(--border); }
+.lp-probes-note { font-size: .85rem; color: var(--muted); line-height: 1.6; max-width: 640px; margin-bottom: 1.5rem; }
+.lp-probes-note a { color: var(--color-probes); text-decoration: none; }
+.lp-probes .lp-metric-grid { margin-bottom: 1.5rem; }
+.lp-probes .lp-chart-card { border: 1px solid var(--border); margin-bottom: 1.5rem; }
+.lp-probes-history { margin-top: 1.5rem; }
+.lp-probes .lp-dl-tool-name { width: 150px; }
+@media (max-width: 640px) { .lp-probes .lp-dl-tool-name { width: 120px; font-size: .62rem; } }
+.lp-probes-history h3 { font-family: var(--font-mono); font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: .75rem; font-weight: 400; }
 .lp-section-label { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: .75rem; display: block; }
 .lp-section-title { font-family: var(--font-head); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; text-transform: uppercase; margin-bottom: 1.5rem; color: var(--text); }
 .lp-chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 3rem; }
@@ -322,6 +332,58 @@
       <h2 class="lp-section-title">Guides</h2>
       <div id="guides-content">
         <p style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);">Loading…</p>
+      </div>
+    </div>
+
+    <!-- PROBES: their own section, own scale, not in any total above -->
+    <div class="lp-section lp-probes" id="probes">
+      <span class="lp-section-label">Standalone readers</span>
+      <h2 class="lp-section-title">Probes</h2>
+      <p class="lp-probes-note">The probes are small single-purpose readers that sit beside the LEAPPs. They are counted here on their own, on their own scale, and are not part of any total or chart above. <a href="/probes">See the probes</a></p>
+      <div class="lp-metric-grid">
+        <div class="lp-metric-card">
+          <i class="ti ti-download lp-metric-icon" aria-hidden="true"></i>
+          <div class="lp-metric-label">Probe downloads</div>
+          <div class="lp-metric-value loading" id="pm-downloads">&mdash;</div>
+          <div class="lp-metric-sub">all releases, five probes</div>
+        </div>
+        <div class="lp-metric-card">
+          <i class="ti ti-star lp-metric-icon" aria-hidden="true"></i>
+          <div class="lp-metric-label">Probe stars</div>
+          <div class="lp-metric-value loading" id="pm-stars">&mdash;</div>
+          <div class="lp-metric-sub">across the probe repos</div>
+        </div>
+        <div class="lp-metric-card">
+          <i class="ti ti-package lp-metric-icon" aria-hidden="true"></i>
+          <div class="lp-metric-label">Probe releases</div>
+          <div class="lp-metric-value loading" id="pm-releases">&mdash;</div>
+          <div class="lp-metric-sub">across the probe repos</div>
+        </div>
+      </div>
+      <div class="lp-chart-card">
+        <div class="lp-chart-title">Downloads by probe</div>
+        <div style="position:relative;height:200px">
+          <canvas id="probeDlChart" role="img" aria-label="Bar chart showing downloads per probe"></canvas>
+        </div>
+      </div>
+      <table class="lp-table">
+        <thead>
+          <tr>
+            <th>Probe</th>
+            <th>Downloads</th>
+            <th>Stars</th>
+            <th>Latest</th>
+            <th>Released</th>
+            <th>Releases</th>
+          </tr>
+        </thead>
+        <tbody id="probes-tbody">
+          <tr class="lp-loading-row"><td colspan="6">Loading&hellip;</td></tr>
+        </tbody>
+      </table>
+      <div class="lp-probes-history">
+        <h3>Download history</h3>
+        <div id="probes-history"><div class="lp-dl-pending">Loading&hellip;</div></div>
       </div>
     </div>
 
@@ -745,6 +807,112 @@
     }
 
     fetchDlHistory();
+
+    // Probes: a separate list, separate totals, separate chart. Nothing here feeds the LEAPP figures.
+    const PROBES = [
+      { key: 'qnxprobe', name: 'qnxprobe', what: 'Filesystems in raw images', repo: 'abrignoni/qnxprobe' },
+      { key: 'ewfprobe', name: 'ewfprobe', what: 'Forensic and disk images', repo: 'abrignoni/ewfprobe' },
+      { key: 'exoprobe', name: 'exoprobe', what: 'ExoPlayer cached media', repo: 'abrignoni/exoprobe' },
+      { key: 'chromiumcacheprobe', name: 'chromiumcacheprobe', what: 'Chrome cache on Android', repo: 'abrignoni/chromiumcacheprobe' },
+      { key: 'mediacarve', name: 'mediacarve', what: 'Signature carving', repo: 'abrignoni/mediacarve' },
+    ];
+    let probeChart = null;
+    function probeColor() {
+      return getComputedStyle(document.documentElement).getPropertyValue('--color-probes').trim() || '#8FA9BF';
+    }
+
+    async function fetchProbeStats() {
+      const tbody = document.getElementById('probes-tbody');
+      try {
+        const rows = await Promise.all(PROBES.map(async p => {
+          const [repoRes, relRes] = await Promise.all([
+            fetch(`https://leapps-api.4n6-198.workers.dev/repos/${p.repo}`),
+            fetch(`https://leapps-api.4n6-198.workers.dev/repos/${p.repo}/releases?per_page=100`),
+          ]);
+          if (!repoRes.ok || !relRes.ok) throw new Error('HTTP');
+          const repo = await repoRes.json();
+          const releases = (await relRes.json()).filter(r => !r.draft);
+          const downloads = releases.reduce((sum, r) => sum + (r.assets || []).reduce((s, a) => s + (a.download_count || 0), 0), 0);
+          const latest = releases.find(r => !r.prerelease) || releases[0] || null;
+          return { ...p, downloads, stars: repo.stargazers_count || 0, releases: releases.length,
+                   latest: latest ? latest.tag_name : '', released: latest ? latest.published_at : '' };
+        }));
+        const set = (id, v) => { const el = document.getElementById(id); el.textContent = fmt(v); el.classList.remove('loading'); };
+        set('pm-downloads', rows.reduce((s, r) => s + r.downloads, 0));
+        set('pm-stars', rows.reduce((s, r) => s + r.stars, 0));
+        set('pm-releases', rows.reduce((s, r) => s + r.releases, 0));
+
+        const color = probeColor();
+        if (probeChart) probeChart.destroy();
+        probeChart = new Chart(document.getElementById('probeDlChart'), {
+          type: 'bar',
+          data: { labels: rows.map(r => r.name), datasets: [{ data: rows.map(r => r.downloads), backgroundColor: color, borderRadius: 3 }] },
+          options: buildChartOptions()
+        });
+
+        const maxDl = Math.max(...rows.map(r => r.downloads), 1);
+        tbody.innerHTML = rows.map(r => `
+          <tr>
+            <td>
+              <div class="lp-tool-name">${r.name}</div>
+              <div class="lp-tool-platform">${r.what}</div>
+            </td>
+            <td class="lp-td-with-bar">
+              ${fmt(r.downloads)}
+              <div class="lp-bar-wrap"><div class="lp-bar-fill" style="width:${Math.round(r.downloads / maxDl * 100)}%;background:${color}"></div></div>
+            </td>
+            <td>${fmt(r.stars)}</td>
+            <td>${r.latest || '&mdash;'}</td>
+            <td>${r.released ? new Date(r.released).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '&mdash;'}</td>
+            <td>${fmt(r.releases)}</td>
+          </tr>`).join('');
+      } catch (e) {
+        tbody.innerHTML = '<tr class="lp-loading-row"><td colspan="6">Could not load the probe figures. <a href="/probes" style="color:var(--color-probes)">See the probes</a></td></tr>';
+      }
+    }
+
+    // The daily snapshot records the probes under their own "probes" key, beside the LEAPP "totals".
+    async function fetchProbeHistory() {
+      const el = document.getElementById('probes-history');
+      try {
+        const res = await fetch('https://raw.githubusercontent.com/abrignoni/leapps-website/main/data/downloads.json');
+        if (!res.ok) throw new Error('HTTP');
+        const snaps = ((await res.json()).snapshots || []).filter(s => s.probes);
+        if (snaps.length < 2) {
+          el.innerHTML = '<div class="lp-dl-pending">' + (snaps.length
+            ? `Probe downloads are recorded with each daily snapshot, starting ${snaps[0].date}. The change since then appears after the next one.`
+            : 'Probe downloads are recorded with each daily snapshot, starting with the next one. The change over time appears once there are two.') + '</div>';
+          return;
+        }
+        const first = snaps[0], last = snaps[snaps.length - 1];
+        const color = probeColor();
+        const gains = PROBES.map(p => ({ name: p.name, gain: Math.max(0, (last.probes[p.key] || 0) - (first.probes[p.key] || 0)) }));
+        const maxGain = Math.max(...gains.map(g => g.gain), 1);
+        el.innerHTML = `<p class="lp-probes-note">Downloads since tracking began on ${first.date}, as of ${last.date}.</p>` +
+          '<div class="lp-dl-tool-rows">' + gains.map(g => `
+            <div class="lp-dl-tool-row">
+              <div class="lp-dl-tool-dot" style="background:${color}"></div>
+              <div class="lp-dl-tool-name">${g.name}</div>
+              <div class="lp-dl-bar-wrap"><div class="lp-dl-bar" style="width:${Math.round(g.gain / maxGain * 100)}%;background:${color}"></div></div>
+              <div class="lp-dl-count">${g.gain > 0 ? '+' + fmt(g.gain) : '&mdash;'}</div>
+              <div class="lp-dl-daily"></div>
+            </div>`).join('') + '</div>';
+      } catch (e) {
+        el.innerHTML = '<div class="lp-dl-pending">Could not load the probe download history.</div>';
+      }
+    }
+
+    fetchProbeStats();
+    fetchProbeHistory();
+    new MutationObserver(() => {
+      if (!probeChart) return;
+      const c = getChartColors();
+      probeChart.data.datasets[0].backgroundColor = probeColor();
+      probeChart.options.scales.x.ticks.color = c.tick;
+      probeChart.options.scales.y.ticks.color = c.tick;
+      probeChart.options.scales.y.grid.color = c.grid;
+      probeChart.update();
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
     // Mobile menu
     const hamburger = document.getElementById('lp-hamburger');
