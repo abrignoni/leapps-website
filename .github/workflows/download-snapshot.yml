@@ -46,6 +46,16 @@ jobs:
             'batchleapp': 'abrignoni/batch-leapp',
           }
 
+          # The probes are kept apart from the LEAPP totals: the Worker's daily total and the
+          # stats page's LEAPP figures sum every key in "totals", so the probes get their own key.
+          PROBES = {
+            'qnxprobe': 'abrignoni/qnxprobe',
+            'ewfprobe': 'abrignoni/ewfprobe',
+            'exoprobe': 'abrignoni/exoprobe',
+            'chromiumcacheprobe': 'abrignoni/chromiumcacheprobe',
+            'mediacarve': 'abrignoni/mediacarve',
+          }
+
           token = os.environ['GH_TOKEN']
           headers = {'Authorization': f'Bearer {token}', 'Accept': 'application/vnd.github+json'}
 
@@ -66,6 +76,7 @@ jobs:
             return total
 
           totals = {key: fetch_downloads(repo) for key, repo in REPOS.items()}
+          probes = {key: fetch_downloads(repo) for key, repo in PROBES.items()}
 
           snapshot_file = 'data/downloads.json'
           try:
@@ -79,14 +90,14 @@ jobs:
 
           # Replace today's entry if it already exists
           snapshots = [s for s in snapshots if s['date'] != today]
-          snapshots.append({'date': today, 'totals': totals})
+          snapshots.append({'date': today, 'totals': totals, 'probes': probes})
 
           data['snapshots'] = snapshots
 
           with open(snapshot_file, 'w') as f:
             json.dump(data, f, indent=2)
 
-          print(f"Snapshot saved for {today}: {totals}")
+          print(f"Snapshot saved for {today}: {totals} probes: {probes}")
           EOF
 
       - name: Regenerate recently-added artifacts
