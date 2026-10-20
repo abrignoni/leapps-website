@@ -1529,14 +1529,14 @@
     {
       "date": "2026-10-20",
       "totals": {
-        "ileapp": 99228,
-        "aleapp": 75654,
-        "rleapp": 6346,
-        "vleapp": 3089,
-        "lava": 4442,
-        "dleapp": 1808,
-        "gleapp": 867,
-        "batchleapp": 720
+        "ileapp": 99301,
+        "aleapp": 75722,
+        "rleapp": 6358,
+        "vleapp": 3098,
+        "lava": 4460,
+        "dleapp": 1817,
+        "gleapp": 878,
+        "batchleapp": 722
       },
       "probes": {
         "qnxprobe": 641,
