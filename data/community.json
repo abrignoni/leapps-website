@@ -4,7 +4,7 @@
   "ileapp": {
    "repo": "abrignoni/iLEAPP",
    "group": "tool",
-   "status": "forbidden",
+   "status": "ok",
    "series": [
     [
      "2019-12-24",
@@ -3587,12 +3587,15 @@
      1394
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20",
+   "daily": {
+    "2026-10-20": 1396
+   }
   },
   "aleapp": {
    "repo": "abrignoni/ALEAPP",
    "group": "tool",
-   "status": "forbidden",
+   "status": "ok",
    "series": [
     [
      "2020-02-22",
@@ -6543,12 +6546,15 @@
      1013
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20",
+   "daily": {
+    "2026-10-20": 1014
+   }
   },
   "rleapp": {
    "repo": "abrignoni/RLEAPP",
    "group": "tool",
-   "status": "forbidden",
+   "status": "ok",
    "series": [
     [
      "2021-08-17",
@@ -7111,12 +7117,15 @@
      147
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20",
+   "daily": {
+    "2026-10-20": 148
+   }
   },
   "vleapp": {
    "repo": "abrignoni/VLEAPP",
    "group": "tool",
-   "status": "forbidden",
+   "status": "ok",
    "series": [
     [
      "2021-07-02",
@@ -7551,12 +7560,15 @@
      120
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20",
+   "daily": {
+    "2026-10-20": 121
+   }
   },
   "lava": {
    "repo": "leapps-org/LAVA-releases",
    "group": "tool",
-   "status": "forbidden",
+   "status": "ok",
    "series": [
     [
      "2026-05-09",
@@ -7599,12 +7611,15 @@
      13
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20",
+   "daily": {
+    "2026-10-20": 14
+   }
   },
   "dleapp": {
    "repo": "abrignoni/DLEAPP",
    "group": "tool",
-   "status": "forbidden",
+   "status": "ok",
    "series": [
     [
      "2026-07-24",
@@ -7703,12 +7718,15 @@
      30
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20",
+   "daily": {
+    "2026-10-20": 31
+   }
   },
   "gleapp": {
    "repo": "abrignoni/GLEAPP",
    "group": "tool",
-   "status": "forbidden",
+   "status": "ok",
    "series": [
     [
      "2026-09-26",
@@ -7771,12 +7789,15 @@
      18
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20",
+   "daily": {
+    "2026-10-20": 19
+   }
   },
   "batchleapp": {
    "repo": "abrignoni/batch-leapp",
    "group": "tool",
-   "status": "forbidden",
+   "status": "ok",
    "series": [
     [
      "2026-07-02",
@@ -7827,12 +7848,15 @@
      12
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20",
+   "daily": {
+    "2026-10-20": 12
+   }
   },
   "qnxprobe": {
    "repo": "abrignoni/qnxprobe",
    "group": "probe",
-   "status": "forbidden",
+   "status": "ok",
    "series": [
     [
      "2026-09-11",
@@ -7867,12 +7891,15 @@
      8
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20",
+   "daily": {
+    "2026-10-20": 8
+   }
   },
   "ewfprobe": {
    "repo": "abrignoni/ewfprobe",
    "group": "probe",
-   "status": "forbidden",
+   "status": "ok",
    "series": [
     [
      "2026-09-09",
@@ -7887,26 +7914,35 @@
      3
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20",
+   "daily": {
+    "2026-10-20": 3
+   }
   },
   "exoprobe": {
    "repo": "abrignoni/exoprobe",
    "group": "probe",
-   "status": "forbidden",
+   "status": "ok",
    "series": [],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20",
+   "daily": {
+    "2026-10-20": 0
+   }
   },
   "chromiumcacheprobe": {
    "repo": "abrignoni/chromiumcacheprobe",
    "group": "probe",
-   "status": "forbidden",
+   "status": "ok",
    "series": [],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20",
+   "daily": {
+    "2026-10-20": 0
+   }
   },
   "mediacarve": {
    "repo": "abrignoni/mediacarve",
    "group": "probe",
-   "status": "forbidden",
+   "status": "ok",
    "series": [
     [
      "2026-09-21",
@@ -7917,7 +7953,10 @@
      2
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20",
+   "daily": {
+    "2026-10-20": 2
+   }
   }
  },
  "commit_activity": {
@@ -10730,5 +10769,5 @@
    "as_of": "2026-10-20"
   }
  },
- "updated_at": "2026-10-20T00:11:00Z"
+ "updated_at": "2026-10-20T00:18:48Z"
 }
