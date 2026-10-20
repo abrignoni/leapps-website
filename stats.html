@@ -384,7 +384,7 @@
     <div class="lp-section" id="community">
       <span class="lp-section-label">Community</span>
       <h2 class="lp-section-title">Stars Over Time</h2>
-      <p class="lp-note">Built from the date each current star was given, for <strong id="star-tool">all tools</strong>. Stars that were later removed are not in the history.</p>
+      <p class="lp-note">Stars for <strong id="star-tool">all tools</strong>. Up to October 19, 2026 the line is built from the date each current star was given, so stars removed before then are not in it. From October 20 it is the star count recorded each day, which also falls when someone removes a star.</p>
       <div class="lp-chart-card" style="border:1px solid var(--border)">
         <div style="position:relative;height:220px"><canvas id="starHistoryChart" role="img" aria-label="Cumulative stars over time"></canvas></div>
       </div>
@@ -1255,13 +1255,27 @@
       const keys = ghTool === 'all' ? groupKeys('tool') : [ghTool];
       document.getElementById('star-tool').textContent = ghTool === 'all' ? 'all tools' : labelFor(ghTool);
       const stars = (GH.community && GH.community.stars) || {};
-      const changes = {};
-      keys.forEach(k => {
-        let prev = 0;
-        ((stars[k] || {}).series || []).forEach(([day, total]) => { changes[day] = (changes[day] || 0) + (total - prev); prev = total; });
+      // Each repo is a step line: its saved history (cumulative per change day), then the daily
+      // counts recorded after the history's last day. Repos are added up day by day, each
+      // carrying its last known value forward.
+      const perRepo = keys.map(k => {
+        const entry = stars[k] || {};
+        const points = (entry.series || []).map(([day, total]) => [day, total]);
+        const lastSaved = points.length ? points[points.length - 1][0] : '';
+        Object.entries(entry.daily || {}).forEach(([day, total]) => { if (day > lastSaved) points.push([day, total]); });
+        return points.sort((a, b) => a[0] < b[0] ? -1 : 1);
       });
-      let running = 0;
-      const series = Object.keys(changes).sort().map(day => { running += changes[day]; return { day, total: running }; });
+      const days = [...new Set(perRepo.flatMap(p => p.map(x => x[0])))].sort();
+      const cursor = perRepo.map(() => ({ i: 0, value: 0 }));
+      const series = days.map(day => {
+        let total = 0;
+        perRepo.forEach((points, r) => {
+          const c = cursor[r];
+          while (c.i < points.length && points[c.i][0] <= day) { c.value = points[c.i][1]; c.i += 1; }
+          total += c.value;
+        });
+        return { day, total };
+      });
       const color = ghTool === 'all' ? '#F5C020' : (TOOL_COLORS[ghTool] || '#F5C020');
       const labels = series.map(p => new Date(p.day + 'T00:00:00Z').toLocaleDateString('en-US', { year: 'numeric', month: 'short', timeZone: 'UTC' }));
       starHistoryChart = lineChart('starHistoryChart', starHistoryChart, labels,

@@ -94,10 +94,29 @@ class Assets(unittest.TestCase):
 
 
 class Community(unittest.TestCase):
-    def test_star_series_is_cumulative_per_change_day(self):
-        stars = [{"starred_at": "2026-01-02T10:00:00Z"}, {"starred_at": "2026-01-01T09:00:00Z"},
-                 {"starred_at": "2026-01-02T23:00:00Z"}, {"starred_at": None}]
-        self.assertEqual(cgs.star_series(stars), [["2026-01-01", 1], ["2026-01-02", 3]])
+    SAVED = {"repo": "a/b", "group": "tool", "status": "forbidden", "series": [["2026-01-01", 1], ["2026-10-19", 9]]}
+
+    def test_star_count_is_added_and_saved_history_kept(self):
+        ok = cgs.ApiResult("ok", {"stargazers_count": 10}, 200)
+        entry = cgs.record_star_count(self.SAVED, "a/b", "tool", "2026-10-20", ok)
+        self.assertEqual(entry["series"], self.SAVED["series"])
+        self.assertEqual(entry["daily"], {"2026-10-20": 10})
+        self.assertEqual(entry["status"], "ok")
+
+    def test_same_day_rerun_replaces_the_count(self):
+        first = cgs.record_star_count(self.SAVED, "a/b", "tool", "2026-10-20",
+                                      cgs.ApiResult("ok", {"stargazers_count": 10}, 200))
+        again = cgs.record_star_count(first, "a/b", "tool", "2026-10-20",
+                                      cgs.ApiResult("ok", {"stargazers_count": 11}, 200))
+        self.assertEqual(again["daily"], {"2026-10-20": 11})
+
+    def test_a_failed_read_keeps_everything_and_records_the_status(self):
+        first = cgs.record_star_count(self.SAVED, "a/b", "tool", "2026-10-20",
+                                      cgs.ApiResult("ok", {"stargazers_count": 10}, 200))
+        failed = cgs.record_star_count(first, "a/b", "tool", "2026-10-21", cgs.ApiResult("forbidden", None, 403))
+        self.assertEqual(failed["daily"], {"2026-10-20": 10})
+        self.assertEqual(failed["series"], self.SAVED["series"])
+        self.assertEqual(failed["status"], "forbidden")
 
     def test_seen_counts_cover_the_last_n_snapshots(self):
         snaps = {f"2026-10-{d:02d}": [{"referrer": "a"}] + ([{"referrer": "b"}] if d > 8 else [])
@@ -127,6 +146,9 @@ class FakeApi:
         self.routes = routes
 
     def __call__(self, path, token, accept="application/vnd.github+json"):
+        if path in self.routes:
+            result = self.routes[path]
+            return result(token) if callable(result) else result
         for prefix, result in self.routes.items():
             if path.startswith(prefix):
                 return result(token) if callable(result) else result
@@ -165,7 +187,7 @@ class EndToEnd(unittest.TestCase):
             "/repos/abrignoni/T/traffic/popular/referrers": ok([]),
             "/repos/abrignoni/T/traffic/popular/paths": ok([{"path": "/abrignoni/T", "title": "T", "count": 3, "uniques": 2}]),
             "/repos/abrignoni/T/releases": ok([{"tag_name": "v1", "assets": [{"name": "t-windows-x64.zip", "download_count": 4}]}]),
-            "/repos/abrignoni/T/stargazers": ok([{"starred_at": "2026-01-01T00:00:00Z"}]),
+            "/repos/abrignoni/T": ok({"stargazers_count": 1}),
             "/repos/abrignoni/T/stats/commit_activity": cgs.ApiResult("computing", None, 202),
         }
 
@@ -206,7 +228,7 @@ class EndToEnd(unittest.TestCase):
         self.run_collect(self.traffic_routes(1), {"GH_TOKEN": "public"})
         entry = self.read("data/traffic/index.json")["repos"]["t"]
         self.assertEqual(set(entry["status"].values()), {"not_configured"})
-        self.assertEqual(self.read("data/community.json")["stars"]["t"]["series"], [["2026-01-01", 1]])
+        self.assertEqual(self.read("data/community.json")["stars"]["t"]["daily"], {"2026-10-20": 1})
         with mock.patch.dict("os.environ", {}, clear=True):
             self.assertEqual(cgs.check_stale(now=datetime(2026, 10, 25, tzinfo=timezone.utc), log=lambda *_: None), 0)
 
