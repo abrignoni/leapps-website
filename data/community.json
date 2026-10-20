@@ -4,7 +4,7 @@
   "ileapp": {
    "repo": "abrignoni/iLEAPP",
    "group": "tool",
-   "status": "ok",
+   "status": "forbidden",
    "series": [
     [
      "2019-12-24",
@@ -3592,7 +3592,7 @@
   "aleapp": {
    "repo": "abrignoni/ALEAPP",
    "group": "tool",
-   "status": "ok",
+   "status": "forbidden",
    "series": [
     [
      "2020-02-22",
@@ -6548,7 +6548,7 @@
   "rleapp": {
    "repo": "abrignoni/RLEAPP",
    "group": "tool",
-   "status": "ok",
+   "status": "forbidden",
    "series": [
     [
      "2021-08-17",
@@ -7116,7 +7116,7 @@
   "vleapp": {
    "repo": "abrignoni/VLEAPP",
    "group": "tool",
-   "status": "ok",
+   "status": "forbidden",
    "series": [
     [
      "2021-07-02",
@@ -7556,7 +7556,7 @@
   "lava": {
    "repo": "leapps-org/LAVA-releases",
    "group": "tool",
-   "status": "ok",
+   "status": "forbidden",
    "series": [
     [
      "2026-05-09",
@@ -7604,7 +7604,7 @@
   "dleapp": {
    "repo": "abrignoni/DLEAPP",
    "group": "tool",
-   "status": "ok",
+   "status": "forbidden",
    "series": [
     [
      "2026-07-24",
@@ -7708,7 +7708,7 @@
   "gleapp": {
    "repo": "abrignoni/GLEAPP",
    "group": "tool",
-   "status": "ok",
+   "status": "forbidden",
    "series": [
     [
      "2026-09-26",
@@ -7776,7 +7776,7 @@
   "batchleapp": {
    "repo": "abrignoni/batch-leapp",
    "group": "tool",
-   "status": "ok",
+   "status": "forbidden",
    "series": [
     [
      "2026-07-02",
@@ -7832,7 +7832,7 @@
   "qnxprobe": {
    "repo": "abrignoni/qnxprobe",
    "group": "probe",
-   "status": "ok",
+   "status": "forbidden",
    "series": [
     [
      "2026-09-11",
@@ -7872,7 +7872,7 @@
   "ewfprobe": {
    "repo": "abrignoni/ewfprobe",
    "group": "probe",
-   "status": "ok",
+   "status": "forbidden",
    "series": [
     [
      "2026-09-09",
@@ -7892,21 +7892,21 @@
   "exoprobe": {
    "repo": "abrignoni/exoprobe",
    "group": "probe",
-   "status": "ok",
+   "status": "forbidden",
    "series": [],
    "as_of": "2026-10-19"
   },
   "chromiumcacheprobe": {
    "repo": "abrignoni/chromiumcacheprobe",
    "group": "probe",
-   "status": "ok",
+   "status": "forbidden",
    "series": [],
    "as_of": "2026-10-19"
   },
   "mediacarve": {
    "repo": "abrignoni/mediacarve",
    "group": "probe",
-   "status": "ok",
+   "status": "forbidden",
    "series": [
     [
      "2026-09-21",
@@ -8135,12 +8135,223 @@
      20
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20"
   },
   "aleapp": {
    "repo": "abrignoni/ALEAPP",
    "group": "tool",
-   "status": "computing"
+   "status": "ok",
+   "weeks": [
+    [
+     "2025-10-26",
+     1
+    ],
+    [
+     "2025-11-02",
+     2
+    ],
+    [
+     "2025-11-09",
+     5
+    ],
+    [
+     "2025-11-16",
+     28
+    ],
+    [
+     "2025-11-23",
+     7
+    ],
+    [
+     "2025-11-30",
+     3
+    ],
+    [
+     "2025-12-07",
+     9
+    ],
+    [
+     "2025-12-14",
+     10
+    ],
+    [
+     "2025-12-21",
+     0
+    ],
+    [
+     "2025-12-28",
+     0
+    ],
+    [
+     "2026-01-04",
+     8
+    ],
+    [
+     "2026-01-11",
+     10
+    ],
+    [
+     "2026-01-18",
+     0
+    ],
+    [
+     "2026-01-25",
+     4
+    ],
+    [
+     "2026-02-01",
+     3
+    ],
+    [
+     "2026-02-08",
+     3
+    ],
+    [
+     "2026-02-15",
+     1
+    ],
+    [
+     "2026-02-22",
+     6
+    ],
+    [
+     "2026-03-01",
+     13
+    ],
+    [
+     "2026-03-08",
+     4
+    ],
+    [
+     "2026-03-15",
+     6
+    ],
+    [
+     "2026-03-22",
+     8
+    ],
+    [
+     "2026-03-29",
+     4
+    ],
+    [
+     "2026-04-05",
+     0
+    ],
+    [
+     "2026-04-12",
+     0
+    ],
+    [
+     "2026-04-19",
+     2
+    ],
+    [
+     "2026-04-26",
+     0
+    ],
+    [
+     "2026-05-03",
+     0
+    ],
+    [
+     "2026-05-10",
+     6
+    ],
+    [
+     "2026-05-17",
+     13
+    ],
+    [
+     "2026-05-24",
+     26
+    ],
+    [
+     "2026-05-31",
+     7
+    ],
+    [
+     "2026-06-07",
+     8
+    ],
+    [
+     "2026-06-14",
+     172
+    ],
+    [
+     "2026-06-21",
+     194
+    ],
+    [
+     "2026-06-28",
+     26
+    ],
+    [
+     "2026-07-05",
+     28
+    ],
+    [
+     "2026-07-12",
+     16
+    ],
+    [
+     "2026-07-19",
+     58
+    ],
+    [
+     "2026-07-26",
+     42
+    ],
+    [
+     "2026-08-02",
+     97
+    ],
+    [
+     "2026-08-09",
+     77
+    ],
+    [
+     "2026-08-16",
+     113
+    ],
+    [
+     "2026-08-23",
+     84
+    ],
+    [
+     "2026-08-30",
+     206
+    ],
+    [
+     "2026-09-06",
+     111
+    ],
+    [
+     "2026-09-13",
+     21
+    ],
+    [
+     "2026-09-20",
+     39
+    ],
+    [
+     "2026-09-27",
+     76
+    ],
+    [
+     "2026-10-04",
+     366
+    ],
+    [
+     "2026-10-11",
+     56
+    ],
+    [
+     "2026-10-18",
+     7
+    ]
+   ],
+   "as_of": "2026-10-20"
   },
   "rleapp": {
    "repo": "abrignoni/RLEAPP",
@@ -8356,7 +8567,7 @@
      1
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20"
   },
   "vleapp": {
    "repo": "abrignoni/VLEAPP",
@@ -8572,7 +8783,7 @@
      1
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20"
   },
   "lava": {
    "repo": "leapps-org/LAVA-releases",
@@ -8788,7 +8999,7 @@
      0
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20"
   },
   "dleapp": {
    "repo": "abrignoni/DLEAPP",
@@ -9004,7 +9215,7 @@
      40
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20"
   },
   "gleapp": {
    "repo": "abrignoni/GLEAPP",
@@ -9220,7 +9431,7 @@
      0
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20"
   },
   "batchleapp": {
    "repo": "abrignoni/batch-leapp",
@@ -9436,7 +9647,7 @@
      0
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20"
   },
   "qnxprobe": {
    "repo": "abrignoni/qnxprobe",
@@ -9652,7 +9863,7 @@
      0
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20"
   },
   "ewfprobe": {
    "repo": "abrignoni/ewfprobe",
@@ -9868,7 +10079,7 @@
      0
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20"
   },
   "exoprobe": {
    "repo": "abrignoni/exoprobe",
@@ -10084,7 +10295,7 @@
      0
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20"
   },
   "chromiumcacheprobe": {
    "repo": "abrignoni/chromiumcacheprobe",
@@ -10300,7 +10511,7 @@
      2
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20"
   },
   "mediacarve": {
    "repo": "abrignoni/mediacarve",
@@ -10516,8 +10727,8 @@
      1
     ]
    ],
-   "as_of": "2026-10-19"
+   "as_of": "2026-10-20"
   }
  },
- "updated_at": "2026-10-19T23:15:40Z"
+ "updated_at": "2026-10-20T00:04:46Z"
 }

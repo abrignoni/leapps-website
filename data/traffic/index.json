@@ -5,10 +5,10 @@
    "repo": "abrignoni/iLEAPP",
    "group": "tool",
    "status": {
-    "views": "ok",
-    "clones": "ok",
-    "referrers": "ok",
-    "paths": "ok"
+    "views": "not_configured",
+    "clones": "not_configured",
+    "referrers": "not_configured",
+    "paths": "not_configured"
    },
    "window": {
     "views": {
@@ -28,10 +28,10 @@
    "repo": "abrignoni/ALEAPP",
    "group": "tool",
    "status": {
-    "views": "ok",
-    "clones": "ok",
-    "referrers": "ok",
-    "paths": "ok"
+    "views": "not_configured",
+    "clones": "not_configured",
+    "referrers": "not_configured",
+    "paths": "not_configured"
    },
    "window": {
     "views": {
@@ -51,10 +51,10 @@
    "repo": "abrignoni/RLEAPP",
    "group": "tool",
    "status": {
-    "views": "ok",
-    "clones": "ok",
-    "referrers": "ok",
-    "paths": "ok"
+    "views": "not_configured",
+    "clones": "not_configured",
+    "referrers": "not_configured",
+    "paths": "not_configured"
    },
    "window": {
     "views": {
@@ -74,10 +74,10 @@
    "repo": "abrignoni/VLEAPP",
    "group": "tool",
    "status": {
-    "views": "ok",
-    "clones": "ok",
-    "referrers": "ok",
-    "paths": "ok"
+    "views": "not_configured",
+    "clones": "not_configured",
+    "referrers": "not_configured",
+    "paths": "not_configured"
    },
    "window": {
     "views": {
@@ -97,10 +97,10 @@
    "repo": "leapps-org/LAVA-releases",
    "group": "tool",
    "status": {
-    "views": "ok",
-    "clones": "ok",
-    "referrers": "ok",
-    "paths": "ok"
+    "views": "not_configured",
+    "clones": "not_configured",
+    "referrers": "not_configured",
+    "paths": "not_configured"
    },
    "window": {
     "views": {
@@ -120,10 +120,10 @@
    "repo": "abrignoni/DLEAPP",
    "group": "tool",
    "status": {
-    "views": "ok",
-    "clones": "ok",
-    "referrers": "ok",
-    "paths": "ok"
+    "views": "not_configured",
+    "clones": "not_configured",
+    "referrers": "not_configured",
+    "paths": "not_configured"
    },
    "window": {
     "views": {
@@ -143,10 +143,10 @@
    "repo": "abrignoni/GLEAPP",
    "group": "tool",
    "status": {
-    "views": "ok",
-    "clones": "ok",
-    "referrers": "ok",
-    "paths": "ok"
+    "views": "not_configured",
+    "clones": "not_configured",
+    "referrers": "not_configured",
+    "paths": "not_configured"
    },
    "window": {
     "views": {
@@ -166,10 +166,10 @@
    "repo": "abrignoni/batch-leapp",
    "group": "tool",
    "status": {
-    "views": "ok",
-    "clones": "ok",
-    "referrers": "ok",
-    "paths": "ok"
+    "views": "not_configured",
+    "clones": "not_configured",
+    "referrers": "not_configured",
+    "paths": "not_configured"
    },
    "window": {
     "views": {
@@ -189,10 +189,10 @@
    "repo": "abrignoni/qnxprobe",
    "group": "probe",
    "status": {
-    "views": "ok",
-    "clones": "ok",
-    "referrers": "ok",
-    "paths": "ok"
+    "views": "not_configured",
+    "clones": "not_configured",
+    "referrers": "not_configured",
+    "paths": "not_configured"
    },
    "window": {
     "views": {
@@ -212,10 +212,10 @@
    "repo": "abrignoni/ewfprobe",
    "group": "probe",
    "status": {
-    "views": "ok",
-    "clones": "ok",
-    "referrers": "ok",
-    "paths": "ok"
+    "views": "not_configured",
+    "clones": "not_configured",
+    "referrers": "not_configured",
+    "paths": "not_configured"
    },
    "window": {
     "views": {
@@ -235,10 +235,10 @@
    "repo": "abrignoni/exoprobe",
    "group": "probe",
    "status": {
-    "views": "ok",
-    "clones": "ok",
-    "referrers": "ok",
-    "paths": "ok"
+    "views": "not_configured",
+    "clones": "not_configured",
+    "referrers": "not_configured",
+    "paths": "not_configured"
    },
    "window": {
     "views": {
@@ -258,10 +258,10 @@
    "repo": "abrignoni/chromiumcacheprobe",
    "group": "probe",
    "status": {
-    "views": "ok",
-    "clones": "ok",
-    "referrers": "ok",
-    "paths": "ok"
+    "views": "not_configured",
+    "clones": "not_configured",
+    "referrers": "not_configured",
+    "paths": "not_configured"
    },
    "window": {
     "views": {
@@ -281,10 +281,10 @@
    "repo": "abrignoni/mediacarve",
    "group": "probe",
    "status": {
-    "views": "ok",
-    "clones": "ok",
-    "referrers": "ok",
-    "paths": "ok"
+    "views": "not_configured",
+    "clones": "not_configured",
+    "referrers": "not_configured",
+    "paths": "not_configured"
    },
    "window": {
     "views": {
@@ -304,5 +304,5 @@
  "months": [
   "2026-10"
  ],
- "updated_at": "2026-10-19T23:15:40Z"
+ "updated_at": "2026-10-20T00:04:46Z"
 }

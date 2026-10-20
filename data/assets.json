@@ -71,6 +71,77 @@
     "script": 6,
     "windows": 14
    }
+  },
+  "2026-10-20": {
+   "ileapp": {
+    "linux": 3545,
+    "macos": 6465,
+    "windows": 88944
+   },
+   "aleapp": {
+    "linux": 3753,
+    "macos": 3320,
+    "windows": 68337
+   },
+   "rleapp": {
+    "linux": 388,
+    "macos": 837,
+    "windows": 5047
+   },
+   "vleapp": {
+    "linux": 330,
+    "macos": 669,
+    "windows": 2019
+   },
+   "lava": {
+    "linux": 393,
+    "macos": 516,
+    "other": 25,
+    "windows": 3485
+   },
+   "dleapp": {
+    "linux": 230,
+    "macos": 240,
+    "windows": 1268
+   },
+   "gleapp": {
+    "linux": 60,
+    "macos": 93,
+    "windows": 671
+   },
+   "batchleapp": {
+    "macos": 125,
+    "windows": 591
+   },
+   "qnxprobe": {
+    "linux": 140,
+    "macos": 153,
+    "windows": 224
+   },
+   "ewfprobe": {
+    "linux": 44,
+    "macos": 54,
+    "script": 28,
+    "windows": 65
+   },
+   "exoprobe": {
+    "linux": 13,
+    "macos": 14,
+    "script": 7,
+    "windows": 38
+   },
+   "chromiumcacheprobe": {
+    "linux": 4,
+    "macos": 2,
+    "script": 2,
+    "windows": 7
+   },
+   "mediacarve": {
+    "linux": 5,
+    "macos": 5,
+    "script": 6,
+    "windows": 14
+   }
   }
  },
  "repos": {
@@ -81,7 +152,7 @@
    "by_os": {
     "linux": 3545,
     "macos": 6465,
-    "windows": 88943
+    "windows": 88944
    },
    "by_os_arch": {
     "linux/arch not stated": 1759,
@@ -91,14 +162,14 @@
     "macos/x64": 2361,
     "windows/arch not stated": 77027,
     "windows/arm64": 1339,
-    "windows/x64": 10577
+    "windows/x64": 10578
    },
    "releases": [
     {
      "tag": "v2026.4.4",
      "published_at": "2026-10-02T00:35:33Z",
      "prerelease": false,
-     "downloads": 2263
+     "downloads": 2264
     },
     {
      "tag": "v2026.4.3",
@@ -332,7 +403,7 @@
    "by_os": {
     "linux": 3753,
     "macos": 3320,
-    "windows": 68336
+    "windows": 68337
    },
    "by_os_arch": {
     "linux/arch not stated": 1950,
@@ -343,14 +414,14 @@
     "macos/x64": 1316,
     "windows/arch not stated": 57349,
     "windows/arm64": 948,
-    "windows/x64": 10039
+    "windows/x64": 10040
    },
    "releases": [
     {
      "tag": "v2026.4.3",
      "published_at": "2026-10-02T00:35:36Z",
      "prerelease": false,
-     "downloads": 2103
+     "downloads": 2104
     },
     {
      "tag": "v2026.4.2",
@@ -1297,7 +1368,7 @@
      "downloads": 8
     }
    ],
-   "checksum_downloads_excluded": 108
+   "checksum_downloads_excluded": 109
   },
   "ewfprobe": {
    "repo": "abrignoni/ewfprobe",
@@ -1451,7 +1522,7 @@
      "downloads": 33
     }
    ],
-   "checksum_downloads_excluded": 5
+   "checksum_downloads_excluded": 6
   },
   "chromiumcacheprobe": {
    "repo": "abrignoni/chromiumcacheprobe",
@@ -1480,7 +1551,7 @@
      "downloads": 15
     }
    ],
-   "checksum_downloads_excluded": 1
+   "checksum_downloads_excluded": 2
   },
   "mediacarve": {
    "repo": "abrignoni/mediacarve",
@@ -1518,5 +1589,5 @@
    "checksum_downloads_excluded": 3
   }
  },
- "updated_at": "2026-10-19T23:15:40Z"
+ "updated_at": "2026-10-20T00:04:46Z"
 }
