@@ -6,7 +6,7 @@ Writes, beside data/downloads.json (which this script never touches):
   data/traffic/index.json      latest status, 14-day totals and the list of month files
   data/traffic/YYYY-MM.json    daily and weekly views and clones, referrer and path snapshots
   data/assets.json             downloads by OS and architecture per day, and by release
-  data/community.json          stars over time and the last year of commit activity
+  data/community.json          stars over time (saved history plus a daily count) and commit activity
 
 GitHub keeps traffic for 14 days, so every run stores what the API returns and the history
 grows from the first run on. The merge rules are the point of this file:
@@ -183,22 +183,25 @@ def summarise_releases(releases: list[dict]) -> dict:
             "releases": per_release, "checksum_downloads_excluded": excluded}
 
 
-def star_series(stargazers: list[dict]) -> list[list]:
-    """[[YYYY-MM-DD, cumulative stars], ...] with one point per day on which the count changed.
+def record_star_count(entry: dict, repo: str, group: str, today: str, result) -> dict:
+    """Add today's star count to a repo's stars entry, keeping its saved history.
 
-    Built from each current stargazer's starred_at, so stars that were later removed are not
-    in it: it is the history of today's stars, not of every star ever given.
+    The stargazer list with star dates needs Contents write for an App token (GitHub's
+    "Permissions required for GitHub Apps"), which this collector will not hold. So the
+    history up to 2026-10-19, built from each current star's date with a broader token, is
+    kept as "series" and never rewritten, and every run adds the repository's
+    stargazers_count to "daily". A count also falls when someone removes a star; the series
+    does not, because it lists only stars that still exist.
     """
-    days: dict[str, int] = {}
-    for entry in stargazers or []:
-        stamp = str(entry.get("starred_at") or "")[:10]
-        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", stamp):
-            days[stamp] = days.get(stamp, 0) + 1
-    series, running = [], 0
-    for day in sorted(days):
-        running += days[day]
-        series.append([day, running])
-    return series
+    updated = {**entry, "repo": repo, "group": group, "status": result.status}
+    updated.setdefault("series", [])
+    daily = dict(updated.get("daily") or {})
+    count = (result.data or {}).get("stargazers_count") if result.status == "ok" else None
+    if isinstance(count, int):
+        daily[today] = count
+        updated["as_of"] = today
+    updated["daily"] = dict(sorted(daily.items()))
+    return updated
 
 
 def seen_counts(snapshots: dict[str, list], field: str, last_n: int = 30) -> dict[str, int]:
@@ -384,15 +387,11 @@ def collect(now: datetime | None = None, log=print, sleep=time.sleep) -> int:
             else:
                 log(f"warn: {repo} releases: {releases.status} ({releases.http})")
 
-            stars = api_get_all(f"/repos/{repo}/stargazers?per_page=100", read_token,
-                                accept="application/vnd.github.star+json")
-            if stars.status == "ok":
-                community["stars"][key] = {"repo": repo, "group": group, "status": "ok",
-                                           "series": star_series(stars.data), "as_of": today}
-            else:
-                previous = community["stars"].get(key, {})
-                community["stars"][key] = {**previous, "repo": repo, "group": group, "status": stars.status}
-                log(f"warn: {repo} stargazers: {stars.status} ({stars.http})")
+            repo_info = api_get(f"/repos/{repo}", read_token)
+            community["stars"][key] = record_star_count(community["stars"].get(key, {}), repo, group,
+                                                        today, repo_info)
+            if repo_info.status != "ok":
+                log(f"warn: {repo} star count: {repo_info.status} ({repo_info.http})")
 
             pending_activity.append((key, repo, group, read_token))
 

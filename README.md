@@ -297,7 +297,7 @@ collector reads its `REPOS` and `PROBES`, so that file stays the one list):
 | Top 10 referring sites and top 10 pages | GitHub traffic API | One dated snapshot per day; never added together |
 | 14-day totals | GitHub traffic API | Latest only, in `index.json` (the KPI tiles) |
 | Downloads by OS, by OS and processor, by release | Release asset names and `download_count` | Per day by OS; latest by processor and release. Checksum files left out |
-| Stars over time | Stargazers with their star dates | Rebuilt each run from the current stargazers |
+| Stars over time | Up to 2026-10-19: each current star's date. After: the repo's star count | Saved history kept as is; one count per repo per day added. The stargazer list with dates needs Contents write for an App, which this App does not get |
 | Commits per week, last year | `stats/commit_activity` | Latest; a `202` keeps the previous weeks with status `computing` |
 
 A failure is stored as a status (`forbidden`, `not_found`, `computing`, `error`,
