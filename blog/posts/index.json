@@ -1,5 +1,19 @@
 [
   {
+    "slug": "2026-10-20-put-ai-in-the-code-not-the-conclusions",
+    "title": "DFIR Thoughts: Put AI in the code, not the conclusions",
+    "date": "2026-10-20",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "AI",
+      "LLM",
+      "DFIR",
+      "opinion",
+      "validation"
+    ],
+    "excerpt": "Handing examiners a chatbot that draws conclusions from parsed data is the wrong way to bring AI into digital forensics. Here is why, and what I do instead with a known-data corpus, tested code and CI checks."
+  },
+  {
     "slug": "2026-10-18-dropbox-dbx-decryption-revisited",
     "title": "Dropbox DBX Decryption, Nine Years Later",
     "date": "2026-10-18",
