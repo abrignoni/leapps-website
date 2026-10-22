@@ -1569,14 +1569,14 @@
     {
       "date": "2026-10-22",
       "totals": {
-        "ileapp": 99792,
-        "aleapp": 76166,
-        "rleapp": 6499,
-        "vleapp": 3215,
-        "lava": 4557,
-        "dleapp": 1955,
-        "gleapp": 935,
-        "batchleapp": 745
+        "ileapp": 99835,
+        "aleapp": 76244,
+        "rleapp": 6503,
+        "vleapp": 3218,
+        "lava": 4566,
+        "dleapp": 1958,
+        "gleapp": 939,
+        "batchleapp": 746
       },
       "probes": {
         "qnxprobe": 646,
