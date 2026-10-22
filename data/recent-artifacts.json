@@ -3,22 +3,22 @@
   "window_days": 45,
   "items": [
     {
+      "name": "life360DriverBehavior",
+      "query": "life360DriverBehavior",
+      "tool": "iLEAPP",
+      "date": "2026-10-22"
+    },
+    {
+      "name": "teamViewer",
+      "query": "teamViewer",
+      "tool": "DLEAPP",
+      "date": "2026-10-22"
+    },
+    {
       "name": "yandexDisk",
       "query": "yandexDisk",
       "tool": "ALEAPP",
       "date": "2026-10-21"
-    },
-    {
-      "name": "managedSettings",
-      "query": "managedSettings",
-      "tool": "iLEAPP",
-      "date": "2026-10-20"
-    },
-    {
-      "name": "whatsappWeb",
-      "query": "whatsappWeb",
-      "tool": "DLEAPP",
-      "date": "2026-10-19"
     },
     {
       "name": "ford sync wince voice cache",
@@ -33,22 +33,22 @@
       "date": "2026-09-28"
     },
     {
+      "name": "life360Awareness",
+      "query": "life360Awareness",
+      "tool": "iLEAPP",
+      "date": "2026-10-21"
+    },
+    {
+      "name": "windowsPowerShellTranscripts",
+      "query": "windowsPowerShellTranscripts",
+      "tool": "DLEAPP",
+      "date": "2026-10-22"
+    },
+    {
       "name": "googlePay",
       "query": "googlePay",
       "tool": "ALEAPP",
       "date": "2026-10-16"
-    },
-    {
-      "name": "batteryUISysdiagnose",
-      "query": "batteryUISysdiagnose",
-      "tool": "iLEAPP",
-      "date": "2026-10-20"
-    },
-    {
-      "name": "windowsUsbHidDevices",
-      "query": "windowsUsbHidDevices",
-      "tool": "DLEAPP",
-      "date": "2026-10-19"
     },
     {
       "name": "bluetooth hci snoop",
@@ -63,16 +63,16 @@
       "date": "2026-09-25"
     },
     {
-      "name": "djiFlightRecordTxt",
-      "query": "djiFlightRecordTxt",
-      "tool": "ALEAPP",
-      "date": "2026-10-16"
+      "name": "life360Stores",
+      "query": "life360Stores",
+      "tool": "iLEAPP",
+      "date": "2026-10-21"
     },
     {
-      "name": "containerManagerState",
-      "query": "containerManagerState",
-      "tool": "iLEAPP",
-      "date": "2026-10-18"
+      "name": "whatsappWeb",
+      "query": "whatsappWeb",
+      "tool": "DLEAPP",
+      "date": "2026-10-19"
     }
   ]
 }
