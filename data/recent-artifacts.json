@@ -3,22 +3,22 @@
   "window_days": 45,
   "items": [
     {
-      "name": "windowsPackagedAppAccounts",
-      "query": "windowsPackagedAppAccounts",
-      "tool": "DLEAPP",
+      "name": "djiFlightRecordTxt",
+      "query": "djiFlightRecordTxt",
+      "tool": "iLEAPP",
       "date": "2026-10-23"
     },
     {
-      "name": "life360Cache",
-      "query": "life360Cache",
-      "tool": "iLEAPP",
-      "date": "2026-10-22"
+      "name": "discordServers",
+      "query": "discordServers",
+      "tool": "ALEAPP",
+      "date": "2026-10-23"
     },
     {
-      "name": "yandexDisk",
-      "query": "yandexDisk",
-      "tool": "ALEAPP",
-      "date": "2026-10-21"
+      "name": "windowsUserComRegistrations",
+      "query": "windowsUserComRegistrations",
+      "tool": "DLEAPP",
+      "date": "2026-10-23"
     },
     {
       "name": "ford sync wince voice cache",
@@ -33,22 +33,22 @@
       "date": "2026-09-28"
     },
     {
-      "name": "windowsEventTranscript",
-      "query": "windowsEventTranscript",
-      "tool": "DLEAPP",
-      "date": "2026-10-22"
-    },
-    {
-      "name": "life360Recovered",
-      "query": "life360Recovered",
+      "name": "discordServers",
+      "query": "discordServers",
       "tool": "iLEAPP",
-      "date": "2026-10-22"
+      "date": "2026-10-23"
     },
     {
-      "name": "googlePay",
-      "query": "googlePay",
+      "name": "yandexDisk",
+      "query": "yandexDisk",
       "tool": "ALEAPP",
-      "date": "2026-10-16"
+      "date": "2026-10-21"
+    },
+    {
+      "name": "windowsLanmanServerShares",
+      "query": "windowsLanmanServerShares",
+      "tool": "DLEAPP",
+      "date": "2026-10-23"
     },
     {
       "name": "bluetooth hci snoop",
@@ -63,16 +63,16 @@
       "date": "2026-09-25"
     },
     {
-      "name": "teamViewer",
-      "query": "teamViewer",
-      "tool": "DLEAPP",
-      "date": "2026-10-22"
+      "name": "crashlytics",
+      "query": "crashlytics",
+      "tool": "iLEAPP",
+      "date": "2026-10-23"
     },
     {
-      "name": "life360DriverBehavior",
-      "query": "life360DriverBehavior",
-      "tool": "iLEAPP",
-      "date": "2026-10-22"
+      "name": "googlePay",
+      "query": "googlePay",
+      "tool": "ALEAPP",
+      "date": "2026-10-16"
     }
   ]
 }
