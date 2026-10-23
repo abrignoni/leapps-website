@@ -403,6 +403,58 @@
       "count": 9,
       "uniques": 6
      }
+    ],
+    "2026-10-23": [
+     {
+      "referrer": "Google",
+      "count": 792,
+      "uniques": 635
+     },
+     {
+      "referrer": "github.com",
+      "count": 586,
+      "uniques": 444
+     },
+     {
+      "referrer": "Bing",
+      "count": 110,
+      "uniques": 80
+     },
+     {
+      "referrer": "DuckDuckGo",
+      "count": 33,
+      "uniques": 31
+     },
+     {
+      "referrer": "search.brave.com",
+      "count": 30,
+      "uniques": 25
+     },
+     {
+      "referrer": "chatgpt.com",
+      "count": 19,
+      "uniques": 9
+     },
+     {
+      "referrer": "sleuthkit.org",
+      "count": 11,
+      "uniques": 8
+     },
+     {
+      "referrer": "rwu.brightspace.com",
+      "count": 10,
+      "uniques": 4
+     },
+     {
+      "referrer": "dfrws.org",
+      "count": 9,
+      "uniques": 8
+     },
+     {
+      "referrer": "mobilehackinglab.com",
+      "count": 9,
+      "uniques": 6
+     }
     ]
    },
    "paths": {
@@ -653,6 +705,68 @@
       "count": 38,
       "uniques": 8
      }
+    ],
+    "2026-10-23": [
+     {
+      "path": "/abrignoni/iLEAPP",
+      "title": "Overview",
+      "count": 1050,
+      "uniques": 733
+     },
+     {
+      "path": "/abrignoni/ILEAPP",
+      "title": "Overview",
+      "count": 771,
+      "uniques": 619
+     },
+     {
+      "path": "/abrignoni/iLEAPP/releases",
+      "title": "/releases",
+      "count": 538,
+      "uniques": 375
+     },
+     {
+      "path": "/abrignoni/iLEAPP/releases/tag/v2026.4.4",
+      "title": "/releases/tag/v2026.4.4",
+      "count": 306,
+      "uniques": 249
+     },
+     {
+      "path": "/abrignoni/iLEAPP/pulls",
+      "title": "/pulls",
+      "count": 155,
+      "uniques": 38
+     },
+     {
+      "path": "/abrignoni/iLEAPP/issues",
+      "title": "/issues",
+      "count": 96,
+      "uniques": 64
+     },
+     {
+      "path": "/abrignoni/iLEAPP/tree/main/scripts",
+      "title": "/tree/main/scripts",
+      "count": 50,
+      "uniques": 35
+     },
+     {
+      "path": "/abrignoni/iLEAPP/commits/main",
+      "title": "/commits/main",
+      "count": 49,
+      "uniques": 24
+     },
+     {
+      "path": "/abrignoni/iLEAPP/blob/main/scripts/_elements/iLEAPP_banner.png",
+      "title": "/blob/main/scripts/_elements/iLEAPP_banner.png",
+      "count": 48,
+      "uniques": 30
+     },
+     {
+      "path": "/abrignoni/iLEAPP/pull/2426",
+      "title": "/pull/2426",
+      "count": 38,
+      "uniques": 8
+     }
     ]
    }
   },
@@ -725,6 +839,10 @@
     "2026-10-21": {
      "count": 101,
      "uniques": 60
+    },
+    "2026-10-22": {
+     "count": 70,
+     "uniques": 42
     }
    },
    "clones_daily": {
@@ -795,6 +913,10 @@
     "2026-10-21": {
      "count": 1024,
      "uniques": 116
+    },
+    "2026-10-22": {
+     "count": 900,
+     "uniques": 130
     }
    },
    "views_weekly": {
@@ -814,13 +936,17 @@
      "count": 1496,
      "uniques": 703
     },
+    "2026-10-09": {
+     "count": 939,
+     "uniques": 453
+    },
     "2026-10-12": {
      "count": 1707,
      "uniques": 720
     },
     "2026-10-19": {
-     "count": 489,
-     "uniques": 242
+     "count": 559,
+     "uniques": 270
     }
    },
    "clones_weekly": {
@@ -840,13 +966,17 @@
      "count": 2244,
      "uniques": 635
     },
+    "2026-10-09": {
+     "count": 1341,
+     "uniques": 383
+    },
     "2026-10-12": {
      "count": 3976,
      "uniques": 681
     },
     "2026-10-19": {
-     "count": 1691,
-     "uniques": 363
+     "count": 2591,
+     "uniques": 474
     }
    },
    "referrers": {
@@ -1056,6 +1186,58 @@
       "referrer": "sleuthkit.org",
       "count": 8,
       "uniques": 6
+     }
+    ],
+    "2026-10-23": [
+     {
+      "referrer": "Google",
+      "count": 709,
+      "uniques": 524
+     },
+     {
+      "referrer": "github.com",
+      "count": 183,
+      "uniques": 157
+     },
+     {
+      "referrer": "Bing",
+      "count": 76,
+      "uniques": 56
+     },
+     {
+      "referrer": "search.brave.com",
+      "count": 55,
+      "uniques": 36
+     },
+     {
+      "referrer": "DuckDuckGo",
+      "count": 26,
+      "uniques": 21
+     },
+     {
+      "referrer": "com.reddit.frontpage",
+      "count": 12,
+      "uniques": 12
+     },
+     {
+      "referrer": "reddit.com",
+      "count": 11,
+      "uniques": 10
+     },
+     {
+      "referrer": "youtube.com",
+      "count": 10,
+      "uniques": 5
+     },
+     {
+      "referrer": "sleuthkit.org",
+      "count": 7,
+      "uniques": 5
+     },
+     {
+      "referrer": "yandex.kz",
+      "count": 6,
+      "uniques": 3
      }
     ]
    },
@@ -1307,6 +1489,68 @@
       "count": 25,
       "uniques": 18
      }
+    ],
+    "2026-10-23": [
+     {
+      "path": "/abrignoni/ALEAPP",
+      "title": "Overview",
+      "count": 1339,
+      "uniques": 931
+     },
+     {
+      "path": "/abrignoni/ALEAPP/releases",
+      "title": "/releases",
+      "count": 476,
+      "uniques": 321
+     },
+     {
+      "path": "/abrignoni/ALEAPP/releases/tag/v2026.4.3",
+      "title": "/releases/tag/v2026.4.3",
+      "count": 213,
+      "uniques": 165
+     },
+     {
+      "path": "/abrignoni/ALEAPP/pulls",
+      "title": "/pulls",
+      "count": 56,
+      "uniques": 17
+     },
+     {
+      "path": "/abrignoni/ALEAPP/tree/main/scripts",
+      "title": "/tree/main/scripts",
+      "count": 42,
+      "uniques": 28
+     },
+     {
+      "path": "/abrignoni/ALEAPP/issues",
+      "title": "/issues",
+      "count": 33,
+      "uniques": 29
+     },
+     {
+      "path": "/abrignoni/ALEAPP/compare/v2026.4.2...v2026.4.3",
+      "title": "/compare/v2026.4.2...v2026.4.3",
+      "count": 31,
+      "uniques": 29
+     },
+     {
+      "path": "/abrignoni/ALEAPP/tree/main/scripts/artifacts",
+      "title": "/tree/main/scripts/artifacts",
+      "count": 24,
+      "uniques": 17
+     },
+     {
+      "path": "/abrignoni/ALEAPP/blob/main/assets/ALEAPP_logo.png",
+      "title": "/blob/main/assets/ALEAPP_logo.png",
+      "count": 22,
+      "uniques": 20
+     },
+     {
+      "path": "/abrignoni/ALEAPP/tree/main",
+      "title": "/tree/main",
+      "count": 21,
+      "uniques": 17
+     }
     ]
    }
   },
@@ -1379,6 +1623,10 @@
     "2026-10-21": {
      "count": 33,
      "uniques": 13
+    },
+    "2026-10-22": {
+     "count": 5,
+     "uniques": 4
     }
    },
    "clones_daily": {
@@ -1449,6 +1697,10 @@
     "2026-10-21": {
      "count": 24,
      "uniques": 18
+    },
+    "2026-10-22": {
+     "count": 34,
+     "uniques": 22
     }
    },
    "views_weekly": {
@@ -1468,13 +1720,17 @@
      "count": 186,
      "uniques": 50
     },
+    "2026-10-09": {
+     "count": 147,
+     "uniques": 34
+    },
     "2026-10-12": {
      "count": 298,
      "uniques": 69
     },
     "2026-10-19": {
-     "count": 86,
-     "uniques": 24
+     "count": 91,
+     "uniques": 26
     }
    },
    "clones_weekly": {
@@ -1494,13 +1750,17 @@
      "count": 751,
      "uniques": 257
     },
+    "2026-10-09": {
+     "count": 541,
+     "uniques": 165
+    },
     "2026-10-12": {
      "count": 1011,
      "uniques": 225
     },
     "2026-10-19": {
-     "count": 108,
-     "uniques": 63
+     "count": 142,
+     "uniques": 82
     }
    },
    "referrers": {
@@ -1639,6 +1899,43 @@
      {
       "referrer": "Google",
       "count": 38,
+      "uniques": 28
+     },
+     {
+      "referrer": "Bing",
+      "count": 6,
+      "uniques": 6
+     },
+     {
+      "referrer": "DuckDuckGo",
+      "count": 2,
+      "uniques": 2
+     },
+     {
+      "referrer": "groups.io",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "referrer": "search.brave.com",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "referrer": "t.co",
+      "count": 1,
+      "uniques": 1
+     }
+    ],
+    "2026-10-23": [
+     {
+      "referrer": "Google",
+      "count": 37,
+      "uniques": 27
+     },
+     {
+      "referrer": "github.com",
+      "count": 32,
       "uniques": 28
      },
      {
@@ -1916,6 +2213,68 @@
       "count": 8,
       "uniques": 3
      }
+    ],
+    "2026-10-23": [
+     {
+      "path": "/abrignoni/RLEAPP",
+      "title": "Overview",
+      "count": 120,
+      "uniques": 87
+     },
+     {
+      "path": "/abrignoni/RLEAPP/releases",
+      "title": "/releases",
+      "count": 34,
+      "uniques": 28
+     },
+     {
+      "path": "/abrignoni/RLEAPP/releases/tag/v2026.4.3",
+      "title": "/releases/tag/v2026.4.3",
+      "count": 18,
+      "uniques": 12
+     },
+     {
+      "path": "/abrignoni/RLEAPP/tree/main/scripts",
+      "title": "/tree/main/scripts",
+      "count": 14,
+      "uniques": 11
+     },
+     {
+      "path": "/abrignoni/RLEAPP/pulls",
+      "title": "/pulls",
+      "count": 11,
+      "uniques": 5
+     },
+     {
+      "path": "/abrignoni/RLEAPP/pull/572",
+      "title": "/pull/572",
+      "count": 9,
+      "uniques": 4
+     },
+     {
+      "path": "/abrignoni/RLEAPP/pull/569",
+      "title": "/pull/569",
+      "count": 9,
+      "uniques": 3
+     },
+     {
+      "path": "/abrignoni/RLEAPP/pull/571",
+      "title": "/pull/571",
+      "count": 9,
+      "uniques": 3
+     },
+     {
+      "path": "/abrignoni/RLEAPP/pull/562",
+      "title": "/pull/562",
+      "count": 8,
+      "uniques": 3
+     },
+     {
+      "path": "/abrignoni/RLEAPP/pull/563",
+      "title": "/pull/563",
+      "count": 8,
+      "uniques": 3
+     }
     ]
    }
   },
@@ -1988,6 +2347,10 @@
     "2026-10-21": {
      "count": 17,
      "uniques": 8
+    },
+    "2026-10-22": {
+     "count": 7,
+     "uniques": 5
     }
    },
    "clones_daily": {
@@ -2058,6 +2421,10 @@
     "2026-10-21": {
      "count": 24,
      "uniques": 18
+    },
+    "2026-10-22": {
+     "count": 29,
+     "uniques": 19
     }
    },
    "views_weekly": {
@@ -2077,13 +2444,17 @@
      "count": 175,
      "uniques": 34
     },
+    "2026-10-09": {
+     "count": 116,
+     "uniques": 21
+    },
     "2026-10-12": {
      "count": 188,
      "uniques": 39
     },
     "2026-10-19": {
-     "count": 42,
-     "uniques": 15
+     "count": 49,
+     "uniques": 17
     }
    },
    "clones_weekly": {
@@ -2103,13 +2474,17 @@
      "count": 2750,
      "uniques": 535
     },
+    "2026-10-09": {
+     "count": 2712,
+     "uniques": 518
+    },
     "2026-10-12": {
      "count": 721,
      "uniques": 228
     },
     "2026-10-19": {
-     "count": 101,
-     "uniques": 52
+     "count": 130,
+     "uniques": 66
     }
    },
    "referrers": {
@@ -2214,6 +2589,28 @@
       "referrer": "Bing",
       "count": 4,
       "uniques": 3
+     },
+     {
+      "referrer": "search.org",
+      "count": 1,
+      "uniques": 1
+     }
+    ],
+    "2026-10-23": [
+     {
+      "referrer": "Google",
+      "count": 19,
+      "uniques": 10
+     },
+     {
+      "referrer": "github.com",
+      "count": 18,
+      "uniques": 15
+     },
+     {
+      "referrer": "Bing",
+      "count": 3,
+      "uniques": 2
      },
      {
       "referrer": "search.org",
@@ -2470,6 +2867,68 @@
       "count": 5,
       "uniques": 4
      }
+    ],
+    "2026-10-23": [
+     {
+      "path": "/abrignoni/VLEAPP",
+      "title": "Overview",
+      "count": 92,
+      "uniques": 55
+     },
+     {
+      "path": "/abrignoni/VLEAPP/releases",
+      "title": "/releases",
+      "count": 18,
+      "uniques": 16
+     },
+     {
+      "path": "/abrignoni/VLEAPP/releases/tag/v2026.4.3",
+      "title": "/releases/tag/v2026.4.3",
+      "count": 9,
+      "uniques": 8
+     },
+     {
+      "path": "/abrignoni/VLEAPP/commits/main",
+      "title": "/commits/main",
+      "count": 9,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/VLEAPP/pull/283",
+      "title": "/pull/283",
+      "count": 6,
+      "uniques": 3
+     },
+     {
+      "path": "/abrignoni/VLEAPP/pull/288",
+      "title": "/pull/288",
+      "count": 6,
+      "uniques": 3
+     },
+     {
+      "path": "/abrignoni/VLEAPP/pull/284",
+      "title": "/pull/284",
+      "count": 6,
+      "uniques": 2
+     },
+     {
+      "path": "/abrignoni/VLEAPP/blob/main/README.md",
+      "title": "/blob/main/README.md",
+      "count": 5,
+      "uniques": 5
+     },
+     {
+      "path": "/abrignoni/VLEAPP/pull/276",
+      "title": "/pull/276",
+      "count": 5,
+      "uniques": 3
+     },
+     {
+      "path": "/abrignoni/VLEAPP/pull/279",
+      "title": "/pull/279",
+      "count": 5,
+      "uniques": 3
+     }
     ]
    }
   },
@@ -2542,6 +3001,10 @@
     "2026-10-21": {
      "count": 6,
      "uniques": 2
+    },
+    "2026-10-22": {
+     "count": 3,
+     "uniques": 3
     }
    },
    "clones_daily": {
@@ -2612,6 +3075,10 @@
     "2026-10-21": {
      "count": 0,
      "uniques": 0
+    },
+    "2026-10-22": {
+     "count": 1,
+     "uniques": 1
     }
    },
    "views_weekly": {
@@ -2631,13 +3098,17 @@
      "count": 14,
      "uniques": 11
     },
+    "2026-10-09": {
+     "count": 6,
+     "uniques": 6
+    },
     "2026-10-12": {
      "count": 47,
      "uniques": 20
     },
     "2026-10-19": {
-     "count": 17,
-     "uniques": 8
+     "count": 20,
+     "uniques": 11
     }
    },
    "clones_weekly": {
@@ -2657,13 +3128,17 @@
      "count": 3,
      "uniques": 3
     },
+    "2026-10-09": {
+     "count": 2,
+     "uniques": 2
+    },
     "2026-10-12": {
      "count": 2,
      "uniques": 2
     },
     "2026-10-19": {
-     "count": 1,
-     "uniques": 1
+     "count": 2,
+     "uniques": 2
     }
    },
    "referrers": {
@@ -2719,6 +3194,23 @@
      }
     ],
     "2026-10-22": [
+     {
+      "referrer": "github.com",
+      "count": 6,
+      "uniques": 5
+     },
+     {
+      "referrer": "Bing",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "referrer": "Google",
+      "count": 1,
+      "uniques": 1
+     }
+    ],
+    "2026-10-23": [
      {
       "referrer": "github.com",
       "count": 6,
@@ -2948,6 +3440,56 @@
       "count": 1,
       "uniques": 1
      }
+    ],
+    "2026-10-23": [
+     {
+      "path": "/leapps-org/LAVA-releases",
+      "title": "Overview",
+      "count": 31,
+      "uniques": 20
+     },
+     {
+      "path": "/leapps-org/LAVA-releases/releases",
+      "title": "/releases",
+      "count": 22,
+      "uniques": 17
+     },
+     {
+      "path": "/leapps-org/LAVA-releases/releases/tag/v0.15.0",
+      "title": "/releases/tag/v0.15.0",
+      "count": 14,
+      "uniques": 12
+     },
+     {
+      "path": "/leapps-org/LAVA-releases/issues",
+      "title": "/issues",
+      "count": 2,
+      "uniques": 2
+     },
+     {
+      "path": "/leapps-org/LAVA-releases/blob/main/LICENSE",
+      "title": "/blob/main/LICENSE",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "path": "/leapps-org/LAVA-releases/blob/main/README.md",
+      "title": "/blob/main/README.md",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "path": "/leapps-org/LAVA-releases/pulls",
+      "title": "/pulls",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "path": "/leapps-org/LAVA-releases/tree/main",
+      "title": "/tree/main",
+      "count": 1,
+      "uniques": 1
+     }
     ]
    }
   },
@@ -3020,6 +3562,10 @@
     "2026-10-21": {
      "count": 20,
      "uniques": 10
+    },
+    "2026-10-22": {
+     "count": 17,
+     "uniques": 9
     }
    },
    "clones_daily": {
@@ -3090,6 +3636,10 @@
     "2026-10-21": {
      "count": 662,
      "uniques": 36
+    },
+    "2026-10-22": {
+     "count": 400,
+     "uniques": 46
     }
    },
    "views_weekly": {
@@ -3109,13 +3659,17 @@
      "count": 207,
      "uniques": 59
     },
+    "2026-10-09": {
+     "count": 153,
+     "uniques": 40
+    },
     "2026-10-12": {
      "count": 337,
      "uniques": 83
     },
     "2026-10-19": {
-     "count": 80,
-     "uniques": 36
+     "count": 97,
+     "uniques": 42
     }
    },
    "clones_weekly": {
@@ -3135,13 +3689,17 @@
      "count": 1210,
      "uniques": 287
     },
+    "2026-10-09": {
+     "count": 1188,
+     "uniques": 269
+    },
     "2026-10-12": {
      "count": 4212,
      "uniques": 657
     },
     "2026-10-19": {
-     "count": 1309,
-     "uniques": 188
+     "count": 1709,
+     "uniques": 222
     }
    },
    "referrers": {
@@ -3316,6 +3874,58 @@
       "referrer": "search.brave.com",
       "count": 11,
       "uniques": 6
+     },
+     {
+      "referrer": "matthewplascencia.substack.com",
+      "count": 7,
+      "uniques": 6
+     },
+     {
+      "referrer": "teams.public.onecdn.static.microsoft",
+      "count": 3,
+      "uniques": 2
+     },
+     {
+      "referrer": "leapps.org",
+      "count": 2,
+      "uniques": 2
+     },
+     {
+      "referrer": "linkedin.com",
+      "count": 2,
+      "uniques": 2
+     },
+     {
+      "referrer": "Bing",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "referrer": "DuckDuckGo",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "referrer": "forensicfocus.com",
+      "count": 1,
+      "uniques": 1
+     }
+    ],
+    "2026-10-23": [
+     {
+      "referrer": "Google",
+      "count": 31,
+      "uniques": 24
+     },
+     {
+      "referrer": "github.com",
+      "count": 24,
+      "uniques": 17
+     },
+     {
+      "referrer": "search.brave.com",
+      "count": 10,
+      "uniques": 7
      },
      {
       "referrer": "matthewplascencia.substack.com",
@@ -3602,6 +4212,68 @@
       "count": 6,
       "uniques": 3
      }
+    ],
+    "2026-10-23": [
+     {
+      "path": "/abrignoni/DLEAPP",
+      "title": "Overview",
+      "count": 147,
+      "uniques": 107
+     },
+     {
+      "path": "/abrignoni/DLEAPP/commits/main",
+      "title": "/commits/main",
+      "count": 39,
+      "uniques": 13
+     },
+     {
+      "path": "/abrignoni/DLEAPP/releases/tag/v2026.4.3",
+      "title": "/releases/tag/v2026.4.3",
+      "count": 19,
+      "uniques": 14
+     },
+     {
+      "path": "/abrignoni/DLEAPP/tree/main/scripts",
+      "title": "/tree/main/scripts",
+      "count": 19,
+      "uniques": 12
+     },
+     {
+      "path": "/abrignoni/DLEAPP/releases",
+      "title": "/releases",
+      "count": 18,
+      "uniques": 16
+     },
+     {
+      "path": "/abrignoni/DLEAPP/tree/main/scripts/artifacts",
+      "title": "/tree/main/scripts/artifacts",
+      "count": 12,
+      "uniques": 9
+     },
+     {
+      "path": "/abrignoni/DLEAPP/pull/528",
+      "title": "/pull/528",
+      "count": 7,
+      "uniques": 3
+     },
+     {
+      "path": "/abrignoni/DLEAPP/pull/534",
+      "title": "/pull/534",
+      "count": 7,
+      "uniques": 3
+     },
+     {
+      "path": "/abrignoni/DLEAPP/pull/521",
+      "title": "/pull/521",
+      "count": 6,
+      "uniques": 5
+     },
+     {
+      "path": "/abrignoni/DLEAPP/tree/main",
+      "title": "/tree/main",
+      "count": 6,
+      "uniques": 5
+     }
     ]
    }
   },
@@ -3674,6 +4346,10 @@
     "2026-10-21": {
      "count": 36,
      "uniques": 9
+    },
+    "2026-10-22": {
+     "count": 15,
+     "uniques": 9
     }
    },
    "clones_daily": {
@@ -3744,6 +4420,10 @@
     "2026-10-21": {
      "count": 110,
      "uniques": 28
+    },
+    "2026-10-22": {
+     "count": 18,
+     "uniques": 13
     }
    },
    "views_weekly": {
@@ -3763,13 +4443,17 @@
      "count": 135,
      "uniques": 40
     },
+    "2026-10-09": {
+     "count": 92,
+     "uniques": 26
+    },
     "2026-10-12": {
      "count": 215,
      "uniques": 52
     },
     "2026-10-19": {
-     "count": 94,
-     "uniques": 23
+     "count": 109,
+     "uniques": 29
     }
    },
    "clones_weekly": {
@@ -3789,13 +4473,17 @@
      "count": 473,
      "uniques": 112
     },
+    "2026-10-09": {
+     "count": 446,
+     "uniques": 105
+    },
     "2026-10-12": {
      "count": 423,
      "uniques": 133
     },
     "2026-10-19": {
-     "count": 125,
-     "uniques": 38
+     "count": 143,
+     "uniques": 51
     }
    },
    "referrers": {
@@ -3948,6 +4636,33 @@
      },
      {
       "referrer": "teams.public.onecdn.static.microsoft",
+      "count": 1,
+      "uniques": 1
+     }
+    ],
+    "2026-10-23": [
+     {
+      "referrer": "github.com",
+      "count": 32,
+      "uniques": 19
+     },
+     {
+      "referrer": "Google",
+      "count": 21,
+      "uniques": 18
+     },
+     {
+      "referrer": "Bing",
+      "count": 3,
+      "uniques": 3
+     },
+     {
+      "referrer": "DuckDuckGo",
+      "count": 2,
+      "uniques": 2
+     },
+     {
+      "referrer": "search.brave.com",
       "count": 1,
       "uniques": 1
      }
@@ -4201,6 +4916,68 @@
       "count": 8,
       "uniques": 3
      }
+    ],
+    "2026-10-23": [
+     {
+      "path": "/abrignoni/GLEAPP",
+      "title": "Overview",
+      "count": 100,
+      "uniques": 75
+     },
+     {
+      "path": "/abrignoni/GLEAPP/pulls",
+      "title": "/pulls",
+      "count": 35,
+      "uniques": 4
+     },
+     {
+      "path": "/abrignoni/GLEAPP/releases/tag/v2026.5.4",
+      "title": "/releases/tag/v2026.5.4",
+      "count": 26,
+      "uniques": 20
+     },
+     {
+      "path": "/abrignoni/GLEAPP/issues",
+      "title": "/issues",
+      "count": 16,
+      "uniques": 8
+     },
+     {
+      "path": "/abrignoni/GLEAPP/releases",
+      "title": "/releases",
+      "count": 12,
+      "uniques": 10
+     },
+     {
+      "path": "/abrignoni/GLEAPP/issues/285",
+      "title": "/issues/285",
+      "count": 11,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/GLEAPP/pull/303",
+      "title": "/pull/303",
+      "count": 10,
+      "uniques": 2
+     },
+     {
+      "path": "/abrignoni/GLEAPP/pull/265",
+      "title": "/pull/265",
+      "count": 8,
+      "uniques": 4
+     },
+     {
+      "path": "/abrignoni/GLEAPP/pull/257",
+      "title": "/pull/257",
+      "count": 8,
+      "uniques": 3
+     },
+     {
+      "path": "/abrignoni/GLEAPP/pull/260",
+      "title": "/pull/260",
+      "count": 8,
+      "uniques": 3
+     }
     ]
    }
   },
@@ -4273,6 +5050,10 @@
     "2026-10-21": {
      "count": 1,
      "uniques": 1
+    },
+    "2026-10-22": {
+     "count": 1,
+     "uniques": 1
     }
    },
    "clones_daily": {
@@ -4343,6 +5124,10 @@
     "2026-10-21": {
      "count": 2,
      "uniques": 2
+    },
+    "2026-10-22": {
+     "count": 4,
+     "uniques": 4
     }
    },
    "views_weekly": {
@@ -4362,12 +5147,16 @@
      "count": 15,
      "uniques": 7
     },
+    "2026-10-09": {
+     "count": 15,
+     "uniques": 7
+    },
     "2026-10-12": {
      "count": 48,
      "uniques": 20
     },
     "2026-10-19": {
-     "count": 6,
+     "count": 7,
      "uniques": 4
     }
    },
@@ -4388,13 +5177,17 @@
      "count": 13,
      "uniques": 13
     },
+    "2026-10-09": {
+     "count": 10,
+     "uniques": 10
+    },
     "2026-10-12": {
      "count": 32,
      "uniques": 32
     },
     "2026-10-19": {
-     "count": 9,
-     "uniques": 8
+     "count": 13,
+     "uniques": 12
     }
    },
    "referrers": {
@@ -4465,6 +5258,18 @@
      }
     ],
     "2026-10-22": [
+     {
+      "referrer": "Google",
+      "count": 7,
+      "uniques": 5
+     },
+     {
+      "referrer": "github.com",
+      "count": 4,
+      "uniques": 4
+     }
+    ],
+    "2026-10-23": [
      {
       "referrer": "Google",
       "count": 7,
@@ -4725,6 +5530,68 @@
       "count": 1,
       "uniques": 1
      }
+    ],
+    "2026-10-23": [
+     {
+      "path": "/abrignoni/batch-leapp",
+      "title": "Overview",
+      "count": 29,
+      "uniques": 20
+     },
+     {
+      "path": "/abrignoni/batch-leapp/pull/15",
+      "title": "/pull/15",
+      "count": 9,
+      "uniques": 3
+     },
+     {
+      "path": "/abrignoni/batch-leapp/releases",
+      "title": "/releases",
+      "count": 7,
+      "uniques": 6
+     },
+     {
+      "path": "/abrignoni/batch-leapp/pull/14",
+      "title": "/pull/14",
+      "count": 7,
+      "uniques": 3
+     },
+     {
+      "path": "/abrignoni/batch-leapp/releases/tag/v1.2.0",
+      "title": "/releases/tag/v1.2.0",
+      "count": 5,
+      "uniques": 5
+     },
+     {
+      "path": "/abrignoni/batch-leapp/blob/main/docs/batch-leapp-guide.md",
+      "title": "/blob/main/docs/batch-leapp-guide.md",
+      "count": 2,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/batch-leapp/blob/main/.gitignore",
+      "title": "/blob/main/.gitignore",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/batch-leapp/blob/main/batch_leapp_gui.py",
+      "title": "/blob/main/batch_leapp_gui.py",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/batch-leapp/blob/main/docs/report-index.png",
+      "title": "/blob/main/docs/report-index.png",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/batch-leapp/blob/main/docs/sample-data.md",
+      "title": "/blob/main/docs/sample-data.md",
+      "count": 1,
+      "uniques": 1
+     }
     ]
    }
   },
@@ -4797,6 +5664,10 @@
     "2026-10-21": {
      "count": 7,
      "uniques": 3
+    },
+    "2026-10-22": {
+     "count": 1,
+     "uniques": 1
     }
    },
    "clones_daily": {
@@ -4867,6 +5738,10 @@
     "2026-10-21": {
      "count": 8,
      "uniques": 6
+    },
+    "2026-10-22": {
+     "count": 7,
+     "uniques": 5
     }
    },
    "views_weekly": {
@@ -4886,12 +5761,16 @@
      "count": 72,
      "uniques": 21
     },
+    "2026-10-09": {
+     "count": 47,
+     "uniques": 15
+    },
     "2026-10-12": {
      "count": 104,
      "uniques": 45
     },
     "2026-10-19": {
-     "count": 35,
+     "count": 36,
      "uniques": 17
     }
    },
@@ -4912,13 +5791,17 @@
      "count": 227,
      "uniques": 90
     },
+    "2026-10-09": {
+     "count": 221,
+     "uniques": 84
+    },
     "2026-10-12": {
      "count": 556,
      "uniques": 171
     },
     "2026-10-19": {
-     "count": 39,
-     "uniques": 27
+     "count": 46,
+     "uniques": 32
     }
    },
    "referrers": {
@@ -5053,6 +5936,53 @@
       "referrer": "Google",
       "count": 16,
       "uniques": 15
+     },
+     {
+      "referrer": "linkedin.com",
+      "count": 10,
+      "uniques": 4
+     },
+     {
+      "referrer": "Bing",
+      "count": 4,
+      "uniques": 1
+     },
+     {
+      "referrer": "search.brave.com",
+      "count": 2,
+      "uniques": 2
+     },
+     {
+      "referrer": "DuckDuckGo",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "referrer": "leapps.org",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "referrer": "qwant.com",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "referrer": "teams.public.onecdn.static.microsoft",
+      "count": 1,
+      "uniques": 1
+     }
+    ],
+    "2026-10-23": [
+     {
+      "referrer": "github.com",
+      "count": 14,
+      "uniques": 7
+     },
+     {
+      "referrer": "Google",
+      "count": 13,
+      "uniques": 13
      },
      {
       "referrer": "linkedin.com",
@@ -5339,6 +6269,68 @@
       "count": 4,
       "uniques": 3
      }
+    ],
+    "2026-10-23": [
+     {
+      "path": "/abrignoni/qnxprobe",
+      "title": "Overview",
+      "count": 65,
+      "uniques": 44
+     },
+     {
+      "path": "/abrignoni/qnxprobe/commits/main",
+      "title": "/commits/main",
+      "count": 9,
+      "uniques": 4
+     },
+     {
+      "path": "/abrignoni/qnxprobe/pull/79",
+      "title": "/pull/79",
+      "count": 9,
+      "uniques": 3
+     },
+     {
+      "path": "/abrignoni/qnxprobe/pull/81",
+      "title": "/pull/81",
+      "count": 8,
+      "uniques": 3
+     },
+     {
+      "path": "/abrignoni/qnxprobe/releases",
+      "title": "/releases",
+      "count": 6,
+      "uniques": 2
+     },
+     {
+      "path": "/abrignoni/qnxprobe/pull/83",
+      "title": "/pull/83",
+      "count": 5,
+      "uniques": 4
+     },
+     {
+      "path": "/abrignoni/qnxprobe/pull/80",
+      "title": "/pull/80",
+      "count": 5,
+      "uniques": 3
+     },
+     {
+      "path": "/abrignoni/qnxprobe/pull/78",
+      "title": "/pull/78",
+      "count": 5,
+      "uniques": 2
+     },
+     {
+      "path": "/abrignoni/qnxprobe/blob/main/qnxprobe.py",
+      "title": "/blob/main/qnxprobe.py",
+      "count": 4,
+      "uniques": 3
+     },
+     {
+      "path": "/abrignoni/qnxprobe/pull/84",
+      "title": "/pull/84",
+      "count": 4,
+      "uniques": 3
+     }
     ]
    }
   },
@@ -5411,6 +6403,10 @@
     "2026-10-21": {
      "count": 0,
      "uniques": 0
+    },
+    "2026-10-22": {
+     "count": 1,
+     "uniques": 1
     }
    },
    "clones_daily": {
@@ -5481,6 +6477,10 @@
     "2026-10-21": {
      "count": 3,
      "uniques": 3
+    },
+    "2026-10-22": {
+     "count": 2,
+     "uniques": 2
     }
    },
    "views_weekly": {
@@ -5500,13 +6500,17 @@
      "count": 30,
      "uniques": 4
     },
+    "2026-10-09": {
+     "count": 24,
+     "uniques": 4
+    },
     "2026-10-12": {
      "count": 10,
      "uniques": 6
     },
     "2026-10-19": {
-     "count": 5,
-     "uniques": 3
+     "count": 6,
+     "uniques": 4
     }
    },
    "clones_weekly": {
@@ -5526,13 +6530,17 @@
      "count": 13,
      "uniques": 12
     },
+    "2026-10-09": {
+     "count": 8,
+     "uniques": 8
+    },
     "2026-10-12": {
      "count": 366,
      "uniques": 59
     },
     "2026-10-19": {
-     "count": 11,
-     "uniques": 6
+     "count": 13,
+     "uniques": 8
     }
    },
    "referrers": {
@@ -5568,6 +6576,18 @@
      }
     ],
     "2026-10-22": [
+     {
+      "referrer": "github.com",
+      "count": 4,
+      "uniques": 4
+     },
+     {
+      "referrer": "teams.public.onecdn.static.microsoft",
+      "count": 1,
+      "uniques": 1
+     }
+    ],
+    "2026-10-23": [
      {
       "referrer": "github.com",
       "count": 4,
@@ -5828,6 +6848,68 @@
       "count": 1,
       "uniques": 1
      }
+    ],
+    "2026-10-23": [
+     {
+      "path": "/abrignoni/ewfprobe",
+      "title": "Overview",
+      "count": 8,
+      "uniques": 8
+     },
+     {
+      "path": "/abrignoni/ewfprobe/releases",
+      "title": "/releases",
+      "count": 4,
+      "uniques": 2
+     },
+     {
+      "path": "/abrignoni/ewfprobe/blob/main/README.md",
+      "title": "/blob/main/README.md",
+      "count": 3,
+      "uniques": 2
+     },
+     {
+      "path": "/abrignoni/ewfprobe/pull/16",
+      "title": "/pull/16",
+      "count": 2,
+      "uniques": 2
+     },
+     {
+      "path": "/abrignoni/ewfprobe/pull/19",
+      "title": "/pull/19",
+      "count": 2,
+      "uniques": 2
+     },
+     {
+      "path": "/abrignoni/ewfprobe/blob/main/ewfprobe.py",
+      "title": "/blob/main/ewfprobe.py",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/ewfprobe/blob/main/ewfprobe_gui.py",
+      "title": "/blob/main/ewfprobe_gui.py",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/ewfprobe/commit/15a63cb7135a57503babe0beee4c100c74aab334",
+      "title": "/commit/15a63cb7135a57503babe0beee4c100c74aab334",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/ewfprobe/pull/10",
+      "title": "/pull/10",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/ewfprobe/pull/10/checks",
+      "title": "/pull/10/checks",
+      "count": 1,
+      "uniques": 1
+     }
     ]
    }
   },
@@ -5900,6 +6982,10 @@
     "2026-10-21": {
      "count": 0,
      "uniques": 0
+    },
+    "2026-10-22": {
+     "count": 0,
+     "uniques": 0
     }
    },
    "clones_daily": {
@@ -5970,6 +7056,10 @@
     "2026-10-21": {
      "count": 1,
      "uniques": 1
+    },
+    "2026-10-22": {
+     "count": 2,
+     "uniques": 2
     }
    },
    "views_weekly": {
@@ -5986,6 +7076,10 @@
      "uniques": 11
     },
     "2026-10-08": {
+     "count": 16,
+     "uniques": 11
+    },
+    "2026-10-09": {
      "count": 16,
      "uniques": 11
     },
@@ -6015,13 +7109,17 @@
      "count": 11,
      "uniques": 11
     },
+    "2026-10-09": {
+     "count": 6,
+     "uniques": 6
+    },
     "2026-10-12": {
      "count": 197,
      "uniques": 38
     },
     "2026-10-19": {
-     "count": 4,
-     "uniques": 4
+     "count": 6,
+     "uniques": 6
     }
    },
    "referrers": {
@@ -6062,6 +7160,18 @@
      }
     ],
     "2026-10-22": [
+     {
+      "referrer": "github.com",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "referrer": "web.telegram.org",
+      "count": 1,
+      "uniques": 1
+     }
+    ],
+    "2026-10-23": [
      {
       "referrer": "github.com",
       "count": 1,
@@ -6262,6 +7372,68 @@
      }
     ],
     "2026-10-22": [
+     {
+      "path": "/abrignoni/exoprobe",
+      "title": "Overview",
+      "count": 35,
+      "uniques": 29
+     },
+     {
+      "path": "/abrignoni/exoprobe/releases",
+      "title": "/releases",
+      "count": 9,
+      "uniques": 7
+     },
+     {
+      "path": "/abrignoni/exoprobe/releases/tag/v0.2.0",
+      "title": "/releases/tag/v0.2.0",
+      "count": 7,
+      "uniques": 6
+     },
+     {
+      "path": "/abrignoni/exoprobe/blob/main/README.md",
+      "title": "/blob/main/README.md",
+      "count": 5,
+      "uniques": 2
+     },
+     {
+      "path": "/abrignoni/exoprobe/releases/tag/v0.2.1",
+      "title": "/releases/tag/v0.2.1",
+      "count": 3,
+      "uniques": 3
+     },
+     {
+      "path": "/abrignoni/exoprobe/projects",
+      "title": "/projects",
+      "count": 2,
+      "uniques": 2
+     },
+     {
+      "path": "/abrignoni/exoprobe/pulls",
+      "title": "/pulls",
+      "count": 2,
+      "uniques": 2
+     },
+     {
+      "path": "/abrignoni/exoprobe/tree/main/tools",
+      "title": "/tree/main/tools",
+      "count": 2,
+      "uniques": 2
+     },
+     {
+      "path": "/abrignoni/exoprobe/actions",
+      "title": "/actions",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/exoprobe/blame/main/README.md",
+      "title": "/blame/main/README.md",
+      "count": 1,
+      "uniques": 1
+     }
+    ],
+    "2026-10-23": [
      {
       "path": "/abrignoni/exoprobe",
       "title": "Overview",
@@ -6394,6 +7566,10 @@
     "2026-10-21": {
      "count": 0,
      "uniques": 0
+    },
+    "2026-10-22": {
+     "count": 0,
+     "uniques": 0
     }
    },
    "clones_daily": {
@@ -6464,6 +7640,10 @@
     "2026-10-21": {
      "count": 7,
      "uniques": 6
+    },
+    "2026-10-22": {
+     "count": 3,
+     "uniques": 3
     }
    },
    "views_weekly": {
@@ -6480,6 +7660,10 @@
      "uniques": 0
     },
     "2026-10-08": {
+     "count": 0,
+     "uniques": 0
+    },
+    "2026-10-09": {
      "count": 0,
      "uniques": 0
     },
@@ -6509,20 +7693,25 @@
      "count": 0,
      "uniques": 0
     },
+    "2026-10-09": {
+     "count": 0,
+     "uniques": 0
+    },
     "2026-10-12": {
      "count": 181,
      "uniques": 38
     },
     "2026-10-19": {
-     "count": 91,
-     "uniques": 17
+     "count": 94,
+     "uniques": 20
     }
    },
    "referrers": {
     "2026-10-19": [],
     "2026-10-20": [],
     "2026-10-21": [],
-    "2026-10-22": []
+    "2026-10-22": [],
+    "2026-10-23": []
    },
    "paths": {
     "2026-10-19": [
@@ -6568,6 +7757,20 @@
      }
     ],
     "2026-10-22": [
+     {
+      "path": "/abrignoni/chromiumcacheprobe",
+      "title": "Overview",
+      "count": 4,
+      "uniques": 4
+     },
+     {
+      "path": "/abrignoni/chromiumcacheprobe/releases",
+      "title": "/releases",
+      "count": 1,
+      "uniques": 1
+     }
+    ],
+    "2026-10-23": [
      {
       "path": "/abrignoni/chromiumcacheprobe",
       "title": "Overview",
@@ -6652,6 +7855,10 @@
     "2026-10-21": {
      "count": 1,
      "uniques": 1
+    },
+    "2026-10-22": {
+     "count": 0,
+     "uniques": 0
     }
    },
    "clones_daily": {
@@ -6722,6 +7929,10 @@
     "2026-10-21": {
      "count": 11,
      "uniques": 6
+    },
+    "2026-10-22": {
+     "count": 1,
+     "uniques": 1
     }
    },
    "views_weekly": {
@@ -6738,6 +7949,10 @@
      "uniques": 3
     },
     "2026-10-08": {
+     "count": 5,
+     "uniques": 3
+    },
+    "2026-10-09": {
      "count": 5,
      "uniques": 3
     },
@@ -6767,13 +7982,17 @@
      "count": 14,
      "uniques": 13
     },
+    "2026-10-09": {
+     "count": 9,
+     "uniques": 9
+    },
     "2026-10-12": {
      "count": 793,
      "uniques": 122
     },
     "2026-10-19": {
-     "count": 55,
-     "uniques": 14
+     "count": 56,
+     "uniques": 15
     }
    },
    "referrers": {
@@ -6799,6 +8018,13 @@
      }
     ],
     "2026-10-22": [
+     {
+      "referrer": "github.com",
+      "count": 2,
+      "uniques": 1
+     }
+    ],
+    "2026-10-23": [
      {
       "referrer": "github.com",
       "count": 2,
@@ -6970,6 +8196,50 @@
      }
     ],
     "2026-10-22": [
+     {
+      "path": "/abrignoni/mediacarve",
+      "title": "Overview",
+      "count": 14,
+      "uniques": 8
+     },
+     {
+      "path": "/abrignoni/mediacarve/pull/3",
+      "title": "/pull/3",
+      "count": 7,
+      "uniques": 3
+     },
+     {
+      "path": "/abrignoni/mediacarve/releases/tag/v0.14.0",
+      "title": "/releases/tag/v0.14.0",
+      "count": 3,
+      "uniques": 2
+     },
+     {
+      "path": "/abrignoni/mediacarve/releases",
+      "title": "/releases",
+      "count": 2,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/mediacarve/blob/main/LICENSE",
+      "title": "/blob/main/LICENSE",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/mediacarve/commit/4251007a31a87439545cee857abd07142bc182c7",
+      "title": "/commit/4251007a31a87439545cee857abd07142bc182c7",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/mediacarve/pull/2",
+      "title": "/pull/2",
+      "count": 1,
+      "uniques": 1
+     }
+    ],
+    "2026-10-23": [
      {
       "path": "/abrignoni/mediacarve",
       "title": "Overview",
