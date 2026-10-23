@@ -1,17 +1,17 @@
 {
-  "generated": "2026-10-22",
+  "generated": "2026-10-23",
   "window_days": 45,
   "items": [
+    {
+      "name": "windowsPackagedAppAccounts",
+      "query": "windowsPackagedAppAccounts",
+      "tool": "DLEAPP",
+      "date": "2026-10-23"
+    },
     {
       "name": "life360Cache",
       "query": "life360Cache",
       "tool": "iLEAPP",
-      "date": "2026-10-22"
-    },
-    {
-      "name": "windowsEventTranscript",
-      "query": "windowsEventTranscript",
-      "tool": "DLEAPP",
       "date": "2026-10-22"
     },
     {
@@ -33,15 +33,15 @@
       "date": "2026-09-28"
     },
     {
-      "name": "life360Recovered",
-      "query": "life360Recovered",
-      "tool": "iLEAPP",
+      "name": "windowsEventTranscript",
+      "query": "windowsEventTranscript",
+      "tool": "DLEAPP",
       "date": "2026-10-22"
     },
     {
-      "name": "teamViewer",
-      "query": "teamViewer",
-      "tool": "DLEAPP",
+      "name": "life360Recovered",
+      "query": "life360Recovered",
+      "tool": "iLEAPP",
       "date": "2026-10-22"
     },
     {
@@ -63,15 +63,15 @@
       "date": "2026-09-25"
     },
     {
-      "name": "life360DriverBehavior",
-      "query": "life360DriverBehavior",
-      "tool": "iLEAPP",
+      "name": "teamViewer",
+      "query": "teamViewer",
+      "tool": "DLEAPP",
       "date": "2026-10-22"
     },
     {
-      "name": "windowsPowerShellTranscripts",
-      "query": "windowsPowerShellTranscripts",
-      "tool": "DLEAPP",
+      "name": "life360DriverBehavior",
+      "query": "life360DriverBehavior",
+      "tool": "iLEAPP",
       "date": "2026-10-22"
     }
   ]
