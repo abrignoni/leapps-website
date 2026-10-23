@@ -9,8 +9,8 @@
       "date": "2026-10-23"
     },
     {
-      "name": "discordServers",
-      "query": "discordServers",
+      "name": "KeepSafe",
+      "query": "KeepSafe",
       "tool": "ALEAPP",
       "date": "2026-10-23"
     },
@@ -39,10 +39,10 @@
       "date": "2026-10-23"
     },
     {
-      "name": "yandexDisk",
-      "query": "yandexDisk",
+      "name": "discordServers",
+      "query": "discordServers",
       "tool": "ALEAPP",
-      "date": "2026-10-21"
+      "date": "2026-10-23"
     },
     {
       "name": "windowsLanmanServerShares",
@@ -69,10 +69,10 @@
       "date": "2026-10-23"
     },
     {
-      "name": "googlePay",
-      "query": "googlePay",
+      "name": "yandexDisk",
+      "query": "yandexDisk",
       "tool": "ALEAPP",
-      "date": "2026-10-16"
+      "date": "2026-10-21"
     }
   ]
 }
