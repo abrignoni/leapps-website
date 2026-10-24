@@ -1,5 +1,22 @@
 [
   {
+    "slug": "2026-10-23-ffs-zip-mac-times-part-two",
+    "title": "Full File System extractions in Zip: MAC times, part two",
+    "date": "2026-10-23",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "iLEAPP",
+      "ALEAPP",
+      "RLEAPP",
+      "VLEAPP",
+      "DLEAPP",
+      "timestamps",
+      "zip",
+      "validation"
+    ],
+    "excerpt": "The times stored inside full file system zips do not always mean what their labels say. CLBX zips put the access time in every slot, and GrayKey style zips carry a fourth time. Here is how CTF writeups and a photo's EXIF settled it, and what changed in the LEAPPs."
+  },
+  {
     "slug": "2026-10-20-put-ai-in-the-code-not-the-conclusions",
     "title": "DFIR Thoughts: Put AI in the code, not the conclusions",
     "date": "2026-10-20",
