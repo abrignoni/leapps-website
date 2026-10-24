@@ -55,7 +55,7 @@ Everything is under `/data/data/com.kii.safe/`, and there is more variety than y
 
 ### Reading the Fleece-encoded records
 
-KeepSafe's databases are SQLite files. In each one, Couchbase Lite puts every record in one table, `kv_default`, and each record's details (for a vault file, an album or a break-in) sit in a single `body` column as a binary blob in Couchbase's **Fleece** format. The photos and videos themselves are separate files, under `files/media` and `files/breakin`.
+KeepSafe's databases are SQLite files. In each one, Couchbase Lite keeps the records of the default collection, the only one KeepSafe uses, in one table, `kv_default`, and each record's details (for a vault file, an album or a break-in) sit in a single `body` column as a binary blob in Couchbase's **Fleece** format. The photos and videos themselves are separate files, under `files/media` and `files/breakin`.
 
 ![DB Browser for SQLite showing the kv_default table of KeepSafe's mediaDb. The body column, outlined in red, holds a BLOB for every record. One record's body is selected and shown on the right as hex bytes with a text column, outlined in blue.](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/2026-10-23-keepsafe-android-aleapp/keepsafe-fleece-body.webp)
 
@@ -63,8 +63,8 @@ KeepSafe's databases are SQLite files. In each one, Couchbase Lite puts every re
 
 Fleece is a compact, JSON-like binary format. Two things make it awkward to read by hand:
 
-- **It is read from the end.** The last two bytes of the blob point back to the top-level record, and values inside it point backwards to each other.
-- **Many field names aren't in the record.** Common fields are stored under small numbers, and the list that turns those numbers into names is stored once per database, in the `kv_info` table under the key `SharedKeys`. Other field names, like `createdAtOnDevice` in Figure 1, are stored as text in the record itself.
+- **It is read from the end.** The last two bytes of the blob point back to the top-level record (with one more hop when the record is larger than 64 KB), and any value that does not fit inline is reached through a pointer that always points backwards ([Fleece format notes](https://github.com/couchbase/fleece/blob/8ce5f690480b77c0f93d03f456a29828b5a55d66/Fleece.md#L54)).
+- **Many field names aren't in the record.** A field name of up to 16 characters, made only of letters, digits, `_` or `-`, is stored as a small number, up to 2,048 names per database ([SharedKeys.hh](https://github.com/couchbase/fleece/blob/8ce5f690480b77c0f93d03f456a29828b5a55d66/Fleece/Core/SharedKeys.hh#L111-L112)). The list that turns those numbers back into names is stored once per database, in the `kv_info` table under the key `SharedKeys` ([DocumentKeys.hh](https://github.com/couchbase/couchbase-lite-core/blob/ea2f962af6d51d3eac84531fa4de2f3a1593a09e/LiteCore/Storage/DocumentKeys.hh#L30)). Longer names, like the 17-character `createdAtOnDevice` in Figure 1, are stored as text in the record itself.
 
 So a hex view of a `body` shows the values (`image/jpeg`, `backedUp`, a SHA-1 hash) but not the names of most of the fields they belong to. Decode it with `SharedKeys` and you get something readable:
 
@@ -83,7 +83,7 @@ So a hex view of a `body` shows the values (`image/jpeg`, `backedUp`, a SHA-1 ha
 }
 ```
 
-The ALEAPP module includes a small Fleece decoder written in plain Python. It reads `SharedKeys` first, then decodes each record's `body`. One more detail: when a record is deleted, Couchbase moves it to a second table, `kv_del_default`, which keeps only the record's ID.
+The ALEAPP module includes a small Fleece decoder written in plain Python. It reads `SharedKeys` first, then decodes each record's `body`. One more detail: when a record is deleted, Couchbase saves it, marked as deleted, in a second table, `kv_del_default`, which has the same columns, and removes it from `kv_default` ([BothKeyStore.cc](https://github.com/couchbase/couchbase-lite-core/blob/ea2f962af6d51d3eac84531fa4de2f3a1593a09e/LiteCore/Storage/BothKeyStore.cc#L44-L47)).
 
 ## The artifacts
 
@@ -169,6 +169,31 @@ The less funny version, which is still worth a laugh:
 - **Manual attempts on the device create data.** On KeepSafe they create records with your PIN guesses and your picture, even on the free version, where the owner can't see them. Document every attempt in your notes, because the app certainly will.
 - **Not every break-in record is the subject.** Before you call someone an intruder, check the time against your own handling of the device. The intruder might be you.
 - **If you test apps on your own phone, check your break-in folder before sharing data.** Ask me how I know.
+
+## Reading any Couchbase Lite database
+
+KeepSafe is not the only app that keeps its data in Couchbase Lite, and the ALEAPP module only reads what KeepSafe stores. For everything else there is [cblite-parser](https://github.com/abrignoni/cblite-parser), a read-only reader for Couchbase Lite databases and the Fleece documents inside them. It is pure Python with no dependencies, free and open source under the MIT license, and it does not open the database in place: it copies the database and its `-wal` and `-shm` to a temporary folder and reads the copy.
+
+It reads:
+
+- every document of every collection, decoded, with its revision ID, sequence and flags;
+- the revision tree, including any older version of a document the database kept;
+- deleted documents in the `kv_del_` tables;
+- the database's own records in `kv_info`, including the shared key table;
+- blob references, with a check that each blob file matches the digest the document recorded;
+- rows that exist only in the `-wal`.
+
+`python -m cblite_parser export <store> <new folder>` writes a report for someone who would rather not use a command line: an `index.html` that opens in any browser with no network, plus `documents.csv`, `revisions.csv`, `blobs.csv` and an `export_info.json` with the size and SHA-256 of every source file it read.
+
+KeepSafe on iOS uses Couchbase Lite too. Here is cblite-parser's export of KeepSafe's iOS store from the iOS image in Cody Bounds' public Digital Forensics Cookbook Datasets (iOS 17.5.1, listed on [The Evidence Locker](https://theevidencelocker.github.io/)):
+
+![The top of a cblite-parser HTML export of photovault.cblite2: the export time and tool version, a Source table listing db.sqlite3, its -wal and -shm with their sizes and SHA-256 hashes, a Database section showing versioning 1 (revision trees, 3.x schema), 28 shared keys and 30 documents with 0 tombstones, collapsed kv_info and shared key tables, and the start of the documents table with sequence, key, revid, flags, expiration and body columns.](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/2026-10-23-keepsafe-android-aleapp/cblite-export-overview.webp)
+
+*Figure 7: the top of the HTML export. The source files are hashed, and the database's own records come before the documents.*
+
+![One document from the same export, expanded: the full decoded body of a KeepSafe photo record with its field names, including id, ownerId, type, importedAt, albumId, originalFilename, a media list for the photo, thumbnail and preview with their sizes and hashes, backupState and createdAtOnDevice.](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/2026-10-23-keepsafe-android-aleapp/cblite-export-document.webp)
+
+*Figure 8: one document expanded. The field names come from the database's shared key table, and `createdAtOnDevice` is there as text, as described above.*
 
 ## Getting the module
 
