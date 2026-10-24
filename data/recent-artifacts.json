@@ -3,6 +3,12 @@
   "window_days": 45,
   "items": [
     {
+      "name": "macosAuthKit",
+      "query": "macosAuthKit",
+      "tool": "DLEAPP",
+      "date": "2026-10-24"
+    },
+    {
       "name": "djiFlightRecordTxt",
       "query": "djiFlightRecordTxt",
       "tool": "iLEAPP",
@@ -12,12 +18,6 @@
       "name": "KeepSafe",
       "query": "KeepSafe",
       "tool": "ALEAPP",
-      "date": "2026-10-23"
-    },
-    {
-      "name": "windowsUserComRegistrations",
-      "query": "windowsUserComRegistrations",
-      "tool": "DLEAPP",
       "date": "2026-10-23"
     },
     {
@@ -33,6 +33,12 @@
       "date": "2026-09-28"
     },
     {
+      "name": "windowsUserComRegistrations",
+      "query": "windowsUserComRegistrations",
+      "tool": "DLEAPP",
+      "date": "2026-10-23"
+    },
+    {
       "name": "discordServers",
       "query": "discordServers",
       "tool": "iLEAPP",
@@ -42,12 +48,6 @@
       "name": "discordServers",
       "query": "discordServers",
       "tool": "ALEAPP",
-      "date": "2026-10-23"
-    },
-    {
-      "name": "windowsLanmanServerShares",
-      "query": "windowsLanmanServerShares",
-      "tool": "DLEAPP",
       "date": "2026-10-23"
     },
     {
@@ -63,16 +63,16 @@
       "date": "2026-09-25"
     },
     {
+      "name": "windowsLanmanServerShares",
+      "query": "windowsLanmanServerShares",
+      "tool": "DLEAPP",
+      "date": "2026-10-23"
+    },
+    {
       "name": "crashlytics",
       "query": "crashlytics",
       "tool": "iLEAPP",
       "date": "2026-10-23"
-    },
-    {
-      "name": "yandexDisk",
-      "query": "yandexDisk",
-      "tool": "ALEAPP",
-      "date": "2026-10-21"
     }
   ]
 }
