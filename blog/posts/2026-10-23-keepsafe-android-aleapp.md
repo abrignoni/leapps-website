@@ -172,6 +172,6 @@ The less funny version, which is still worth a laugh:
 
 ## Getting the module
 
-The module is in a pull request to ALEAPP: [abrignoni/ALEAPP#1758](https://github.com/abrignoni/ALEAPP/pull/1758). It was built and checked against a full file-system extraction of my own test phone, a Pixel 8 Pro running KeepSafe 14.23.0.
+The KeepSafe module is now part of ALEAPP ([abrignoni/ALEAPP#1758](https://github.com/abrignoni/ALEAPP/pull/1758)). It was built and checked against a full file-system extraction of my own test phone, a Pixel 8 Pro running KeepSafe 14.23.0.
 
 And if you try it on your own phone first, you may find someone familiar in the Break-in Records. Smile.
