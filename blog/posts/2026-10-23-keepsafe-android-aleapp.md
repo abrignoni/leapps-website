@@ -1,7 +1,7 @@
 ---
 title: "KeepSafe for Android Caught an Intruder. It Was Me."
 date: 2026-10-23
-author: Heather Charpentier
+author: Heather Charpentier and Alexis Brignoni
 tags: [ALEAPP, Android, artifacts, research, media]
 excerpt: KeepSafe hides photos behind a PIN, a decoy vault and a fake calculator. It also quietly photographs anyone who gets the PIN wrong. I found that out by finding the top of my own head in the extraction. Here is how the app stores its data and what the new ALEAPP module reports.
 ---
