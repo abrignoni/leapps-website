@@ -1,7 +1,13 @@
 {
-  "generated": "2026-10-24",
+  "generated": "2026-10-25",
   "window_days": 45,
   "items": [
+    {
+      "name": "grokReturns",
+      "query": "grokReturns",
+      "tool": "RLEAPP",
+      "date": "2026-10-25"
+    },
     {
       "name": "macosAuthKit",
       "query": "macosAuthKit",
@@ -66,12 +72,6 @@
       "name": "windowsLanmanServerShares",
       "query": "windowsLanmanServerShares",
       "tool": "DLEAPP",
-      "date": "2026-10-23"
-    },
-    {
-      "name": "crashlytics",
-      "query": "crashlytics",
-      "tool": "iLEAPP",
       "date": "2026-10-23"
     }
   ]
