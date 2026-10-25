@@ -1629,17 +1629,17 @@
     {
       "date": "2026-10-25",
       "totals": {
-        "ileapp": 100204,
-        "aleapp": 76694,
-        "rleapp": 6554,
-        "vleapp": 3260,
-        "lava": 4649,
-        "dleapp": 2014,
-        "gleapp": 976,
-        "batchleapp": 772
+        "ileapp": 100229,
+        "aleapp": 76735,
+        "rleapp": 6559,
+        "vleapp": 3263,
+        "lava": 4650,
+        "dleapp": 2017,
+        "gleapp": 977,
+        "batchleapp": 775
       },
       "probes": {
-        "qnxprobe": 688,
+        "qnxprobe": 689,
         "ewfprobe": 243,
         "exoprobe": 94,
         "chromiumcacheprobe": 20,
