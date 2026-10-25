@@ -3,6 +3,18 @@
   "window_days": 45,
   "items": [
     {
+      "name": "smsAppPayloads",
+      "query": "smsAppPayloads",
+      "tool": "iLEAPP",
+      "date": "2026-10-25"
+    },
+    {
+      "name": "healthConnect",
+      "query": "healthConnect",
+      "tool": "ALEAPP",
+      "date": "2026-10-25"
+    },
+    {
       "name": "grokReturns",
       "query": "grokReturns",
       "tool": "RLEAPP",
@@ -15,22 +27,22 @@
       "date": "2026-10-24"
     },
     {
-      "name": "djiFlightRecordTxt",
-      "query": "djiFlightRecordTxt",
-      "tool": "iLEAPP",
-      "date": "2026-10-23"
-    },
-    {
-      "name": "KeepSafe",
-      "query": "KeepSafe",
-      "tool": "ALEAPP",
-      "date": "2026-10-23"
-    },
-    {
       "name": "ford sync wince voice cache",
       "query": "ford_sync_wince_voice_cache",
       "tool": "VLEAPP",
       "date": "2026-10-10"
+    },
+    {
+      "name": "smsEdits",
+      "query": "smsEdits",
+      "tool": "iLEAPP",
+      "date": "2026-10-25"
+    },
+    {
+      "name": "samsungSmartSwitch",
+      "query": "samsungSmartSwitch",
+      "tool": "ALEAPP",
+      "date": "2026-10-25"
     },
     {
       "name": "tikTokReturnPdf",
@@ -45,34 +57,22 @@
       "date": "2026-10-23"
     },
     {
-      "name": "discordServers",
-      "query": "discordServers",
-      "tool": "iLEAPP",
-      "date": "2026-10-23"
-    },
-    {
-      "name": "discordServers",
-      "query": "discordServers",
-      "tool": "ALEAPP",
-      "date": "2026-10-23"
-    },
-    {
       "name": "bluetooth hci snoop",
       "query": "bluetooth_hci_snoop",
       "tool": "VLEAPP",
       "date": "2026-10-10"
     },
     {
-      "name": "robinhoodReturns",
-      "query": "robinhoodReturns",
-      "tool": "RLEAPP",
-      "date": "2026-09-25"
+      "name": "smsReactions",
+      "query": "smsReactions",
+      "tool": "iLEAPP",
+      "date": "2026-10-25"
     },
     {
-      "name": "windowsLanmanServerShares",
-      "query": "windowsLanmanServerShares",
-      "tool": "DLEAPP",
-      "date": "2026-10-23"
+      "name": "blockedNumbers",
+      "query": "blockedNumbers",
+      "tool": "ALEAPP",
+      "date": "2026-10-25"
     }
   ]
 }

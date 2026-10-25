@@ -1629,19 +1629,19 @@
     {
       "date": "2026-10-25",
       "totals": {
-        "ileapp": 100179,
-        "aleapp": 76666,
-        "rleapp": 6550,
-        "vleapp": 3256,
-        "lava": 4640,
-        "dleapp": 2007,
-        "gleapp": 972,
-        "batchleapp": 770
+        "ileapp": 100204,
+        "aleapp": 76694,
+        "rleapp": 6554,
+        "vleapp": 3260,
+        "lava": 4649,
+        "dleapp": 2014,
+        "gleapp": 976,
+        "batchleapp": 772
       },
       "probes": {
-        "qnxprobe": 687,
-        "ewfprobe": 242,
-        "exoprobe": 93,
+        "qnxprobe": 688,
+        "ewfprobe": 243,
+        "exoprobe": 94,
         "chromiumcacheprobe": 20,
         "mediacarve": 39
       }
