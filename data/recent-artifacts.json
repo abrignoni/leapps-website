@@ -3,15 +3,15 @@
   "window_days": 45,
   "items": [
     {
+      "name": "playInstallSource",
+      "query": "playInstallSource",
+      "tool": "ALEAPP",
+      "date": "2026-10-26"
+    },
+    {
       "name": "smsAppPayloads",
       "query": "smsAppPayloads",
       "tool": "iLEAPP",
-      "date": "2026-10-25"
-    },
-    {
-      "name": "healthConnect",
-      "query": "healthConnect",
-      "tool": "ALEAPP",
       "date": "2026-10-25"
     },
     {
@@ -33,15 +33,15 @@
       "date": "2026-10-10"
     },
     {
+      "name": "lockSettings",
+      "query": "lockSettings",
+      "tool": "ALEAPP",
+      "date": "2026-10-26"
+    },
+    {
       "name": "smsEdits",
       "query": "smsEdits",
       "tool": "iLEAPP",
-      "date": "2026-10-25"
-    },
-    {
-      "name": "samsungSmartSwitch",
-      "query": "samsungSmartSwitch",
-      "tool": "ALEAPP",
       "date": "2026-10-25"
     },
     {
@@ -63,15 +63,15 @@
       "date": "2026-10-10"
     },
     {
+      "name": "playDataUsage",
+      "query": "playDataUsage",
+      "tool": "ALEAPP",
+      "date": "2026-10-26"
+    },
+    {
       "name": "smsReactions",
       "query": "smsReactions",
       "tool": "iLEAPP",
-      "date": "2026-10-25"
-    },
-    {
-      "name": "blockedNumbers",
-      "query": "blockedNumbers",
-      "tool": "ALEAPP",
       "date": "2026-10-25"
     }
   ]
