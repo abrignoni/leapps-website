@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "gmsScreenlockStateHistory",
-      "query": "gmsScreenlockStateHistory",
+      "name": "samsungTcpMonitorApInfo",
+      "query": "samsungTcpMonitorApInfo",
       "tool": "ALEAPP",
       "date": "2026-10-27"
     },
@@ -33,10 +33,10 @@
       "date": "2026-10-10"
     },
     {
-      "name": "playInstallSource",
-      "query": "playInstallSource",
+      "name": "rollbackStore",
+      "query": "rollbackStore",
       "tool": "ALEAPP",
-      "date": "2026-10-26"
+      "date": "2026-10-27"
     },
     {
       "name": "smsEdits",
@@ -63,10 +63,10 @@
       "date": "2026-10-10"
     },
     {
-      "name": "lockSettings",
-      "query": "lockSettings",
+      "name": "gmsScreenlockStateHistory",
+      "query": "gmsScreenlockStateHistory",
       "tool": "ALEAPP",
-      "date": "2026-10-26"
+      "date": "2026-10-27"
     },
     {
       "name": "smsReactions",
