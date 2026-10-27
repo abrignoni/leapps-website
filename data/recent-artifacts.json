@@ -3,21 +3,21 @@
   "window_days": 45,
   "items": [
     {
-      "name": "samsungTcpMonitorApInfo",
-      "query": "samsungTcpMonitorApInfo",
+      "name": "hiveBoxes",
+      "query": "hiveBoxes",
       "tool": "ALEAPP",
+      "date": "2026-10-27"
+    },
+    {
+      "name": "grokReturns",
+      "query": "grokReturns",
+      "tool": "RLEAPP",
       "date": "2026-10-27"
     },
     {
       "name": "smsAppPayloads",
       "query": "smsAppPayloads",
       "tool": "iLEAPP",
-      "date": "2026-10-25"
-    },
-    {
-      "name": "grokReturns",
-      "query": "grokReturns",
-      "tool": "RLEAPP",
       "date": "2026-10-25"
     },
     {
@@ -33,22 +33,22 @@
       "date": "2026-10-10"
     },
     {
-      "name": "rollbackStore",
-      "query": "rollbackStore",
+      "name": "bugreportPermissions",
+      "query": "bugreportPermissions",
       "tool": "ALEAPP",
       "date": "2026-10-27"
-    },
-    {
-      "name": "smsEdits",
-      "query": "smsEdits",
-      "tool": "iLEAPP",
-      "date": "2026-10-25"
     },
     {
       "name": "tikTokReturnPdf",
       "query": "tikTokReturnPdf",
       "tool": "RLEAPP",
       "date": "2026-09-28"
+    },
+    {
+      "name": "smsEdits",
+      "query": "smsEdits",
+      "tool": "iLEAPP",
+      "date": "2026-10-25"
     },
     {
       "name": "macosAuthKit",
@@ -63,16 +63,16 @@
       "date": "2026-10-10"
     },
     {
-      "name": "gmsScreenlockStateHistory",
-      "query": "gmsScreenlockStateHistory",
+      "name": "bugreportUsageJobs",
+      "query": "bugreportUsageJobs",
       "tool": "ALEAPP",
       "date": "2026-10-27"
     },
     {
-      "name": "smsReactions",
-      "query": "smsReactions",
-      "tool": "iLEAPP",
-      "date": "2026-10-25"
+      "name": "robinhoodReturns",
+      "query": "robinhoodReturns",
+      "tool": "RLEAPP",
+      "date": "2026-09-25"
     }
   ]
 }

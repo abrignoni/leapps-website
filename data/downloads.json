@@ -1669,17 +1669,17 @@
     {
       "date": "2026-10-27",
       "totals": {
-        "ileapp": 100670,
-        "aleapp": 77095,
-        "rleapp": 6653,
-        "vleapp": 3339,
-        "lava": 4737,
-        "dleapp": 2121,
-        "gleapp": 1060,
-        "batchleapp": 795
+        "ileapp": 100714,
+        "aleapp": 77132,
+        "rleapp": 6657,
+        "vleapp": 3342,
+        "lava": 4749,
+        "dleapp": 2124,
+        "gleapp": 1064,
+        "batchleapp": 797
       },
       "probes": {
-        "qnxprobe": 700,
+        "qnxprobe": 703,
         "ewfprobe": 244,
         "exoprobe": 95,
         "chromiumcacheprobe": 20,
