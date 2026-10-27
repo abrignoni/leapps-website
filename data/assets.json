@@ -568,6 +568,77 @@
     "script": 6,
     "windows": 16
    }
+  },
+  "2026-10-27": {
+   "ileapp": {
+    "linux": 3659,
+    "macos": 6640,
+    "windows": 89946
+   },
+   "aleapp": {
+    "linux": 3916,
+    "macos": 3430,
+    "windows": 69405
+   },
+   "rleapp": {
+    "linux": 427,
+    "macos": 882,
+    "windows": 5215
+   },
+   "vleapp": {
+    "linux": 369,
+    "macos": 713,
+    "windows": 2144
+   },
+   "lava": {
+    "linux": 428,
+    "macos": 546,
+    "other": 25,
+    "windows": 3713
+   },
+   "dleapp": {
+    "linux": 270,
+    "macos": 285,
+    "windows": 1432
+   },
+   "gleapp": {
+    "linux": 79,
+    "macos": 111,
+    "windows": 807
+   },
+   "batchleapp": {
+    "macos": 139,
+    "windows": 652
+   },
+   "qnxprobe": {
+    "linux": 147,
+    "macos": 161,
+    "windows": 263
+   },
+   "ewfprobe": {
+    "linux": 48,
+    "macos": 58,
+    "script": 31,
+    "windows": 70
+   },
+   "exoprobe": {
+    "linux": 13,
+    "macos": 16,
+    "script": 7,
+    "windows": 51
+   },
+   "chromiumcacheprobe": {
+    "linux": 4,
+    "macos": 4,
+    "script": 2,
+    "windows": 8
+   },
+   "mediacarve": {
+    "linux": 5,
+    "macos": 7,
+    "script": 6,
+    "windows": 16
+   }
   }
  },
  "repos": {
@@ -576,32 +647,32 @@
    "group": "tool",
    "status": "ok",
    "by_os": {
-    "linux": 3644,
-    "macos": 6605,
-    "windows": 89766
+    "linux": 3659,
+    "macos": 6640,
+    "windows": 89946
    },
    "by_os_arch": {
     "linux/arch not stated": 1759,
-    "linux/arm64": 546,
-    "linux/x64": 1339,
-    "macos/arm64": 4201,
-    "macos/x64": 2404,
-    "windows/arch not stated": 77172,
-    "windows/arm64": 1419,
-    "windows/x64": 11175
+    "linux/arm64": 550,
+    "linux/x64": 1350,
+    "macos/arm64": 4227,
+    "macos/x64": 2413,
+    "windows/arch not stated": 77192,
+    "windows/arm64": 1438,
+    "windows/x64": 11316
    },
    "releases": [
     {
      "tag": "v2026.4.5",
      "published_at": "2026-10-24T17:21:08Z",
      "prerelease": false,
-     "downloads": 163
+     "downloads": 355
     },
     {
      "tag": "v2026.4.4",
      "published_at": "2026-10-02T00:35:33Z",
      "prerelease": false,
-     "downloads": 2872
+     "downloads": 2876
     },
     {
      "tag": "v2026.4.3",
@@ -637,7 +708,7 @@
      "tag": "v2026.3.2",
      "published_at": "2026-08-27T19:40:23Z",
      "prerelease": false,
-     "downloads": 1198
+     "downloads": 1199
     },
     {
      "tag": "v2026.3.1",
@@ -673,25 +744,25 @@
      "tag": "v2.5.0",
      "published_at": "2026-05-26T20:57:36Z",
      "prerelease": false,
-     "downloads": 3290
+     "downloads": 3298
     },
     {
      "tag": "v2.4.0",
      "published_at": "2026-05-18T20:58:27Z",
      "prerelease": false,
-     "downloads": 1019
+     "downloads": 1024
     },
     {
      "tag": "v2.3.1",
      "published_at": "2026-04-20T21:53:00Z",
      "prerelease": false,
-     "downloads": 2090
+     "downloads": 2095
     },
     {
      "tag": "v2.3.0",
      "published_at": "2025-08-31T20:55:01Z",
      "prerelease": false,
-     "downloads": 8494
+     "downloads": 8501
     },
     {
      "tag": "v2.2.0",
@@ -715,7 +786,7 @@
      "tag": "v2.1.0",
      "published_at": "2025-02-16T16:36:48Z",
      "prerelease": false,
-     "downloads": 4781
+     "downloads": 4784
     },
     {
      "tag": "v2.0.4",
@@ -781,7 +852,7 @@
      "tag": "v1.18.7",
      "published_at": "2023-05-23T02:39:45Z",
      "prerelease": false,
-     "downloads": 14762
+     "downloads": 14765
     },
     {
      "tag": "v1.18.6",
@@ -793,7 +864,7 @@
      "tag": "v1.18.2",
      "published_at": "2023-02-06T02:07:34Z",
      "prerelease": false,
-     "downloads": 3919
+     "downloads": 3921
     },
     {
      "tag": "v.1.18.1",
@@ -826,124 +897,124 @@
      "downloads": 624
     }
    ],
-   "checksum_downloads_excluded": 302
+   "checksum_downloads_excluded": 322
   },
   "aleapp": {
    "repo": "abrignoni/ALEAPP",
    "group": "tool",
    "status": "ok",
    "by_os": {
-    "linux": 3896,
-    "macos": 3414,
-    "windows": 69260
+    "linux": 3916,
+    "macos": 3430,
+    "windows": 69405
    },
    "by_os_arch": {
     "linux/arch not stated": 1952,
-    "linux/arm64": 462,
-    "linux/x64": 1482,
+    "linux/arm64": 465,
+    "linux/x64": 1499,
     "macos/arch not stated": 16,
-    "macos/arm64": 2056,
-    "macos/x64": 1342,
-    "windows/arch not stated": 57463,
-    "windows/arm64": 1035,
-    "windows/x64": 10762
+    "macos/arm64": 2067,
+    "macos/x64": 1347,
+    "windows/arch not stated": 57476,
+    "windows/arm64": 1042,
+    "windows/x64": 10887
    },
    "releases": [
     {
      "tag": "v2026.4.4",
      "published_at": "2026-10-24T17:31:50Z",
      "prerelease": false,
-     "downloads": 204
+     "downloads": 334
     },
     {
      "tag": "v2026.4.3",
      "published_at": "2026-10-02T00:35:36Z",
      "prerelease": false,
-     "downloads": 2658
+     "downloads": 2662
     },
     {
      "tag": "v2026.4.2",
      "published_at": "2026-09-29T20:55:11Z",
      "prerelease": false,
-     "downloads": 370
+     "downloads": 371
     },
     {
      "tag": "v2026.4.1",
      "published_at": "2026-09-20T10:51:27Z",
      "prerelease": false,
-     "downloads": 1577
+     "downloads": 1589
     },
     {
      "tag": "v2026.4.0",
      "published_at": "2026-09-13T19:30:16Z",
      "prerelease": false,
-     "downloads": 983
+     "downloads": 985
     },
     {
      "tag": "v2026.3.3",
      "published_at": "2026-09-09T19:52:43Z",
      "prerelease": false,
-     "downloads": 607
+     "downloads": 608
     },
     {
      "tag": "v2026.3.2",
      "published_at": "2026-08-27T19:40:58Z",
      "prerelease": false,
-     "downloads": 1085
+     "downloads": 1087
     },
     {
      "tag": "v2026.3.1",
      "published_at": "2026-08-18T15:42:16Z",
      "prerelease": false,
-     "downloads": 947
+     "downloads": 950
     },
     {
      "tag": "v2026.3.0",
      "published_at": "2026-08-14T09:25:55Z",
      "prerelease": false,
-     "downloads": 498
+     "downloads": 499
     },
     {
      "tag": "v2026.2.0",
      "published_at": "2026-07-24T22:50:30Z",
      "prerelease": false,
-     "downloads": 1409
+     "downloads": 1411
     },
     {
      "tag": "v2026.1.0",
      "published_at": "2026-07-10T23:58:50Z",
      "prerelease": false,
-     "downloads": 1101
+     "downloads": 1107
     },
     {
      "tag": "v3.6.0",
      "published_at": "2026-05-26T21:04:28Z",
      "prerelease": false,
-     "downloads": 2690
+     "downloads": 2692
     },
     {
      "tag": "v3.5.0",
      "published_at": "2026-05-18T21:21:47Z",
      "prerelease": false,
-     "downloads": 890
+     "downloads": 892
     },
     {
      "tag": "v3.4.1",
      "published_at": "2026-04-21T21:08:29Z",
      "prerelease": false,
-     "downloads": 1941
+     "downloads": 1943
     },
     {
      "tag": "v3.4.0",
      "published_at": "2025-04-25T19:52:27Z",
      "prerelease": false,
-     "downloads": 11922
+     "downloads": 11924
     },
     {
      "tag": "v3.3.0",
      "published_at": "2025-02-22T11:04:46Z",
      "prerelease": false,
-     "downloads": 4888
+     "downloads": 4891
     },
     {
      "tag": "v3.2.5",
@@ -967,7 +1038,7 @@
      "tag": "v3.2.2",
      "published_at": "2024-05-02T21:09:35Z",
      "prerelease": false,
-     "downloads": 18245
+     "downloads": 18249
     },
     {
      "tag": "v3.2.1",
@@ -985,13 +1056,13 @@
      "tag": "v3.1.8",
      "published_at": "2023-05-16T05:57:17Z",
      "prerelease": false,
-     "downloads": 4056
+     "downloads": 4057
     },
     {
      "tag": "v3.1.6",
      "published_at": "2023-02-06T02:01:36Z",
      "prerelease": false,
-     "downloads": 3332
+     "downloads": 3333
     },
     {
      "tag": "v3.1.5",
@@ -1060,39 +1131,39 @@
      "downloads": 75
     }
    ],
-   "checksum_downloads_excluded": 268
+   "checksum_downloads_excluded": 279
   },
   "rleapp": {
    "repo": "abrignoni/RLEAPP",
    "group": "tool",
    "status": "ok",
    "by_os": {
-    "linux": 420,
-    "macos": 877,
-    "windows": 5179
+    "linux": 427,
+    "macos": 882,
+    "windows": 5215
    },
    "by_os_arch": {
     "linux/arch not stated": 91,
     "linux/arm64": 72,
-    "linux/x64": 257,
-    "macos/arm64": 458,
-    "macos/x64": 419,
+    "linux/x64": 264,
+    "macos/arm64": 462,
+    "macos/x64": 420,
     "windows/arch not stated": 3048,
-    "windows/arm64": 203,
-    "windows/x64": 1928
+    "windows/arm64": 205,
+    "windows/x64": 1962
    },
    "releases": [
     {
      "tag": "v2026.4.4",
      "published_at": "2026-10-24T17:31:52Z",
      "prerelease": false,
-     "downloads": 43
+     "downloads": 86
     },
     {
      "tag": "v2026.4.3",
      "published_at": "2026-10-02T00:35:38Z",
      "prerelease": false,
-     "downloads": 631
+     "downloads": 634
     },
     {
      "tag": "v2026.4.2",
@@ -1104,7 +1175,7 @@
      "tag": "v2026.4.1",
      "published_at": "2026-09-20T10:51:40Z",
      "prerelease": false,
-     "downloads": 369
+     "downloads": 371
     },
     {
      "tag": "v2026.4.0",
@@ -1191,39 +1262,39 @@
      "downloads": 58
     }
    ],
-   "checksum_downloads_excluded": 108
+   "checksum_downloads_excluded": 115
   },
   "vleapp": {
    "repo": "abrignoni/VLEAPP",
    "group": "tool",
    "status": "ok",
    "by_os": {
-    "linux": 358,
-    "macos": 708,
-    "windows": 2118
+    "linux": 369,
+    "macos": 713,
+    "windows": 2144
    },
    "by_os_arch": {
     "linux/arch not stated": 56,
-    "linux/arm64": 83,
-    "linux/x64": 219,
-    "macos/arm64": 350,
-    "macos/x64": 358,
+    "linux/arm64": 85,
+    "linux/x64": 228,
+    "macos/arm64": 354,
+    "macos/x64": 359,
     "windows/arch not stated": 811,
-    "windows/arm64": 141,
-    "windows/x64": 1166
+    "windows/arm64": 143,
+    "windows/x64": 1190
    },
    "releases": [
     {
      "tag": "v2026.4.4",
      "published_at": "2026-10-24T17:21:11Z",
      "prerelease": false,
-     "downloads": 33
+     "downloads": 67
     },
     {
      "tag": "v2026.4.3",
      "published_at": "2026-10-02T00:35:41Z",
      "prerelease": false,
-     "downloads": 451
+     "downloads": 453
     },
     {
      "tag": "v2026.4.2",
@@ -1235,13 +1306,13 @@
      "tag": "v2026.4.1",
      "published_at": "2026-09-20T10:51:44Z",
      "prerelease": false,
-     "downloads": 257
+     "downloads": 258
     },
     {
      "tag": "v2026.4.0",
      "published_at": "2026-09-13T19:30:31Z",
      "prerelease": false,
-     "downloads": 165
+     "downloads": 169
     },
     {
      "tag": "v2026.3.2",
@@ -1265,7 +1336,7 @@
      "tag": "v2026.2.0",
      "published_at": "2026-07-25T16:11:46Z",
      "prerelease": false,
-     "downloads": 196
+     "downloads": 197
     },
     {
      "tag": "v2.2.0",
@@ -1292,33 +1363,33 @@
      "downloads": 98
     }
    ],
-   "checksum_downloads_excluded": 101
+   "checksum_downloads_excluded": 107
   },
   "lava": {
    "repo": "leapps-org/LAVA-releases",
    "group": "tool",
    "status": "ok",
    "by_os": {
-    "linux": 426,
-    "macos": 543,
+    "linux": 428,
+    "macos": 546,
     "other": 25,
-    "windows": 3670
+    "windows": 3713
    },
    "by_os_arch": {
     "linux/arm64": 122,
-    "linux/x64": 304,
-    "macos/arm64": 434,
-    "macos/x64": 109,
+    "linux/x64": 306,
+    "macos/arm64": 436,
+    "macos/x64": 110,
     "other": 25,
-    "windows/arm64": 471,
-    "windows/x64": 3199
+    "windows/arm64": 474,
+    "windows/x64": 3239
    },
    "releases": [
     {
      "tag": "v0.15.0",
      "published_at": "2026-08-14T19:29:18Z",
      "prerelease": false,
-     "downloads": 2942
+     "downloads": 2990
     },
     {
      "tag": "v0.14.0",
@@ -1346,30 +1417,30 @@
    "group": "tool",
    "status": "ok",
    "by_os": {
-    "linux": 265,
-    "macos": 281,
-    "windows": 1396
+    "linux": 270,
+    "macos": 285,
+    "windows": 1432
    },
    "by_os_arch": {
     "linux/arm64": 66,
-    "linux/x64": 199,
-    "macos/arm64": 172,
-    "macos/x64": 109,
-    "windows/arm64": 163,
-    "windows/x64": 1233
+    "linux/x64": 204,
+    "macos/arm64": 175,
+    "macos/x64": 110,
+    "windows/arm64": 164,
+    "windows/x64": 1268
    },
    "releases": [
     {
      "tag": "v2026.4.4",
      "published_at": "2026-10-24T17:21:13Z",
      "prerelease": false,
-     "downloads": 47
+     "downloads": 90
     },
     {
      "tag": "v2026.4.3",
      "published_at": "2026-10-02T00:35:44Z",
      "prerelease": false,
-     "downloads": 635
+     "downloads": 637
     },
     {
      "tag": "v2026.4.2",
@@ -1408,29 +1479,29 @@
      "downloads": 241
     }
    ],
-   "checksum_downloads_excluded": 104
+   "checksum_downloads_excluded": 111
   },
   "gleapp": {
    "repo": "abrignoni/GLEAPP",
    "group": "tool",
    "status": "ok",
    "by_os": {
-    "linux": 74,
-    "macos": 106,
-    "windows": 773
+    "linux": 79,
+    "macos": 111,
+    "windows": 807
    },
    "by_os_arch": {
-    "linux/x64": 74,
-    "macos/arm64": 73,
-    "macos/x64": 33,
-    "windows/x64": 773
+    "linux/x64": 79,
+    "macos/arm64": 77,
+    "macos/x64": 34,
+    "windows/x64": 807
    },
    "releases": [
     {
      "tag": "v2026.5.5",
      "published_at": "2026-10-24T17:21:15Z",
      "prerelease": false,
-     "downloads": 30
+     "downloads": 74
     },
     {
      "tag": "v2026.5.4",
@@ -1463,26 +1534,26 @@
      "downloads": 14
     }
    ],
-   "checksum_downloads_excluded": 39
+   "checksum_downloads_excluded": 42
   },
   "batchleapp": {
    "repo": "abrignoni/batch-leapp",
    "group": "tool",
    "status": "ok",
    "by_os": {
-    "macos": 138,
-    "windows": 638
+    "macos": 139,
+    "windows": 652
    },
    "by_os_arch": {
-    "macos/arm64": 138,
-    "windows/x64": 638
+    "macos/arm64": 139,
+    "windows/x64": 652
    },
    "releases": [
     {
      "tag": "v1.2.0",
      "published_at": "2026-10-01T20:11:17Z",
      "prerelease": false,
-     "downloads": 215
+     "downloads": 230
     },
     {
      "tag": "v1.1.0",
@@ -1517,23 +1588,23 @@
    "status": "ok",
    "by_os": {
     "linux": 147,
-    "macos": 159,
-    "windows": 258
+    "macos": 161,
+    "windows": 263
    },
    "by_os_arch": {
     "linux/arm64": 68,
     "linux/x64": 79,
-    "macos/arm64": 83,
-    "macos/x64": 76,
-    "windows/arm64": 78,
-    "windows/x64": 180
+    "macos/arm64": 84,
+    "macos/x64": 77,
+    "windows/arm64": 79,
+    "windows/x64": 184
    },
    "releases": [
     {
      "tag": "v1.76",
      "published_at": "2026-10-24T15:27:52Z",
      "prerelease": false,
-     "downloads": 11
+     "downloads": 18
     },
     {
      "tag": "v1.75",
@@ -1849,14 +1920,14 @@
    "group": "probe",
    "status": "ok",
    "by_os": {
-    "linux": 47,
+    "linux": 48,
     "macos": 58,
     "script": 31,
     "windows": 70
    },
    "by_os_arch": {
     "linux/arm64": 21,
-    "linux/x64": 26,
+    "linux/x64": 27,
     "macos/arm64": 30,
     "macos/x64": 28,
     "script": 31,
@@ -1898,7 +1969,7 @@
      "tag": "v0.10.0",
      "published_at": "2026-09-27T23:19:43Z",
      "prerelease": false,
-     "downloads": 45
+     "downloads": 46
     },
     {
      "tag": "v0.9.0",
@@ -2069,5 +2140,5 @@
    "checksum_downloads_excluded": 5
   }
  },
- "updated_at": "2026-10-26T10:48:53Z"
+ "updated_at": "2026-10-27T10:14:51Z"
 }
