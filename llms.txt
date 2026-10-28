@@ -24,6 +24,13 @@ Standalone single-purpose readers, separate from the LEAPPs: https://leapps.org/
 - [chromiumcacheprobe](https://github.com/abrignoni/chromiumcacheprobe): reads the Chromium Simple Cache as Chrome keeps it on Android, with its HTTP times and headers, and rebuilds the H.264 video it holds as MP4 files, copying the sample bytes as stored; recovery engine by Forensik.IT GmbH
 - [mediacarve](https://github.com/abrignoni/mediacarve): recovers images and video from any stream of bytes by signature, with lengths parsed from each file's own structure; MIT, standard library only
 
+Readers: the format readers the LEAPPs vendor as single files, each also a command line tool (https://leapps.org/probes#readers):
+
+- [c2pareader](https://github.com/abrignoni/c2pareader): reads the Content Credentials (C2PA) and IPTC digital source type a picture or video declares, without verifying signatures; formerly c2paprobe
+- [cblite-parser](https://github.com/abrignoni/cblite-parser): reads Couchbase Lite databases and their Fleece documents, with revision trees, deleted documents, blob references and rows only in the -wal
+- [hive-parser](https://github.com/abrignoni/hive-parser): reads Hive boxes, the key-value store Flutter apps write, frame by frame and as the app reads them back
+- [mmkv-parser](https://github.com/abrignoni/mmkv-parser): reads Tencent MMKV key-value store files, every entry in file order and as the app sees them
+
 ## Install
 
 macOS (Homebrew tap: leapps-org/leapps):

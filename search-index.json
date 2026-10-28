@@ -96,6 +96,36 @@
     "excerpt": "Recovers images, video, audio and, when asked, SQLite databases, binary plists, ZIP archives and PDFs from any stream of bytes by signature, with each length parsed from the file's own structure. MIT, standard library only."
   },
   {
+    "title": "Readers: the format readers the LEAPPs vendor",
+    "url": "https://leapps.org/probes#readers",
+    "page": "Probes",
+    "excerpt": "c2pareader, cblite-parser, hive-parser and mmkv-parser: read-only, standard library only, MIT, each also a command line tool."
+  },
+  {
+    "title": "c2pareader: Content Credentials (C2PA) and IPTC source type",
+    "url": "https://leapps.org/probes#section-c2pareader",
+    "page": "Probes",
+    "excerpt": "Reads the C2PA manifest store and IPTC digital source type a picture or video declares. It does not verify signatures. Formerly c2paprobe."
+  },
+  {
+    "title": "cblite-parser: Couchbase Lite and Fleece",
+    "url": "https://leapps.org/probes#section-cblite-parser",
+    "page": "Probes",
+    "excerpt": "Reads Couchbase Lite databases and their Fleece documents, with revision trees, deleted documents, blob references and rows only in the -wal."
+  },
+  {
+    "title": "hive-parser: Hive boxes from Flutter apps",
+    "url": "https://leapps.org/probes#section-hive-parser",
+    "page": "Probes",
+    "excerpt": "Reads Hive boxes frame by frame in file order, so earlier values and deleted keys stay visible, and as the app reads them back."
+  },
+  {
+    "title": "mmkv-parser: Tencent MMKV stores",
+    "url": "https://leapps.org/probes#section-mmkv-parser",
+    "page": "Probes",
+    "excerpt": "Reads MMKV key-value store files, every entry in file order with superseded writes and removals, and as the app sees them."
+  },
+  {
     "title": "Probes — standalone forensic readers",
     "url": "https://leapps.org/probes",
     "page": "Probes",
