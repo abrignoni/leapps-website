@@ -347,7 +347,7 @@
       {
         "@type": "WebPage",
         "name": "Probes — LEAPPs",
-        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for media, databases, plists, archives and PDFs carved by signature. One Python file each, built on the standard library.",
+        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for media, databases, plists, archives and PDFs carved by signature. One Python file each, built on the standard library. Plus the readers the LEAPPs vendor: c2pareader, cblite-parser, hive-parser and mmkv-parser.",
         "url": "https://leapps.org/probes",
         "isPartOf": { "@type": "WebSite", "name": "LEAPPs", "url": "https://leapps.org" }
       },
@@ -416,6 +416,62 @@
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "license": "https://opensource.org/licenses/MIT",
         "author": { "@type": "Person", "name": "Alexis Brignoni", "url": "https://github.com/abrignoni" }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "c2pareader",
+        "description": "Reads the Content Credentials (C2PA) manifest store and IPTC digital source type a picture or video declares, without verifying signatures.",
+        "url": "https://leapps.org/probes#section-c2pareader",
+        "codeRepository": "https://github.com/abrignoni/c2pareader",
+        "programmingLanguage": "Python",
+        "license": "https://opensource.org/licenses/MIT",
+        "author": {
+          "@type": "Person",
+          "name": "Alexis Brignoni",
+          "url": "https://github.com/abrignoni"
+        }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "cblite-parser",
+        "description": "Reads Couchbase Lite databases and the Fleece documents inside them, with field names, revision trees, deleted documents, blob references and rows only in the -wal.",
+        "url": "https://leapps.org/probes#section-cblite-parser",
+        "codeRepository": "https://github.com/abrignoni/cblite-parser",
+        "programmingLanguage": "Python",
+        "license": "https://opensource.org/licenses/MIT",
+        "author": {
+          "@type": "Person",
+          "name": "Alexis Brignoni",
+          "url": "https://github.com/abrignoni"
+        }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "hive-parser",
+        "description": "Reads Hive boxes, the key-value store Flutter apps write, frame by frame in file order, and the view the app itself reads back.",
+        "url": "https://leapps.org/probes#section-hive-parser",
+        "codeRepository": "https://github.com/abrignoni/hive-parser",
+        "programmingLanguage": "Python",
+        "license": "https://opensource.org/licenses/MIT",
+        "author": {
+          "@type": "Person",
+          "name": "Alexis Brignoni",
+          "url": "https://github.com/abrignoni"
+        }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "mmkv-parser",
+        "description": "Reads Tencent MMKV key-value store files, every entry in file order, and the view the app itself sees.",
+        "url": "https://leapps.org/probes#section-mmkv-parser",
+        "codeRepository": "https://github.com/abrignoni/mmkv-parser",
+        "programmingLanguage": "Python",
+        "license": "https://opensource.org/licenses/MIT",
+        "author": {
+          "@type": "Person",
+          "name": "Alexis Brignoni",
+          "url": "https://github.com/abrignoni"
+        }
       }
     ]
   }
@@ -513,6 +569,7 @@
         <a href="#section-exoprobe" class="lp-tool-pill">exoprobe</a>
         <a href="#section-chromiumcacheprobe" class="lp-tool-pill">chromiumcacheprobe</a>
         <a href="#section-mediacarve" class="lp-tool-pill">mediacarve</a>
+        <a href="#readers" class="lp-tool-pill">Readers</a>
       </div>
       <figure class="lp-video">
         <video controls preload="none" playsinline poster="/videos/probes-intro.jpg?v=20261017" width="1280" height="720" aria-label="The probe family in under a minute">
@@ -538,6 +595,13 @@
         <li><a href="#section-mediacarve"><i class="ti ti-photo-search"></i>mediacarve</a></li>
         <li><a href="#about-the-builds"><i class="ti ti-package"></i>About the builds</a></li>
         <li><a href="/stats#probes"><i class="ti ti-chart-bar"></i>By the numbers</a></li>
+      </ul>
+      <div class="lp-sidebar-title" style="margin-top:1.5rem">Readers</div>
+      <ul class="lp-sidebar-links">
+        <li><a href="#section-c2pareader"><i class="ti ti-certificate"></i>c2pareader</a></li>
+        <li><a href="#section-cblite-parser"><i class="ti ti-database"></i>cblite-parser</a></li>
+        <li><a href="#section-hive-parser"><i class="ti ti-hexagons"></i>hive-parser</a></li>
+        <li><a href="#section-mmkv-parser"><i class="ti ti-key"></i>mmkv-parser</a></li>
       </ul>
     </aside>
 
@@ -755,6 +819,130 @@
           <div>
             <h3>Or run the Python file</h3>
             <p>Each probe is one Python file that needs the standard library and nothing else, so <code>python3 &lt;probe&gt;.py</code> works on Windows, macOS and Linux, and its window is a second file, <code>&lt;probe&gt;_gui.py</code>. ewfprobe, exoprobe, chromiumcacheprobe and mediacarve attach the Python files to every release as well.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- READERS -->
+      <section class="lp-tool-section" id="readers">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Libraries &middot; Command line</div>
+            <h2>Readers</h2>
+            <div class="lp-tool-fullname">The format readers the LEAPPs carry inside them</div>
+          </div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What are the readers?</h3>
+            <p>Each reader decodes one data store an app writes, and lives in its own repository so it can be tested on its own. The LEAPPs copy the file in unchanged and record the commit they copied, so the code that read the data can be traced to its repository.</p>
+            <p>They have no window and no executables. Each is pure Python on the standard library, read-only, MIT licensed, and also runs from the command line with <code>python -m</code>.</p>
+          </div>
+          <div>
+            <h3>Releases</h3>
+            <p>Each release is tagged at the commit the LEAPPs vendor, for the readers they vendor. Where a reader is vendored as one file, the release attaches that file, its licence and a <code>SHA256SUMS.txt</code>. The full source and tests are in the source archives.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- C2PAREADER -->
+      <section class="lp-tool-section" id="section-c2pareader">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Reader &middot; Pictures and video</div>
+            <h2>c2pareader</h2>
+            <div class="lp-tool-fullname">The Content Credentials (C2PA) and IPTC digital source type a file declares</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><a href="https://github.com/abrignoni/c2pareader/releases" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-tag"></i>Releases</a><a href="https://github.com/abrignoni/c2pareader" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What it reads</h3>
+            <p>The C2PA manifest store and the XMP packet a picture or video carries: claim generator, actions, stated digital source types, ingredients, and the signature's stated signer, issuer and time-stamp. JPEG, PNG, HEIC, HEIF, AVIF, MP4, MOV, WebP, AVI, WAV, GIF, TIFF, DNG and JPEG XL.</p>
+            <p>It reports what the file declares. It does not verify a signature. It was called c2paprobe up to v0.1.1.</p>
+          </div>
+          <div>
+            <h3>Where it runs</h3>
+            <ul>
+              <li>GLEAPP, for the CR and AI badges and the Content Credentials artifact</li>
+              <li>iLEAPP and ALEAPP, starting with their next releases</li>
+              <li><code>python -m c2pareader photo.jpg</code> prints JSON</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CBLITE-PARSER -->
+      <section class="lp-tool-section" id="section-cblite-parser">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Reader &middot; App databases</div>
+            <h2>cblite-parser</h2>
+            <div class="lp-tool-fullname">Couchbase Lite databases and the Fleece documents inside them</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><a href="https://github.com/abrignoni/cblite-parser/releases" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-tag"></i>Releases</a><a href="https://github.com/abrignoni/cblite-parser" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What it reads</h3>
+            <p>Every document of every collection with its field names restored from the database's own key table, the revision tree, deleted documents, the database's own records, blob references checked against their files, and rows that exist only in the <code>-wal</code>. It copies the database and its sidecars to a temporary folder and reads the copy.</p>
+          </div>
+          <div>
+            <h3>Where it runs</h3>
+            <ul>
+              <li>On its own, for any app that keeps its data in Couchbase Lite</li>
+              <li><code>python -m cblite_parser export</code> writes an HTML report that opens with no network, plus CSV files</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- HIVE-PARSER -->
+      <section class="lp-tool-section" id="section-hive-parser">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Reader &middot; Flutter apps</div>
+            <h2>hive-parser</h2>
+            <div class="lp-tool-fullname">Hive boxes, the key-value store Flutter apps write</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><a href="https://github.com/abrignoni/hive-parser/releases" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-tag"></i>Releases</a><a href="https://github.com/abrignoni/hive-parser" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What it reads</h3>
+            <p>A box is an append-only log: a write adds a frame instead of editing the old one, and a deletion adds a frame with no value. hive-parser reads every frame in file order, so earlier values and deleted keys stay visible, and separately what the app itself reads back.</p>
+          </div>
+          <div>
+            <h3>Where it runs</h3>
+            <ul>
+              <li>iLEAPP and ALEAPP</li>
+              <li><code>python -m hive_parser dump BOX.hive</code>, with <code>--live</code>, <code>--json</code> and <code>--carve</code></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- MMKV-PARSER -->
+      <section class="lp-tool-section" id="section-mmkv-parser">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Reader &middot; Android and iOS apps</div>
+            <h2>mmkv-parser</h2>
+            <div class="lp-tool-fullname">Tencent MMKV key-value store files</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><a href="https://github.com/abrignoni/mmkv-parser/releases" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-tag"></i>Releases</a><a href="https://github.com/abrignoni/mmkv-parser" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What it reads</h3>
+            <p>Apps use MMKV in place of SharedPreferences and NSUserDefaults. mmkv-parser reads every entry in file order, superseded writes and removals included, and the view the app itself sees. On request it reads the records of a store whose recorded size is zero, and carves earlier generations from past the recorded data, reported as inferences.</p>
+          </div>
+          <div>
+            <h3>Where it runs</h3>
+            <ul>
+              <li>iLEAPP and ALEAPP</li>
+              <li><code>python -m mmkv_parser dump</code>, with <code>--live</code> and <code>--key</code> for an encrypted store</li>
+            </ul>
           </div>
         </div>
       </section>
