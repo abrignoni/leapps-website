@@ -1,7 +1,13 @@
 {
-  "generated": "2026-10-27",
+  "generated": "2026-10-28",
   "window_days": 45,
   "items": [
+    {
+      "name": "hiveBoxes",
+      "query": "hiveBoxes",
+      "tool": "iLEAPP",
+      "date": "2026-10-27"
+    },
     {
       "name": "hiveBoxes",
       "query": "hiveBoxes",
@@ -13,12 +19,6 @@
       "query": "grokReturns",
       "tool": "RLEAPP",
       "date": "2026-10-27"
-    },
-    {
-      "name": "smsAppPayloads",
-      "query": "smsAppPayloads",
-      "tool": "iLEAPP",
-      "date": "2026-10-25"
     },
     {
       "name": "windowsForwardedEvents",
@@ -33,6 +33,12 @@
       "date": "2026-10-10"
     },
     {
+      "name": "smsAppPayloads",
+      "query": "smsAppPayloads",
+      "tool": "iLEAPP",
+      "date": "2026-10-25"
+    },
+    {
       "name": "bugreportPermissions",
       "query": "bugreportPermissions",
       "tool": "ALEAPP",
@@ -43,12 +49,6 @@
       "query": "tikTokReturnPdf",
       "tool": "RLEAPP",
       "date": "2026-09-28"
-    },
-    {
-      "name": "smsEdits",
-      "query": "smsEdits",
-      "tool": "iLEAPP",
-      "date": "2026-10-25"
     },
     {
       "name": "macosAuthKit",
@@ -63,16 +63,16 @@
       "date": "2026-10-10"
     },
     {
+      "name": "smsEdits",
+      "query": "smsEdits",
+      "tool": "iLEAPP",
+      "date": "2026-10-25"
+    },
+    {
       "name": "bugreportUsageJobs",
       "query": "bugreportUsageJobs",
       "tool": "ALEAPP",
       "date": "2026-10-27"
-    },
-    {
-      "name": "robinhoodReturns",
-      "query": "robinhoodReturns",
-      "tool": "RLEAPP",
-      "date": "2026-09-25"
     }
   ]
 }
