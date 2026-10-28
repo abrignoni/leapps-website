@@ -99,7 +99,7 @@
     "title": "Readers: the format readers the LEAPPs vendor",
     "url": "https://leapps.org/probes#readers",
     "page": "Probes",
-    "excerpt": "c2pareader, cblite-parser, hive-parser and mmkv-parser: read-only, standard library only, MIT, each also a command line tool."
+    "excerpt": "c2pareader, cblite-parser, hive-parser, mmkv-parser and sqlite-wal: read-only, standard library only, MIT, each also a command line tool."
   },
   {
     "title": "c2pareader: Content Credentials (C2PA) and IPTC source type",
@@ -124,6 +124,12 @@
     "url": "https://leapps.org/probes#section-mmkv-parser",
     "page": "Probes",
     "excerpt": "Reads MMKV key-value store files, every entry in file order with superseded writes and removals, and as the app sees them."
+  },
+  {
+    "title": "sqlite-wal: earlier states in a SQLite write-ahead log",
+    "url": "https://leapps.org/probes#section-sqlite-wal",
+    "page": "Probes",
+    "excerpt": "Reads the earlier committed states a SQLite -wal still holds, through SQLite itself, and lists rows an earlier state holds that the current one does not."
   },
   {
     "title": "Probes — standalone forensic readers",

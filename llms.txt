@@ -30,6 +30,7 @@ Readers: the format readers the LEAPPs vendor as single files, each also a comma
 - [cblite-parser](https://github.com/abrignoni/cblite-parser): reads Couchbase Lite databases and their Fleece documents, with revision trees, deleted documents, blob references and rows only in the -wal
 - [hive-parser](https://github.com/abrignoni/hive-parser): reads Hive boxes, the key-value store Flutter apps write, frame by frame and as the app reads them back
 - [mmkv-parser](https://github.com/abrignoni/mmkv-parser): reads Tencent MMKV key-value store files, every entry in file order and as the app sees them
+- [sqlite-wal](https://github.com/abrignoni/sqlite-wal): reads the earlier committed states a SQLite write-ahead log still holds, through SQLite itself, and lists rows an earlier state holds that the current one does not
 
 ## Install
 
