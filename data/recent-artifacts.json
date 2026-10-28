@@ -3,15 +3,21 @@
   "window_days": 45,
   "items": [
     {
-      "name": "hiveBoxes",
-      "query": "hiveBoxes",
-      "tool": "iLEAPP",
-      "date": "2026-10-27"
+      "name": "androidSetupFlags",
+      "query": "androidSetupFlags",
+      "tool": "ALEAPP",
+      "date": "2026-10-28"
+    },
+    {
+      "name": "teleguardDesktop",
+      "query": "teleguardDesktop",
+      "tool": "DLEAPP",
+      "date": "2026-10-28"
     },
     {
       "name": "hiveBoxes",
       "query": "hiveBoxes",
-      "tool": "ALEAPP",
+      "tool": "iLEAPP",
       "date": "2026-10-27"
     },
     {
@@ -21,16 +27,22 @@
       "date": "2026-10-27"
     },
     {
-      "name": "windowsForwardedEvents",
-      "query": "windowsForwardedEvents",
-      "tool": "DLEAPP",
-      "date": "2026-10-25"
-    },
-    {
       "name": "ford sync wince voice cache",
       "query": "ford_sync_wince_voice_cache",
       "tool": "VLEAPP",
       "date": "2026-10-10"
+    },
+    {
+      "name": "bugreportRecovery",
+      "query": "bugreportRecovery",
+      "tool": "ALEAPP",
+      "date": "2026-10-28"
+    },
+    {
+      "name": "windowsForwardedEvents",
+      "query": "windowsForwardedEvents",
+      "tool": "DLEAPP",
+      "date": "2026-10-25"
     },
     {
       "name": "smsAppPayloads",
@@ -39,22 +51,10 @@
       "date": "2026-10-25"
     },
     {
-      "name": "bugreportPermissions",
-      "query": "bugreportPermissions",
-      "tool": "ALEAPP",
-      "date": "2026-10-27"
-    },
-    {
       "name": "tikTokReturnPdf",
       "query": "tikTokReturnPdf",
       "tool": "RLEAPP",
       "date": "2026-09-28"
-    },
-    {
-      "name": "macosAuthKit",
-      "query": "macosAuthKit",
-      "tool": "DLEAPP",
-      "date": "2026-10-24"
     },
     {
       "name": "bluetooth hci snoop",
@@ -63,16 +63,16 @@
       "date": "2026-10-10"
     },
     {
-      "name": "smsEdits",
-      "query": "smsEdits",
-      "tool": "iLEAPP",
-      "date": "2026-10-25"
-    },
-    {
-      "name": "bugreportUsageJobs",
-      "query": "bugreportUsageJobs",
+      "name": "hiveBoxes",
+      "query": "hiveBoxes",
       "tool": "ALEAPP",
       "date": "2026-10-27"
+    },
+    {
+      "name": "macosAuthKit",
+      "query": "macosAuthKit",
+      "tool": "DLEAPP",
+      "date": "2026-10-24"
     }
   ]
 }

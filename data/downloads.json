@@ -1689,21 +1689,21 @@
     {
       "date": "2026-10-28",
       "totals": {
-        "ileapp": 100847,
-        "aleapp": 77270,
-        "rleapp": 6688,
-        "vleapp": 3369,
-        "lava": 4772,
-        "dleapp": 2139,
-        "gleapp": 1091,
-        "batchleapp": 805
+        "ileapp": 100953,
+        "aleapp": 77365,
+        "rleapp": 6705,
+        "vleapp": 3382,
+        "lava": 4799,
+        "dleapp": 2164,
+        "gleapp": 1116,
+        "batchleapp": 813
       },
       "probes": {
-        "qnxprobe": 705,
-        "ewfprobe": 244,
-        "exoprobe": 95,
-        "chromiumcacheprobe": 20,
-        "mediacarve": 39
+        "qnxprobe": 708,
+        "ewfprobe": 248,
+        "exoprobe": 97,
+        "chromiumcacheprobe": 21,
+        "mediacarve": 41
       }
     }
   ]
