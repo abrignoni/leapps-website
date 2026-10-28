@@ -347,7 +347,7 @@
       {
         "@type": "WebPage",
         "name": "Probes — LEAPPs",
-        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for media, databases, plists, archives and PDFs carved by signature. One Python file each, built on the standard library. Plus the readers the LEAPPs vendor: c2pareader, cblite-parser, hive-parser and mmkv-parser.",
+        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for media, databases, plists, archives and PDFs carved by signature. One Python file each, built on the standard library. Plus the readers the LEAPPs vendor: c2pareader, cblite-parser, hive-parser, mmkv-parser and sqlite-wal.",
         "url": "https://leapps.org/probes",
         "isPartOf": { "@type": "WebSite", "name": "LEAPPs", "url": "https://leapps.org" }
       },
@@ -465,6 +465,20 @@
         "description": "Reads Tencent MMKV key-value store files, every entry in file order, and the view the app itself sees.",
         "url": "https://leapps.org/probes#section-mmkv-parser",
         "codeRepository": "https://github.com/abrignoni/mmkv-parser",
+        "programmingLanguage": "Python",
+        "license": "https://opensource.org/licenses/MIT",
+        "author": {
+          "@type": "Person",
+          "name": "Alexis Brignoni",
+          "url": "https://github.com/abrignoni"
+        }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "sqlite-wal",
+        "description": "Reads the earlier committed states a SQLite write-ahead log still holds, through SQLite itself, and lists rows an earlier state holds that the current one does not.",
+        "url": "https://leapps.org/probes#section-sqlite-wal",
+        "codeRepository": "https://github.com/abrignoni/sqlite-wal",
         "programmingLanguage": "Python",
         "license": "https://opensource.org/licenses/MIT",
         "author": {
@@ -602,6 +616,7 @@
         <li><a href="#section-cblite-parser"><i class="ti ti-database"></i>cblite-parser</a></li>
         <li><a href="#section-hive-parser"><i class="ti ti-hexagons"></i>hive-parser</a></li>
         <li><a href="#section-mmkv-parser"><i class="ti ti-key"></i>mmkv-parser</a></li>
+        <li><a href="#section-sqlite-wal"><i class="ti ti-history"></i>sqlite-wal</a></li>
       </ul>
     </aside>
 
@@ -942,6 +957,32 @@
             <ul>
               <li>iLEAPP and ALEAPP</li>
               <li><code>python -m mmkv_parser dump</code>, with <code>--live</code> and <code>--key</code> for an encrypted store</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SQLITE-WAL -->
+      <section class="lp-tool-section" id="section-sqlite-wal">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Reader &middot; SQLite databases</div>
+            <h2>sqlite-wal</h2>
+            <div class="lp-tool-fullname">The earlier committed states a SQLite write-ahead log still holds</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><a href="https://github.com/abrignoni/sqlite-wal/releases" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-tag"></i>Releases</a><a href="https://github.com/abrignoni/sqlite-wal" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What it reads</h3>
+            <p>A database in WAL mode keeps each committed transaction in its <code>-wal</code> until the log is reset, so the log can hold every committed state since then, not just the newest. sqlite-wal cuts a scratch copy of the log at each commit and lets SQLite read it, so every row comes from SQLite itself. On request it also reads the previous log generation and an uncommitted transaction.</p>
+            <p>A row it reports was in an earlier state and is not in the current one. That alone does not say a user deleted it, and an empty result does not say nothing was deleted.</p>
+          </div>
+          <div>
+            <h3>Where it runs</h3>
+            <ul>
+              <li>iLEAPP and ALEAPP, starting with their next releases, for artifacts such as Snapchat, Discord and Google Chat</li>
+              <li><code>python -m sqlite_wal summary DB</code> and <code>rows DB --query</code>, with <code>--key</code> to label earlier versions of current rows</li>
             </ul>
           </div>
         </div>
