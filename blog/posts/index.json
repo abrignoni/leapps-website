@@ -1,5 +1,21 @@
 [
   {
+    "slug": "2026-10-29-chromium-file-system-survives-history",
+    "title": "Clearing History Does Not Clear Chromium's File System Storage",
+    "date": "2026-10-29",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "ALEAPP",
+      "Android",
+      "Chromium",
+      "Chrome",
+      "browsers",
+      "artifacts",
+      "research"
+    ],
+    "excerpt": "Websites can save real files inside a Chromium browser. On Android, those files stayed after browsing history was cleared in a known-data test. ALEAPP now reads them, building on Ryan Benson's 2019 work."
+  },
+  {
     "slug": "2026-10-23-keepsafe-android-aleapp",
     "title": "KeepSafe for Android Caught an Intruder. It Was Me.",
     "date": "2026-10-23",
