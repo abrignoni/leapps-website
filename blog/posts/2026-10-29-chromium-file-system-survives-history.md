@@ -34,6 +34,12 @@ Known data, on Chrome 124.0.6367.219 in an Android 15 emulator. A local test pag
 2. **After clearing browsing history only, for the last hour.** The test site's History rows were gone. The site's Origins record, its folder names, its file names and the file contents were all still there. One detail: Chrome rewrote the Origin Private File System file between the two snapshots, so that file's data path and its folder's time changed. Same name, same contents.
 3. **Control: after clearing cookies and site data, for the last hour.** This one removed the site's folder and its files. It also left a deleted Origins record that still names the site, sitting in the LevelDB log until compaction.
 
+Those leftover records turn up in real extractions too. Here are two of them, from a training extraction, as LAVA shows them:
+
+![LAVA showing the Chromium File System API - Sites artifact with two rows. Both have State Deleted, Folder Present No and Browser Chrome. The Site and Site Key columns are covered with gray bars marked redacted.](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/2026-10-29-chromium-file-system-survives-history/lava-sites-deleted-redacted.webp)
+
+*Two deleted site records in a training extraction. The site names are redacted.*
+
 So the History screen can be empty while the files a site saved are still on the device. Correct? That is what the known data shows.
 
 ## Reading the records
