@@ -48,7 +48,15 @@ A site record means the site opened this storage. It does not mean the site save
 
 It also does not tell you when the browser was used or who used it. The Origins database stores no time.
 
-Storage a site keeps while it is embedded in another site lives somewhere else, under `WebStorage/<bucket>/FileSystem`. ALEAPP does not read that one.
+## Embedded sites keep theirs somewhere else
+
+A site embedded in another site, in a frame for example, does not use the `File System` folder. Chrome keeps that site's File System API storage under `WebStorage/<bucket id>/FileSystem`, in a bucket whose storage key names both the embedded site and the top-level site.
+
+We tested that too, on the same emulator. A page on one site embedded a page from a second site, and the embedded page wrote two files. Both went into a bucket folder. The embedded page's address was never in History, only the top page was. Clearing history only changed nothing in the bucket. Clearing cookies and site data removed the bucket folder and its row in `WebStorage/QuotaManager`, and this time nothing left behind named the site.
+
+On our test images: 29 bucket rows on 6 of 22 images, all Chrome, none holding saved files.
+
+One caveat. The bucket's last accessed and last modified times come from `QuotaManager` and belong to the whole bucket. Any kind of storage the site uses updates them, not only the File System API.
 
 ## The limits
 
@@ -56,10 +64,11 @@ One Chrome version, one emulator, and only the "last hour" time range. WebView a
 
 ## In ALEAPP
 
-Two new artifacts, added in [ALEAPP #1839](https://github.com/abrignoni/ALEAPP/pull/1839) and coming in the next release:
+Three new artifacts, added in [ALEAPP #1839](https://github.com/abrignoni/ALEAPP/pull/1839) and [ALEAPP #1840](https://github.com/abrignoni/ALEAPP/pull/1840) and coming in the next release:
 
 - **Chromium File System API - Sites**: the site records, live and deleted, with the folder each one points to.
-- **Chromium File System API - Files**: the folders and files each site saved, rebuilt from its Paths database, with the saved files shown as media.
+- **Chromium File System API - Bucket Storage**: one row per bucket folder, with the embedded site, the top-level site and the bucket's last accessed and last modified times.
+- **Chromium File System API - Files**: the folders and files each site saved, from the `File System` folder and from bucket storage, rebuilt from the Paths databases, with the saved files shown as media and a Top-Level Site column for bucket entries.
 
 The notes on each artifact carry the Chromium source citations and the test details.
 
