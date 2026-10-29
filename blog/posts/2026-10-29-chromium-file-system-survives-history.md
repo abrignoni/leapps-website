@@ -42,15 +42,6 @@ Those leftover records turn up in real extractions too. Here are two of them, fr
 
 So the History screen can be empty while the files a site saved are still on the device. Correct? That is what the known data shows.
 
-## Reading the records
-
-The format below comes from the Chromium source at commit [3a50e01](https://github.com/chromium/chromium/tree/3a50e012e4c9b8a410a4e2b12bf577e69ee8f755) (tag 130.0.6723.58).
-
-- **Origins** keys look like `ORIGIN:<scheme_host_port>`, and each stores the name of the site's numbered folder ([sandbox_origin_database.cc](https://github.com/chromium/chromium/blob/3a50e012e4c9b8a410a4e2b12bf577e69ee8f755/storage/browser/file_system/sandbox_origin_database.cc#L253-L258)). A port of 0 means the scheme's default port ([database_identifier.cc](https://github.com/chromium/chromium/blob/3a50e012e4c9b8a410a4e2b12bf577e69ee8f755/storage/common/database/database_identifier.cc#L101-L104)). The test site was `ORIGIN:http_localhost_8765`.
-- **Paths** keys look like `CHILD_OF:<parent id>:<name>`, and each numeric id holds a parent id, a data path, a name and a time ([sandbox_directory_database.cc](https://github.com/chromium/chromium/blob/3a50e012e4c9b8a410a4e2b12bf577e69ee8f755/storage/browser/file_system/sandbox_directory_database.cc#L38-L49)).
-- **Only folders keep a usable time.** Chromium updates a folder's time whenever something inside it is created, copied, moved or removed ([obfuscated_file_util.cc](https://github.com/chromium/chromium/blob/3a50e012e4c9b8a410a4e2b12bf577e69ee8f755/storage/browser/file_system/obfuscated_file_util.cc#L103-L106)). A file's time comes from its data file instead ([obfuscated_file_util.cc](https://github.com/chromium/chromium/blob/3a50e012e4c9b8a410a4e2b12bf577e69ee8f755/storage/browser/file_system/obfuscated_file_util.cc#L1144-L1156)). In the test, both file entries stored a time of 0.
-- **A deleted `CHILD_OF` key** means a name was removed from that folder by a delete, a rename or a move. It tells you the name and the parent folder, and nothing else.
-
 ## What a record means, and what it does not
 
 A site record means the site opened this storage. It does not mean the site saved anything. On our test images, 30 of the 31 live site records had no saved folders or files. Do not read a record as "this site stored data here" without looking at the Paths.
@@ -75,3 +66,14 @@ The notes on each artifact carry the Chromium source citations and the test deta
 Thanks again to Ryan Benson. His post did the hard part years ago. This just follows it to Android.
 
 Hope this helps.
+
+---
+
+## Notes on the format
+
+For anyone reading the records by hand. The format comes from the Chromium source at commit [3a50e01](https://github.com/chromium/chromium/tree/3a50e012e4c9b8a410a4e2b12bf577e69ee8f755) (tag 130.0.6723.58).
+
+- **Origins** keys look like `ORIGIN:<scheme_host_port>`, and each stores the name of the site's numbered folder ([sandbox_origin_database.cc](https://github.com/chromium/chromium/blob/3a50e012e4c9b8a410a4e2b12bf577e69ee8f755/storage/browser/file_system/sandbox_origin_database.cc#L253-L258)). A port of 0 means the scheme's default port ([database_identifier.cc](https://github.com/chromium/chromium/blob/3a50e012e4c9b8a410a4e2b12bf577e69ee8f755/storage/common/database/database_identifier.cc#L101-L104)). The test site was `ORIGIN:http_localhost_8765`.
+- **Paths** keys look like `CHILD_OF:<parent id>:<name>`, and each numeric id holds a parent id, a data path, a name and a time ([sandbox_directory_database.cc](https://github.com/chromium/chromium/blob/3a50e012e4c9b8a410a4e2b12bf577e69ee8f755/storage/browser/file_system/sandbox_directory_database.cc#L38-L49)).
+- **Only folders keep a usable time.** Chromium updates a folder's time whenever something inside it is created, copied, moved or removed ([obfuscated_file_util.cc](https://github.com/chromium/chromium/blob/3a50e012e4c9b8a410a4e2b12bf577e69ee8f755/storage/browser/file_system/obfuscated_file_util.cc#L103-L106)). A file's time comes from its data file instead ([obfuscated_file_util.cc](https://github.com/chromium/chromium/blob/3a50e012e4c9b8a410a4e2b12bf577e69ee8f755/storage/browser/file_system/obfuscated_file_util.cc#L1144-L1156)). In the test, both file entries stored a time of 0.
+- **A deleted `CHILD_OF` key** means a name was removed from that folder by a delete, a rename or a move. It tells you the name and the parent folder, and nothing else.
