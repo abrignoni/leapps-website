@@ -8,7 +8,7 @@ excerpt: Websites can save real files inside a Chromium browser. On Android, tho
 
 # Clearing History Does Not Clear Chromium's File System Storage
 
-![A wooden desk at night under a green lamp. On the desk, a phone shows a History screen with every row blank and a few sparkles around it, as if wiped clean. Below, the desk's drawer is pulled open and full of colored file folders tabbed 000 to 004, two with papers sticking out.](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/2026-10-29-chromium-file-system-survives-history/chromium-file-system-hero.webp)
+![Headline: History cleared. Files kept. Chromium File System API storage on Android. Beside it, a wooden desk at night under a green lamp. On the desk, a phone shows a History screen with every row blank and sparkles around it. Below, the desk's drawer, labelled File System on a brass plate, is pulled open and full of colored folders tabbed 000 to 003, the first with t and p dividers, and papers named 00000000, 00000003 and 00000001 sticking out. Footer: ALEAPP, known data: Chrome 124, Android 15.](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/2026-10-29-chromium-file-system-survives-history/chromium-file-system-hero.webp)
 
 Websites can keep files inside your browser. Not cookies, not a database. Actual folders and files. Chromium gives sites APIs to do this, and the files sit in the browser profile under `File System`.
 
