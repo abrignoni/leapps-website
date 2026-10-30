@@ -1,12 +1,18 @@
 {
-  "generated": "2026-10-29",
+  "generated": "2026-10-30",
   "window_days": 45,
   "items": [
     {
-      "name": "chromiumFileSystem",
-      "query": "chromiumFileSystem",
+      "name": "sconeCallDataLogs",
+      "query": "sconeCallDataLogs",
       "tool": "ALEAPP",
-      "date": "2026-10-29"
+      "date": "2026-10-30"
+    },
+    {
+      "name": "bmw nbt navigation",
+      "query": "bmw_nbt_navigation",
+      "tool": "VLEAPP",
+      "date": "2026-10-30"
     },
     {
       "name": "teleguardDesktop",
@@ -27,16 +33,16 @@
       "date": "2026-10-27"
     },
     {
+      "name": "ipMemoryStore",
+      "query": "ipMemoryStore",
+      "tool": "ALEAPP",
+      "date": "2026-10-30"
+    },
+    {
       "name": "ford sync wince voice cache",
       "query": "ford_sync_wince_voice_cache",
       "tool": "VLEAPP",
       "date": "2026-10-10"
-    },
-    {
-      "name": "androidSetupFlags",
-      "query": "androidSetupFlags",
-      "tool": "ALEAPP",
-      "date": "2026-10-28"
     },
     {
       "name": "windowsForwardedEvents",
@@ -57,22 +63,16 @@
       "date": "2026-09-28"
     },
     {
+      "name": "chromiumFileSystem",
+      "query": "chromiumFileSystem",
+      "tool": "ALEAPP",
+      "date": "2026-10-29"
+    },
+    {
       "name": "bluetooth hci snoop",
       "query": "bluetooth_hci_snoop",
       "tool": "VLEAPP",
       "date": "2026-10-10"
-    },
-    {
-      "name": "bugreportRecovery",
-      "query": "bugreportRecovery",
-      "tool": "ALEAPP",
-      "date": "2026-10-28"
-    },
-    {
-      "name": "macosAuthKit",
-      "query": "macosAuthKit",
-      "tool": "DLEAPP",
-      "date": "2026-10-24"
     }
   ]
 }
