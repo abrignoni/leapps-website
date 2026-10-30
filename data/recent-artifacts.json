@@ -3,6 +3,12 @@
   "window_days": 45,
   "items": [
     {
+      "name": "widgetEngagements",
+      "query": "widgetEngagements",
+      "tool": "iLEAPP",
+      "date": "2026-10-30"
+    },
+    {
       "name": "sconeCallDataLogs",
       "query": "sconeCallDataLogs",
       "tool": "ALEAPP",
@@ -15,22 +21,22 @@
       "date": "2026-10-30"
     },
     {
-      "name": "teleguardDesktop",
-      "query": "teleguardDesktop",
+      "name": "macosIntelligencePlatformGraph",
+      "query": "macosIntelligencePlatformGraph",
       "tool": "DLEAPP",
-      "date": "2026-10-28"
-    },
-    {
-      "name": "hiveBoxes",
-      "query": "hiveBoxes",
-      "tool": "iLEAPP",
-      "date": "2026-10-27"
+      "date": "2026-10-30"
     },
     {
       "name": "grokReturns",
       "query": "grokReturns",
       "tool": "RLEAPP",
       "date": "2026-10-27"
+    },
+    {
+      "name": "suggestionsUrls",
+      "query": "suggestionsUrls",
+      "tool": "iLEAPP",
+      "date": "2026-10-30"
     },
     {
       "name": "ipMemoryStore",
@@ -45,16 +51,10 @@
       "date": "2026-10-10"
     },
     {
-      "name": "windowsForwardedEvents",
-      "query": "windowsForwardedEvents",
+      "name": "macosWebkitResourceLoadStatistics",
+      "query": "macosWebkitResourceLoadStatistics",
       "tool": "DLEAPP",
-      "date": "2026-10-25"
-    },
-    {
-      "name": "smsAppPayloads",
-      "query": "smsAppPayloads",
-      "tool": "iLEAPP",
-      "date": "2026-10-25"
+      "date": "2026-10-30"
     },
     {
       "name": "tikTokReturnPdf",
@@ -63,16 +63,16 @@
       "date": "2026-09-28"
     },
     {
+      "name": "metaTimeInApp",
+      "query": "metaTimeInApp",
+      "tool": "iLEAPP",
+      "date": "2026-10-30"
+    },
+    {
       "name": "chromiumFileSystem",
       "query": "chromiumFileSystem",
       "tool": "ALEAPP",
       "date": "2026-10-29"
-    },
-    {
-      "name": "bluetooth hci snoop",
-      "query": "bluetooth_hci_snoop",
-      "tool": "VLEAPP",
-      "date": "2026-10-10"
     }
   ]
 }
