@@ -3,14 +3,14 @@
   "window_days": 45,
   "items": [
     {
-      "name": "widgetEngagements",
-      "query": "widgetEngagements",
+      "name": "homeKit",
+      "query": "homeKit",
       "tool": "iLEAPP",
       "date": "2026-10-30"
     },
     {
-      "name": "sconeCallDataLogs",
-      "query": "sconeCallDataLogs",
+      "name": "mozillaProfileTimes",
+      "query": "mozillaProfileTimes",
       "tool": "ALEAPP",
       "date": "2026-10-30"
     },
@@ -21,8 +21,8 @@
       "date": "2026-10-30"
     },
     {
-      "name": "macosIntelligencePlatformGraph",
-      "query": "macosIntelligencePlatformGraph",
+      "name": "macosMobileBluetooth",
+      "query": "macosMobileBluetooth",
       "tool": "DLEAPP",
       "date": "2026-10-30"
     },
@@ -33,14 +33,14 @@
       "date": "2026-10-27"
     },
     {
-      "name": "suggestionsUrls",
-      "query": "suggestionsUrls",
+      "name": "suggestionsContactDetails",
+      "query": "suggestionsContactDetails",
       "tool": "iLEAPP",
       "date": "2026-10-30"
     },
     {
-      "name": "ipMemoryStore",
-      "query": "ipMemoryStore",
+      "name": "sconeCallDataLogs",
+      "query": "sconeCallDataLogs",
       "tool": "ALEAPP",
       "date": "2026-10-30"
     },
@@ -51,8 +51,8 @@
       "date": "2026-10-10"
     },
     {
-      "name": "macosWebkitResourceLoadStatistics",
-      "query": "macosWebkitResourceLoadStatistics",
+      "name": "macosIntelligencePlatformGraph",
+      "query": "macosIntelligencePlatformGraph",
       "tool": "DLEAPP",
       "date": "2026-10-30"
     },
@@ -63,16 +63,16 @@
       "date": "2026-09-28"
     },
     {
-      "name": "metaTimeInApp",
-      "query": "metaTimeInApp",
+      "name": "widgetEngagements",
+      "query": "widgetEngagements",
       "tool": "iLEAPP",
       "date": "2026-10-30"
     },
     {
-      "name": "chromiumFileSystem",
-      "query": "chromiumFileSystem",
+      "name": "ipMemoryStore",
+      "query": "ipMemoryStore",
       "tool": "ALEAPP",
-      "date": "2026-10-29"
+      "date": "2026-10-30"
     }
   ]
 }
