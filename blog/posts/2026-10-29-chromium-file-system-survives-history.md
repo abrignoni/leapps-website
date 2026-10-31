@@ -1,16 +1,16 @@
 ---
-title: Clearing History Does Not Clear Chromium's File System Storage
+title: Clearing history does not clear Chromium's File System storage
 date: 2026-10-29
 author: Alexis Brignoni
 tags: [ALEAPP, Android, Chromium, Chrome, browsers, artifacts, research]
 excerpt: Websites can save real files inside a Chromium browser. On Android, those files stayed after browsing history was cleared in a known-data test. ALEAPP now reads them, building on Ryan Benson's 2019 work.
 ---
 
-# Clearing History Does Not Clear Chromium's File System Storage
+# Clearing history does not clear Chromium's File System storage
 
 ![Headline: History cleared. Files kept. Chromium File System API storage on Android. Beside it, a wooden desk at night under a green lamp. On the desk, a phone shows a History screen with every row blank and sparkles around it. Below, the desk's drawer, labelled File System on a brass plate, is pulled open and full of colored folders tabbed 000 to 003, the first with t and p dividers, and papers named 00000000, 00000003 and 00000001 sticking out. Footer: ALEAPP, known data: Chrome 124, Android 15.](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/2026-10-29-chromium-file-system-survives-history/chromium-file-system-hero.webp)
 
-Websites can keep files inside your browser. Not cookies, not a database. Actual folders and files. Chromium gives sites APIs to do this, and the files sit in the browser profile under `File System`.
+Websites can keep files inside your browser: real folders and files, separate from cookies and site databases. Chromium gives sites APIs to do this, and the files sit in the browser profile under `File System`.
 
 Credit first. Ryan Benson explained this store for desktop Chrome back in 2019 in [Deciphering Browser Hieroglyphics: FileSystem (Part 3)](https://hindsig.ht/blog/deciphering-browser-hieroglyphics-leveldb-filesystem/), and Hindsight parses it. The Origins and Paths LevelDBs, the numbered site folders with their `t` and `p` subfolders, the data files with no extension: it is all there. Go read it. What follows builds on his work.
 
@@ -24,7 +24,7 @@ On our test images, ALEAPP found 33 site records on 16 of 22 images, across all 
 
 ## The newer API writes to the same place
 
-Ryan's post predates the Origin Private File System (`navigator.storage.getDirectory`). On Chrome 124, a file written through it landed in this same store, in the same site folder as a file written through the older `webkitRequestFileSystem`. One store, two APIs. Good to know when you go looking.
+Ryan's post predates the Origin Private File System (`navigator.storage.getDirectory`). On Chrome 124, a file written through it landed in this same store, in the same site folder as a file written through the older `webkitRequestFileSystem`. So when you look for files a site saved, check that one store for both APIs.
 
 ## The test
 
@@ -73,8 +73,6 @@ Three new artifacts, added in [ALEAPP #1839](https://github.com/abrignoni/ALEAPP
 The notes on each artifact carry the Chromium source citations and the test details.
 
 Thanks again to Ryan Benson. His post did the hard part years ago. This just follows it to Android.
-
-Hope this helps.
 
 ---
 
