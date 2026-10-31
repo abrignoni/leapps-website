@@ -1,7 +1,7 @@
 [
   {
     "slug": "2026-10-29-chromium-file-system-survives-history",
-    "title": "Clearing History Does Not Clear Chromium's File System Storage",
+    "title": "Clearing history does not clear Chromium's File System storage",
     "date": "2026-10-29",
     "author": "Alexis Brignoni",
     "tags": [
