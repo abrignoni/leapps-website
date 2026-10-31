@@ -58,7 +58,7 @@ async function injectOG(request, url, slug, env) {
   const pageRes = await env.ASSETS.fetch(request);
   if (!(pageRes.headers.get('content-type') || '').includes('text/html')) return pageRes;
 
-  const title = `${post.title} — LEAPPs Blog`;
+  const title = `${post.title} | LEAPPs Blog`;
   const desc = post.excerpt || 'News, updates and forensics insights from the LEAPPs project.';
   // Version the card URL by the post date. It's the same image, but the
   // distinct URL forces social platforms to fetch it fresh instead of serving

@@ -633,15 +633,15 @@ img { max-width: 100%; display: block; }
         const title = meta.title || slug;
         const excerpt = meta.excerpt || '';
         const postUrl = `https://leapps.org/blog-post?post=${encodeURIComponent(slug)}`;
-        document.title = `${title} — LEAPPs Blog`;
+        document.title = `${title} | LEAPPs Blog`;
         document.querySelector('meta[name="description"]').setAttribute('content', excerpt);
-        document.querySelector('meta[property="og:title"]').setAttribute('content', `${title} — LEAPPs Blog`);
+        document.querySelector('meta[property="og:title"]').setAttribute('content', `${title} | LEAPPs Blog`);
         document.querySelector('meta[property="og:description"]').setAttribute('content', excerpt);
         document.querySelector('meta[property="og:url"]').setAttribute('content', postUrl);
         const cardUrl = `https://leapps.org/blog/og/${encodeURIComponent(slug)}.png`;
         document.querySelector('meta[property="og:image"]').setAttribute('content', cardUrl);
         document.querySelector('meta[name="twitter:image"]').setAttribute('content', cardUrl);
-        document.querySelector('meta[name="twitter:title"]').setAttribute('content', `${title} — LEAPPs Blog`);
+        document.querySelector('meta[name="twitter:title"]').setAttribute('content', `${title} | LEAPPs Blog`);
         document.querySelector('meta[name="twitter:description"]').setAttribute('content', excerpt);
         document.querySelector('link[rel="canonical"]').setAttribute('href', postUrl);
         if (meta.date) {
@@ -705,7 +705,7 @@ img { max-width: 100%; display: block; }
           <div id="prevnext-slot"></div>
           <div class="post-subscribe">
             <h3>Enjoyed this post? <span>Get the next one.</span></h3>
-            <p>New posts, tool releases, and parser updates by email. No spam &mdash; just signal.</p>
+            <p>New posts, tool releases, and parser updates by email. Nothing else.</p>
             <iframe data-w-type="embedded" loading="lazy" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
               title="LEAPPs mailing list signup form"
               src="https://shv4k.mjt.lu/wgt/shv4k/0n0g/form?c=10409fc4"
