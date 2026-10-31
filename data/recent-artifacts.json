@@ -1,12 +1,18 @@
 {
-  "generated": "2026-10-30",
+  "generated": "2026-10-31",
   "window_days": 45,
   "items": [
     {
-      "name": "homeKit",
-      "query": "homeKit",
+      "name": "chromeSyncData",
+      "query": "chromeSyncData",
       "tool": "iLEAPP",
-      "date": "2026-10-30"
+      "date": "2026-10-31"
+    },
+    {
+      "name": "anyDesk",
+      "query": "anyDesk",
+      "tool": "DLEAPP",
+      "date": "2026-10-31"
     },
     {
       "name": "mozillaProfileTimes",
@@ -21,21 +27,21 @@
       "date": "2026-10-30"
     },
     {
-      "name": "macosMobileBluetooth",
-      "query": "macosMobileBluetooth",
-      "tool": "DLEAPP",
-      "date": "2026-10-30"
-    },
-    {
       "name": "grokReturns",
       "query": "grokReturns",
       "tool": "RLEAPP",
       "date": "2026-10-27"
     },
     {
-      "name": "suggestionsContactDetails",
-      "query": "suggestionsContactDetails",
+      "name": "homeKit",
+      "query": "homeKit",
       "tool": "iLEAPP",
+      "date": "2026-10-31"
+    },
+    {
+      "name": "macosMobileBluetooth",
+      "query": "macosMobileBluetooth",
+      "tool": "DLEAPP",
       "date": "2026-10-30"
     },
     {
@@ -51,27 +57,21 @@
       "date": "2026-10-10"
     },
     {
-      "name": "macosIntelligencePlatformGraph",
-      "query": "macosIntelligencePlatformGraph",
-      "tool": "DLEAPP",
-      "date": "2026-10-30"
-    },
-    {
       "name": "tikTokReturnPdf",
       "query": "tikTokReturnPdf",
       "tool": "RLEAPP",
       "date": "2026-09-28"
     },
     {
-      "name": "widgetEngagements",
-      "query": "widgetEngagements",
+      "name": "metaTimeInApp",
+      "query": "metaTimeInApp",
       "tool": "iLEAPP",
       "date": "2026-10-30"
     },
     {
-      "name": "ipMemoryStore",
-      "query": "ipMemoryStore",
-      "tool": "ALEAPP",
+      "name": "macosIntelligencePlatformGraph",
+      "query": "macosIntelligencePlatformGraph",
+      "tool": "DLEAPP",
       "date": "2026-10-30"
     }
   ]
