@@ -347,7 +347,7 @@
       {
         "@type": "WebPage",
         "name": "Probes — LEAPPs",
-        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for media, databases, plists, archives and PDFs carved by signature. One Python file each, built on the standard library. Plus the readers the LEAPPs vendor: c2pareader, cblite-parser, hive-parser, mmkv-parser and sqlite-wal.",
+        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for media, databases, plists, archives and PDFs carved by signature. One Python file each, built on the standard library. Plus the readers the LEAPPs vendor: c2pareader, cblite-parser, hive-parser, mmkv-parser, sqlite-wal and cimreader.",
         "url": "https://leapps.org/probes",
         "isPartOf": { "@type": "WebSite", "name": "LEAPPs", "url": "https://leapps.org" }
       },
@@ -486,6 +486,20 @@
           "name": "Alexis Brignoni",
           "url": "https://github.com/abrignoni"
         }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "cimreader",
+        "description": "Reads the Windows WMI CIM repository and lists the WMI event subscriptions in it. A port of python-cim from Mandiant's flare-wmi.",
+        "url": "https://leapps.org/probes#section-cimreader",
+        "codeRepository": "https://github.com/abrignoni/cimreader",
+        "programmingLanguage": "Python",
+        "license": "https://www.apache.org/licenses/LICENSE-2.0",
+        "author": {
+          "@type": "Person",
+          "name": "Alexis Brignoni",
+          "url": "https://github.com/abrignoni"
+        }
       }
     ]
   }
@@ -617,6 +631,7 @@
         <li><a href="#section-hive-parser"><i class="ti ti-hexagons"></i>hive-parser</a></li>
         <li><a href="#section-mmkv-parser"><i class="ti ti-key"></i>mmkv-parser</a></li>
         <li><a href="#section-sqlite-wal"><i class="ti ti-history"></i>sqlite-wal</a></li>
+        <li><a href="#section-cimreader"><i class="ti ti-brand-windows"></i>cimreader</a></li>
       </ul>
     </aside>
 
@@ -850,8 +865,8 @@
         <div class="lp-about-box">
           <div>
             <h3>What are the readers?</h3>
-            <p>Each reader decodes one data store an app writes, and lives in its own repository so it can be tested on its own. The LEAPPs copy the file in unchanged and record the commit they copied, so the code that read the data can be traced to its repository.</p>
-            <p>They have no window and no executables. Each is pure Python on the standard library, read-only, MIT licensed, and also runs from the command line with <code>python -m</code>.</p>
+            <p>Each reader decodes one data store an app or the operating system writes, and lives in its own repository so it can be tested on its own. The LEAPPs copy the file in unchanged and record the commit they copied, so the code that read the data can be traced to its repository.</p>
+            <p>They have no window and no executables. Each is pure Python on the standard library, read-only, free and open source under its own licence (MIT, or Apache 2.0 for cimreader), and also runs on its own from the command line.</p>
           </div>
           <div>
             <h3>Releases</h3>
@@ -983,6 +998,33 @@
             <ul>
               <li>iLEAPP and ALEAPP, starting with their next releases, for artifacts such as Snapchat, Discord and Google Chat</li>
               <li><code>python -m sqlite_wal summary DB</code> and <code>rows DB --query</code>, with <code>--key</code> to label earlier versions of current rows</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CIMREADER -->
+      <section class="lp-tool-section" id="section-cimreader">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Reader &middot; Windows WMI</div>
+            <h2>cimreader</h2>
+            <div class="lp-tool-fullname">The Windows WMI CIM repository and the event subscriptions in it</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><a href="https://github.com/abrignoni/cimreader/releases" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-tag"></i>Releases</a><a href="https://github.com/abrignoni/cimreader" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What it reads</h3>
+            <p>The repository in <code>Windows\System32\wbem\Repository</code>: <code>OBJECTS.DATA</code>, <code>INDEX.BTR</code> and the <code>MAPPING</code> files. It resolves the active page mapping, walks the index and decodes namespaces, class definitions and instances against their classes. Its first job is listing WMI event subscriptions, the filters, consumers and bindings between them, a common persistence mechanism.</p>
+            <p>When an object cannot be decoded, <code>instances</code> and <code>subscriptions</code> exit with 2, so "nothing there" and "could not read" are never the same answer.</p>
+            <p>A port of python-cim from Mandiant's <a href="https://github.com/mandiant/flare-wmi" target="_blank" rel="noopener noreferrer">flare-wmi</a>, written by Willi Ballenthin with contributions from davidpany and fhouse. Apache License 2.0, like the original.</p>
+          </div>
+          <div>
+            <h3>Where it runs</h3>
+            <ul>
+              <li>DLEAPP, starting with its next release, for its WMI subscription artifacts</li>
+              <li><code>python3 cimreader.py subscriptions Repository</code> prints the subscriptions as JSON</li>
             </ul>
           </div>
         </div>

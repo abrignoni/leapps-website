@@ -31,6 +31,7 @@ Readers: the format readers the LEAPPs vendor as single files, each also a comma
 - [hive-parser](https://github.com/abrignoni/hive-parser): reads Hive boxes, the key-value store Flutter apps write, frame by frame and as the app reads them back
 - [mmkv-parser](https://github.com/abrignoni/mmkv-parser): reads Tencent MMKV key-value store files, every entry in file order and as the app sees them
 - [sqlite-wal](https://github.com/abrignoni/sqlite-wal): reads the earlier committed states a SQLite write-ahead log still holds, through SQLite itself, and lists rows an earlier state holds that the current one does not
+- [cimreader](https://github.com/abrignoni/cimreader): reads the Windows WMI CIM repository and lists WMI event subscriptions (filters, consumers, bindings); a port of python-cim from Mandiant's flare-wmi, Apache 2.0
 
 ## Install
 
