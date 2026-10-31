@@ -99,7 +99,7 @@
     "title": "Readers: the format readers the LEAPPs vendor",
     "url": "https://leapps.org/probes#readers",
     "page": "Probes",
-    "excerpt": "c2pareader, cblite-parser, hive-parser, mmkv-parser and sqlite-wal: read-only, standard library only, MIT, each also a command line tool."
+    "excerpt": "c2pareader, cblite-parser, hive-parser, mmkv-parser, sqlite-wal and cimreader: read-only, standard library only, free and open source, each also a command line tool."
   },
   {
     "title": "c2pareader: Content Credentials (C2PA) and IPTC source type",
@@ -130,6 +130,12 @@
     "url": "https://leapps.org/probes#section-sqlite-wal",
     "page": "Probes",
     "excerpt": "Reads the earlier committed states a SQLite -wal still holds, through SQLite itself, and lists rows an earlier state holds that the current one does not."
+  },
+  {
+    "title": "cimreader: Windows WMI repository and event subscriptions",
+    "url": "https://leapps.org/probes#section-cimreader",
+    "page": "Probes",
+    "excerpt": "Reads the WMI CIM repository (OBJECTS.DATA, INDEX.BTR, MAPPING files) and lists WMI event subscriptions. A port of python-cim from Mandiant's flare-wmi, Apache 2.0."
   },
   {
     "title": "Probes — standalone forensic readers",
