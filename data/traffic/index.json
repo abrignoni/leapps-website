@@ -12,17 +12,17 @@
    },
    "window": {
     "views": {
-     "count": 4923,
-     "uniques": 2042,
-     "as_of": "2026-10-31"
+     "count": 4897,
+     "uniques": 2035,
+     "as_of": "2026-11-01"
     },
     "clones": {
-     "count": 37617,
-     "uniques": 1684,
-     "as_of": "2026-10-31"
+     "count": 38914,
+     "uniques": 1735,
+     "as_of": "2026-11-01"
     }
    },
-   "last_success": "2026-10-31T10:45:14Z"
+   "last_success": "2026-11-01T11:43:09Z"
   },
   "aleapp": {
    "repo": "abrignoni/ALEAPP",
@@ -35,17 +35,17 @@
    },
    "window": {
     "views": {
-     "count": 3102,
-     "uniques": 1578,
-     "as_of": "2026-10-31"
+     "count": 3066,
+     "uniques": 1573,
+     "as_of": "2026-11-01"
     },
     "clones": {
-     "count": 11300,
-     "uniques": 1560,
-     "as_of": "2026-10-31"
+     "count": 11662,
+     "uniques": 1597,
+     "as_of": "2026-11-01"
     }
    },
-   "last_success": "2026-10-31T10:45:14Z"
+   "last_success": "2026-11-01T11:43:09Z"
   },
   "rleapp": {
    "repo": "abrignoni/RLEAPP",
@@ -58,17 +58,17 @@
    },
    "window": {
     "views": {
-     "count": 428,
-     "uniques": 191,
-     "as_of": "2026-10-31"
+     "count": 407,
+     "uniques": 188,
+     "as_of": "2026-11-01"
     },
     "clones": {
-     "count": 1484,
-     "uniques": 378,
-     "as_of": "2026-10-31"
+     "count": 1404,
+     "uniques": 346,
+     "as_of": "2026-11-01"
     }
    },
-   "last_success": "2026-10-31T10:45:14Z"
+   "last_success": "2026-11-01T11:43:09Z"
   },
   "vleapp": {
    "repo": "abrignoni/VLEAPP",
@@ -81,17 +81,17 @@
    },
    "window": {
     "views": {
-     "count": 308,
-     "uniques": 132,
-     "as_of": "2026-10-31"
+     "count": 297,
+     "uniques": 134,
+     "as_of": "2026-11-01"
     },
     "clones": {
-     "count": 1162,
-     "uniques": 317,
-     "as_of": "2026-10-31"
+     "count": 1118,
+     "uniques": 314,
+     "as_of": "2026-11-01"
     }
    },
-   "last_success": "2026-10-31T10:45:14Z"
+   "last_success": "2026-11-01T11:43:09Z"
   },
   "lava": {
    "repo": "leapps-org/LAVA-releases",
@@ -104,17 +104,17 @@
    },
    "window": {
     "views": {
-     "count": 120,
+     "count": 122,
      "uniques": 60,
-     "as_of": "2026-10-31"
+     "as_of": "2026-11-01"
     },
     "clones": {
      "count": 9,
      "uniques": 8,
-     "as_of": "2026-10-31"
+     "as_of": "2026-11-01"
     }
    },
-   "last_success": "2026-10-31T10:45:14Z"
+   "last_success": "2026-11-01T11:43:09Z"
   },
   "dleapp": {
    "repo": "abrignoni/DLEAPP",
@@ -127,17 +127,17 @@
    },
    "window": {
     "views": {
-     "count": 504,
-     "uniques": 180,
-     "as_of": "2026-10-31"
+     "count": 484,
+     "uniques": 185,
+     "as_of": "2026-11-01"
     },
     "clones": {
-     "count": 8001,
-     "uniques": 611,
-     "as_of": "2026-10-31"
+     "count": 7815,
+     "uniques": 616,
+     "as_of": "2026-11-01"
     }
    },
-   "last_success": "2026-10-31T10:45:14Z"
+   "last_success": "2026-11-01T11:43:09Z"
   },
   "gleapp": {
    "repo": "abrignoni/GLEAPP",
@@ -150,17 +150,17 @@
    },
    "window": {
     "views": {
-     "count": 406,
-     "uniques": 106,
-     "as_of": "2026-10-31"
+     "count": 381,
+     "uniques": 113,
+     "as_of": "2026-11-01"
     },
     "clones": {
-     "count": 919,
-     "uniques": 237,
-     "as_of": "2026-10-31"
+     "count": 807,
+     "uniques": 231,
+     "as_of": "2026-11-01"
     }
    },
-   "last_success": "2026-10-31T10:45:14Z"
+   "last_success": "2026-11-01T11:43:09Z"
   },
   "batchleapp": {
    "repo": "abrignoni/batch-leapp",
@@ -173,17 +173,17 @@
    },
    "window": {
     "views": {
-     "count": 69,
-     "uniques": 39,
-     "as_of": "2026-10-31"
+     "count": 66,
+     "uniques": 38,
+     "as_of": "2026-11-01"
     },
     "clones": {
-     "count": 30,
-     "uniques": 27,
-     "as_of": "2026-10-31"
+     "count": 28,
+     "uniques": 25,
+     "as_of": "2026-11-01"
     }
    },
-   "last_success": "2026-10-31T10:45:14Z"
+   "last_success": "2026-11-01T11:43:09Z"
   },
   "qnxprobe": {
    "repo": "abrignoni/qnxprobe",
@@ -196,17 +196,17 @@
    },
    "window": {
     "views": {
-     "count": 188,
-     "uniques": 67,
-     "as_of": "2026-10-31"
+     "count": 185,
+     "uniques": 69,
+     "as_of": "2026-11-01"
     },
     "clones": {
-     "count": 411,
-     "uniques": 213,
-     "as_of": "2026-10-31"
+     "count": 305,
+     "uniques": 187,
+     "as_of": "2026-11-01"
     }
    },
-   "last_success": "2026-10-31T10:45:14Z"
+   "last_success": "2026-11-01T11:43:09Z"
   },
   "ewfprobe": {
    "repo": "abrignoni/ewfprobe",
@@ -219,17 +219,17 @@
    },
    "window": {
     "views": {
-     "count": 35,
-     "uniques": 18,
-     "as_of": "2026-10-31"
+     "count": 41,
+     "uniques": 19,
+     "as_of": "2026-11-01"
     },
     "clones": {
-     "count": 347,
-     "uniques": 68,
-     "as_of": "2026-10-31"
+     "count": 248,
+     "uniques": 59,
+     "as_of": "2026-11-01"
     }
    },
-   "last_success": "2026-10-31T10:45:14Z"
+   "last_success": "2026-11-01T11:43:09Z"
   },
   "exoprobe": {
    "repo": "abrignoni/exoprobe",
@@ -242,17 +242,17 @@
    },
    "window": {
     "views": {
-     "count": 50,
-     "uniques": 25,
-     "as_of": "2026-10-31"
+     "count": 48,
+     "uniques": 22,
+     "as_of": "2026-11-01"
     },
     "clones": {
-     "count": 97,
-     "uniques": 25,
-     "as_of": "2026-10-31"
+     "count": 18,
+     "uniques": 18,
+     "as_of": "2026-11-01"
     }
    },
-   "last_success": "2026-10-31T10:45:14Z"
+   "last_success": "2026-11-01T11:43:09Z"
   },
   "chromiumcacheprobe": {
    "repo": "abrignoni/chromiumcacheprobe",
@@ -267,15 +267,15 @@
     "views": {
      "count": 11,
      "uniques": 6,
-     "as_of": "2026-10-31"
+     "as_of": "2026-11-01"
     },
     "clones": {
-     "count": 126,
-     "uniques": 40,
-     "as_of": "2026-10-31"
+     "count": 113,
+     "uniques": 36,
+     "as_of": "2026-11-01"
     }
    },
-   "last_success": "2026-10-31T10:45:14Z"
+   "last_success": "2026-11-01T11:43:09Z"
   },
   "mediacarve": {
    "repo": "abrignoni/mediacarve",
@@ -288,21 +288,22 @@
    },
    "window": {
     "views": {
-     "count": 32,
-     "uniques": 14,
-     "as_of": "2026-10-31"
+     "count": 26,
+     "uniques": 12,
+     "as_of": "2026-11-01"
     },
     "clones": {
-     "count": 248,
-     "uniques": 90,
-     "as_of": "2026-10-31"
+     "count": 116,
+     "uniques": 45,
+     "as_of": "2026-11-01"
     }
    },
-   "last_success": "2026-10-31T10:45:14Z"
+   "last_success": "2026-11-01T11:43:09Z"
   }
  },
  "months": [
-  "2026-10"
+  "2026-10",
+  "2026-11"
  ],
- "updated_at": "2026-10-31T10:45:14Z"
+ "updated_at": "2026-11-01T11:43:09Z"
 }
