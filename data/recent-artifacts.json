@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "faceTimeMessages",
-      "query": "faceTimeMessages",
+      "name": "chromeIosOpenTabs",
+      "query": "chromeIosOpenTabs",
       "tool": "iLEAPP",
       "date": "2026-11-01"
     },
@@ -33,8 +33,8 @@
       "date": "2026-10-27"
     },
     {
-      "name": "lockdownPairRecords",
-      "query": "lockdownPairRecords",
+      "name": "playbackSessions",
+      "query": "playbackSessions",
       "tool": "iLEAPP",
       "date": "2026-11-01"
     },
@@ -63,10 +63,10 @@
       "date": "2026-09-28"
     },
     {
-      "name": "photosPickerLog",
-      "query": "photosPickerLog",
+      "name": "mtLastLaunch",
+      "query": "mtLastLaunch",
       "tool": "iLEAPP",
-      "date": "2026-10-31"
+      "date": "2026-11-01"
     },
     {
       "name": "macosMobileBluetooth",

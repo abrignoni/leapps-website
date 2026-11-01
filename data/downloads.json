@@ -1769,17 +1769,17 @@
     {
       "date": "2026-11-01",
       "totals": {
-        "ileapp": 101603,
-        "aleapp": 78006,
-        "rleapp": 6787,
-        "vleapp": 3447,
-        "lava": 4922,
-        "dleapp": 2253,
+        "ileapp": 101679,
+        "aleapp": 78072,
+        "rleapp": 6792,
+        "vleapp": 3450,
+        "lava": 4927,
+        "dleapp": 2259,
         "gleapp": 1185,
         "batchleapp": 840
       },
       "probes": {
-        "qnxprobe": 715,
+        "qnxprobe": 716,
         "ewfprobe": 250,
         "exoprobe": 97,
         "chromiumcacheprobe": 21,
