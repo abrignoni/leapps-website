@@ -1,23 +1,23 @@
 {
-  "generated": "2026-11-01",
+  "generated": "2026-11-02",
   "window_days": 45,
   "items": [
+    {
+      "name": "instagramPendingMedia",
+      "query": "instagramPendingMedia",
+      "tool": "ALEAPP",
+      "date": "2026-11-02"
+    },
+    {
+      "name": "windowsCbsLogs",
+      "query": "windowsCbsLogs",
+      "tool": "DLEAPP",
+      "date": "2026-11-02"
+    },
     {
       "name": "chromeIosOpenTabs",
       "query": "chromeIosOpenTabs",
       "tool": "iLEAPP",
-      "date": "2026-11-01"
-    },
-    {
-      "name": "chromiumWebsiteUsage",
-      "query": "chromiumWebsiteUsage",
-      "tool": "ALEAPP",
-      "date": "2026-11-01"
-    },
-    {
-      "name": "editorExtensions",
-      "query": "editorExtensions",
-      "tool": "DLEAPP",
       "date": "2026-11-01"
     },
     {
@@ -33,22 +33,22 @@
       "date": "2026-10-27"
     },
     {
+      "name": "chromiumSitePermissions",
+      "query": "chromiumSitePermissions",
+      "tool": "ALEAPP",
+      "date": "2026-11-02"
+    },
+    {
+      "name": "editorExtensions",
+      "query": "editorExtensions",
+      "tool": "DLEAPP",
+      "date": "2026-11-01"
+    },
+    {
       "name": "playbackSessions",
       "query": "playbackSessions",
       "tool": "iLEAPP",
       "date": "2026-11-01"
-    },
-    {
-      "name": "mozillaProfileTimes",
-      "query": "mozillaProfileTimes",
-      "tool": "ALEAPP",
-      "date": "2026-10-30"
-    },
-    {
-      "name": "windowsWmiRepository",
-      "query": "windowsWmiRepository",
-      "tool": "DLEAPP",
-      "date": "2026-10-31"
     },
     {
       "name": "ford sync wince voice cache",
@@ -63,16 +63,16 @@
       "date": "2026-09-28"
     },
     {
-      "name": "mtLastLaunch",
-      "query": "mtLastLaunch",
-      "tool": "iLEAPP",
-      "date": "2026-11-01"
+      "name": "permissionController",
+      "query": "permissionController",
+      "tool": "ALEAPP",
+      "date": "2026-11-02"
     },
     {
-      "name": "sconeCallDataLogs",
-      "query": "sconeCallDataLogs",
-      "tool": "ALEAPP",
-      "date": "2026-10-30"
+      "name": "windowsWmiRepository",
+      "query": "windowsWmiRepository",
+      "tool": "DLEAPP",
+      "date": "2026-10-31"
     }
   ]
 }
