@@ -1,17 +1,17 @@
 {
-  "generated": "2026-11-02",
+  "generated": "2026-11-03",
   "window_days": 45,
   "items": [
+    {
+      "name": "windowsUserVaultCredentials",
+      "query": "windowsUserVaultCredentials",
+      "tool": "DLEAPP",
+      "date": "2026-11-03"
+    },
     {
       "name": "instagramPendingMedia",
       "query": "instagramPendingMedia",
       "tool": "ALEAPP",
-      "date": "2026-11-02"
-    },
-    {
-      "name": "windowsCbsLogs",
-      "query": "windowsCbsLogs",
-      "tool": "DLEAPP",
       "date": "2026-11-02"
     },
     {
@@ -33,16 +33,16 @@
       "date": "2026-10-27"
     },
     {
+      "name": "windowsArsoCredentials",
+      "query": "windowsArsoCredentials",
+      "tool": "DLEAPP",
+      "date": "2026-11-03"
+    },
+    {
       "name": "chromiumSitePermissions",
       "query": "chromiumSitePermissions",
       "tool": "ALEAPP",
       "date": "2026-11-02"
-    },
-    {
-      "name": "editorExtensions",
-      "query": "editorExtensions",
-      "tool": "DLEAPP",
-      "date": "2026-11-01"
     },
     {
       "name": "playbackSessions",
@@ -63,16 +63,16 @@
       "date": "2026-09-28"
     },
     {
+      "name": "windowsSystemCredentials",
+      "query": "windowsSystemCredentials",
+      "tool": "DLEAPP",
+      "date": "2026-11-02"
+    },
+    {
       "name": "permissionController",
       "query": "permissionController",
       "tool": "ALEAPP",
       "date": "2026-11-02"
-    },
-    {
-      "name": "windowsWmiRepository",
-      "query": "windowsWmiRepository",
-      "tool": "DLEAPP",
-      "date": "2026-10-31"
     }
   ]
 }
