@@ -347,7 +347,7 @@
       {
         "@type": "WebPage",
         "name": "Probes — LEAPPs",
-        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for media, databases, plists, archives and PDFs carved by signature. One Python file each, built on the standard library. Plus the readers the LEAPPs vendor: c2pareader, cblite-parser, hive-parser, mmkv-parser, sqlite-wal and cimreader.",
+        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for media, databases, plists, archives and PDFs carved by signature. One Python file each, built on the standard library. Plus the readers the LEAPPs vendor: c2pareader, cblite-parser, hive-parser, mmkv-parser, sqlite-wal, cimreader and dpapiprobe.",
         "url": "https://leapps.org/probes",
         "isPartOf": { "@type": "WebSite", "name": "LEAPPs", "url": "https://leapps.org" }
       },
@@ -500,6 +500,20 @@
           "name": "Alexis Brignoni",
           "url": "https://github.com/abrignoni"
         }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "dpapiprobe",
+        "description": "Offline Windows DPAPI decryption from the registry hives and master key files in a disk image: LSA secrets, master keys, DPAPI blobs, Credential Manager and Vault files, and Chromium passwords and cookies.",
+        "url": "https://leapps.org/probes#section-dpapiprobe",
+        "codeRepository": "https://github.com/abrignoni/dpapiprobe",
+        "programmingLanguage": "Python",
+        "license": "https://opensource.org/licenses/MIT",
+        "author": {
+          "@type": "Person",
+          "name": "Alexis Brignoni",
+          "url": "https://github.com/abrignoni"
+        }
       }
     ]
   }
@@ -632,6 +646,7 @@
         <li><a href="#section-mmkv-parser"><i class="ti ti-key"></i>mmkv-parser</a></li>
         <li><a href="#section-sqlite-wal"><i class="ti ti-history"></i>sqlite-wal</a></li>
         <li><a href="#section-cimreader"><i class="ti ti-brand-windows"></i>cimreader</a></li>
+        <li><a href="#section-dpapiprobe"><i class="ti ti-lock-open"></i>dpapiprobe</a></li>
       </ul>
     </aside>
 
@@ -866,7 +881,7 @@
           <div>
             <h3>What are the readers?</h3>
             <p>Each reader decodes one data store an app or the operating system writes, and lives in its own repository so it can be tested on its own. The LEAPPs copy the file in unchanged and record the commit they copied, so the code that read the data can be traced to its repository.</p>
-            <p>They have no window and no executables. Each is pure Python on the standard library, read-only, free and open source under its own licence (MIT, or Apache 2.0 for cimreader), and also runs on its own from the command line.</p>
+            <p>They have no window and no executables. Each is pure Python and read-only, free and open source under its own licence (MIT, or Apache 2.0 for cimreader), and also runs on its own from the command line. All but one need only the standard library: dpapiprobe also needs PyCryptodome and python-registry.</p>
           </div>
           <div>
             <h3>Releases</h3>
@@ -1025,6 +1040,33 @@
             <ul>
               <li>DLEAPP, starting with its next release, for its WMI subscription artifacts</li>
               <li><code>python3 cimreader.py subscriptions Repository</code> prints the subscriptions as JSON</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- DPAPIPROBE -->
+      <section class="lp-tool-section" id="section-dpapiprobe">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Reader &middot; Windows DPAPI</div>
+            <h2>dpapiprobe</h2>
+            <div class="lp-tool-fullname">Offline Windows DPAPI decryption from the hives and files in an image</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><a href="https://github.com/abrignoni/dpapiprobe/releases" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-tag"></i>Releases</a><a href="https://github.com/abrignoni/dpapiprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What it reads</h3>
+            <p>Point it at the registry hives and master key files pulled from a disk image. With the boot key alone it recovers the LSA secrets, decrypts the SYSTEM master keys and opens the DPAPI blobs they protect, including those inside Credential Manager and Vault files. With the account's password or its SHA-1 hash it opens that user's master keys, and the SHA-1 hash can come from the account's ARSO (TBAL) LSA secret. It also recovers a Chromium profile's key from <code>Local State</code> and decrypts saved passwords and cookies marked <code>v10</code>.</p>
+            <p>Values marked <code>v20</code> (App-Bound Encryption, Chrome 127 and later) are reported as present and not decrypted. On the command line, the default output is identifiers, lengths and SHA-1 fingerprints; recovered values are written only to a file you name.</p>
+            <p>Written clean-room under MIT so tools that ship frozen binaries can vendor it. The maintained offline DPAPI library, dpapick3, is GPL-3.0.</p>
+          </div>
+          <div>
+            <h3>Where it runs</h3>
+            <ul>
+              <li>DLEAPP, starting with its next release, for its LSA secrets, Credential Manager, Vault, ARSO, Wi-Fi key and Chromium password and cookie artifacts</li>
+              <li><code>python -m dpapiprobe lsa --system SYSTEM --security SECURITY</code>, plus <code>bootkey</code>, <code>masterkeys</code>, <code>blob</code>, <code>credential</code> and <code>vault-policy</code></li>
             </ul>
           </div>
         </div>
