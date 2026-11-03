@@ -821,7 +821,7 @@
           <div>
             <h3>What is mediacarve?</h3>
             <p>When no filesystem parser can name a file, carving still finds it by its signature. mediacarve reads anything that can seek and read: a raw image, a disk, a file inside an archive, or an E01 opened with ewfprobe. It counts what is recoverable, or writes it to a folder or a zip, and never writes to what it reads.</p>
-            <p>The established carvers, PhotoRec and Scalpel, are GPL. mediacarve exists so an MIT-licensed tool can carve without a copyleft dependency or a build toolchain. GLEAPP carves with it.</p>
+            <p>It is MIT and needs no build toolchain, so a tool that ships as a frozen binary can carve with it. GLEAPP does.</p>
           </div>
           <div>
             <h3>Highlights</h3>
@@ -1060,7 +1060,7 @@
             <h3>What it reads</h3>
             <p>Point it at an E01 or raw image, or at the registry hives and master key files pulled from one. <code>triage</code> opens the image read-only through the bundled ewfprobe and qnxprobe readers and finds the hives, master keys, Vault and Chromium stores on every volume itself. With the boot key alone it recovers the LSA secrets, decrypts the SYSTEM master keys and opens the DPAPI blobs they protect, including those inside Credential Manager and Vault files. With the account's password or its SHA-1 hash it opens that user's master keys, and the SHA-1 hash can come from the account's ARSO (TBAL) LSA secret. It also recovers a Chromium profile's key from <code>Local State</code> and decrypts saved passwords and cookies marked <code>v10</code>.</p>
             <p>Values marked <code>v20</code> (App-Bound Encryption, Chrome 127 and later) are reported as present and not decrypted. On the command line, the default output is identifiers, lengths and SHA-1 fingerprints; recovered values are written only to a file you name.</p>
-            <p>Written clean-room under MIT so tools that ship frozen binaries can vendor it. The maintained offline DPAPI library, dpapick3, is GPL-3.0.</p>
+            <p>Written clean-room under MIT, so tools that ship as frozen binaries, the LEAPPs among them, can include it.</p>
           </div>
           <div>
             <h3>Where it runs</h3>
