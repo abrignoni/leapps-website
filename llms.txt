@@ -32,7 +32,7 @@ Readers: the format readers the LEAPPs vendor as single files, each also a comma
 - [mmkv-parser](https://github.com/abrignoni/mmkv-parser): reads Tencent MMKV key-value store files, every entry in file order and as the app sees them
 - [sqlite-wal](https://github.com/abrignoni/sqlite-wal): reads the earlier committed states a SQLite write-ahead log still holds, through SQLite itself, and lists rows an earlier state holds that the current one does not
 - [cimreader](https://github.com/abrignoni/cimreader): reads the Windows WMI CIM repository and lists WMI event subscriptions (filters, consumers, bindings); a port of python-cim from Mandiant's flare-wmi, Apache 2.0
-- [dpapiprobe](https://github.com/abrignoni/dpapiprobe): offline Windows DPAPI decryption from the hives and master key files in an image (LSA secrets, master keys, DPAPI blobs, Credential Manager and Vault, Chromium v10 passwords and cookies); MIT, clean-room, needs PyCryptodome and python-registry
+- [dpapiprobe](https://github.com/abrignoni/dpapiprobe): offline Windows DPAPI decryption, straight from an E01 or raw image or from the hives and master key files pulled from one (LSA secrets, master keys, DPAPI blobs, Credential Manager and Vault, Chromium v10 passwords and cookies); MIT, clean-room, needs PyCryptodome and python-registry
 
 ## Install
 

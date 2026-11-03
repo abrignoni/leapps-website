@@ -141,7 +141,7 @@
     "title": "dpapiprobe: offline Windows DPAPI decryption",
     "url": "https://leapps.org/probes#section-dpapiprobe",
     "page": "Probes",
-    "excerpt": "Recovers LSA secrets, decrypts master keys and DPAPI blobs, Credential Manager and Vault files, and Chromium v10 passwords and cookies, offline from an image. MIT, clean-room."
+    "excerpt": "Opens an E01 or raw image, or extracted files, and recovers LSA secrets, master keys, DPAPI blobs, Credential Manager and Vault files, and Chromium v10 passwords and cookies, offline. MIT, clean-room."
   },
   {
     "title": "Probes — standalone forensic readers",

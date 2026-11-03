@@ -504,7 +504,7 @@
       {
         "@type": "SoftwareSourceCode",
         "name": "dpapiprobe",
-        "description": "Offline Windows DPAPI decryption from the registry hives and master key files in a disk image: LSA secrets, master keys, DPAPI blobs, Credential Manager and Vault files, and Chromium passwords and cookies.",
+        "description": "Offline Windows DPAPI decryption, straight from an E01 or raw image or from the hives and master key files pulled from one: LSA secrets, master keys, DPAPI blobs, Credential Manager and Vault files, and Chromium passwords and cookies.",
         "url": "https://leapps.org/probes#section-dpapiprobe",
         "codeRepository": "https://github.com/abrignoni/dpapiprobe",
         "programmingLanguage": "Python",
@@ -1051,14 +1051,14 @@
           <div class="lp-tool-header-left">
             <div class="lp-tool-platform">Reader &middot; Windows DPAPI</div>
             <h2>dpapiprobe</h2>
-            <div class="lp-tool-fullname">Offline Windows DPAPI decryption from the hives and files in an image</div>
+            <div class="lp-tool-fullname">Offline Windows DPAPI decryption, from an image or the files pulled from one</div>
           </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><a href="https://github.com/abrignoni/dpapiprobe/releases" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-tag"></i>Releases</a><a href="https://github.com/abrignoni/dpapiprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><a href="https://github.com/abrignoni/dpapiprobe/tags" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-tag"></i>Tags</a><a href="https://github.com/abrignoni/dpapiprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
         </div>
         <div class="lp-about-box">
           <div>
             <h3>What it reads</h3>
-            <p>Point it at the registry hives and master key files pulled from a disk image. With the boot key alone it recovers the LSA secrets, decrypts the SYSTEM master keys and opens the DPAPI blobs they protect, including those inside Credential Manager and Vault files. With the account's password or its SHA-1 hash it opens that user's master keys, and the SHA-1 hash can come from the account's ARSO (TBAL) LSA secret. It also recovers a Chromium profile's key from <code>Local State</code> and decrypts saved passwords and cookies marked <code>v10</code>.</p>
+            <p>Point it at an E01 or raw image, or at the registry hives and master key files pulled from one. <code>triage</code> opens the image read-only through the bundled ewfprobe and qnxprobe readers and finds the hives, master keys, Vault and Chromium stores on every volume itself. With the boot key alone it recovers the LSA secrets, decrypts the SYSTEM master keys and opens the DPAPI blobs they protect, including those inside Credential Manager and Vault files. With the account's password or its SHA-1 hash it opens that user's master keys, and the SHA-1 hash can come from the account's ARSO (TBAL) LSA secret. It also recovers a Chromium profile's key from <code>Local State</code> and decrypts saved passwords and cookies marked <code>v10</code>.</p>
             <p>Values marked <code>v20</code> (App-Bound Encryption, Chrome 127 and later) are reported as present and not decrypted. On the command line, the default output is identifiers, lengths and SHA-1 fingerprints; recovered values are written only to a file you name.</p>
             <p>Written clean-room under MIT so tools that ship frozen binaries can vendor it. The maintained offline DPAPI library, dpapick3, is GPL-3.0.</p>
           </div>
@@ -1066,7 +1066,8 @@
             <h3>Where it runs</h3>
             <ul>
               <li>DLEAPP, starting with its next release, for its LSA secrets, Credential Manager, Vault, ARSO, Wi-Fi key and Chromium password and cookie artifacts</li>
-              <li><code>python -m dpapiprobe lsa --system SYSTEM --security SECURITY</code>, plus <code>bootkey</code>, <code>masterkeys</code>, <code>blob</code>, <code>credential</code> and <code>vault-policy</code></li>
+              <li><code>python -m dpapiprobe triage --image disk.E01</code> as of v0.5.1, plus one command per step: <code>lsa</code>, <code>masterkeys</code>, <code>user-masterkeys</code>, <code>tbal</code>, <code>credential</code>, <code>vault</code>, <code>chromium</code> and more</li>
+              <li>Executables and a window, like the other probes, once the builds can be code signed</li>
             </ul>
           </div>
         </div>
