@@ -3,8 +3,8 @@
   "window_days": 45,
   "items": [
     {
-      "name": "windowsUserVaultCredentials",
-      "query": "windowsUserVaultCredentials",
+      "name": "windowsChromiumCookies",
+      "query": "windowsChromiumCookies",
       "tool": "DLEAPP",
       "date": "2026-11-03"
     },
@@ -33,8 +33,8 @@
       "date": "2026-10-27"
     },
     {
-      "name": "windowsArsoCredentials",
-      "query": "windowsArsoCredentials",
+      "name": "windowsChromiumPasswords",
+      "query": "windowsChromiumPasswords",
       "tool": "DLEAPP",
       "date": "2026-11-03"
     },
@@ -63,10 +63,10 @@
       "date": "2026-09-28"
     },
     {
-      "name": "windowsSystemCredentials",
-      "query": "windowsSystemCredentials",
+      "name": "windowsUserVaultCredentials",
+      "query": "windowsUserVaultCredentials",
       "tool": "DLEAPP",
-      "date": "2026-11-02"
+      "date": "2026-11-03"
     },
     {
       "name": "permissionController",
