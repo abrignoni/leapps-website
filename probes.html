@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Probes — LEAPPs</title>
-  <meta name="description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for media, databases, plists, archives and PDFs carved by signature. One Python file each, built on the standard library." />
+  <meta name="description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, mediacarve for media, databases, plists, archives and PDFs carved by signature, and regfprobe for Windows registry hives. One Python file each, built on the standard library." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://leapps.org/probes" />
   <meta property="og:title" content="Probes — LEAPPs" />
-  <meta property="og:description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for media, databases, plists, archives and PDFs carved by signature. One Python file each, built on the standard library." />
+  <meta property="og:description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, mediacarve for media, databases, plists, archives and PDFs carved by signature, and regfprobe for Windows registry hives. One Python file each, built on the standard library." />
   <meta property="og:image" content="https://leapps.org/blog/og/default.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -21,7 +21,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Probes — LEAPPs" />
-  <meta name="twitter:description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for media, databases, plists, archives and PDFs carved by signature. One Python file each, built on the standard library." />
+  <meta name="twitter:description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, mediacarve for media, databases, plists, archives and PDFs carved by signature, and regfprobe for Windows registry hives. One Python file each, built on the standard library." />
   <meta name="twitter:image" content="https://leapps.org/blog/og/default.png" />
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/logos/leapps-favicon-512.png" />
@@ -347,7 +347,7 @@
       {
         "@type": "WebPage",
         "name": "Probes — LEAPPs",
-        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, and mediacarve for media, databases, plists, archives and PDFs carved by signature. One Python file each, built on the standard library. Plus the readers the LEAPPs vendor: c2pareader, cblite-parser, hive-parser, mmkv-parser, sqlite-wal, cimreader and dpapiprobe.",
+        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, mediacarve for media, databases, plists, archives and PDFs carved by signature, and regfprobe for Windows registry hives. One Python file each, built on the standard library. Plus the readers the LEAPPs vendor: c2pareader, cblite-parser, hive-parser, mmkv-parser, sqlite-wal, cimreader and dpapiprobe.",
         "url": "https://leapps.org/probes",
         "isPartOf": { "@type": "WebSite", "name": "LEAPPs", "url": "https://leapps.org" }
       },
@@ -412,6 +412,19 @@
         "description": "Recovers images, video, audio and, when asked, SQLite databases, binary plists, ZIP archives and PDFs from any stream of bytes by signature, with each file's length parsed from its own structure rather than guessed.",
         "url": "https://leapps.org/probes#section-mediacarve",
         "downloadUrl": "https://github.com/abrignoni/mediacarve/releases",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "license": "https://opensource.org/licenses/MIT",
+        "author": { "@type": "Person", "name": "Alexis Brignoni", "url": "https://github.com/abrignoni" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "regfprobe",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Windows, macOS, Linux",
+        "description": "Reads Windows registry hive files offline and read-only: keys, values, search, a timeline of key last-written times, and export to JSON, CSV or a .reg file. Dirty hives have their .LOG1 and .LOG2 transaction logs replayed in memory first, and hives can be read straight from an E01 or raw image.",
+        "url": "https://leapps.org/probes#section-regfprobe",
+        "downloadUrl": "https://github.com/abrignoni/regfprobe/releases",
         "isAccessibleForFree": true,
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "license": "https://opensource.org/licenses/MIT",
@@ -582,6 +595,7 @@
     <a href="#section-exoprobe" onclick="closeMobileMenu()">exoprobe</a>
     <a href="#section-chromiumcacheprobe" onclick="closeMobileMenu()">chromiumcacheprobe</a>
     <a href="#section-mediacarve" onclick="closeMobileMenu()">mediacarve</a>
+    <a href="#section-regfprobe" onclick="closeMobileMenu()">regfprobe</a>
     <a href="https://leapps.org/stats" onclick="closeMobileMenu()">Stats</a>
     <a href="https://leapps.org/changelog" onclick="closeMobileMenu()">Changelog</a>
     <a href="https://leapps.org/artifacts" onclick="closeMobileMenu()">Artifacts</a>
@@ -611,6 +625,7 @@
         <a href="#section-exoprobe" class="lp-tool-pill">exoprobe</a>
         <a href="#section-chromiumcacheprobe" class="lp-tool-pill">chromiumcacheprobe</a>
         <a href="#section-mediacarve" class="lp-tool-pill">mediacarve</a>
+        <a href="#section-regfprobe" class="lp-tool-pill">regfprobe</a>
         <a href="#readers" class="lp-tool-pill">Readers</a>
       </div>
       <figure class="lp-video">
@@ -635,6 +650,7 @@
         <li><a href="#section-exoprobe"><i class="ti ti-movie"></i>exoprobe</a></li>
         <li><a href="#section-chromiumcacheprobe"><i class="ti ti-brand-chrome"></i>chromiumcacheprobe</a></li>
         <li><a href="#section-mediacarve"><i class="ti ti-photo-search"></i>mediacarve</a></li>
+        <li><a href="#section-regfprobe"><i class="ti ti-binary-tree"></i>regfprobe</a></li>
         <li><a href="#about-the-builds"><i class="ti ti-package"></i>About the builds</a></li>
         <li><a href="/stats#probes"><i class="ti ti-chart-bar"></i>By the numbers</a></li>
       </ul>
@@ -846,6 +862,44 @@
         <a href="https://github.com/abrignoni/mediacarve/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all mediacarve releases on GitHub</a>
       </section>
 
+      <!-- REGFPROBE -->
+      <section class="lp-tool-section" id="section-regfprobe">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Windows registry &middot; Hives</div>
+            <h2>regfprobe</h2>
+            <div class="lp-tool-fullname">Read Windows registry hives offline, with their transaction logs replayed</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-regfprobe"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-regfprobe"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/regfprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What is regfprobe?</h3>
+            <p>It reads hive files such as SYSTEM, SOFTWARE, SAM, SECURITY, NTUSER.DAT, UsrClass.dat and Amcache.hve: keys, values, class names, security descriptors and last-written times. When a hive is dirty, its <code>.LOG1</code> and <code>.LOG2</code> logs are replayed in memory first. It never writes to the hive or its logs.</p>
+            <p>It was checked against a hive Windows itself built and listed, and against python-registry, RECmd and regipy on real hives; the README lists where they differ. DLEAPP, starting with its next release, and dpapiprobe 0.6.0 read their hives with it.</p>
+          </div>
+          <div>
+            <h3>Highlights</h3>
+            <ul>
+              <li><code>info</code>, <code>ls</code>, <code>cat</code> and <code>find</code> over keys, value names and data, a <code>timeline</code> of key last-written times, and <code>export</code> to JSON, CSV or a <code>.reg</code> file</li>
+              <li><code>--image</code> finds and reads the hives inside an E01 or raw image without extracting anything first, and <code>hives --extract</code> copies them out with their logs</li>
+              <li>A banner says how far to trust what follows: a clean hive, a dirty hive whose logs were replayed, a dirty hive read as it is, or damaged structures that were skipped</li>
+              <li>A damaged cell loses that one key, value or list and is counted; the rest of the hive reads normally. Deleted keys and values are not recovered</li>
+              <li>An optional read-only window with a key tree, values, security, search and a timeline. It does not work with a screen reader; the command line prints the same keys and values as text</li>
+              <li>The release executables carry qnxprobe and ewfprobe, so <code>--image</code> works with no other file</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lp-status-bar">
+          <div class="lp-status-dot"></div>
+          <span class="lp-status-text">Live releases</span>
+        </div>
+        <div id="releases-regfprobe" class="lp-releases-list">
+          <div class="lp-loading"><span>Fetching releases&hellip;</span></div>
+        </div>
+        <a href="https://github.com/abrignoni/regfprobe/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all regfprobe releases on GitHub</a>
+      </section>
+
       <!-- ABOUT THE BUILDS -->
       <section class="lp-tool-section" id="about-the-builds">
         <div class="lp-tool-header">
@@ -858,12 +912,12 @@
         <div class="lp-about-box">
           <div>
             <h3>Executables</h3>
-            <p>Every release carries standalone executables for Windows, macOS and Linux, each on x64 and arm64, built by the probe's own GitHub Actions workflow from the tagged commit, with a <code>SHA256SUMS.txt</code> covering them. Each archive holds the command line tool and its window as two executables.</p>
+            <p>Every release carries standalone executables for Windows, macOS and Linux, each on x64 and arm64, built by the probe's own GitHub Actions workflow from the tagged commit, with a <code>SHA256SUMS.txt</code> covering them. Each archive holds the command line tool and its window as two executables; regfprobe attaches the two as separate files, covered by <code>SHA256SUMS-binaries.txt</code>.</p>
             <p>They are not code signed yet, so Windows SmartScreen and macOS Gatekeeper will each ask once. Unzip to a local folder rather than running from a network share.</p>
           </div>
           <div>
             <h3>Or run the Python file</h3>
-            <p>Each probe is one Python file that needs the standard library and nothing else, so <code>python3 &lt;probe&gt;.py</code> works on Windows, macOS and Linux, and its window is a second file, <code>&lt;probe&gt;_gui.py</code>. ewfprobe, exoprobe, chromiumcacheprobe and mediacarve attach the Python files to every release as well.</p>
+            <p>Each probe is one Python file that needs the standard library and nothing else, so <code>python3 &lt;probe&gt;.py</code> works on Windows, macOS and Linux, and its window is a second file, <code>&lt;probe&gt;_gui.py</code>. ewfprobe, exoprobe, chromiumcacheprobe, mediacarve and regfprobe attach the Python files to every release as well.</p>
           </div>
         </div>
       </section>
@@ -881,7 +935,7 @@
           <div>
             <h3>What are the readers?</h3>
             <p>Each reader decodes one data store an app or the operating system writes, and lives in its own repository so it can be tested on its own. The LEAPPs copy the file in unchanged and record the commit they copied, so the code that read the data can be traced to its repository.</p>
-            <p>They have no window and no executables. Each is pure Python and read-only, free and open source under its own licence (MIT, or Apache 2.0 for cimreader), and also runs on its own from the command line. All but one need only the standard library: dpapiprobe also needs PyCryptodome and python-registry.</p>
+            <p>They have no window and no executables. Each is pure Python and read-only, free and open source under its own licence (MIT, or Apache 2.0 for cimreader), and also runs on its own from the command line. All but one need only the standard library: dpapiprobe also needs PyCryptodome.</p>
           </div>
           <div>
             <h3>Releases</h3>
@@ -910,7 +964,7 @@
             <h3>Where it runs</h3>
             <ul>
               <li>GLEAPP, for the CR and AI badges and the Content Credentials artifact</li>
-              <li>iLEAPP and ALEAPP, starting with their next releases</li>
+              <li>iLEAPP and ALEAPP</li>
               <li><code>python -m c2pareader photo.jpg</code> prints JSON</li>
             </ul>
           </div>
@@ -1011,7 +1065,7 @@
           <div>
             <h3>Where it runs</h3>
             <ul>
-              <li>iLEAPP and ALEAPP, starting with their next releases, for artifacts such as Snapchat, Discord and Google Chat</li>
+              <li>iLEAPP and ALEAPP, for artifacts such as Snapchat, Discord and Google Chat</li>
               <li><code>python -m sqlite_wal summary DB</code> and <code>rows DB --query</code>, with <code>--key</code> to label earlier versions of current rows</li>
             </ul>
           </div>
@@ -1038,7 +1092,7 @@
           <div>
             <h3>Where it runs</h3>
             <ul>
-              <li>DLEAPP, starting with its next release, for its WMI subscription artifacts</li>
+              <li>DLEAPP, for its WMI subscription artifacts</li>
               <li><code>python3 cimreader.py subscriptions Repository</code> prints the subscriptions as JSON</li>
             </ul>
           </div>
@@ -1065,7 +1119,7 @@
           <div>
             <h3>Where it runs</h3>
             <ul>
-              <li>DLEAPP, starting with its next release, for its LSA secrets, Credential Manager, Vault, ARSO, Wi-Fi key and Chromium password and cookie artifacts</li>
+              <li>DLEAPP, for its LSA secrets, Credential Manager, Vault, ARSO, Wi-Fi key and Chromium password and cookie artifacts</li>
               <li><code>python -m dpapiprobe triage --image disk.E01</code> as of v0.5.1, plus one command per step: <code>lsa</code>, <code>masterkeys</code>, <code>user-masterkeys</code>, <code>tbal</code>, <code>credential</code>, <code>vault</code>, <code>chromium</code> and more</li>
               <li>Executables and a window, like the other probes, once the builds can be code signed</li>
             </ul>
@@ -1127,6 +1181,7 @@
       { id: 'exoprobe', name: 'exoprobe', repo: 'abrignoni/exoprobe' },
       { id: 'chromiumcacheprobe', name: 'chromiumcacheprobe', repo: 'abrignoni/chromiumcacheprobe' },
       { id: 'mediacarve', name: 'mediacarve', repo: 'abrignoni/mediacarve' },
+      { id: 'regfprobe', name: 'regfprobe', repo: 'abrignoni/regfprobe' },
     ];
 
     // Classify an asset from its filename: OS, architecture, and GUI/CLI
@@ -1134,6 +1189,8 @@
     // that doesn't match cleanly falls back to the flat filename rendering.
     function parseAsset(name) {
       const n = name.toLowerCase();
+      // Licence and checksum files are text, whatever platform their name mentions.
+      if (n.endsWith('.txt')) return { os: null, arch: '', flavor: null, gui: false };
       let os = null;
       if (/win(dows)?[_.-]|\.exe$/.test(n) || n.includes('windows')) os = 'windows';
       else if (n.includes('mac') || n.includes('darwin') || n.endsWith('.dmg')) os = 'macos';
@@ -1146,7 +1203,7 @@
       // capital Batch-LEAPP = app, lowercase batch-leapp = CLI, and the
       // Windows zip bundles both.
       let flavor = null;
-      if (/gui/.test(n)) flavor = 'GUI';
+      if (/gui|-window-/.test(n)) flavor = 'GUI';
       else if (/^batch-leapp-/.test(name)) flavor = 'CLI';
       else if (/^Batch-LEAPP-/.test(name)) flavor = os === 'windows' ? 'GUI + CLI' : 'GUI';
       return { os, arch, flavor, gui: !!flavor && flavor.startsWith('GUI') };

@@ -138,6 +138,12 @@
     "excerpt": "Reads the WMI CIM repository (OBJECTS.DATA, INDEX.BTR, MAPPING files) and lists WMI event subscriptions. A port of python-cim from Mandiant's flare-wmi, Apache 2.0."
   },
   {
+    "title": "regfprobe: Windows registry hives, offline",
+    "url": "https://leapps.org/probes#section-regfprobe",
+    "page": "Probes",
+    "excerpt": "Reads registry hives (SYSTEM, SOFTWARE, SAM, NTUSER.DAT and more) read-only, replays dirty hives' transaction logs in memory, searches, builds a timeline and exports to JSON, CSV or .reg. Executables for Windows, macOS and Linux, or one standard-library Python file. MIT."
+  },
+  {
     "title": "dpapiprobe: offline Windows DPAPI decryption",
     "url": "https://leapps.org/probes#section-dpapiprobe",
     "page": "Probes",
@@ -147,7 +153,7 @@
     "title": "Probes — standalone forensic readers",
     "url": "https://leapps.org/probes",
     "page": "Probes",
-    "excerpt": "Single-purpose readers that sit beside the LEAPPs: qnxprobe, ewfprobe, exoprobe, chromiumcacheprobe and mediacarve. One Python file each, built on the standard library, never writing to the evidence they read."
+    "excerpt": "Single-purpose readers that sit beside the LEAPPs: qnxprobe, ewfprobe, exoprobe, chromiumcacheprobe, mediacarve and regfprobe. One Python file each, built on the standard library, never writing to the evidence they read."
   },
   {
     "title": "Install with Homebrew (macOS)",
