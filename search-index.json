@@ -99,7 +99,7 @@
     "title": "Readers: the format readers the LEAPPs vendor",
     "url": "https://leapps.org/probes#readers",
     "page": "Probes",
-    "excerpt": "c2pareader, cblite-parser, hive-parser, mmkv-parser, sqlite-wal, cimreader and dpapiprobe: read-only, free and open source, each also a command line tool."
+    "excerpt": "c2pareader, cblite-parser, hive-parser, mmkv-parser, sqlite-wal, cimreader, regfprobe and dpapiprobe: read-only, free and open source, each also a command line tool."
   },
   {
     "title": "c2pareader: Content Credentials (C2PA) and IPTC source type",
@@ -136,6 +136,12 @@
     "url": "https://leapps.org/probes#section-cimreader",
     "page": "Probes",
     "excerpt": "Reads the WMI CIM repository (OBJECTS.DATA, INDEX.BTR, MAPPING files) and lists WMI event subscriptions. A port of python-cim from Mandiant's flare-wmi, Apache 2.0."
+  },
+  {
+    "title": "regfprobe: Windows registry hives, offline",
+    "url": "https://leapps.org/probes#section-regfprobe",
+    "page": "Probes",
+    "excerpt": "Reads registry hives (SYSTEM, SOFTWARE, SAM, NTUSER.DAT and more) read-only, replays dirty hives' transaction logs in memory, searches, builds a timeline and exports to JSON, CSV or .reg. Standard library only, MIT."
   },
   {
     "title": "dpapiprobe: offline Windows DPAPI decryption",
