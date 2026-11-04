@@ -54,6 +54,7 @@ jobs:
             'exoprobe': 'abrignoni/exoprobe',
             'chromiumcacheprobe': 'abrignoni/chromiumcacheprobe',
             'mediacarve': 'abrignoni/mediacarve',
+            'regfprobe': 'abrignoni/regfprobe',
           }
 
           token = os.environ['GH_TOKEN']

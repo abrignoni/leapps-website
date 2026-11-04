@@ -35,6 +35,7 @@ const ALLOWED_REPOS = [
   'abrignoni/exoprobe',
   'abrignoni/chromiumcacheprobe',
   'abrignoni/mediacarve',
+  'abrignoni/regfprobe',
   'leapps-org/LAVA-releases',
   'leapps-org/leapps-language-resources',
 ];
