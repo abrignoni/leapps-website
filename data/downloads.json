@@ -1845,6 +1845,27 @@
         "chromiumcacheprobe": 21,
         "mediacarve": 41
       }
+    },
+    {
+      "date": "2026-11-05",
+      "totals": {
+        "ileapp": 102535,
+        "aleapp": 79039,
+        "rleapp": 6901,
+        "vleapp": 3684,
+        "lava": 5080,
+        "dleapp": 2393,
+        "gleapp": 1350,
+        "batchleapp": 876
+      },
+      "probes": {
+        "qnxprobe": 980,
+        "ewfprobe": 260,
+        "exoprobe": 97,
+        "chromiumcacheprobe": 21,
+        "mediacarve": 41,
+        "regfprobe": 5
+      }
     }
   ]
 }
