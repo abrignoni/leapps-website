@@ -361,6 +361,7 @@ const ALLOWED_DOWNLOADS = {
   'apple-unified-logs-ileapp-field-guide.pdf': `https://raw.githubusercontent.com/${BLOG_REPO}/main/downloads/apple-unified-logs-ileapp-field-guide.pdf`,
   'apple-unified-logs-predicate-reference.pdf': `https://raw.githubusercontent.com/${BLOG_REPO}/main/downloads/apple-unified-logs-predicate-reference.pdf`,
   'telegram-system-events-reference.pdf': `https://raw.githubusercontent.com/${BLOG_REPO}/main/downloads/telegram-system-events-reference.pdf`,
+  'regfprobe-user-manual.pdf': `https://raw.githubusercontent.com/${BLOG_REPO}/main/downloads/regfprobe-user-manual.pdf`,
 };
 
 async function handleTrackedDownload(url, env, ctx) {
