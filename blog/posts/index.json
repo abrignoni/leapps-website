@@ -1,5 +1,17 @@
 [
   {
+    "slug": "2026-11-06-lava-field-guide",
+    "title": "Reviewing, Tagging, and Exporting LEAPP Cases with LAVA",
+    "date": "2026-11-06",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "LAVA",
+      "LEAPPs",
+      "DFIR"
+    ],
+    "excerpt": "LAVA is the LEAPPs viewer. It opens the case that iLEAPP, ALEAPP and the rest of the family produce and turns millions of parsed rows into something you can filter, read as conversations, place on a timeline, tag, and hand to someone else. Here is the workflow, start to finish."
+  },
+  {
     "slug": "2026-10-29-chromium-file-system-survives-history",
     "title": "Clearing history does not clear Chromium's File System storage",
     "date": "2026-10-29",
