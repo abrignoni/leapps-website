@@ -75,12 +75,21 @@ CELL_HEAD = ParagraphStyle('CellHead', parent=CELL, fontName='Helvetica-Bold')
 def inline(text: str) -> str:
     """Markdown inline formatting to ReportLab paragraph markup."""
     out = html.escape(text, quote=False)
-    out = re.sub(r'`([^`]+)`', r'<font face="Courier" size="8.5">\1</font>', out)
+    # Code spans are set aside before bold, italic and links, and put back last, so a * or
+    # [ inside `...` stays literal (`*.db` would otherwise open an italic).
+    spans = []
+
+    def keep(match):
+        spans.append(match.group(1))
+        return f'\x00{len(spans) - 1}\x00'
+
+    out = re.sub(r'`([^`]+)`', keep, out)
     out = re.sub(r'\*\*([^*]+)\*\*', r'<b>\1</b>', out)
     out = re.sub(r'(?<!\*)\*([^*]+)\*(?!\*)', r'<i>\1</i>', out)
     out = re.sub(r'\[([^\]]+)\]\(([^)]+)\)',
                  rf'<a href="\2" color="{ACCENT.hexval().replace("0x", "#")}">\1</a>', out)
-    return out
+    return re.sub(r'\x00(\d+)\x00',
+                  lambda match: f'<font face="Courier" size="8.5">{spans[int(match.group(1))]}</font>', out)
 
 
 def table_flowable(rows: list[list[str]]) -> Table:
