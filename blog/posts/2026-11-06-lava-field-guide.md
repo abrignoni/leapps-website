@@ -142,7 +142,7 @@ When the extractor declares a conversation view for an artifact, such as SMS and
 - **Filtered** is on by default whenever the table has filters, so the conversation list and threads follow those filters. Messages that are filtered out fold into markers such as *12 messages filtered out*, so you always see where the gaps are. Turn Filtered off to see every thread in full. The time window applies either way.
 - **Columns** (beside Export PDF) adds more fields to each bubble, such as status or service center. A module's suggested list is on by default; **Use suggested list** puts it back after you change it.
 - **View in table** on a message filters the table to that conversation's rows (remove the filter when you are done). **View in conversation** on a table row opens the thread and scrolls to that message.
-- **Tag conversation** tags every message in the thread, including messages hidden by filters or the time window.
+- **Tag conversation** tags every message in the thread, including messages hidden by filters or the time window. From 2026.1.2, with the window on, the notice says how many of the tagged rows are outside it.
 
 ### Conversation analytics
 
@@ -172,7 +172,7 @@ Choose how each row is tested:
 - **First timestamp**: tests each artifact's first datetime column. The LEAPPs put the event time first by convention; LAVA does not check it. This is the default and the one the timeline uses.
 - **Any timestamp**: keeps a row when any of its datetime columns falls in the range.
 
-Artifacts with no datetime column (an artifact with only date columns counts) cannot be tested, so they are shown in full and marked as untimed. Tick **Hide untimed artifacts** to show none of their rows instead.
+Artifacts with no datetime column (an artifact with only date columns counts) cannot be tested, so they are shown in full and marked as untimed. Tick **Hide untimed artifacts** to show none of their rows instead. From 2026.1.2, such an artifact says it has no timestamp column and is hidden by the time window, where it used to show only *No data*.
 
 > **Read this part carefully.** The time window does not apply to Tagged Rows, tag exports, the QC sample or the Timeline, which only shades it. The window tests the evidence times in each row, not when you tagged it. Rows with no time in the tested column drop out whenever the window is on, however wide it is. Tagging is the exception that goes the other way: **Tag hits** and **Select all N matching rows** tag across the whole case even with a window on, because a withhold export covers the whole case. LAVA says so before it tags.
 
@@ -185,7 +185,8 @@ Artifacts with no datetime column (an artifact with only date columns counts) ca
 - Each lane has its own scale; compare bars within a lane, not across lanes. **Log scale** keeps small counts visible next to large ones.
 - The opening view covers the middle of each artifact's events. In a case with 50 or more timed artifacts it also leaves out the few artifacts at the extremes, such as one holding only zero times (1601 or 1970) or future dates. Events outside the view are counted at the lane edges; click a count to go there. In a smaller case a stray time can stretch the opening view, so check **Full range** too.
 - Click an artifact's bar to open those rows in the artifact. A category bar expands that category's artifact lanes. Opening a bar replaces that artifact's column filters with one date filter, which stays afterwards. If the time window is on, the table can show fewer rows than the bar. **Back to Timeline** returns you to the same place.
-- Switch to **List** to read the events in view in time order, with artifact, timestamp column and a summary of each row. The list holds at most 100,000 events; if a view holds more, zoom in first.
+- Switch to **List** to read the events in view in time order, with artifact, timestamp column and a summary of each row (from 2026.1.2, a message row's summary leads with the sender and the message text). The list holds at most 100,000 events; if a view holds more, zoom in first.
+- From 2026.1.2, **Leave out categories** above the List drops whole categories from the List and its export, for example unified log lines that bury the messages and calls around them. The 100,000 limit counts only the events listed. The HTML export names the categories left out, and its suggested file name ends in `_filtered`. The lanes still show every category.
 - **Use as time window** sets the case-wide time window to the range on screen. It tests the first timestamp and does not hide untimed artifacts.
 - In List, **Export** writes the events in view as CSV for Excel, or as HTML (up to 10,000 rows) to read and print. The HTML file records the range, time zone and basis; the CSV holds the rows only.
 
