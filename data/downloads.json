@@ -1912,19 +1912,19 @@
     {
       "date": "2026-11-08",
       "totals": {
-        "ileapp": 103220,
-        "aleapp": 79777,
-        "rleapp": 7022,
-        "vleapp": 3764,
-        "lava": 5321,
-        "dleapp": 2493,
-        "gleapp": 1445,
-        "batchleapp": 915
+        "ileapp": 103287,
+        "aleapp": 79833,
+        "rleapp": 7026,
+        "vleapp": 3767,
+        "lava": 5333,
+        "dleapp": 2502,
+        "gleapp": 1447,
+        "batchleapp": 916
       },
       "probes": {
         "qnxprobe": 1008,
         "ewfprobe": 266,
-        "exoprobe": 102,
+        "exoprobe": 103,
         "chromiumcacheprobe": 21,
         "mediacarve": 43,
         "regfprobe": 10
