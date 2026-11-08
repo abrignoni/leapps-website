@@ -25,7 +25,7 @@ Standalone single-purpose readers, separate from the LEAPPs: https://leapps.org/
 - [mediacarve](https://github.com/abrignoni/mediacarve): recovers images and video from any stream of bytes by signature, with lengths parsed from each file's own structure; MIT, standard library only
 - [regfprobe](https://github.com/abrignoni/regfprobe): reads Windows registry hive files offline and read-only (keys, values, search, a timeline of key last-written times, export to JSON, CSV or .reg), replaying dirty hives' .LOG1 and .LOG2 logs in memory, and reads hives straight from an E01 or raw image; MIT, standard library only
 
-Readers: the format readers the LEAPPs vendor as single files, each also a command line tool (https://leapps.org/probes#readers):
+Readers: the format readers the LEAPPs carry, vendored as single files except heicreader, each also a command line tool (https://leapps.org/probes#readers):
 
 - [c2pareader](https://github.com/abrignoni/c2pareader): reads the Content Credentials (C2PA) and IPTC digital source type a picture or video declares, without verifying signatures; formerly c2paprobe
 - [cblite-parser](https://github.com/abrignoni/cblite-parser): reads Couchbase Lite databases and their Fleece documents, with revision trees, deleted documents, blob references and rows only in the -wal
@@ -34,6 +34,7 @@ Readers: the format readers the LEAPPs vendor as single files, each also a comma
 - [sqlite-wal](https://github.com/abrignoni/sqlite-wal): reads the earlier committed states a SQLite write-ahead log still holds, through SQLite itself, and lists rows an earlier state holds that the current one does not
 - [cimreader](https://github.com/abrignoni/cimreader): reads the Windows WMI CIM repository and lists WMI event subscriptions (filters, consumers, bindings); a port of python-cim from Mandiant's flare-wmi, Apache 2.0
 - [dpapiprobe](https://github.com/abrignoni/dpapiprobe): offline Windows DPAPI decryption, straight from an E01 or raw image or from the hives and master key files pulled from one (LSA secrets, master keys, DPAPI blobs, Credential Manager and Vault, Chromium v10 passwords and cookies); MIT, clean-room, needs PyCryptodome
+- [heicreader](https://github.com/abrignoni/heicreader): reads HEIC and HEIF images with a bundled pure-Go decoder and no GPL or LGPL code; the LEAPPs install it from its release wheels and use it to show HEIC media in their reports; MIT
 
 ## Install
 

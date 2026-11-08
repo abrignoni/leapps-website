@@ -96,10 +96,10 @@
     "excerpt": "Recovers images, video, audio and, when asked, SQLite databases, binary plists, ZIP archives and PDFs from any stream of bytes by signature, with each length parsed from the file's own structure. MIT, standard library only."
   },
   {
-    "title": "Readers: the format readers the LEAPPs vendor",
+    "title": "Readers: the format readers the LEAPPs carry",
     "url": "https://leapps.org/probes#readers",
     "page": "Probes",
-    "excerpt": "c2pareader, cblite-parser, hive-parser, mmkv-parser, sqlite-wal, cimreader and dpapiprobe: read-only, free and open source, each also a command line tool."
+    "excerpt": "c2pareader, cblite-parser, hive-parser, mmkv-parser, sqlite-wal, cimreader, dpapiprobe and heicreader: read-only, free and open source, each also a command line tool."
   },
   {
     "title": "c2pareader: Content Credentials (C2PA) and IPTC source type",
@@ -136,6 +136,12 @@
     "url": "https://leapps.org/probes#section-cimreader",
     "page": "Probes",
     "excerpt": "Reads the WMI CIM repository (OBJECTS.DATA, INDEX.BTR, MAPPING files) and lists WMI event subscriptions. A port of python-cim from Mandiant's flare-wmi, Apache 2.0."
+  },
+  {
+    "title": "heicreader: HEIC and HEIF images",
+    "url": "https://leapps.org/probes#section-heicreader",
+    "page": "Probes",
+    "excerpt": "Reads HEIC and HEIF images with a bundled pure-Go decoder and no GPL or LGPL code. The LEAPPs use it to show HEIC media in their reports as JPEG, or PNG with transparency. MIT."
   },
   {
     "title": "regfprobe: Windows registry hives, offline",
