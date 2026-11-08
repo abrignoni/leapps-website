@@ -1908,6 +1908,27 @@
         "mediacarve": 43,
         "regfprobe": 10
       }
+    },
+    {
+      "date": "2026-11-08",
+      "totals": {
+        "ileapp": 103155,
+        "aleapp": 79696,
+        "rleapp": 7013,
+        "vleapp": 3756,
+        "lava": 5303,
+        "dleapp": 2487,
+        "gleapp": 1439,
+        "batchleapp": 913
+      },
+      "probes": {
+        "qnxprobe": 1007,
+        "ewfprobe": 265,
+        "exoprobe": 102,
+        "chromiumcacheprobe": 21,
+        "mediacarve": 43,
+        "regfprobe": 10
+      }
     }
   ]
 }

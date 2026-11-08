@@ -1,17 +1,17 @@
 {
-  "generated": "2026-11-07",
+  "generated": "2026-11-08",
   "window_days": 45,
   "items": [
+    {
+      "name": "bitcoinCore",
+      "query": "bitcoinCore",
+      "tool": "DLEAPP",
+      "date": "2026-11-08"
+    },
     {
       "name": "googleAppTabs",
       "query": "googleAppTabs",
       "tool": "iLEAPP",
-      "date": "2026-11-04"
-    },
-    {
-      "name": "windowsVirtualDisks",
-      "query": "windowsVirtualDisks",
-      "tool": "DLEAPP",
       "date": "2026-11-04"
     },
     {
@@ -33,16 +33,16 @@
       "date": "2026-10-27"
     },
     {
+      "name": "firefoxCache",
+      "query": "firefoxCache",
+      "tool": "DLEAPP",
+      "date": "2026-11-08"
+    },
+    {
       "name": "chromeIosOpenTabs",
       "query": "chromeIosOpenTabs",
       "tool": "iLEAPP",
       "date": "2026-11-01"
-    },
-    {
-      "name": "windowsIeFavoritesCookies",
-      "query": "windowsIeFavoritesCookies",
-      "tool": "DLEAPP",
-      "date": "2026-11-04"
     },
     {
       "name": "chromiumSitePermissions",
@@ -63,16 +63,16 @@
       "date": "2026-09-28"
     },
     {
+      "name": "qbittorrent",
+      "query": "qbittorrent",
+      "tool": "DLEAPP",
+      "date": "2026-11-08"
+    },
+    {
       "name": "playbackSessions",
       "query": "playbackSessions",
       "tool": "iLEAPP",
       "date": "2026-11-01"
-    },
-    {
-      "name": "windowsInternetExplorer",
-      "query": "windowsInternetExplorer",
-      "tool": "DLEAPP",
-      "date": "2026-11-04"
     }
   ]
 }
