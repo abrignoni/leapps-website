@@ -157,7 +157,7 @@ Select a conversation and use **Export PDF**. The export matches the preview in 
 - **PDF**: Letter or A4. PDFs always render in light colors for printing.
 - **HTML**: one file with its styles inside it and the media copied into a folder beside it, so it stays small. Keep the file and folder together. Video and audio messages get a player with the file link below it; formats browsers cannot play (AMR, 3GP, CAF) keep the link only. Choose **As in LAVA** for your colors or **Light, for printing**. Copied files are renamed (numbered, unsafe characters replaced).
 
-A media file the case does not hold shows as *File not found in the case* with its name, in the app and in both formats, and the dialog tells you how many were missing. A file LAVA finds but cannot show says *This file could not be shown*.
+A media file the case does not hold shows as *File not found in the case* with its name, in the app and in both formats, and the dialog tells you how many were missing. A file LAVA finds but cannot show says *This file could not be shown*. From 2026.1.2, untick **Media** in the dialog to leave the media files out; the export says *Media not included in this export* where each attachment was.
 
 Keep **Include Metadata Header** ticked (the default). The header records the project folder, module and artifact, the LAVA version (and the LEAPP version when the case has it), the export time, the conversation ID, participants (the senders seen in the thread), the date range and message total for the whole conversation, the number of messages in the export when filters or the time window narrow it, and the time zone and date format. The dialog's export language starts at English; change it if you need another. If the export was filtered, the header says so and lists the filters, because a filtered export may not represent the whole conversation. A progress count shows while media is copied.
 
@@ -194,12 +194,25 @@ The panel below the lanes lists what is **not on the timeline**: artifacts with 
 
 ## Find in all artifacts
 
-**Find in all artifacts** searches every column of every artifact at once. It shows the matching row count per artifact; click **Open** to go to an artifact with the hits filtered in (this replaces that artifact's column filters).
+**Find in all artifacts**, in the sidebar, searches every column of every artifact at once. It has two modes: **Search** and **Term lists** (below).
+
+In Search, type a term and press Enter to make it a chip, and add as many as you need. Enter on an empty box runs the search. The results line reads like *2,037 matching rows in 94 of 541 artifacts*, and the table lists each artifact with its matching rows and how many hits each term had in it. Click **Open** to go to an artifact with the hits filtered in under a *Search:* chip (this replaces that artifact's column filters); **Back to search results** returns you to the same list.
+
+How terms match:
 
 - Matching ignores case for A to Z only. Accented and non-Latin letters match only as typed.
 - A term made only of digits and phone punctuation, with seven or more digits, matches on digits alone, so `(555) 123-4567` also finds `+15551234567`. Only the last ten digits are used, and the term can also hit any longer number that contains those digits, such as an ID. Dates and IP addresses typed with dots or dashes get the same digits-only matching. Find matches stored values, not the displayed format, so a date typed as LAVA shows it will not find a stored epoch time.
 - A term also matches a media row when the file's name, source path or extraction path contains it, so a folder name can hit every media row under it.
-- When the time window is on, only rows inside it are counted, and the results say so. Untimed artifacts are searched in full, unless Hide untimed artifacts is ticked, in which case they are skipped. Tagging the hits still covers the whole case: LAVA asks first, with the number of rows across the case and the number inside the window, and tags them all. The record it writes names every tagged row.
+
+When the time window is on, only rows inside it are counted, and the results say so. Untimed artifacts are searched in full, unless Hide untimed artifacts is ticked, in which case they are skipped. Tagging the hits still covers the whole case: LAVA asks first, with the number of rows across the case and the number inside the window, and tags them all. The record it writes names every tagged row.
+
+From 2026.1.2:
+
+- The button you clicked shows the progress, as *Searching 42%*, *Tagging 42%* or *Saving 42%*, with a thin line under it. Progress moves through large tables instead of sitting on one. Hover the button to see the artifact being searched and its row count.
+- Click the running button to cancel. A cancel stops before anything is written: a cancelled tagging tags nothing, a cancelled report saves nothing, and a cancelled search keeps the previous results.
+- **Tag hits** and **Save report** run the search again before they write, so on a large case they take a while too.
+- Leaving the page does not stop a run, and coming back shows it still going.
+- Cases with very wide artifacts (two Photos.sqlite artifacts have 851 columns) no longer make a search with two or more terms, or a phone number, fail and return nothing.
 
 ### Term lists for privilege review
 
@@ -253,7 +266,7 @@ When a row is tagged, LAVA stores a hash of its content. It also compares the ar
 The export button under an artifact writes rows to a file or the clipboard. Choose the rows (all, filtered, or selected), the columns (all or visible), and the format:
 
 - To the clipboard: **TSV (for Excel)**, **CSV (as text)**, or **Table (for Word/Outlook)**.
-- To a file: **CSV**, **JSON**, **XML** or **HTML**. Images go inside the HTML file itself; video and audio are not included.
+- To a file: **CSV**, **JSON**, **XML** or **HTML**. Images go inside the HTML file itself; video and audio are not included. From 2026.1.2, untick **Media** to leave the pictures out of the HTML.
 
 Only **Filtered rows** applies the column filters and the time window; **All rows** and **Selected rows** do not. JSON and XML hold the stored values, not the formatted values on screen (integers larger than 2^53 are rounded there too).
 
@@ -268,7 +281,7 @@ HTML is off for a table export of 10,000 rows or more and for a Timeline list or
 > **Withholding covers every tag.** Sharing uses only the tags ticked in the Tagged Rows filter. Withholding ignores the ticks: every tagged row in the case is kept out unless you set its tags to Ignore or Redact in the Tags step, and LAVA checks the tags file itself and refuses to write if any tagged row would reach the reviewer.
 
 2. **Tags** (withholding only): set each tag's action. *Withhold* leaves the row out. *Redact* keeps the row and blanks the columns you pick: text cells read `[REDACTED]`, other cells and media are left empty (a column that cannot be empty also reads `[REDACTED]`), and the original values are never written. *Ignore* means the tag has no effect. A row with any Withhold tag is withheld.
-3. **Options**: the format (only when sharing tagged rows; withholding always makes a LAVA project) and a case note shown to whoever opens the export. A LAVA project adds a production label such as *Release 1*, **Replaces**, the run log and processed-files list, and the source folder name and paths. An HTML report adds media, dark mode, and the source folder name and path. The run log and paths start off when withholding and on when sharing tagged rows, because file paths and folder names can name a client, an attorney or a privileged file. Check them every time.
+3. **Options**: the format (only when sharing tagged rows; withholding always makes a LAVA project) and a case note shown to whoever opens the export. A LAVA project adds a production label such as *Release 1*, **Replaces**, the run log and processed-files list, and the source folder name and paths. An HTML report adds media, dark mode, and the source folder name and path. The run log and paths start off when withholding and on when sharing tagged rows, because file paths and folder names can name a client, an attorney or a privileged file. Check them every time. From 2026.1.2, a LAVA project also has **Media**: untick it to leave the media files out. Media cells are left empty, the export record says media was left out, and the shared-media check is skipped because no file goes out.
 4. **Review**: the rows exported (when sharing) or the rows withheld and redacted (when withholding), with a checklist before you send it when withholding.
 
 The two formats:
@@ -321,7 +334,7 @@ If this export corrects an earlier one, use **Replaces** (LAVA project only) to 
 - Review every Needs review tag before a withhold export, and check each tag's action in the Tags step.
 - Run a QC sample and record its seed.
 - Resolve integrity, shared-media and copy warnings; do not click past them.
-- Keep run logs and source paths out of reviewer exports unless they are needed. Media of kept rows always goes with a reviewer export, so use the shared-media check.
+- Keep run logs and source paths out of reviewer exports unless they are needed. Media of kept rows goes with a reviewer export unless you untick Media (2026.1.2 and later), so use the shared-media check.
 - Keep the source case, `_lava_work.db`, the `_lava_filter_records` folder and every export you produced.
 
 Parse it. Open it. Work it in LAVA. And when something in the viewer slows you down or a view is missing, open an issue. That is how the tool grows.
