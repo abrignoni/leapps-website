@@ -347,7 +347,7 @@
       {
         "@type": "WebPage",
         "name": "Probes — LEAPPs",
-        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, mediacarve for media, databases, plists, archives and PDFs carved by signature, and regfprobe for Windows registry hives. One Python file each, built on the standard library. Plus the readers the LEAPPs vendor: c2pareader, cblite-parser, hive-parser, mmkv-parser, sqlite-wal, cimreader and dpapiprobe.",
+        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, mediacarve for media, databases, plists, archives and PDFs carved by signature, and regfprobe for Windows registry hives. One Python file each, built on the standard library. Plus the readers the LEAPPs carry: c2pareader, cblite-parser, hive-parser, mmkv-parser, sqlite-wal, cimreader, dpapiprobe and heicreader.",
         "url": "https://leapps.org/probes",
         "isPartOf": { "@type": "WebSite", "name": "LEAPPs", "url": "https://leapps.org" }
       },
@@ -527,6 +527,20 @@
           "name": "Alexis Brignoni",
           "url": "https://github.com/abrignoni"
         }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "heicreader",
+        "description": "Reads HEIC and HEIF images with a bundled pure-Go decoder and no GPL or LGPL code: the pixels, oriented as the file asks, and the Exif block as stored.",
+        "url": "https://leapps.org/probes#section-heicreader",
+        "codeRepository": "https://github.com/abrignoni/heicreader",
+        "programmingLanguage": ["Python", "Go"],
+        "license": "https://opensource.org/licenses/MIT",
+        "author": {
+          "@type": "Person",
+          "name": "Alexis Brignoni",
+          "url": "https://github.com/abrignoni"
+        }
       }
     ]
   }
@@ -663,6 +677,7 @@
         <li><a href="#section-sqlite-wal"><i class="ti ti-history"></i>sqlite-wal</a></li>
         <li><a href="#section-cimreader"><i class="ti ti-brand-windows"></i>cimreader</a></li>
         <li><a href="#section-dpapiprobe"><i class="ti ti-lock-open"></i>dpapiprobe</a></li>
+        <li><a href="#section-heicreader"><i class="ti ti-photo"></i>heicreader</a></li>
       </ul>
     </aside>
 
@@ -934,12 +949,12 @@
         <div class="lp-about-box">
           <div>
             <h3>What are the readers?</h3>
-            <p>Each reader decodes one data store an app or the operating system writes, and lives in its own repository so it can be tested on its own. The LEAPPs copy the file in unchanged and record the commit they copied, so the code that read the data can be traced to its repository.</p>
-            <p>They have no window and no executables. Each is pure Python and read-only, free and open source under its own licence (MIT, or Apache 2.0 for cimreader), and also runs on its own from the command line. All but one need only the standard library: dpapiprobe also needs PyCryptodome.</p>
+            <p>Each reader decodes one data store an app or the operating system writes, and lives in its own repository so it can be tested on its own. The LEAPPs copy the file in unchanged and record the commit they copied, so the code that read the data can be traced to its repository. heicreader is the exception: the LEAPPs install it from the wheels on its release, pinned to that version.</p>
+            <p>They have no window. Each is read-only, free and open source under its own licence (MIT, or Apache 2.0 for cimreader), and also runs on its own from the command line. All but heicreader are pure Python with no executables, and all but dpapiprobe and heicreader need only the standard library: dpapiprobe also needs PyCryptodome. heicreader is a Python package around a helper program written in Go, so each of its wheels holds a native binary, and the LEAPPs' packaged builds carry it.</p>
           </div>
           <div>
             <h3>Releases</h3>
-            <p>Each release is tagged at the commit the LEAPPs vendor, for the readers they vendor. Where a reader is vendored as one file, the release attaches that file, its licence and a <code>SHA256SUMS.txt</code>. The full source and tests are in the source archives.</p>
+            <p>Each release is tagged at the commit the LEAPPs vendor, for the readers they vendor. Where a reader is vendored as one file, the release attaches that file, its licence and a <code>SHA256SUMS.txt</code>. The full source and tests are in the source archives. heicreader's release attaches one wheel per platform (Windows x64 and ARM, macOS Apple silicon and Intel, Linux x64 and ARM) and a <code>SHA256SUMS.txt</code>.</p>
           </div>
         </div>
       </section>
@@ -1122,6 +1137,34 @@
               <li>DLEAPP, for its LSA secrets, Credential Manager, Vault, ARSO, Wi-Fi key and Chromium password and cookie artifacts</li>
               <li><code>python -m dpapiprobe triage --image disk.E01</code> as of v0.5.1, plus one command per step: <code>lsa</code>, <code>masterkeys</code>, <code>user-masterkeys</code>, <code>tbal</code>, <code>credential</code>, <code>vault</code>, <code>chromium</code> and more</li>
               <li>Executables and a window, like the other probes, once the builds can be code signed</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- HEICREADER -->
+      <section class="lp-tool-section" id="section-heicreader">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Reader &middot; Pictures</div>
+            <h2>heicreader</h2>
+            <div class="lp-tool-fullname">HEIC and HEIF images, decoded with no GPL or LGPL code</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><a href="https://github.com/abrignoni/heicreader/releases" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-tag"></i>Releases</a><a href="https://github.com/abrignoni/heicreader" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What it reads</h3>
+            <p>HEIC and HEIF images, the format iPhones save photos in. It hands back the pixels, with the rotation, mirroring and crop the file asks for already applied, and the Exif block as stored, Orientation tag included. A damaged file raises an error and the next file carries on.</p>
+            <p>A small Python package around a helper program written in Go. The decoder is <a href="https://github.com/abrignoni/h265" target="_blank" rel="noopener noreferrer">abrignoni/h265</a>, a fork of the pure-Go gen2brain/h265 with one fix for transparency stored as a grid of its own, the way Apple writes it, offered upstream as <a href="https://github.com/gen2brain/h265/pull/12" target="_blank" rel="noopener noreferrer">gen2brain/h265#12</a>. Nothing in it is GPL or LGPL, so the LEAPPs' packaged builds can carry it. They used pillow-heif before, whose wheels bundle the GPL x265 encoder.</p>
+            <p>MIT. HEVC is covered by patents, and the licence covers copyright only.</p>
+          </div>
+          <div>
+            <h3>Where it runs</h3>
+            <ul>
+              <li>iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP, since November 7, 2026: HEIC media is attached to the report as a JPEG copy, or PNG when the image has transparency. A file it cannot convert is attached as it is.</li>
+              <li><code>heicreader.to_pil("IMG_0001.HEIC")</code> in Python, with Pillow installed</li>
+              <li><code>heicreader convert IMG_0001.HEIC IMG_0001.jpg</code> with the helper itself</li>
             </ul>
           </div>
         </div>
