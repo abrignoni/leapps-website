@@ -69,6 +69,12 @@
 [data-tool="gleapp"] { --accent: var(--color-gleapp); --accent-rgb: var(--color-gleapp-rgb); }
 [data-tool="batch"] { --accent: #1FB8A6; --accent-rgb: 31,184,166; }
 [data-tool="kdl"] { --accent: #D64541; --accent-rgb: 214,69,65; }
+.lp-video-dialog { margin: auto; padding: 0; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text); width: min(960px, 94vw); max-width: 94vw; }
+.lp-video-dialog::backdrop { background: rgba(0,0,0,.75); }
+.lp-video-dialog-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .5rem .5rem .5rem 1rem; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.lp-video-close { background: none; border: 1px solid var(--border); color: var(--text); cursor: pointer; width: 2rem; height: 2rem; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; }
+.lp-video-close:hover { border-color: var(--gold); color: var(--gold); }
+.lp-video-dialog video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; }
 /* LAVA's blue is too dark to read as small text on the dark ground, so its text uses a lighter tint there. */
 [data-tool="lava"] { --accent-ink: color-mix(in srgb, var(--color-lava) 55%, #fff); }
 [data-theme="light"] [data-tool="lava"] { --accent-ink: var(--color-lava); }
@@ -941,7 +947,7 @@
             <h2><img src="/logos/KDL_icon.svg" alt="" width="108" height="108" class="lp-tool-logo-inline">KDL</h2>
             <div class="lp-tool-fullname">Known-data logger: write down what you did on a test phone while you do it</div>
           </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-kdl"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-kdl"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/known-data-logger" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-kdl"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-kdl"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/known-data-logger" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a><a href="/videos/kdl-intro.mp4?v=20261109" class="lp-gh-link lp-video-open" data-video="kdl" data-v="20261109" data-title="KDL in under a minute"><i class="ti ti-player-play"></i>Watch</a></div>
         </div>
         <div class="lp-about-box">
           <div>
@@ -1646,5 +1652,33 @@
     })();
   </script>
   <script src="/analytics.js?v=20260707" defer></script>
+  <dialog class="lp-video-dialog" id="lp-video-dialog" aria-labelledby="lp-video-dialog-title">
+    <div class="lp-video-dialog-bar">
+      <span id="lp-video-dialog-title"></span>
+      <button type="button" class="lp-video-close" aria-label="Close video"><i class="ti ti-x"></i></button>
+    </div>
+    <video controls playsinline preload="none" width="1280" height="720"></video>
+  </dialog>
+  <script>
+  (function () {
+    var dlg = document.getElementById('lp-video-dialog');
+    if (!dlg || typeof dlg.showModal !== 'function') return; // links fall back to the MP4
+    var v = dlg.querySelector('video'), title = document.getElementById('lp-video-dialog-title');
+    document.querySelectorAll('.lp-video-open').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var k = a.getAttribute('data-video'), ver = a.getAttribute('data-v') || '20261015';
+        title.textContent = a.getAttribute('data-title') || '';
+        v.poster = '/videos/' + k + '-intro.jpg?v=' + ver;
+        v.src = '/videos/' + k + '-intro.mp4?v=' + ver;
+        dlg.showModal();
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+      });
+    });
+    dlg.addEventListener('close', function () { v.pause(); v.removeAttribute('src'); v.load(); });
+    dlg.querySelector('.lp-video-close').addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+  })();
+  </script>
 </body>
 </html>
