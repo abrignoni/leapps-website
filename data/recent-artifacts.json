@@ -1,12 +1,12 @@
 {
-  "generated": "2026-11-08",
+  "generated": "2026-11-09",
   "window_days": 45,
   "items": [
     {
-      "name": "googleJapaneseInput",
-      "query": "googleJapaneseInput",
+      "name": "officeBackstageCache",
+      "query": "officeBackstageCache",
       "tool": "DLEAPP",
-      "date": "2026-11-08"
+      "date": "2026-11-09"
     },
     {
       "name": "googleAppTabs",
@@ -33,10 +33,10 @@
       "date": "2026-10-27"
     },
     {
-      "name": "microsoftImeJapanese",
-      "query": "microsoftImeJapanese",
+      "name": "limewire",
+      "query": "limewire",
       "tool": "DLEAPP",
-      "date": "2026-11-08"
+      "date": "2026-11-09"
     },
     {
       "name": "chromeIosOpenTabs",
@@ -63,10 +63,10 @@
       "date": "2026-09-28"
     },
     {
-      "name": "ares",
-      "query": "ares",
+      "name": "claudeCodeSessions",
+      "query": "claudeCodeSessions",
       "tool": "DLEAPP",
-      "date": "2026-11-08"
+      "date": "2026-11-09"
     },
     {
       "name": "playbackSessions",
