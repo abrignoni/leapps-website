@@ -68,6 +68,7 @@
 [data-tool="dleapp"] { --accent: var(--color-dleapp); --accent-rgb: var(--color-dleapp-rgb); }
 [data-tool="gleapp"] { --accent: var(--color-gleapp); --accent-rgb: var(--color-gleapp-rgb); }
 [data-tool="batch"] { --accent: #1FB8A6; --accent-rgb: 31,184,166; }
+[data-tool="kdl"] { --accent: #D64541; --accent-rgb: 214,69,65; }
 /* LAVA's blue is too dark to read as small text on the dark ground, so its text uses a lighter tint there. */
 [data-tool="lava"] { --accent-ink: color-mix(in srgb, var(--color-lava) 55%, #fff); }
 [data-theme="light"] [data-tool="lava"] { --accent-ink: var(--color-lava); }
@@ -458,6 +459,19 @@
       },
       {
         "@type": "SoftwareApplication",
+        "name": "KDL (Known-data logger)",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Android 8.0 or later",
+        "description": "Android app for test phones that logs what the tester did and when, so the known data for a test is written down as it happens.",
+        "url": "https://leapps.org/releases#section-kdl",
+        "downloadUrl": "https://github.com/abrignoni/known-data-logger/releases/latest",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "license": "https://opensource.org/licenses/MIT",
+        "author": { "@type": "Person", "name": "Alexis Brignoni", "url": "https://github.com/abrignoni" }
+      },
+      {
+        "@type": "SoftwareApplication",
         "name": "LAVA",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Windows, macOS, Linux",
@@ -540,6 +554,7 @@
     <a href="#section-gleapp" onclick="closeMobileMenu()">GLEAPP</a>
     <a href="#section-gleapp-map-downloader" onclick="closeMobileMenu()">GLEAPP Map Downloader</a>
     <a href="#section-batch-leapp" onclick="closeMobileMenu()">Batch LEAPP</a>
+    <a href="#section-kdl" onclick="closeMobileMenu()">KDL</a>
     <a href="https://leapps.org/stats" onclick="closeMobileMenu()">Stats</a>
     <a href="https://leapps.org/changelog" onclick="closeMobileMenu()">Changelog</a>
     <a href="https://leapps.org/artifacts" onclick="closeMobileMenu()">Artifacts</a>
@@ -572,6 +587,7 @@
         <a href="#section-dleapp" class="lp-tool-pill" data-tool="dleapp">DLEAPP</a>
         <a href="#section-gleapp" class="lp-tool-pill" data-tool="gleapp">GLEAPP</a>
         <a href="#section-batch-leapp" class="lp-tool-pill" data-tool="batch">Batch LEAPP</a>
+        <a href="#section-kdl" class="lp-tool-pill" data-tool="kdl">KDL</a>
       </div>
     </div>
   </header>
@@ -592,6 +608,7 @@
         <li><a href="#section-gleapp" data-tool="gleapp"><i class="ti ti-photo"></i>GLEAPP</a></li>
         <li><a href="#section-gleapp-map-downloader" data-tool="gleapp"><i class="ti ti-map"></i>Map Downloader</a></li>
         <li><a href="#section-batch-leapp" data-tool="batch"><i class="ti ti-stack-2"></i>Batch LEAPP</a></li>
+        <li><a href="#section-kdl" data-tool="kdl"><i class="ti ti-timeline-event"></i>KDL</a></li>
         <li><a href="#code-signing-policy"><i class="ti ti-shield-check"></i>Code signing policy</a></li>
       </ul>
     </aside>
@@ -916,6 +933,44 @@
         <a href="https://github.com/abrignoni/batch-leapp/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all Batch LEAPP releases on GitHub</a>
       </section>
 
+      <!-- KDL (KNOWN-DATA LOGGER) -->
+      <section class="lp-tool-section" id="section-kdl" data-tool="kdl">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Known data &middot; Android test phones</div>
+            <h2><img src="/logos/KDL_icon.svg" alt="" width="108" height="108" class="lp-tool-logo-inline">KDL</h2>
+            <div class="lp-tool-fullname">Known-data logger: write down what you did on a test phone while you do it</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-kdl"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-kdl"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/known-data-logger" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What is KDL?</h3>
+            <p>An Android app for test phones. Turn on capture and use the phone. KDL logs what you did and when: taps, typed text, screens, incoming messages and calls from their notifications, and a screenshot each time you tap the red MARK button. Every entry carries the device clock, the time zone, the time since boot and the boot count. Export the log into the <code>documentation/</code> folder next to the extraction, and <code>tools/make_documentation.py</code> turns it into an <code>.xlsx</code>.</p>
+            <p>It is there to make known data for apps the LEAPPs do not parse yet, so a parser can be built and checked against it. Two scripts in the repository help with that: <code>kdl_locate.py</code> takes the export and an extraction and finds where the app stored each logged value and time, and <code>kdl_check.py</code> grades a LEAPP artifact's output against the log.</p>
+            <p><strong>Test phones only.</strong> KDL records typed text and screens in the apps you pick. Never install it on an evidence device.</p>
+          </div>
+          <div>
+            <h3>Highlights</h3>
+            <ul>
+              <li>Rows are hash-chained, so changing, removing or reordering a row breaks every hash after it, and <code>make_documentation.py</code> checks the whole chain</li>
+              <li>Android 8.0 or later. Screenshots need Android 11 or later. iOS is planned, not built</li>
+              <li>Not on Google Play and not a LEAPP. Install the APK with adb or from the file, and check it against <code>SHA256SUMS</code>. Release signer certificate SHA-256: <code style="word-break:break-all">ab957515938e78247caa26a3747e7e429b4a6bd766854a8fdf3aa8929bb50faf</code></li>
+              <li>The scripts in <code>tools/</code> come with the source code download. MIT licensed</li>
+              <li><a href="https://github.com/abrignoni/known-data-logger/blob/main/docs/USER_MANUAL.md" target="_blank" rel="noopener noreferrer">Read the user manual</a>: installing, checking the hash and signer, and every screen</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lp-status-bar">
+          <div class="lp-status-dot"></div>
+          <span class="lp-status-text">Live releases</span>
+        </div>
+        <div id="releases-kdl" class="lp-releases-list">
+          <div class="lp-loading"><span>Fetching releases&hellip;</span></div>
+        </div>
+        <a href="https://github.com/abrignoni/known-data-logger/releases/latest" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>Latest KDL release on GitHub</a>
+      </section>
+
       <!-- CODE SIGNING POLICY -->
       <section class="lp-tool-section" id="code-signing-policy">
         <div class="lp-tool-header">
@@ -1008,6 +1063,7 @@
       { id: 'gleapp', name: 'GLEAPP', repo: 'abrignoni/GLEAPP' },
       { id: 'gleapp-map-downloader', name: 'GLEAPP Map Downloader', repo: 'abrignoni/GLEAPP-MapDownloader' },
       { id: 'batch-leapp', name: 'Batch LEAPP', repo: 'abrignoni/batch-leapp' },
+      { id: 'kdl', name: 'KDL', repo: 'abrignoni/known-data-logger' },
     ];
 
     // Classify an asset from its filename: OS, architecture, and GUI/CLI
@@ -1060,6 +1116,7 @@
 
     function formatBytes(bytes) {
       if (!bytes) return '';
+      if (bytes < 1024) return bytes + ' B';
       if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(0) + ' KB';
       return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
     }

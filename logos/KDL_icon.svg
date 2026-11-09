@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108">
+  <!-- From known-data-logger app/src/main/res/drawable/ic_launcher_{background,foreground}.xml at 84c3c49, with rounded corners for the site. -->
+  <rect width="108" height="108" rx="24" fill="#1B2A41"/>
+  <path d="M26.125,56 L72.125,56" stroke="#CFD8E3" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <path d="M70.125,48 L84.125,56 L70.125,64 Z" fill="#CFD8E3"/>
+  <path d="M33.125,56 L33.125,47 M48.125,56 L48.125,65 M63.125,56 L63.125,47" stroke="#CFD8E3" stroke-width="2.5" fill="none"/>
+  <circle cx="33.125" cy="40" r="5.5" fill="#D64541"/>
+  <circle cx="48.125" cy="72" r="5.5" fill="#D64541"/>
+  <circle cx="63.125" cy="40" r="5.5" fill="#D64541"/>
+</svg>
