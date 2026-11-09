@@ -1933,21 +1933,21 @@
     {
       "date": "2026-11-09",
       "totals": {
-        "ileapp": 103324,
-        "aleapp": 79869,
-        "rleapp": 7033,
-        "vleapp": 3772,
-        "lava": 5339,
-        "dleapp": 2507,
-        "gleapp": 1449,
-        "batchleapp": 918
+        "ileapp": 103535,
+        "aleapp": 80032,
+        "rleapp": 7069,
+        "vleapp": 3797,
+        "lava": 5406,
+        "dleapp": 2535,
+        "gleapp": 1472,
+        "batchleapp": 924
       },
       "probes": {
-        "qnxprobe": 1015,
+        "qnxprobe": 1016,
         "ewfprobe": 266,
         "exoprobe": 103,
         "chromiumcacheprobe": 21,
-        "mediacarve": 43,
+        "mediacarve": 45,
         "regfprobe": 10
       }
     }

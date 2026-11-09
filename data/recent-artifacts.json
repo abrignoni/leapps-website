@@ -3,6 +3,12 @@
   "window_days": 45,
   "items": [
     {
+      "name": "knownDataLogger",
+      "query": "knownDataLogger",
+      "tool": "ALEAPP",
+      "date": "2026-11-09"
+    },
+    {
       "name": "officeBackstageCache",
       "query": "officeBackstageCache",
       "tool": "DLEAPP",
@@ -13,12 +19,6 @@
       "query": "googleAppTabs",
       "tool": "iLEAPP",
       "date": "2026-11-04"
-    },
-    {
-      "name": "instagramPendingMedia",
-      "query": "instagramPendingMedia",
-      "tool": "ALEAPP",
-      "date": "2026-11-02"
     },
     {
       "name": "bmw nbt navigation",
@@ -33,6 +33,12 @@
       "date": "2026-10-27"
     },
     {
+      "name": "instagramPendingMedia",
+      "query": "instagramPendingMedia",
+      "tool": "ALEAPP",
+      "date": "2026-11-02"
+    },
+    {
       "name": "limewire",
       "query": "limewire",
       "tool": "DLEAPP",
@@ -43,12 +49,6 @@
       "query": "chromeIosOpenTabs",
       "tool": "iLEAPP",
       "date": "2026-11-01"
-    },
-    {
-      "name": "chromiumSitePermissions",
-      "query": "chromiumSitePermissions",
-      "tool": "ALEAPP",
-      "date": "2026-11-02"
     },
     {
       "name": "ford sync wince voice cache",
@@ -63,16 +63,16 @@
       "date": "2026-09-28"
     },
     {
+      "name": "chromiumSitePermissions",
+      "query": "chromiumSitePermissions",
+      "tool": "ALEAPP",
+      "date": "2026-11-02"
+    },
+    {
       "name": "claudeCodeSessions",
       "query": "claudeCodeSessions",
       "tool": "DLEAPP",
       "date": "2026-11-09"
-    },
-    {
-      "name": "playbackSessions",
-      "query": "playbackSessions",
-      "tool": "iLEAPP",
-      "date": "2026-11-01"
     }
   ]
 }
