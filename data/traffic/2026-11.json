@@ -12737,6 +12737,177 @@
      }
     ]
    }
+  },
+  "regfprobe": {
+   "views_daily": {
+    "2026-11-01": {
+     "count": 0,
+     "uniques": 0
+    },
+    "2026-11-02": {
+     "count": 0,
+     "uniques": 0
+    },
+    "2026-11-03": {
+     "count": 0,
+     "uniques": 0
+    },
+    "2026-11-04": {
+     "count": 0,
+     "uniques": 0
+    },
+    "2026-11-05": {
+     "count": 42,
+     "uniques": 5
+    },
+    "2026-11-06": {
+     "count": 10,
+     "uniques": 3
+    },
+    "2026-11-07": {
+     "count": 0,
+     "uniques": 0
+    },
+    "2026-11-08": {
+     "count": 0,
+     "uniques": 0
+    },
+    "2026-11-09": {
+     "count": 1,
+     "uniques": 1
+    }
+   },
+   "clones_daily": {
+    "2026-11-01": {
+     "count": 0,
+     "uniques": 0
+    },
+    "2026-11-02": {
+     "count": 0,
+     "uniques": 0
+    },
+    "2026-11-03": {
+     "count": 0,
+     "uniques": 0
+    },
+    "2026-11-04": {
+     "count": 357,
+     "uniques": 35
+    },
+    "2026-11-05": {
+     "count": 281,
+     "uniques": 62
+    },
+    "2026-11-06": {
+     "count": 174,
+     "uniques": 43
+    },
+    "2026-11-07": {
+     "count": 22,
+     "uniques": 16
+    },
+    "2026-11-08": {
+     "count": 2,
+     "uniques": 1
+    },
+    "2026-11-09": {
+     "count": 1,
+     "uniques": 1
+    }
+   },
+   "views_weekly": {
+    "2026-11-02": {
+     "count": 52,
+     "uniques": 7
+    },
+    "2026-11-09": {
+     "count": 1,
+     "uniques": 1
+    }
+   },
+   "clones_weekly": {
+    "2026-11-02": {
+     "count": 836,
+     "uniques": 139
+    },
+    "2026-11-09": {
+     "count": 1,
+     "uniques": 1
+    }
+   },
+   "referrers": {
+    "2026-11-10": [
+     {
+      "referrer": "github.com",
+      "count": 6,
+      "uniques": 5
+     }
+    ]
+   },
+   "paths": {
+    "2026-11-10": [
+     {
+      "path": "/abrignoni/regfprobe/pulls",
+      "title": "/pulls",
+      "count": 24,
+      "uniques": 2
+     },
+     {
+      "path": "/abrignoni/regfprobe",
+      "title": "Overview",
+      "count": 10,
+      "uniques": 6
+     },
+     {
+      "path": "/abrignoni/regfprobe/pull/10",
+      "title": "/pull/10",
+      "count": 8,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/regfprobe/pull/19",
+      "title": "/pull/19",
+      "count": 2,
+      "uniques": 2
+     },
+     {
+      "path": "/abrignoni/regfprobe/releases/tag/v0.2.1",
+      "title": "/releases/tag/v0.2.1",
+      "count": 2,
+      "uniques": 2
+     },
+     {
+      "path": "/abrignoni/regfprobe/graphs/contributors",
+      "title": "/graphs/contributors",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/regfprobe/pull/10/commits/5f56a8c0688a9bab63b11b782e6cb15b9d84a612",
+      "title": "/pull/10/commits/5f56a8c0688a9bab63b11b782e6cb15b9d84a612",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/regfprobe/pull/12",
+      "title": "/pull/12",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/regfprobe/pull/13",
+      "title": "/pull/13",
+      "count": 1,
+      "uniques": 1
+     },
+     {
+      "path": "/abrignoni/regfprobe/pull/16",
+      "title": "/pull/16",
+      "count": 1,
+      "uniques": 1
+     }
+    ]
+   }
   }
  }
 }

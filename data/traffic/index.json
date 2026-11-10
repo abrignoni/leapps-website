@@ -22,7 +22,7 @@
      "as_of": "2026-11-10"
     }
    },
-   "last_success": "2026-11-10T13:17:20Z"
+   "last_success": "2026-11-10T14:31:47Z"
   },
   "aleapp": {
    "repo": "abrignoni/ALEAPP",
@@ -45,7 +45,7 @@
      "as_of": "2026-11-10"
     }
    },
-   "last_success": "2026-11-10T13:17:20Z"
+   "last_success": "2026-11-10T14:31:47Z"
   },
   "rleapp": {
    "repo": "abrignoni/RLEAPP",
@@ -68,7 +68,7 @@
      "as_of": "2026-11-10"
     }
    },
-   "last_success": "2026-11-10T13:17:20Z"
+   "last_success": "2026-11-10T14:31:47Z"
   },
   "vleapp": {
    "repo": "abrignoni/VLEAPP",
@@ -91,7 +91,7 @@
      "as_of": "2026-11-10"
     }
    },
-   "last_success": "2026-11-10T13:17:20Z"
+   "last_success": "2026-11-10T14:31:47Z"
   },
   "lava": {
    "repo": "leapps-org/LAVA-releases",
@@ -114,7 +114,7 @@
      "as_of": "2026-11-10"
     }
    },
-   "last_success": "2026-11-10T13:17:20Z"
+   "last_success": "2026-11-10T14:31:47Z"
   },
   "dleapp": {
    "repo": "abrignoni/DLEAPP",
@@ -137,7 +137,7 @@
      "as_of": "2026-11-10"
     }
    },
-   "last_success": "2026-11-10T13:17:20Z"
+   "last_success": "2026-11-10T14:31:47Z"
   },
   "gleapp": {
    "repo": "abrignoni/GLEAPP",
@@ -160,7 +160,7 @@
      "as_of": "2026-11-10"
     }
    },
-   "last_success": "2026-11-10T13:17:20Z"
+   "last_success": "2026-11-10T14:31:47Z"
   },
   "batchleapp": {
    "repo": "abrignoni/batch-leapp",
@@ -183,7 +183,7 @@
      "as_of": "2026-11-10"
     }
    },
-   "last_success": "2026-11-10T13:17:20Z"
+   "last_success": "2026-11-10T14:31:47Z"
   },
   "qnxprobe": {
    "repo": "abrignoni/qnxprobe",
@@ -206,7 +206,7 @@
      "as_of": "2026-11-10"
     }
    },
-   "last_success": "2026-11-10T13:17:20Z"
+   "last_success": "2026-11-10T14:31:47Z"
   },
   "ewfprobe": {
    "repo": "abrignoni/ewfprobe",
@@ -229,7 +229,7 @@
      "as_of": "2026-11-10"
     }
    },
-   "last_success": "2026-11-10T13:17:20Z"
+   "last_success": "2026-11-10T14:31:47Z"
   },
   "exoprobe": {
    "repo": "abrignoni/exoprobe",
@@ -252,7 +252,7 @@
      "as_of": "2026-11-10"
     }
    },
-   "last_success": "2026-11-10T13:17:20Z"
+   "last_success": "2026-11-10T14:31:47Z"
   },
   "chromiumcacheprobe": {
    "repo": "abrignoni/chromiumcacheprobe",
@@ -275,7 +275,7 @@
      "as_of": "2026-11-10"
     }
    },
-   "last_success": "2026-11-10T13:17:20Z"
+   "last_success": "2026-11-10T14:31:47Z"
   },
   "mediacarve": {
    "repo": "abrignoni/mediacarve",
@@ -298,23 +298,35 @@
      "as_of": "2026-11-10"
     }
    },
-   "last_success": "2026-11-10T13:17:20Z"
+   "last_success": "2026-11-10T14:31:47Z"
   },
   "regfprobe": {
    "repo": "abrignoni/regfprobe",
    "group": "probe",
    "status": {
-    "views": "forbidden",
-    "clones": "forbidden",
-    "referrers": "forbidden",
-    "paths": "forbidden"
+    "views": "ok",
+    "clones": "ok",
+    "referrers": "ok",
+    "paths": "ok"
    },
-   "window": {}
+   "window": {
+    "views": {
+     "count": 53,
+     "uniques": 8,
+     "as_of": "2026-11-10"
+    },
+    "clones": {
+     "count": 837,
+     "uniques": 140,
+     "as_of": "2026-11-10"
+    }
+   },
+   "last_success": "2026-11-10T14:31:47Z"
   }
  },
  "months": [
   "2026-10",
   "2026-11"
  ],
- "updated_at": "2026-11-10T13:17:20Z"
+ "updated_at": "2026-11-10T14:31:47Z"
 }
