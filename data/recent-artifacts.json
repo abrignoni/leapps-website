@@ -3,15 +3,15 @@
   "window_days": 45,
   "items": [
     {
+      "name": "outlookAutocomplete",
+      "query": "outlookAutocomplete",
+      "tool": "DLEAPP",
+      "date": "2026-11-10"
+    },
+    {
       "name": "knownDataLogger",
       "query": "knownDataLogger",
       "tool": "ALEAPP",
-      "date": "2026-11-09"
-    },
-    {
-      "name": "officeBackstageCache",
-      "query": "officeBackstageCache",
-      "tool": "DLEAPP",
       "date": "2026-11-09"
     },
     {
@@ -33,16 +33,16 @@
       "date": "2026-10-27"
     },
     {
+      "name": "outlookPst",
+      "query": "outlookPst",
+      "tool": "DLEAPP",
+      "date": "2026-11-10"
+    },
+    {
       "name": "instagramPendingMedia",
       "query": "instagramPendingMedia",
       "tool": "ALEAPP",
       "date": "2026-11-02"
-    },
-    {
-      "name": "limewire",
-      "query": "limewire",
-      "tool": "DLEAPP",
-      "date": "2026-11-09"
     },
     {
       "name": "chromeIosOpenTabs",
@@ -63,16 +63,16 @@
       "date": "2026-09-28"
     },
     {
+      "name": "officeBackstageCache",
+      "query": "officeBackstageCache",
+      "tool": "DLEAPP",
+      "date": "2026-11-09"
+    },
+    {
       "name": "chromiumSitePermissions",
       "query": "chromiumSitePermissions",
       "tool": "ALEAPP",
       "date": "2026-11-02"
-    },
-    {
-      "name": "claudeCodeSessions",
-      "query": "claudeCodeSessions",
-      "tool": "DLEAPP",
-      "date": "2026-11-09"
     }
   ]
 }

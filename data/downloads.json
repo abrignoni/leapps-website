@@ -1954,18 +1954,18 @@
     {
       "date": "2026-11-10",
       "totals": {
-        "ileapp": 103586,
-        "aleapp": 80075,
-        "rleapp": 7076,
-        "vleapp": 3808,
-        "lava": 5444,
-        "dleapp": 2541,
-        "gleapp": 1482,
-        "batchleapp": 931
+        "ileapp": 103748,
+        "aleapp": 80240,
+        "rleapp": 7102,
+        "vleapp": 3824,
+        "lava": 5513,
+        "dleapp": 2563,
+        "gleapp": 1513,
+        "batchleapp": 944
       },
       "probes": {
-        "qnxprobe": 1022,
-        "ewfprobe": 267,
+        "qnxprobe": 1029,
+        "ewfprobe": 271,
         "exoprobe": 104,
         "chromiumcacheprobe": 22,
         "mediacarve": 46,
