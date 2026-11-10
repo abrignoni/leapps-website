@@ -1950,6 +1950,27 @@
         "mediacarve": 45,
         "regfprobe": 10
       }
+    },
+    {
+      "date": "2026-11-10",
+      "totals": {
+        "ileapp": 103586,
+        "aleapp": 80075,
+        "rleapp": 7076,
+        "vleapp": 3808,
+        "lava": 5444,
+        "dleapp": 2541,
+        "gleapp": 1482,
+        "batchleapp": 931
+      },
+      "probes": {
+        "qnxprobe": 1022,
+        "ewfprobe": 267,
+        "exoprobe": 104,
+        "chromiumcacheprobe": 22,
+        "mediacarve": 46,
+        "regfprobe": 11
+      }
     }
   ]
 }
