@@ -1975,22 +1975,22 @@
     {
       "date": "2026-11-11",
       "totals": {
-        "ileapp": 103831,
-        "aleapp": 80335,
-        "rleapp": 7117,
-        "vleapp": 3837,
-        "lava": 5545,
-        "dleapp": 2579,
-        "gleapp": 1529,
-        "batchleapp": 952
+        "ileapp": 103973,
+        "aleapp": 80454,
+        "rleapp": 7132,
+        "vleapp": 3849,
+        "lava": 5571,
+        "dleapp": 2597,
+        "gleapp": 1539,
+        "batchleapp": 958
       },
       "probes": {
-        "qnxprobe": 1029,
-        "ewfprobe": 271,
-        "exoprobe": 104,
-        "chromiumcacheprobe": 22,
-        "mediacarve": 46,
-        "regfprobe": 11
+        "qnxprobe": 1033,
+        "ewfprobe": 274,
+        "exoprobe": 106,
+        "chromiumcacheprobe": 24,
+        "mediacarve": 47,
+        "regfprobe": 15
       }
     }
   ]
