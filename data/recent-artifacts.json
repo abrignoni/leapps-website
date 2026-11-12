@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-11",
+  "generated": "2026-11-12",
   "window_days": 45,
   "items": [
     {
@@ -9,8 +9,8 @@
       "date": "2026-11-11"
     },
     {
-      "name": "macosVolumeStatusDatabase",
-      "query": "macosVolumeStatusDatabase",
+      "name": "macosCoreAnalytics",
+      "query": "macosCoreAnalytics",
       "tool": "DLEAPP",
       "date": "2026-11-11"
     },
@@ -39,8 +39,8 @@
       "date": "2026-11-11"
     },
     {
-      "name": "macosHstsHosts",
-      "query": "macosHstsHosts",
+      "name": "macosLoginWindow",
+      "query": "macosLoginWindow",
       "tool": "DLEAPP",
       "date": "2026-11-11"
     },
@@ -69,8 +69,8 @@
       "date": "2026-11-04"
     },
     {
-      "name": "macosSafariPerSitePreferences",
-      "query": "macosSafariPerSitePreferences",
+      "name": "macosMenuBar",
+      "query": "macosMenuBar",
       "tool": "DLEAPP",
       "date": "2026-11-11"
     }
