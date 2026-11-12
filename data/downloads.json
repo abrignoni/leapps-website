@@ -1996,19 +1996,19 @@
     {
       "date": "2026-11-12",
       "totals": {
-        "ileapp": 104076,
-        "aleapp": 80532,
-        "rleapp": 7146,
-        "vleapp": 3863,
-        "lava": 5588,
-        "dleapp": 2612,
-        "gleapp": 1549,
-        "batchleapp": 967
+        "ileapp": 104234,
+        "aleapp": 80696,
+        "rleapp": 7168,
+        "vleapp": 3882,
+        "lava": 5638,
+        "dleapp": 2631,
+        "gleapp": 1563,
+        "batchleapp": 971
       },
       "probes": {
-        "qnxprobe": 1033,
+        "qnxprobe": 1034,
         "ewfprobe": 275,
-        "exoprobe": 106,
+        "exoprobe": 109,
         "chromiumcacheprobe": 24,
         "mediacarve": 47,
         "regfprobe": 15
