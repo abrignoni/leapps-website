@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261015" />
+  <link rel="stylesheet" href="/css/global.css?v=20261113" />
   <style>
 .lp-header { padding: 3.5rem 2rem 3rem; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
 .lp-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(245,192,32,.06) 0%, transparent 70%); pointer-events: none; }
@@ -189,23 +189,29 @@
       <div class="lp-mobile-search-results" id="lp-mobile-search-results"></div>
     </div>
 
-    <a href="https://leapps.org#tools" onclick="closeMobileMenu()">Tools</a>
-    <a href="https://leapps.org#lava" onclick="closeMobileMenu()">LAVA</a>
-    <a href="https://leapps.org/releases" onclick="closeMobileMenu()">Releases</a>
-    <a href="https://leapps.org/probes" onclick="closeMobileMenu()">Probes</a>
-    <a href="https://leapps.org/device-tools" onclick="closeMobileMenu()">Device Tools</a>
+    <details class="lp-mm-group">
+      <summary>Tools</summary>
+      <a href="https://leapps.org#tools" onclick="closeMobileMenu()">All Tools</a>
+      <a href="https://leapps.org#lava" onclick="closeMobileMenu()">LAVA</a>
+      <a href="https://leapps.org/releases" onclick="closeMobileMenu()">Releases</a>
+      <a href="https://leapps.org/probes" onclick="closeMobileMenu()">Probes</a>
+      <a href="https://leapps.org/device-tools" onclick="closeMobileMenu()">Device Tools</a>
+      <a href="https://leapps.org/artifacts" onclick="closeMobileMenu()">Artifacts</a>
+      <a href="https://leapps.org/docs" onclick="closeMobileMenu()">Docs</a>
+    </details>
     <a href="https://leapps.org/stats" onclick="closeMobileMenu()">Stats</a>
     <a href="https://leapps.org/changelog" onclick="closeMobileMenu()">Changelog</a>
-    <a href="https://leapps.org/artifacts" onclick="closeMobileMenu()">Artifacts</a>
-    <a href="https://leapps.org/docs" onclick="closeMobileMenu()">Docs</a>
-    <a href="https://leapps.org#faq" onclick="closeMobileMenu()">FAQ</a>
-    <a href="https://leapps.org#mentions" onclick="closeMobileMenu()">Featured</a>
-    <a href="https://leapps.org#contributors" onclick="closeMobileMenu()">Contributors</a>
-    <a href="https://leapps.org/scoreboard" onclick="closeMobileMenu()">Scoreboard</a>
-    <a href="https://leapps.org/mailing" onclick="closeMobileMenu()">Mailing List</a>
-    <a href="https://leapps.org/designs" onclick="closeMobileMenu()">Design Reviews</a>
-    <a href="https://leapps.org/guides" onclick="closeMobileMenu()">Guides</a>
-    <a href="https://leapps.org/resources" onclick="closeMobileMenu()">Resources</a>
+    <details class="lp-mm-group">
+      <summary>Community</summary>
+      <a href="https://leapps.org#faq" onclick="closeMobileMenu()">FAQ</a>
+      <a href="https://leapps.org#mentions" onclick="closeMobileMenu()">Featured</a>
+      <a href="https://leapps.org#contributors" onclick="closeMobileMenu()">Contributors</a>
+      <a href="https://leapps.org/scoreboard" onclick="closeMobileMenu()">Scoreboard</a>
+      <a href="https://leapps.org/mailing" onclick="closeMobileMenu()">Mailing List</a>
+      <a href="https://leapps.org/designs" onclick="closeMobileMenu()">Design Reviews</a>
+      <a href="https://leapps.org/guides" onclick="closeMobileMenu()">Guides</a>
+      <a href="https://leapps.org/resources" onclick="closeMobileMenu()">Resources</a>
+    </details>
     <a href="https://leapps.org/blog" onclick="closeMobileMenu()">Blog</a>
     <a href="https://leapps.org/about" onclick="closeMobileMenu()">About</a>
     <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">GitHub</a>
