@@ -134,7 +134,7 @@ class RepoList(unittest.TestCase):
     def test_lists_come_from_the_download_workflow(self):
         lists = cgs.load_repo_lists()
         self.assertEqual(len(lists["tool"]), 8)
-        self.assertEqual(len(lists["probe"]), 6)
+        self.assertEqual(len(lists["probe"]), 7)
         self.assertEqual(lists["tool"]["lava"], "leapps-org/LAVA-releases")
         self.assertNotIn("leapps-org/LAVA-beta", lists["tool"].values())
 

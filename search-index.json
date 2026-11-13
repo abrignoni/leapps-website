@@ -168,6 +168,12 @@
     "excerpt": "Reads registry hives (SYSTEM, SOFTWARE, SAM, NTUSER.DAT and more) read-only, replays dirty hives' transaction logs in memory, searches, builds a timeline and exports to JSON, CSV or .reg. Executables for Windows, macOS and Linux, or one standard-library Python file. MIT."
   },
   {
+    "title": "pstprobe: Outlook PST and OST files",
+    "url": "https://leapps.org/probes#section-pstprobe",
+    "page": "Probes",
+    "excerpt": "Reads Outlook PST and OST mailboxes read-only: folders, items, recipients and attachments, with export to JSON lines and a check of the file's stored CRCs. Written from the MS-PST specification, no libpff. Executables for Windows, macOS and Linux, or one standard-library Python file. MIT."
+  },
+  {
     "title": "dpapiprobe: offline Windows DPAPI decryption",
     "url": "https://leapps.org/probes#section-dpapiprobe",
     "page": "Probes",
@@ -177,7 +183,7 @@
     "title": "Probes — standalone forensic readers",
     "url": "https://leapps.org/probes",
     "page": "Probes",
-    "excerpt": "Single-purpose readers that sit beside the LEAPPs: qnxprobe, ewfprobe, exoprobe, chromiumcacheprobe, mediacarve and regfprobe. One Python file each, built on the standard library, never writing to the evidence they read."
+    "excerpt": "Single-purpose readers that sit beside the LEAPPs: qnxprobe, ewfprobe, exoprobe, chromiumcacheprobe, mediacarve, regfprobe and pstprobe. One Python file each, built on the standard library, never writing to the evidence they read."
   },
   {
     "title": "Install with Homebrew (macOS)",

@@ -38,6 +38,7 @@ const ALLOWED_REPOS = [
   'abrignoni/chromiumcacheprobe',
   'abrignoni/mediacarve',
   'abrignoni/regfprobe',
+  'abrignoni/pstprobe',
   'leapps-org/LAVA-releases',
   'leapps-org/leapps-language-resources',
 ];
@@ -291,6 +292,7 @@ async function handleChangelogFeed(env) {
     { name: 'chromiumcacheprobe', repo: 'abrignoni/chromiumcacheprobe' },
     { name: 'mediacarve', repo: 'abrignoni/mediacarve' },
     { name: 'regfprobe', repo: 'abrignoni/regfprobe' },
+    { name: 'pstprobe', repo: 'abrignoni/pstprobe' },
     { name: 'KDL', repo: 'abrignoni/known-data-logger' },
     { name: 'AppWalk', repo: 'abrignoni/appwalk' },
   ];
