@@ -2013,6 +2013,27 @@
         "mediacarve": 47,
         "regfprobe": 15
       }
+    },
+    {
+      "date": "2026-11-13",
+      "totals": {
+        "ileapp": 104326,
+        "aleapp": 80783,
+        "rleapp": 7173,
+        "vleapp": 3888,
+        "lava": 5657,
+        "dleapp": 2638,
+        "gleapp": 1568,
+        "batchleapp": 972
+      },
+      "probes": {
+        "qnxprobe": 1034,
+        "ewfprobe": 275,
+        "exoprobe": 110,
+        "chromiumcacheprobe": 24,
+        "mediacarve": 47,
+        "regfprobe": 20
+      }
     }
   ]
 }
