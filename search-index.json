@@ -67,9 +67,21 @@
   },
   {
     "title": "KDL (Known-data logger): known data from test phones",
-    "url": "https://leapps.org/releases#section-kdl",
-    "page": "Releases",
+    "url": "https://leapps.org/device-tools#section-kdl",
+    "page": "Device Tools",
     "excerpt": "Android app for test phones that logs taps, typed text, screens, notifications and screenshots with their times, to make known data for building and checking LEAPP parsers. Test phones only."
+  },
+  {
+    "title": "Device Tools: tools that work with a phone directly",
+    "url": "https://leapps.org/device-tools",
+    "page": "Device Tools",
+    "excerpt": "KDL for test phones, which logs what a tester does to make known data, and AppWalk for phones under examination, which documents what an app shows screen by screen from the examiner's computer."
+  },
+  {
+    "title": "AppWalk: document an Android app screen by screen",
+    "url": "https://leapps.org/device-tools#section-appwalk",
+    "page": "Device Tools",
+    "excerpt": "Runs on the examiner's computer and drives a phone under examination over adb, saving a screenshot and the view tree of every screen, a hash-chained log in KDL's export format, a transcript and a PDF report. It changes the phone: opened threads are marked read."
   },
   {
     "title": "qnxprobe — filesystem identification and extraction",
