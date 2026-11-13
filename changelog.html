@@ -105,6 +105,9 @@
 .lp-cl-tool.regfprobe { border-color: rgba(var(--color-probes-rgb),.3); color: rgb(var(--color-probes-rgb)); }
 .lp-latest-chip-tool.regfprobe { color: rgb(var(--color-probes-rgb)); }
 .lp-filter-btn[data-tool="regfprobe"].active { border-color: rgb(var(--color-probes-rgb)); color: rgb(var(--color-probes-rgb)); background: rgba(var(--color-probes-rgb),.08); }
+.lp-cl-tool.pstprobe { border-color: rgba(var(--color-probes-rgb),.3); color: rgb(var(--color-probes-rgb)); }
+.lp-latest-chip-tool.pstprobe { color: rgb(var(--color-probes-rgb)); }
+.lp-filter-btn[data-tool="pstprobe"].active { border-color: rgb(var(--color-probes-rgb)); color: rgb(var(--color-probes-rgb)); background: rgba(var(--color-probes-rgb),.08); }
 .lp-cl-tool.kdl { border-color: rgba(214,69,65,.3); color: rgb(214,69,65); }
 .lp-latest-chip-tool.kdl { color: rgb(214,69,65); }
 .lp-filter-btn[data-tool="kdl"].active { border-color: rgb(214,69,65); color: rgb(214,69,65); background: rgba(214,69,65,.08); }
@@ -299,6 +302,7 @@
       <button class="lp-filter-btn" data-tool="chromiumcacheprobe" data-group="probe" onclick="filterTool('chromiumcacheprobe', this)">chromiumcacheprobe</button>
       <button class="lp-filter-btn" data-tool="mediacarve" data-group="probe" onclick="filterTool('mediacarve', this)">mediacarve</button>
       <button class="lp-filter-btn" data-tool="regfprobe" data-group="probe" onclick="filterTool('regfprobe', this)">regfprobe</button>
+      <button class="lp-filter-btn" data-tool="pstprobe" data-group="probe" onclick="filterTool('pstprobe', this)">pstprobe</button>
       <button class="lp-filter-btn" data-tool="kdl" data-group="device" onclick="filterTool('kdl', this)">KDL</button>
       <button class="lp-filter-btn" data-tool="appwalk" data-group="device" onclick="filterTool('appwalk', this)">AppWalk</button>
     </div>
@@ -378,6 +382,7 @@
       { id: 'chromiumcacheprobe', name: 'chromiumcacheprobe', repo: 'abrignoni/chromiumcacheprobe', group: 'probe' },
       { id: 'mediacarve', name: 'mediacarve', repo: 'abrignoni/mediacarve', group: 'probe' },
       { id: 'regfprobe', name: 'regfprobe', repo: 'abrignoni/regfprobe', group: 'probe' },
+      { id: 'pstprobe', name: 'pstprobe', repo: 'abrignoni/pstprobe', group: 'probe' },
       { id: 'kdl', name: 'KDL', repo: 'abrignoni/known-data-logger', group: 'device' },
       { id: 'appwalk', name: 'AppWalk', repo: 'abrignoni/appwalk', group: 'device' },
     ];

@@ -55,6 +55,7 @@ jobs:
             'chromiumcacheprobe': 'abrignoni/chromiumcacheprobe',
             'mediacarve': 'abrignoni/mediacarve',
             'regfprobe': 'abrignoni/regfprobe',
+            'pstprobe': 'abrignoni/pstprobe',
           }
 
           token = os.environ['GH_TOKEN']

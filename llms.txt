@@ -31,6 +31,7 @@ Standalone single-purpose readers, separate from the LEAPPs: https://leapps.org/
 - [chromiumcacheprobe](https://github.com/abrignoni/chromiumcacheprobe): reads the Chromium Simple Cache as Chrome keeps it on Android, with its HTTP times and headers, and rebuilds the H.264 video it holds as MP4 files, copying the sample bytes as stored; recovery engine by Forensik.IT GmbH
 - [mediacarve](https://github.com/abrignoni/mediacarve): recovers images and video from any stream of bytes by signature, with lengths parsed from each file's own structure; MIT, standard library only
 - [regfprobe](https://github.com/abrignoni/regfprobe): reads Windows registry hive files offline and read-only (keys, values, search, a timeline of key last-written times, export to JSON, CSV or .reg), replaying dirty hives' .LOG1 and .LOG2 logs in memory, and reads hives straight from an E01 or raw image; MIT, standard library only
+- [pstprobe](https://github.com/abrignoni/pstprobe): reads Outlook PST and OST files read-only (folders, items, recipients and attachments, including attached items), exports folders as JSON lines and checks the CRCs the file stores; written from the MS-PST specification, no libpff; MIT, standard library only
 
 Readers: the format readers the LEAPPs carry, vendored as single files except heicreader, each also a command line tool (https://leapps.org/probes#readers):
 

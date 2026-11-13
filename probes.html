@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Probes — LEAPPs</title>
-  <meta name="description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, mediacarve for media, databases, plists, archives and PDFs carved by signature, and regfprobe for Windows registry hives. One Python file each, built on the standard library." />
+  <meta name="description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, mediacarve for media, databases, plists, archives and PDFs carved by signature, regfprobe for Windows registry hives, and pstprobe for Outlook PST and OST files. One Python file each, built on the standard library." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://leapps.org/probes" />
   <meta property="og:title" content="Probes — LEAPPs" />
-  <meta property="og:description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, mediacarve for media, databases, plists, archives and PDFs carved by signature, and regfprobe for Windows registry hives. One Python file each, built on the standard library." />
+  <meta property="og:description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, mediacarve for media, databases, plists, archives and PDFs carved by signature, regfprobe for Windows registry hives, and pstprobe for Outlook PST and OST files. One Python file each, built on the standard library." />
   <meta property="og:image" content="https://leapps.org/blog/og/default.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -21,7 +21,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Probes — LEAPPs" />
-  <meta name="twitter:description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, mediacarve for media, databases, plists, archives and PDFs carved by signature, and regfprobe for Windows registry hives. One Python file each, built on the standard library." />
+  <meta name="twitter:description" content="Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, mediacarve for media, databases, plists, archives and PDFs carved by signature, regfprobe for Windows registry hives, and pstprobe for Outlook PST and OST files. One Python file each, built on the standard library." />
   <meta name="twitter:image" content="https://leapps.org/blog/og/default.png" />
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/logos/leapps-favicon-512.png" />
@@ -347,7 +347,7 @@
       {
         "@type": "WebPage",
         "name": "Probes — LEAPPs",
-        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, mediacarve for media, databases, plists, archives and PDFs carved by signature, and regfprobe for Windows registry hives. One Python file each, built on the standard library. Plus the readers the LEAPPs carry: c2pareader, cblite-parser, hive-parser, mmkv-parser, sqlite-wal, cimreader, dpapiprobe and heicreader.",
+        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, mediacarve for media, databases, plists, archives and PDFs carved by signature, regfprobe for Windows registry hives, and pstprobe for Outlook PST and OST files. One Python file each, built on the standard library. Plus the readers the LEAPPs carry: c2pareader, cblite-parser, hive-parser, mmkv-parser, sqlite-wal, cimreader, dpapiprobe and heicreader.",
         "url": "https://leapps.org/probes",
         "isPartOf": { "@type": "WebSite", "name": "LEAPPs", "url": "https://leapps.org" }
       },
@@ -425,6 +425,19 @@
         "description": "Reads Windows registry hive files offline and read-only: keys, values, search, a timeline of key last-written times, and export to JSON, CSV or a .reg file. Dirty hives have their .LOG1 and .LOG2 transaction logs replayed in memory first, and hives can be read straight from an E01 or raw image.",
         "url": "https://leapps.org/probes#section-regfprobe",
         "downloadUrl": "https://github.com/abrignoni/regfprobe/releases",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "license": "https://opensource.org/licenses/MIT",
+        "author": { "@type": "Person", "name": "Alexis Brignoni", "url": "https://github.com/abrignoni" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "pstprobe",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Windows, macOS, Linux",
+        "description": "Reads Outlook PST and OST files read-only: folders, items, recipients and attachments, including attached items, with export to JSON lines and a check of the CRCs the file stores. Written from the MS-PST specification, with no libpff.",
+        "url": "https://leapps.org/probes#section-pstprobe",
+        "downloadUrl": "https://github.com/abrignoni/pstprobe/releases",
         "isAccessibleForFree": true,
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "license": "https://opensource.org/licenses/MIT",
@@ -610,6 +623,7 @@
       <a href="#section-chromiumcacheprobe" onclick="closeMobileMenu()">chromiumcacheprobe</a>
       <a href="#section-mediacarve" onclick="closeMobileMenu()">mediacarve</a>
       <a href="#section-regfprobe" onclick="closeMobileMenu()">regfprobe</a>
+      <a href="#section-pstprobe" onclick="closeMobileMenu()">pstprobe</a>
     </details>
     <details class="lp-mm-group">
       <summary>Tools</summary>
@@ -652,14 +666,15 @@
         <a href="#section-chromiumcacheprobe" class="lp-tool-pill">chromiumcacheprobe</a>
         <a href="#section-mediacarve" class="lp-tool-pill">mediacarve</a>
         <a href="#section-regfprobe" class="lp-tool-pill">regfprobe</a>
+        <a href="#section-pstprobe" class="lp-tool-pill">pstprobe</a>
         <a href="#readers" class="lp-tool-pill">Readers</a>
       </div>
       <figure class="lp-video">
-        <video controls preload="none" playsinline poster="/videos/probes-intro.jpg?v=20261017" width="1280" height="720" aria-label="The probe family in under a minute">
-          <source src="/videos/probes-intro.mp4?v=20261017" type="video/mp4">
-          <a href="/videos/probes-intro.mp4?v=20261017">Watch the probe family video (MP4)</a>
+        <video controls preload="none" playsinline poster="/videos/probes-intro.jpg?v=20261113" width="1280" height="720" aria-label="The probe family in about a minute">
+          <source src="/videos/probes-intro.mp4?v=20261113" type="video/mp4">
+          <a href="/videos/probes-intro.mp4?v=20261113">Watch the probe family video (MP4)</a>
         </video>
-        <figcaption>The probe family in under a minute: what each one opens, and what it hands back.</figcaption>
+        <figcaption>The probe family in about a minute: what each one opens, and what it hands back.</figcaption>
       </figure>
     </div>
   </header>
@@ -677,6 +692,7 @@
         <li><a href="#section-chromiumcacheprobe"><i class="ti ti-brand-chrome"></i>chromiumcacheprobe</a></li>
         <li><a href="#section-mediacarve"><i class="ti ti-photo-search"></i>mediacarve</a></li>
         <li><a href="#section-regfprobe"><i class="ti ti-binary-tree"></i>regfprobe</a></li>
+        <li><a href="#section-pstprobe"><i class="ti ti-mail"></i>pstprobe</a></li>
         <li><a href="#about-the-builds"><i class="ti ti-package"></i>About the builds</a></li>
         <li><a href="/stats#probes"><i class="ti ti-chart-bar"></i>By the numbers</a></li>
       </ul>
@@ -927,6 +943,44 @@
         <a href="https://github.com/abrignoni/regfprobe/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all regfprobe releases on GitHub</a>
       </section>
 
+      <!-- PSTPROBE -->
+      <section class="lp-tool-section" id="section-pstprobe">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Outlook &middot; PST and OST</div>
+            <h2>pstprobe</h2>
+            <div class="lp-tool-fullname">Read Outlook PST and OST files, written from Microsoft's specification</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-pstprobe"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-pstprobe"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/pstprobe" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What is pstprobe?</h3>
+            <p>It opens a Personal Storage Table (<code>.pst</code>) or an Offline Storage Table (<code>.ost</code>) and reads its folders, the items in them (mail, contacts, appointments, tasks, notes and the rest), their recipients and their attachments, including items attached to other items. It opens the file read-only, and a mailbox of several gigabytes is read a piece at a time, never loaded whole.</p>
+            <p>It is written from Microsoft's [MS-PST] specification, with nothing taken from libpff, so an MIT tool can read a mailbox with no copyleft dependency and nothing to build. It was compared with libpff on PSTs Outlook made, the OST in the NIST CFReDS Data Leakage Case and the Enron PST set; the README gives the results, and says which variants have been read only in the tests' own files. DLEAPP, starting with its next release, reads Outlook mailboxes with it.</p>
+          </div>
+          <div>
+            <h3>Highlights</h3>
+            <ul>
+              <li><code>info</code>, <code>folders</code>, <code>items</code>, <code>props</code> and <code>body</code> to look inside, <code>extract</code> for every file attachment, and <code>export</code> for one folder or all of them as JSON lines, with compressed RTF bodies decompressed beside them</li>
+              <li>Unicode and ANSI PSTs, and Unicode OSTs with 4 KB pages and zlib-compressed blocks. Cyclic encoding has been read only in the tests' own files. A file encrypted with Windows Information Protection is refused with an error that says so</li>
+              <li><code>verify</code> recomputes the CRCs the file stores for its header, B-tree pages and blocks. The other commands do not check them, so a file whose CRCs do not match still reads</li>
+              <li>Times come back in UTC. ANSI text that names no code page of its own is decoded as Windows-1252 unless another is given, and only Western ANSI files have been read</li>
+              <li>No recovery: items no longer linked from a folder, and data in free space, are not looked for</li>
+              <li>An optional read-only window with the folder tree, each folder's items with their times, and tabs for an item's properties, recipients, attachments and body. Bodies are shown as text, never rendered</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lp-status-bar">
+          <div class="lp-status-dot"></div>
+          <span class="lp-status-text">Live releases</span>
+        </div>
+        <div id="releases-pstprobe" class="lp-releases-list">
+          <div class="lp-loading"><span>Fetching releases&hellip;</span></div>
+        </div>
+        <a href="https://github.com/abrignoni/pstprobe/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all pstprobe releases on GitHub</a>
+      </section>
+
       <!-- ABOUT THE BUILDS -->
       <section class="lp-tool-section" id="about-the-builds">
         <div class="lp-tool-header">
@@ -939,12 +993,12 @@
         <div class="lp-about-box">
           <div>
             <h3>Executables</h3>
-            <p>Every release carries standalone executables for Windows, macOS and Linux, each on x64 and arm64, built by the probe's own GitHub Actions workflow from the tagged commit, with a <code>SHA256SUMS.txt</code> covering them. Each archive holds the command line tool and its window as two executables; regfprobe attaches the two as separate files, covered by <code>SHA256SUMS-binaries.txt</code>.</p>
+            <p>Every release carries standalone executables for Windows, macOS and Linux, each on x64 and arm64, built by the probe's own GitHub Actions workflow from the tagged commit, with a <code>SHA256SUMS.txt</code> covering them. Each archive holds the command line tool and its window as two executables; regfprobe and pstprobe attach the two as separate files instead, listed in <code>SHA256SUMS-binaries.txt</code> for regfprobe and in <code>SHA256SUMS.txt</code> for pstprobe.</p>
             <p>They are not code signed yet, so Windows SmartScreen and macOS Gatekeeper will each ask once. Unzip to a local folder rather than running from a network share.</p>
           </div>
           <div>
             <h3>Or run the Python file</h3>
-            <p>Each probe is one Python file that needs the standard library and nothing else, so <code>python3 &lt;probe&gt;.py</code> works on Windows, macOS and Linux, and its window is a second file, <code>&lt;probe&gt;_gui.py</code>. ewfprobe, exoprobe, chromiumcacheprobe, mediacarve and regfprobe attach the Python files to every release as well.</p>
+            <p>Each probe is one Python file that needs the standard library and nothing else, so <code>python3 &lt;probe&gt;.py</code> works on Windows, macOS and Linux, and its window is <code>&lt;probe&gt;_gui.py</code>, which needs <code>&lt;probe&gt;_theme.py</code> beside it. ewfprobe, exoprobe, chromiumcacheprobe, mediacarve, regfprobe and pstprobe attach the Python files to every release as well.</p>
           </div>
         </div>
       </section>
@@ -1238,6 +1292,7 @@
       { id: 'chromiumcacheprobe', name: 'chromiumcacheprobe', repo: 'abrignoni/chromiumcacheprobe' },
       { id: 'mediacarve', name: 'mediacarve', repo: 'abrignoni/mediacarve' },
       { id: 'regfprobe', name: 'regfprobe', repo: 'abrignoni/regfprobe' },
+      { id: 'pstprobe', name: 'pstprobe', repo: 'abrignoni/pstprobe' },
     ];
 
     // Classify an asset from its filename: OS, architecture, and GUI/CLI

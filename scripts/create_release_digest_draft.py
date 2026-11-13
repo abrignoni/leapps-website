@@ -61,6 +61,7 @@ TOOLS = (
     ("chromiumcacheprobe", "abrignoni/chromiumcacheprobe", "probes#section-chromiumcacheprobe"),
     ("mediacarve", "abrignoni/mediacarve", "probes#section-mediacarve"),
     ("regfprobe", "abrignoni/regfprobe", "probes#section-regfprobe"),
+    ("pstprobe", "abrignoni/pstprobe", "probes#section-pstprobe"),
     ("KDL", "abrignoni/known-data-logger", "device-tools#section-kdl"),
     ("AppWalk", "abrignoni/appwalk", "device-tools#section-appwalk"),
 )
