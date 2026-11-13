@@ -2017,22 +2017,22 @@
     {
       "date": "2026-11-13",
       "totals": {
-        "ileapp": 104326,
-        "aleapp": 80783,
-        "rleapp": 7173,
-        "vleapp": 3888,
-        "lava": 5657,
-        "dleapp": 2638,
-        "gleapp": 1568,
-        "batchleapp": 972
+        "ileapp": 104470,
+        "aleapp": 80901,
+        "rleapp": 7186,
+        "vleapp": 3898,
+        "lava": 5704,
+        "dleapp": 2652,
+        "gleapp": 1588,
+        "batchleapp": 975
       },
       "probes": {
-        "qnxprobe": 1034,
-        "ewfprobe": 275,
-        "exoprobe": 110,
-        "chromiumcacheprobe": 24,
-        "mediacarve": 47,
-        "regfprobe": 20
+        "qnxprobe": 1052,
+        "ewfprobe": 434,
+        "exoprobe": 155,
+        "chromiumcacheprobe": 53,
+        "mediacarve": 85,
+        "regfprobe": 87
       }
     }
   ]
