@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Changelog — LEAPPs</title>
-  <meta name="description" content="Unified release history across all LEAPPs tools — iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP." />
+  <meta name="description" content="Every release of the LEAPPs and LAVA, their companions, the probes and the device tools, newest first." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://leapps.org/changelog" />
   <meta property="og:title" content="Changelog — LEAPPs" />
-  <meta property="og:description" content="Unified release history across all LEAPPs tools — iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP." />
+  <meta property="og:description" content="Every release of the LEAPPs and LAVA, their companions, the probes and the device tools, newest first." />
   <meta property="og:image" content="https://leapps.org/blog/og/default.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -84,6 +84,35 @@
 .lp-cl-tool.batch { border-color: rgba(31,184,166,.3); color: #1FB8A6; }
 .lp-cl-tool.dleapp { border-color: rgba(var(--color-dleapp-rgb),.3); color: var(--color-dleapp); }
 .lp-cl-tool.gleapp { border-color: rgba(var(--color-gleapp-rgb),.3); color: var(--color-gleapp); }
+.lp-cl-tool.mapdl { border-color: rgba(var(--color-gleapp-rgb),.3); color: rgb(var(--color-gleapp-rgb)); }
+.lp-latest-chip-tool.mapdl { color: rgb(var(--color-gleapp-rgb)); }
+.lp-filter-btn[data-tool="mapdl"].active { border-color: rgb(var(--color-gleapp-rgb)); color: rgb(var(--color-gleapp-rgb)); background: rgba(var(--color-gleapp-rgb),.08); }
+.lp-cl-tool.qnxprobe { border-color: rgba(var(--color-probes-rgb),.3); color: rgb(var(--color-probes-rgb)); }
+.lp-latest-chip-tool.qnxprobe { color: rgb(var(--color-probes-rgb)); }
+.lp-filter-btn[data-tool="qnxprobe"].active { border-color: rgb(var(--color-probes-rgb)); color: rgb(var(--color-probes-rgb)); background: rgba(var(--color-probes-rgb),.08); }
+.lp-cl-tool.ewfprobe { border-color: rgba(var(--color-probes-rgb),.3); color: rgb(var(--color-probes-rgb)); }
+.lp-latest-chip-tool.ewfprobe { color: rgb(var(--color-probes-rgb)); }
+.lp-filter-btn[data-tool="ewfprobe"].active { border-color: rgb(var(--color-probes-rgb)); color: rgb(var(--color-probes-rgb)); background: rgba(var(--color-probes-rgb),.08); }
+.lp-cl-tool.exoprobe { border-color: rgba(var(--color-probes-rgb),.3); color: rgb(var(--color-probes-rgb)); }
+.lp-latest-chip-tool.exoprobe { color: rgb(var(--color-probes-rgb)); }
+.lp-filter-btn[data-tool="exoprobe"].active { border-color: rgb(var(--color-probes-rgb)); color: rgb(var(--color-probes-rgb)); background: rgba(var(--color-probes-rgb),.08); }
+.lp-cl-tool.chromiumcacheprobe { border-color: rgba(var(--color-probes-rgb),.3); color: rgb(var(--color-probes-rgb)); }
+.lp-latest-chip-tool.chromiumcacheprobe { color: rgb(var(--color-probes-rgb)); }
+.lp-filter-btn[data-tool="chromiumcacheprobe"].active { border-color: rgb(var(--color-probes-rgb)); color: rgb(var(--color-probes-rgb)); background: rgba(var(--color-probes-rgb),.08); }
+.lp-cl-tool.mediacarve { border-color: rgba(var(--color-probes-rgb),.3); color: rgb(var(--color-probes-rgb)); }
+.lp-latest-chip-tool.mediacarve { color: rgb(var(--color-probes-rgb)); }
+.lp-filter-btn[data-tool="mediacarve"].active { border-color: rgb(var(--color-probes-rgb)); color: rgb(var(--color-probes-rgb)); background: rgba(var(--color-probes-rgb),.08); }
+.lp-cl-tool.regfprobe { border-color: rgba(var(--color-probes-rgb),.3); color: rgb(var(--color-probes-rgb)); }
+.lp-latest-chip-tool.regfprobe { color: rgb(var(--color-probes-rgb)); }
+.lp-filter-btn[data-tool="regfprobe"].active { border-color: rgb(var(--color-probes-rgb)); color: rgb(var(--color-probes-rgb)); background: rgba(var(--color-probes-rgb),.08); }
+.lp-cl-tool.kdl { border-color: rgba(214,69,65,.3); color: rgb(214,69,65); }
+.lp-latest-chip-tool.kdl { color: rgb(214,69,65); }
+.lp-filter-btn[data-tool="kdl"].active { border-color: rgb(214,69,65); color: rgb(214,69,65); background: rgba(214,69,65,.08); }
+.lp-cl-tool.appwalk { border-color: rgba(31,162,149,.3); color: rgb(31,162,149); }
+.lp-latest-chip-tool.appwalk { color: rgb(31,162,149); }
+.lp-filter-btn[data-tool="appwalk"].active { border-color: rgb(31,162,149); color: rgb(31,162,149); background: rgba(31,162,149,.08); }
+.lp-filter-bar + .lp-filter-bar { margin-top: -1.25rem; }
+.lp-filter-btn[hidden] { display: none; }
 .lp-cl-latest { font-family: var(--font-mono); font-size: .55rem; padding: .1rem .4rem; background: rgba(245,192,32,.15); border: 1px solid rgba(245,192,32,.3); color: var(--gold); letter-spacing: .1em; text-transform: uppercase; }
 .lp-cl-version { font-family: var(--font-head); font-size: 1.1rem; font-weight: 900; text-transform: uppercase; color: var(--text); margin-bottom: .3rem; }
 .lp-cl-body { font-size: .85rem; color: var(--muted); line-height: 1.6; }
@@ -94,8 +123,8 @@
 .lp-cl-stats { display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
 .lp-cl-stat-num { font-family: var(--font-head); font-size: 1.5rem; font-weight: 900; color: var(--gold); }
 .lp-cl-stat-lbl { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: .1rem; }
-.lp-latest-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 2rem; }
-.lp-latest-chip { background: var(--off-black); padding: .9rem 1rem; display: flex; flex-direction: column; gap: .25rem; transition: background .2s; text-decoration: none !important; }
+.lp-latest-row { display: flex; flex-wrap: wrap; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 2rem; }
+.lp-latest-chip { flex: 1 1 150px; background: var(--off-black); padding: .9rem 1rem; display: flex; flex-direction: column; gap: .25rem; transition: background .2s; text-decoration: none !important; }
 .lp-latest-chip:hover { background: var(--surface); }
 .lp-latest-chip-tool { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; }
 .lp-latest-chip-tool.ileapp { color: var(--color-ileapp); }
@@ -109,8 +138,6 @@
 .lp-latest-chip-ver { font-family: var(--font-head); font-size: 1rem; font-weight: 900; text-transform: uppercase; color: var(--text); line-height: 1.1; }
 .lp-latest-chip-date { font-family: var(--font-mono); font-size: .58rem; color: var(--muted); letter-spacing: .04em; }
 @media (max-width: 600px) {
-  .lp-latest-row { grid-template-columns: repeat(2, 1fr); }
-  .lp-latest-row .lp-latest-chip:last-child { grid-column: span 2; }
 }
 #lp-root { margin: 0 8px; }
 [data-theme="light"] body, [data-theme="light"] #lp-root, [data-theme="light"] section,
@@ -125,7 +152,7 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Changelog — LEAPPs",
-    "description": "Unified release history across all LEAPPs tools — iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP.",
+    "description": "Every release of the LEAPPs and LAVA, their companions, the probes and the device tools, newest first.",
     "url": "https://leapps.org/changelog",
     "isPartOf": { "@type": "WebSite", "name": "LEAPPs", "url": "https://leapps.org" }
   }
@@ -144,6 +171,7 @@
           <a href="https://leapps.org#lava"><i class="ti ti-eye" aria-hidden="true"></i>LAVA</a>
           <a href="https://leapps.org/releases"><i class="ti ti-download" aria-hidden="true"></i>Releases</a>
           <a href="https://leapps.org/probes"><i class="ti ti-zoom-scan" aria-hidden="true"></i>Probes</a>
+          <a href="https://leapps.org/device-tools"><i class="ti ti-device-mobile" aria-hidden="true"></i>Device Tools</a>
           <a href="https://leapps.org/artifacts"><i class="ti ti-database" aria-hidden="true"></i>Artifacts</a>
           <a href="https://leapps.org/docs"><i class="ti ti-book" aria-hidden="true"></i>Docs</a>
         </div>
@@ -190,6 +218,7 @@
     <a href="https://leapps.org#lava" onclick="closeMobileMenu()">LAVA</a>
     <a href="https://leapps.org/releases" onclick="closeMobileMenu()">Releases</a>
     <a href="https://leapps.org/probes" onclick="closeMobileMenu()">Probes</a>
+    <a href="https://leapps.org/device-tools" onclick="closeMobileMenu()">Device Tools</a>
     <a href="https://leapps.org/stats" onclick="closeMobileMenu()">Stats</a>
     <a href="https://leapps.org/changelog" onclick="closeMobileMenu()">Changelog</a>
     <a href="https://leapps.org/artifacts" onclick="closeMobileMenu()">Artifacts</a>
@@ -211,7 +240,7 @@
     <div class="lp-header-inner">
       <span class="lp-eyebrow">All tools · All versions</span>
       <h1>Change<span>log</span></h1>
-      <p>Unified release history across iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP — newest first. Data pulled live from GitHub.</p>
+      <p>Every release of the LEAPPs and LAVA, their companions, the probes and the device tools, newest first. Data pulled live from GitHub.</p>
       <a href="https://leapps-api.4n6-198.workers.dev/changelog/feed" class="lp-rss-btn" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to changelog RSS feed"><i class="ti ti-rss" aria-hidden="true"></i> RSS Feed</a>
     </div>
   </header>
@@ -241,16 +270,31 @@
       <div class="lp-latest-chip"><span class="lp-skel" style="height:.58rem;width:40px;margin-bottom:.25rem"></span><span class="lp-skel" style="height:1rem;width:70px;margin-bottom:.2rem"></span><span class="lp-skel" style="height:.58rem;width:55px"></span></div>
     </div>
 
-    <div class="lp-filter-bar">
-      <button class="lp-filter-btn active" data-tool="all" onclick="filterTool('all', this)">All</button>
-      <button class="lp-filter-btn" data-tool="lava" onclick="filterTool('lava', this)">LAVA</button>
-      <button class="lp-filter-btn" data-tool="ileapp" onclick="filterTool('ileapp', this)">iLEAPP</button>
-      <button class="lp-filter-btn" data-tool="aleapp" onclick="filterTool('aleapp', this)">ALEAPP</button>
-      <button class="lp-filter-btn" data-tool="rleapp" onclick="filterTool('rleapp', this)">RLEAPP</button>
-      <button class="lp-filter-btn" data-tool="vleapp" onclick="filterTool('vleapp', this)">VLEAPP</button>
-      <button class="lp-filter-btn" data-tool="dleapp" onclick="filterTool('dleapp', this)">DLEAPP</button>
-      <button class="lp-filter-btn" data-tool="gleapp" onclick="filterTool('gleapp', this)">GLEAPP</button>
-      <button class="lp-filter-btn" data-tool="batch" onclick="filterTool('batch', this)">Batch LEAPP</button>
+    <div class="lp-filter-bar" id="lp-group-bar">
+      <button class="lp-filter-btn active" data-group="all" onclick="filterGroup('all', this)">All</button>
+      <button class="lp-filter-btn" data-group="suite" onclick="filterGroup('suite', this)">Suite</button>
+      <button class="lp-filter-btn" data-group="companion" onclick="filterGroup('companion', this)">Companions</button>
+      <button class="lp-filter-btn" data-group="probe" onclick="filterGroup('probe', this)">Probes</button>
+      <button class="lp-filter-btn" data-group="device" onclick="filterGroup('device', this)">Device tools</button>
+    </div>
+    <div class="lp-filter-bar" id="lp-tool-bar">
+      <button class="lp-filter-btn" data-tool="lava" data-group="suite" onclick="filterTool('lava', this)">LAVA</button>
+      <button class="lp-filter-btn" data-tool="ileapp" data-group="suite" onclick="filterTool('ileapp', this)">iLEAPP</button>
+      <button class="lp-filter-btn" data-tool="aleapp" data-group="suite" onclick="filterTool('aleapp', this)">ALEAPP</button>
+      <button class="lp-filter-btn" data-tool="rleapp" data-group="suite" onclick="filterTool('rleapp', this)">RLEAPP</button>
+      <button class="lp-filter-btn" data-tool="vleapp" data-group="suite" onclick="filterTool('vleapp', this)">VLEAPP</button>
+      <button class="lp-filter-btn" data-tool="dleapp" data-group="suite" onclick="filterTool('dleapp', this)">DLEAPP</button>
+      <button class="lp-filter-btn" data-tool="gleapp" data-group="suite" onclick="filterTool('gleapp', this)">GLEAPP</button>
+      <button class="lp-filter-btn" data-tool="batch" data-group="companion" onclick="filterTool('batch', this)">Batch LEAPP</button>
+      <button class="lp-filter-btn" data-tool="mapdl" data-group="companion" onclick="filterTool('mapdl', this)">GLEAPP Map Downloader</button>
+      <button class="lp-filter-btn" data-tool="qnxprobe" data-group="probe" onclick="filterTool('qnxprobe', this)">qnxprobe</button>
+      <button class="lp-filter-btn" data-tool="ewfprobe" data-group="probe" onclick="filterTool('ewfprobe', this)">ewfprobe</button>
+      <button class="lp-filter-btn" data-tool="exoprobe" data-group="probe" onclick="filterTool('exoprobe', this)">exoprobe</button>
+      <button class="lp-filter-btn" data-tool="chromiumcacheprobe" data-group="probe" onclick="filterTool('chromiumcacheprobe', this)">chromiumcacheprobe</button>
+      <button class="lp-filter-btn" data-tool="mediacarve" data-group="probe" onclick="filterTool('mediacarve', this)">mediacarve</button>
+      <button class="lp-filter-btn" data-tool="regfprobe" data-group="probe" onclick="filterTool('regfprobe', this)">regfprobe</button>
+      <button class="lp-filter-btn" data-tool="kdl" data-group="device" onclick="filterTool('kdl', this)">KDL</button>
+      <button class="lp-filter-btn" data-tool="appwalk" data-group="device" onclick="filterTool('appwalk', this)">AppWalk</button>
     </div>
 
     <div id="changelog-container">
@@ -284,6 +328,7 @@
           <div class="lp-footer-col-head">Explore</div>
           <a href="https://leapps.org/releases">Releases</a>
           <a href="https://leapps.org/probes">Probes</a>
+          <a href="https://leapps.org/device-tools">Device Tools</a>
           <a href="https://leapps.org/artifacts">Artifacts</a>
           <a href="https://leapps.org/docs">Docs</a>
           <a href="https://leapps.org/changelog">Changelog</a>
@@ -309,16 +354,28 @@
   </footer>
 
   <script>
+    // group: suite (the LEAPPs and LAVA), companion, probe or device. Readers are not
+    // listed: they have no releases of their own and ship inside the LEAPPs.
     const tools = [
-      { id: 'lava',   name: 'LAVA',   repo: 'leapps-org/LAVA-releases' },
-      { id: 'ileapp', name: 'iLEAPP', repo: 'abrignoni/iLEAPP' },
-      { id: 'aleapp', name: 'ALEAPP', repo: 'abrignoni/ALEAPP' },
-      { id: 'rleapp', name: 'RLEAPP', repo: 'abrignoni/RLEAPP' },
-      { id: 'vleapp', name: 'VLEAPP', repo: 'abrignoni/VLEAPP' },
-      { id: 'dleapp', name: 'DLEAPP', repo: 'abrignoni/DLEAPP' },
-      { id: 'gleapp', name: 'GLEAPP', repo: 'abrignoni/GLEAPP' },
-      { id: 'batch',  name: 'Batch LEAPP', repo: 'abrignoni/batch-leapp' },
+      { id: 'lava', name: 'LAVA', repo: 'leapps-org/LAVA-releases', group: 'suite' },
+      { id: 'ileapp', name: 'iLEAPP', repo: 'abrignoni/iLEAPP', group: 'suite' },
+      { id: 'aleapp', name: 'ALEAPP', repo: 'abrignoni/ALEAPP', group: 'suite' },
+      { id: 'rleapp', name: 'RLEAPP', repo: 'abrignoni/RLEAPP', group: 'suite' },
+      { id: 'vleapp', name: 'VLEAPP', repo: 'abrignoni/VLEAPP', group: 'suite' },
+      { id: 'dleapp', name: 'DLEAPP', repo: 'abrignoni/DLEAPP', group: 'suite' },
+      { id: 'gleapp', name: 'GLEAPP', repo: 'abrignoni/GLEAPP', group: 'suite' },
+      { id: 'batch', name: 'Batch LEAPP', repo: 'abrignoni/batch-leapp', group: 'companion' },
+      { id: 'mapdl', name: 'GLEAPP Map Downloader', repo: 'abrignoni/GLEAPP-MapDownloader', group: 'companion' },
+      { id: 'qnxprobe', name: 'qnxprobe', repo: 'abrignoni/qnxprobe', group: 'probe' },
+      { id: 'ewfprobe', name: 'ewfprobe', repo: 'abrignoni/ewfprobe', group: 'probe' },
+      { id: 'exoprobe', name: 'exoprobe', repo: 'abrignoni/exoprobe', group: 'probe' },
+      { id: 'chromiumcacheprobe', name: 'chromiumcacheprobe', repo: 'abrignoni/chromiumcacheprobe', group: 'probe' },
+      { id: 'mediacarve', name: 'mediacarve', repo: 'abrignoni/mediacarve', group: 'probe' },
+      { id: 'regfprobe', name: 'regfprobe', repo: 'abrignoni/regfprobe', group: 'probe' },
+      { id: 'kdl', name: 'KDL', repo: 'abrignoni/known-data-logger', group: 'device' },
+      { id: 'appwalk', name: 'AppWalk', repo: 'abrignoni/appwalk', group: 'device' },
     ];
+    const groupOf = Object.fromEntries(tools.map(t => [t.id, t.group]));
 
     function formatDate(iso) {
       const d = new Date(iso);
@@ -351,17 +408,12 @@
     let allEntries = [];
     let currentFilter = 'all';
 
-    function filterTool(tool, btn) {
-      currentFilter = tool;
-      document.querySelectorAll('.lp-filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('.lp-cl-entry').forEach(e => {
-        if (tool === 'all' || e.dataset.tool === tool) e.classList.remove('hidden');
-        else e.classList.add('hidden');
-      });
+    // Show the entries a filter keeps: 'all', a group ('g:probe') or one tool id.
+    function applyFilter(f) {
+      currentFilter = f;
+      const keep = e => f === 'all' || (f.startsWith('g:') ? groupOf[e.dataset.tool] === f.slice(2) : e.dataset.tool === f);
+      document.querySelectorAll('.lp-cl-entry').forEach(e => e.classList.toggle('hidden', !keep(e)));
       document.querySelectorAll('.lp-year-marker').forEach(m => {
-        const next = m.nextElementSibling;
-        if (!next) { m.style.display = 'none'; return; }
         let hasVisible = false;
         let el = m.nextElementSibling;
         while (el && !el.classList.contains('lp-year-marker')) {
@@ -370,6 +422,23 @@
         }
         m.style.display = hasVisible ? '' : 'none';
       });
+    }
+
+    function filterGroup(group, btn) {
+      document.querySelectorAll('#lp-group-bar .lp-filter-btn').forEach(b => b.classList.toggle('active', b === btn));
+      document.querySelectorAll('#lp-tool-bar .lp-filter-btn').forEach(b => {
+        b.classList.remove('active');
+        b.hidden = group !== 'all' && b.dataset.group !== group;
+      });
+      applyFilter(group === 'all' ? 'all' : 'g:' + group);
+      renderLatestRow(allEntries);
+    }
+
+    function filterTool(tool, btn) {
+      const on = !btn.classList.contains('active');
+      document.querySelectorAll('#lp-tool-bar .lp-filter-btn').forEach(b => b.classList.toggle('active', on && b === btn));
+      const g = document.querySelector('#lp-group-bar .lp-filter-btn.active').dataset.group;
+      applyFilter(on ? tool : (g === 'all' ? 'all' : 'g:' + g));
     }
 
     function renderChangelog(entries) {
@@ -420,7 +489,8 @@
           latestByTool[e.tool] = e;
         }
       });
-      const order = ['lava', 'ileapp', 'aleapp', 'rleapp', 'vleapp', 'dleapp', 'gleapp', 'batch'];
+      const g = (document.querySelector('#lp-group-bar .lp-filter-btn.active') || {dataset: {group: 'all'}}).dataset.group;
+      const order = tools.filter(t => g === 'all' ? (t.group === 'suite' || t.group === 'companion') : t.group === g).map(t => t.id);
       document.getElementById('latest-row').innerHTML = order.map(id => {
         const e = latestByTool[id];
         if (!e) return '';

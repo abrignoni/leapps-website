@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Device Tools — LEAPPs</title>
+  <meta name="description" content="KDL logs what a tester does on an Android test phone, to make known data. AppWalk documents what an app shows on a phone under examination, screen by screen, from the examiner's computer. Free and open source." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://leapps.org/device-tools" />
+  <meta property="og:title" content="Device Tools — LEAPPs" />
+  <meta property="og:description" content="KDL logs what a tester does on an Android test phone, to make known data. AppWalk documents what an app shows on a phone under examination, screen by screen, from the examiner's computer. Free and open source." />
+  <meta property="og:image" content="https://leapps.org/blog/og/default.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="LEAPPs forensics tools: iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP and LAVA" />
+  <meta property="og:site_name" content="LEAPPs" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Device Tools — LEAPPs" />
+  <meta name="twitter:description" content="KDL logs what a tester does on an Android test phone, to make known data. AppWalk documents what an app shows on a phone under examination, screen by screen, from the examiner's computer. Free and open source." />
+  <meta name="twitter:image" content="https://leapps.org/blog/og/default.png" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/logos/leapps-favicon-512.png" />
+  <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/logos/leapps-favicon-512.png" />
+  <meta name="theme-color" content="#F5C020" />
+  <meta name="author" content="Alexis Brignoni" />
+  <meta name="google-site-verification" content="4NRgfrYq66eJKZVReVwQNbH_cyJI4bLQXXnrm8WuW9A" />
+  <link rel="canonical" href="https://leapps.org/device-tools" />
+  <link rel="alternate" type="application/rss+xml" title="LEAPPs Blog" href="https://leapps-api.4n6-198.workers.dev/blog/feed" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link rel="stylesheet" href="/css/global.css?v=20261015" />
+  <style>
+.lp-page-header {
+      padding: 3.5rem 2rem 3rem; border-bottom: 1px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+.lp-page-header::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(245,192,32,.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+.lp-page-header-inner { max-width: 1100px; margin: 0 auto; }
+.lp-eyebrow { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
+.lp-page-header h1 { font-family: var(--font-head); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; text-transform: uppercase; line-height: .95; margin-bottom: 1rem; }
+.lp-page-header h1 span { color: var(--gold); }
+.lp-page-header p { color: var(--muted); font-size: 1rem; max-width: 520px; line-height: 1.7; margin-bottom: 2rem; }
+.lp-tool-nav { display: flex; gap: .5rem; flex-wrap: wrap; }
+.lp-tool-pill {
+      font-family: var(--font-mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+      padding: .4rem 1rem; border: 1px solid var(--border); color: var(--muted);
+      text-decoration: none !important; transition: border-color .2s, color .2s, background .2s;
+    }
+/* A tool's section, pill and sidebar link take that tool's color as their accent.
+   Anything without a data-tool stays on the site gold. */
+:where(.lp-tool-section, .lp-tool-pill, .lp-sidebar-links a) { --accent: var(--gold); --accent-rgb: 245,192,32; --accent-ink: var(--accent); }
+[data-tool="kdl"] { --accent: #D64541; --accent-rgb: 214,69,65; }
+[data-tool="appwalk"] { --accent: #1FA295; --accent-rgb: 31,162,149; }
+.lp-video-dialog { margin: auto; padding: 0; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text); width: min(960px, 94vw); max-width: 94vw; }
+.lp-video-dialog::backdrop { background: rgba(0,0,0,.75); }
+.lp-video-dialog-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .5rem .5rem .5rem 1rem; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.lp-video-close { background: none; border: 1px solid var(--border); color: var(--text); cursor: pointer; width: 2rem; height: 2rem; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; }
+.lp-video-close:hover { border-color: var(--gold); color: var(--gold); }
+.lp-video-dialog video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; }
+.lp-tool-pill[data-tool] { border-color: rgba(var(--accent-rgb, 245,192,32),.4); color: var(--accent-ink, var(--gold)); }
+.lp-tool-pill:hover { border-color: var(--accent, var(--gold)); color: var(--accent-ink, var(--gold)); background: rgba(var(--accent-rgb, 245,192,32),.06); }
+.lp-main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; display: grid; grid-template-columns: 240px 1fr; gap: 3rem; align-items: start; }
+.lp-sidebar { position: sticky; top: 80px; }
+.lp-sidebar-title { font-family: var(--font-mono); font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+.lp-sidebar-links { list-style: none; display: flex; flex-direction: column; gap: .25rem; }
+.lp-sidebar-links a {
+      display: flex; align-items: center; gap: .6rem;
+      padding: .6rem .75rem; font-size: .875rem; color: var(--muted);
+      text-decoration: none !important; border-left: 2px solid transparent;
+      transition: color .2s, border-color .2s, background .2s;
+    }
+.lp-sidebar-links a:hover { color: var(--text); background: var(--surface); border-left-color: var(--border); }
+.lp-sidebar-links a[data-tool] { border-left-color: rgba(var(--accent-rgb, 245,192,32),.4); }
+.lp-sidebar-links a[data-tool] i { color: var(--accent-ink, var(--gold)); }
+.lp-sidebar-links a[data-tool]:hover { border-left-color: var(--accent, var(--gold)); background: rgba(var(--accent-rgb, 245,192,32),.05); }
+.lp-sidebar-links i { font-size: 1rem; }
+.lp-tool-section { margin-bottom: 3rem; scroll-margin-top: 90px; }
+.lp-tool-section:last-child { margin-bottom: 0; }
+.lp-tool-header {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 1rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+.lp-tool-header-left {}
+.lp-tool-platform { font-family: var(--font-mono); font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: var(--accent-ink, var(--gold)); margin-bottom: .4rem; }
+.lp-tool-header h2 { font-family: var(--font-head); font-size: 2.2rem; font-weight: 900; text-transform: uppercase; line-height: 1; color: var(--text); }
+.lp-tool-fullname { font-size: .85rem; color: var(--muted); margin-top: .3rem; }
+.lp-gh-link {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-family: var(--font-mono); font-size: .7rem; letter-spacing: .08em;
+      padding: .5rem 1rem; border: 1px solid var(--border); color: var(--muted);
+      text-decoration: none !important; transition: border-color .2s, color .2s;
+      white-space: nowrap; align-self: flex-start;
+    }
+.lp-gh-link:hover { border-color: var(--accent, var(--gold)); color: var(--accent-ink, var(--gold)); }
+.lp-about-box {
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 1.5rem; margin-bottom: 1.5rem; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    }
+.lp-about-box h3 { font-family: var(--font-head); font-size: .9rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--accent-ink, var(--gold)); margin-bottom: .6rem; }
+.lp-about-box p { font-size: .85rem; color: var(--muted); line-height: 1.6; }
+.lp-about-box ul { list-style: none; display: flex; flex-direction: column; gap: .3rem; }
+.lp-about-box ul a { font-size: .85rem; color: var(--muted); text-decoration: none !important; transition: color .2s; }
+.lp-about-box ul a:hover { color: var(--accent-ink, var(--gold)); }
+.lp-status-bar {
+      display: flex; align-items: center; gap: 1rem;
+      padding: .75rem 1rem; background: var(--surface); border: 1px solid var(--border);
+      margin-bottom: 1rem; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .08em;
+    }
+.lp-status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent, var(--gold)); flex-shrink: 0; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+.lp-status-text { color: var(--accent-ink, var(--gold)); }
+.lp-status-sep { color: var(--border); }
+.lp-status-sub { color: var(--muted); }
+.lp-install-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent, var(--gold)); border-radius: 0 6px 6px 0;
+      padding: .9rem 1.1rem; margin-bottom: 1.25rem;
+    }
+.lp-install-head {
+      font-family: var(--font-mono); font-size: .68rem; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--accent-ink, var(--gold)); margin-bottom: .6rem;
+      display: flex; align-items: center; gap: .45rem;
+    }
+.lp-install-row { display: flex; align-items: center; gap: .6rem; padding: .3rem 0; min-width: 0; }
+.lp-install-row code {
+      font-family: var(--font-mono); font-size: .8rem; color: var(--text);
+      overflow-x: auto; white-space: nowrap; flex: 1; min-width: 0;
+    }
+.lp-install-tag {
+      font-family: var(--font-mono); font-size: .62rem; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--muted); width: 2.6rem; flex-shrink: 0;
+    }
+.lp-brew-copy {
+      background: none; border: 1px solid var(--border); color: var(--muted);
+      width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; border-radius: 4px; flex-shrink: 0; transition: color .2s, border-color .2s;
+    }
+.lp-brew-copy:hover, .lp-brew-copy.copied { color: var(--accent-ink, var(--gold)); border-color: var(--accent, var(--gold)); }
+.lp-install-note { font-size: .75rem; color: var(--muted); margin-top: .5rem; }
+.lp-install-note a { color: var(--accent-ink, var(--gold)); text-decoration: none; }
+.lp-install-note code { font-family: var(--font-mono); font-size: .72rem; color: var(--text); }
+.lp-releases-list { display: flex; flex-direction: column; gap: .75rem; }
+.lp-release-card {
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 1.25rem 1.5rem; transition: border-color .2s;
+    }
+.lp-release-card:hover { border-color: #444; }
+.lp-release-card.latest { border-color: rgba(var(--accent-rgb, 245,192,32),.3); }
+.lp-release-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: .75rem; flex-wrap: wrap; }
+.lp-release-version { font-family: var(--font-head); font-size: 1.3rem; font-weight: 900; text-transform: uppercase; color: var(--text); }
+.lp-release-date { font-family: var(--font-mono); font-size: .7rem; color: var(--muted); letter-spacing: .08em; }
+.lp-latest-badge {
+      background: rgba(var(--accent-rgb, 245,192,32),.15); border: 1px solid rgba(var(--accent-rgb, 245,192,32),.3);
+      color: var(--accent-ink, var(--gold)); font-family: var(--font-mono); font-size: .65rem;
+      padding: .2rem .6rem; letter-spacing: .1em; text-transform: uppercase;
+    }
+.lp-release-body { font-size: .85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; white-space: pre-wrap; word-break: break-word; }
+.lp-show-more { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .06em; color: var(--accent-ink, var(--gold)); background: none; border: none; cursor: pointer; padding: 0; white-space: nowrap; transition: opacity .2s; }
+.lp-show-more:hover { opacity: .75; }
+.lp-release-assets { display: flex; gap: .5rem; flex-wrap: wrap; }
+.lp-asset-btn {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-family: var(--font-mono); font-size: .7rem; letter-spacing: .06em;
+      padding: .4rem .85rem; border: 1px solid var(--border); color: var(--muted);
+      text-decoration: none !important; transition: border-color .2s, color .2s, background .2s;
+    }
+.lp-asset-btn:hover { border-color: var(--accent, var(--gold)); color: var(--accent-ink, var(--gold)); }
+.lp-asset-btn.primary { background: var(--gold); border-color: var(--gold); color: var(--off-black) !important; }
+.lp-asset-btn.primary:hover { background: var(--gold-dk); border-color: var(--gold-dk); }
+.lp-asset-btn .lp-flavor { font-weight: 700; letter-spacing: .1em; }
+.lp-asset-rows { display: flex; flex-direction: column; gap: .5rem; }
+.lp-asset-row { display: flex; align-items: flex-start; gap: .75rem; padding: .45rem 0; border-top: 1px solid rgba(44,44,44,.5); }
+.lp-asset-row:first-child { border-top: none; }
+.lp-asset-row-label { display: inline-flex; flex-direction: column; align-items: flex-start; gap: .3rem; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text); min-width: 108px; width: 108px; padding-top: .45rem; flex-shrink: 0; }
+.lp-asset-row-label .lp-os-name { display: inline-flex; align-items: center; gap: .4rem; }
+.lp-asset-row-label i { color: var(--muted); }
+.lp-asset-row-btns { display: flex; flex-wrap: wrap; gap: .45rem; }
+.lp-your-os { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-ink, var(--gold)); border: 1px solid rgba(var(--accent-rgb, 245,192,32),.35); padding: .08rem .4rem; border-radius: 3px; }
+@media (max-width: 640px) {
+  .lp-asset-row { flex-direction: column; gap: .3rem; }
+  .lp-asset-row-label { padding-top: 0; }
+}
+.lp-loading {
+      padding: 2rem; text-align: center; border: 1px solid var(--border);
+      background: var(--surface); font-family: var(--font-mono); font-size: .8rem; color: var(--muted);
+    }
+.lp-loading span { color: var(--accent-ink, var(--gold)); }
+.lp-error { padding: 1.5rem; border: 1px solid #5a2020; background: rgba(90,32,32,.15); font-size: .85rem; color: #cc7777; }
+.lp-view-all {
+      display: inline-flex; align-items: center; gap: .5rem; margin-top: 1rem;
+      font-family: var(--font-mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none !important; transition: color .2s;
+    }
+.lp-view-all:hover { color: var(--accent-ink, var(--gold)); }
+.lp-star-badge {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em;
+      padding: .35rem .75rem; border: 1px solid var(--border);
+      color: var(--gold); background: rgba(245,192,32,.08);
+      white-space: nowrap;
+    }
+.lp-star-badge i { font-size: .85rem; }
+.lp-star-badge.loading { color: var(--muted); background: transparent; }
+.lp-share-group { display: inline-flex; align-items: center; gap: .3rem; }
+.lp-share-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px;
+      background: none; border: 1px solid var(--border);
+      color: var(--muted); cursor: pointer; font-size: .85rem;
+      transition: border-color .2s, color .2s; text-decoration: none !important;
+      flex-shrink: 0;
+    }
+.lp-share-btn:hover { border-color: #444; color: var(--text); }
+.lp-share-btn.mastodon:hover { border-color: #6364ff; color: #6364ff; }
+.lp-share-btn.bluesky:hover { border-color: #0085ff; color: #0085ff; }
+.lp-share-btn.reddit:hover { border-color: #ff4500; color: #ff4500; }
+.lp-share-btn.linkedin:hover { border-color: #0077b5; color: #0077b5; }
+.lp-share-btn.email:hover { border-color: var(--accent, var(--gold)); color: var(--accent-ink, var(--gold)); }
+.lp-share-btn.copy-link:hover { border-color: var(--accent, var(--gold)); color: var(--accent-ink, var(--gold)); }
+.lp-share-btn.copied { border-color: #4caf50; color: #4caf50; }
+.lp-copy-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px;
+      background: none; border: 1px solid var(--border);
+      color: var(--muted); cursor: pointer;
+      font-size: .8rem; transition: border-color .2s, color .2s, background .2s;
+      flex-shrink: 0; vertical-align: middle;
+    }
+.lp-copy-btn:hover { border-color: var(--accent, var(--gold)); color: var(--accent-ink, var(--gold)); }
+.lp-copy-btn.copied { border-color: #4caf50; color: #4caf50; background: rgba(76,175,80,.08); }
+.lp-dl-count-badge {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em;
+      padding: .35rem .75rem; border: 1px solid var(--border);
+      color: #aaaaaa; background: rgba(255,255,255,.04);
+      white-space: nowrap;
+    }
+.lp-dl-count-badge i { font-size: .85rem; }
+.lp-dl-count-badge.loading { color: var(--muted); background: transparent; }
+.lp-release-dl-count {
+      font-family: var(--font-mono); font-size: .65rem; letter-spacing: .08em;
+      color: var(--muted); display: inline-flex; align-items: center; gap: .3rem;
+      margin-left: .5rem;
+    }
+.lp-older-toggle {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .75rem 1rem; margin-top: .5rem;
+      border: 1px solid var(--border); background: var(--surface);
+      cursor: pointer; transition: border-color .2s, background .2s;
+      user-select: none;
+    }
+.lp-older-toggle:hover { border-color: #444; background: var(--surface2); }
+.lp-older-toggle.open { border-color: rgba(var(--accent-rgb, 245,192,32),.3); }
+.lp-older-label { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; color: var(--muted); display: flex; align-items: center; gap: .5rem; }
+.lp-older-toggle.open .lp-older-label { color: var(--accent-ink, var(--gold)); }
+.lp-older-toggle.open .lp-chevron { transform: rotate(180deg); color: var(--accent-ink, var(--gold)); }
+.lp-older-releases { display: none; flex-direction: column; gap: .75rem; margin-top: .5rem; }
+.lp-older-toggle.open + .lp-older-releases { display: flex; }
+@media (max-width: 768px) {
+  .lp-main { grid-template-columns: minmax(0, 1fr); }
+  .lp-sidebar { position: static; }
+  .lp-sidebar-links { flex-direction: row; flex-wrap: wrap; }
+  .lp-sidebar-links a { border-left: none; border-bottom: 2px solid transparent; padding: .4rem .6rem; }
+  .lp-about-box { grid-template-columns: 1fr; }
+}
+@media print {
+  .lp-nav, .lp-mobile-menu, .lp-hamburger,
+      .lp-page-header::before, .lp-tool-nav,
+      .lp-sidebar, .lp-status-bar,
+      .lp-share-group, .lp-copy-btn,
+      .lp-star-badge, .lp-dl-count-badge,
+      .lp-release-dl-count, .lp-older-toggle,
+      .lp-view-all, .lp-footer,
+      .lp-asset-btn.primary .lp-copy-btn,
+      .lp-gh-link { display: none !important; }
+  .lp-page-header { padding: 1rem 0; border-bottom: 2pt solid black; margin-bottom: 1rem; }
+  .lp-eyebrow { font-size: 8pt; letter-spacing: .15em; }
+  .lp-page-header h1 { font-size: 24pt; }
+  .lp-page-header p { font-size: 10pt; color: #444 !important; }
+  .lp-main { display: block; padding: 0; }
+  .lp-tool-section { page-break-inside: avoid; margin-bottom: 1.5rem; border-bottom: 1pt solid #ccc; padding-bottom: 1rem; }
+  .lp-tool-header { padding-bottom: .5rem; border-bottom: 1pt solid #999; }
+  .lp-tool-header h2 { font-size: 18pt; }
+  .lp-tool-platform { font-size: 8pt; }
+  .lp-tool-fullname { font-size: 9pt; color: #555 !important; }
+  .lp-release-card { border: 1pt solid #ccc; padding: .75rem; margin-bottom: .5rem; page-break-inside: avoid; }
+  .lp-release-card.latest { border: 1.5pt solid #999; }
+  .lp-release-version { font-size: 13pt; font-weight: bold; }
+  .lp-release-date { font-size: 9pt; }
+  .lp-latest-badge { border: 1pt solid #999; font-size: 7pt; padding: .1rem .4rem; }
+  .lp-release-body { font-size: 9pt; color: #333 !important; }
+  .lp-older-releases { display: flex !important; flex-direction: column; gap: .5rem; }
+  .lp-release-assets { display: block; }
+  .lp-asset-btn {
+        display: block !important;
+        padding: .2rem 0;
+        font-size: 8pt;
+        border: none !important;
+        text-decoration: none;
+      }
+  .lp-asset-btn::after {
+        content: " — " attr(href);
+        font-size: 7pt;
+        color: #555 !important;
+        word-break: break-all;
+      }
+  .lp-about-box { display: block; border: 1pt solid #ccc; padding: .75rem; margin-bottom: .75rem; }
+  .lp-about-box h3 { font-size: 9pt; color: #333 !important; }
+  .lp-about-box p, .lp-about-box ul a { font-size: 9pt; color: #555 !important; }
+  .lp-page-header-inner::before {
+        content: "LEAPPs Device Tools, leapps.org/device-tools. Printed: " attr(data-print-date);
+        display: block; font-size: 8pt; color: #666 !important; margin-bottom: .5rem;
+      }
+  @page { margin: 1.5cm; }
+}
+#lp-root { margin: 0 8px; }
+[data-theme="light"] body, [data-theme="light"] #lp-root, [data-theme="light"] section,
+    [data-theme="light"] main, [data-theme="light"] footer, [data-theme="light"] #canvas,
+    [data-theme="light"] #page, [data-theme="light"] #content, [data-theme="light"] .page-section,
+    [data-theme="light"] .page-section-wrapper,
+    [data-theme="light"] .sqs-layout { background-color: #F5F2EC !important; }
+  .lp-tool-logo-inline { width: 1.1em; height: 1.1em; vertical-align: -0.15em; margin-right: .4rem; border-radius: 22%; }
+</style>
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Device Tools — LEAPPs",
+      "url": "https://leapps.org/device-tools",
+      "description": "KDL logs what a tester does on an Android test phone, to make known data. AppWalk documents what an app shows on a phone under examination, screen by screen, from the examiner's computer. Free and open source.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "LEAPPs",
+        "url": "https://leapps.org/"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "KDL (Known-data logger)",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Android 8.0 or later",
+      "description": "Android app for test phones that logs what the tester did and when, so the known data for a test is written down as it happens.",
+      "url": "https://leapps.org/device-tools#section-kdl",
+      "downloadUrl": "https://github.com/abrignoni/known-data-logger/releases/latest",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "license": "https://opensource.org/licenses/MIT",
+      "author": {
+        "@type": "Person",
+        "name": "Alexis Brignoni",
+        "url": "https://github.com/abrignoni"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "AppWalk",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Windows, macOS, Linux",
+      "description": "Documents what an Android app shows, screen by screen, with screenshots, view trees and a hash-chained log. Runs on the examiner's computer over adb, for phones the examiner is allowed to examine.",
+      "url": "https://leapps.org/device-tools#section-appwalk",
+      "downloadUrl": "https://github.com/abrignoni/appwalk/releases",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "license": "https://opensource.org/licenses/MIT",
+      "author": {
+        "@type": "Person",
+        "name": "Alexis Brignoni",
+        "url": "https://github.com/abrignoni"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<div id="lp-root">
+
+  <!-- NAV -->
+  <nav class="lp-nav">
+    <a href="https://leapps.org" class="lp-nav-logo">LEAPPs</a>
+    <ul class="lp-nav-links">
+      <li class="lp-nav-dropdown">
+        <div class="lp-nav-dropdown-trigger">Tools <i class="ti ti-chevron-down lp-chev" aria-hidden="true"></i></div>
+        <div class="lp-nav-dropdown-menu">
+          <a href="https://leapps.org#tools"><i class="ti ti-layout-grid" aria-hidden="true"></i>All Tools</a>
+          <a href="https://leapps.org#lava"><i class="ti ti-eye" aria-hidden="true"></i>LAVA</a>
+          <a href="https://leapps.org/releases"><i class="ti ti-download" aria-hidden="true"></i>Releases</a>
+          <a href="https://leapps.org/probes"><i class="ti ti-zoom-scan" aria-hidden="true"></i>Probes</a>
+          <a href="https://leapps.org/device-tools" class="active"><i class="ti ti-device-mobile" aria-hidden="true"></i>Device Tools</a>
+          <a href="https://leapps.org/artifacts"><i class="ti ti-database" aria-hidden="true"></i>Artifacts</a>
+          <a href="https://leapps.org/docs"><i class="ti ti-book" aria-hidden="true"></i>Docs</a>
+        </div>
+      </li>
+      <li><a href="https://leapps.org/stats">Stats</a></li>
+      <li><a href="https://leapps.org/changelog">Changelog</a></li>
+      <li class="lp-nav-dropdown">
+        <div class="lp-nav-dropdown-trigger">Community <i class="ti ti-chevron-down lp-chev" aria-hidden="true"></i></div>
+        <div class="lp-nav-dropdown-menu">
+          <a href="https://leapps.org#faq"><i class="ti ti-help-circle" aria-hidden="true"></i>FAQ</a>
+          <a href="https://leapps.org#mentions"><i class="ti ti-award" aria-hidden="true"></i>Featured</a>
+          <a href="https://leapps.org#contributors"><i class="ti ti-users" aria-hidden="true"></i>Contributors</a>
+          <a href="https://leapps.org/scoreboard"><i class="ti ti-trophy" aria-hidden="true"></i>Scoreboard</a>
+          <a href="https://leapps.org/mailing"><i class="ti ti-mail" aria-hidden="true"></i>Mailing List</a>
+          <a href="https://leapps.org/designs"><i class="ti ti-notes" aria-hidden="true"></i>Design Reviews</a>
+          <a href="https://leapps.org/guides"><i class="ti ti-file-type-pdf" aria-hidden="true"></i>Guides</a>
+          <a href="https://leapps.org/resources"><i class="ti ti-books" aria-hidden="true"></i>Resources</a>
+        </div>
+      </li>
+      <li><a href="https://leapps.org/blog">Blog</a></li>
+      <li><a href="https://leapps.org/about">About</a></li>
+      <li><a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+    <div class="lp-search-wrap" id="lp-search-wrap">
+      <svg class="lp-search-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input class="lp-search-input" id="lp-search-input" type="text" placeholder="Search artifacts, posts…" autocomplete="off" />
+      <div class="lp-search-results" id="lp-search-results"></div>
+    </div>
+    <a href="https://leapps.org/releases" class="lp-nav-cta">Download</a>
+    <button class="lp-theme-toggle" id="lp-theme-toggle" aria-label="Toggle theme"><i class="ti ti-sun" id="lp-theme-icon" aria-hidden="true"></i></button>
+    <button class="lp-hamburger" id="lp-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="lp-mobile-menu" id="lp-mobile-menu">
+    <div class="lp-mobile-search">
+      <svg class="lp-mobile-search-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input class="lp-mobile-search-input" id="lp-mobile-search-input" type="text" placeholder="Search artifacts, posts…" autocomplete="off" />
+      <div class="lp-mobile-search-results" id="lp-mobile-search-results"></div>
+    </div>
+
+    <a href="https://leapps.org#tools" onclick="closeMobileMenu()">Tools</a>
+    <a href="https://leapps.org#lava" onclick="closeMobileMenu()">LAVA</a>
+    <a href="https://leapps.org/probes" onclick="closeMobileMenu()">Probes</a>
+    <a href="https://leapps.org/device-tools" onclick="closeMobileMenu()">Device Tools</a>
+    <a href="#section-kdl" onclick="closeMobileMenu()">KDL</a>
+    <a href="#section-appwalk" onclick="closeMobileMenu()">AppWalk</a>
+    <a href="https://leapps.org/stats" onclick="closeMobileMenu()">Stats</a>
+    <a href="https://leapps.org/changelog" onclick="closeMobileMenu()">Changelog</a>
+    <a href="https://leapps.org/artifacts" onclick="closeMobileMenu()">Artifacts</a>
+    <a href="https://leapps.org/docs" onclick="closeMobileMenu()">Docs</a>
+    <a href="https://leapps.org#faq" onclick="closeMobileMenu()">FAQ</a>
+    <a href="https://leapps.org#mentions" onclick="closeMobileMenu()">Featured</a>
+    <a href="https://leapps.org#contributors" onclick="closeMobileMenu()">Contributors</a>
+    <a href="https://leapps.org/scoreboard" onclick="closeMobileMenu()">Scoreboard</a>
+    <a href="https://leapps.org/mailing" onclick="closeMobileMenu()">Mailing List</a>
+    <a href="https://leapps.org/designs" onclick="closeMobileMenu()">Design Reviews</a>
+    <a href="https://leapps.org/guides" onclick="closeMobileMenu()">Guides</a>
+    <a href="https://leapps.org/resources" onclick="closeMobileMenu()">Resources</a>
+    <a href="https://leapps.org/blog" onclick="closeMobileMenu()">Blog</a>
+    <a href="https://leapps.org/about" onclick="closeMobileMenu()">About</a>
+    <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">GitHub</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="lp-page-header">
+    <div class="lp-page-header-inner">
+      <span class="lp-eyebrow">Work with the phone itself</span>
+      <h1>Device <span>Tools</span></h1>
+      <p>The LEAPPs and the probes read files from an extraction. These tools work with a phone directly, and each is for a different phone: KDL goes on a test phone and never on an evidence device, and AppWalk runs on your computer and documents a phone under examination. Free and open source.</p>
+      <div class="lp-tool-nav">
+        <a href="#section-kdl" class="lp-tool-pill" data-tool="kdl">KDL</a>
+        <a href="#section-appwalk" class="lp-tool-pill" data-tool="appwalk">AppWalk</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <div class="lp-main">
+
+    <!-- SIDEBAR -->
+    <aside class="lp-sidebar">
+      <div class="lp-sidebar-title">Test phones only</div>
+      <ul class="lp-sidebar-links">
+        <li><a href="#section-kdl" data-tool="kdl"><i class="ti ti-timeline-event"></i>KDL</a></li>
+      </ul>
+      <div class="lp-sidebar-title" style="margin-top:1.5rem">Phones under examination</div>
+      <ul class="lp-sidebar-links">
+        <li><a href="#section-appwalk" data-tool="appwalk"><i class="ti ti-shoe"></i>AppWalk</a></li>
+      </ul>
+    </aside>
+
+    <!-- CONTENT -->
+    <main>
+
+      <!-- KDL (KNOWN-DATA LOGGER) -->
+      <section class="lp-tool-section" id="section-kdl" data-tool="kdl">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Test phones only &middot; Android 8.0 or later</div>
+            <h2><img src="/logos/KDL_icon.svg" alt="" width="108" height="108" class="lp-tool-logo-inline">KDL</h2>
+            <div class="lp-tool-fullname">Known-data logger: write down what you did on a test phone while you do it</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-kdl"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-kdl"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/known-data-logger" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a><a href="/videos/kdl-intro.mp4?v=20261109" class="lp-gh-link lp-video-open" data-video="kdl" data-v="20261109" data-title="KDL in under a minute"><i class="ti ti-player-play"></i>Watch</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What is KDL?</h3>
+            <p>An Android app for test phones. Turn on capture and use the phone. KDL logs what you did and when: taps, typed text, screens, incoming messages and calls from their notifications, and a screenshot each time you tap the red MARK button, saved since 0.5.0 with the text the app reported for that screen (its view tree). Every entry carries the device clock, the time zone, the time since boot and the boot count. Export the log into the <code>documentation/</code> folder next to the extraction, and <code>tools/make_documentation.py</code> turns it into an <code>.xlsx</code>.</p>
+            <p>It is there to make known data for apps the LEAPPs do not parse yet, so a parser can be built and checked against it. Two scripts in the repository help with that: <code>kdl_locate.py</code> takes the export and an extraction and finds where the app stored each logged value and time, and <code>kdl_check.py</code> grades a LEAPP artifact's output against the log.</p>
+            <p><strong>Test phones only.</strong> KDL records typed text and screens in the apps you pick. Never install it on an evidence device.</p>
+          </div>
+          <div>
+            <h3>Highlights</h3>
+            <ul>
+              <li>Rows are hash-chained, so changing, removing or reordering a row breaks every hash after it, and <code>make_documentation.py</code> checks the whole chain. Since 0.5.0 the chain also covers the screenshots and view trees</li>
+              <li>Android 8.0 or later. Screenshots need Android 11 or later. iOS is planned, not built</li>
+              <li>Not on Google Play and not a LEAPP. Install the APK with adb or from the file, and check it against <code>SHA256SUMS</code>. Release signer certificate SHA-256: <code style="word-break:break-all">ab957515938e78247caa26a3747e7e429b4a6bd766854a8fdf3aa8929bb50faf</code></li>
+              <li>The scripts in <code>tools/</code> come with the source code download. MIT licensed</li>
+              <li><a href="https://github.com/abrignoni/known-data-logger/blob/main/docs/USER_MANUAL.md" target="_blank" rel="noopener noreferrer">Read the user manual</a>: installing, checking the hash and signer, and every screen</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lp-status-bar">
+          <div class="lp-status-dot"></div>
+          <span class="lp-status-text">Live releases</span>
+        </div>
+        <div id="releases-kdl" class="lp-releases-list">
+          <div class="lp-loading"><span>Fetching releases&hellip;</span></div>
+        </div>
+        <a href="https://github.com/abrignoni/known-data-logger/releases/latest" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>Latest KDL release on GitHub</a>
+      </section>
+
+      <!-- APPWALK -->
+      <section class="lp-tool-section" id="section-appwalk" data-tool="appwalk">
+        <div class="lp-tool-header">
+          <div class="lp-tool-header-left">
+            <div class="lp-tool-platform">Phones under examination &middot; Windows &middot; macOS &middot; Linux</div>
+            <h2><img src="/logos/appwalk_icon.png" alt="" width="256" height="256" class="lp-tool-logo-inline">AppWalk</h2>
+            <div class="lp-tool-fullname">Document what an Android app shows, screen by screen, from your computer</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-appwalk"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-appwalk"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/appwalk" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
+        </div>
+        <div class="lp-about-box">
+          <div>
+            <h3>What is AppWalk?</h3>
+            <p>AppWalk runs on the examiner's computer and drives a connected Android phone over adb. Open the app on the phone and AppWalk scrolls that screen from one end to the other, or opens the rows you choose from a list (conversations, for example) and walks each one. At every step it saves a screenshot and the text the app reported for that screen (its view tree), and it logs everything it did in a hash-chained log in KDL's export format. Each run also gets a transcript and a PDF report.</p>
+            <p>It is for a phone examined with the owner's consent or other lawful authority. It does not unlock anything or get around any lock: when a lock screen, a password prompt or another app is in front, it stops and waits for the examiner.</p>
+            <p><strong>It changes the phone.</strong> Opening a thread marks it read, as it does for a person, and USB debugging stores the computer's key on the phone. It installs no app.</p>
+          </div>
+          <div>
+            <h3>Highlights</h3>
+            <ul>
+              <li>A window with four steps (phone, what to document, run, result) and a command line that runs the same code</li>
+              <li>Each screenshot's row holds the SHA-256 of its image and view tree, so the newest row hash covers every picture. <code>appwalk.py verify</code> checks each file against its row, and KDL's <code>make_documentation.py</code> reads the export</li>
+              <li>The transcript says who sent a message only for apps with a profile. Google Messages, Fossify Messages, WhatsApp, Signal and Discord have one, and the window can teach new ones. Check a profile's output against the screenshots</li>
+              <li>A screen the app marks as secure comes back black and is recorded as <code>blank</code></li>
+              <li>Builds for macOS, Windows and Linux, each for ARM64 and x64. Not code signed yet: the README.txt in each pack says how to open it. adb is not included, so install Android's SDK Platform-Tools</li>
+              <li>Tried on an Android 15 emulator and on one Pixel 7a with Android 17 (WhatsApp, Signal and Discord). No iOS. MIT licensed</li>
+              <li><a href="https://github.com/abrignoni/appwalk/blob/main/docs/QUICKSTART.md" target="_blank" rel="noopener noreferrer">Quick start</a> and <a href="https://github.com/abrignoni/appwalk/blob/main/docs/USER_MANUAL.md" target="_blank" rel="noopener noreferrer">user manual</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="lp-status-bar">
+          <div class="lp-status-dot"></div>
+          <span class="lp-status-text">Live releases</span>
+        </div>
+        <div id="releases-appwalk" class="lp-releases-list">
+          <div class="lp-loading"><span>Fetching releases&hellip;</span></div>
+        </div>
+        <a href="https://github.com/abrignoni/appwalk/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all AppWalk releases on GitHub</a>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+    <footer class="lp-footer">
+    <div class="lp-footer-inner">
+      <div class="lp-footer-brand">
+        <a href="https://leapps.org/" class="lp-footer-wordmark">LEAPPs</a>
+        <p class="lp-footer-tagline">Free, open-source digital forensics tools for practitioners worldwide.</p>
+        <div class="lp-footer-connect">Connect</div>
+        <div class="lp-footer-social">
+          <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ti ti-brand-github"></i></a>
+          <a href="https://discord.gg/XaZaknENUR" target="_blank" rel="noopener noreferrer" aria-label="Discord"><i class="ti ti-brand-discord"></i></a>
+          <a href="https://www.linkedin.com/company/leapps/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+          <a href="https://www.youtube.com/@AlexisBrignoni" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+          <a href="https://leapps-api.4n6-198.workers.dev/blog/feed" target="_blank" rel="noopener noreferrer" aria-label="RSS Feed"><i class="ti ti-rss"></i></a>
+        </div>
+      </div>
+      <div class="lp-footer-cols">
+        <div class="lp-footer-col">
+          <div class="lp-footer-col-head">Explore</div>
+          <a href="https://leapps.org/releases">Releases</a>
+          <a href="https://leapps.org/probes">Probes</a>
+          <a href="https://leapps.org/device-tools">Device Tools</a>
+          <a href="https://leapps.org/artifacts">Artifacts</a>
+          <a href="https://leapps.org/docs">Docs</a>
+          <a href="https://leapps.org/changelog">Changelog</a>
+          <a href="https://leapps.org/stats">Stats</a>
+          <a href="https://leapps.org/releases#code-signing-policy">Code signing policy</a>
+        </div>
+        <div class="lp-footer-col">
+          <div class="lp-footer-col-head">Community</div>
+          <a href="https://leapps.org/blog">Blog</a>
+          <a href="https://leapps.org/scoreboard">Scoreboard</a>
+          <a href="https://leapps.org/resources">Resources</a>
+          <a href="https://leapps.org/designs">Design Reviews</a>
+          <a href="https://leapps.org/guides">Guides</a>
+          <a href="https://leapps.org/mailing">Mailing List</a>
+          <a href="https://leapps.org/about">About</a>
+        </div>
+      </div>
+    </div>
+    <div class="lp-footer-bottom">
+      <span>© 2026 LEAPPs · Free &amp; open source · MIT License</span>
+      <span>Built by the community</span>
+    </div>
+  </footer>
+
+  <script>
+    const tools = [
+      { id: 'kdl', name: 'KDL', repo: 'abrignoni/known-data-logger' },
+      { id: 'appwalk', name: 'AppWalk', repo: 'abrignoni/appwalk' },
+    ];
+
+    // Classify an asset from its filename: OS, architecture, and GUI/CLI
+    // flavor. The LEAPP release naming is regular enough to parse; anything
+    // that doesn't match cleanly falls back to the flat filename rendering.
+    function parseAsset(name) {
+      const n = name.toLowerCase();
+      let os = null;
+      if (/win(dows)?[_.-]|\.exe$/.test(n) || n.includes('windows')) os = 'windows';
+      else if (n.includes('mac') || n.includes('darwin') || n.endsWith('.dmg')) os = 'macos';
+      else if (n.includes('linux') || n.endsWith('.appimage')) os = 'linux';
+      let arch = '';
+      if (/apple[_-]?silicon|arm64|aarch64/.test(n)) arch = os === 'macos' ? 'Apple Silicon' : 'arm64';
+      else if (/x86[_-]?64|x64|amd64|intel/.test(n)) arch = os === 'macos' ? 'Intel' : 'x64';
+      // Flavor from the name. batch-leapp's assets carry no GUI token; their
+      // convention (documented in that repo's README download table) is:
+      // capital Batch-LEAPP = app, lowercase batch-leapp = CLI, and the
+      // Windows zip bundles both.
+      let flavor = null;
+      if (/gui/.test(n)) flavor = 'GUI';
+      else if (/^batch-leapp-/.test(name)) flavor = 'CLI';
+      else if (/^Batch-LEAPP-/.test(name)) flavor = os === 'windows' ? 'GUI + CLI' : 'GUI';
+      // Windows builds that come two ways: an installer (-setup.exe) and a
+      // zip that runs without installing (-portable.zip).
+      let kind = '';
+      if (/[-_]setup\.exe$/.test(n)) kind = 'installer';
+      else if (/[-_]portable\.zip$/.test(n)) kind = 'portable';
+      return { os, arch, flavor, kind, gui: !!flavor && flavor.startsWith('GUI') };
+    }
+
+    // Best-effort OS detection for ordering the download rows. Architecture is
+    // deliberately not guessed (browsers hide it, especially on macOS).
+    function detectOS() {
+      const p = ((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || navigator.userAgent || '').toLowerCase();
+      if (p.includes('win')) return 'windows';
+      if (p.includes('mac')) return 'macos';
+      if (p.includes('linux') || p.includes('x11')) return 'linux';
+      return null;
+    }
+    const VISITOR_OS = detectOS();
+
+    function getOSIcon(name) {
+      const n = name.toLowerCase();
+      if (n.includes('win') || n.endsWith('.exe') || n.endsWith('.zip') && n.includes('win')) return '<i class="ti ti-brand-windows"></i>';
+      if (n.includes('mac') || n.endsWith('.dmg') || n.includes('darwin') || n.includes('macos')) return '<i class="ti ti-brand-apple"></i>';
+      if (n.endsWith('.deb') || n.endsWith('.rpm') || n.includes('linux') || n.endsWith('.tar.gz') || n.endsWith('.appimage')) return '<i class="ti ti-brand-ubuntu"></i>';
+      if (n.endsWith('.zip')) return '<i class="ti ti-file-zip"></i>';
+      return '<i class="ti ti-download"></i>';
+    }
+
+    function formatBytes(bytes) {
+      if (!bytes) return '';
+      if (bytes < 1024) return bytes + ' B';
+      if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(0) + ' KB';
+      return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+    }
+
+    function formatDate(iso) {
+      const d = new Date(iso);
+      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    }
+
+    function truncateBody(body, max = 300) {
+      if (!body) return '';
+      const plain = body.replace(/#{1,6}\s/g, '').replace(/\*\*/g, '').replace(/\*/g, '').replace(/`/g, '').trim();
+      if (plain.length <= max) return plain;
+      const id = 'rlbody-' + Math.random().toString(36).slice(2);
+      const short = plain.slice(0, max).trimEnd();
+      return `<span id="${id}-short">${short}… <button class="lp-show-more" onclick="lpToggleBody('${id}')">Show more</button></span><span id="${id}-full" style="display:none">${plain} <button class="lp-show-more" onclick="lpToggleBody('${id}')">Show less</button></span>`;
+    }
+
+    function lpToggleBody(id) {
+      const s = document.getElementById(id + '-short');
+      const f = document.getElementById(id + '-full');
+      if (!s || !f) return;
+      const collapsed = s.style.display !== 'none';
+      s.style.display = collapsed ? 'none' : '';
+      f.style.display = collapsed ? '' : 'none';
+    }
+
+    function renderReleases(id, releases, tool) {
+      const container = document.getElementById('releases-' + id);
+      if (!releases || releases.length === 0) {
+        container.innerHTML = '<div class="lp-error">No releases found.</div>';
+        return;
+      }
+      const shown = releases;
+
+      function buildCard(r, i) {
+        const assets = (r.assets || []).filter(a => !a.name.includes('.blockmap') && !a.name.includes('latest'));
+
+        // One asset button. label=null renders the raw filename (older
+        // releases / unparseable assets); otherwise the friendly label with
+        // the filename in the tooltip. Copy-URL and SHA-256 buttons always kept.
+        function assetBtn(a, ai, label, primary) {
+          const dlCount = a.download_count > 0 ? `<span style="opacity:.5;font-size:.65rem;margin-left:.35rem"><i class="ti ti-download" style="font-size:.6rem"></i>${formatStars(a.download_count)}</span>` : '';
+          const copyId = `copy-${id}-${i}-${ai}`;
+          const hashId = `hash-${id}-${i}-${ai}`;
+          const digest = a.digest ? a.digest.replace(/^sha256:/, '') : '';
+          const hashBtn = digest ? `<button class="lp-copy-btn" id="${hashId}" onclick="copySha('${digest}','${hashId}')" title="Copy SHA-256 hash"><i class="ti ti-fingerprint"></i></button>` : '';
+          const text = label || `${getOSIcon(a.name)} ${a.name}`;
+          return `<div style="display:inline-flex;align-items:center;gap:0"><a href="${a.browser_download_url}" class="lp-asset-btn ${primary ? 'primary' : ''}" target="_blank" rel="noopener noreferrer" title="${a.name}">${text} ${a.size ? '<span style="opacity:.6;font-size:.65rem">' + formatBytes(a.size) + '</span>' : ''} ${dlCount}</a><button class="lp-copy-btn" id="${copyId}" onclick="copyUrl('${a.browser_download_url}','${copyId}')" title="Copy download URL"><i class="ti ti-clipboard"></i></button>${hashBtn}</div>`;
+        }
+
+        let assetBtns = '';
+        const parsed = assets.map((a, ai) => {
+          const p = parseAsset(a.name);
+          if (!p.flavor && tool.flavor) { p.flavor = tool.flavor; p.gui = tool.flavor.startsWith('GUI'); }
+          return { a, ai, p };
+        });
+        const groupable = i === 0 && parsed.filter(x => x.p.os).length >= 3;
+        if (groupable) {
+          // Latest release: group by OS, visitor's platform first, GUI before
+          // CLI inside each row, GUI on the visitor's row styled primary.
+          const OS_META = { windows: ['ti-brand-windows', 'Windows'], macos: ['ti-brand-apple', 'macOS'], linux: ['ti-brand-ubuntu', 'Linux'] };
+          const order = ['windows', 'macos', 'linux'].sort((x, y) => (y === VISITOR_OS) - (x === VISITOR_OS));
+          const hasFlavor = parsed.some(x => x.p.flavor);
+          const rows = order.map(os => {
+            const inRow = parsed.filter(x => x.p.os === os)
+              .sort((x, y) => (y.p.gui - x.p.gui) || String(x.p.arch).localeCompare(String(y.p.arch)) || String(x.p.kind).localeCompare(String(y.p.kind)));
+            if (!inRow.length) return '';
+            // If two assets in a row would get the same label (e.g. a .zip and
+            // a .tar.gz of the same build), append the file format. An
+            // installer or portable build says so instead.
+            const keyOf = x => `${x.p.flavor}|${x.p.arch}|${x.p.kind}`;
+            const dupes = new Set(inRow.map(keyOf).filter((k, idx, arr) => arr.indexOf(k) !== idx));
+            const extOf = n => n.toLowerCase().endsWith('.tar.gz') ? 'tar.gz' : n.split('.').pop().toLowerCase();
+            const btns = inRow.map(x => {
+              const flavor = hasFlavor ? (x.p.flavor || 'CLI') : '';
+              const ext = x.p.kind ? ` · ${x.p.kind}` : (dupes.has(keyOf(x)) ? ` · ${extOf(x.a.name)}` : '');
+              const label = `${flavor ? `<span class="lp-flavor">${flavor}</span> · ` : ''}${x.p.arch || 'download'}${ext}`;
+              return assetBtn(x.a, x.ai, label, os === VISITOR_OS && (x.p.gui || !hasFlavor));
+            }).join('');
+            const yourOS = os === VISITOR_OS ? ' <span class="lp-your-os">your system</span>' : '';
+            return `<div class="lp-asset-row"><span class="lp-asset-row-label"><span class="lp-os-name"><i class="ti ${OS_META[os][0]}"></i>${OS_META[os][1]}</span>${yourOS}</span><div class="lp-asset-row-btns">${btns}</div></div>`;
+          }).join('');
+          const leftover = parsed.filter(x => !x.p.os);
+          const leftoverHtml = leftover.length
+            ? `<div class="lp-asset-row"><span class="lp-asset-row-label"><span class="lp-os-name"><i class="ti ti-package"></i>Other</span></span><div class="lp-asset-row-btns">${leftover.map(x => assetBtn(x.a, x.ai, null, false)).join('')}</div></div>`
+            : '';
+          assetBtns = `<div class="lp-asset-rows">${rows}${leftoverHtml}</div>`;
+        } else {
+          assetBtns = parsed.map((x, k) => assetBtn(x.a, x.ai, null, k === 0)).join('');
+        }
+        const body = truncateBody(r.body);
+        const releaseDlCount = assets.reduce((sum, a) => sum + (a.download_count || 0), 0);
+        const releaseDlStr = releaseDlCount > 0 ? `<span class="lp-release-dl-count"><i class="ti ti-download"></i>${formatStars(releaseDlCount)}</span>` : '';
+        const releaseUrl = `https://github.com/${tool.repo}/releases/tag/${r.tag_name}`;
+        const shareText = encodeURIComponent(`${tool.name} ${r.tag_name} just released! Download the latest forensics tools from LEAPPs. ${releaseUrl}`);
+        const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(releaseUrl)}`;
+        const shareBtnId = `share-${id}-${i}`;
+        return `
+          <div class="lp-release-card ${i === 0 ? 'latest' : ''}">
+            <div class="lp-release-top">
+              <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap">
+                <span class="lp-release-version">${r.tag_name}</span>
+                ${i === 0 ? '<span class="lp-latest-badge">Latest</span>' : ''}
+                ${releaseDlStr}
+              </div>
+              <div style="display:flex;align-items:center;gap:.5rem">
+                <span class="lp-release-date">${formatDate(r.published_at)}</span>
+                <div class="lp-share-group">
+                  <a href="https://mastodon.social/share?text=${shareText}" class="lp-share-btn mastodon" target="_blank" rel="noopener noreferrer" title="Share on Mastodon"><i class="ti ti-brand-mastodon"></i></a>
+                  <a href="https://bsky.app/intent/compose?text=${shareText}" class="lp-share-btn bluesky" target="_blank" rel="noopener noreferrer" title="Share on Bluesky"><i class="ti ti-butterfly"></i></a>
+                  <a href="https://www.reddit.com/r/computerforensics/submit?url=${encodeURIComponent(releaseUrl)}&title=${encodeURIComponent(tool.name + ' ' + r.tag_name + ' released')}" class="lp-share-btn reddit" target="_blank" rel="noopener noreferrer" title="Share on Reddit"><i class="ti ti-brand-reddit"></i></a>
+                  <a href="${linkedinUrl}" class="lp-share-btn linkedin" target="_blank" rel="noopener noreferrer" title="Share on LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+                  <a href="mailto:?subject=${encodeURIComponent(tool.name + ' ' + r.tag_name + ' Released')}&body=${encodeURIComponent('New release: ' + tool.name + ' ' + r.tag_name + '\n\nDownload it here: ' + releaseUrl)}" class="lp-share-btn email" title="Share via Email"><i class="ti ti-mail"></i></a>
+                  <button class="lp-share-btn copy-link" id="${shareBtnId}" onclick="copyReleaseUrl('${releaseUrl}','${shareBtnId}')" title="Copy release link"><i class="ti ti-link"></i></button>
+                </div>
+              </div>
+            </div>
+            ${body ? `<div class="lp-release-body">${body}</div>` : ''}
+            ${assetBtns ? `<div class="lp-release-assets">${assetBtns}</div>` : ''}
+          </div>`;
+      }
+
+      const latest = buildCard(shown[0], 0);
+      const older = shown.slice(1);
+
+      let olderHTML = '';
+      if (older.length > 0) {
+        const cards = older.map((r, i) => buildCard(r, i + 1)).join('');
+        olderHTML = `
+          <div class="lp-older-toggle" onclick="this.classList.toggle('open')">
+            <span class="lp-older-label"><i class="ti ti-history"></i> ${older.length} older release${older.length > 1 ? 's' : ''}</span>
+            <i class="ti ti-chevron-down lp-chevron"></i>
+          </div>
+          <div class="lp-older-releases">
+            ${cards}
+          </div>`;
+      }
+
+      container.innerHTML = latest + olderHTML;
+    }
+
+    async function fetchReleases(tool) {
+      const container = document.getElementById('releases-' + tool.id);
+      try {
+        const res = await fetch(`https://leapps-api.4n6-198.workers.dev/repos/${tool.repo}/releases?per_page=100`);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = (await res.json()).filter(r => !r.draft);
+        renderReleases(tool.id, data, tool);
+      } catch (e) {
+        container.innerHTML = `<div class="lp-error">Could not load releases. <a href="https://github.com/${tool.repo}/releases" target="_blank" rel="noopener noreferrer" style="color:var(--gold)">View on GitHub →</a></div>`;
+      }
+    }
+
+    Promise.all(tools.map(fetchReleases)).then(() => {
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 100);
+        }
+      }
+    });
+
+    // Copy-to-clipboard for the Homebrew install commands
+    document.querySelectorAll('.lp-brew-copy').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const cmd = btn.getAttribute('data-copy');
+        try { await navigator.clipboard.writeText(cmd); }
+        catch (e) {
+          const ta = document.createElement('textarea');
+          ta.value = cmd; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); } catch (_) {}
+          ta.remove();
+        }
+        const icon = btn.querySelector('i');
+        btn.classList.add('copied');
+        if (icon) icon.className = 'ti ti-check';
+        setTimeout(() => { btn.classList.remove('copied'); if (icon) icon.className = 'ti ti-copy'; }, 1500);
+        if (window.gtag) {
+          window.gtag('event', 'install_copy', { tool: btn.getAttribute('data-tool') || '', link_text: cmd.slice(0, 100) });
+        }
+      });
+    });
+
+    // Mobile hamburger menu
+    const hamburger = document.getElementById('lp-hamburger');
+    const mobileMenu = document.getElementById('lp-mobile-menu');
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    function closeMobileMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }
+    document.addEventListener('click', function(e) {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    // Fetch star counts
+    function formatStars(n) {
+      if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
+      return n.toString();
+    }
+
+    async function fetchStars(tool) {
+      const el = document.getElementById('stars-releases-' + tool.id);
+      if (!el) return;
+      try {
+        const res = await fetch(`https://leapps-api.4n6-198.workers.dev/repos/${tool.repo}`);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        el.innerHTML = `<i class="ti ti-star"></i>${formatStars(data.stargazers_count)}`;
+        el.classList.remove('loading');
+      } catch(e) {
+        el.style.display = 'none';
+      }
+    }
+
+    async function fetchTotalDownloads(tool) {
+      const el = document.getElementById('dlcount-releases-' + tool.id);
+      if (!el) return;
+      try {
+        const res = await fetch(`https://leapps-api.4n6-198.workers.dev/repos/${tool.repo}/releases?per_page=100`);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const releases = (await res.json()).filter(r => !r.draft);
+        const total = releases.reduce((sum, r) => {
+          return sum + (r.assets || []).reduce((s, a) => s + (a.download_count || 0), 0);
+        }, 0);
+        if (total > 0) {
+          el.innerHTML = `<i class="ti ti-download"></i>${formatStars(total)} downloads`;
+          el.classList.remove('loading');
+        } else {
+          el.style.display = 'none';
+        }
+      } catch(e) {
+        el.style.display = 'none';
+      }
+    }
+
+    // Copy release URL to clipboard
+    function copyReleaseUrl(url, btnId) {
+      navigator.clipboard.writeText(url).then(function() {
+        const btn = document.getElementById(btnId);
+        if (!btn) return;
+        btn.classList.add('copied');
+        btn.innerHTML = '<i class="ti ti-check"></i>';
+        setTimeout(function() {
+          btn.classList.remove('copied');
+          btn.innerHTML = '<i class="ti ti-link"></i>';
+        }, 2000);
+      }).catch(function() {
+        const ta = document.createElement('textarea');
+        ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+        document.body.removeChild(ta);
+        const btn = document.getElementById(btnId);
+        if (btn) {
+          btn.classList.add('copied');
+          btn.innerHTML = '<i class="ti ti-check"></i>';
+          setTimeout(function() { btn.classList.remove('copied'); btn.innerHTML = '<i class="ti ti-link"></i>'; }, 2000);
+        }
+      });
+    }
+
+    // Copy SHA to clipboard
+    function copySha(sha, btnId) {
+      navigator.clipboard.writeText(sha).then(function() {
+        const btn = document.getElementById(btnId);
+        if (!btn) return;
+        const icon = btn.querySelector('i');
+        btn.classList.add('copied');
+        icon.className = 'ti ti-check';
+        setTimeout(function() { btn.classList.remove('copied'); icon.className = 'ti ti-fingerprint'; }, 2000);
+      }).catch(function() {
+        const ta = document.createElement('textarea');
+        ta.value = sha; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+        document.body.removeChild(ta);
+        const btn = document.getElementById(btnId);
+        if (btn) {
+          const icon = btn.querySelector('i');
+          btn.classList.add('copied'); icon.className = 'ti ti-check';
+          setTimeout(function() { btn.classList.remove('copied'); icon.className = 'ti ti-fingerprint'; }, 2000);
+        }
+      });
+    }
+
+    // Copy URL to clipboard
+    function copyUrl(url, btnId) {
+      navigator.clipboard.writeText(url).then(function() {
+        const btn = document.getElementById(btnId);
+        if (!btn) return;
+        const icon = btn.querySelector('i');
+        btn.classList.add('copied');
+        icon.className = 'ti ti-check';
+        setTimeout(function() {
+          btn.classList.remove('copied');
+          icon.className = 'ti ti-clipboard';
+        }, 2000);
+      }).catch(function() {
+        const ta = document.createElement('textarea');
+        ta.value = url;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        const btn = document.getElementById(btnId);
+        if (btn) {
+          const icon = btn.querySelector('i');
+          btn.classList.add('copied');
+          icon.className = 'ti ti-check';
+          setTimeout(function() {
+            btn.classList.remove('copied');
+            icon.className = 'ti ti-clipboard';
+          }, 2000);
+        }
+      });
+    }
+
+    tools.forEach(fetchStars);
+    tools.forEach(fetchTotalDownloads);
+
+    // Set print date on page header
+    window.addEventListener('beforeprint', function() {
+      const inner = document.querySelector('.lp-page-header-inner');
+      if (inner) inner.setAttribute('data-print-date', new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
+    });
+  </script>
+  <script>
+    (function(){
+      var btn=document.getElementById('lp-theme-toggle');
+      var icon=document.getElementById('lp-theme-icon');
+      var t=localStorage.getItem('lp-theme')||'dark';
+      function apply(theme){
+        document.documentElement.setAttribute('data-theme',theme);
+        icon.className=theme==='light'?'ti ti-moon':'ti ti-sun';
+      }
+      apply(t);
+      btn.addEventListener('click',function(){t=t==='dark'?'light':'dark';localStorage.setItem('lp-theme',t);apply(t);});
+    })();
+  </script>
+
+</div>
+  <script>
+    // Footer active state
+    (function() {
+      var path = window.location.pathname.replace(/\.html$/, '').replace(/\/+$/, '') || '/';
+      document.querySelectorAll('.lp-footer-col a').forEach(function(a) {
+        var href = a.getAttribute('href') || '';
+        var ap = href.replace(/https:\/\/leapps\.org/, '').replace(/\/+$/, '') || '/';
+        if (ap === path) { a.style.color = '#F5C020'; }
+      });
+    })();
+  </script>
+  <script>
+    // Back to top button
+    (function() {
+      var btn = document.createElement('button');
+      btn.setAttribute('aria-label', 'Back to top');
+      btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>';
+      btn.style.cssText = 'position:fixed;bottom:1.5rem;right:1.5rem;width:48px;height:48px;background:#F5C020;color:#0E0E0E;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s,background .2s;z-index:9999;box-shadow:0 4px 16px rgba(0,0,0,.4);';
+      document.body.appendChild(btn);
+      function getScrollTop() { return window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0; }
+      function onScroll() {
+        if (getScrollTop() > 200) { btn.style.opacity='1'; btn.style.pointerEvents='auto'; }
+        else { btn.style.opacity='0'; btn.style.pointerEvents='none'; }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      document.addEventListener('scroll', onScroll, { passive: true });
+      btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
+        document.body.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      btn.addEventListener('mouseover', function() { btn.style.background='#D4A010'; });
+      btn.addEventListener('mouseout', function() { btn.style.background='#F5C020'; });
+    })();
+  </script>
+  <script>
+    // Site search
+    (function() {
+      const WORKER = 'https://leapps-api.4n6-198.workers.dev';
+      const TOOLS = [
+        { id: 'ileapp', name: 'iLEAPP', repo: 'abrignoni/iLEAPP' },
+        { id: 'aleapp', name: 'ALEAPP', repo: 'abrignoni/ALEAPP' },
+        { id: 'rleapp', name: 'RLEAPP', repo: 'abrignoni/RLEAPP' },
+        { id: 'vleapp', name: 'VLEAPP', repo: 'abrignoni/VLEAPP' },
+        { id: 'dleapp', name: 'DLEAPP', repo: 'abrignoni/DLEAPP' },
+      ];
+      let cache = null, loading = false;
+
+      window.getData = async function getData() {
+        if (cache) return cache;
+        if (loading) return null;
+        loading = true;
+        try {
+          const [blogRes, pagesRes, ...artifactRess] = await Promise.all([
+            fetch(`/blog/posts/index.json`).then(r => r.ok ? r.json() : []),
+            fetch(`/search-index.json`).then(r => r.ok ? r.json() : []),
+            ...TOOLS.map(t => fetch(`${WORKER}/repos/${t.repo}/contents/scripts/artifacts`).then(r => r.ok ? r.json() : []).then(files => ({ tool: t, files })))
+          ]);
+          const posts = Array.isArray(blogRes) ? blogRes : [];
+          const pages = Array.isArray(pagesRes) ? pagesRes : [];
+          const artifacts = [];
+          artifactRess.forEach(({ tool, files }) => {
+            if (!Array.isArray(files)) return;
+            files.filter(f => f.name.endsWith('.py') && f.name !== '__init__.py').forEach(f => {
+              artifacts.push({ name: f.name.replace('.py', '').replace(/_/g, ' '), tool: tool.name, url: `https://leapps.org/artifacts?q=${encodeURIComponent(f.name.replace(/\.py$/, ""))}` });
+            });
+          });
+          cache = { posts, artifacts, pages };
+        } catch(e) { cache = { posts: [], artifacts: [], pages: [] }; }
+        loading = false;
+        return cache;
+      }
+
+      function renderResults(query, data) {
+        const q = query.toLowerCase().trim();
+        const el = document.getElementById('lp-search-results');
+        if (!q) { el.style.display = 'none'; return; }
+
+        const posts = data.posts.filter(p => p.title.toLowerCase().includes(q) || (p.excerpt||'').toLowerCase().includes(q)).slice(0, 4);
+        const arts = data.artifacts.filter(a => a.name.toLowerCase().includes(q)).slice(0, 5);
+        const pages = (data.pages||[]).filter(p => p.title.toLowerCase().includes(q) || (p.excerpt||'').toLowerCase().includes(q)).slice(0, 4);
+
+        if (!posts.length && !arts.length && !pages.length) {
+          el.innerHTML = '<div class="lp-search-empty">No results found.</div>';
+          el.style.display = 'block';
+          return;
+        }
+
+        let html = '';
+        if (posts.length) {
+          html += '<div class="lp-search-group">Blog Posts</div>';
+          posts.forEach(p => {
+            html += `<a class="lp-search-item" href="https://leapps.org/blog-post?post=${encodeURIComponent(p.slug)}">${p.title}</a>`;
+          });
+        }
+        if (arts.length) {
+          html += '<div class="lp-search-group">Artifacts</div>';
+          arts.forEach(a => {
+            html += `<a class="lp-search-item" href="${a.url}">${a.name} <span class="lp-search-badge">${a.tool}</span></a>`;
+          });
+        }
+        if (pages.length) {
+          html += '<div class="lp-search-group">Pages</div>';
+          pages.forEach(p => {
+            html += `<a class="lp-search-item" href="${p.url}">${p.title} <span class="lp-search-badge">${p.page}</span></a>`;
+          });
+        }
+        el.innerHTML = html;
+        el.style.display = 'block';
+      }
+
+      const input = document.getElementById('lp-search-input');
+      const results = document.getElementById('lp-search-results');
+      if (!input) return;
+
+      let debounce;
+      input.addEventListener('input', async () => {
+        clearTimeout(debounce);
+        debounce = setTimeout(async () => {
+          const data = await getData();
+          if (data) renderResults(input.value, data);
+        }, 200);
+      });
+      input.addEventListener('focus', async () => {
+        if (input.value.length > 1) {
+          const data = await getData();
+          if (data) renderResults(input.value, data);
+        }
+        // Prefetch on first focus
+        getData();
+      });
+      document.addEventListener('click', e => {
+        if (!document.getElementById('lp-search-wrap')?.contains(e.target)) {
+          results.style.display = 'none';
+        }
+      });
+    })();
+  </script>
+  <script>
+    // Mobile search
+    (function() {
+      const input = document.getElementById('lp-mobile-search-input');
+      const results = document.getElementById('lp-mobile-search-results');
+      if (!input) return;
+      let debounce;
+      input.addEventListener('input', () => {
+        clearTimeout(debounce);
+        debounce = setTimeout(async () => {
+          const data = await getData();
+          if (data) renderMobileResults(input.value, data);
+        }, 200);
+      });
+      function renderMobileResults(query, data) {
+        const q = query.toLowerCase().trim();
+        if (!q) { results.style.display = 'none'; return; }
+        const posts = data.posts.filter(p => p.title.toLowerCase().includes(q) || (p.excerpt||'').toLowerCase().includes(q)).slice(0, 3);
+        const arts = data.artifacts.filter(a => a.name.toLowerCase().includes(q)).slice(0, 4);
+        const pages = (data.pages||[]).filter(p => p.title.toLowerCase().includes(q) || (p.excerpt||'').toLowerCase().includes(q)).slice(0, 3);
+        if (!posts.length && !arts.length && !pages.length) {
+          results.innerHTML = '<div class="lp-search-empty" style="padding:.75rem;color:var(--muted);font-family:var(--font-mono);font-size:.75rem;text-align:center;">No results found.</div>';
+          results.style.display = 'block'; return;
+        }
+        let html = '';
+        if (posts.length) {
+          html += '<div class="lp-search-group">Blog Posts</div>';
+          posts.forEach(p => { html += `<a class="lp-search-item" href="https://leapps.org/blog-post?post=${encodeURIComponent(p.slug)}">${p.title}</a>`; });
+        }
+        if (arts.length) {
+          html += '<div class="lp-search-group">Artifacts</div>';
+          arts.forEach(a => { html += `<a class="lp-search-item" href="${a.url}">${a.name}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);margin-left:.5rem;">${a.tool}</span></a>`; });
+        }
+        if (pages.length) {
+          html += '<div class="lp-search-group">Pages</div>';
+          pages.forEach(p => { html += `<a class="lp-search-item" href="${p.url}">${p.title}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);margin-left:.5rem;">${p.page}</span></a>`; });
+        }
+        results.innerHTML = html;
+        results.style.display = 'block';
+      }
+    })();
+  </script>
+  <script src="/analytics.js?v=20260707" defer></script>
+  <dialog class="lp-video-dialog" id="lp-video-dialog" aria-labelledby="lp-video-dialog-title">
+    <div class="lp-video-dialog-bar">
+      <span id="lp-video-dialog-title"></span>
+      <button type="button" class="lp-video-close" aria-label="Close video"><i class="ti ti-x"></i></button>
+    </div>
+    <video controls playsinline preload="none" width="1280" height="720"></video>
+  </dialog>
+  <script>
+  (function () {
+    var dlg = document.getElementById('lp-video-dialog');
+    if (!dlg || typeof dlg.showModal !== 'function') return; // links fall back to the MP4
+    var v = dlg.querySelector('video'), title = document.getElementById('lp-video-dialog-title');
+    document.querySelectorAll('.lp-video-open').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var k = a.getAttribute('data-video'), ver = a.getAttribute('data-v') || '20261015';
+        title.textContent = a.getAttribute('data-title') || '';
+        v.poster = '/videos/' + k + '-intro.jpg?v=' + ver;
+        v.src = '/videos/' + k + '-intro.mp4?v=' + ver;
+        dlg.showModal();
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+      });
+    });
+    dlg.addEventListener('close', function () { v.pause(); v.removeAttribute('src'); v.load(); });
+    dlg.querySelector('.lp-video-close').addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+  })();
+  </script>
+</body>
+</html>
