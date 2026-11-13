@@ -1,5 +1,21 @@
 [
   {
+    "slug": "2026-11-13-kdl-and-appwalk",
+    "title": "KDL and AppWalk, two tools that work with the phone itself",
+    "date": "2026-11-13",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "KDL",
+      "AppWalk",
+      "Android",
+      "known data",
+      "validation",
+      "DFIR",
+      "open source"
+    ],
+    "excerpt": "KDL writes down what you do on a test phone, so a forensic tool can be checked against known data. AppWalk documents what an app shows on a phone under examination, screen by screen, from your computer. Both keep a hash-chained log. Free and open source."
+  },
+  {
     "slug": "2026-11-06-lava-field-guide",
     "title": "Reviewing, Tagging, and Exporting LEAPP Cases with LAVA",
     "date": "2026-11-06",
