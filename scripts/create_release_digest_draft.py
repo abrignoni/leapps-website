@@ -43,16 +43,26 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from create_mailing_draft import SITE, mailjet_post  # noqa: E402
 
-# (display name, github repo, anchor on leapps.org/releases)
+# (display name, github repo, page and anchor on leapps.org), in the order a digest
+# lists them: the suite, its companions, the probes, then the device tools.
 TOOLS = (
-    ("iLEAPP", "abrignoni/iLEAPP", "section-ileapp"),
-    ("ALEAPP", "abrignoni/ALEAPP", "section-aleapp"),
-    ("RLEAPP", "abrignoni/RLEAPP", "section-rleapp"),
-    ("VLEAPP", "abrignoni/VLEAPP", "section-vleapp"),
-    ("DLEAPP", "abrignoni/DLEAPP", "section-dleapp"),
-    ("GLEAPP", "abrignoni/GLEAPP", "section-gleapp"),
-    ("LAVA", "leapps-org/LAVA-releases", "section-lava"),
-    ("Batch LEAPP", "abrignoni/batch-leapp", "section-batch-leapp"),
+    ("iLEAPP", "abrignoni/iLEAPP", "releases#section-ileapp"),
+    ("ALEAPP", "abrignoni/ALEAPP", "releases#section-aleapp"),
+    ("RLEAPP", "abrignoni/RLEAPP", "releases#section-rleapp"),
+    ("VLEAPP", "abrignoni/VLEAPP", "releases#section-vleapp"),
+    ("DLEAPP", "abrignoni/DLEAPP", "releases#section-dleapp"),
+    ("GLEAPP", "abrignoni/GLEAPP", "releases#section-gleapp"),
+    ("LAVA", "leapps-org/LAVA-releases", "releases#section-lava"),
+    ("Batch LEAPP", "abrignoni/batch-leapp", "releases#section-batch-leapp"),
+    ("GLEAPP Map Downloader", "abrignoni/GLEAPP-MapDownloader", "releases#section-gleapp-map-downloader"),
+    ("qnxprobe", "abrignoni/qnxprobe", "probes#section-qnxprobe"),
+    ("ewfprobe", "abrignoni/ewfprobe", "probes#section-ewfprobe"),
+    ("exoprobe", "abrignoni/exoprobe", "probes#section-exoprobe"),
+    ("chromiumcacheprobe", "abrignoni/chromiumcacheprobe", "probes#section-chromiumcacheprobe"),
+    ("mediacarve", "abrignoni/mediacarve", "probes#section-mediacarve"),
+    ("regfprobe", "abrignoni/regfprobe", "probes#section-regfprobe"),
+    ("KDL", "abrignoni/known-data-logger", "device-tools#section-kdl"),
+    ("AppWalk", "abrignoni/appwalk", "device-tools#section-appwalk"),
 )
 
 NOTES_MAX_CHARS = 700
@@ -102,7 +112,8 @@ def recent_releases(hours: int) -> list:
                     "notes": release.get("body") or "",
                     "published": published,
                 })
-    found.sort(key=lambda r: r["published"])
+    rank = {tool: i for i, (tool, _, _) in enumerate(TOOLS)}
+    found.sort(key=lambda r: (rank[r["tool"]], r["published"]))
     return found
 
 
@@ -375,7 +386,8 @@ def generate_intro(releases: list, mode: str = "window") -> str:
         if mode == "current":
             task = (
                 "Write the intro paragraph for a mailing list email that lists "
-                "the current version of every tool in the LEAPP suite. This is "
+                "the current version of every tool on leapps.org: the LEAPP "
+                "suite, its companions, the probes and the device tools. This is "
                 "not an announcement of something that just shipped: it is a "
                 "snapshot of where the suite stands today, so a reader can "
                 "check what they are running against what is current. Say that "
@@ -460,7 +472,7 @@ def build_email(releases: list, mode: str = "window") -> tuple[str, str, str]:
         released = (f'<p style="margin:0 0 12px; font-size:12px; color:#8A8A8A;">'
                     f'Released {r["published"]:%Y-%m-%d}</p>' if current else "")
         released_text = f"Released {r['published']:%Y-%m-%d}\n" if current else ""
-        link = f"{SITE}/releases#{r['anchor']}"
+        link = f"{SITE}/{r['anchor']}"
         sections_html.append(f"""
       <div style="padding:24px 28px; border-top:1px solid #2C2C2C;">
         <p style="margin:0 0 6px; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#F5C020;">

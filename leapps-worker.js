@@ -274,7 +274,9 @@ async function handleBlogFeed(env) {
 }
 
 async function handleChangelogFeed(env) {
+  // Every tool with releases on leapps.org. Keep in step with the tools array in changelog.html.
   const CHANGELOG_REPOS = [
+    { name: 'LAVA', repo: 'leapps-org/LAVA-releases' },
     { name: 'iLEAPP', repo: 'abrignoni/iLEAPP' },
     { name: 'ALEAPP', repo: 'abrignoni/ALEAPP' },
     { name: 'RLEAPP', repo: 'abrignoni/RLEAPP' },
@@ -282,7 +284,15 @@ async function handleChangelogFeed(env) {
     { name: 'DLEAPP', repo: 'abrignoni/DLEAPP' },
     { name: 'GLEAPP', repo: 'abrignoni/GLEAPP' },
     { name: 'Batch LEAPP', repo: 'abrignoni/batch-leapp' },
-    { name: 'LAVA',   repo: 'leapps-org/LAVA-releases' },
+    { name: 'GLEAPP Map Downloader', repo: 'abrignoni/GLEAPP-MapDownloader' },
+    { name: 'qnxprobe', repo: 'abrignoni/qnxprobe' },
+    { name: 'ewfprobe', repo: 'abrignoni/ewfprobe' },
+    { name: 'exoprobe', repo: 'abrignoni/exoprobe' },
+    { name: 'chromiumcacheprobe', repo: 'abrignoni/chromiumcacheprobe' },
+    { name: 'mediacarve', repo: 'abrignoni/mediacarve' },
+    { name: 'regfprobe', repo: 'abrignoni/regfprobe' },
+    { name: 'KDL', repo: 'abrignoni/known-data-logger' },
+    { name: 'AppWalk', repo: 'abrignoni/appwalk' },
   ];
 
   const cache = caches.default;
