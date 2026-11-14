@@ -1,24 +1,30 @@
 {
-  "generated": "2026-11-13",
+  "generated": "2026-11-14",
   "window_days": 45,
   "items": [
     {
-      "name": "biomeSiriExecution",
-      "query": "biomeSiriExecution",
+      "name": "chromiumFavicons",
+      "query": "chromiumFavicons",
+      "tool": "ALEAPP",
+      "date": "2026-11-14"
+    },
+    {
+      "name": "chromeSyncSettings",
+      "query": "chromeSyncSettings",
+      "tool": "RLEAPP",
+      "date": "2026-11-14"
+    },
+    {
+      "name": "linuxShadow",
+      "query": "linuxShadow",
+      "tool": "DLEAPP",
+      "date": "2026-11-14"
+    },
+    {
+      "name": "paypal",
+      "query": "paypal",
       "tool": "iLEAPP",
       "date": "2026-11-13"
-    },
-    {
-      "name": "privateNotepad",
-      "query": "privateNotepad",
-      "tool": "ALEAPP",
-      "date": "2026-11-12"
-    },
-    {
-      "name": "macosWebKitIndexedDB",
-      "query": "macosWebKitIndexedDB",
-      "tool": "DLEAPP",
-      "date": "2026-11-12"
     },
     {
       "name": "bmw nbt navigation",
@@ -27,28 +33,28 @@
       "date": "2026-10-30"
     },
     {
+      "name": "privateNotepad",
+      "query": "privateNotepad",
+      "tool": "ALEAPP",
+      "date": "2026-11-12"
+    },
+    {
       "name": "grokReturns",
       "query": "grokReturns",
       "tool": "RLEAPP",
       "date": "2026-10-27"
     },
     {
-      "name": "zelle",
-      "query": "zelle",
-      "tool": "iLEAPP",
-      "date": "2026-11-12"
-    },
-    {
-      "name": "knownDataLogger",
-      "query": "knownDataLogger",
-      "tool": "ALEAPP",
-      "date": "2026-11-09"
-    },
-    {
-      "name": "macosCoreAnalytics",
-      "query": "macosCoreAnalytics",
+      "name": "linuxDhcpLeases",
+      "query": "linuxDhcpLeases",
       "tool": "DLEAPP",
-      "date": "2026-11-11"
+      "date": "2026-11-14"
+    },
+    {
+      "name": "biomeSiriExecution",
+      "query": "biomeSiriExecution",
+      "tool": "iLEAPP",
+      "date": "2026-11-13"
     },
     {
       "name": "ford sync wince voice cache",
@@ -57,22 +63,16 @@
       "date": "2026-10-10"
     },
     {
-      "name": "anydesk",
-      "query": "anydesk",
-      "tool": "iLEAPP",
-      "date": "2026-11-12"
-    },
-    {
-      "name": "instagramPendingMedia",
-      "query": "instagramPendingMedia",
+      "name": "knownDataLogger",
+      "query": "knownDataLogger",
       "tool": "ALEAPP",
-      "date": "2026-11-02"
+      "date": "2026-11-09"
     },
     {
-      "name": "macosLoginWindow",
-      "query": "macosLoginWindow",
+      "name": "rocketChatDesktop",
+      "query": "rocketChatDesktop",
       "tool": "DLEAPP",
-      "date": "2026-11-11"
+      "date": "2026-11-14"
     }
   ]
 }
