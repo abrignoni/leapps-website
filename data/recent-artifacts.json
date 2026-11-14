@@ -15,8 +15,8 @@
       "date": "2026-11-14"
     },
     {
-      "name": "linuxShadow",
-      "query": "linuxShadow",
+      "name": "windowsIeAddons",
+      "query": "windowsIeAddons",
       "tool": "DLEAPP",
       "date": "2026-11-14"
     },
@@ -45,8 +45,8 @@
       "date": "2026-10-27"
     },
     {
-      "name": "linuxDhcpLeases",
-      "query": "linuxDhcpLeases",
+      "name": "chromiumNotifications",
+      "query": "chromiumNotifications",
       "tool": "DLEAPP",
       "date": "2026-11-14"
     },
@@ -69,8 +69,8 @@
       "date": "2026-11-09"
     },
     {
-      "name": "rocketChatDesktop",
-      "query": "rocketChatDesktop",
+      "name": "chromiumFileSystem",
+      "query": "chromiumFileSystem",
       "tool": "DLEAPP",
       "date": "2026-11-14"
     }
