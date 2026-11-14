@@ -576,10 +576,12 @@
             <ul>
               <li>A window with four steps (phone, what to document, run, result) and a command line that runs the same code</li>
               <li>Each screenshot's row holds the SHA-256 of its image and view tree, so the newest row hash covers every picture. <code>appwalk.py verify</code> checks each file against its row, and KDL's <code>make_documentation.py</code> reads the export</li>
-              <li>The transcript says who sent a message only for apps with a profile. Google Messages, Fossify Messages, WhatsApp, Signal and Discord have one, and the window can teach new ones. Check a profile's output against the screenshots</li>
+              <li>The transcript says who sent a message only for apps with a profile. Google Messages, Fossify Messages, WhatsApp, Signal, Discord, Instagram, Threads and LinkedIn have one, and the window can teach new ones. Check a profile's output against the screenshots</li>
               <li>A screen the app marks as secure comes back black and is recorded as <code>blank</code></li>
+              <li>A file can be added to an export after the walk, such as WhatsApp's Export chat zip. It goes into the hash chain, and the check catches a changed or extra file</li>
+              <li>It can document Settings &gt; About phone as chained screenshots, since adb can no longer read the IMEI or phone number. Where the phone gives that screen's text, the IMEI, number and serial are read out for you to check; stock Android, Pixel included, does not, so read them from the screenshots</li>
               <li>Builds for macOS, Windows and Linux, each for ARM64 and x64. Not code signed yet: the README.txt in each pack says how to open it. adb is not included, so install Android's SDK Platform-Tools</li>
-              <li>Tried on an Android 15 emulator and on one Pixel 7a with Android 17 (WhatsApp, Signal and Discord). No iOS. MIT licensed</li>
+              <li>Tried on an Android 15 emulator and on one Pixel 7a with Android 17 (WhatsApp, Signal, Discord, Instagram, Threads and LinkedIn). No iOS. MIT licensed</li>
               <li><a href="https://github.com/abrignoni/appwalk/blob/main/docs/QUICKSTART.md" target="_blank" rel="noopener noreferrer">Quick start</a> and <a href="https://github.com/abrignoni/appwalk/blob/main/docs/USER_MANUAL.md" target="_blank" rel="noopener noreferrer">user manual</a></li>
             </ul>
           </div>
