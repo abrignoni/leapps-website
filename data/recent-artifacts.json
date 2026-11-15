@@ -1,10 +1,10 @@
 {
-  "generated": "2026-11-14",
+  "generated": "2026-11-15",
   "window_days": 45,
   "items": [
     {
-      "name": "chromiumFavicons",
-      "query": "chromiumFavicons",
+      "name": "smartselect",
+      "query": "smartselect",
       "tool": "ALEAPP",
       "date": "2026-11-14"
     },
@@ -33,10 +33,10 @@
       "date": "2026-10-30"
     },
     {
-      "name": "privateNotepad",
-      "query": "privateNotepad",
+      "name": "chromiumFavicons",
+      "query": "chromiumFavicons",
       "tool": "ALEAPP",
-      "date": "2026-11-12"
+      "date": "2026-11-14"
     },
     {
       "name": "grokReturns",
@@ -63,10 +63,10 @@
       "date": "2026-10-10"
     },
     {
-      "name": "knownDataLogger",
-      "query": "knownDataLogger",
+      "name": "privateNotepad",
+      "query": "privateNotepad",
       "tool": "ALEAPP",
-      "date": "2026-11-09"
+      "date": "2026-11-12"
     },
     {
       "name": "chromiumFileSystem",
