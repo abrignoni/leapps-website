@@ -77,6 +77,16 @@
 .lp-tool-btn[data-tool="rleapp"].active { border-color: var(--color-rleapp); color: var(--color-rleapp); background: rgba(var(--color-rleapp-rgb),.08); }
 .lp-tool-btn[data-tool="vleapp"].active { border-color: var(--color-vleapp); color: var(--color-vleapp); background: rgba(var(--color-vleapp-rgb),.08); }
 .lp-tool-btn[data-tool="dleapp"].active { border-color: var(--color-dleapp); color: var(--color-dleapp); background: rgba(var(--color-dleapp-rgb),.08); }
+/* Operating system filter: shown only while DLEAPP is the selected tool, because only DLEAPP
+   artifacts declare a `platforms` value (Windows, macOS, Linux, Device). */
+.lp-os-filter { display: none; gap: .4rem; flex-wrap: wrap; align-items: center; margin: -.75rem 0 1.5rem; }
+.lp-os-filter.visible { display: flex; }
+.lp-os-label { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-right: .25rem; }
+.lp-os-btn.active { border-color: var(--color-dleapp); color: var(--color-dleapp); background: rgba(var(--color-dleapp-rgb),.08); }
+.lp-os-btn .n { opacity: .6; margin-left: .35rem; }
+.lp-os-btn[hidden] { display: none; }
+.lp-platforms { display: flex; flex-wrap: wrap; gap: .25rem; margin-top: .35rem; }
+.lp-platform { font-family: var(--font-mono); font-size: .55rem; letter-spacing: .06em; color: var(--muted); border: 1px solid var(--border); padding: .1rem .35rem; white-space: nowrap; }
 .lp-results-meta { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .06em; color: var(--muted); margin-bottom: 1rem; min-height: 1.2rem; }
 .lp-results-meta span { color: var(--gold); }
 .lp-progress-bar-wrap { height: 2px; background: var(--border); margin-bottom: 1.5rem; overflow: hidden; }
@@ -294,6 +304,17 @@
       <button class="lp-tool-btn" data-tool="dleapp">DLEAPP</button>
     </div>
 
+    <!-- OPERATING SYSTEM FILTER (DLEAPP only) -->
+    <div class="lp-os-filter" id="os-filter" role="group" aria-label="Filter DLEAPP artifacts by operating system">
+      <span class="lp-os-label">Operating system</span>
+      <button class="lp-tool-btn lp-os-btn active" data-os="all">All</button>
+      <button class="lp-tool-btn lp-os-btn" data-os="windows">Windows</button>
+      <button class="lp-tool-btn lp-os-btn" data-os="macos">macOS</button>
+      <button class="lp-tool-btn lp-os-btn" data-os="linux">Linux</button>
+      <button class="lp-tool-btn lp-os-btn" data-os="device" title="Firmware of devices that are not computers: TVs, cameras, doorbells">Devices</button>
+      <button class="lp-tool-btn lp-os-btn" data-os="unset" title="Artifacts that do not declare an operating system yet" hidden>Not set</button>
+    </div>
+
     <!-- SEARCH + CATEGORY -->
     <div class="lp-controls">
       <div class="lp-search-wrap">
@@ -314,7 +335,7 @@
         <thead>
           <tr>
             <th class="lp-th-sort" data-sort="name" aria-sort="ascending" title="Sort by name">Artifact <i class="lp-sort-ind ti ti-arrows-sort" aria-hidden="true"></i></th>
-            <th>Tool</th>
+            <th class="lp-th-sort" data-sort="tool" aria-sort="none" title="Sort by tool, then operating system">Tool <i class="lp-sort-ind ti ti-arrows-sort" aria-hidden="true"></i></th>
             <th>Category</th>
             <th>Output Types</th>
             <th class="lp-th-sort" data-sort="updated" aria-sort="none" title="Sort by last updated date">Updated <i class="lp-sort-ind ti ti-arrows-sort" aria-hidden="true"></i></th>
@@ -389,6 +410,12 @@
 
     const API = 'https://leapps-api.4n6-198.workers.dev';
     const ARTIFACTS_PATH = 'scripts/artifacts';
+
+    // The values a DLEAPP artifact's `platforms` tuple may hold (DLEAPP's
+    // admin/test/scripts/test_artifact_platforms.py enforces the same set),
+    // mapped to the id used in the filter buttons and the ?os= link.
+    const PLATFORM_IDS = { Windows: 'windows', macOS: 'macos', Linux: 'linux', Device: 'device' };
+    const PLATFORM_ORDER = ['Windows', 'macOS', 'Linux', 'Device'];
 
     // ── PARSER ──────────────────────────────────────────────────────────────
 
@@ -609,6 +636,7 @@
           sampleData: extractSampleData(body),
           outputTypes: extractOutputTypes(body),
           lastUpdated: normalizeDate(extractStr(body, 'last_update_date')),
+          platforms: extractStrList(body, 'platforms').filter(p => PLATFORM_IDS[p]),
         });
       }
       return results;
@@ -626,7 +654,7 @@
         results.push({
           key: m[1], name: m[1], toolId, filename,
           description: '', category: m[2] || 'Uncategorized',
-          author: '', paths: [], sampleData: [], outputTypes: [], lastUpdated: '',
+          author: '', paths: [], sampleData: [], outputTypes: [], lastUpdated: '', platforms: [],
         });
       }
       return results;
@@ -650,6 +678,26 @@
       document.getElementById('progress-text').textContent = `${loadedFiles} / ${totalFiles} files`;
     }
 
+    // All five tools are fetched together, about 2,100 files. Started at once, the
+    // browser refuses most of them (net::ERR_INSUFFICIENT_RESOURCES) and the tool
+    // listed last loses nearly all its files, so downloads share one small pool.
+    const MAX_CONCURRENT_FILES = 24;
+    let activeDownloads = 0;
+    const downloadQueue = [];
+    function limited(task) {
+      return new Promise((resolve, reject) => {
+        const run = () => {
+          activeDownloads++;
+          task().then(resolve, reject).finally(() => {
+            activeDownloads--;
+            const next = downloadQueue.shift();
+            if (next) next();
+          });
+        };
+        if (activeDownloads < MAX_CONCURRENT_FILES) run(); else downloadQueue.push(run);
+      });
+    }
+
     async function fetchToolArtifacts(tool) {
       const listRes = await fetch(`${API}/repos/${tool.repo}/contents/${ARTIFACTS_PATH}`);
       if (!listRes.ok) throw new Error(`HTTP ${listRes.status}`);
@@ -660,16 +708,27 @@
       totalFiles += pyFiles.length;
 
       const artifacts = [];
+      let failedFiles = 0;
       await Promise.all(pyFiles.map(async f => {
         try {
-          const res = await fetch(f.download_url);
-          const text = res.ok ? await res.text() : '';
+          const text = await limited(async () => {
+            const res = await fetch(f.download_url);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            return res.text();
+          });
           parseFile(text, tool.id, f.name).forEach(a => artifacts.push(a));
-        } catch (_) { /* skip bad files silently */ } finally {
+        } catch (_) { failedFiles++; } finally {
           updateProgress();
         }
       }));
 
+      // Counted, not hidden: a file that fails to download drops its artifacts from
+      // every count on the page.
+      if (failedFiles) {
+        document.getElementById('error-container').insertAdjacentHTML('beforeend',
+          `<div class="lp-tool-error"><i class="ti ti-alert-circle"></i>
+           ${failedFiles} of ${pyFiles.length} <strong>${escHtml(tool.name)}</strong> artifact files could not be loaded, so the counts below are short. Reload the page to try again.</div>`);
+      }
       return artifacts;
     }
 
@@ -678,6 +737,7 @@
     let allArtifacts = [];
     let activeTool = 'all';
     let activeCategory = 'all';
+    let activeOs = 'all';
     let searchQuery = '';
 
     function escHtml(s) {
@@ -734,8 +794,12 @@
            </div>` : '';
 
       const ghBase = `https://github.com/${TOOLS.find(t => t.id === a.toolId)?.repo}/blob/main/${ARTIFACTS_PATH}/${escHtml(a.filename)}`;
+      const platformIds = a.platforms.map(p => PLATFORM_IDS[p]).join(' ');
+      const platformsHtml = a.platforms.length
+        ? `<div class="lp-platforms">${a.platforms.map(p => `<span class="lp-platform">${escHtml(p)}</span>`).join('')}</div>`
+        : '';
 
-      return `<tr data-tool="${escHtml(a.toolId)}" data-category="${escHtml(a.category)}" data-updated="${escHtml(a.lastUpdated)}" data-search="${escHtml((a.name + ' ' + a.category + ' ' + a.description + ' ' + a.author + ' ' + a.paths.join(' ') + ' ' + a.sampleData.map(s => s.key + ' ' + s.value).join(' ') + ' ' + a.filename + ' ' + a.lastUpdated).toLowerCase())}">
+      return `<tr data-tool="${escHtml(a.toolId)}" data-category="${escHtml(a.category)}" data-updated="${escHtml(a.lastUpdated)}" data-platforms="${escHtml(platformIds)}" data-search="${escHtml((a.name + ' ' + a.category + ' ' + a.description + ' ' + a.author + ' ' + a.paths.join(' ') + ' ' + a.sampleData.map(s => s.key + ' ' + s.value).join(' ') + ' ' + a.filename + ' ' + a.lastUpdated + ' ' + a.platforms.join(' ')).toLowerCase())}">
         <td>
           <div class="lp-art-name"><a href="${ghBase}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;transition:color .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color=''">${escHtml(a.name)}</a></div>
           ${a.description ? `<div class="lp-art-desc">${escHtml(a.description)}</div>` : ''}
@@ -743,7 +807,7 @@
           ${pathsHtml}
           ${sampleHtml}
         </td>
-        <td><span class="lp-tool-tag ${escHtml(a.toolId)}">${escHtml(toolLabel)}</span></td>
+        <td><span class="lp-tool-tag ${escHtml(a.toolId)}">${escHtml(toolLabel)}</span>${platformsHtml}</td>
         <td style="font-size:.82rem;color:var(--muted)">${escHtml(a.category)}</td>
         <td><div class="lp-output-types">${outputBadges}</div></td>
         <td class="lp-updated">${a.lastUpdated ? escHtml(a.lastUpdated) : '<span class="lp-updated-none">—</span>'}</td>
@@ -765,11 +829,22 @@
       let visible = 0;
       const visibleCats = new Set();
       const visibleTools = new Set();
+      // The OS filter applies only while DLEAPP is selected (see setTool).
+      const osOn = activeTool === 'dleapp';
+      document.getElementById('os-filter').classList.toggle('visible', osOn);
+      const osCounts = { all: 0, windows: 0, macos: 0, linux: 0, device: 0, unset: 0 };
       rows.forEach(row => {
         const toolMatch = activeTool === 'all' || row.dataset.tool === activeTool;
         const catMatch = activeCategory === 'all' || row.dataset.category === activeCategory;
         const searchMatch = !searchQuery || row.dataset.search.includes(searchQuery);
-        const show = toolMatch && catMatch && searchMatch;
+        const ids = row.dataset.platforms ? row.dataset.platforms.split(' ') : [];
+        if (osOn && toolMatch && catMatch && searchMatch) {
+          osCounts.all++;
+          if (ids.length) ids.forEach(id => { osCounts[id]++; }); else osCounts.unset++;
+        }
+        const osMatch = !osOn || activeOs === 'all'
+          || (activeOs === 'unset' ? ids.length === 0 : ids.includes(activeOs));
+        const show = toolMatch && catMatch && searchMatch && osMatch;
         row.classList.toggle('hidden', !show);
         if (show) {
           visible++;
@@ -778,13 +853,23 @@
         }
       });
 
+      if (osOn) {
+        document.querySelectorAll('.lp-os-btn').forEach(btn => {
+          const id = btn.dataset.os;
+          let n = btn.querySelector('.n');
+          if (!n) { n = document.createElement('span'); n.className = 'n'; btn.appendChild(n); }
+          n.textContent = osCounts[id].toLocaleString();
+          if (id === 'unset') btn.hidden = osCounts.unset === 0 && activeOs !== 'unset';
+        });
+      }
+
       const statColor = activeTool === 'all' ? 'var(--gold)' : `var(--color-${activeTool})`;
 
       const meta = document.getElementById('results-meta');
       meta.innerHTML = `Showing <span style="color: ${statColor}; transition: color .3s;">${visible}</span> of <span style="color: ${statColor}; transition: color .3s;">${allArtifacts.length}</span> artifacts`;
       document.getElementById('no-results').classList.toggle('visible', visible === 0 && allArtifacts.length > 0);
 
-      const isFiltered = activeTool !== 'all' || activeCategory !== 'all' || searchQuery;
+      const isFiltered = activeTool !== 'all' || activeCategory !== 'all' || searchQuery || (osOn && activeOs !== 'all');
       document.getElementById('stat-total').textContent = visible.toLocaleString();
       document.getElementById('stat-categories').textContent = visibleCats.size.toLocaleString();
       document.getElementById('stat-tools').textContent = visibleTools.size.toLocaleString();
@@ -810,6 +895,18 @@
             return (av < bv ? -1 : 1) * mul;
           }
           return a.name.localeCompare(b.name); // tie-break by name
+        }
+        if (key === 'tool') {
+          // Tool name, then operating system (Windows, macOS, Linux, Device; artifacts
+          // with none last), then artifact name.
+          const tl = id => TOOLS.find(t => t.id === id)?.name || id;
+          const byTool = tl(a.toolId).localeCompare(tl(b.toolId));
+          if (byTool) return byTool * mul;
+          const rank = x => x.platforms.length
+            ? x.platforms.map(p => PLATFORM_ORDER.indexOf(p)).join('.') : '9';
+          const ra = rank(a), rb = rank(b);
+          if (ra !== rb) return (ra < rb ? -1 : 1) * mul;
+          return a.name.localeCompare(b.name);
         }
         return a.name.localeCompare(b.name) * mul;
       });
@@ -892,11 +989,11 @@
       });
 
       if (toolErrors.length) {
-        errContainer.innerHTML = toolErrors.map(e =>
+        errContainer.insertAdjacentHTML('beforeend', toolErrors.map(e =>
           `<div class="lp-tool-error"><i class="ti ti-alert-circle"></i>
            Could not load <strong>${escHtml(e.tool.name)}</strong> artifacts: ${escHtml(e.reason)}.
            <a href="https://github.com/${escHtml(e.tool.repo)}/tree/main/${ARTIFACTS_PATH}" target="_blank" rel="noopener noreferrer" style="color:var(--gold);margin-left:.5rem">View on GitHub →</a></div>`
-        ).join('');
+        ).join(''));
       }
 
       if (allArtifacts.length === 0) {
@@ -910,9 +1007,17 @@
       applyDeepLink();
     }
 
-    // Pre-filter from a ?q= deep link (e.g. arriving from the global navbar search)
+    // Pre-filter from a deep link: ?tool= and ?os= (see syncUrl), and ?q= (e.g.
+    // arriving from the global navbar search)
     function applyDeepLink() {
-      const q = new URLSearchParams(location.search).get('q');
+      const params = new URLSearchParams(location.search);
+      const tool = params.get('tool');
+      if (tool) {
+        setTool(tool.toLowerCase());
+        if (activeTool === 'dleapp') setOs((params.get('os') || 'all').toLowerCase());
+        applyFilters();
+      }
+      const q = params.get('q');
       if (!q) return;
       searchQuery = q.trim().toLowerCase();
       const input = document.getElementById('search-input');
@@ -923,11 +1028,43 @@
 
     // ── EVENT LISTENERS ──────────────────────────────────────────────────────
 
-    document.querySelectorAll('.lp-tool-btn').forEach(btn => {
+    // Keep the tool and OS choice in the address bar (?tool=dleapp&os=macos) so a
+    // filtered view can be linked. Other parameters (such as ?q=) are left alone.
+    function syncUrl() {
+      const params = new URLSearchParams(location.search);
+      if (activeTool === 'all') params.delete('tool'); else params.set('tool', activeTool);
+      if (activeTool === 'dleapp' && activeOs !== 'all') params.set('os', activeOs); else params.delete('os');
+      const qs = params.toString();
+      history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+    }
+
+    function setTool(tool) {
+      if (!TOOLS.some(t => t.id === tool)) tool = 'all';
+      activeTool = tool;
+      document.querySelectorAll('.lp-tool-filter .lp-tool-btn').forEach(b =>
+        b.classList.toggle('active', b.dataset.tool === tool));
+      if (tool !== 'dleapp') setOs('all');
+    }
+
+    function setOs(os) {
+      const ids = ['all', 'unset', ...Object.values(PLATFORM_IDS)];
+      activeOs = ids.includes(os) ? os : 'all';
+      document.querySelectorAll('.lp-os-btn').forEach(b =>
+        b.classList.toggle('active', b.dataset.os === activeOs));
+    }
+
+    document.querySelectorAll('.lp-tool-filter .lp-tool-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.lp-tool-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        activeTool = btn.dataset.tool;
+        setTool(btn.dataset.tool);
+        syncUrl();
+        applyFilters();
+      });
+    });
+
+    document.querySelectorAll('.lp-os-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        setOs(btn.dataset.os);
+        syncUrl();
         applyFilters();
       });
     });
