@@ -1,23 +1,23 @@
 {
-  "generated": "2026-11-15",
+  "generated": "2026-11-16",
   "window_days": 45,
   "items": [
     {
-      "name": "smartselect",
-      "query": "smartselect",
+      "name": "adServices",
+      "query": "adServices",
       "tool": "ALEAPP",
-      "date": "2026-11-14"
+      "date": "2026-11-16"
+    },
+    {
+      "name": "windowsRasPhonebook",
+      "query": "windowsRasPhonebook",
+      "tool": "DLEAPP",
+      "date": "2026-11-16"
     },
     {
       "name": "chromeSyncSettings",
       "query": "chromeSyncSettings",
       "tool": "RLEAPP",
-      "date": "2026-11-14"
-    },
-    {
-      "name": "windowsIeAddons",
-      "query": "windowsIeAddons",
-      "tool": "DLEAPP",
       "date": "2026-11-14"
     },
     {
@@ -33,22 +33,22 @@
       "date": "2026-10-30"
     },
     {
-      "name": "chromiumFavicons",
-      "query": "chromiumFavicons",
+      "name": "enabledAccessibilityServices",
+      "query": "enabledAccessibilityServices",
       "tool": "ALEAPP",
-      "date": "2026-11-14"
+      "date": "2026-11-16"
+    },
+    {
+      "name": "windowsPortProxy",
+      "query": "windowsPortProxy",
+      "tool": "DLEAPP",
+      "date": "2026-11-16"
     },
     {
       "name": "grokReturns",
       "query": "grokReturns",
       "tool": "RLEAPP",
       "date": "2026-10-27"
-    },
-    {
-      "name": "chromiumNotifications",
-      "query": "chromiumNotifications",
-      "tool": "DLEAPP",
-      "date": "2026-11-14"
     },
     {
       "name": "biomeSiriExecution",
@@ -63,16 +63,16 @@
       "date": "2026-10-10"
     },
     {
-      "name": "privateNotepad",
-      "query": "privateNotepad",
+      "name": "androidBrowser",
+      "query": "androidBrowser",
       "tool": "ALEAPP",
-      "date": "2026-11-12"
+      "date": "2026-11-16"
     },
     {
-      "name": "chromiumFileSystem",
-      "query": "chromiumFileSystem",
+      "name": "chromiumNativeMessagingHosts",
+      "query": "chromiumNativeMessagingHosts",
       "tool": "DLEAPP",
-      "date": "2026-11-14"
+      "date": "2026-11-16"
     }
   ]
 }
