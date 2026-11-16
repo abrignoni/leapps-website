@@ -3,8 +3,14 @@
   "window_days": 45,
   "items": [
     {
-      "name": "adServices",
-      "query": "adServices",
+      "name": "cloudConfigurationDetails",
+      "query": "cloudConfigurationDetails",
+      "tool": "iLEAPP",
+      "date": "2026-11-16"
+    },
+    {
+      "name": "SamsungGalleryLogEncodedStrings",
+      "query": "SamsungGalleryLogEncodedStrings",
       "tool": "ALEAPP",
       "date": "2026-11-16"
     },
@@ -21,20 +27,20 @@
       "date": "2026-11-14"
     },
     {
-      "name": "paypal",
-      "query": "paypal",
-      "tool": "iLEAPP",
-      "date": "2026-11-13"
-    },
-    {
       "name": "bmw nbt navigation",
       "query": "bmw_nbt_navigation",
       "tool": "VLEAPP",
       "date": "2026-10-30"
     },
     {
-      "name": "enabledAccessibilityServices",
-      "query": "enabledAccessibilityServices",
+      "name": "configurationProfiles",
+      "query": "configurationProfiles",
+      "tool": "iLEAPP",
+      "date": "2026-11-16"
+    },
+    {
+      "name": "photoPickerCopies",
+      "query": "photoPickerCopies",
       "tool": "ALEAPP",
       "date": "2026-11-16"
     },
@@ -51,27 +57,21 @@
       "date": "2026-10-27"
     },
     {
-      "name": "biomeSiriExecution",
-      "query": "biomeSiriExecution",
-      "tool": "iLEAPP",
-      "date": "2026-11-13"
-    },
-    {
       "name": "ford sync wince voice cache",
       "query": "ford_sync_wince_voice_cache",
       "tool": "VLEAPP",
       "date": "2026-10-10"
     },
     {
-      "name": "androidBrowser",
-      "query": "androidBrowser",
-      "tool": "ALEAPP",
-      "date": "2026-11-16"
+      "name": "paypal",
+      "query": "paypal",
+      "tool": "iLEAPP",
+      "date": "2026-11-13"
     },
     {
-      "name": "chromiumNativeMessagingHosts",
-      "query": "chromiumNativeMessagingHosts",
-      "tool": "DLEAPP",
+      "name": "smsClockGap",
+      "query": "smsClockGap",
+      "tool": "ALEAPP",
       "date": "2026-11-16"
     }
   ]
