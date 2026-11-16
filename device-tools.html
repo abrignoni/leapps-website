@@ -529,7 +529,7 @@
         <div class="lp-about-box">
           <div>
             <h3>What is KDL?</h3>
-            <p>An Android app for test phones. Turn on capture and use the phone. KDL logs what you did and when: taps, typed text, screens, incoming messages and calls from their notifications, and a screenshot each time you tap the red MARK button, saved since 0.5.0 with the text the app reported for that screen (its view tree). Every entry carries the device clock, the time zone, the time since boot and the boot count. Export the log into the <code>documentation/</code> folder next to the extraction, and <code>tools/make_documentation.py</code> turns it into an <code>.xlsx</code>.</p>
+            <p>An Android app for test phones. Turn on capture and use the phone. KDL logs what you did and when: taps, typed text, screens, incoming messages and calls from their notifications, from 0.6.0 messages that arrive in a chat you have open, and a screenshot each time you tap the red MARK button, saved since 0.5.0 with the text the app reported for that screen (its view tree). Every entry carries the device clock, the time zone, the time since boot and the boot count. Export the log into the <code>documentation/</code> folder next to the extraction, and <code>tools/make_documentation.py</code> turns it into an <code>.xlsx</code>.</p>
             <p>It is there to make known data for apps the LEAPPs do not parse yet, so a parser can be built and checked against it. Two scripts in the repository help with that: <code>kdl_locate.py</code> takes the export and an extraction and finds where the app stored each logged value and time, and <code>kdl_check.py</code> grades a LEAPP artifact's output against the log.</p>
             <p><strong>Test phones only.</strong> KDL records typed text and screens in the apps you pick. Never install it on an evidence device.</p>
           </div>
@@ -538,6 +538,7 @@
             <ul>
               <li>Rows are hash-chained, so changing, removing or reordering a row breaks every hash after it, and <code>make_documentation.py</code> checks the whole chain. Since 0.5.0 the chain also covers the screenshots and view trees</li>
               <li>Android 8.0 or later. Screenshots need Android 11 or later. The iOS version (iOS 17 or later) is in <a href="https://github.com/abrignoni/known-data-logger-ios" target="_blank" rel="noopener noreferrer">its own repository</a>: you build it yourself with Xcode, and the same scripts in <code>tools/</code> check its exports</li>
+              <li>Rules ship for Google Messages, Instagram, Threads, WhatsApp, Signal, Messenger, Telegram, Discord, Snapchat, Wire, LINE, TikTok and Zangi, each checked on a test phone or the emulator; each rule names the app version and device it was checked on. For another app, teach a rule from a capture</li>
               <li>Not on Google Play and not a LEAPP. Install the APK with adb or from the file, and check it against <code>SHA256SUMS</code>. Release signer certificate SHA-256: <code style="word-break:break-all">ab957515938e78247caa26a3747e7e429b4a6bd766854a8fdf3aa8929bb50faf</code></li>
               <li>The scripts in <code>tools/</code> come with the source code download. MIT licensed</li>
               <li><a href="https://github.com/abrignoni/known-data-logger/blob/main/docs/USER_MANUAL.md" target="_blank" rel="noopener noreferrer">Read the user manual</a>: installing, checking the hash and signer, and every screen</li>
@@ -576,12 +577,12 @@
             <ul>
               <li>A window with four steps (phone, what to document, run, result) and a command line that runs the same code</li>
               <li>Each screenshot's row holds the SHA-256 of its image and view tree, so the newest row hash covers every picture. <code>appwalk.py verify</code> checks each file against its row, and KDL's <code>make_documentation.py</code> reads the export</li>
-              <li>The transcript says who sent a message only for apps with a profile. Google Messages, Fossify Messages, WhatsApp, Signal, Discord, Instagram, Threads and LinkedIn have one, and the window can teach new ones. Check a profile's output against the screenshots</li>
+              <li>The transcript says who sent a message only for apps with a profile. Google Messages, Fossify Messages, WhatsApp, Signal, Messenger, Telegram, Discord, Snapchat, Wire, LINE, TikTok, Instagram, Threads and LinkedIn have one, and the window can teach new ones. Check a profile's output against the screenshots</li>
               <li>A screen the app marks as secure comes back black and is recorded as <code>blank</code></li>
               <li>A file can be added to an export after the walk, such as WhatsApp's Export chat zip. It goes into the hash chain, and the check catches a changed or extra file</li>
               <li>It can document Settings &gt; About phone as chained screenshots, since adb can no longer read the IMEI or phone number. Where the phone gives that screen's text, the IMEI, number and serial are read out for you to check; stock Android, Pixel included, does not, so read them from the screenshots</li>
               <li>Builds for macOS, Windows and Linux, each for ARM64 and x64. Not code signed yet: the README.txt in each pack says how to open it. adb is not included, so install Android's SDK Platform-Tools</li>
-              <li>Tried on an Android 15 emulator and on one Pixel 7a with Android 17 (WhatsApp, Signal, Discord, Instagram, Threads and LinkedIn). No iOS. MIT licensed</li>
+              <li>Tried on an Android 15 emulator, a Pixel 7a with Android 17 (WhatsApp, Signal, Discord, Instagram, Threads and LinkedIn), and a Galaxy A16 5G and a moto g play with Android 16 (Google Messages, WhatsApp, Signal, Messenger, Telegram, Discord, Snapchat, Wire, LINE, TikTok, Instagram and Threads). No iOS. MIT licensed</li>
               <li><a href="https://github.com/abrignoni/appwalk/blob/main/docs/QUICKSTART.md" target="_blank" rel="noopener noreferrer">Quick start</a> and <a href="https://github.com/abrignoni/appwalk/blob/main/docs/USER_MANUAL.md" target="_blank" rel="noopener noreferrer">user manual</a></li>
             </ul>
           </div>
