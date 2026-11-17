@@ -85,7 +85,10 @@
 .lp-os-btn.active { border-color: var(--color-dleapp); color: var(--color-dleapp); background: rgba(var(--color-dleapp-rgb),.08); }
 .lp-os-btn .n { opacity: .6; margin-left: .35rem; }
 .lp-os-btn[hidden] { display: none; }
-.lp-platforms { display: flex; flex-wrap: wrap; gap: .25rem; margin-top: .35rem; }
+.lp-platforms { display: flex; flex-wrap: wrap; gap: .25rem; }
+/* With DLEAPP selected every Tool cell says DLEAPP, so the OS column takes its place. */
+.lp-table:not(.os-view) .lp-col-os, .lp-table.os-view .lp-col-tool { display: none; }
+.lp-os-none { font-family: var(--font-mono); font-size: .6rem; color: var(--muted); }
 .lp-platform { font-family: var(--font-mono); font-size: .55rem; letter-spacing: .06em; color: var(--muted); border: 1px solid var(--border); padding: .1rem .35rem; white-space: nowrap; }
 .lp-results-meta { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .06em; color: var(--muted); margin-bottom: 1rem; min-height: 1.2rem; }
 .lp-results-meta span { color: var(--gold); }
@@ -149,9 +152,8 @@
 .lp-no-results { text-align: center; padding: 3rem 2rem; font-family: var(--font-mono); font-size: .8rem; color: var(--muted); border: 1px solid var(--border); background: var(--surface); display: none; }
 .lp-no-results.visible { display: block; }
 @media (max-width: 768px) {
-  /* hide Output Types (4th) and Updated (5th) on narrow screens */
-  .lp-table th:nth-child(4), .lp-table td:nth-child(4),
-  .lp-table th:nth-child(5), .lp-table td:nth-child(5) { display: none; }
+  /* hide Output Types and Updated on narrow screens */
+  .lp-table .lp-col-types, .lp-table .lp-col-updated { display: none; }
 }
 #lp-root { margin: 0 8px; }
 [data-theme="light"] body, [data-theme="light"] #lp-root, [data-theme="light"] section,
@@ -335,18 +337,19 @@
         <thead>
           <tr>
             <th class="lp-th-sort" data-sort="name" aria-sort="ascending" title="Sort by name">Artifact <i class="lp-sort-ind ti ti-arrows-sort" aria-hidden="true"></i></th>
-            <th class="lp-th-sort" data-sort="tool" aria-sort="none" title="Sort by tool, then operating system">Tool <i class="lp-sort-ind ti ti-arrows-sort" aria-hidden="true"></i></th>
+            <th class="lp-th-sort lp-col-tool" data-sort="tool" aria-sort="none" title="Sort by tool, then operating system">Tool <i class="lp-sort-ind ti ti-arrows-sort" aria-hidden="true"></i></th>
+            <th class="lp-th-sort lp-col-os" data-sort="os" aria-sort="none" title="Sort by operating system">OS <i class="lp-sort-ind ti ti-arrows-sort" aria-hidden="true"></i></th>
             <th>Category</th>
-            <th>Output Types</th>
-            <th class="lp-th-sort" data-sort="updated" aria-sort="none" title="Sort by last updated date">Updated <i class="lp-sort-ind ti ti-arrows-sort" aria-hidden="true"></i></th>
+            <th class="lp-col-types">Output Types</th>
+            <th class="lp-th-sort lp-col-updated" data-sort="updated" aria-sort="none" title="Sort by last updated date">Updated <i class="lp-sort-ind ti ti-arrows-sort" aria-hidden="true"></i></th>
           </tr>
         </thead>
         <tbody id="artifacts-tbody">
-          <tr><td><span class="lp-skel" style="height:1rem;width:160px;margin-bottom:.3rem"></span><span class="lp-skel" style="height:.75rem;width:240px"></span></td><td><span class="lp-skel" style="height:.75rem;width:60px"></span></td><td><span class="lp-skel" style="height:.75rem;width:90px"></span></td><td><span class="lp-skel" style="height:.75rem;width:80px"></span></td><td><span class="lp-skel" style="height:.75rem;width:70px"></span></td></tr>
-          <tr><td><span class="lp-skel" style="height:1rem;width:140px;margin-bottom:.3rem"></span><span class="lp-skel" style="height:.75rem;width:200px"></span></td><td><span class="lp-skel" style="height:.75rem;width:60px"></span></td><td><span class="lp-skel" style="height:.75rem;width:80px"></span></td><td><span class="lp-skel" style="height:.75rem;width:80px"></span></td><td><span class="lp-skel" style="height:.75rem;width:70px"></span></td></tr>
-          <tr><td><span class="lp-skel" style="height:1rem;width:180px;margin-bottom:.3rem"></span><span class="lp-skel" style="height:.75rem;width:220px"></span></td><td><span class="lp-skel" style="height:.75rem;width:60px"></span></td><td><span class="lp-skel" style="height:.75rem;width:100px"></span></td><td><span class="lp-skel" style="height:.75rem;width:80px"></span></td><td><span class="lp-skel" style="height:.75rem;width:70px"></span></td></tr>
-          <tr><td><span class="lp-skel" style="height:1rem;width:130px;margin-bottom:.3rem"></span><span class="lp-skel" style="height:.75rem;width:190px"></span></td><td><span class="lp-skel" style="height:.75rem;width:60px"></span></td><td><span class="lp-skel" style="height:.75rem;width:75px"></span></td><td><span class="lp-skel" style="height:.75rem;width:80px"></span></td><td><span class="lp-skel" style="height:.75rem;width:70px"></span></td></tr>
-          <tr><td><span class="lp-skel" style="height:1rem;width:170px;margin-bottom:.3rem"></span><span class="lp-skel" style="height:.75rem;width:210px"></span></td><td><span class="lp-skel" style="height:.75rem;width:60px"></span></td><td><span class="lp-skel" style="height:.75rem;width:85px"></span></td><td><span class="lp-skel" style="height:.75rem;width:80px"></span></td><td><span class="lp-skel" style="height:.75rem;width:70px"></span></td></tr>
+          <tr><td><span class="lp-skel" style="height:1rem;width:160px;margin-bottom:.3rem"></span><span class="lp-skel" style="height:.75rem;width:240px"></span></td><td><span class="lp-skel" style="height:.75rem;width:60px"></span></td><td><span class="lp-skel" style="height:.75rem;width:90px"></span></td><td class="lp-col-types"><span class="lp-skel" style="height:.75rem;width:80px"></span></td><td class="lp-col-updated"><span class="lp-skel" style="height:.75rem;width:70px"></span></td></tr>
+          <tr><td><span class="lp-skel" style="height:1rem;width:140px;margin-bottom:.3rem"></span><span class="lp-skel" style="height:.75rem;width:200px"></span></td><td><span class="lp-skel" style="height:.75rem;width:60px"></span></td><td><span class="lp-skel" style="height:.75rem;width:80px"></span></td><td class="lp-col-types"><span class="lp-skel" style="height:.75rem;width:80px"></span></td><td class="lp-col-updated"><span class="lp-skel" style="height:.75rem;width:70px"></span></td></tr>
+          <tr><td><span class="lp-skel" style="height:1rem;width:180px;margin-bottom:.3rem"></span><span class="lp-skel" style="height:.75rem;width:220px"></span></td><td><span class="lp-skel" style="height:.75rem;width:60px"></span></td><td><span class="lp-skel" style="height:.75rem;width:100px"></span></td><td class="lp-col-types"><span class="lp-skel" style="height:.75rem;width:80px"></span></td><td class="lp-col-updated"><span class="lp-skel" style="height:.75rem;width:70px"></span></td></tr>
+          <tr><td><span class="lp-skel" style="height:1rem;width:130px;margin-bottom:.3rem"></span><span class="lp-skel" style="height:.75rem;width:190px"></span></td><td><span class="lp-skel" style="height:.75rem;width:60px"></span></td><td><span class="lp-skel" style="height:.75rem;width:75px"></span></td><td class="lp-col-types"><span class="lp-skel" style="height:.75rem;width:80px"></span></td><td class="lp-col-updated"><span class="lp-skel" style="height:.75rem;width:70px"></span></td></tr>
+          <tr><td><span class="lp-skel" style="height:1rem;width:170px;margin-bottom:.3rem"></span><span class="lp-skel" style="height:.75rem;width:210px"></span></td><td><span class="lp-skel" style="height:.75rem;width:60px"></span></td><td><span class="lp-skel" style="height:.75rem;width:85px"></span></td><td class="lp-col-types"><span class="lp-skel" style="height:.75rem;width:80px"></span></td><td class="lp-col-updated"><span class="lp-skel" style="height:.75rem;width:70px"></span></td></tr>
         </tbody>
       </table>
     </div>
@@ -807,10 +810,11 @@
           ${pathsHtml}
           ${sampleHtml}
         </td>
-        <td><span class="lp-tool-tag ${escHtml(a.toolId)}">${escHtml(toolLabel)}</span>${platformsHtml}</td>
+        <td class="lp-col-tool"><span class="lp-tool-tag ${escHtml(a.toolId)}">${escHtml(toolLabel)}</span></td>
+        <td class="lp-col-os">${platformsHtml || '<span class="lp-os-none">Not set</span>'}</td>
         <td style="font-size:.82rem;color:var(--muted)">${escHtml(a.category)}</td>
-        <td><div class="lp-output-types">${outputBadges}</div></td>
-        <td class="lp-updated">${a.lastUpdated ? escHtml(a.lastUpdated) : '<span class="lp-updated-none">—</span>'}</td>
+        <td class="lp-col-types"><div class="lp-output-types">${outputBadges}</div></td>
+        <td class="lp-updated lp-col-updated">${a.lastUpdated ? escHtml(a.lastUpdated) : '<span class="lp-updated-none">—</span>'}</td>
       </tr>`;
     }
 
@@ -832,6 +836,7 @@
       // The OS filter applies only while DLEAPP is selected (see setTool).
       const osOn = activeTool === 'dleapp';
       document.getElementById('os-filter').classList.toggle('visible', osOn);
+      document.querySelector('.lp-table').classList.toggle('os-view', osOn);
       const osCounts = { all: 0, windows: 0, macos: 0, linux: 0, device: 0, unset: 0 };
       rows.forEach(row => {
         const toolMatch = activeTool === 'all' || row.dataset.tool === activeTool;
@@ -895,6 +900,14 @@
             return (av < bv ? -1 : 1) * mul;
           }
           return a.name.localeCompare(b.name); // tie-break by name
+        }
+        if (key === 'os') {
+          // Windows, macOS, Linux, Device order; artifacts with no value last.
+          const rank = x => x.platforms.length
+            ? x.platforms.map(p => PLATFORM_ORDER.indexOf(p)).join('.') : '9';
+          const ra = rank(a), rb = rank(b);
+          if (ra !== rb) return (ra < rb ? -1 : 1) * mul;
+          return a.name.localeCompare(b.name);
         }
         if (key === 'tool') {
           // Tool name, then operating system (Windows, macOS, Linux, Device; artifacts
@@ -1044,6 +1057,13 @@
       document.querySelectorAll('.lp-tool-filter .lp-tool-btn').forEach(b =>
         b.classList.toggle('active', b.dataset.tool === tool));
       if (tool !== 'dleapp') setOs('all');
+      // The OS column exists only in the DLEAPP view; leaving it while sorted by OS
+      // falls back to sorting by name. Returns true when the rows need re-sorting.
+      if (tool !== 'dleapp' && currentSort.key === 'os') {
+        currentSort = { key: 'name', dir: 'asc' };
+        return true;
+      }
+      return false;
     }
 
     function setOs(os) {
@@ -1055,9 +1075,9 @@
 
     document.querySelectorAll('.lp-tool-filter .lp-tool-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        setTool(btn.dataset.tool);
+        const resort = setTool(btn.dataset.tool);
         syncUrl();
-        applyFilters();
+        if (resort) renderRows(); else applyFilters();
       });
     });
 
