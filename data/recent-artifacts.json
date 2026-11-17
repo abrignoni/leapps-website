@@ -1,24 +1,24 @@
 {
-  "generated": "2026-11-16",
+  "generated": "2026-11-17",
   "window_days": 45,
   "items": [
     {
-      "name": "cloudConfigurationDetails",
-      "query": "cloudConfigurationDetails",
+      "name": "webkitWebsiteDataOrigins",
+      "query": "webkitWebsiteDataOrigins",
       "tool": "iLEAPP",
-      "date": "2026-11-16"
+      "date": "2026-11-17"
     },
     {
-      "name": "SamsungGalleryLogEncodedStrings",
-      "query": "SamsungGalleryLogEncodedStrings",
+      "name": "samsungSecureStores",
+      "query": "samsungSecureStores",
       "tool": "ALEAPP",
-      "date": "2026-11-16"
+      "date": "2026-11-17"
     },
     {
-      "name": "windowsRasPhonebook",
-      "query": "windowsRasPhonebook",
+      "name": "macosMapsSync",
+      "query": "macosMapsSync",
       "tool": "DLEAPP",
-      "date": "2026-11-16"
+      "date": "2026-11-17"
     },
     {
       "name": "chromeSyncSettings",
@@ -33,20 +33,20 @@
       "date": "2026-10-30"
     },
     {
-      "name": "configurationProfiles",
-      "query": "configurationProfiles",
+      "name": "osanalyticsAdDaily",
+      "query": "osanalyticsAdDaily",
       "tool": "iLEAPP",
-      "date": "2026-11-16"
+      "date": "2026-11-17"
     },
     {
-      "name": "photoPickerCopies",
-      "query": "photoPickerCopies",
+      "name": "whatsAppLocalBackups",
+      "query": "whatsAppLocalBackups",
       "tool": "ALEAPP",
-      "date": "2026-11-16"
+      "date": "2026-11-17"
     },
     {
-      "name": "windowsPortProxy",
-      "query": "windowsPortProxy",
+      "name": "windowsRasPhonebook",
+      "query": "windowsRasPhonebook",
       "tool": "DLEAPP",
       "date": "2026-11-16"
     },
@@ -63,16 +63,16 @@
       "date": "2026-10-10"
     },
     {
-      "name": "paypal",
-      "query": "paypal",
+      "name": "whatsAppLID",
+      "query": "whatsAppLID",
       "tool": "iLEAPP",
-      "date": "2026-11-13"
+      "date": "2026-11-17"
     },
     {
-      "name": "smsClockGap",
-      "query": "smsClockGap",
+      "name": "samsungInternet",
+      "query": "samsungInternet",
       "tool": "ALEAPP",
-      "date": "2026-11-16"
+      "date": "2026-11-17"
     }
   ]
 }
