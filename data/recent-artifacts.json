@@ -1,24 +1,24 @@
 {
-  "generated": "2026-11-17",
+  "generated": "2026-11-18",
   "window_days": 45,
   "items": [
     {
-      "name": "webkitWebsiteDataOrigins",
-      "query": "webkitWebsiteDataOrigins",
+      "name": "faceTimeLinks",
+      "query": "faceTimeLinks",
       "tool": "iLEAPP",
-      "date": "2026-11-17"
+      "date": "2026-11-18"
     },
     {
-      "name": "samsungSecureStores",
-      "query": "samsungSecureStores",
+      "name": "samsungSecureFolderFileOperationLog",
+      "query": "samsungSecureFolderFileOperationLog",
       "tool": "ALEAPP",
-      "date": "2026-11-17"
+      "date": "2026-11-18"
     },
     {
-      "name": "macosMapsSync",
-      "query": "macosMapsSync",
+      "name": "macosParallelsVms",
+      "query": "macosParallelsVms",
       "tool": "DLEAPP",
-      "date": "2026-11-17"
+      "date": "2026-11-18"
     },
     {
       "name": "chromeSyncSettings",
@@ -33,22 +33,22 @@
       "date": "2026-10-30"
     },
     {
-      "name": "osanalyticsAdDaily",
-      "query": "osanalyticsAdDaily",
+      "name": "playbackEventStreams",
+      "query": "playbackEventStreams",
       "tool": "iLEAPP",
-      "date": "2026-11-17"
+      "date": "2026-11-18"
     },
     {
-      "name": "whatsAppLocalBackups",
-      "query": "whatsAppLocalBackups",
+      "name": "gmsSemlocTransient",
+      "query": "gmsSemlocTransient",
       "tool": "ALEAPP",
-      "date": "2026-11-17"
+      "date": "2026-11-18"
     },
     {
-      "name": "windowsRasPhonebook",
-      "query": "windowsRasPhonebook",
+      "name": "macosMapsSync",
+      "query": "macosMapsSync",
       "tool": "DLEAPP",
-      "date": "2026-11-16"
+      "date": "2026-11-17"
     },
     {
       "name": "grokReturns",
@@ -63,16 +63,16 @@
       "date": "2026-10-10"
     },
     {
-      "name": "whatsAppLID",
-      "query": "whatsAppLID",
+      "name": "appleCalculator",
+      "query": "appleCalculator",
       "tool": "iLEAPP",
-      "date": "2026-11-17"
+      "date": "2026-11-18"
     },
     {
-      "name": "samsungInternet",
-      "query": "samsungInternet",
+      "name": "googleFindMyDevice",
+      "query": "googleFindMyDevice",
       "tool": "ALEAPP",
-      "date": "2026-11-17"
+      "date": "2026-11-18"
     }
   ]
 }
