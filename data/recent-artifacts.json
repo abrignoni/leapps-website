@@ -9,8 +9,8 @@
       "date": "2026-11-18"
     },
     {
-      "name": "samsungSecureFolderFileOperationLog",
-      "query": "samsungSecureFolderFileOperationLog",
+      "name": "samsungCloudClockOffset",
+      "query": "samsungCloudClockOffset",
       "tool": "ALEAPP",
       "date": "2026-11-18"
     },
@@ -39,8 +39,8 @@
       "date": "2026-11-18"
     },
     {
-      "name": "gmsSemlocTransient",
-      "query": "gmsSemlocTransient",
+      "name": "samsungSecureFolderFileOperationLog",
+      "query": "samsungSecureFolderFileOperationLog",
       "tool": "ALEAPP",
       "date": "2026-11-18"
     },
@@ -69,8 +69,8 @@
       "date": "2026-11-18"
     },
     {
-      "name": "googleFindMyDevice",
-      "query": "googleFindMyDevice",
+      "name": "gmsSemlocTransient",
+      "query": "gmsSemlocTransient",
       "tool": "ALEAPP",
       "date": "2026-11-18"
     }
