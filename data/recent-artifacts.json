@@ -1,18 +1,24 @@
 {
-  "generated": "2026-11-19",
+  "generated": "2026-11-20",
   "window_days": 45,
   "items": [
     {
-      "name": "faceTimeLinks",
-      "query": "faceTimeLinks",
+      "name": "biomeAppExtensionUsage",
+      "query": "biomeAppExtensionUsage",
       "tool": "iLEAPP",
-      "date": "2026-11-18"
+      "date": "2026-11-20"
     },
     {
-      "name": "samsungCloudClockOffset",
-      "query": "samsungCloudClockOffset",
+      "name": "samsungClock",
+      "query": "samsungClock",
       "tool": "ALEAPP",
-      "date": "2026-11-18"
+      "date": "2026-11-20"
+    },
+    {
+      "name": "binanceReturns",
+      "query": "binanceReturns",
+      "tool": "RLEAPP",
+      "date": "2026-11-20"
     },
     {
       "name": "macosParallelsVms",
@@ -21,28 +27,28 @@
       "date": "2026-11-18"
     },
     {
-      "name": "chromeSyncSettings",
-      "query": "chromeSyncSettings",
-      "tool": "RLEAPP",
-      "date": "2026-11-14"
-    },
-    {
       "name": "bmw nbt navigation",
       "query": "bmw_nbt_navigation",
       "tool": "VLEAPP",
       "date": "2026-10-30"
     },
     {
-      "name": "playbackEventStreams",
-      "query": "playbackEventStreams",
+      "name": "citizen",
+      "query": "citizen",
       "tool": "iLEAPP",
-      "date": "2026-11-18"
+      "date": "2026-11-20"
     },
     {
-      "name": "samsungSecureFolderFileOperationLog",
-      "query": "samsungSecureFolderFileOperationLog",
+      "name": "samsungCalculator",
+      "query": "samsungCalculator",
       "tool": "ALEAPP",
-      "date": "2026-11-18"
+      "date": "2026-11-20"
+    },
+    {
+      "name": "chromeSyncSettings",
+      "query": "chromeSyncSettings",
+      "tool": "RLEAPP",
+      "date": "2026-11-14"
     },
     {
       "name": "macosMapsSync",
@@ -51,28 +57,22 @@
       "date": "2026-11-17"
     },
     {
-      "name": "grokReturns",
-      "query": "grokReturns",
-      "tool": "RLEAPP",
-      "date": "2026-10-27"
-    },
-    {
       "name": "ford sync wince voice cache",
       "query": "ford_sync_wince_voice_cache",
       "tool": "VLEAPP",
       "date": "2026-10-10"
     },
     {
-      "name": "appleCalculator",
-      "query": "appleCalculator",
+      "name": "dust",
+      "query": "dust",
       "tool": "iLEAPP",
-      "date": "2026-11-18"
+      "date": "2026-11-20"
     },
     {
-      "name": "gmsSemlocTransient",
-      "query": "gmsSemlocTransient",
+      "name": "whatsAppGoogleDriveBackup",
+      "query": "whatsAppGoogleDriveBackup",
       "tool": "ALEAPP",
-      "date": "2026-11-18"
+      "date": "2026-11-20"
     }
   ]
 }
