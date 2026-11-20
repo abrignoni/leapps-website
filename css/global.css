@@ -289,6 +289,9 @@ a { color: inherit; }
 @media (max-width: 480px) {
   .lp-nav { padding: 1rem; }
 }
+/* Tell the browser which scheme is active so native controls and scrollbars match. */
+:root { color-scheme: dark; }
+:root[data-theme="light"] { color-scheme: light; }
 [data-theme="light"] { --off-black: #F5F2EC; --surface: #EAE6DE; --border: #C8C3B8; --text: #1C1A14; --muted: #6B6458; }
 /* On the light ground each tool uses the darker member of its palette. */
 [data-theme="light"] {
