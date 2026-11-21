@@ -2192,23 +2192,23 @@
     {
       "date": "2026-11-21",
       "totals": {
-        "ileapp": 105996,
-        "aleapp": 82645,
-        "rleapp": 7362,
-        "vleapp": 4031,
-        "lava": 6085,
-        "dleapp": 2818,
-        "gleapp": 1758,
-        "batchleapp": 1030
+        "ileapp": 106042,
+        "aleapp": 82711,
+        "rleapp": 7366,
+        "vleapp": 4035,
+        "lava": 6095,
+        "dleapp": 2824,
+        "gleapp": 1760,
+        "batchleapp": 1032
       },
       "probes": {
         "qnxprobe": 1140,
         "ewfprobe": 460,
-        "exoprobe": 180,
+        "exoprobe": 181,
         "chromiumcacheprobe": 71,
         "mediacarve": 108,
         "regfprobe": 132,
-        "pstprobe": 163
+        "pstprobe": 165
       }
     }
   ]

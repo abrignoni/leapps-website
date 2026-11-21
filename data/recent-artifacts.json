@@ -15,8 +15,8 @@
       "date": "2026-11-21"
     },
     {
-      "name": "virtualMachineConfigs",
-      "query": "virtualMachineConfigs",
+      "name": "fatVolumeInfo",
+      "query": "fatVolumeInfo",
       "tool": "DLEAPP",
       "date": "2026-11-21"
     },
@@ -45,10 +45,10 @@
       "date": "2026-11-21"
     },
     {
-      "name": "macosParallelsVms",
-      "query": "macosParallelsVms",
+      "name": "virtualMachineConfigs",
+      "query": "virtualMachineConfigs",
       "tool": "DLEAPP",
-      "date": "2026-11-18"
+      "date": "2026-11-21"
     },
     {
       "name": "chromeSyncSettings",
