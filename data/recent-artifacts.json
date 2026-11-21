@@ -1,18 +1,24 @@
 {
-  "generated": "2026-11-20",
+  "generated": "2026-11-21",
   "window_days": 45,
   "items": [
     {
-      "name": "biomeSetsPhoneIndexedCalls",
-      "query": "biomeSetsPhoneIndexedCalls",
+      "name": "biomeLocationSemantic",
+      "query": "biomeLocationSemantic",
       "tool": "iLEAPP",
-      "date": "2026-11-20"
+      "date": "2026-11-21"
     },
     {
-      "name": "samsungClock",
-      "query": "samsungClock",
+      "name": "appOpsHistoryDb",
+      "query": "appOpsHistoryDb",
       "tool": "ALEAPP",
-      "date": "2026-11-20"
+      "date": "2026-11-21"
+    },
+    {
+      "name": "virtualMachineConfigs",
+      "query": "virtualMachineConfigs",
+      "tool": "DLEAPP",
+      "date": "2026-11-21"
     },
     {
       "name": "binanceReturns",
@@ -21,28 +27,28 @@
       "date": "2026-11-20"
     },
     {
-      "name": "macosParallelsVms",
-      "query": "macosParallelsVms",
-      "tool": "DLEAPP",
-      "date": "2026-11-18"
-    },
-    {
       "name": "bmw nbt navigation",
       "query": "bmw_nbt_navigation",
       "tool": "VLEAPP",
       "date": "2026-10-30"
     },
     {
-      "name": "biomeAppExtensionUsage",
-      "query": "biomeAppExtensionUsage",
+      "name": "biomeSetsPhoneIndexedCalls",
+      "query": "biomeSetsPhoneIndexedCalls",
       "tool": "iLEAPP",
       "date": "2026-11-20"
     },
     {
-      "name": "samsungCalculator",
-      "query": "samsungCalculator",
+      "name": "samsungContextEngine",
+      "query": "samsungContextEngine",
       "tool": "ALEAPP",
-      "date": "2026-11-20"
+      "date": "2026-11-21"
+    },
+    {
+      "name": "macosParallelsVms",
+      "query": "macosParallelsVms",
+      "tool": "DLEAPP",
+      "date": "2026-11-18"
     },
     {
       "name": "chromeSyncSettings",
@@ -51,26 +57,20 @@
       "date": "2026-11-14"
     },
     {
-      "name": "macosMapsSync",
-      "query": "macosMapsSync",
-      "tool": "DLEAPP",
-      "date": "2026-11-17"
-    },
-    {
       "name": "ford sync wince voice cache",
       "query": "ford_sync_wince_voice_cache",
       "tool": "VLEAPP",
       "date": "2026-10-10"
     },
     {
-      "name": "citizen",
-      "query": "citizen",
+      "name": "biomeAppExtensionUsage",
+      "query": "biomeAppExtensionUsage",
       "tool": "iLEAPP",
       "date": "2026-11-20"
     },
     {
-      "name": "whatsAppGoogleDriveBackup",
-      "query": "whatsAppGoogleDriveBackup",
+      "name": "signalLocalBackups",
+      "query": "signalLocalBackups",
       "tool": "ALEAPP",
       "date": "2026-11-20"
     }
