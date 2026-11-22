@@ -386,7 +386,7 @@
         "name": "RLEAPP",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Windows, macOS, Linux",
-        "description": "Returns, Logs, Events and Properties Parser — free open-source tool for parsing ISP returns and social media data.",
+        "description": "Returns, Logs, Events and Protobuf Parser — free open-source tool for parsing ISP returns and social media data.",
         "url": "https://leapps.org/releases",
         "downloadUrl": "https://github.com/abrignoni/RLEAPP/releases",
         "isAccessibleForFree": true,
@@ -399,7 +399,7 @@
         "name": "VLEAPP",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Windows, macOS, Linux",
-        "description": "Vehicle Logs, Events and Plists Parser — free open-source tool for parsing artifacts from vehicle infotainment and telematics systems.",
+        "description": "Vehicle Logs, Events and Protobuf Parser — free open-source tool for parsing artifacts from vehicle infotainment and telematics systems.",
         "url": "https://leapps.org/releases",
         "downloadUrl": "https://github.com/abrignoni/VLEAPP/releases",
         "isAccessibleForFree": true,
@@ -581,7 +581,7 @@
     <div class="lp-page-header-inner">
       <span class="lp-eyebrow">Latest Builds</span>
       <h1>Tool <span>Releases</span></h1>
-      <p>Download the latest versions of the LEAPPs forensic tools. All tools are free and open-source.</p>
+      <p>Download the latest versions of the LEAPPs forensic tools. All tools are free. The LEAPPs and Batch LEAPP are open source under MIT. LAVA is freeware under its own license.</p>
       <div class="lp-tool-nav">
         <a href="#section-lava" class="lp-tool-pill" data-tool="lava">LAVA</a>
         <a href="#section-aleapp" class="lp-tool-pill" data-tool="aleapp">ALEAPP</a>
@@ -731,7 +731,7 @@
           <div class="lp-tool-header-left">
             <div class="lp-tool-platform">ISP Returns</div>
             <h2><img src="/logos/RLEAPP_icon.png" alt="" width="256" height="256" class="lp-tool-logo-inline">RLEAPP</h2>
-            <div class="lp-tool-fullname">Returns, Logs, Events &amp; Properties Parser</div>
+            <div class="lp-tool-fullname">Returns, Logs, Events &amp; Protobuf Parser</div>
           </div>
           <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-rleapp"><i class="ti ti-star"></i>…</span><span class="lp-dl-count-badge loading" id="dlcount-releases-rleapp"><i class="ti ti-download"></i>…</span><a href="https://github.com/abrignoni/RLEAPP" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
         </div>
@@ -759,7 +759,7 @@
           <div class="lp-tool-header-left">
             <div class="lp-tool-platform">Vehicle Systems</div>
             <h2><img src="/logos/VLEAPP_icon.png" alt="" width="256" height="256" class="lp-tool-logo-inline">VLEAPP</h2>
-            <div class="lp-tool-fullname">Vehicle Logs, Events &amp; Plists Parser</div>
+            <div class="lp-tool-fullname">Vehicle Logs, Events &amp; Protobuf Parser</div>
           </div>
           <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-vleapp"><i class="ti ti-star"></i>…</span><span class="lp-dl-count-badge loading" id="dlcount-releases-vleapp"><i class="ti ti-download"></i>…</span><a href="https://github.com/abrignoni/VLEAPP" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
         </div>
@@ -855,7 +855,7 @@
           <div class="lp-install-row"><span class="lp-install-tag">Tap</span><code>brew trust leapps-org/leapps; brew tap leapps-org/leapps</code><button class="lp-brew-copy" data-copy="brew trust leapps-org/leapps; brew tap leapps-org/leapps" data-tool="GLEAPP" aria-label="Copy GLEAPP tap command"><i class="ti ti-copy"></i></button></div>
           <div class="lp-install-row"><span class="lp-install-tag">App</span><code>brew install --cask gleapp</code><button class="lp-brew-copy" data-copy="brew install --cask gleapp" data-tool="GLEAPP" aria-label="Copy GLEAPP app install command"><i class="ti ti-copy"></i></button></div>
           <div class="lp-install-note">Run the Tap line once. Homebrew 6 will not load a tap outside its own until you trust it, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
-          <div class="lp-install-note">The <code>gleapp</code> cask installs GLEAPP.app. It does not link a command line.</div>
+          <div class="lp-install-note">The <code>gleapp</code> cask installs GLEAPP.app and links a <code>gleapp</code> command that opens the window. <code>gleapp web</code> opens the same interface in a browser.</div>
           <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
         </div>
         <div class="lp-status-bar">
@@ -1014,7 +1014,7 @@
       </div>
     </div>
     <div class="lp-footer-bottom">
-      <span>© 2026 LEAPPs · Free &amp; open source · MIT License</span>
+      <span>© 2026 LEAPPs · Free tools · LEAPPs under MIT · LAVA is freeware</span>
       <span>Built by the community</span>
     </div>
   </footer>

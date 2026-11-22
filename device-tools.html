@@ -537,7 +537,7 @@
             <h3>What is KDL?</h3>
             <p>An Android app for test phones. Turn on capture and use the phone. KDL logs what you did and when: taps, typed text, screens, incoming messages and calls from their notifications, from 0.6.0 messages that arrive in a chat you have open, and a screenshot each time you tap the red MARK button, saved since 0.5.0 with the text the app reported for that screen (its view tree). Every entry carries the device clock, the time zone, the time since boot and the boot count. Export the log into the <code>documentation/</code> folder next to the extraction, and <code>tools/make_documentation.py</code> turns it into an <code>.xlsx</code>.</p>
             <p>It is there to make known data for apps the LEAPPs do not parse yet, so a parser can be built and checked against it. Two scripts in the repository help with that: <code>kdl_locate.py</code> takes the export and an extraction and finds where the app stored each logged value and time, and <code>kdl_check.py</code> grades a LEAPP artifact's output against the log.</p>
-            <p><strong>Test phones only.</strong> KDL records typed text and screens in the apps you pick. Never install it on an evidence device.</p>
+            <p><strong>Test phones only.</strong> KDL records typed text and screens in the apps you pick, plus System UI and Settings, which are always captured. Never install it on an evidence device.</p>
           </div>
           <div>
             <h3>Highlights</h3>
@@ -575,7 +575,7 @@
             <h3>What is AppWalk?</h3>
             <p>AppWalk runs on the examiner's computer and drives a connected Android phone over adb. Open the app on the phone and AppWalk scrolls that screen from one end to the other, or opens the rows you choose from a list (conversations, for example) and walks each one. At every step it saves a screenshot and the text the app reported for that screen (its view tree), and it logs everything it did in a hash-chained log in KDL's export format. Each run also gets a transcript and a PDF report.</p>
             <p>It is for a phone examined with the owner's consent or other lawful authority. It does not unlock anything or get around any lock: when a lock screen, a password prompt or another app is in front, it stops and waits for the examiner.</p>
-            <p><strong>It changes the phone.</strong> Opening a thread marks it read, as it does for a person, and USB debugging stores the computer's key on the phone. It installs no app.</p>
+            <p><strong>It changes the phone.</strong> Opening a thread can mark it read, as it does for a person, and USB debugging stores the computer's key on the phone. If the phone is online, opening a conversation can also send read receipts and download content. Reading the phone's identity can leave a Settings search and show the dialer in app usage. It installs no app.</p>
           </div>
           <div>
             <h3>Highlights</h3>
@@ -646,7 +646,7 @@
       </div>
     </div>
     <div class="lp-footer-bottom">
-      <span>© 2026 LEAPPs · Free &amp; open source · MIT License</span>
+      <span>© 2026 LEAPPs · Free tools · LEAPPs under MIT · LAVA is freeware</span>
       <span>Built by the community</span>
     </div>
   </footer>

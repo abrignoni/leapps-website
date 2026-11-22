@@ -280,7 +280,7 @@
       <div class="lp-step-num">02</div>
       <div class="lp-step-body">
         <div class="lp-step-title">Get Your Extraction</div>
-        <p class="lp-step-desc">LEAPPs works on extracted data — it does not acquire from live devices. You need a file system or backup from your preferred acquisition tool.</p>
+        <p class="lp-step-desc">LEAPPs works on extracted data — it does not acquire from live devices. You need a file system or backup from your preferred acquisition tool. UFDR report packages are not supported.</p>
         <div class="lp-table-scroll" role="region" aria-label="Tool compatibility" tabindex="0">
         <table class="lp-table">
           <thead>
@@ -294,12 +294,12 @@
             <tr>
               <td><span class="lp-pill ileapp">iLEAPP</span></td>
               <td>iTunes/Finder backup, full file system (FFS), GrayKey, Cellebrite</td>
-              <td>Cellebrite UFED, GrayKey, iTunes backup</td>
+              <td>Cellebrite full file system (zip, including CLBX), GrayKey, iTunes backup</td>
             </tr>
             <tr>
               <td><span class="lp-pill aleapp">ALEAPP</span></td>
               <td>Full file system, adb backup, Cellebrite, GrayKey</td>
-              <td>Cellebrite UFED, GrayKey, adb pull</td>
+              <td>Cellebrite full file system (zip, including CLBX), GrayKey, adb pull</td>
             </tr>
             <tr>
               <td><span class="lp-pill rleapp">RLEAPP</span></td>
@@ -314,7 +314,7 @@
             <tr>
               <td><span class="lp-pill gleapp">GLEAPP</span></td>
               <td>Folder of media, full file system extraction, E01 or raw disk image</td>
-              <td>Cellebrite UFED, GrayKey, EnCase/E01, raw dd images</td>
+              <td>Cellebrite full file system (zip), GrayKey, EnCase/E01, raw dd images</td>
             </tr>
           </tbody>
         </table>
@@ -346,7 +346,7 @@
       <div class="lp-step-num">03</div>
       <div class="lp-step-body">
         <div class="lp-step-title">Install &amp; Run</div>
-        <p class="lp-step-desc">LEAPPs tools run on Python 3.10+. Download the latest release, install dependencies, and run against your extraction folder.</p>
+        <p class="lp-step-desc">LEAPPs tools run on Python 3.11+. Download the latest release, install dependencies, and run against your extraction folder.</p>
         <p style="font-size:.85rem;margin-bottom:1rem;padding:.6rem .9rem;background:var(--surface);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;">💡 <strong>Prefer not to run Python scripts directly?</strong> The <a href="https://leapps.org/releases" style="color:var(--gold);text-decoration:none;">Releases page</a> provides pre-built downloads for Windows, macOS and Linux, so no Python installation is needed. For iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP each download is one program: started with no arguments it opens the window, and given arguments it runs as the command line.</p>
 
         <div class="lp-code-label">Fastest install — macOS (Homebrew)</div>
@@ -354,7 +354,7 @@
 <span class="kw">brew</span> tap leapps-org/leapps
 <span class="kw">brew</span> install --cask ileapp-gui    <span class="cm"># iLEAPP: app and command line together</span>
 <span class="kw">brew</span> install --cask aleapp-gui    <span class="cm"># same for rleapp-gui, vleapp-gui, dleapp-gui</span>
-<span class="kw">brew</span> install --cask gleapp        <span class="cm"># GLEAPP (app only)</span>
+<span class="kw">brew</span> install --cask gleapp        <span class="cm"># GLEAPP: app and gleapp command</span>
 <span class="kw">brew</span> install --cask lava          <span class="cm"># LAVA</span></div>
         <p style="font-size:.82rem;color:var(--muted);margin:.5rem 0 1.25rem;">A Homebrew install handles Python and dependencies for you, so skip the pip steps below and run the tool directly. Homebrew 6 will not load a tap outside its own until you trust it; an older Homebrew that has no <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">brew trust</code> command can skip that line. For iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP the cask installs the app and links its command line (<code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">ileapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">aleapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">rleapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">vleapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">dleapp</code>): started with no arguments it opens the window, and given arguments it runs as the command line. Full walkthrough in the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew" style="color:var(--gold);text-decoration:none;">Homebrew guide</a>. On Windows, use the pre-built executables or the manual steps below.</p>
 
@@ -390,16 +390,17 @@
 
         <ul class="lp-checklist" style="margin-top:1rem;">
           <li><i class="ti ti-download"></i>Download the latest release from <a href="https://leapps.org/releases" style="color:var(--gold);text-decoration:none;">leapps.org/releases</a></li>
-          <li><i class="ti ti-brand-python"></i>Requires Python 3.10 or later — <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:none;">python.org/downloads</a></li>
+          <li><i class="ti ti-brand-python"></i>Requires Python 3.11 or later — <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:none;">python.org/downloads</a></li>
           <li><i class="ti ti-folder"></i>Point the tool at the extraction source, not individual files</li>
           <li><i class="ti ti-clock"></i>Runtime depends on extraction size</li>
         </ul>
 
         <div class="lp-code-label" style="margin-top:1.75rem;">Your first run — end to end (macOS)</div>
         <div class="lp-code" style="white-space:pre;"><span class="kw">brew</span> trust leapps-org/leapps; brew tap leapps-org/leapps &amp;&amp; brew install --cask ileapp-gui
+<span class="kw">mkdir</span> <span class="kw">-p</span> <span class="st">~/Cases/reports</span>
 <span class="kw">ileapp</span> <span class="kw">-t</span> <span class="st">zip</span> <span class="kw">-i</span> <span class="st">~/Cases/ios_extraction.zip</span> <span class="kw">-o</span> <span class="st">~/Cases/reports</span>
 <span class="kw">open</span> <span class="st">~/Cases/reports</span>    <span class="cm"># open index.html in the newest folder, or load the LAVA project</span></div>
-        <p style="font-size:.82rem;color:var(--muted);margin-top:.5rem;">Three commands: install, parse, review. No extraction to test with yet? Explore a pre-processed report in the <a href="https://github.com/leapps-org/LAVA-sample-projects" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:none;">LAVA sample projects</a> to see what the output looks like.</p>
+        <p style="font-size:.82rem;color:var(--muted);margin-top:.5rem;">Four commands: install, make the report folder, parse, review. No extraction to test with yet? Explore a pre-processed report in the <a href="https://github.com/leapps-org/LAVA-sample-projects" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:none;">LAVA sample projects</a> to see what the output looks like.</p>
       </div>
     </div>
 
@@ -417,11 +418,11 @@
 
         <div class="lp-lava-callout">
           <div class="lp-lava-callout-head"><i class="ti ti-eye" aria-hidden="true"></i> Recommended: Open in LAVA</div>
-          <p>LAVA (LEAPPs Artifact Viewer Application) is the purpose-built viewer for LEAPPs reports. Instead of browsing a flat HTML file, LAVA gives you filtering capabilities and data export options.</p>
+          <p>LAVA (LEAPP Artifact Viewer App) is the purpose-built viewer for LEAPPs reports. Instead of browsing a flat HTML file, LAVA gives you filtering capabilities and data export options.</p>
           <p><strong style="color:var(--text);">How to use it:</strong></p>
           <ul class="lp-checklist" style="margin-bottom:.75rem;">
             <li><i class="ti ti-download"></i>Download LAVA from <a href="https://leapps.org/releases">leapps.org/releases</a></li>
-            <li><i class="ti ti-folder-open"></i>Launch LAVA and open the output folder from your LEAPPs run</li>
+            <li><i class="ti ti-folder-open"></i>Launch LAVA and open the <code>.lava</code> file in your LEAPPs output folder</li>
             <li><i class="ti ti-layout-list"></i>Browse artifacts by category with structured navigation</li>
             <li><i class="ti ti-filter"></i>Filter artifacts by category, date, or keyword to zero in on relevant data</li>
             <li><i class="ti ti-file-export"></i>Export findings for reports and documentation</li>
@@ -511,7 +512,7 @@
       </div>
     </div>
     <div class="lp-footer-bottom">
-      <span>© 2026 LEAPPs · Free &amp; open source · MIT License</span>
+      <span>© 2026 LEAPPs · Free tools · LEAPPs under MIT · LAVA is freeware</span>
       <span>Built by the community</span>
     </div>
   </footer>

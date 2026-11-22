@@ -41,7 +41,7 @@ Readers: the format readers the LEAPPs carry, vendored as single files except he
 - [mmkv-parser](https://github.com/abrignoni/mmkv-parser): reads Tencent MMKV key-value store files, every entry in file order and as the app sees them
 - [sqlite-wal](https://github.com/abrignoni/sqlite-wal): reads the earlier committed states a SQLite write-ahead log still holds, through SQLite itself, and lists rows an earlier state holds that the current one does not
 - [cimreader](https://github.com/abrignoni/cimreader): reads the Windows WMI CIM repository and lists WMI event subscriptions (filters, consumers, bindings); a port of python-cim from Mandiant's flare-wmi, Apache 2.0
-- [dpapiprobe](https://github.com/abrignoni/dpapiprobe): offline Windows DPAPI decryption, straight from an E01 or raw image or from the hives and master key files pulled from one (LSA secrets, master keys, DPAPI blobs, Credential Manager and Vault, Chromium v10 passwords and cookies); MIT, clean-room, needs PyCryptodome
+- [dpapiprobe](https://github.com/abrignoni/dpapiprobe): offline Windows DPAPI decryption, straight from an E01 or raw image or from the hives and master key files pulled from one (LSA secrets, master keys, DPAPI blobs, Credential Manager and Vault, Chromium v10 passwords and cookies); MIT, needs PyCryptodome
 - [heicreader](https://github.com/abrignoni/heicreader): reads HEIC and HEIF images with a bundled pure-Go decoder and no GPL or LGPL code; the LEAPPs install it from its release wheels and use it to show HEIC media in their reports; MIT
 
 ## Install
