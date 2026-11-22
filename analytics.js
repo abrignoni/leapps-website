@@ -69,7 +69,7 @@
     var accept = document.createElement('button');
     accept.type = 'button';
     accept.textContent = 'Accept';
-    accept.style.cssText = 'font-family:inherit;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;cursor:pointer;background:var(--gold,#F5C020);color:var(--off-black,#0E0E0E);border:1px solid var(--gold,#F5C020);padding:.45rem 1.1rem;';
+    accept.style.cssText = 'font-family:inherit;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;cursor:pointer;background:var(--gold,#F5C020);color:var(--on-gold,#0E0E0E);border:1px solid var(--gold,#F5C020);padding:.45rem 1.1rem;';
 
     var decline = document.createElement('button');
     decline.type = 'button';
