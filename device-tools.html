@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261123" />
+  <link rel="stylesheet" href="/css/global.css?v=20261124" />
   <style>
 .lp-page-header {
       padding: 3.5rem 2rem 3rem; border-bottom: 1px solid var(--border);
@@ -252,6 +252,7 @@
       color: #aaaaaa; background: rgba(255,255,255,.04);
       white-space: nowrap;
     }
+[data-theme="light"] .lp-dl-count-badge { color: var(--muted); }
 .lp-dl-count-badge i { font-size: .85rem; }
 .lp-dl-count-badge.loading { color: var(--muted); background: transparent; }
 .lp-release-dl-count {
@@ -750,13 +751,13 @@
         // releases / unparseable assets); otherwise the friendly label with
         // the filename in the tooltip. Copy-URL and SHA-256 buttons always kept.
         function assetBtn(a, ai, label, primary) {
-          const dlCount = a.download_count > 0 ? `<span style="opacity:.5;font-size:.75rem;margin-left:.35rem"><i class="ti ti-download" style="font-size:.75rem"></i>${formatStars(a.download_count)}</span>` : '';
+          const dlCount = a.download_count > 0 ? `<span style="font-size:.75rem;margin-left:.35rem"><i class="ti ti-download" style="font-size:.75rem"></i>${formatStars(a.download_count)}</span>` : '';
           const copyId = `copy-${id}-${i}-${ai}`;
           const hashId = `hash-${id}-${i}-${ai}`;
           const digest = a.digest ? a.digest.replace(/^sha256:/, '') : '';
           const hashBtn = digest ? `<button class="lp-copy-btn" id="${hashId}" onclick="copySha('${digest}','${hashId}')" title="Copy SHA-256 hash"><i class="ti ti-fingerprint"></i></button>` : '';
           const text = label || `${getOSIcon(a.name)} ${a.name}`;
-          return `<div style="display:inline-flex;align-items:center;gap:0"><a href="${a.browser_download_url}" class="lp-asset-btn ${primary ? 'primary' : ''}" target="_blank" rel="noopener noreferrer" title="${a.name}">${text} ${a.size ? '<span style="opacity:.6;font-size:.75rem">' + formatBytes(a.size) + '</span>' : ''} ${dlCount}</a><button class="lp-copy-btn" id="${copyId}" onclick="copyUrl('${a.browser_download_url}','${copyId}')" title="Copy download URL"><i class="ti ti-clipboard"></i></button>${hashBtn}</div>`;
+          return `<div style="display:inline-flex;align-items:center;gap:0"><a href="${a.browser_download_url}" class="lp-asset-btn ${primary ? 'primary' : ''}" target="_blank" rel="noopener noreferrer" title="${a.name}">${text} ${a.size ? '<span style="font-size:.75rem">' + formatBytes(a.size) + '</span>' : ''} ${dlCount}</a><button class="lp-copy-btn" id="${copyId}" onclick="copyUrl('${a.browser_download_url}','${copyId}')" title="Copy download URL"><i class="ti ti-clipboard"></i></button>${hashBtn}</div>`;
         }
 
         let assetBtns = '';

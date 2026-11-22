@@ -36,7 +36,7 @@
   --rank-6: #E0405E;
   /* Text colors. They match the brand colors here and darken in the light theme. */
   --gold-text: var(--gold);
-  --color-ileapp-text: var(--color-ileapp);
+  --color-ileapp-text: #FF5A60;
   --color-aleapp-text: var(--color-aleapp);
   --color-rleapp-text: var(--color-rleapp);
   --color-vleapp-text: var(--color-vleapp);
@@ -45,10 +45,11 @@
   --color-probes-text: var(--color-probes);
   --rank-1-text: var(--rank-1);
   --rank-2-text: var(--rank-2);
-  --rank-3-text: var(--rank-3);
+  --rank-3-text: #B57AD0;
   --rank-4-text: var(--rank-4);
   --rank-5-text: var(--rank-5);
   --rank-6-text: var(--rank-6);
+  --color-lang-text: #A9B4E8;
 }
 html { scroll-behavior: smooth; }
 body {
@@ -213,9 +214,9 @@ a { color: inherit; }
       font-family: var(--font-mono);
       font-size: .75rem;
       letter-spacing: .05em;
-      color: #666666;
+      color: var(--muted);
     }
-.lp-footer-bottom a { color: #666666; text-decoration: none; transition: color .2s; }
+.lp-footer-bottom a { color: var(--muted); text-decoration: none; transition: color .2s; }
 .lp-footer-bottom a:hover { color: var(--gold-text); }
 @media (max-width: 768px) {
   .lp-footer { padding: 2.5rem 1.5rem 1.5rem; text-align: center; }
@@ -331,6 +332,7 @@ a { color: inherit; }
   --rank-4-text: #6E560E;
   --rank-5-text: #8B471B;
   --rank-6-text: #A12E44;
+  --color-lang-text: #303A6A;
   --color-ileapp: #C90005; --color-ileapp-rgb: 201,0,5;
   --color-aleapp: #398A11; --color-aleapp-rgb: 57,138,17;
   --color-rleapp: #FDA915; --color-rleapp-rgb: 253,169,21;
