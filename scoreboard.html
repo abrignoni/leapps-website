@@ -430,6 +430,9 @@
     async function fetchMergedPRsForRepo(repoInfo, onProgress) {
       const contributors = {};
       let page = 1;
+      // A safety stop, not a budget. The loop ends at the first short page, so it
+      // makes one request per 100 closed PRs. A lower cap silently drops merged PRs
+      // from the oldest history and undercounts the people who wrote them.
       const MAX_PAGES = 100;
 
       while (page <= MAX_PAGES) {
