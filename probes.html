@@ -778,7 +778,7 @@
           <div>
             <h3>What is ewfprobe?</h3>
             <p>It opens an acquisition, joins its segments, and presents the acquired disk as an ordinary seekable file, so anything that can read a raw image can read these with a one-line change at the point the image is opened.</p>
-            <p>It is written from the public format documentation, with no libewf and no C extension, so a tool can take these images with no copyleft dependency and nothing to build. Two cases need an optional package: an LZFSE <code>.dmg</code> needs <code>pyliblzfse</code>, and an encrypted image needs <code>pycryptodome</code>. The release executables carry <code>pycryptodome</code> but not <code>pyliblzfse</code>.</p>
+            <p>It is written from the public format documentation, with no libewf and no C extension, so a tool can take these images with no copyleft dependency and nothing to build. Two cases need an optional package: an encrypted image needs <code>pycryptodome</code>, which the release executables carry, and a zstd QCOW on Python older than 3.14 needs <code>backports.zstd</code> or <code>zstandard</code>.</p>
           </div>
           <div>
             <h3>Highlights</h3>
@@ -1208,7 +1208,7 @@
             <h3>What it reads</h3>
             <p>Point it at an E01 or raw image, or at the registry hives and master key files pulled from one. <code>triage</code> opens the image read-only through the bundled ewfprobe and qnxprobe readers and finds the hives, master keys, Vault and Chromium stores on every volume itself. With the boot key alone it recovers the LSA secrets, decrypts the SYSTEM master keys and opens the DPAPI blobs they protect, including those inside Credential Manager and Vault files. With the account's password or its SHA-1 hash it opens that user's master keys, and the SHA-1 hash can come from the account's ARSO (TBAL) LSA secret. It also recovers a Chromium profile's key from <code>Local State</code> and decrypts saved passwords and cookies marked <code>v10</code>.</p>
             <p>Values marked <code>v20</code> (App-Bound Encryption, Chrome 127 and later) are reported as present and not decrypted. On the command line, the default output is identifiers, lengths and SHA-1 fingerprints; recovered values are written only to a file you name.</p>
-            <p>Written clean-room under MIT, so tools that ship as frozen binaries, the LEAPPs among them, can include it.</p>
+            <p>Written with Claude from the documented DPAPI structures and released under MIT, so tools that ship as frozen binaries, the LEAPPs among them, can include it.</p>
           </div>
           <div>
             <h3>Where it runs</h3>
@@ -1293,7 +1293,7 @@
       </div>
     </div>
     <div class="lp-footer-bottom">
-      <span>© 2026 LEAPPs · Free &amp; open source · MIT License</span>
+      <span>© 2026 LEAPPs · Free tools · LEAPPs under MIT · LAVA is freeware</span>
       <span>Built by the community</span>
     </div>
   </footer>

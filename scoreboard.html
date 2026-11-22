@@ -387,7 +387,7 @@
       </div>
     </div>
     <div class="lp-footer-bottom">
-      <span>© 2026 LEAPPs · Free &amp; open source · MIT License</span>
+      <span>© 2026 LEAPPs · Free tools · LEAPPs under MIT · LAVA is freeware</span>
       <span>Built by the community</span>
     </div>
   </footer>
@@ -430,7 +430,7 @@
     async function fetchMergedPRsForRepo(repoInfo, onProgress) {
       const contributors = {};
       let page = 1;
-      const MAX_PAGES = 25;
+      const MAX_PAGES = 100;
 
       while (page <= MAX_PAGES) {
         const res = await fetch(`${API}/repos/${repoInfo.repo}/pulls?state=closed&per_page=100&page=${page}`);
