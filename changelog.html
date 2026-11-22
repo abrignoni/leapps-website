@@ -148,6 +148,9 @@
     [data-theme="light"] #page, [data-theme="light"] #content, [data-theme="light"] .page-section,
     [data-theme="light"] .page-section-wrapper,
     [data-theme="light"] .sqs-layout { background-color: #F5F2EC !important; }
+@media (max-width: 480px) {
+  .lp-cl-body { min-width: 0; overflow-wrap: anywhere; }
+}
   </style>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>
   <script type="application/ld+json">
@@ -246,6 +249,7 @@
     <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">GitHub</a>
   </div>
 
+  <main id="main" tabindex="-1">
   <header class="lp-header">
     <div class="lp-header-inner">
       <span class="lp-eyebrow">All tools · All versions</span>
@@ -255,7 +259,7 @@
     </div>
   </header>
 
-  <main id="main" tabindex="-1" class="lp-main">
+  <div class="lp-main">
 
     <div class="lp-cl-stats">
       <div>
@@ -318,6 +322,7 @@
       </div>
     </div>
 
+  </div>
   </main>
 
     <footer class="lp-footer">

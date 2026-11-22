@@ -234,6 +234,7 @@
     <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">GitHub</a>
   </div>
 
+  <main id="main" tabindex="-1">
   <header class="lp-header">
     <div class="lp-header-inner">
       <span class="lp-eyebrow">Community Recognition</span>
@@ -243,7 +244,7 @@
     </div>
   </header>
 
-  <main id="main" tabindex="-1" class="lp-main">
+  <div class="lp-main">
 
     <!-- RANK LEGEND -->
     <div class="lp-section">
@@ -305,7 +306,7 @@
         </div>
       </div>
       <div class="lp-sb-results" id="sb-results"></div>
-      <div class="lp-table-scroll" role="region" aria-label="Contributor leaderboard, scrollable" tabindex="0">
+      <div class="lp-table-scroll" role="region" aria-label="Contributor leaderboard">
       <table class="lp-table" aria-label="Contributor leaderboard">
         <thead>
           <tr>
@@ -321,8 +322,25 @@
         </tbody>
       </table>
       </div>
+      <script>
+(function () {
+  var box = document.querySelector('.lp-table-scroll');
+  if (!box) return;
+  function syncTabStop() {
+    if (box.scrollWidth > box.clientWidth + 1) box.tabIndex = 0;
+    else box.removeAttribute('tabindex');
+  }
+  syncTabStop();
+  if (window.ResizeObserver) {
+    var watcher = new ResizeObserver(syncTabStop);
+    watcher.observe(box);
+    watcher.observe(box.querySelector('table'));
+  }
+})();
+</script>
     </div>
 
+  </div>
   </main>
 
     <footer class="lp-footer">

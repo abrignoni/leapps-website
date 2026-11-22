@@ -342,7 +342,13 @@
 .lp-video-close { background: none; border: 1px solid var(--border); color: var(--text); cursor: pointer; width: 2rem; height: 2rem; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; }
 .lp-video-close:hover { border-color: var(--gold); color: var(--gold); }
 .lp-video-dialog video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; }
-</style>
+@media (max-width: 480px) {
+  .lp-tool-header { flex-wrap: wrap; }
+  .lp-tool-header-left { min-width: 0; max-width: 100%; }
+  .lp-tool-header h2 { font-size: 1.8rem; overflow-wrap: anywhere; }
+  .lp-about-box { min-width: 0; overflow-wrap: anywhere; }
+}
+  </style>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>
   <script>if (location.hash === '#section-qnxprobe') location.replace('/probes#section-qnxprobe');</script>
   <script type="application/ld+json">

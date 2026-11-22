@@ -64,6 +64,9 @@
 .lp-guide-btn.primary .lp-guide-dl { color: inherit; }
 .lp-guide-card.community { background: var(--off-black); }
 [data-theme="light"] .lp-guide-card.community { background: #EFECE5; }
+@media (max-width: 480px) {
+  .lp-guide-grid { grid-template-columns: minmax(0, 1fr); }
+}
   </style>
   <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('lp-theme') || 'dark');</script>
   <script type="application/ld+json">

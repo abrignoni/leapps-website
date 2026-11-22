@@ -156,6 +156,11 @@
 .lp-share-btn { position: absolute; top: .75rem; right: .75rem; background: none; border: none; color: var(--border); cursor: pointer; font-size: .85rem; padding: 2px 4px; transition: color .2s; line-height: 1; }
 .lp-share-btn:hover { color: var(--gold); }
 .lp-share-btn.copied { color: var(--gold); }
+@media (max-width: 480px) {
+  .lp-table th, .lp-table td { padding-left: .35rem; padding-right: .35rem; }
+  .lp-table th { letter-spacing: .04em; }
+  .lp-td-with-bar { min-width: 72px; }
+}
   </style>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>
   <script type="application/ld+json">
@@ -254,6 +259,7 @@
     <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">GitHub</a>
   </div>
 
+  <main id="main" tabindex="-1">
   <header class="lp-header">
     <div class="lp-header-inner">
       <span class="lp-eyebrow">Project Health</span>
@@ -263,7 +269,7 @@
     </div>
   </header>
 
-  <main id="main" tabindex="-1" class="lp-main">
+  <div class="lp-main">
 
     <!-- GLOBAL METRICS -->
     <div class="lp-metric-grid">
@@ -515,6 +521,7 @@
       </div>
     </div>
 
+  </div>
   </main>
 
     <footer class="lp-footer">

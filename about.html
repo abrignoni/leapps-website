@@ -199,6 +199,10 @@
 .lp-tool-badge-vleapp { background: rgba(var(--color-vleapp-rgb),.15); color: var(--color-vleapp); border: 1px solid rgba(var(--color-vleapp-rgb),.3); }
 .lp-tool-badge-lava { background: rgba(var(--color-lava-rgb),.15); color: var(--color-lava-text); border: 1px solid rgba(var(--color-lava-rgb),.3); }
 .lp-tool-badge-lang { background: rgba(48,58,106,.2); color: #303A6A; border: 1px solid rgba(48,58,106,.4); }
+@media (max-width: 480px) {
+  .lp-principles { grid-template-columns: minmax(0, 1fr); }
+  .lp-principle { min-width: 0; overflow-wrap: anywhere; }
+}
   </style>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>
   <script type="application/ld+json">
@@ -302,6 +306,7 @@
     <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">GitHub</a>
   </div>
 
+  <main id="main" tabindex="-1">
   <header class="lp-header">
     <div class="lp-header-inner">
       <span class="lp-eyebrow">Mission · Origin · Philosophy</span>
@@ -310,7 +315,7 @@
     </div>
   </header>
 
-  <main id="main" tabindex="-1" class="lp-main">
+  <div class="lp-main">
 
     <!-- ORIGIN -->
     <div class="lp-prose-section" id="origin">
@@ -481,7 +486,7 @@
       <h2>Alexis Brignoni</h2>
       <div style="display:flex;align-items:flex-start;gap:1rem;margin-top:1.25rem;">
         <img src="https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/img/alexis-brignoni.jpg" alt="Alexis Brignoni" width="44" height="44" style="border-radius:50%;flex-shrink:0;border:2px solid var(--border);object-fit:cover;" />
-        <div>
+        <div style="min-width:0;overflow-wrap:anywhere;">
           <p style="margin:.0 0 .75rem;">
             Alexis Brignoni is a digital forensics practitioner, researcher, and educator. He built iLEAPP while working as a Special Agent and digital forensic examiner with the FBI, and has continued to develop the LEAPPs suite alongside his work in the field.
           </p>
@@ -587,6 +592,7 @@
       </div>
     </div>
 
+  </div>
   </main>
 
     <footer class="lp-footer">

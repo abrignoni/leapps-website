@@ -107,6 +107,8 @@
   .lp-decision { grid-template-columns: 1fr 1fr; }
   .lp-cta-strip { flex-direction: column; align-items: flex-start; }
   .lp-code { max-width: 100%; }
+  .lp-checklist li { display: block; }
+  .lp-checklist li i { margin-right: .5rem; }
 }
 #lp-root { margin: 0 8px; }
 [data-theme="light"] body, [data-theme="light"] #lp-root { background-color: #F5F2EC !important; }
@@ -279,7 +281,7 @@
       <div class="lp-step-body">
         <div class="lp-step-title">Get Your Extraction</div>
         <p class="lp-step-desc">LEAPPs works on extracted data — it does not acquire from live devices. You need a file system or backup from your preferred acquisition tool.</p>
-        <div class="lp-table-scroll" role="region" aria-label="Tool compatibility, scrollable" tabindex="0">
+        <div class="lp-table-scroll" role="region" aria-label="Tool compatibility">
         <table class="lp-table">
           <thead>
             <tr>
@@ -317,6 +319,22 @@
           </tbody>
         </table>
         </div>
+        <script>
+(function () {
+  var box = document.querySelector('.lp-table-scroll');
+  if (!box) return;
+  function syncTabStop() {
+    if (box.scrollWidth > box.clientWidth + 1) box.tabIndex = 0;
+    else box.removeAttribute('tabindex');
+  }
+  syncTabStop();
+  if (window.ResizeObserver) {
+    var watcher = new ResizeObserver(syncTabStop);
+    watcher.observe(box);
+    watcher.observe(box.querySelector('table'));
+  }
+})();
+</script>
         <p style="font-size:.78rem;color:var(--muted);">Point LEAPPs at the <strong style="color:var(--text);">extraction source</strong>.</p>
       </div>
     </div>
