@@ -749,7 +749,7 @@
               <li>Deleted files recovered from YAFFS2, JFFS2 and UBIFS, and refused rather than filled with zeros when part of a file is already gone</li>
               <li>BitLocker volumes opened with their password, recovery password or startup key (<code>.BEK</code>); without a key, the report names the volume, its protectors and what would open it</li>
               <li>Encrypted APFS volumes opened with their password or personal recovery key; without one, the volume is named as locked, with the password hint it stores, rather than left out of the listing</li>
-              <li>Every container ewfprobe opens, from E01 and AFF4 to <code>.dmg</code>, VHDX and VMDK, read directly, so a walk starts from the file you were handed</li>
+              <li>Every disk image ewfprobe opens, from E01 and AFF4 to <code>.dmg</code>, VHDX and VMDK, read directly, so a walk starts from the file you were handed. Starting with its next release, it also lists and extracts the files of an L01 or AD1. Lx01 is refused</li>
               <li>A window, <code>qnxprobe_gui</code>, that runs the same report and extraction and browses an image's contents without extracting it. The release executables carry it</li>
             </ul>
           </div>
