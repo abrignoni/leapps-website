@@ -337,6 +337,9 @@
     watcher.observe(box.querySelector('table'));
   } else {
     window.addEventListener('resize', syncTabStop);
+    if (window.MutationObserver) {
+      new MutationObserver(syncTabStop).observe(box, { childList: true, subtree: true, characterData: true });
+    }
   }
 })();
 </script>
