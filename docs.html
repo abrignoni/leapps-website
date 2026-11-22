@@ -62,6 +62,7 @@
 .lp-decision-card-tag.gleapp { color: var(--color-gleapp); }
 .lp-decision-card-title { font-family: var(--font-head); font-size: 1rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: .2rem; }
 .lp-decision-card-sub { font-size: .78rem; color: var(--muted); }
+.lp-table-scroll { max-width: 100%; overflow-x: auto; }
 .lp-code { background: #0a0a0a; border: 1px solid var(--border); border-left: 3px solid var(--gold); padding: 1rem 1.25rem; font-family: var(--font-mono); font-size: .8rem; color: #c8c3b8; line-height: 1.8; overflow-x: auto; margin-bottom: .75rem; position: relative; }
 .lp-code-label { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: .4rem; }
 .lp-code span.cm { color: var(--muted); }
@@ -106,7 +107,6 @@
   .lp-decision { grid-template-columns: 1fr 1fr; }
   .lp-cta-strip { flex-direction: column; align-items: flex-start; }
   .lp-code { max-width: 100%; }
-  main table { display: block; max-width: 100%; overflow-x: auto; }
 }
 #lp-root { margin: 0 8px; }
 [data-theme="light"] body, [data-theme="light"] #lp-root { background-color: #F5F2EC !important; }
@@ -279,6 +279,7 @@
       <div class="lp-step-body">
         <div class="lp-step-title">Get Your Extraction</div>
         <p class="lp-step-desc">LEAPPs works on extracted data — it does not acquire from live devices. You need a file system or backup from your preferred acquisition tool.</p>
+        <div class="lp-table-scroll" role="region" aria-label="Tool compatibility, scrollable" tabindex="0">
         <table class="lp-table">
           <thead>
             <tr>
@@ -315,6 +316,7 @@
             </tr>
           </tbody>
         </table>
+        </div>
         <p style="font-size:.78rem;color:var(--muted);">Point LEAPPs at the <strong style="color:var(--text);">extraction source</strong>.</p>
       </div>
     </div>

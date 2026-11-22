@@ -53,6 +53,7 @@
 .rank-card-icon { font-size: 1.4rem; margin-bottom: .6rem; display: block; }
 .rank-card-title { font-family: var(--font-head); font-size: 1.1rem; font-weight: 900; text-transform: uppercase; line-height: 1.1; margin-bottom: .25rem; }
 .rank-card-threshold { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em; color: var(--muted); }
+.lp-table-scroll { max-width: 100%; overflow-x: auto; }
 .lp-table { width: 100%; border-collapse: collapse; }
 .lp-table th { text-align: left; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding: .6rem 1rem; border-bottom: 1px solid var(--border); font-weight: 400; }
 .lp-table th:not(:first-child):not(:nth-child(2)) { text-align: right; }
@@ -124,7 +125,6 @@
   .lp-table th:nth-child(4), .lp-table td:nth-child(4) { display: none; }
   #sb-count-head { white-space: normal; }
   .lp-table th, .lp-table td { padding-left: .4rem; padding-right: .4rem; }
-  .lp-table { display: block; max-width: 100%; overflow-x: auto; }
   .lp-table th { letter-spacing: .04em; }
   .lp-table td { overflow-wrap: anywhere; }
   .pos-num { min-width: 1.5rem; }
@@ -305,6 +305,7 @@
         </div>
       </div>
       <div class="lp-sb-results" id="sb-results"></div>
+      <div class="lp-table-scroll" role="region" aria-label="Contributor leaderboard, scrollable" tabindex="0">
       <table class="lp-table" aria-label="Contributor leaderboard">
         <thead>
           <tr>
@@ -319,6 +320,7 @@
           <tr class="lp-loading-row"><td colspan="5">Fetching pull request data from GitHub…</td></tr>
         </tbody>
       </table>
+      </div>
     </div>
 
   </main>
