@@ -332,6 +332,8 @@
     var watcher = new ResizeObserver(syncTabStop);
     watcher.observe(box);
     watcher.observe(box.querySelector('table'));
+  } else {
+    window.addEventListener('resize', syncTabStop);
   }
 })();
 </script>
