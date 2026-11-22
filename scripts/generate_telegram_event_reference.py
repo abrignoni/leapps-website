@@ -38,8 +38,9 @@ ANDROID_PATH = ('TMessagesProj_AppTests/src/androidTest/kotlin/org/telegram/tgne
 IOS_SOURCE = f'repos/{IOS_REPO}/contents/{IOS_PATH}'
 ANDROID_SOURCE = f'repos/{ANDROID_REPO}/contents/{ANDROID_PATH}'
 
-# Events whose iOS and Android names differ. Reviewed by hand: string matching
-# pairs only 27 of roughly seventy concepts, because the clients name the same
+# Events whose iOS and Android names differ. Reviewed by hand: matching names
+# with capitalization ignored pairs only 27 of roughly seventy concepts, and an
+# exact match pairs none, because the clients name the same
 # event differently (iOS addedMembers is Android ChatAddUser, and so on).
 CROSS_MAP = {
     'addedMembers': 'ChatAddUser',
