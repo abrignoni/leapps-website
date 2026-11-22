@@ -64,7 +64,7 @@
 
     var txt = document.createElement('span');
     txt.style.cssText = 'max-width:620px;';
-    txt.textContent = 'We use Google Analytics to understand site traffic. Privacy-friendly analytics runs either way.';
+    txt.textContent = 'We use Google Analytics only if you accept. Cloudflare\'s cookieless page counts run either way.';
 
     var accept = document.createElement('button');
     accept.type = 'button';

@@ -298,7 +298,7 @@
             </tr>
             <tr>
               <td><span class="lp-pill aleapp">ALEAPP</span></td>
-              <td>Full file system, adb backup, Cellebrite, GrayKey</td>
+              <td>Full file system, adb pull, Cellebrite, GrayKey</td>
               <td>Cellebrite full file system (zip, including CLBX), GrayKey, adb pull</td>
             </tr>
             <tr>
@@ -350,13 +350,13 @@
         <p style="font-size:.85rem;margin-bottom:1rem;padding:.6rem .9rem;background:var(--surface);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;">💡 <strong>Prefer not to run Python scripts directly?</strong> The <a href="https://leapps.org/releases" style="color:var(--gold);text-decoration:none;">Releases page</a> provides pre-built downloads for Windows, macOS and Linux, so no Python installation is needed. For iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP each download is one program: started with no arguments it opens the window, and given arguments it runs as the command line.</p>
 
         <div class="lp-code-label">Fastest install — macOS (Homebrew)</div>
-        <div class="lp-code" style="white-space:pre;"><span class="kw">brew</span> trust leapps-org/leapps      <span class="cm"># Homebrew 6: trust the tap before adding it</span>
+        <div class="lp-code" style="white-space:pre;"><span class="kw">brew</span> trust leapps-org/leapps      <span class="cm"># trust the tap before adding it</span>
 <span class="kw">brew</span> tap leapps-org/leapps
-<span class="kw">brew</span> install --cask ileapp-gui    <span class="cm"># iLEAPP: app and command line together</span>
-<span class="kw">brew</span> install --cask aleapp-gui    <span class="cm"># same for rleapp-gui, vleapp-gui, dleapp-gui</span>
+<span class="kw">brew</span> install --cask ileapp        <span class="cm"># iLEAPP: app and command line together</span>
+<span class="kw">brew</span> install --cask aleapp        <span class="cm"># same for rleapp, vleapp, dleapp</span>
 <span class="kw">brew</span> install --cask gleapp        <span class="cm"># GLEAPP: app and gleapp command</span>
 <span class="kw">brew</span> install --cask lava          <span class="cm"># LAVA</span></div>
-        <p style="font-size:.82rem;color:var(--muted);margin:.5rem 0 1.25rem;">A Homebrew install handles Python and dependencies for you, so skip the pip steps below and run the tool directly. Homebrew 6 will not load a tap outside its own until you trust it; an older Homebrew that has no <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">brew trust</code> command can skip that line. For iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP the cask installs the app and links its command line (<code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">ileapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">aleapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">rleapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">vleapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">dleapp</code>): started with no arguments it opens the window, and given arguments it runs as the command line. Full walkthrough in the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew" style="color:var(--gold);text-decoration:none;">Homebrew guide</a>. On Windows, use the pre-built executables or the manual steps below.</p>
+        <p style="font-size:.82rem;color:var(--muted);margin:.5rem 0 1.25rem;">A Homebrew install handles Python and dependencies for you, so skip the pip steps below and run the tool directly. Current Homebrew may require you to trust the tap first; an older Homebrew that has no <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">brew trust</code> command can skip that line. For iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP the cask installs the app and links its command line (<code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">ileapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">aleapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">rleapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">vleapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">dleapp</code>): started with no arguments it opens the window, and given arguments it runs as the command line. Full walkthrough in the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew" style="color:var(--gold);text-decoration:none;">Homebrew guide</a>. On Windows, use the pre-built executables or the manual steps below.</p>
 
         <div class="lp-tabs" id="run-tabs">
           <div class="lp-tab active" data-tab="gui">GUI</div>
@@ -379,9 +379,12 @@
           <div class="lp-code"><span class="kw">python</span> ileapp.py <span class="kw">-t</span> <span class="st">fs</span> <span class="kw">-i</span> <span class="st">/path/to/extraction</span> <span class="kw">-o</span> <span class="st">/path/to/output</span></div>
           <div class="lp-code-label">General options</div>
           <div class="lp-code" style="white-space:pre;"><span class="kw">-h</span>, <span class="kw">--help</span>                        <span class="cm"># show help message and exit</span>
-<span class="kw">-t</span> <span class="st">{fs,tar,zip,gz,raw}</span>            <span class="cm"># input type: 'fs' for a folder of extracted files,</span>
+<span class="kw">-t</span> <span class="st">{fs,tar,zip,gz,itunes,file,raw}</span>
+                                  <span class="cm"># input type: 'fs' for a folder of extracted files,</span>
                                   <span class="cm">#   'tar', 'zip', or 'gz' for compressed packages,</span>
-                                  <span class="cm">#   'raw' for a disk image</span>
+                                  <span class="cm">#   'itunes' for an iTunes backup folder,</span>
+                                  <span class="cm">#   'file' for a single file, 'raw' for a disk image.</span>
+                                  <span class="cm">#   These are iLEAPP's values. They differ per tool.</span>
 <span class="kw">-o</span>, <span class="kw">--output_path</span> <span class="st">OUTPUT_PATH</span>     <span class="cm"># path to base output folder (must exist)</span>
 <span class="kw">-i</span>, <span class="kw">--input_path</span>  <span class="st">INPUT_PATH</span>      <span class="cm"># path to extraction source</span></div>
           <p style="font-size:.78rem;color:var(--muted);margin-top:.75rem;">Each tool may have additional options. Run <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">python ileapp.py -h</code> (or <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">aleapp.py</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">rleapp.py</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">vleapp.py</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">dleapp.py</code>) to see the full list of options for that tool.</p>
@@ -391,12 +394,12 @@
         <ul class="lp-checklist" style="margin-top:1rem;">
           <li><i class="ti ti-download"></i>Download the latest release from <a href="https://leapps.org/releases" style="color:var(--gold);text-decoration:none;">leapps.org/releases</a></li>
           <li><i class="ti ti-brand-python"></i>Requires Python 3.11 or later — <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:none;">python.org/downloads</a></li>
-          <li><i class="ti ti-folder"></i>Point the tool at the extraction source, not individual files</li>
+          <li><i class="ti ti-folder"></i>Point the tool at the whole extraction unless you are parsing one file with <code>-t file</code> (iLEAPP and VLEAPP)</li>
           <li><i class="ti ti-clock"></i>Runtime depends on extraction size</li>
         </ul>
 
         <div class="lp-code-label" style="margin-top:1.75rem;">Your first run — end to end (macOS)</div>
-        <div class="lp-code" style="white-space:pre;"><span class="kw">brew</span> trust leapps-org/leapps; brew tap leapps-org/leapps &amp;&amp; brew install --cask ileapp-gui
+        <div class="lp-code" style="white-space:pre;"><span class="kw">brew</span> trust leapps-org/leapps; brew tap leapps-org/leapps &amp;&amp; brew install --cask ileapp
 <span class="kw">mkdir</span> <span class="kw">-p</span> <span class="st">~/Cases/reports</span>
 <span class="kw">ileapp</span> <span class="kw">-t</span> <span class="st">zip</span> <span class="kw">-i</span> <span class="st">~/Cases/ios_extraction.zip</span> <span class="kw">-o</span> <span class="st">~/Cases/reports</span>
 <span class="kw">open</span> <span class="st">~/Cases/reports</span>    <span class="cm"># open index.html in the newest folder, or load the LAVA project</span></div>
@@ -441,7 +444,7 @@
         <ul class="lp-checklist" style="margin-bottom:1rem;">
           <li><i class="ti ti-brand-github"></i>Fork the relevant repo on GitHub</li>
           <li><i class="ti ti-file-code"></i>Add a new Python file to the <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">scripts/artifacts/</code> folder following the existing module pattern</li>
-          <li><i class="ti ti-git-pull-request"></i>Open a pull request — the maintainer reviews and merges quickly</li>
+          <li><i class="ti ti-git-pull-request"></i>Open a pull request. A maintainer reviews it</li>
           <li><i class="ti ti-trophy"></i>Your GitHub handle appears on the <a href="https://leapps.org/scoreboard" style="color:var(--gold);text-decoration:none;">Scoreboard</a> once your parser ships</li>
         </ul>
         <p style="font-size:.82rem;color:var(--muted);">Questions? Ask in <a href="https://discord.gg/XaZaknENUR" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:none;">Discord</a> — the community is active and happy to help new contributors get started.</p>
@@ -731,6 +734,6 @@
       }
     })();
   </script>
-  <script src="/analytics.js?v=20261122" defer></script>
+  <script src="/analytics.js?v=20261123" defer></script>
 </body>
 </html>

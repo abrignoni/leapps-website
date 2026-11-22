@@ -302,11 +302,11 @@
         <div class="lp-metric-sub">across all tools</div>
       </div>
       <div class="lp-metric-card">
-        <button class="lp-share-btn" aria-label="Copy stat" onclick="copyMetric(this,'Total commits','m-commits')"><i class="ti ti-copy" aria-hidden="true"></i></button>
+        <button class="lp-share-btn" aria-label="Copy stat" onclick="copyMetric(this,'Commits by linked GitHub accounts, open-source repos','m-commits')"><i class="ti ti-copy" aria-hidden="true"></i></button>
         <i class="ti ti-git-commit lp-metric-icon" aria-hidden="true"></i>
-        <div class="lp-metric-label">Total commits</div>
+        <div class="lp-metric-label">Commits</div>
         <div class="lp-metric-value loading" id="m-commits">—</div>
-        <div class="lp-metric-sub">across all repos</div>
+        <div class="lp-metric-sub">by linked GitHub accounts, open-source repos</div>
       </div>
       <div class="lp-metric-card">
         <button class="lp-share-btn" aria-label="Copy stat" onclick="copyMetric(this,'Unique visitors (14 days)','m-visitors')"><i class="ti ti-copy" aria-hidden="true"></i></button>
@@ -355,7 +355,7 @@
     <div class="lp-section" id="dl-history-section">
       <span class="lp-section-label">Download tracking</span>
       <h2 class="lp-section-title">Download History</h2>
-      <p style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);letter-spacing:.06em;margin-bottom:1.25rem;">Updated 4&times; daily &mdash; 9 PM, 3 AM, 9 AM, 3 PM ET</p>
+      <p style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);letter-spacing:.06em;margin-bottom:1.25rem;">Updated 4&times; daily (01:00, 07:00, 13:00, 19:00 UTC)</p>
       <div id="dl-history-content">
         <div class="lp-dl-pending">Loading download history…</div>
       </div>
@@ -464,7 +464,7 @@
           <i class="ti ti-download lp-metric-icon" aria-hidden="true"></i>
           <div class="lp-metric-label">Probe downloads</div>
           <div class="lp-metric-value loading" id="pm-downloads">&mdash;</div>
-          <div class="lp-metric-sub">all releases, five probes</div>
+          <div class="lp-metric-sub" id="m-probe-scope">all releases, seven probes</div>
         </div>
         <div class="lp-metric-card">
           <i class="ti ti-star lp-metric-icon" aria-hidden="true"></i>
@@ -638,6 +638,29 @@
       { attributes: true, attributeFilter: ['data-theme'] }
     );
 
+    // Reads every contributor page. complete is false when a page failed or the page
+    // limit was reached, so the table can mark the count as partial.
+    async function fetchContributorPages(repo) {
+      const contributors = [];
+      let loaded = false;
+      for (let p = 1; p <= 10; p++) {
+        const res = await fetch(`https://leapps-api.4n6-198.workers.dev/repos/${repo}/contributors?per_page=100&page=${p}`).catch(() => null);
+        if (!res || !res.ok) return { contributors, loaded, complete: false };
+        const data = await res.json().catch(() => null);
+        if (!Array.isArray(data)) return { contributors, loaded, complete: false };
+        loaded = true;
+        contributors.push(...data);
+        if (data.length < 100) return { contributors, loaded, complete: true };
+      }
+      return { contributors, loaded, complete: false };
+    }
+
+    // No count when nothing loaded, and a + when only part of the list loaded.
+    function contribCell(r, value) {
+      if (!r.openSource || !r.contribLoaded) return '—';
+      return fmt(value) + (r.contribComplete ? '' : '+');
+    }
+
     async function fetchStats() {
       try {
         const results = await Promise.all(tools.map(async t => {
@@ -651,12 +674,14 @@
           const downloads = Array.isArray(releases) ? releases.reduce((sum, r) =>
             sum + (r.assets || []).reduce((s, a) => s + (a.download_count || 0), 0), 0) : 0;
 
-          let commits = 0, contributors = 0;
+          let commits = 0, contributors = 0, contribLoaded = false, contribComplete = false;
           if (t.openSource) {
-            const contrRes = await fetch(`https://leapps-api.4n6-198.workers.dev/repos/${t.repo}/contributors?per_page=100&page=1`);
-            const contribs = contrRes.ok ? await contrRes.json().catch(() => []) : [];
-            commits = Array.isArray(contribs) ? contribs.reduce((s, c) => s + (c.contributions || 0), 0) : 0;
-            contributors = Array.isArray(contribs) ? contribs.filter(c => c.type !== 'Bot' && !c.login.toLowerCase().includes('bot')).length : 0;
+            const pages = await fetchContributorPages(t.repo);
+            const contribs = pages.contributors;
+            contribLoaded = pages.loaded;
+            contribComplete = pages.complete;
+            commits = contribs.reduce((s, c) => s + (c.contributions || 0), 0);
+            contributors = contribs.filter(c => c.type !== 'Bot' && !c.login.toLowerCase().includes('bot') && c.login !== 'actions-user').length;
           }
 
           return {
@@ -665,7 +690,7 @@
             forks: repo.forks_count || 0,
             openIssues: repo.open_issues_count || 0,
             releases: Array.isArray(releases) ? releases.length : 0,
-            downloads, commits, contributors
+            downloads, commits, contributors, contribLoaded, contribComplete
           };
         }));
 
@@ -697,7 +722,9 @@
         document.getElementById('m-contributors').classList.remove('loading');
         document.getElementById('m-releases').textContent = fmt(totRel);
         document.getElementById('m-releases').classList.remove('loading');
-        document.getElementById('m-commits').textContent = fmt(totCom);
+        document.getElementById('m-commits').textContent = results.some(r => r.openSource && r.contribLoaded)
+          ? fmt(totCom) + (results.some(r => r.openSource && !r.contribComplete) ? '+' : '')
+          : '—';
         document.getElementById('m-commits').classList.remove('loading');
 
         // Updated timestamp
@@ -732,9 +759,9 @@
             </td>
             <td>${fmt(r.forks)}</td>
             <td>${fmt(r.openIssues)}</td>
-            <td>${r.openSource ? fmt(r.contributors) + '+' : '—'}</td>
+            <td>${contribCell(r, r.contributors)}</td>
             <td>${fmt(r.releases)}</td>
-            <td>${r.openSource ? fmt(r.commits) : '—'}</td>
+            <td>${contribCell(r, r.commits)}</td>
           </tr>
           <tr class="lp-drill" id="drill-${toolKey(r.name)}" hidden><td colspan="8"></td></tr>`).join('');
 
@@ -959,6 +986,8 @@
       { key: 'pstprobe', name: 'pstprobe', what: 'Outlook PST and OST files', repo: 'abrignoni/pstprobe' },
     ];
     let probeChart = null;
+    document.getElementById('m-probe-scope').textContent = `all releases, ${PROBES.length} probes`;
+
     function probeColor() {
       return getComputedStyle(document.documentElement).getPropertyValue('--color-probes').trim() || '#8FA9BF';
     }
@@ -1602,6 +1631,6 @@
       }
     })();
   </script>
-  <script src="/analytics.js?v=20261122" defer></script>
+  <script src="/analytics.js?v=20261123" defer></script>
 </body>
 </html>
