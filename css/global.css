@@ -415,3 +415,5 @@ main:focus { outline: none; }
 /* A selected control needs a visible edge, not only a change of hue. */
 [data-theme="light"] :is(.lp-filter-btn.active, .lp-os-btn.active, .lp-sb-tool-btn.active, .lp-tool-btn.active, .lp-dl-toggle button.active, .lp-picker button.active) { border-color: currentColor !important; }
 [data-theme="light"] :is(.lp-tab.active, .lp-page-nav-inner a.active) { border-bottom-color: currentColor !important; }
+[data-theme="light"] .lp-show-more:hover { opacity: 1; text-decoration: underline; }
+[data-theme="light"] .lp-footer-col a[aria-current="page"] { text-decoration: underline; }
