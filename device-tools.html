@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261122" />
+  <link rel="stylesheet" href="/css/global.css?v=20261123" />
   <style>
 .lp-page-header {
       padding: 3.5rem 2rem 3rem; border-bottom: 1px solid var(--border);
@@ -47,9 +47,9 @@
       pointer-events: none;
     }
 .lp-page-header-inner { max-width: 1100px; margin: 0 auto; }
-.lp-eyebrow { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
+.lp-eyebrow { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-text); margin-bottom: 1rem; display: block; }
 .lp-page-header h1 { font-family: var(--font-head); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; text-transform: uppercase; line-height: .95; margin-bottom: 1rem; }
-.lp-page-header h1 span { color: var(--gold); }
+.lp-page-header h1 span { color: var(--gold-text); }
 .lp-page-header p { color: var(--muted); font-size: 1rem; max-width: 520px; line-height: 1.7; margin-bottom: 2rem; }
 .lp-tool-nav { display: flex; gap: .5rem; flex-wrap: wrap; }
 .lp-tool-pill {
@@ -66,7 +66,7 @@
 .lp-video-dialog::backdrop { background: rgba(0,0,0,.75); }
 .lp-video-dialog-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .5rem .5rem .5rem 1rem; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .lp-video-close { background: none; border: 1px solid var(--border); color: var(--text); cursor: pointer; width: 2rem; height: 2rem; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; }
-.lp-video-close:hover { border-color: var(--gold); color: var(--gold); }
+.lp-video-close:hover { border-color: var(--gold); color: var(--gold-text); }
 .lp-video-dialog video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; }
 .lp-tool-pill[data-tool] { border-color: rgba(var(--accent-rgb, 245,192,32),.4); color: var(--accent-ink, var(--gold)); }
 .lp-tool-pill:hover { border-color: var(--accent, var(--gold)); color: var(--accent-ink, var(--gold)); background: rgba(var(--accent-rgb, 245,192,32),.06); }
@@ -213,7 +213,7 @@
       display: inline-flex; align-items: center; gap: .4rem;
       font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em;
       padding: .35rem .75rem; border: 1px solid var(--border);
-      color: var(--gold); background: rgba(245,192,32,.08);
+      color: var(--gold-text); background: rgba(245,192,32,.08);
       white-space: nowrap;
     }
 .lp-star-badge i { font-size: .85rem; }
@@ -858,7 +858,7 @@
         const data = (await res.json()).filter(r => !r.draft);
         renderReleases(tool.id, data, tool);
       } catch (e) {
-        container.innerHTML = `<div class="lp-error">Could not load releases. <a href="https://github.com/${tool.repo}/releases" target="_blank" rel="noopener noreferrer" style="color:var(--gold)">View on GitHub →</a></div>`;
+        container.innerHTML = `<div class="lp-error">Could not load releases. <a href="https://github.com/${tool.repo}/releases" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text)">View on GitHub →</a></div>`;
       }
     }
 
@@ -1063,7 +1063,7 @@
       document.querySelectorAll('.lp-footer-col a').forEach(function(a) {
         var href = a.getAttribute('href') || '';
         var ap = href.replace(/https:\/\/leapps\.org/, '').replace(/\/+$/, '') || '/';
-        if (ap === path) { a.style.color = '#F5C020'; }
+        if (ap === path) { a.style.color = 'var(--gold-text)'; }
       });
     })();
   </script>

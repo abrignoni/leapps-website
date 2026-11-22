@@ -34,14 +34,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261122" />
+  <link rel="stylesheet" href="/css/global.css?v=20261123" />
   <style>
 .lp-header { padding: 3.5rem 2rem 3rem; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
 .lp-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(245,192,32,.06) 0%, transparent 70%); pointer-events: none; }
 .lp-header-inner { max-width: 1100px; margin: 0 auto; }
-.lp-eyebrow { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
+.lp-eyebrow { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-text); margin-bottom: 1rem; display: block; }
 .lp-header h1 { font-family: var(--font-head); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; text-transform: uppercase; line-height: .95; margin-bottom: 1rem; }
-.lp-header h1 span { color: var(--gold); }
+.lp-header h1 span { color: var(--gold-text); }
 .lp-header p { color: var(--muted); font-size: 1rem; max-width: 520px; line-height: 1.7; }
 .lp-main { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
 .lp-res-section { margin-bottom: 3rem; }
@@ -51,7 +51,7 @@
       font-size: .75rem;
       letter-spacing: .2em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-text);
       margin-bottom: 1.25rem;
       display: flex;
       align-items: center;
@@ -110,7 +110,7 @@
       align-items: center;
       gap: .4rem;
     }
-.lp-res-card-type i { font-size: .8rem; color: var(--gold); }
+.lp-res-card-type i { font-size: .8rem; color: var(--gold-text); }
 .lp-res-card-title {
       font-family: var(--font-head);
       font-size: 1.2rem;
@@ -136,7 +136,7 @@
       gap: .3rem;
       transition: color .2s;
     }
-.lp-res-card:hover .lp-res-card-link { color: var(--gold); }
+.lp-res-card:hover .lp-res-card-link { color: var(--gold-text); }
 .lp-res-card-icon {
       flex-shrink: 0;
       width: 80px;
@@ -147,7 +147,7 @@
       align-items: center;
       justify-content: center;
     }
-.lp-res-card-icon i { font-size: 2rem; color: var(--gold); }
+.lp-res-card-icon i { font-size: 2rem; color: var(--gold-text); }
 .lp-page-nav {
       border-bottom: 1px solid var(--border);
       background: var(--surface);
@@ -178,7 +178,7 @@
       transition: color .2s, border-color .2s;
     }
 .lp-page-nav-inner a:hover { color: var(--text); }
-.lp-page-nav-inner a.active { color: var(--gold); border-bottom-color: var(--gold); }
+.lp-page-nav-inner a.active { color: var(--gold-text); border-bottom-color: var(--gold); }
 .lp-res-card-meta {
       font-family: var(--font-mono);
       font-size: .75rem;
@@ -252,7 +252,7 @@
       font-size: .75rem;
       letter-spacing: .15em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-text);
     }
 .lp-mention-name {
       font-family: var(--font-head);
@@ -854,7 +854,7 @@
       document.querySelectorAll('.lp-footer-col a').forEach(function(a) {
         var href = a.getAttribute('href') || '';
         var ap = href.replace(/https:\/\/leapps\.org/, '').replace(/\/+$/, '') || '/';
-        if (ap === path) { a.style.color = '#F5C020'; }
+        if (ap === path) { a.style.color = 'var(--gold-text)'; }
       });
     })();
   </script>

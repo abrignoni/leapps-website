@@ -33,21 +33,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261122" />
+  <link rel="stylesheet" href="/css/global.css?v=20261123" />
   <style>
 .lp-header { padding: 3.5rem 2rem 3rem; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
 .lp-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(245,192,32,.06) 0%, transparent 70%); pointer-events: none; }
 .lp-header-inner { max-width: 1100px; margin: 0 auto; }
-.lp-eyebrow { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
+.lp-eyebrow { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-text); margin-bottom: 1rem; display: block; }
 .lp-header h1 { font-family: var(--font-head); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; text-transform: uppercase; line-height: .95; margin-bottom: 1rem; }
-.lp-header h1 span { color: var(--gold); }
+.lp-header h1 span { color: var(--gold-text); }
 .lp-header p { color: var(--muted); font-size: 1rem; max-width: 520px; line-height: 1.7; }
 .lp-updated { font-family: var(--font-mono); font-size: .75rem; color: var(--muted); margin-top: 1rem; letter-spacing: .08em; }
 .lp-main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
 .lp-metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 3rem; }
 .lp-metric-card { background: var(--off-black); padding: 1.5rem; position: relative; transition: background .2s; }
 .lp-metric-card:hover { background: var(--surface); }
-.lp-metric-icon { font-size: 1.1rem; color: var(--gold); margin-bottom: .75rem; display: block; }
+.lp-metric-icon { font-size: 1.1rem; color: var(--gold-text); margin-bottom: .75rem; display: block; }
 .lp-metric-label { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: .5rem; line-height: 1.5; min-height: 3em; }  /* two lines, so every tile's number sits on the same line */
 .lp-metric-value { font-family: var(--font-head); font-size: clamp(1.7rem, 2.6vw, 2.2rem); font-weight: 900; color: var(--text); line-height: 1; }
 .lp-metric-value.loading { font-size: 1.5rem; color: transparent !important; background: linear-gradient(90deg, var(--border) 25%, var(--surface) 50%, var(--border) 75%); background-size: 800px 100%; animation: shimmer 1.5s infinite; border-radius: 2px; min-width: 80px; display: inline-block; }
@@ -59,14 +59,14 @@
 /* Probes: counted on their own, in the probes' family color, never in the totals above. */
 .lp-probes { --gold: var(--color-probes); padding-top: 2.5rem; border-top: 1px solid var(--border); }
 .lp-probes-note { font-size: .85rem; color: var(--muted); line-height: 1.6; max-width: 640px; margin-bottom: 1.5rem; }
-.lp-probes-note a { color: var(--color-probes); text-decoration: none; }
+.lp-probes-note a { color: var(--color-probes-text); text-decoration: none; }
 .lp-probes .lp-metric-grid { margin-bottom: 1.5rem; }
 .lp-probes .lp-chart-card { border: 1px solid var(--border); margin-bottom: 1.5rem; }
 .lp-probes-history { margin-top: 1.5rem; }
 .lp-probes .lp-dl-tool-name { width: 150px; }
 @media (max-width: 640px) { .lp-probes .lp-dl-tool-name { width: 120px; font-size: .75rem; } }
 .lp-probes-history h3 { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: .75rem; font-weight: 400; }
-.lp-section-label { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: .75rem; display: block; }
+.lp-section-label { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-text); margin-bottom: .75rem; display: block; }
 .lp-section-title { font-family: var(--font-head); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; text-transform: uppercase; margin-bottom: 1.5rem; color: var(--text); }
 .lp-chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 3rem; }
 .lp-chart-card { background: var(--off-black); padding: 1.5rem; }
@@ -97,7 +97,7 @@
 .lp-dl-chart-title { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .lp-dl-toggle { display: flex; }
 .lp-dl-toggle button { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; padding: .2rem .65rem; border: 1px solid var(--border); color: var(--muted); background: none; cursor: pointer; transition: color .2s, border-color .2s; }
-.lp-dl-toggle button.active { color: var(--gold); border-color: rgba(245,192,32,.4); }
+.lp-dl-toggle button.active { color: var(--gold-text); border-color: rgba(245,192,32,.4); }
 .lp-dl-pending { font-family: var(--font-mono); font-size: .75rem; color: var(--muted); padding: 2rem; text-align: center; border: 1px solid var(--border); }
 .lp-table { width: 100%; border-collapse: collapse; }
 .lp-table th { text-align: left; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding: .6rem 1rem; border-bottom: 1px solid var(--border); font-weight: 400; }
@@ -140,11 +140,11 @@
 .lp-fresh { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em; color: var(--muted); margin-top: .75rem; }
 .lp-picker { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: 1.25rem; }
 .lp-picker button { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; padding: .3rem .7rem; border: 1px solid var(--border); color: var(--muted); background: none; cursor: pointer; transition: color .2s, border-color .2s; }
-.lp-picker button.active { color: var(--gold); border-color: rgba(245,192,32,.45); }
+.lp-picker button.active { color: var(--gold-text); border-color: rgba(245,192,32,.45); }
 .lp-picker-label { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); align-self: center; margin-right: .35rem; }
 .lp-ref-table td:first-child { font-family: var(--font-mono); font-size: .78rem; word-break: break-all; }
 .lp-drill-btn { background: none; border: none; color: var(--muted); font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; padding: .25rem 0 0; }
-.lp-drill-btn:hover, .lp-drill-btn[aria-expanded="true"] { color: var(--gold); }
+.lp-drill-btn:hover, .lp-drill-btn[aria-expanded="true"] { color: var(--gold-text); }
 .lp-table tr.lp-drill td { text-align: left !important; font-family: var(--font-body, inherit); background: var(--off-black); padding: 1.25rem 1rem 1.5rem; }
 .lp-table tr.lp-drill:hover td { background: var(--off-black); }
 .lp-drill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
@@ -154,8 +154,8 @@
 .lp-drill-list li span:first-child { color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .lp-drill-list li span:last-child { color: var(--muted); flex-shrink: 0; }
 .lp-share-btn { position: absolute; top: .75rem; right: .75rem; background: none; border: none; color: var(--border); cursor: pointer; font-size: .85rem; padding: 2px 4px; transition: color .2s; line-height: 1; }
-.lp-share-btn:hover { color: var(--gold); }
-.lp-share-btn.copied { color: var(--gold); }
+.lp-share-btn:hover { color: var(--gold-text); }
+.lp-share-btn.copied { color: var(--gold-text); }
 @media (max-width: 480px) {
   .lp-table th, .lp-table td { padding-left: .35rem; padding-right: .35rem; }
   .lp-table th { letter-spacing: .04em; }
@@ -767,7 +767,7 @@
 
       } catch(e) {
         document.getElementById('lp-updated').textContent = 'Could not load data. Please try again later.';
-        document.getElementById('stats-tbody').innerHTML = '<tr class="lp-loading-row"><td colspan="8">Could not load GitHub data. <a href="https://github.com/abrignoni" style="color:var(--gold)">View on GitHub →</a></td></tr>';
+        document.getElementById('stats-tbody').innerHTML = '<tr class="lp-loading-row"><td colspan="8">Could not load GitHub data. <a href="https://github.com/abrignoni" style="color: var(--gold-text)">View on GitHub →</a></td></tr>';
       }
     }
 
@@ -1038,7 +1038,7 @@
             <td>${fmt(r.releases)}</td>
           </tr>`).join('');
       } catch (e) {
-        tbody.innerHTML = '<tr class="lp-loading-row"><td colspan="6">Could not load the probe figures. <a href="/probes" style="color:var(--color-probes)">See the probes</a></td></tr>';
+        tbody.innerHTML = '<tr class="lp-loading-row"><td colspan="6">Could not load the probe figures. <a href="/probes" style="color: var(--color-probes-text)">See the probes</a></td></tr>';
       }
     }
 
@@ -1458,7 +1458,7 @@
       document.querySelectorAll('.lp-footer-col a').forEach(function(a) {
         var href = a.getAttribute('href') || '';
         var ap = href.replace(/https:\/\/leapps\.org/, '').replace(/\/+$/, '') || '/';
-        if (ap === path) { a.style.color = '#F5C020'; }
+        if (ap === path) { a.style.color = 'var(--gold-text)'; }
       });
     })();
   </script>

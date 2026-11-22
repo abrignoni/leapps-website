@@ -33,24 +33,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261122" />
+  <link rel="stylesheet" href="/css/global.css?v=20261123" />
   <style>
 .lp-header { padding: 3.5rem 2rem 3rem; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
 .lp-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(245,192,32,.06) 0%, transparent 70%); pointer-events: none; }
 .lp-header-inner { max-width: 1100px; margin: 0 auto; }
-.lp-eyebrow { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
+.lp-eyebrow { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-text); margin-bottom: 1rem; display: block; }
 .lp-header h1 { font-family: var(--font-head); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; text-transform: uppercase; line-height: .95; margin-bottom: 1rem; }
-.lp-header h1 span { color: var(--gold); }
+.lp-header h1 span { color: var(--gold-text); }
 .lp-header p { color: var(--muted); font-size: 1rem; max-width: 520px; line-height: 1.7; }
 .lp-main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem; }
 .lp-artifact-stats { display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
 .lp-recent-strip { display: none; margin: -0.5rem 0 2rem; padding: 1rem 1.25rem; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; }
-.lp-recent-head { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; display: flex; align-items: center; gap: .45rem; }
+.lp-recent-head { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-text); margin-bottom: .6rem; display: flex; align-items: center; gap: .45rem; }
 .lp-recent-chips { display: flex; gap: .5rem; flex-wrap: wrap; }
 .lp-recent-chip { display: inline-flex; align-items: baseline; gap: .45rem; font-size: .8rem; color: var(--text); text-decoration: none; border: 1px solid var(--border); padding: .3rem .65rem; border-radius: 4px; transition: border-color .2s, color .2s; }
-.lp-recent-chip:hover { border-color: var(--gold); color: var(--gold); }
+.lp-recent-chip:hover { border-color: var(--gold); color: var(--gold-text); }
 .lp-recent-chip .t { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .05em; color: var(--muted); }
-.lp-artifact-stat-num { font-family: var(--font-head); font-size: 1.5rem; font-weight: 900; color: var(--gold); transition: color 0.3s ease; }
+.lp-artifact-stat-num { font-family: var(--font-head); font-size: 1.5rem; font-weight: 900; color: var(--gold-text); transition: color 0.3s ease; }
 .lp-artifact-stat-lbl { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: .1rem; }
 .lp-stat-filtered { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: .75rem; display: none; }
 .lp-controls { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 1.25rem; }
@@ -71,18 +71,18 @@
 .lp-tool-filter { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
 .lp-tool-btn { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; padding: .35rem .85rem; border: 1px solid var(--border); color: var(--muted); background: none; cursor: pointer; transition: border-color .2s, color .2s, background .2s; }
 .lp-tool-btn:hover { border-color: #444; color: var(--text); }
-.lp-tool-btn.active { border-color: var(--gold); color: var(--gold); background: rgba(245,192,32,.08); }
-.lp-tool-btn[data-tool="ileapp"].active { border-color: var(--color-ileapp); color: var(--color-ileapp); background: rgba(var(--color-ileapp-rgb),.08); }
-.lp-tool-btn[data-tool="aleapp"].active { border-color: var(--color-aleapp); color: var(--color-aleapp); background: rgba(var(--color-aleapp-rgb),.08); }
-.lp-tool-btn[data-tool="rleapp"].active { border-color: var(--color-rleapp); color: var(--color-rleapp); background: rgba(var(--color-rleapp-rgb),.08); }
-.lp-tool-btn[data-tool="vleapp"].active { border-color: var(--color-vleapp); color: var(--color-vleapp); background: rgba(var(--color-vleapp-rgb),.08); }
-.lp-tool-btn[data-tool="dleapp"].active { border-color: var(--color-dleapp); color: var(--color-dleapp); background: rgba(var(--color-dleapp-rgb),.08); }
+.lp-tool-btn.active { border-color: var(--gold); color: var(--gold-text); background: rgba(245,192,32,.08); }
+.lp-tool-btn[data-tool="ileapp"].active { border-color: var(--color-ileapp); color: var(--color-ileapp-text); background: rgba(var(--color-ileapp-rgb),.08); }
+.lp-tool-btn[data-tool="aleapp"].active { border-color: var(--color-aleapp); color: var(--color-aleapp-text); background: rgba(var(--color-aleapp-rgb),.08); }
+.lp-tool-btn[data-tool="rleapp"].active { border-color: var(--color-rleapp); color: var(--color-rleapp-text); background: rgba(var(--color-rleapp-rgb),.08); }
+.lp-tool-btn[data-tool="vleapp"].active { border-color: var(--color-vleapp); color: var(--color-vleapp-text); background: rgba(var(--color-vleapp-rgb),.08); }
+.lp-tool-btn[data-tool="dleapp"].active { border-color: var(--color-dleapp); color: var(--color-dleapp-text); background: rgba(var(--color-dleapp-rgb),.08); }
 /* Operating system filter: shown only while DLEAPP is the selected tool, because only DLEAPP
    artifacts declare a `platforms` value (Windows, macOS, Linux, Device). */
 .lp-os-filter { display: none; gap: .4rem; flex-wrap: wrap; align-items: center; margin: -.75rem 0 1.5rem; }
 .lp-os-filter.visible { display: flex; }
 .lp-os-label { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-right: .25rem; }
-.lp-os-btn.active { border-color: var(--color-dleapp); color: var(--color-dleapp); background: rgba(var(--color-dleapp-rgb),.08); }
+.lp-os-btn.active { border-color: var(--color-dleapp); color: var(--color-dleapp-text); background: rgba(var(--color-dleapp-rgb),.08); }
 .lp-os-btn .n { opacity: .6; margin-left: .35rem; }
 .lp-os-btn[hidden] { display: none; }
 .lp-platforms { display: flex; flex-wrap: wrap; gap: .25rem; }
@@ -91,11 +91,11 @@
 .lp-os-none { font-family: var(--font-mono); font-size: .75rem; color: var(--muted); }
 .lp-platform { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em; color: var(--muted); border: 1px solid var(--border); padding: .1rem .35rem; white-space: nowrap; }
 .lp-results-meta { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em; color: var(--muted); margin-bottom: 1rem; min-height: 1.2rem; }
-.lp-results-meta span { color: var(--gold); }
+.lp-results-meta span { color: var(--gold-text); }
 .lp-progress-bar-wrap { height: 2px; background: var(--border); margin-bottom: 1.5rem; overflow: hidden; }
 .lp-progress-bar { height: 100%; background: var(--gold); width: 0%; transition: width .3s ease; }
 .lp-progress-label { font-family: var(--font-mono); font-size: .75rem; color: var(--muted); margin-bottom: .75rem; letter-spacing: .06em; }
-.lp-progress-label span { color: var(--gold); }
+.lp-progress-label span { color: var(--gold-text); }
 .lp-table-wrap { overflow-x: auto; }
 .lp-table { width: 100%; border-collapse: collapse; }
 .lp-table th { text-align: left; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding: .6rem 1rem; border-bottom: 1px solid var(--border); font-weight: 400; white-space: nowrap; }
@@ -108,13 +108,13 @@
 .lp-art-author { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .05em; color: var(--muted); margin-top: .3rem; display: flex; align-items: center; gap: .3rem; opacity: .85; }
 .lp-art-author .ti { font-size: .8rem; }
 .lp-art-author a { color: inherit; text-decoration: underline; text-decoration-color: rgba(255,255,255,.25); text-underline-offset: 2px; transition: color .2s; }
-.lp-art-author a:hover { color: var(--gold); text-decoration-color: var(--gold); }
+.lp-art-author a:hover { color: var(--gold-text); text-decoration-color: var(--gold); }
 .lp-tool-tag { display: inline-block; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; padding: .2rem .5rem; border: 1px solid; white-space: nowrap; }
-.lp-tool-tag.ileapp { color: var(--color-ileapp); border-color: rgba(var(--color-ileapp-rgb),.3); }
-.lp-tool-tag.aleapp { color: var(--color-aleapp); border-color: rgba(var(--color-aleapp-rgb),.3); }
-.lp-tool-tag.rleapp { color: var(--color-rleapp); border-color: rgba(var(--color-rleapp-rgb),.3); }
-.lp-tool-tag.vleapp { color: var(--color-vleapp); border-color: rgba(var(--color-vleapp-rgb),.3); }
-.lp-tool-tag.dleapp { color: var(--color-dleapp); border-color: rgba(var(--color-dleapp-rgb),.3); }
+.lp-tool-tag.ileapp { color: var(--color-ileapp-text); border-color: rgba(var(--color-ileapp-rgb),.3); }
+.lp-tool-tag.aleapp { color: var(--color-aleapp-text); border-color: rgba(var(--color-aleapp-rgb),.3); }
+.lp-tool-tag.rleapp { color: var(--color-rleapp-text); border-color: rgba(var(--color-rleapp-rgb),.3); }
+.lp-tool-tag.vleapp { color: var(--color-vleapp-text); border-color: rgba(var(--color-vleapp-rgb),.3); }
+.lp-tool-tag.dleapp { color: var(--color-dleapp-text); border-color: rgba(var(--color-dleapp-rgb),.3); }
 .lp-output-types { display: flex; gap: .3rem; flex-wrap: wrap; }
 .lp-output-badge { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; padding: .1rem .4rem; border: 1px solid var(--border); color: var(--muted); white-space: nowrap; }
 .lp-output-badge.lava { border-color: rgba(var(--color-lava-rgb),.3); color: var(--color-lava-text); }
@@ -125,8 +125,8 @@
 .lp-output-badge.kml { border-color: rgba(232,118,45,.35); color: #E8762D; }
 .lp-output-badge.none { border-style: dashed; color: var(--muted); }
 .lp-th-sort { cursor: pointer; user-select: none; transition: color .15s; }
-.lp-th-sort:hover { color: var(--gold); }
-.lp-th-sort.sorted { color: var(--gold); }
+.lp-th-sort:hover { color: var(--gold-text); }
+.lp-th-sort.sorted { color: var(--gold-text); }
 .lp-sort-ind { font-size: .95rem; line-height: 1; vertical-align: -.16em; margin-left: .2rem; }
 .lp-th-sort:not(.sorted) .lp-sort-ind { opacity: .5; }
 .lp-th-sort:hover .lp-sort-ind { opacity: 1; }
@@ -136,7 +136,7 @@
 .lp-paths-toggle { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; color: var(--muted); cursor: pointer; background: none; border: none; padding: 0; display: inline-flex; align-items: center; gap: .3rem; transition: color .2s; margin-top: .35rem; }
 .lp-paths-toggle + .lp-paths-list + .lp-paths-toggle,
     .lp-paths-toggle + .lp-sample-list + .lp-paths-toggle { margin-left: 1rem; } /* breathing room between the paths and samples toggles */
-.lp-paths-toggle:hover { color: var(--gold); }
+.lp-paths-toggle:hover { color: var(--gold-text); }
 .lp-paths-list { display: none; margin-top: .4rem; }
 .lp-paths-list.open { display: block; }
 .lp-path-item { font-family: var(--font-mono); font-size: .75rem; color: var(--muted); padding: .15rem 0; word-break: break-all; }
@@ -872,7 +872,7 @@
         });
       }
 
-      const statColor = activeTool === 'all' ? 'var(--gold)' : `var(--color-${activeTool})`;
+      const statColor = activeTool === 'all' ? 'var(--gold-text)' : `var(--color-${activeTool}-text)`;
 
       const meta = document.getElementById('results-meta');
       meta.innerHTML = `Showing <span style="color: ${statColor}; transition: color .3s;">${visible}</span> of <span style="color: ${statColor}; transition: color .3s;">${allArtifacts.length}</span> artifacts`;
@@ -1009,14 +1009,14 @@
         errContainer.insertAdjacentHTML('beforeend', toolErrors.map(e =>
           `<div class="lp-tool-error"><i class="ti ti-alert-circle"></i>
            Could not load <strong>${escHtml(e.tool.name)}</strong> artifacts: ${escHtml(e.reason)}.
-           <a href="https://github.com/${escHtml(e.tool.repo)}/tree/main/${ARTIFACTS_PATH}" target="_blank" rel="noopener noreferrer" style="color:var(--gold);margin-left:.5rem">View on GitHub →</a></div>`
+           <a href="https://github.com/${escHtml(e.tool.repo)}/tree/main/${ARTIFACTS_PATH}" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text);margin-left:.5rem">View on GitHub →</a></div>`
         ).join(''));
       }
 
       if (allArtifacts.length === 0) {
         document.getElementById('progress-wrap').style.display = 'none';
         document.getElementById('artifacts-tbody').innerHTML =
-          `<tr><td colspan="5" style="text-align:center;padding:3rem;font-family:var(--font-mono);font-size:.8rem;color:var(--muted)">No artifacts loaded. <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" style="color:var(--gold)">View on GitHub →</a></td></tr>`;
+          `<tr><td colspan="5" style="text-align:center;padding:3rem;font-family:var(--font-mono);font-size:.8rem;color:var(--muted)">No artifacts loaded. <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text)">View on GitHub →</a></td></tr>`;
         return;
       }
 
@@ -1166,7 +1166,7 @@
       document.querySelectorAll('.lp-footer-col a').forEach(function(a) {
         var href = a.getAttribute('href') || '';
         var ap = href.replace(/https:\/\/leapps\.org/, '').replace(/\/+$/, '') || '/';
-        if (ap === path) { a.style.color = '#F5C020'; }
+        if (ap === path) { a.style.color = 'var(--gold-text)'; }
       });
     })();
   </script>

@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261122" />
+  <link rel="stylesheet" href="/css/global.css?v=20261123" />
   <style>
 img { max-width: 100%; display: block; }
 .lp-hero {
@@ -64,7 +64,7 @@ img { max-width: 100%; display: block; }
       font-size: .75rem;
       letter-spacing: .2em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-text);
       margin-bottom: 1.25rem;
     }
 .lp-hero h1 {
@@ -77,7 +77,7 @@ img { max-width: 100%; display: block; }
       text-transform: uppercase;
       color: var(--text);
     }
-.lp-hero h1 span { color: var(--gold); }
+.lp-hero h1 span { color: var(--gold-text); }
 .lp-hero-sub {
       max-width: 480px;
       color: var(--muted);
@@ -117,7 +117,7 @@ img { max-width: 100%; display: block; }
       transition: border-color .2s, color .2s;
       cursor: pointer;
     }
-.lp-btn-outline:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
+.lp-btn-outline:hover { border-color: var(--gold) !important; color: var(--gold-text) !important; }
 .lp-hero-logo img {
       width: 320px;
       height: auto;
@@ -137,7 +137,7 @@ img { max-width: 100%; display: block; }
       font-family: var(--font-head);
       font-size: 2rem;
       font-weight: 900;
-      color: var(--gold);
+      color: var(--gold-text);
     }
 .lp-stat-lbl {
       font-size: .75rem;
@@ -155,7 +155,7 @@ img { max-width: 100%; display: block; }
       font-size: .75rem;
       letter-spacing: .2em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-text);
       margin-bottom: .75rem;
       display: block;
     }
@@ -190,7 +190,7 @@ img { max-width: 100%; display: block; }
       white-space: nowrap;
       transition: color .2s;
     }
-.lp-blog-alllink:hover { color: var(--gold); }
+.lp-blog-alllink:hover { color: var(--gold-text); }
 .lp-blog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -217,7 +217,7 @@ img { max-width: 100%; display: block; }
       align-items: center;
       gap: .6rem;
     }
-.lp-blog-card-meta .date { color: var(--gold); }
+.lp-blog-card-meta .date { color: var(--gold-text); }
 .lp-blog-card h3 {
       font-family: var(--font-head);
       font-size: 1.2rem;
@@ -246,7 +246,7 @@ img { max-width: 100%; display: block; }
       gap: .3rem;
       transition: color .2s;
     }
-.lp-blog-card:hover .lp-blog-card-more { color: var(--gold); }
+.lp-blog-card:hover .lp-blog-card-more { color: var(--gold-text); }
 .lp-tools-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -276,7 +276,7 @@ img { max-width: 100%; display: block; }
       font-family: var(--font-mono);
       font-size: .75rem;
       letter-spacing: .15em;
-      color: var(--gold);
+      color: var(--gold-text);
       text-transform: uppercase;
       margin-bottom: .75rem;
     }
@@ -323,23 +323,23 @@ img { max-width: 100%; display: block; }
       align-items: center;
       gap: .35rem;
     }
-.lp-tool-link:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
+.lp-tool-link:hover { border-color: var(--gold) !important; color: var(--gold-text) !important; }
 .lp-tool-card-ileapp { border-left: 2px solid var(--color-ileapp); }
 .lp-tool-card-ileapp .lp-tool-tag,
-    .lp-tool-card-ileapp .lp-tool-name { color: var(--color-ileapp); }
-.lp-tool-card-ileapp .lp-tool-link { border-color: rgba(var(--color-ileapp-rgb),.3) !important; color: var(--color-ileapp) !important; }
+    .lp-tool-card-ileapp .lp-tool-name { color: var(--color-ileapp-text); }
+.lp-tool-card-ileapp .lp-tool-link { border-color: rgba(var(--color-ileapp-rgb),.3) !important; color: var(--color-ileapp-text) !important; }
 .lp-tool-card-aleapp { border-left: 2px solid var(--color-aleapp); }
 .lp-tool-card-aleapp .lp-tool-tag,
-    .lp-tool-card-aleapp .lp-tool-name { color: var(--color-aleapp); }
-.lp-tool-card-aleapp .lp-tool-link { border-color: rgba(var(--color-aleapp-rgb),.3) !important; color: var(--color-aleapp) !important; }
+    .lp-tool-card-aleapp .lp-tool-name { color: var(--color-aleapp-text); }
+.lp-tool-card-aleapp .lp-tool-link { border-color: rgba(var(--color-aleapp-rgb),.3) !important; color: var(--color-aleapp-text) !important; }
 .lp-tool-card-rleapp { border-left: 2px solid var(--color-rleapp); }
 .lp-tool-card-rleapp .lp-tool-tag,
-    .lp-tool-card-rleapp .lp-tool-name { color: var(--color-rleapp); }
-.lp-tool-card-rleapp .lp-tool-link { border-color: rgba(var(--color-rleapp-rgb),.3) !important; color: var(--color-rleapp) !important; }
+    .lp-tool-card-rleapp .lp-tool-name { color: var(--color-rleapp-text); }
+.lp-tool-card-rleapp .lp-tool-link { border-color: rgba(var(--color-rleapp-rgb),.3) !important; color: var(--color-rleapp-text) !important; }
 .lp-tool-card-vleapp { border-left: 2px solid var(--color-vleapp); }
 .lp-tool-card-vleapp .lp-tool-tag,
-    .lp-tool-card-vleapp .lp-tool-name { color: var(--color-vleapp); }
-.lp-tool-card-vleapp .lp-tool-link { border-color: rgba(var(--color-vleapp-rgb),.3) !important; color: var(--color-vleapp) !important; }
+    .lp-tool-card-vleapp .lp-tool-name { color: var(--color-vleapp-text); }
+.lp-tool-card-vleapp .lp-tool-link { border-color: rgba(var(--color-vleapp-rgb),.3) !important; color: var(--color-vleapp-text) !important; }
 .lp-tool-card-lava { border-left: 2px solid var(--color-lava); }
 .lp-tool-card-lava .lp-tool-tag,
     .lp-tool-card-lava .lp-tool-name { color: var(--color-lava-text); }
@@ -349,12 +349,12 @@ img { max-width: 100%; display: block; }
     }
 .lp-tool-card-dleapp { border-left: 2px solid var(--color-dleapp); }
 .lp-tool-card-dleapp .lp-tool-tag,
-    .lp-tool-card-dleapp .lp-tool-name { color: var(--color-dleapp); }
-.lp-tool-card-dleapp .lp-tool-link { border-color: rgba(var(--color-dleapp-rgb),.3) !important; color: var(--color-dleapp) !important; }
+    .lp-tool-card-dleapp .lp-tool-name { color: var(--color-dleapp-text); }
+.lp-tool-card-dleapp .lp-tool-link { border-color: rgba(var(--color-dleapp-rgb),.3) !important; color: var(--color-dleapp-text) !important; }
 .lp-tool-card-gleapp { border-left: 2px solid var(--color-gleapp); }
 .lp-tool-card-gleapp .lp-tool-tag,
-    .lp-tool-card-gleapp .lp-tool-name { color: var(--color-gleapp); }
-.lp-tool-card-gleapp .lp-tool-link { border-color: rgba(var(--color-gleapp-rgb),.3) !important; color: var(--color-gleapp) !important; }
+    .lp-tool-card-gleapp .lp-tool-name { color: var(--color-gleapp-text); }
+.lp-tool-card-gleapp .lp-tool-link { border-color: rgba(var(--color-gleapp-rgb),.3) !important; color: var(--color-gleapp-text) !important; }
 .lp-tool-card-batch { border-left: 2px solid #1FB8A6; }
 .lp-tool-card-batch .lp-tool-tag,
     .lp-tool-card-batch .lp-tool-name { color: #1FB8A6; }
@@ -382,7 +382,7 @@ img { max-width: 100%; display: block; }
       justify-content: center;
       flex-shrink: 0;
       font-size: 1.2rem;
-      color: var(--gold);
+      color: var(--gold-text);
     }
 .lp-feature-item h3 {
       font-family: var(--font-head);
@@ -413,7 +413,7 @@ img { max-width: 100%; display: block; }
       font-size: .75rem;
       letter-spacing: .2em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-text);
       margin-bottom: .75rem;
       display: block;
     }
@@ -449,7 +449,7 @@ img { max-width: 100%; display: block; }
       padding: .4rem 0;
     }
 .lp-lava-row:last-of-type { border-bottom: none; }
-.lp-lava-key { color: var(--gold); }
+.lp-lava-key { color: var(--gold-text); }
 .lp-lava-val { color: #aaaaaa; }
 .lp-lava-footer { margin-top: 1rem; font-size: .75rem; color: var(--muted); letter-spacing: .1em; }
 .lp-lava-screenshot {
@@ -484,7 +484,7 @@ img { max-width: 100%; display: block; }
 .lp-version-badge {
       background: rgba(245,192,32,.15);
       border: 1px solid rgba(245,192,32,.3);
-      color: var(--gold);
+      color: var(--gold-text);
       font-family: var(--font-mono);
       font-size: .75rem;
       padding: .3rem .75rem;
@@ -506,16 +506,16 @@ img { max-width: 100%; display: block; }
       text-decoration: none !important;
       transition: border-color .2s, color .2s;
     }
-.lp-dl-btn:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
+.lp-dl-btn:hover { border-color: var(--gold) !important; color: var(--gold-text) !important; }
 .lp-dl-side { display: grid; gap: .75rem; min-width: 160px; }
 .lp-dl-side .lp-dl-btn { justify-content: center; }
-.lp-dl-btn-ileapp { border-color: rgba(var(--color-ileapp-rgb),.4) !important; color: var(--color-ileapp) !important; }
-.lp-dl-btn-aleapp { border-color: rgba(var(--color-aleapp-rgb),.4) !important; color: var(--color-aleapp) !important; }
-.lp-dl-btn-rleapp { border-color: rgba(var(--color-rleapp-rgb),.4) !important; color: var(--color-rleapp) !important; }
-.lp-dl-btn-vleapp { border-color: rgba(var(--color-vleapp-rgb),.4) !important; color: var(--color-vleapp) !important; }
+.lp-dl-btn-ileapp { border-color: rgba(var(--color-ileapp-rgb),.4) !important; color: var(--color-ileapp-text) !important; }
+.lp-dl-btn-aleapp { border-color: rgba(var(--color-aleapp-rgb),.4) !important; color: var(--color-aleapp-text) !important; }
+.lp-dl-btn-rleapp { border-color: rgba(var(--color-rleapp-rgb),.4) !important; color: var(--color-rleapp-text) !important; }
+.lp-dl-btn-vleapp { border-color: rgba(var(--color-vleapp-rgb),.4) !important; color: var(--color-vleapp-text) !important; }
 .lp-dl-btn-batch { border-color: rgba(31,184,166,.4) !important; color: #1FB8A6 !important; }
-.lp-dl-btn-dleapp { border-color: rgba(var(--color-dleapp-rgb),.4) !important; color: var(--color-dleapp) !important; }
-.lp-dl-btn-gleapp { border-color: rgba(var(--color-gleapp-rgb),.4) !important; color: var(--color-gleapp) !important; }
+.lp-dl-btn-dleapp { border-color: rgba(var(--color-dleapp-rgb),.4) !important; color: var(--color-dleapp-text) !important; }
+.lp-dl-btn-gleapp { border-color: rgba(var(--color-gleapp-rgb),.4) !important; color: var(--color-gleapp-text) !important; }
 .lp-dl-btn-lava {
       border-color: rgba(var(--color-lava-rgb),.4) !important;
       color: var(--color-lava-text) !important;
@@ -544,11 +544,11 @@ img { max-width: 100%; display: block; }
       margin-bottom: 1rem;
       color: var(--text);
     }
-.lp-mailing h2 span { color: var(--gold); }
+.lp-mailing h2 span { color: var(--gold-text); }
 .lp-mailing-intro { color: var(--muted); font-size: .95rem; line-height: 1.7; margin-bottom: 1.75rem; }
 .lp-mail-perks { display: flex; justify-content: center; gap: 2.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
 .lp-mail-perk { display: flex; align-items: center; gap: .5rem; font-size: .8rem; color: var(--muted); }
-.lp-mail-perk i { color: var(--gold); font-size: 1rem; }
+.lp-mail-perk i { color: var(--gold-text); font-size: 1rem; }
 .lp-mailjet-wrap {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -584,18 +584,18 @@ img { max-width: 100%; display: block; }
 .lp-faq-trigger:hover { background: var(--surface); }
 .lp-faq-trigger.open { background: var(--surface); }
 .lp-faq-q { font-size: .9rem; font-weight: 600; color: var(--text); line-height: 1.4; }
-.lp-faq-trigger.open .lp-faq-q { color: var(--gold); }
+.lp-faq-trigger.open .lp-faq-q { color: var(--gold-text); }
 .lp-faq-chev { color: var(--muted); font-size: .9rem; flex-shrink: 0; margin-top: 2px; transition: transform .25s; }
-.lp-faq-trigger.open .lp-faq-chev { transform: rotate(180deg); color: var(--gold); }
+.lp-faq-trigger.open .lp-faq-chev { transform: rotate(180deg); color: var(--gold-text); }
 .lp-faq-answer {
       display: none; padding: 1rem 1.25rem 1.25rem;
       font-size: .85rem; color: var(--muted); line-height: 1.7;
       border-bottom: 1px solid var(--border); background: var(--surface);
     }
 .lp-faq-answer.open { display: block; }
-.lp-faq-answer a { color: var(--gold); text-decoration: none; }
+.lp-faq-answer a { color: var(--gold-text); text-decoration: none; }
 .lp-faq-answer a:hover { text-decoration: underline; }
-.lp-faq-answer code { font-family: var(--font-mono); color: var(--gold); }
+.lp-faq-answer code { font-family: var(--font-mono); color: var(--gold-text); }
 @media (max-width: 640px) {
   .lp-faq-grid { grid-template-columns: 1fr; }
 }
@@ -640,7 +640,7 @@ img { max-width: 100%; display: block; }
       font-size: .75rem;
       letter-spacing: .15em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-text);
     }
 .lp-mention-name {
       font-family: var(--font-head);
@@ -681,7 +681,7 @@ img { max-width: 100%; display: block; }
       width: 40px; height: 40px; border-radius: 50%;
       background: var(--surface); border: 1px solid var(--border);
       display: flex; align-items: center; justify-content: center;
-      font-size: .9rem; font-weight: 700; color: var(--gold);
+      font-size: .9rem; font-weight: 700; color: var(--gold-text);
       font-family: var(--font-mono); flex-shrink: 0; overflow: hidden;
     }
 .lp-contrib-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
@@ -692,14 +692,14 @@ img { max-width: 100%; display: block; }
 .lp-contrib-commits { font-family: var(--font-mono); font-size: .75rem; color: var(--muted); }
 .lp-contrib-tools { display: flex; gap: .3rem; flex-wrap: wrap; justify-content: flex-end; }
 .lp-contrib-tag { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; padding: .15rem .45rem; border: 1px solid var(--border); color: var(--muted); }
-.lp-contrib-tag-ileapp { background: rgba(var(--color-ileapp-rgb),.15); color: var(--color-ileapp); border: 1px solid rgba(var(--color-ileapp-rgb),.3); }
-.lp-contrib-tag-aleapp { background: rgba(var(--color-aleapp-rgb),.15); color: var(--color-aleapp); border: 1px solid rgba(var(--color-aleapp-rgb),.3); }
-.lp-contrib-tag-rleapp { background: rgba(var(--color-rleapp-rgb),.15); color: var(--color-rleapp); border: 1px solid rgba(var(--color-rleapp-rgb),.3); }
-.lp-contrib-tag-vleapp { background: rgba(var(--color-vleapp-rgb),.15); color: var(--color-vleapp); border: 1px solid rgba(var(--color-vleapp-rgb),.3); }
+.lp-contrib-tag-ileapp { background: rgba(var(--color-ileapp-rgb),.15); color: var(--color-ileapp-text); border: 1px solid rgba(var(--color-ileapp-rgb),.3); }
+.lp-contrib-tag-aleapp { background: rgba(var(--color-aleapp-rgb),.15); color: var(--color-aleapp-text); border: 1px solid rgba(var(--color-aleapp-rgb),.3); }
+.lp-contrib-tag-rleapp { background: rgba(var(--color-rleapp-rgb),.15); color: var(--color-rleapp-text); border: 1px solid rgba(var(--color-rleapp-rgb),.3); }
+.lp-contrib-tag-vleapp { background: rgba(var(--color-vleapp-rgb),.15); color: var(--color-vleapp-text); border: 1px solid rgba(var(--color-vleapp-rgb),.3); }
 .lp-contrib-tag-lava { background: rgba(var(--color-lava-rgb),.15); color: var(--color-lava-text); border: 1px solid rgba(var(--color-lava-rgb),.3); }
 .lp-contrib-tag-batch { background: rgba(31,184,166,.15); color: #1FB8A6; border: 1px solid rgba(31,184,166,.3); }
-.lp-contrib-tag-dleapp { background: rgba(var(--color-dleapp-rgb),.15); color: var(--color-dleapp); border: 1px solid rgba(var(--color-dleapp-rgb),.3); }
-.lp-contrib-tag-gleapp { background: rgba(var(--color-gleapp-rgb),.15); color: var(--color-gleapp); border: 1px solid rgba(var(--color-gleapp-rgb),.3); }
+.lp-contrib-tag-dleapp { background: rgba(var(--color-dleapp-rgb),.15); color: var(--color-dleapp-text); border: 1px solid rgba(var(--color-dleapp-rgb),.3); }
+.lp-contrib-tag-gleapp { background: rgba(var(--color-gleapp-rgb),.15); color: var(--color-gleapp-text); border: 1px solid rgba(var(--color-gleapp-rgb),.3); }
 .lp-contrib-tag-lang { background: rgba(48,58,106,.25); color: #6b7fd4; border: 1px solid rgba(48,58,106,.6); }
 .lp-contrib-loading { padding: 2rem; text-align: center; font-family: var(--font-mono); font-size: .8rem; color: var(--muted); background: var(--surface); border: 1px solid var(--border); }
 .lp-contrib-toggle {
@@ -711,7 +711,7 @@ img { max-width: 100%; display: block; }
       user-select: none;
     }
 .lp-contrib-toggle:hover { border-color: #444; color: var(--text); }
-.lp-contrib-toggle.open { border-color: rgba(245,192,32,.3); color: var(--gold); }
+.lp-contrib-toggle.open { border-color: rgba(245,192,32,.3); color: var(--gold-text); }
 .lp-contrib-toggle .lp-chevron { transition: transform .25s; }
 .lp-contrib-toggle.open .lp-chevron { transform: rotate(180deg); }
 .lp-contrib-extra { display: none; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-top: none; margin-top: -1px; }
@@ -737,17 +737,17 @@ img { max-width: 100%; display: block; }
       flex-wrap: wrap;
     }
 .lp-whats-new-left { display: flex; align-items: center; gap: .85rem; }
-.lp-whats-new-icon { color: var(--gold); font-size: 1.1rem; flex-shrink: 0; }
+.lp-whats-new-icon { color: var(--gold-text); font-size: 1.1rem; flex-shrink: 0; }
 .lp-whats-new-eyebrow {
       font-family: var(--font-mono);
       font-size: .75rem;
       letter-spacing: .15em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-text);
       margin-bottom: .2rem;
     }
 .lp-whats-new-main { font-size: .875rem; color: var(--text); }
-.lp-whats-new-main span { color: var(--gold); font-weight: 600; }
+.lp-whats-new-main span { color: var(--gold-text); font-weight: 600; }
 .lp-whats-new-date {
       color: var(--muted);
       font-size: .75rem;
@@ -757,7 +757,7 @@ img { max-width: 100%; display: block; }
 .lp-whats-new-link {
       font-family: var(--font-mono);
       font-size: .75rem;
-      color: var(--gold) !important;
+      color: var(--gold-text) !important;
       text-decoration: none !important;
       white-space: nowrap;
       display: inline-flex;
@@ -824,7 +824,7 @@ img { max-width: 100%; display: block; }
 .lp-video-dialog::backdrop { background: rgba(0,0,0,.75); }
 .lp-video-dialog-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .5rem .5rem .5rem 1rem; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .lp-video-close { background: none; border: 1px solid var(--border); color: var(--text); cursor: pointer; width: 2rem; height: 2rem; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; }
-.lp-video-close:hover { border-color: var(--gold); color: var(--gold); }
+.lp-video-close:hover { border-color: var(--gold); color: var(--gold-text); }
 .lp-video-dialog video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; }
 </style>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>
@@ -1341,7 +1341,7 @@ img { max-width: 100%; display: block; }
       <h2 class="lp-section-title">Contributors</h2>
       <p style="color:var(--muted);font-size:.95rem;margin-bottom:2rem;max-width:560px;">The forensics practitioners and developers who build and maintain the LEAPPs tools. All data pulled live from GitHub.</p>
       <div id="lp-contrib-top" class="lp-contrib-list">
-        <div class="lp-contrib-loading"><span style="color:var(--gold)">Fetching contributors…</span></div>
+        <div class="lp-contrib-loading"><span style="color: var(--gold-text)">Fetching contributors…</span></div>
       </div>
       <div id="lp-contrib-toggle-wrap" style="display:none">
         <div class="lp-contrib-toggle" id="lp-contrib-toggle" onclick="toggleContribExtra()">
@@ -1359,7 +1359,7 @@ img { max-width: 100%; display: block; }
       <h2 class="lp-section-title">Language Contributors</h2>
       <p style="color:var(--muted);font-size:.95rem;margin-bottom:2rem;max-width:560px;">People who contributed to the LEAPPs language resources. All data pulled live from GitHub.</p>
       <div id="lp-trans-top" class="lp-contrib-list">
-        <div class="lp-contrib-loading"><span style="color:var(--gold)">Fetching contributors…</span></div>
+        <div class="lp-contrib-loading"><span style="color: var(--gold-text)">Fetching contributors…</span></div>
       </div>
       <div id="lp-trans-toggle-wrap" style="display:none">
         <div class="lp-contrib-toggle" id="lp-trans-toggle" onclick="toggleTransExtra()">
@@ -1381,7 +1381,7 @@ img { max-width: 100%; display: block; }
         <a href="https://leapps.org/blog" class="lp-blog-alllink">All posts <i class="ti ti-arrow-right"></i></a>
       </div>
       <div class="lp-blog-grid" id="lp-blog-grid">
-        <div class="lp-blog-card"><div class="lp-blog-card-meta"><span style="color:var(--gold)">Loading posts…</span></div></div>
+        <div class="lp-blog-card"><div class="lp-blog-card-meta"><span style="color: var(--gold-text)">Loading posts…</span></div></div>
       </div>
     </div>
   </section>
@@ -1550,7 +1550,7 @@ img { max-width: 100%; display: block; }
         }
       } catch(e) {
         document.getElementById('lp-contrib-top').innerHTML =
-          '<div class="lp-contrib-loading">Could not load contributors. <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" style="color:var(--gold)">View on GitHub →</a></div>';
+          '<div class="lp-contrib-loading">Could not load contributors. <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text)">View on GitHub →</a></div>';
       }
     })();
 
@@ -1601,7 +1601,7 @@ img { max-width: 100%; display: block; }
         }
       } catch(e) {
         document.getElementById('lp-trans-top').innerHTML =
-          '<div class="lp-contrib-loading">Could not load contributors. <a href="https://github.com/abrignoni/leapps-website" target="_blank" rel="noopener noreferrer" style="color:var(--gold)">View on GitHub →</a></div>';
+          '<div class="lp-contrib-loading">Could not load contributors. <a href="https://github.com/abrignoni/leapps-website" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text)">View on GitHub →</a></div>';
       }
     })();
 
@@ -1832,7 +1832,7 @@ img { max-width: 100%; display: block; }
       document.querySelectorAll('.lp-footer-col a').forEach(function(a) {
         var href = a.getAttribute('href') || '';
         var ap = href.replace(/https:\/\/leapps\.org/, '').replace(/\/+$/, '') || '/';
-        if (ap === path) { a.style.color = '#F5C020'; }
+        if (ap === path) { a.style.color = 'var(--gold-text)'; }
       });
     })();
   </script>
