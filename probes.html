@@ -788,7 +788,7 @@
               <li>Logical evidence: EnCase <code>.L01</code> and FTK Imager <code>.ad1</code>, each entry listed, exported and checked against the hashes stored for it</li>
               <li>Encrypted Apple disk images, FTK Imager AD encryption and encrypted AFF opened with their password or the certificate's private key. The password comes from a file, an environment variable or the terminal, never the command line</li>
               <li>Checked against the tools that write these formats (libewf, AFFLIB, <code>hdiutil</code>, FTK Imager, Windows 11 and qemu-img); on five EnCase L01s from Digital Corpora, all 55,599 exported files match libewf byte for byte</li>
-              <li>An incomplete set is refused, not read as a smaller image that reports its missing data as empty. An AFD missing its last file can only be caught when that file held the image size. Otherwise info and verify count its pages as missing. Encrypted Ex01, Lx01, encrypted AFF4 and encrypted QCOW are not read</li>
+              <li>A set it can tell is incomplete is refused, not read as a smaller image that reports its missing data as empty. An AFD missing its last file is refused only when that file held the image size. Otherwise it opens and info and verify count its pages as missing, so opening alone does not show the set is complete. Encrypted Ex01, Lx01, encrypted AFF4 and encrypted QCOW are not read</li>
               <li>A window, <code>ewfprobe_gui</code>, for Info, Verify, listing and Export. A password typed into it reaches ewfprobe in an environment variable, not on its command line. The release executables carry it from v0.13.0</li>
             </ul>
           </div>

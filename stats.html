@@ -644,8 +644,8 @@
       const contributors = [];
       let loaded = false;
       for (let p = 1; p <= 10; p++) {
-        const res = await fetch(`https://leapps-api.4n6-198.workers.dev/repos/${repo}/contributors?per_page=100&page=${p}`);
-        if (!res.ok) return { contributors, loaded, complete: false };
+        const res = await fetch(`https://leapps-api.4n6-198.workers.dev/repos/${repo}/contributors?per_page=100&page=${p}`).catch(() => null);
+        if (!res || !res.ok) return { contributors, loaded, complete: false };
         const data = await res.json().catch(() => null);
         if (!Array.isArray(data)) return { contributors, loaded, complete: false };
         loaded = true;
