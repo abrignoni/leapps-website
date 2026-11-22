@@ -69,12 +69,12 @@
     var accept = document.createElement('button');
     accept.type = 'button';
     accept.textContent = 'Accept';
-    accept.style.cssText = 'font-family:inherit;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;cursor:pointer;background:var(--gold,#F5C020);color:var(--off-black,#0E0E0E);border:none;padding:.45rem 1.1rem;';
+    accept.style.cssText = 'font-family:inherit;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;cursor:pointer;background:var(--gold,#F5C020);color:var(--off-black,#0E0E0E);border:1px solid var(--gold,#F5C020);padding:.45rem 1.1rem;';
 
     var decline = document.createElement('button');
     decline.type = 'button';
     decline.textContent = 'Decline';
-    decline.style.cssText = 'font-family:inherit;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;background:transparent;color:var(--muted,#9a9a9a);border:1px solid var(--border,#2C2C2C);padding:.45rem 1.1rem;';
+    decline.style.cssText = 'font-family:inherit;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;cursor:pointer;background:transparent;color:var(--text,#F0EDE6);border:1px solid var(--text,#F0EDE6);padding:.45rem 1.1rem;';
 
     accept.addEventListener('click', function () { decide('granted'); });
     decline.addEventListener('click', function () { decide('denied'); });

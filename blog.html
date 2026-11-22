@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261113" />
+  <link rel="stylesheet" href="/css/global.css?v=20261122" />
   <style>
 img { max-width: 100%; display: block; }
 .blog-wrap {
@@ -135,7 +135,7 @@ img { max-width: 100%; display: block; }
     }
 .tag {
       font-family: var(--font-mono);
-      font-size: .7rem;
+      font-size: .75rem;
       color: var(--muted);
       border: 1px solid var(--border);
       padding: .15rem .5rem;
@@ -146,7 +146,7 @@ img { max-width: 100%; display: block; }
 .card-author:hover { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
 .pin-badge {
       font-family: var(--font-mono);
-      font-size: .65rem;
+      font-size: .75rem;
       letter-spacing: .1em;
       color: var(--gold);
       border: 1px solid var(--gold);
@@ -172,6 +172,8 @@ img { max-width: 100%; display: block; }
 [data-theme="light"] .lp-filter-select { background: #EAE6DE; color: #1C1A14; border-color: #C8C3B8; }
 @media (max-width: 768px) {
   .blog-header h1 { font-size: 2.2rem; }
+  .blog-header-actions { flex-wrap: wrap; }
+  .lp-filter-select { max-width: 100%; min-width: 0; }
 }
   </style>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>
@@ -192,6 +194,7 @@ img { max-width: 100%; display: block; }
   </script>
 </head>
 <body>
+<a class="lp-skip-link" href="#main">Skip to content</a>
 <div class="lp-page">
 
   <nav class="lp-nav">
@@ -274,7 +277,7 @@ img { max-width: 100%; display: block; }
     <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">GitHub</a>
   </div>
 
-  <main class="blog-wrap">
+  <main id="main" tabindex="-1" class="blog-wrap">
     <header class="blog-header">
       <h1>Blog</h1>
       <p>Forensics deep dives, tool updates, artifact write-ups, and community contributions.</p>
@@ -295,7 +298,7 @@ img { max-width: 100%; display: block; }
     </header>
 
     <div id="tag-filter" style="display:none;margin-bottom:1.5rem;display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;">
-      <span style="font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:.25rem;">Filter:</span>
+      <span style="font-family:var(--font-mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:.25rem;">Filter:</span>
     </div>
 
     <!-- The cards below are generated from blog/posts/index.json and are the
@@ -1083,17 +1086,17 @@ img { max-width: 100%; display: block; }
         }
         if (arts.length) {
           html += '<div class="lp-search-group">Artifacts</div>';
-          arts.forEach(a => { html += `<a class="lp-search-item" href="${a.url}">${a.name}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);margin-left:.5rem;">${a.tool}</span></a>`; });
+          arts.forEach(a => { html += `<a class="lp-search-item" href="${a.url}">${a.name}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);margin-left:.5rem;">${a.tool}</span></a>`; });
         }
         if (pages.length) {
           html += '<div class="lp-search-group">Pages</div>';
-          pages.forEach(p => { html += `<a class="lp-search-item" href="${p.url}">${p.title}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);margin-left:.5rem;">${p.page}</span></a>`; });
+          pages.forEach(p => { html += `<a class="lp-search-item" href="${p.url}">${p.title}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);margin-left:.5rem;">${p.page}</span></a>`; });
         }
         results.innerHTML = html;
         results.style.display = 'block';
       }
     })();
   </script>
-  <script src="/analytics.js?v=20260707" defer></script>
+  <script src="/analytics.js?v=20261122" defer></script>
 </body>
 </html>
