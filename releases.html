@@ -194,6 +194,10 @@
 .lp-your-os { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-ink, var(--gold)); border: 1px solid rgba(var(--accent-rgb, 245,192,32),.35); padding: .08rem .4rem; border-radius: 3px; }
 @media (max-width: 640px) {
   .lp-asset-row { flex-direction: column; gap: .3rem; }
+  .lp-asset-row-btns, .lp-release-assets { width: 100%; min-width: 0; }
+  .lp-asset-row-btns > div, .lp-release-assets > div { max-width: 100%; min-width: 0; }
+  .lp-asset-btn { min-width: 0; max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+  .lp-copy-btn { flex: none; }
   .lp-asset-row-label { padding-top: 0; }
 }
 .lp-loading {
