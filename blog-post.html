@@ -36,7 +36,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261113" />
+  <link rel="stylesheet" href="/css/global.css?v=20261122" />
   <style>
 img { max-width: 100%; display: block; }
 .post-wrap {
@@ -101,7 +101,7 @@ img { max-width: 100%; display: block; }
     }
 .tag {
       font-family: var(--font-mono);
-      font-size: .7rem;
+      font-size: .75rem;
       color: var(--muted);
       border: 1px solid var(--border);
       padding: .15rem .5rem;
@@ -235,7 +235,7 @@ img { max-width: 100%; display: block; }
 .post-subscribe h3 span { color: var(--gold); }
 .post-subscribe p { font-size: .88rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.6; }
 .post-subscribe iframe { display: block; width: 100%; border: none; height: 0; min-height: 140px; }
-.post-subscribe-alt { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .05em; color: var(--muted); margin-top: .75rem; }
+.post-subscribe-alt { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .05em; color: var(--muted); margin-top: .75rem; }
 .post-subscribe-alt a { color: var(--gold); text-decoration: none; }
 .post-share {
       margin-top: 3rem;
@@ -248,7 +248,7 @@ img { max-width: 100%; display: block; }
     }
 .post-share-label {
       font-family: var(--font-mono);
-      font-size: .7rem;
+      font-size: .75rem;
       letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--muted);
@@ -259,7 +259,7 @@ img { max-width: 100%; display: block; }
       align-items: center;
       gap: .4rem;
       font-family: var(--font-mono);
-      font-size: .72rem;
+      font-size: .75rem;
       letter-spacing: .04em;
       color: var(--muted);
       border: 1px solid var(--border);
@@ -274,7 +274,7 @@ img { max-width: 100%; display: block; }
 .related-posts { margin-top: 3.5rem; }
 .related-posts-label {
       font-family: var(--font-mono);
-      font-size: .68rem;
+      font-size: .75rem;
       letter-spacing: .2em;
       text-transform: uppercase;
       color: var(--gold);
@@ -302,7 +302,7 @@ img { max-width: 100%; display: block; }
 .related-card:hover { border-color: var(--gold); }
 .related-card .date {
       font-family: var(--font-mono);
-      font-size: .65rem;
+      font-size: .75rem;
       color: var(--muted);
       letter-spacing: .05em;
     }
@@ -342,7 +342,7 @@ img { max-width: 100%; display: block; }
 .prevnext-card.next { text-align: right; align-items: flex-end; }
 .prevnext-dir {
       font-family: var(--font-mono);
-      font-size: .62rem;
+      font-size: .75rem;
       letter-spacing: .1em;
       text-transform: uppercase;
       color: var(--gold);
@@ -408,6 +408,7 @@ img { max-width: 100%; display: block; }
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>
 </head>
 <body>
+<a class="lp-skip-link" href="#main">Skip to content</a>
 <div class="lp-page">
 
   <nav class="lp-nav">
@@ -490,7 +491,7 @@ img { max-width: 100%; display: block; }
     <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">GitHub</a>
   </div>
 
-  <main class="post-wrap">
+  <main id="main" tabindex="-1" class="post-wrap">
     <div class="breadcrumb">
       <a href="https://leapps.org/blog">Blog</a>
       <span class="sep">/</span>
@@ -1087,17 +1088,17 @@ img { max-width: 100%; display: block; }
         }
         if (arts.length) {
           html += '<div class="lp-search-group">Artifacts</div>';
-          arts.forEach(a => { html += `<a class="lp-search-item" href="${a.url}">${a.name}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);margin-left:.5rem;">${a.tool}</span></a>`; });
+          arts.forEach(a => { html += `<a class="lp-search-item" href="${a.url}">${a.name}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);margin-left:.5rem;">${a.tool}</span></a>`; });
         }
         if (pages.length) {
           html += '<div class="lp-search-group">Pages</div>';
-          pages.forEach(p => { html += `<a class="lp-search-item" href="${p.url}">${p.title}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);margin-left:.5rem;">${p.page}</span></a>`; });
+          pages.forEach(p => { html += `<a class="lp-search-item" href="${p.url}">${p.title}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);margin-left:.5rem;">${p.page}</span></a>`; });
         }
         results.innerHTML = html;
         results.style.display = 'block';
       }
     })();
   </script>
-  <script src="/analytics.js?v=20260707" defer></script>
+  <script src="/analytics.js?v=20261122" defer></script>
 </body>
 </html>

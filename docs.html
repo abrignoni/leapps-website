@@ -34,12 +34,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261113" />
+  <link rel="stylesheet" href="/css/global.css?v=20261122" />
   <style>
 .lp-header { padding: 3.5rem 2rem 3rem; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
 .lp-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(245,192,32,.06) 0%, transparent 70%); pointer-events: none; }
 .lp-header-inner { max-width: 900px; margin: 0 auto; }
-.lp-eyebrow { display: inline-block; font-family: var(--font-mono); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.lp-eyebrow { display: inline-block; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
 .lp-header h1 { font-family: var(--font-head); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; text-transform: uppercase; line-height: .95; margin-bottom: 1rem; }
 .lp-header h1 span { color: var(--gold); }
 .lp-header p { color: var(--muted); font-size: 1rem; max-width: 560px; line-height: 1.7; }
@@ -53,7 +53,7 @@
 .lp-decision { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: .75rem; margin-bottom: 1rem; }
 .lp-decision-card { background: var(--surface); border: 1px solid var(--border); padding: .9rem 1rem; text-decoration: none !important; transition: border-color .2s; }
 .lp-decision-card:hover { border-color: var(--gold); }
-.lp-decision-card-tag { font-family: var(--font-mono); font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: .35rem; }
+.lp-decision-card-tag { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: .35rem; }
 .lp-decision-card-tag.ileapp { color: var(--color-ileapp); }
 .lp-decision-card-tag.aleapp { color: var(--color-aleapp); }
 .lp-decision-card-tag.rleapp { color: var(--color-rleapp); }
@@ -62,21 +62,22 @@
 .lp-decision-card-tag.gleapp { color: var(--color-gleapp); }
 .lp-decision-card-title { font-family: var(--font-head); font-size: 1rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: .2rem; }
 .lp-decision-card-sub { font-size: .78rem; color: var(--muted); }
+.lp-table-scroll { max-width: 100%; overflow-x: auto; }
 .lp-code { background: #0a0a0a; border: 1px solid var(--border); border-left: 3px solid var(--gold); padding: 1rem 1.25rem; font-family: var(--font-mono); font-size: .8rem; color: #c8c3b8; line-height: 1.8; overflow-x: auto; margin-bottom: .75rem; position: relative; }
-.lp-code-label { font-family: var(--font-mono); font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: .4rem; }
-.lp-code span.cm { color: #555; }
+.lp-code-label { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: .4rem; }
+.lp-code span.cm { color: var(--muted); }
 .lp-code span.kw { color: var(--gold); }
 .lp-code span.st { color: #A4C639; }
 .lp-tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 1rem; }
 .lp-tab { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; padding: .5rem 1rem; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color .2s, border-color .2s; user-select: none; }
 .lp-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
-.lp-pill { display: inline-block; font-family: var(--font-mono); font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; padding: .2rem .55rem; border: 1px solid; margin-right: .3rem; }
+.lp-pill { display: inline-block; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; padding: .2rem .55rem; border: 1px solid; margin-right: .3rem; }
 .lp-pill.ileapp { color: var(--color-ileapp); border-color: rgba(var(--color-ileapp-rgb),.4); }
 .lp-pill.aleapp { color: var(--color-aleapp); border-color: rgba(var(--color-aleapp-rgb),.4); }
 .lp-pill.rleapp { color: var(--color-rleapp); border-color: rgba(var(--color-rleapp-rgb),.4); }
 .lp-pill.vleapp { color: var(--color-vleapp); border-color: rgba(var(--color-vleapp-rgb),.4); }
 .lp-pill.gleapp { color: var(--color-gleapp); border-color: rgba(var(--color-gleapp-rgb),.4); }
-.lp-pill.lava { color: var(--color-lava);  border-color: rgba(var(--color-lava-rgb),.4); }
+.lp-pill.lava { color: var(--color-lava-text);  border-color: rgba(var(--color-lava-rgb),.4); }
 .lp-lava-callout { background: var(--surface); border: 1px solid rgba(245,192,32,.3); border-left: 3px solid var(--gold); padding: 1.5rem; margin-top: 1.25rem; }
 .lp-lava-callout-head { display: flex; align-items: center; gap: .6rem; font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; }
 .lp-lava-callout p { font-size: .88rem; color: var(--muted); line-height: 1.7; margin-bottom: .75rem; }
@@ -87,7 +88,7 @@
 .lp-checklist li { display: flex; align-items: flex-start; gap: .6rem; font-size: .88rem; color: var(--muted); line-height: 1.6; }
 .lp-checklist li i { color: var(--gold); font-size: .9rem; margin-top: .15rem; flex-shrink: 0; }
 .lp-table { width: 100%; border-collapse: collapse; font-size: .82rem; margin-bottom: .75rem; }
-.lp-table th { font-family: var(--font-mono); font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--border); }
+.lp-table th { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--border); }
 .lp-table td { padding: .65rem .75rem; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; }
 .lp-table tr:last-child td { border-bottom: none; }
 .lp-table td:first-child { color: var(--muted); font-family: var(--font-mono); font-size: .75rem; }
@@ -95,7 +96,7 @@
 .lp-cta-strip-title { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; text-transform: uppercase; }
 .lp-cta-strip-desc { font-size: .85rem; color: var(--muted); margin-top: .25rem; }
 .lp-cta-strip-btns { display: flex; gap: .75rem; flex-wrap: wrap; flex-shrink: 0; }
-.lp-btn-primary { background: var(--gold); color: var(--off-black) !important; padding: .6rem 1.4rem; font-family: var(--font-head); font-weight: 700; font-size: .9rem; letter-spacing: .1em; text-transform: uppercase; text-decoration: none !important; white-space: nowrap; transition: background .2s; }
+.lp-btn-primary { background: var(--gold); color: var(--on-gold) !important; padding: .6rem 1.4rem; font-family: var(--font-head); font-weight: 700; font-size: .9rem; letter-spacing: .1em; text-transform: uppercase; text-decoration: none !important; white-space: nowrap; transition: background .2s; }
 .lp-btn-primary:hover { background: var(--gold-dk) !important; }
 .lp-btn-outline { background: transparent; color: var(--text) !important; padding: .6rem 1.4rem; font-family: var(--font-head); font-weight: 700; font-size: .9rem; letter-spacing: .1em; text-transform: uppercase; border: 1px solid var(--border); text-decoration: none !important; white-space: nowrap; transition: border-color .2s, color .2s; }
 .lp-btn-outline:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
@@ -105,6 +106,9 @@
   .lp-step-num { width: 36px; height: 36px; font-size: .75rem; }
   .lp-decision { grid-template-columns: 1fr 1fr; }
   .lp-cta-strip { flex-direction: column; align-items: flex-start; }
+  .lp-code { max-width: 100%; }
+  .lp-checklist li { display: block; }
+  .lp-checklist li i { margin-right: .5rem; }
 }
 #lp-root { margin: 0 8px; }
 [data-theme="light"] body, [data-theme="light"] #lp-root { background-color: #F5F2EC !important; }
@@ -134,6 +138,7 @@
   </script>
 </head>
 <body>
+<a class="lp-skip-link" href="#main">Skip to content</a>
 <div id="lp-root">
 
   <nav class="lp-nav">
@@ -217,6 +222,7 @@
     <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">GitHub</a>
   </div>
 
+  <main id="main" tabindex="-1">
   <header class="lp-header">
     <div class="lp-header-inner">
       <span class="lp-eyebrow">Documentation · Getting Started</span>
@@ -275,6 +281,7 @@
       <div class="lp-step-body">
         <div class="lp-step-title">Get Your Extraction</div>
         <p class="lp-step-desc">LEAPPs works on extracted data — it does not acquire from live devices. You need a file system or backup from your preferred acquisition tool.</p>
+        <div class="lp-table-scroll" role="region" aria-label="Tool compatibility" tabindex="0">
         <table class="lp-table">
           <thead>
             <tr>
@@ -311,6 +318,25 @@
             </tr>
           </tbody>
         </table>
+        </div>
+        <script>
+(function () {
+  var box = document.querySelector('.lp-table-scroll');
+  if (!box) return;
+  function syncTabStop() {
+    if (box.scrollWidth > box.clientWidth + 1) box.tabIndex = 0;
+    else box.removeAttribute('tabindex');
+  }
+  syncTabStop();
+  if (window.ResizeObserver) {
+    var watcher = new ResizeObserver(syncTabStop);
+    watcher.observe(box);
+    watcher.observe(box.querySelector('table'));
+  } else {
+    window.addEventListener('resize', syncTabStop);
+  }
+})();
+</script>
         <p style="font-size:.78rem;color:var(--muted);">Point LEAPPs at the <strong style="color:var(--text);">extraction source</strong>.</p>
       </div>
     </div>
@@ -439,10 +465,12 @@
         <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;text-transform:uppercase;color:var(--text);margin-bottom:.25rem;"><i class="ti ti-puzzle" style="color:var(--gold);margin-right:.4rem;"></i>Want to add a parser?</div>
         <div style="font-size:.82rem;color:var(--muted);">The contributor guide walks through module structure, SQLite and plist parsing, timestamps, media, LAVA conversation view, the checks pull requests run, and submitting a pull request.</div>
       </div>
-      <a href="https://leapps.org/blog-post?post=2026-06-14-how-to-write-an-ileapp-module" style="font-family:var(--font-head);font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--off-black);background:var(--gold);padding:.6rem 1.4rem;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:background .2s;" onmouseover="this.style.background='var(--gold-dk)'" onmouseout="this.style.background='var(--gold)'">Read the Guide <i class="ti ti-arrow-up-right"></i></a>
+      <a href="https://leapps.org/blog-post?post=2026-06-14-how-to-write-an-ileapp-module" style="font-family:var(--font-head);font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color: var(--on-gold);background:var(--gold);padding:.6rem 1.4rem;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:background .2s;" onmouseover="this.style.background='var(--gold-dk)'" onmouseout="this.style.background='var(--gold)'">Read the Guide <i class="ti ti-arrow-up-right"></i></a>
     </div>
 
   </div>
+
+  </main>
 
     <footer class="lp-footer">
     <div class="lp-footer-inner">
@@ -691,17 +719,17 @@
         }
         if (arts.length) {
           html += '<div class="lp-search-group">Artifacts</div>';
-          arts.forEach(a => { html += `<a class="lp-search-item" href="${a.url}">${a.name}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);margin-left:.5rem;">${a.tool}</span></a>`; });
+          arts.forEach(a => { html += `<a class="lp-search-item" href="${a.url}">${a.name}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);margin-left:.5rem;">${a.tool}</span></a>`; });
         }
         if (pages.length) {
           html += '<div class="lp-search-group">Pages</div>';
-          pages.forEach(p => { html += `<a class="lp-search-item" href="${p.url}">${p.title}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);margin-left:.5rem;">${p.page}</span></a>`; });
+          pages.forEach(p => { html += `<a class="lp-search-item" href="${p.url}">${p.title}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);margin-left:.5rem;">${p.page}</span></a>`; });
         }
         results.innerHTML = html;
         results.style.display = 'block';
       }
     })();
   </script>
-  <script src="/analytics.js?v=20260707" defer></script>
+  <script src="/analytics.js?v=20261122" defer></script>
 </body>
 </html>

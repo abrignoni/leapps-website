@@ -34,12 +34,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261113" />
+  <link rel="stylesheet" href="/css/global.css?v=20261122" />
   <style>
 .lp-header { padding: 4rem 2rem 3rem; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
 .lp-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(245,192,32,.06) 0%, transparent 70%); pointer-events: none; }
 .lp-header-inner { max-width: 700px; margin: 0 auto; text-align: center; }
-.lp-eyebrow { display: inline-block; font-family: var(--font-mono); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.lp-eyebrow { display: inline-block; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
 .lp-header h1 { font-family: var(--font-head); font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; text-transform: uppercase; line-height: .95; margin-bottom: 1rem; }
 .lp-header h1 span { color: var(--gold); }
 .lp-header p { color: var(--muted); font-size: 1rem; max-width: 520px; margin: 0 auto; line-height: 1.7; }
@@ -49,7 +49,7 @@
 .lp-perk i { color: var(--gold); font-size: 1rem; }
 .lp-form-wrap { background: var(--surface); border: 1px solid var(--border); padding: 2rem; }
 .lp-form-wrap iframe { display: block; width: 100%; min-height: 160px; border: none; }
-.lp-note { text-align: center; font-size: .78rem; color: #555; margin-top: 1.25rem; font-family: var(--font-mono); letter-spacing: .06em; }
+.lp-note { text-align: center; font-size: .78rem; color: var(--muted); margin-top: 1.25rem; font-family: var(--font-mono); letter-spacing: .06em; }
 #lp-root { margin: 0 8px; }
 [data-theme="light"] body, [data-theme="light"] #lp-root { background-color: #F5F2EC !important; }
   </style>
@@ -66,6 +66,7 @@
   </script>
 </head>
 <body>
+<a class="lp-skip-link" href="#main">Skip to content</a>
 <div id="lp-root">
 
   <nav class="lp-nav">
@@ -149,6 +150,7 @@
     <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">GitHub</a>
   </div>
 
+  <main id="main" tabindex="-1">
   <header class="lp-header">
     <div class="lp-header-inner">
       <span class="lp-eyebrow">Stay in the Loop</span>
@@ -157,7 +159,7 @@
     </div>
   </header>
 
-  <main class="lp-main">
+  <div class="lp-main">
     <div class="lp-perks">
       <div class="lp-perk"><i class="ti ti-bell"></i>Release alerts</div>
       <div class="lp-perk"><i class="ti ti-git-branch"></i>New parsers</div>
@@ -171,6 +173,7 @@
         width="100%" style="height: 0; min-height: 160px;"></iframe>
     </div>
     <p class="lp-note">No spam &middot; Unsubscribe anytime</p>
+  </div>
   </main>
 
   <!-- FOOTER -->
@@ -412,17 +415,17 @@
         }
         if (arts.length) {
           html += '<div class="lp-search-group">Artifacts</div>';
-          arts.forEach(a => { html += `<a class="lp-search-item" href="${a.url}">${a.name}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);margin-left:.5rem;">${a.tool}</span></a>`; });
+          arts.forEach(a => { html += `<a class="lp-search-item" href="${a.url}">${a.name}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);margin-left:.5rem;">${a.tool}</span></a>`; });
         }
         if (pages.length) {
           html += '<div class="lp-search-group">Pages</div>';
-          pages.forEach(p => { html += `<a class="lp-search-item" href="${p.url}">${p.title}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);margin-left:.5rem;">${p.page}</span></a>`; });
+          pages.forEach(p => { html += `<a class="lp-search-item" href="${p.url}">${p.title}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);margin-left:.5rem;">${p.page}</span></a>`; });
         }
         results.innerHTML = html;
         results.style.display = 'block';
       }
     })();
   </script>
-  <script src="/analytics.js?v=20260707" defer></script>
+  <script src="/analytics.js?v=20261122" defer></script>
 </body>
 </html>

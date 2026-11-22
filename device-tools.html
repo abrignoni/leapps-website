@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261113" />
+  <link rel="stylesheet" href="/css/global.css?v=20261122" />
   <style>
 .lp-page-header {
       padding: 3.5rem 2rem 3rem; border-bottom: 1px solid var(--border);
@@ -53,14 +53,14 @@
 .lp-page-header p { color: var(--muted); font-size: 1rem; max-width: 520px; line-height: 1.7; margin-bottom: 2rem; }
 .lp-tool-nav { display: flex; gap: .5rem; flex-wrap: wrap; }
 .lp-tool-pill {
-      font-family: var(--font-mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+      font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
       padding: .4rem 1rem; border: 1px solid var(--border); color: var(--muted);
       text-decoration: none !important; transition: border-color .2s, color .2s, background .2s;
     }
 /* A tool's section, pill and sidebar link take that tool's color as their accent.
    Anything without a data-tool stays on the site gold. */
 :where(.lp-tool-section, .lp-tool-pill, .lp-sidebar-links a) { --accent: var(--gold); --accent-rgb: 245,192,32; --accent-ink: var(--accent); }
-[data-tool="kdl"] { --accent: #D64541; --accent-rgb: 214,69,65; }
+[data-tool="kdl"] { --accent: var(--color-kdl-text); --accent-rgb: 214,69,65; }
 [data-tool="appwalk"] { --accent: #1FA295; --accent-rgb: 31,162,149; }
 .lp-video-dialog { margin: auto; padding: 0; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text); width: min(960px, 94vw); max-width: 94vw; }
 .lp-video-dialog::backdrop { background: rgba(0,0,0,.75); }
@@ -72,7 +72,7 @@
 .lp-tool-pill:hover { border-color: var(--accent, var(--gold)); color: var(--accent-ink, var(--gold)); background: rgba(var(--accent-rgb, 245,192,32),.06); }
 .lp-main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; display: grid; grid-template-columns: 240px 1fr; gap: 3rem; align-items: start; }
 .lp-sidebar { position: sticky; top: 80px; }
-.lp-sidebar-title { font-family: var(--font-mono); font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+.lp-sidebar-title { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
 .lp-sidebar-links { list-style: none; display: flex; flex-direction: column; gap: .25rem; }
 .lp-sidebar-links a {
       display: flex; align-items: center; gap: .6rem;
@@ -93,12 +93,12 @@
       flex-wrap: wrap;
     }
 .lp-tool-header-left {}
-.lp-tool-platform { font-family: var(--font-mono); font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: var(--accent-ink, var(--gold)); margin-bottom: .4rem; }
+.lp-tool-platform { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; color: var(--accent-ink, var(--gold)); margin-bottom: .4rem; }
 .lp-tool-header h2 { font-family: var(--font-head); font-size: 2.2rem; font-weight: 900; text-transform: uppercase; line-height: 1; color: var(--text); }
 .lp-tool-fullname { font-size: .85rem; color: var(--muted); margin-top: .3rem; }
 .lp-gh-link {
       display: inline-flex; align-items: center; gap: .5rem;
-      font-family: var(--font-mono); font-size: .7rem; letter-spacing: .08em;
+      font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em;
       padding: .5rem 1rem; border: 1px solid var(--border); color: var(--muted);
       text-decoration: none !important; transition: border-color .2s, color .2s;
       white-space: nowrap; align-self: flex-start;
@@ -117,7 +117,7 @@
 .lp-status-bar {
       display: flex; align-items: center; gap: 1rem;
       padding: .75rem 1rem; background: var(--surface); border: 1px solid var(--border);
-      margin-bottom: 1rem; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .08em;
+      margin-bottom: 1rem; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em;
     }
 .lp-status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent, var(--gold)); flex-shrink: 0; animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
@@ -130,7 +130,7 @@
       padding: .9rem 1.1rem; margin-bottom: 1.25rem;
     }
 .lp-install-head {
-      font-family: var(--font-mono); font-size: .68rem; letter-spacing: .15em;
+      font-family: var(--font-mono); font-size: .75rem; letter-spacing: .15em;
       text-transform: uppercase; color: var(--accent-ink, var(--gold)); margin-bottom: .6rem;
       display: flex; align-items: center; gap: .45rem;
     }
@@ -140,7 +140,7 @@
       overflow-x: auto; white-space: nowrap; flex: 1; min-width: 0;
     }
 .lp-install-tag {
-      font-family: var(--font-mono); font-size: .62rem; letter-spacing: .1em;
+      font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em;
       text-transform: uppercase; color: var(--muted); width: 2.6rem; flex-shrink: 0;
     }
 .lp-brew-copy {
@@ -151,7 +151,7 @@
 .lp-brew-copy:hover, .lp-brew-copy.copied { color: var(--accent-ink, var(--gold)); border-color: var(--accent, var(--gold)); }
 .lp-install-note { font-size: .75rem; color: var(--muted); margin-top: .5rem; }
 .lp-install-note a { color: var(--accent-ink, var(--gold)); text-decoration: none; }
-.lp-install-note code { font-family: var(--font-mono); font-size: .72rem; color: var(--text); }
+.lp-install-note code { font-family: var(--font-mono); font-size: .75rem; color: var(--text); }
 .lp-releases-list { display: flex; flex-direction: column; gap: .75rem; }
 .lp-release-card {
       background: var(--surface); border: 1px solid var(--border);
@@ -161,36 +161,40 @@
 .lp-release-card.latest { border-color: rgba(var(--accent-rgb, 245,192,32),.3); }
 .lp-release-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: .75rem; flex-wrap: wrap; }
 .lp-release-version { font-family: var(--font-head); font-size: 1.3rem; font-weight: 900; text-transform: uppercase; color: var(--text); }
-.lp-release-date { font-family: var(--font-mono); font-size: .7rem; color: var(--muted); letter-spacing: .08em; }
+.lp-release-date { font-family: var(--font-mono); font-size: .75rem; color: var(--muted); letter-spacing: .08em; }
 .lp-latest-badge {
       background: rgba(var(--accent-rgb, 245,192,32),.15); border: 1px solid rgba(var(--accent-rgb, 245,192,32),.3);
-      color: var(--accent-ink, var(--gold)); font-family: var(--font-mono); font-size: .65rem;
+      color: var(--accent-ink, var(--gold)); font-family: var(--font-mono); font-size: .75rem;
       padding: .2rem .6rem; letter-spacing: .1em; text-transform: uppercase;
     }
 .lp-release-body { font-size: .85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; white-space: pre-wrap; word-break: break-word; }
-.lp-show-more { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .06em; color: var(--accent-ink, var(--gold)); background: none; border: none; cursor: pointer; padding: 0; white-space: nowrap; transition: opacity .2s; }
+.lp-show-more { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em; color: var(--accent-ink, var(--gold)); background: none; border: none; cursor: pointer; padding: 0; white-space: nowrap; transition: opacity .2s; }
 .lp-show-more:hover { opacity: .75; }
 .lp-release-assets { display: flex; gap: .5rem; flex-wrap: wrap; }
 .lp-asset-btn {
       display: inline-flex; align-items: center; gap: .4rem;
-      font-family: var(--font-mono); font-size: .7rem; letter-spacing: .06em;
+      font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em;
       padding: .4rem .85rem; border: 1px solid var(--border); color: var(--muted);
       text-decoration: none !important; transition: border-color .2s, color .2s, background .2s;
     }
 .lp-asset-btn:hover { border-color: var(--accent, var(--gold)); color: var(--accent-ink, var(--gold)); }
-.lp-asset-btn.primary { background: var(--gold); border-color: var(--gold); color: var(--off-black) !important; }
+.lp-asset-btn.primary { background: var(--gold); border-color: var(--gold); color: var(--on-gold) !important; }
 .lp-asset-btn.primary:hover { background: var(--gold-dk); border-color: var(--gold-dk); }
 .lp-asset-btn .lp-flavor { font-weight: 700; letter-spacing: .1em; }
 .lp-asset-rows { display: flex; flex-direction: column; gap: .5rem; }
 .lp-asset-row { display: flex; align-items: flex-start; gap: .75rem; padding: .45rem 0; border-top: 1px solid rgba(44,44,44,.5); }
 .lp-asset-row:first-child { border-top: none; }
-.lp-asset-row-label { display: inline-flex; flex-direction: column; align-items: flex-start; gap: .3rem; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text); min-width: 108px; width: 108px; padding-top: .45rem; flex-shrink: 0; }
+.lp-asset-row-label { display: inline-flex; flex-direction: column; align-items: flex-start; gap: .3rem; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text); min-width: 108px; width: 108px; padding-top: .45rem; flex-shrink: 0; }
 .lp-asset-row-label .lp-os-name { display: inline-flex; align-items: center; gap: .4rem; }
 .lp-asset-row-label i { color: var(--muted); }
 .lp-asset-row-btns { display: flex; flex-wrap: wrap; gap: .45rem; }
-.lp-your-os { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-ink, var(--gold)); border: 1px solid rgba(var(--accent-rgb, 245,192,32),.35); padding: .08rem .4rem; border-radius: 3px; }
+.lp-your-os { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-ink, var(--gold)); border: 1px solid rgba(var(--accent-rgb, 245,192,32),.35); padding: .08rem .4rem; border-radius: 3px; }
 @media (max-width: 640px) {
   .lp-asset-row { flex-direction: column; gap: .3rem; }
+  .lp-asset-row-btns, .lp-release-assets { width: 100%; min-width: 0; }
+  .lp-asset-row-btns > div, .lp-release-assets > div { max-width: 100%; min-width: 0; }
+  .lp-asset-btn { min-width: 0; max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+  .lp-copy-btn { flex: none; }
   .lp-asset-row-label { padding-top: 0; }
 }
 .lp-loading {
@@ -201,7 +205,7 @@
 .lp-error { padding: 1.5rem; border: 1px solid #5a2020; background: rgba(90,32,32,.15); font-size: .85rem; color: #cc7777; }
 .lp-view-all {
       display: inline-flex; align-items: center; gap: .5rem; margin-top: 1rem;
-      font-family: var(--font-mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+      font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
       color: var(--muted); text-decoration: none !important; transition: color .2s;
     }
 .lp-view-all:hover { color: var(--accent-ink, var(--gold)); }
@@ -251,7 +255,7 @@
 .lp-dl-count-badge i { font-size: .85rem; }
 .lp-dl-count-badge.loading { color: var(--muted); background: transparent; }
 .lp-release-dl-count {
-      font-family: var(--font-mono); font-size: .65rem; letter-spacing: .08em;
+      font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em;
       color: var(--muted); display: inline-flex; align-items: center; gap: .3rem;
       margin-left: .5rem;
     }
@@ -397,6 +401,7 @@
   </script>
 </head>
 <body>
+<a class="lp-skip-link" href="#main">Skip to content</a>
 <div id="lp-root">
 
   <!-- NAV -->
@@ -486,6 +491,7 @@
   </div>
 
   <!-- PAGE HEADER -->
+  <main id="main" tabindex="-1">
   <header class="lp-page-header">
     <div class="lp-page-header-inner">
       <span class="lp-eyebrow">Work with the phone itself</span>
@@ -514,7 +520,7 @@
     </aside>
 
     <!-- CONTENT -->
-    <main>
+    <div class="lp-main-content">
 
       <!-- KDL (KNOWN-DATA LOGGER) -->
       <section class="lp-tool-section" id="section-kdl" data-tool="kdl">
@@ -596,8 +602,9 @@
         <a href="https://github.com/abrignoni/appwalk/releases" class="lp-view-all" target="_blank" rel="noopener noreferrer"><i class="ti ti-external-link"></i>View all AppWalk releases on GitHub</a>
       </section>
 
-    </main>
+    </div>
   </div>
+  </main>
 
   <!-- FOOTER -->
     <footer class="lp-footer">
@@ -743,13 +750,13 @@
         // releases / unparseable assets); otherwise the friendly label with
         // the filename in the tooltip. Copy-URL and SHA-256 buttons always kept.
         function assetBtn(a, ai, label, primary) {
-          const dlCount = a.download_count > 0 ? `<span style="opacity:.5;font-size:.65rem;margin-left:.35rem"><i class="ti ti-download" style="font-size:.6rem"></i>${formatStars(a.download_count)}</span>` : '';
+          const dlCount = a.download_count > 0 ? `<span style="opacity:.5;font-size:.75rem;margin-left:.35rem"><i class="ti ti-download" style="font-size:.75rem"></i>${formatStars(a.download_count)}</span>` : '';
           const copyId = `copy-${id}-${i}-${ai}`;
           const hashId = `hash-${id}-${i}-${ai}`;
           const digest = a.digest ? a.digest.replace(/^sha256:/, '') : '';
           const hashBtn = digest ? `<button class="lp-copy-btn" id="${hashId}" onclick="copySha('${digest}','${hashId}')" title="Copy SHA-256 hash"><i class="ti ti-fingerprint"></i></button>` : '';
           const text = label || `${getOSIcon(a.name)} ${a.name}`;
-          return `<div style="display:inline-flex;align-items:center;gap:0"><a href="${a.browser_download_url}" class="lp-asset-btn ${primary ? 'primary' : ''}" target="_blank" rel="noopener noreferrer" title="${a.name}">${text} ${a.size ? '<span style="opacity:.6;font-size:.65rem">' + formatBytes(a.size) + '</span>' : ''} ${dlCount}</a><button class="lp-copy-btn" id="${copyId}" onclick="copyUrl('${a.browser_download_url}','${copyId}')" title="Copy download URL"><i class="ti ti-clipboard"></i></button>${hashBtn}</div>`;
+          return `<div style="display:inline-flex;align-items:center;gap:0"><a href="${a.browser_download_url}" class="lp-asset-btn ${primary ? 'primary' : ''}" target="_blank" rel="noopener noreferrer" title="${a.name}">${text} ${a.size ? '<span style="opacity:.6;font-size:.75rem">' + formatBytes(a.size) + '</span>' : ''} ${dlCount}</a><button class="lp-copy-btn" id="${copyId}" onclick="copyUrl('${a.browser_download_url}','${copyId}')" title="Copy download URL"><i class="ti ti-clipboard"></i></button>${hashBtn}</div>`;
         }
 
         let assetBtns = '';
@@ -1218,18 +1225,18 @@
         }
         if (arts.length) {
           html += '<div class="lp-search-group">Artifacts</div>';
-          arts.forEach(a => { html += `<a class="lp-search-item" href="${a.url}">${a.name}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);margin-left:.5rem;">${a.tool}</span></a>`; });
+          arts.forEach(a => { html += `<a class="lp-search-item" href="${a.url}">${a.name}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);margin-left:.5rem;">${a.tool}</span></a>`; });
         }
         if (pages.length) {
           html += '<div class="lp-search-group">Pages</div>';
-          pages.forEach(p => { html += `<a class="lp-search-item" href="${p.url}">${p.title}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);margin-left:.5rem;">${p.page}</span></a>`; });
+          pages.forEach(p => { html += `<a class="lp-search-item" href="${p.url}">${p.title}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);margin-left:.5rem;">${p.page}</span></a>`; });
         }
         results.innerHTML = html;
         results.style.display = 'block';
       }
     })();
   </script>
-  <script src="/analytics.js?v=20260707" defer></script>
+  <script src="/analytics.js?v=20261122" defer></script>
   <dialog class="lp-video-dialog" id="lp-video-dialog" aria-labelledby="lp-video-dialog-title">
     <div class="lp-video-dialog-bar">
       <span id="lp-video-dialog-title"></span>

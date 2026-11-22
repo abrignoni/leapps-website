@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261113" />
+  <link rel="stylesheet" href="/css/global.css?v=20261122" />
   <style>
 .lp-header { padding: 3.5rem 2rem 3rem; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
 .lp-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(245,192,32,.06) 0%, transparent 70%); pointer-events: none; }
@@ -48,7 +48,7 @@
 .lp-res-section:last-child { margin-bottom: 0; }
 .lp-res-section-label {
       font-family: var(--font-mono);
-      font-size: .65rem;
+      font-size: .75rem;
       letter-spacing: .2em;
       text-transform: uppercase;
       color: var(--gold);
@@ -101,7 +101,7 @@
 .lp-res-card-body { flex: 1; min-width: 0; }
 .lp-res-card-type {
       font-family: var(--font-mono);
-      font-size: .58rem;
+      font-size: .75rem;
       letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--muted);
@@ -128,7 +128,7 @@
     }
 .lp-res-card-link {
       font-family: var(--font-mono);
-      font-size: .62rem;
+      font-size: .75rem;
       letter-spacing: .08em;
       color: var(--muted);
       display: inline-flex;
@@ -167,7 +167,7 @@
 .lp-page-nav-inner::-webkit-scrollbar { display: none; }
 .lp-page-nav-inner a {
       font-family: var(--font-mono);
-      font-size: .62rem;
+      font-size: .75rem;
       letter-spacing: .1em;
       text-transform: uppercase;
       color: var(--muted);
@@ -181,7 +181,7 @@
 .lp-page-nav-inner a.active { color: var(--gold); border-bottom-color: var(--gold); }
 .lp-res-card-meta {
       font-family: var(--font-mono);
-      font-size: .58rem;
+      font-size: .75rem;
       letter-spacing: .08em;
       color: var(--muted);
       display: flex;
@@ -209,7 +209,7 @@
       font-weight: 700;
       letter-spacing: .1em;
       text-transform: uppercase;
-      color: var(--off-black);
+      color: var(--on-gold);
       background: var(--gold);
       padding: .6rem 1.4rem;
       text-decoration: none !important;
@@ -249,7 +249,7 @@
 .lp-mention-card:hover::before { transform: scaleX(1); }
 .lp-mention-category {
       font-family: var(--font-mono);
-      font-size: .6rem;
+      font-size: .75rem;
       letter-spacing: .15em;
       text-transform: uppercase;
       color: var(--gold);
@@ -264,14 +264,14 @@
     }
 .lp-mention-desc {
       font-family: var(--font-mono);
-      font-size: .65rem;
+      font-size: .75rem;
       color: var(--muted);
       margin-top: .1rem;
     }
 .lp-mention-ext {
       font-family: var(--font-mono);
-      font-size: .6rem;
-      color: #444;
+      font-size: .75rem;
+      color: var(--muted);
       margin-top: auto;
       padding-top: .5rem;
       display: flex;
@@ -302,6 +302,7 @@
   </script>
 </head>
 <body>
+<a class="lp-skip-link" href="#main">Skip to content</a>
 <div id="lp-root">
 
   <nav class="lp-nav">
@@ -385,6 +386,7 @@
     <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">GitHub</a>
   </div>
 
+  <main id="main" tabindex="-1">
   <header class="lp-header">
     <div class="lp-header-inner">
       <span class="lp-eyebrow">Community · Learning</span>
@@ -403,7 +405,7 @@
     </div>
   </nav>
 
-  <main class="lp-main">
+  <div class="lp-main">
 
     <!-- SUBMIT CTA -->
     <div class="lp-submit-cta">
@@ -740,6 +742,7 @@
       </div>
     </div>
 
+  </div>
   </main>
 
     <footer class="lp-footer">
@@ -1013,17 +1016,17 @@
         }
         if (arts.length) {
           html += '<div class="lp-search-group">Artifacts</div>';
-          arts.forEach(a => { html += `<a class="lp-search-item" href="${a.url}">${a.name}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);margin-left:.5rem;">${a.tool}</span></a>`; });
+          arts.forEach(a => { html += `<a class="lp-search-item" href="${a.url}">${a.name}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);margin-left:.5rem;">${a.tool}</span></a>`; });
         }
         if (pages.length) {
           html += '<div class="lp-search-group">Pages</div>';
-          pages.forEach(p => { html += `<a class="lp-search-item" href="${p.url}">${p.title}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);margin-left:.5rem;">${p.page}</span></a>`; });
+          pages.forEach(p => { html += `<a class="lp-search-item" href="${p.url}">${p.title}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);margin-left:.5rem;">${p.page}</span></a>`; });
         }
         results.innerHTML = html;
         results.style.display = 'block';
       }
     })();
   </script>
-  <script src="/analytics.js?v=20260707" defer></script>
+  <script src="/analytics.js?v=20261122" defer></script>
 </body>
 </html>

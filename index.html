@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261113" />
+  <link rel="stylesheet" href="/css/global.css?v=20261122" />
   <style>
 img { max-width: 100%; display: block; }
 .lp-hero {
@@ -88,7 +88,7 @@ img { max-width: 100%; display: block; }
 .lp-hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
 .lp-btn-primary {
       background: var(--gold);
-      color: var(--off-black) !important;
+      color: var(--on-gold) !important;
       padding: .75rem 2rem;
       font-family: var(--font-head);
       font-weight: 700;
@@ -152,7 +152,7 @@ img { max-width: 100%; display: block; }
     }
 .lp-section-label {
       font-family: var(--font-mono);
-      font-size: .7rem;
+      font-size: .75rem;
       letter-spacing: .2em;
       text-transform: uppercase;
       color: var(--gold);
@@ -179,7 +179,7 @@ img { max-width: 100%; display: block; }
 .lp-blog-head .lp-section-title { margin-bottom: 0; }
 .lp-blog-alllink {
       font-family: var(--font-mono);
-      font-size: .72rem;
+      font-size: .75rem;
       letter-spacing: .08em;
       text-transform: uppercase;
       color: var(--muted);
@@ -210,7 +210,7 @@ img { max-width: 100%; display: block; }
 .lp-blog-card:hover { background: var(--surface); }
 .lp-blog-card-meta {
       font-family: var(--font-mono);
-      font-size: .68rem;
+      font-size: .75rem;
       letter-spacing: .05em;
       color: var(--muted);
       display: flex;
@@ -238,7 +238,7 @@ img { max-width: 100%; display: block; }
 .lp-blog-card-more {
       margin-top: auto;
       font-family: var(--font-mono);
-      font-size: .68rem;
+      font-size: .75rem;
       letter-spacing: .06em;
       color: var(--muted);
       display: inline-flex;
@@ -274,7 +274,7 @@ img { max-width: 100%; display: block; }
 .lp-tool-card:hover::before { transform: scaleX(1); }
 .lp-tool-tag {
       font-family: var(--font-mono);
-      font-size: .65rem;
+      font-size: .75rem;
       letter-spacing: .15em;
       color: var(--gold);
       text-transform: uppercase;
@@ -312,7 +312,7 @@ img { max-width: 100%; display: block; }
 .lp-tool-links { display: flex; gap: .5rem; flex-wrap: wrap; }
 .lp-tool-link {
       font-family: var(--font-mono);
-      font-size: .65rem;
+      font-size: .75rem;
       letter-spacing: .08em;
       padding: .3rem .65rem;
       border: 1px solid var(--border);
@@ -342,10 +342,10 @@ img { max-width: 100%; display: block; }
 .lp-tool-card-vleapp .lp-tool-link { border-color: rgba(var(--color-vleapp-rgb),.3) !important; color: var(--color-vleapp) !important; }
 .lp-tool-card-lava { border-left: 2px solid var(--color-lava); }
 .lp-tool-card-lava .lp-tool-tag,
-    .lp-tool-card-lava .lp-tool-name { color: var(--color-lava); }
+    .lp-tool-card-lava .lp-tool-name { color: var(--color-lava-text); }
 .lp-tool-card-lava .lp-tool-link {
       border-color: rgba(var(--color-lava-rgb),.3) !important;
-      color: var(--color-lava) !important;
+      color: var(--color-lava-text) !important;
     }
 .lp-tool-card-dleapp { border-left: 2px solid var(--color-dleapp); }
 .lp-tool-card-dleapp .lp-tool-tag,
@@ -410,7 +410,7 @@ img { max-width: 100%; display: block; }
     }
 .lp-lava-tag {
       font-family: var(--font-mono);
-      font-size: .7rem;
+      font-size: .75rem;
       letter-spacing: .2em;
       text-transform: uppercase;
       color: var(--gold);
@@ -436,7 +436,7 @@ img { max-width: 100%; display: block; }
       line-height: 1.9;
     }
 .lp-lava-label {
-      font-size: .65rem;
+      font-size: .75rem;
       letter-spacing: .15em;
       text-transform: uppercase;
       color: var(--muted);
@@ -451,7 +451,7 @@ img { max-width: 100%; display: block; }
 .lp-lava-row:last-of-type { border-bottom: none; }
 .lp-lava-key { color: var(--gold); }
 .lp-lava-val { color: #aaaaaa; }
-.lp-lava-footer { margin-top: 1rem; font-size: .65rem; color: #555555; letter-spacing: .1em; }
+.lp-lava-footer { margin-top: 1rem; font-size: .75rem; color: var(--muted); letter-spacing: .1em; }
 .lp-lava-screenshot {
       border: 1px solid var(--border);
       border-radius: 8px;
@@ -486,7 +486,7 @@ img { max-width: 100%; display: block; }
       border: 1px solid rgba(245,192,32,.3);
       color: var(--gold);
       font-family: var(--font-mono);
-      font-size: .7rem;
+      font-size: .75rem;
       padding: .3rem .75rem;
       letter-spacing: .1em;
       display: inline-block;
@@ -518,7 +518,7 @@ img { max-width: 100%; display: block; }
 .lp-dl-btn-gleapp { border-color: rgba(var(--color-gleapp-rgb),.4) !important; color: var(--color-gleapp) !important; }
 .lp-dl-btn-lava {
       border-color: rgba(var(--color-lava-rgb),.4) !important;
-      color: var(--color-lava) !important;
+      color: var(--color-lava-text) !important;
     }
 .lp-mailing {
       padding: 5rem 2rem;
@@ -562,9 +562,9 @@ img { max-width: 100%; display: block; }
 .lp-mail-note {
       margin-top: 1rem;
       font-family: var(--font-mono);
-      font-size: .65rem;
+      font-size: .75rem;
       letter-spacing: .1em;
-      color: #555555;
+      color: var(--muted);
       text-transform: uppercase;
     }
 .lp-faq-section { padding: 4rem 2rem; border-top: 1px solid var(--border); }
@@ -637,7 +637,7 @@ img { max-width: 100%; display: block; }
 .lp-mention-card:hover::before { transform: scaleX(1); }
 .lp-mention-category {
       font-family: var(--font-mono);
-      font-size: .6rem;
+      font-size: .75rem;
       letter-spacing: .15em;
       text-transform: uppercase;
       color: var(--gold);
@@ -652,14 +652,14 @@ img { max-width: 100%; display: block; }
     }
 .lp-mention-desc {
       font-family: var(--font-mono);
-      font-size: .65rem;
+      font-size: .75rem;
       color: var(--muted);
       margin-top: .1rem;
     }
 .lp-mention-ext {
       font-family: var(--font-mono);
-      font-size: .6rem;
-      color: #444;
+      font-size: .75rem;
+      color: var(--muted);
       margin-top: auto;
       padding-top: .5rem;
       display: flex;
@@ -689,14 +689,14 @@ img { max-width: 100%; display: block; }
 .lp-contrib-name { font-size: .875rem; font-weight: 600; color: var(--text); }
 .lp-contrib-role { font-size: .75rem; color: var(--muted); margin-top: .1rem; }
 .lp-contrib-right { display: flex; flex-direction: column; align-items: flex-end; gap: .3rem; flex-shrink: 0; }
-.lp-contrib-commits { font-family: var(--font-mono); font-size: .65rem; color: #555; }
+.lp-contrib-commits { font-family: var(--font-mono); font-size: .75rem; color: var(--muted); }
 .lp-contrib-tools { display: flex; gap: .3rem; flex-wrap: wrap; justify-content: flex-end; }
-.lp-contrib-tag { font-family: var(--font-mono); font-size: .55rem; letter-spacing: .08em; padding: .15rem .45rem; border: 1px solid var(--border); color: var(--muted); }
+.lp-contrib-tag { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; padding: .15rem .45rem; border: 1px solid var(--border); color: var(--muted); }
 .lp-contrib-tag-ileapp { background: rgba(var(--color-ileapp-rgb),.15); color: var(--color-ileapp); border: 1px solid rgba(var(--color-ileapp-rgb),.3); }
 .lp-contrib-tag-aleapp { background: rgba(var(--color-aleapp-rgb),.15); color: var(--color-aleapp); border: 1px solid rgba(var(--color-aleapp-rgb),.3); }
 .lp-contrib-tag-rleapp { background: rgba(var(--color-rleapp-rgb),.15); color: var(--color-rleapp); border: 1px solid rgba(var(--color-rleapp-rgb),.3); }
 .lp-contrib-tag-vleapp { background: rgba(var(--color-vleapp-rgb),.15); color: var(--color-vleapp); border: 1px solid rgba(var(--color-vleapp-rgb),.3); }
-.lp-contrib-tag-lava { background: rgba(var(--color-lava-rgb),.15); color: var(--color-lava); border: 1px solid rgba(var(--color-lava-rgb),.3); }
+.lp-contrib-tag-lava { background: rgba(var(--color-lava-rgb),.15); color: var(--color-lava-text); border: 1px solid rgba(var(--color-lava-rgb),.3); }
 .lp-contrib-tag-batch { background: rgba(31,184,166,.15); color: #1FB8A6; border: 1px solid rgba(31,184,166,.3); }
 .lp-contrib-tag-dleapp { background: rgba(var(--color-dleapp-rgb),.15); color: var(--color-dleapp); border: 1px solid rgba(var(--color-dleapp-rgb),.3); }
 .lp-contrib-tag-gleapp { background: rgba(var(--color-gleapp-rgb),.15); color: var(--color-gleapp); border: 1px solid rgba(var(--color-gleapp-rgb),.3); }
@@ -740,7 +740,7 @@ img { max-width: 100%; display: block; }
 .lp-whats-new-icon { color: var(--gold); font-size: 1.1rem; flex-shrink: 0; }
 .lp-whats-new-eyebrow {
       font-family: var(--font-mono);
-      font-size: .65rem;
+      font-size: .75rem;
       letter-spacing: .15em;
       text-transform: uppercase;
       color: var(--gold);
@@ -750,13 +750,13 @@ img { max-width: 100%; display: block; }
 .lp-whats-new-main span { color: var(--gold); font-weight: 600; }
 .lp-whats-new-date {
       color: var(--muted);
-      font-size: .7rem;
+      font-size: .75rem;
       margin-top: .15rem;
       font-family: var(--font-mono);
     }
 .lp-whats-new-link {
       font-family: var(--font-mono);
-      font-size: .7rem;
+      font-size: .75rem;
       color: var(--gold) !important;
       text-decoration: none !important;
       white-space: nowrap;
@@ -781,7 +781,7 @@ img { max-width: 100%; display: block; }
 @media (max-width: 480px) {
   .lp-contrib-row { flex-wrap: wrap; gap: .75rem; }
   .lp-contrib-right { display: none; }
-  .lp-contrib-role { font-size: .7rem; }
+  .lp-contrib-role { font-size: .75rem; }
   .lp-contrib-name { font-size: .875rem; }
 }
 @media (max-width: 480px) {
@@ -795,7 +795,7 @@ img { max-width: 100%; display: block; }
       width: 48px;
       height: 48px;
       background: var(--gold);
-      color: var(--off-black);
+      color: var(--on-gold);
       border: none;
       cursor: pointer;
       display: flex;
@@ -890,6 +890,7 @@ img { max-width: 100%; display: block; }
   </script>
 </head>
 <body>
+<a class="lp-skip-link" href="#main">Skip to content</a>
 <div id="lp-root">
 
   <!-- NAV -->
@@ -976,6 +977,7 @@ img { max-width: 100%; display: block; }
   </div>
 
   <!-- HERO -->
+  <main id="main" tabindex="-1">
   <section class="lp-hero">
     <div class="lp-hero-inner">
       <div>
@@ -1009,7 +1011,7 @@ img { max-width: 100%; display: block; }
       <div><div class="lp-stat-num" id="hero-stat-downloads">—</div><div class="lp-stat-lbl">Total Downloads</div></div>
       <div><div class="lp-stat-num" id="hero-stat-contributors">—</div><div class="lp-stat-lbl">Contributors</div></div>
       <div><div class="lp-stat-num" id="hero-stat-stars">—</div><div class="lp-stat-lbl">GitHub Stars</div></div>
-      <div><div class="lp-stat-num">500+</div><div class="lp-stat-lbl">Parsers</div></div>
+      <div><div class="lp-stat-num">4,500+</div><div class="lp-stat-lbl">Artifacts</div></div>
     </div>
   </section>
 
@@ -1327,7 +1329,7 @@ img { max-width: 100%; display: block; }
       </a>
       </div>
       <div style="margin-top:1.5rem;">
-        <a href="https://leapps.org/resources#mentions" style="font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:color .2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">See all recognitions <i class="ti ti-arrow-up-right"></i></a>
+        <a href="https://leapps.org/resources#mentions" style="font-family:var(--font-mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:color .2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">See all recognitions <i class="ti ti-arrow-up-right"></i></a>
       </div>
     </div>
   </section>
@@ -1404,6 +1406,8 @@ img { max-width: 100%; display: block; }
   </section>
 
   <!-- FOOTER -->
+  </main>
+
     <footer class="lp-footer">
     <div class="lp-footer-inner">
       <div class="lp-footer-brand">
@@ -1989,18 +1993,18 @@ img { max-width: 100%; display: block; }
         }
         if (arts.length) {
           html += '<div class="lp-search-group">Artifacts</div>';
-          arts.forEach(a => { html += `<a class="lp-search-item" href="${a.url}">${a.name}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);margin-left:.5rem;">${a.tool}</span></a>`; });
+          arts.forEach(a => { html += `<a class="lp-search-item" href="${a.url}">${a.name}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);margin-left:.5rem;">${a.tool}</span></a>`; });
         }
         if (pages.length) {
           html += '<div class="lp-search-group">Pages</div>';
-          pages.forEach(p => { html += `<a class="lp-search-item" href="${p.url}">${p.title}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);margin-left:.5rem;">${p.page}</span></a>`; });
+          pages.forEach(p => { html += `<a class="lp-search-item" href="${p.url}">${p.title}<span class="lp-search-badge" style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);margin-left:.5rem;">${p.page}</span></a>`; });
         }
         results.innerHTML = html;
         results.style.display = 'block';
       }
     })();
   </script>
-  <script src="/analytics.js?v=20260707" defer></script>
+  <script src="/analytics.js?v=20261122" defer></script>
   <dialog class="lp-video-dialog" id="lp-video-dialog" aria-labelledby="lp-video-dialog-title">
     <div class="lp-video-dialog-bar">
       <span id="lp-video-dialog-title"></span>
