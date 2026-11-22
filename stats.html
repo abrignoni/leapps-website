@@ -722,7 +722,9 @@
         document.getElementById('m-contributors').classList.remove('loading');
         document.getElementById('m-releases').textContent = fmt(totRel);
         document.getElementById('m-releases').classList.remove('loading');
-        document.getElementById('m-commits').textContent = fmt(totCom) + (results.some(r => r.openSource && !r.contribComplete) ? '+' : '');
+        document.getElementById('m-commits').textContent = results.some(r => r.openSource && r.contribLoaded)
+          ? fmt(totCom) + (results.some(r => r.openSource && !r.contribComplete) ? '+' : '')
+          : '—';
         document.getElementById('m-commits').classList.remove('loading');
 
         // Updated timestamp

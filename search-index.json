@@ -117,7 +117,7 @@
     "title": "Readers: the format readers the LEAPPs carry, and cblite-parser",
     "url": "https://leapps.org/probes#readers",
     "page": "Probes",
-    "excerpt": "c2pareader, cblite-parser, hive-parser, mmkv-parser, sqlite-wal, cimreader, dpapiprobe and heicreader: read-only, free and open source, each also a command line tool."
+    "excerpt": "c2pareader, hive-parser, mmkv-parser, sqlite-wal, cimreader, dpapiprobe and heicreader, plus cblite-parser, which runs on its own: read-only, free and open source, each also a command line tool."
   },
   {
     "title": "c2pareader: Content Credentials (C2PA) and IPTC source type",
