@@ -983,7 +983,7 @@ img { max-width: 100%; display: block; }
       <div>
         <p class="lp-eyebrow">Digital Forensics</p>
         <h1>Leap Ahead<br>of the <span>Evidence</span></h1>
-        <p class="lp-hero-sub">Free tools for mobile and digital forensics professionals. Extract, parse, and analyze artifacts from iOS, Android, and more.</p>
+        <p class="lp-hero-sub">Free tools for mobile and digital forensics professionals. Parse and review artifacts from iOS, Android and more.</p>
         <div class="lp-hero-btns">
           <a href="#download" class="lp-btn-primary">Download Tools</a>
           <a href="https://leapps.org/docs" class="lp-btn-outline">Quick Start</a>
@@ -1011,14 +1011,15 @@ img { max-width: 100%; display: block; }
       <div><div class="lp-stat-num" id="hero-stat-downloads">—</div><div class="lp-stat-lbl">Total Downloads</div></div>
       <div><div class="lp-stat-num" id="hero-stat-contributors">—</div><div class="lp-stat-lbl">Contributors</div></div>
       <div><div class="lp-stat-num" id="hero-stat-stars">—</div><div class="lp-stat-lbl">GitHub Stars</div></div>
-      <div><div class="lp-stat-num">4,500+</div><div class="lp-stat-lbl">Artifacts</div></div>
+      <div><div class="lp-stat-num">4,700+</div><div class="lp-stat-lbl">Artifacts</div></div>
+      <p style="flex-basis:100%;margin:0;font-size:.75rem;color:var(--muted);">Downloads and stars cover the LEAPPs, LAVA and Batch LEAPP. Downloads include checksum files. The contributor count leaves out LAVA.</p>
     </div>
   </section>
 
   <!-- TOOLS -->
   <section class="lp-section" id="tools">
     <span class="lp-section-label">The Suite</span>
-    <h2 class="lp-section-title">Eight Tools.<br>Every Platform.</h2>
+    <h2 class="lp-section-title">Eight Tools.<br>One Workflow.</h2>
     <div class="lp-tools-grid">
       <div class="lp-tool-card lp-tool-card-ileapp">
         <div class="lp-tool-tag">iOS · iPadOS</div>
@@ -1096,7 +1097,7 @@ img { max-width: 100%; display: block; }
         <div class="lp-tool-tag">Automation</div>
         <div class="lp-tool-name"><img src="/logos/batch-leapp_icon_1024.png" alt="Batch LEAPP logo" width="1024" height="1024" class="lp-tool-logo">Batch LEAPP</div>
         <div class="lp-tool-full">Batch processing for LEAPP tools</div>
-        <div class="lp-tool-desc">Run any LEAPP tool across a whole folder of extractions — one report index, hashing, and a case manifest.</div>
+        <div class="lp-tool-desc">Run iLEAPP, ALEAPP, RLEAPP, VLEAPP or DLEAPP across a folder of extractions, with one report index, hashing, and a case manifest.</div>
         <div class="lp-tool-links">
           <a href="https://github.com/abrignoni/batch-leapp" class="lp-tool-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a>
           <a href="https://leapps.org/releases#section-batch-leapp" class="lp-tool-link"><i class="ti ti-download"></i>Download</a>
@@ -1119,7 +1120,7 @@ img { max-width: 100%; display: block; }
         <div class="lp-feature-icon"><i class="ti ti-brand-python"></i></div>
         <div>
           <h3>Python-based</h3>
-          <p>Built in Python for cross-platform compatibility. Run on Windows, macOS, or Linux with no licensing fees.</p>
+          <p>The parsers are built in Python for cross-platform compatibility. Run on Windows, macOS, or Linux with no licensing fees.</p>
         </div>
       </div>
       <div class="lp-feature-item">
@@ -1153,7 +1154,7 @@ img { max-width: 100%; display: block; }
         <span class="lp-lava-tag">Featured Tool</span>
         <h2>LAVA<br>Visualization</h2>
         <p>LAVA — LEAPP Artifact Viewer App — takes output from the LEAPP tools and transforms raw parsed data into an easy to navigate interface.</p>
-        <p>Correlate events across devices and applications. Build a complete picture of user activity for investigations and legal proceedings.</p>
+        <p>Review events across the artifacts in a case. Build a complete picture of user activity for investigations and legal proceedings.</p>
         <a href="https://leapps.org/releases" class="lp-btn-primary">Download LAVA</a>
       </div>
       <div class="lp-lava-screenshot">
@@ -1234,7 +1235,7 @@ img { max-width: 100%; display: block; }
             <span class="lp-faq-q">How do I install the tools?</span>
             <i class="ti ti-chevron-down lp-faq-chev" aria-hidden="true"></i>
           </button>
-          <div class="lp-faq-answer">Download the latest release from the <a href="https://leapps.org/releases">releases page</a>. On Windows, unzip the portable download and run the program inside it. On macOS, open the disk image. To run from source, install Python 3 and run <code>pip install -r requirements.txt</code> followed by the main script.</div>
+          <div class="lp-faq-answer">Download the latest release from the <a href="https://leapps.org/releases">releases page</a>. For the parsers on Windows, unzip the portable download and run the program inside it. On macOS, open the disk image. LAVA uses an installer on Windows and a disk image on macOS. Batch LEAPP comes as a zip on both. To run a parser from source, install Python 3 and run <code>pip install -r requirements.txt</code> followed by the main script.</div>
         </div>
 
         <div class="lp-faq-item">
@@ -1356,7 +1357,7 @@ img { max-width: 100%; display: block; }
     <div class="lp-contrib-inner">
       <span class="lp-section-label">The People</span>
       <h2 class="lp-section-title">Language Contributors</h2>
-      <p style="color:var(--muted);font-size:.95rem;margin-bottom:2rem;max-width:560px;">The contributors who make LEAPPs accessible in multiple languages through UI translations. All data pulled live from GitHub.</p>
+      <p style="color:var(--muted);font-size:.95rem;margin-bottom:2rem;max-width:560px;">People who contributed to the LEAPPs language resources. All data pulled live from GitHub.</p>
       <div id="lp-trans-top" class="lp-contrib-list">
         <div class="lp-contrib-loading"><span style="color:var(--gold)">Fetching contributors…</span></div>
       </div>
@@ -2004,7 +2005,7 @@ img { max-width: 100%; display: block; }
       }
     })();
   </script>
-  <script src="/analytics.js?v=20261122" defer></script>
+  <script src="/analytics.js?v=20261123" defer></script>
   <dialog class="lp-video-dialog" id="lp-video-dialog" aria-labelledby="lp-video-dialog-title">
     <div class="lp-video-dialog-bar">
       <span id="lp-video-dialog-title"></span>

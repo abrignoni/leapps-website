@@ -358,7 +358,7 @@
       {
         "@type": "WebPage",
         "name": "Probes — LEAPPs",
-        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, mediacarve for media, databases, plists, archives and PDFs carved by signature, regfprobe for Windows registry hives, and pstprobe for Outlook PST and OST files. One Python file each, built on the standard library. Plus the readers the LEAPPs carry: c2pareader, cblite-parser, hive-parser, mmkv-parser, sqlite-wal, cimreader, dpapiprobe and heicreader.",
+        "description": "Single-purpose forensic readers: qnxprobe for filesystems in raw images and flash dumps, ewfprobe for forensic, Apple and virtual disk images, exoprobe for media Android apps cached through ExoPlayer, chromiumcacheprobe for Chrome's cache on Android and the video it holds, mediacarve for media, databases, plists, archives and PDFs carved by signature, regfprobe for Windows registry hives, and pstprobe for Outlook PST and OST files. One core Python file each, built on the standard library. Plus the readers the LEAPPs carry: c2pareader, cblite-parser, hive-parser, mmkv-parser, sqlite-wal, cimreader, dpapiprobe and heicreader.",
         "url": "https://leapps.org/probes",
         "isPartOf": { "@type": "WebSite", "name": "LEAPPs", "url": "https://leapps.org" }
       },
@@ -671,7 +671,7 @@
     <div class="lp-page-header-inner">
       <span class="lp-eyebrow">Standalone tools</span>
       <h1>The <span>Probes</span></h1>
-      <p>Single-purpose readers that sit beside the LEAPPs rather than inside them. Each one reads one kind of evidence the way its format defines it, runs from one Python file built on the standard library, and never writes to the evidence it reads. Each has an optional window that runs its own command line, for anyone who would rather not use a terminal. Free and open source under the MIT license.</p>
+      <p>Single-purpose readers that sit beside the LEAPPs rather than inside them. Each one reads one kind of evidence the way its format defines it, runs from one core Python file built on the standard library (some features need a companion file or optional package), and never writes to the evidence it reads. Each has an optional window that runs its own command line, for anyone who would rather not use a terminal. Free and open source under the MIT license.</p>
       <div class="lp-tool-nav">
         <a href="#section-qnxprobe" class="lp-tool-pill">qnxprobe</a>
         <a href="#section-ewfprobe" class="lp-tool-pill">ewfprobe</a>
@@ -738,8 +738,8 @@
         <div class="lp-about-box">
           <div>
             <h3>What is qnxprobe?</h3>
-            <p>A head unit image lands on your desk and the first question is what is actually in it. The partition table will call a qnx6 volume Linux, and the usual tools have no QNX support at all. qnxprobe identifies each volume by its own on-disk structure instead of the type byte, then lists it and extracts to a zip with a provenance manifest.</p>
-            <p>Nothing to install, no admin rights, and it never writes to the image. Decryption (BitLocker, encrypted APFS and encrypted containers) uses the <code>pycryptodome</code> package, which the release executables carry.</p>
+            <p>A head unit image lands on your desk and the first question is what is actually in it. The partition table will call a qnx6 volume Linux, and blkid, file and The Sleuth Kit have no QNX6 support. qnxprobe identifies each volume by its own on-disk structure instead of the type byte, then lists it and extracts to a zip with a provenance manifest.</p>
+            <p>Nothing to install, no admin rights, and it never writes to the image. Decryption (BitLocker, encrypted APFS and encrypted containers) uses the <code>pycryptodome</code> package and, for LUKS with Argon2, <code>argon2-cffi</code>. The release executables carry both.</p>
           </div>
           <div>
             <h3>Highlights</h3>
@@ -788,7 +788,7 @@
               <li>Logical evidence: EnCase <code>.L01</code> and FTK Imager <code>.ad1</code>, each entry listed, exported and checked against the hashes stored for it</li>
               <li>Encrypted Apple disk images, FTK Imager AD encryption and encrypted AFF opened with their password or the certificate's private key. The password comes from a file, an environment variable or the terminal, never the command line</li>
               <li>Checked against the tools that write these formats (libewf, AFFLIB, <code>hdiutil</code>, FTK Imager, Windows 11 and qemu-img); on five EnCase L01s from Digital Corpora, all 55,599 exported files match libewf byte for byte</li>
-              <li>An incomplete set is refused, not read as a smaller image that reports its missing data as empty. Encrypted Ex01, Lx01, encrypted AFF4 and encrypted QCOW are not read</li>
+              <li>An incomplete set is refused, not read as a smaller image that reports its missing data as empty. An AFD missing its last file can only be caught when that file held the image size. Otherwise info and verify count its pages as missing. Encrypted Ex01, Lx01, encrypted AFF4 and encrypted QCOW are not read</li>
               <li>A window, <code>ewfprobe_gui</code>, for Info, Verify, listing and Export. A password typed into it reaches ewfprobe in an environment variable, not on its command line. The release executables carry it from v0.13.0</li>
             </ul>
           </div>
@@ -817,7 +817,7 @@
           <div>
             <h3>What is exoprobe?</h3>
             <p>ExoPlayer, now androidx.media3, caches what an app plays, but not as one file: a cached video is split into pieces named for the byte offset they start at, and the address it came from is kept in a separate index. Opened on its own, a piece is a truncated file at best.</p>
-            <p>exoprobe reads the index, joins each item's pieces back into the file the app downloaded, and joins a DASH or HLS stream's segments in the order its cached manifest or playlist lists them. It writes only into the output folder you give it.</p>
+            <p>exoprobe reads the index, joins each item's pieces back into the file the app downloaded, and joins a DASH or HLS stream's segments in the order its cached manifest or playlist lists them. It writes only into the output folder you give it and a temporary copy of the index database.</p>
           </div>
           <div>
             <h3>Highlights</h3>
@@ -970,7 +970,7 @@
           <div>
             <h3>What is pstprobe?</h3>
             <p>It opens a Personal Storage Table (<code>.pst</code>) or an Offline Storage Table (<code>.ost</code>) and reads its folders, the items in them (mail, contacts, appointments, tasks, notes and the rest), their recipients and their attachments, including items attached to other items. It opens the file read-only, and a mailbox of several gigabytes is read a piece at a time, never loaded whole.</p>
-            <p>It is written from Microsoft's [MS-PST] specification, with nothing taken from libpff, so an MIT tool can read a mailbox with no copyleft dependency and nothing to build. It was compared with libpff on PSTs Outlook made, the OST in the NIST CFReDS Data Leakage Case and the Enron PST set; the README gives the results, and says which variants have been read only in the tests' own files. DLEAPP, starting with its next release, reads Outlook mailboxes with it.</p>
+            <p>It is written from Microsoft's [MS-PST] specification and, for 4 KB OST files, the public PFF format notes, with no libpff code, so an MIT tool can read a mailbox with no copyleft dependency and nothing to build. It was compared with libpff on PSTs Outlook made, the OST in the NIST CFReDS Data Leakage Case and the Enron PST set; the README gives the results, and says which variants have been read only in the tests' own files. DLEAPP, starting with its next release, reads Outlook mailboxes with it.</p>
           </div>
           <div>
             <h3>Highlights</h3>
@@ -1006,12 +1006,12 @@
         <div class="lp-about-box">
           <div>
             <h3>Executables</h3>
-            <p>Every release carries standalone executables for Windows, macOS and Linux, each on x64 and arm64, built by the probe's own GitHub Actions workflow from the tagged commit, with a <code>SHA256SUMS.txt</code> covering them. Each archive holds the command line tool and its window as two executables; regfprobe and pstprobe attach the two as separate files instead, listed in <code>SHA256SUMS-binaries.txt</code> for regfprobe and in <code>SHA256SUMS.txt</code> for pstprobe.</p>
+            <p>Current releases carry standalone executables for Windows, macOS and Linux, each on x64 and arm64, built by the probe's own GitHub Actions workflow from the tagged commit, with a <code>SHA256SUMS.txt</code> covering them. In current releases, each archive holds the command line tool and its window as two executables; regfprobe and pstprobe attach the two as separate files instead, listed in <code>SHA256SUMS-binaries.txt</code> for regfprobe and in <code>SHA256SUMS.txt</code> for pstprobe.</p>
             <p>They are not code signed yet, so Windows SmartScreen and macOS Gatekeeper will each ask once. Unzip to a local folder rather than running from a network share.</p>
           </div>
           <div>
             <h3>Or run the Python file</h3>
-            <p>Each probe is one Python file that needs the standard library and nothing else, so <code>python3 &lt;probe&gt;.py</code> works on Windows, macOS and Linux, and its window is <code>&lt;probe&gt;_gui.py</code>, which needs <code>&lt;probe&gt;_theme.py</code> beside it. ewfprobe, exoprobe, chromiumcacheprobe, mediacarve, regfprobe and pstprobe attach the Python files to every release as well.</p>
+            <p>Each core reader is one Python file on the standard library, so <code>python3 &lt;probe&gt;.py</code> works on Windows, macOS and Linux. Some features need more: qnxprobe needs <code>ewfprobe.py</code> to open containers, regfprobe <code>--image</code> needs <code>qnxprobe.py</code> (and <code>ewfprobe.py</code> for E01), and chromiumcacheprobe needs the <code>brotli</code> package for Brotli bodies. The window is <code>&lt;probe&gt;_gui.py</code>, which needs the probe and its theme file beside it. regfprobe's window also needs <code>regfprobe_report.py</code>, <code>regfprobe_interpret.py</code> and <code>regfprobe_profile.py</code>. ewfprobe, exoprobe, chromiumcacheprobe, mediacarve, regfprobe and pstprobe attach the Python file to every release, and the window's files since the window was added.</p>
           </div>
         </div>
       </section>
@@ -1022,14 +1022,14 @@
           <div class="lp-tool-header-left">
             <div class="lp-tool-platform">Libraries &middot; Command line</div>
             <h2>Readers</h2>
-            <div class="lp-tool-fullname">The format readers the LEAPPs carry inside them</div>
+            <div class="lp-tool-fullname">The format readers the LEAPPs carry, and cblite-parser, which runs on its own</div>
           </div>
         </div>
         <div class="lp-about-box">
           <div>
             <h3>What are the readers?</h3>
             <p>Each reader decodes one data store an app or the operating system writes, and lives in its own repository so it can be tested on its own. The LEAPPs copy the file in unchanged and record the commit they copied, so the code that read the data can be traced to its repository. heicreader is the exception: the LEAPPs install it from the wheels on its release, pinned to that version.</p>
-            <p>They have no window. Each is read-only, free and open source under its own licence (MIT, or Apache 2.0 for cimreader), and also runs on its own from the command line. All but heicreader are pure Python with no executables, and all but dpapiprobe and heicreader need only the standard library: dpapiprobe also needs PyCryptodome. heicreader is a Python package around a helper program written in Go, so each of its wheels holds a native binary, and the LEAPPs' packaged builds carry it.</p>
+            <p>They have no window. Each is read-only, free and open source under its own licence (MIT, or Apache 2.0 for cimreader), and also runs on its own from the command line. All but heicreader are pure Python with no executables, and all but dpapiprobe and heicreader need only the standard library: dpapiprobe also needs PyCryptodome. heicreader is a Python package around a helper program written in Go, so each of its wheels holds a native binary, and the LEAPPs' packaged builds carry it starting with their next release. mmkv-parser needs PyCryptodome or cryptography only to decrypt a store.</p>
           </div>
           <div>
             <h3>Releases</h3>
@@ -1159,7 +1159,7 @@
           <div>
             <h3>Where it runs</h3>
             <ul>
-              <li>iLEAPP and ALEAPP, for artifacts such as Snapchat, Discord and Google Chat</li>
+              <li>iLEAPP and ALEAPP, for artifacts such as Snapchat, Discord and Google Chat, and a DLEAPP Bluetooth artifact. RLEAPP and VLEAPP carry it too</li>
               <li><code>python -m sqlite_wal summary DB</code> and <code>rows DB --query</code>, with <code>--key</code> to label earlier versions of current rows</li>
             </ul>
           </div>
@@ -1235,13 +1235,13 @@
           <div>
             <h3>What it reads</h3>
             <p>HEIC and HEIF images, the format iPhones save photos in. It hands back the pixels, with the rotation, mirroring and crop the file asks for already applied, and the Exif block as stored, Orientation tag included. A damaged file raises an error and the next file carries on.</p>
-            <p>A small Python package around a helper program written in Go. The decoder is <a href="https://github.com/abrignoni/h265" target="_blank" rel="noopener noreferrer">abrignoni/h265</a>, a fork of the pure-Go gen2brain/h265 with one fix for transparency stored as a grid of its own, the way Apple writes it, offered upstream as <a href="https://github.com/gen2brain/h265/pull/12" target="_blank" rel="noopener noreferrer">gen2brain/h265#12</a>. Nothing in it is GPL or LGPL, so the LEAPPs' packaged builds can carry it. They used pillow-heif before, whose wheels bundle the GPL x265 encoder.</p>
+            <p>A small Python package around a helper program written in Go. The decoder is <a href="https://github.com/abrignoni/h265" target="_blank" rel="noopener noreferrer">abrignoni/h265</a>, a fork of the pure-Go gen2brain/h265 with one fix for transparency stored as a grid of its own, the way Apple writes it, offered upstream as <a href="https://github.com/gen2brain/h265/pull/12" target="_blank" rel="noopener noreferrer">gen2brain/h265#12</a>. Nothing in it is GPL or LGPL, so the LEAPPs' packaged builds can carry it, starting with their next release. Until then, iLEAPP, RLEAPP and DLEAPP releases list pillow-heif, whose wheels bundle the GPL x265 encoder.</p>
             <p>MIT. HEVC is covered by patents, and the licence covers copyright only.</p>
           </div>
           <div>
             <h3>Where it runs</h3>
             <ul>
-              <li>iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP, since November 7, 2026: HEIC media is attached to the report as a JPEG copy, or PNG when the image has transparency. A file it cannot convert is attached as it is.</li>
+              <li>iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP, starting with their next release: HEIC media is attached to the report as a JPEG copy, or PNG when the image has transparency. A file it cannot convert is attached as it is.</li>
               <li><code>heicreader.to_pil("IMG_0001.HEIC")</code> in Python, with Pillow installed</li>
               <li><code>heicreader convert IMG_0001.HEIC IMG_0001.jpg</code> with the helper itself</li>
             </ul>
@@ -1883,7 +1883,7 @@
       }
     })();
   </script>
-  <script src="/analytics.js?v=20261122" defer></script>
+  <script src="/analytics.js?v=20261123" defer></script>
   <dialog class="lp-video-dialog" id="lp-video-dialog" aria-labelledby="lp-video-dialog-title">
     <div class="lp-video-dialog-bar">
       <span id="lp-video-dialog-title"></span>

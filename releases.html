@@ -454,7 +454,7 @@
         "name": "Batch LEAPP",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Windows, macOS",
-        "description": "Runs iLEAPP, ALEAPP, RLEAPP or VLEAPP across a whole folder of extractions, with one report index and a SHA-256 manifest.",
+        "description": "Runs iLEAPP, ALEAPP, RLEAPP, VLEAPP or DLEAPP across a whole folder of extractions, with one report index and a SHA-256 manifest.",
         "url": "https://leapps.org/releases",
         "downloadUrl": "https://github.com/abrignoni/batch-leapp/releases",
         "isAccessibleForFree": true,
@@ -654,7 +654,7 @@
           <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
           <div class="lp-install-row"><span class="lp-install-tag">Tap</span><code>brew trust leapps-org/leapps; brew tap leapps-org/leapps</code><button class="lp-brew-copy" data-copy="brew trust leapps-org/leapps; brew tap leapps-org/leapps" data-tool="LAVA" aria-label="Copy LAVA tap command"><i class="ti ti-copy"></i></button></div>
           <div class="lp-install-row"><span class="lp-install-tag">GUI</span><code>brew install --cask lava</code><button class="lp-brew-copy" data-copy="brew install --cask lava" data-tool="LAVA" aria-label="Copy LAVA GUI install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-note">Run the Tap line once. Homebrew 6 will not load a tap outside its own until you trust it, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
+          <div class="lp-install-note">Run the Tap line once. Current Homebrew may require you to trust the tap first, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
           <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
         </div>
         <div class="lp-status-bar">
@@ -682,9 +682,9 @@
         <div class="lp-install-box">
           <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
           <div class="lp-install-row"><span class="lp-install-tag">Tap</span><code>brew trust leapps-org/leapps; brew tap leapps-org/leapps</code><button class="lp-brew-copy" data-copy="brew trust leapps-org/leapps; brew tap leapps-org/leapps" data-tool="ALEAPP" aria-label="Copy ALEAPP tap command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-row"><span class="lp-install-tag">App</span><code>brew install --cask aleapp-gui</code><button class="lp-brew-copy" data-copy="brew install --cask aleapp-gui" data-tool="ALEAPP" aria-label="Copy ALEAPP app install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-note">Run the Tap line once. Homebrew 6 will not load a tap outside its own until you trust it, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
-          <div class="lp-install-note">ALEAPP is one program now. The <code>aleapp-gui</code> cask installs ALEAPP.app and links its command line as <code>aleapp</code>: started with no arguments it opens the window, and given arguments it runs as the command line. The separate <code>brew install aleapp</code> formula is deprecated and stays at its last release.</div>
+          <div class="lp-install-row"><span class="lp-install-tag">App</span><code>brew install --cask aleapp</code><button class="lp-brew-copy" data-copy="brew install --cask aleapp" data-tool="ALEAPP" aria-label="Copy ALEAPP app install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-note">Run the Tap line once. Current Homebrew may require you to trust the tap first, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
+          <div class="lp-install-note">ALEAPP is one program now. The <code>aleapp</code> cask installs ALEAPP.app and links its command line as <code>aleapp</code>: started with no arguments it opens the window, and given arguments it runs as the command line. The old formula was replaced by this cask. Homebrew can migrate an existing install.</div>
           <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
         </div>
         <div class="lp-status-bar">
@@ -710,9 +710,9 @@
         <div class="lp-install-box">
           <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
           <div class="lp-install-row"><span class="lp-install-tag">Tap</span><code>brew trust leapps-org/leapps; brew tap leapps-org/leapps</code><button class="lp-brew-copy" data-copy="brew trust leapps-org/leapps; brew tap leapps-org/leapps" data-tool="iLEAPP" aria-label="Copy iLEAPP tap command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-row"><span class="lp-install-tag">App</span><code>brew install --cask ileapp-gui</code><button class="lp-brew-copy" data-copy="brew install --cask ileapp-gui" data-tool="iLEAPP" aria-label="Copy iLEAPP app install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-note">Run the Tap line once. Homebrew 6 will not load a tap outside its own until you trust it, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
-          <div class="lp-install-note">iLEAPP is one program now. The <code>ileapp-gui</code> cask installs iLEAPP.app and links its command line as <code>ileapp</code>: started with no arguments it opens the window, and given arguments it runs as the command line. The separate <code>brew install ileapp</code> formula is deprecated and stays at its last release.</div>
+          <div class="lp-install-row"><span class="lp-install-tag">App</span><code>brew install --cask ileapp</code><button class="lp-brew-copy" data-copy="brew install --cask ileapp" data-tool="iLEAPP" aria-label="Copy iLEAPP app install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-note">Run the Tap line once. Current Homebrew may require you to trust the tap first, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
+          <div class="lp-install-note">iLEAPP is one program now. The <code>ileapp</code> cask installs iLEAPP.app and links its command line as <code>ileapp</code>: started with no arguments it opens the window, and given arguments it runs as the command line. The old formula was replaced by this cask. Homebrew can migrate an existing install.</div>
           <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
         </div>
         <div class="lp-status-bar">
@@ -738,9 +738,9 @@
         <div class="lp-install-box">
           <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
           <div class="lp-install-row"><span class="lp-install-tag">Tap</span><code>brew trust leapps-org/leapps; brew tap leapps-org/leapps</code><button class="lp-brew-copy" data-copy="brew trust leapps-org/leapps; brew tap leapps-org/leapps" data-tool="RLEAPP" aria-label="Copy RLEAPP tap command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-row"><span class="lp-install-tag">App</span><code>brew install --cask rleapp-gui</code><button class="lp-brew-copy" data-copy="brew install --cask rleapp-gui" data-tool="RLEAPP" aria-label="Copy RLEAPP app install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-note">Run the Tap line once. Homebrew 6 will not load a tap outside its own until you trust it, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
-          <div class="lp-install-note">RLEAPP is one program now. The <code>rleapp-gui</code> cask installs RLEAPP.app and links its command line as <code>rleapp</code>: started with no arguments it opens the window, and given arguments it runs as the command line. The separate <code>brew install rleapp</code> formula is deprecated and stays at its last release.</div>
+          <div class="lp-install-row"><span class="lp-install-tag">App</span><code>brew install --cask rleapp</code><button class="lp-brew-copy" data-copy="brew install --cask rleapp" data-tool="RLEAPP" aria-label="Copy RLEAPP app install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-note">Run the Tap line once. Current Homebrew may require you to trust the tap first, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
+          <div class="lp-install-note">RLEAPP is one program now. The <code>rleapp</code> cask installs RLEAPP.app and links its command line as <code>rleapp</code>: started with no arguments it opens the window, and given arguments it runs as the command line. The old formula was replaced by this cask. Homebrew can migrate an existing install.</div>
           <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
         </div>
         <div class="lp-status-bar">
@@ -766,9 +766,9 @@
         <div class="lp-install-box">
           <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
           <div class="lp-install-row"><span class="lp-install-tag">Tap</span><code>brew trust leapps-org/leapps; brew tap leapps-org/leapps</code><button class="lp-brew-copy" data-copy="brew trust leapps-org/leapps; brew tap leapps-org/leapps" data-tool="VLEAPP" aria-label="Copy VLEAPP tap command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-row"><span class="lp-install-tag">App</span><code>brew install --cask vleapp-gui</code><button class="lp-brew-copy" data-copy="brew install --cask vleapp-gui" data-tool="VLEAPP" aria-label="Copy VLEAPP app install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-note">Run the Tap line once. Homebrew 6 will not load a tap outside its own until you trust it, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
-          <div class="lp-install-note">VLEAPP is one program now. The <code>vleapp-gui</code> cask installs VLEAPP.app and links its command line as <code>vleapp</code>: started with no arguments it opens the window, and given arguments it runs as the command line. The separate <code>brew install vleapp</code> formula is deprecated and stays at its last release.</div>
+          <div class="lp-install-row"><span class="lp-install-tag">App</span><code>brew install --cask vleapp</code><button class="lp-brew-copy" data-copy="brew install --cask vleapp" data-tool="VLEAPP" aria-label="Copy VLEAPP app install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-note">Run the Tap line once. Current Homebrew may require you to trust the tap first, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
+          <div class="lp-install-note">VLEAPP is one program now. The <code>vleapp</code> cask installs VLEAPP.app and links its command line as <code>vleapp</code>: started with no arguments it opens the window, and given arguments it runs as the command line. The old formula was replaced by this cask. Homebrew can migrate an existing install.</div>
           <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
         </div>
         <div class="lp-status-bar">
@@ -808,9 +808,9 @@
         <div class="lp-install-box">
           <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
           <div class="lp-install-row"><span class="lp-install-tag">Tap</span><code>brew trust leapps-org/leapps; brew tap leapps-org/leapps</code><button class="lp-brew-copy" data-copy="brew trust leapps-org/leapps; brew tap leapps-org/leapps" data-tool="DLEAPP" aria-label="Copy DLEAPP tap command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-row"><span class="lp-install-tag">App</span><code>brew install --cask dleapp-gui</code><button class="lp-brew-copy" data-copy="brew install --cask dleapp-gui" data-tool="DLEAPP" aria-label="Copy DLEAPP app install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-note">Run the Tap line once. Homebrew 6 will not load a tap outside its own until you trust it, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
-          <div class="lp-install-note">DLEAPP is one program now. The <code>dleapp-gui</code> cask installs DLEAPP.app and links its command line as <code>dleapp</code>: started with no arguments it opens the window, and given arguments it runs as the command line.</div>
+          <div class="lp-install-row"><span class="lp-install-tag">App</span><code>brew install --cask dleapp</code><button class="lp-brew-copy" data-copy="brew install --cask dleapp" data-tool="DLEAPP" aria-label="Copy DLEAPP app install command"><i class="ti ti-copy"></i></button></div>
+          <div class="lp-install-note">Run the Tap line once. Current Homebrew may require you to trust the tap first, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
+          <div class="lp-install-note">DLEAPP is one program now. The <code>dleapp</code> cask installs DLEAPP.app and links its command line as <code>dleapp</code>: started with no arguments it opens the window, and given arguments it runs as the command line.</div>
           <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
         </div>
         <div class="lp-status-bar">
@@ -837,7 +837,7 @@
           <div>
             <h3>What is GLEAPP?</h3>
             <p>Triage and analysis for large sets of images and video. GLEAPP ingests media from folders, full file system extractions and disk images, hashes and de-duplicates it, reads metadata, pulls video key frames, matches known-hash lists, and opens a local review gallery to work the backlog in.</p>
-            <p>It is a tool for authorized examiners. It ships no illegal-content hash database, downloads nothing, and performs no content classification: categorizing a file is always the examiner's decision.</p>
+            <p>It is a tool for authorized examiners. It ships no illegal-content hash database and downloads nothing. It never assigns a category. Face detection and skin-tone ratio are triage signals, and visual similarity groups files for the examiner to review.</p>
           </div>
           <div>
             <h3>Highlights</h3>
@@ -845,7 +845,7 @@
               <li>Reads folders, full file system extractions, and E01 or raw disk images, walking each file system file by file, with optional recovery of deleted media</li>
               <li>Exact and visual de-duplication, EXIF and GPS metadata, video key frames, and known-hash matching (Project VIC, CAID-style, CSV, and the NSRL RDS)</li>
               <li>HTML contact sheet, CSV, JSON, KMZ, and a LAVA project as output</li>
-              <li>Offline maps: import an area cut by the <a href="#section-gleapp-map-downloader">GLEAPP Map Downloader</a> under Maps, Import, and GLEAPP itself never goes online</li>
+              <li>Offline maps: import an area cut by the <a href="#section-gleapp-map-downloader">GLEAPP Map Downloader</a> under Maps, Import. GLEAPP makes no network requests of its own. On Windows, Microsoft's WebView2 runtime may send its own diagnostic data</li>
               <li>Builds for Windows, macOS (Apple silicon and Intel), and Linux, so no Python is needed</li>
             </ul>
           </div>
@@ -854,7 +854,7 @@
           <div class="lp-install-head"><i class="ti ti-brand-apple"></i>Fastest install &mdash; macOS via Homebrew</div>
           <div class="lp-install-row"><span class="lp-install-tag">Tap</span><code>brew trust leapps-org/leapps; brew tap leapps-org/leapps</code><button class="lp-brew-copy" data-copy="brew trust leapps-org/leapps; brew tap leapps-org/leapps" data-tool="GLEAPP" aria-label="Copy GLEAPP tap command"><i class="ti ti-copy"></i></button></div>
           <div class="lp-install-row"><span class="lp-install-tag">App</span><code>brew install --cask gleapp</code><button class="lp-brew-copy" data-copy="brew install --cask gleapp" data-tool="GLEAPP" aria-label="Copy GLEAPP app install command"><i class="ti ti-copy"></i></button></div>
-          <div class="lp-install-note">Run the Tap line once. Homebrew 6 will not load a tap outside its own until you trust it, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
+          <div class="lp-install-note">Run the Tap line once. Current Homebrew may require you to trust the tap first, which is what <code>brew trust</code> does. An older Homebrew that has no <code>brew trust</code> command can leave that part out.</div>
           <div class="lp-install-note">The <code>gleapp</code> cask installs GLEAPP.app and links a <code>gleapp</code> command that opens the window. <code>gleapp web</code> opens the same interface in a browser.</div>
           <div class="lp-install-note">On Windows or installing manually? Grab a build below, or see the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew">Homebrew guide</a>.</div>
         </div>
@@ -881,7 +881,7 @@
         <div class="lp-about-box">
           <div>
             <h3>What is it?</h3>
-            <p>GLEAPP never goes online, so its maps have to come from somewhere. The Map Downloader is the part that does: run it on a machine with internet access, pick an area and a level of detail, and it saves that area of the <a href="https://protomaps.com" target="_blank" rel="noopener noreferrer">Protomaps</a> planet basemap as one <code>.pmtiles</code> file. Copy the file to the offline machine and import it in GLEAPP under Maps, Import. Any viewer that reads PMTiles opens it too.</p>
+            <p>GLEAPP makes no network requests of its own, so its maps have to come from somewhere. The Map Downloader is the part that does: run it on a machine with internet access, pick an area and a level of detail, and it saves that area of the <a href="https://protomaps.com" target="_blank" rel="noopener noreferrer">Protomaps</a> planet basemap as one <code>.pmtiles</code> file. Copy the file to the offline machine and import it in GLEAPP under Maps, Import. Any viewer that reads PMTiles opens it too.</p>
             <p>Privacy: Protomaps' server sees which part of the planet you read, which is the area you ask for. When the area itself is sensitive, cut a larger one around it, or cut it on a machine that is not tied to the case.</p>
           </div>
           <div>
@@ -911,14 +911,14 @@
           <div class="lp-tool-header-left">
             <div class="lp-tool-platform">Automation &middot; macOS &middot; Windows</div>
             <h2><img src="/logos/batch-leapp_icon_1024.png" alt="" width="1024" height="1024" class="lp-tool-logo-inline">Batch LEAPP</h2>
-            <div class="lp-tool-fullname">Run any LEAPP tool across a folder of extractions</div>
+            <div class="lp-tool-fullname">Run iLEAPP, ALEAPP, RLEAPP, VLEAPP or DLEAPP across a folder of extractions</div>
           </div>
           <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap"><span class="lp-star-badge loading" id="stars-releases-batch-leapp"><i class="ti ti-star"></i>&hellip;</span><span class="lp-dl-count-badge loading" id="dlcount-releases-batch-leapp"><i class="ti ti-download"></i>&hellip;</span><a href="https://github.com/abrignoni/batch-leapp" class="lp-gh-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a></div>
         </div>
         <div class="lp-about-box">
           <div>
             <h3>What is Batch LEAPP?</h3>
-            <p>Point it at a directory and it finds every extraction inside, runs iLEAPP, ALEAPP, RLEAPP, or VLEAPP against each one in parallel, and builds a single report index linking every result &mdash; with SHA-256 hashing and a manifest for your case file.</p>
+            <p>Point it at a directory and it finds every extraction inside, runs iLEAPP, ALEAPP, RLEAPP, VLEAPP or DLEAPP against each one, one at a time by default or in parallel with <code>--jobs</code>, and builds a single report index linking every result, with SHA-256 hashing and a manifest for your case file.</p>
           </div>
           <div>
             <h3>Highlights</h3>
@@ -1615,6 +1615,6 @@
       }
     })();
   </script>
-  <script src="/analytics.js?v=20261122" defer></script>
+  <script src="/analytics.js?v=20261123" defer></script>
 </body>
 </html>

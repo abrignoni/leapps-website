@@ -542,8 +542,8 @@
           <div>
             <h3>Highlights</h3>
             <ul>
-              <li>Every row is hash-chained, screenshots and view trees included. Change one row and every hash after it breaks. <code>make_documentation.py</code> checks the chain</li>
-              <li>Rules ship for Google Messages, Instagram, Threads, WhatsApp, Signal, Messenger, Telegram, Discord, Snapchat, Wire, LINE, TikTok and Zangi. Each names the app version and device it was checked on. For other apps, teach your own</li>
+              <li>Every row is hash-chained, screenshots and view trees included. Change or remove a row and the chain breaks there. Write down the latest row hash too: the chain alone cannot show rows cut off the end. <code>make_documentation.py</code> checks the chain</li>
+              <li>Rules ship for Google Messages, Instagram, Threads, WhatsApp, Signal, Messenger, Telegram, Discord, Snapchat, Wire, LINE, TikTok and Zangi. Each says what it was checked on. For other apps, teach your own</li>
               <li>Android 8.0 or later (screenshots need 11). The iOS version (iOS 17 or later) is in <a href="https://github.com/abrignoni/known-data-logger-ios" target="_blank" rel="noopener noreferrer">its own repository</a>: build it yourself with Xcode</li>
               <li>Not on Google Play. Check the APK against <code>SHA256SUMS</code> and the signer certificate SHA-256: <code style="word-break:break-all">ab957515938e78247caa26a3747e7e429b4a6bd766854a8fdf3aa8929bb50faf</code></li>
               <li>MIT licensed. The <code>tools/</code> scripts come with the source code download. <a href="https://github.com/abrignoni/known-data-logger/blob/main/docs/USER_MANUAL.md" target="_blank" rel="noopener noreferrer">User manual</a></li>
@@ -585,7 +585,7 @@
               <li>Every screenshot and view tree is hashed into the log, and <code>appwalk.py verify</code> checks them. KDL's <code>make_documentation.py</code> reads the export</li>
               <li>Screens the app marks as secure come back black, logged as <code>blank</code></li>
               <li>Add a file after the walk (WhatsApp's Export chat zip, for example) and it joins the hash chain</li>
-              <li>Documents Settings &gt; About phone as screenshots, since adb can no longer read the IMEI or phone number. On phones that give that screen's text, AppWalk reads the values out for you to check. Stock Android, Pixel included, does not</li>
+              <li>Documents Settings &gt; About phone as screenshots, since adb can no longer read the IMEI or phone number. On phones that give that screen's text, AppWalk reads the values out for you to check. Stock Android, Pixel included, does not. If About phone shows no IMEI, it tries Settings search and then enters <code>*#06#</code> on the dialer. It places no call and records the call log before and after</li>
               <li>macOS, Windows and Linux, ARM64 and x64. Not signed yet: the README.txt in each pack says how to open it. Get adb from Android's SDK Platform-Tools</li>
               <li>Tried on an Android 15 emulator, a Pixel 7a with Android 17 (WhatsApp, Signal, Discord, Instagram, Threads and LinkedIn), and a Galaxy A16 5G and a moto g play with Android 16 (Google Messages, WhatsApp, Signal, Messenger, Telegram, Discord, Snapchat, Wire, LINE, TikTok, Instagram and Threads). No iOS. MIT licensed</li>
               <li><a href="https://github.com/abrignoni/appwalk/blob/main/docs/QUICKSTART.md" target="_blank" rel="noopener noreferrer">Quick start</a> and <a href="https://github.com/abrignoni/appwalk/blob/main/docs/USER_MANUAL.md" target="_blank" rel="noopener noreferrer">user manual</a></li>
@@ -1236,7 +1236,7 @@
       }
     })();
   </script>
-  <script src="/analytics.js?v=20261122" defer></script>
+  <script src="/analytics.js?v=20261123" defer></script>
   <dialog class="lp-video-dialog" id="lp-video-dialog" aria-labelledby="lp-video-dialog-title">
     <div class="lp-video-dialog-bar">
       <span id="lp-video-dialog-title"></span>

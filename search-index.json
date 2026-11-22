@@ -39,7 +39,7 @@
     "title": "ALEAPP — Android Logs Events and Protobuf Parser",
     "url": "https://leapps.org/releases#section-aleapp",
     "page": "Releases",
-    "excerpt": "Parse Android device artifacts from adb backups, full file system, and Cellebrite extractions."
+    "excerpt": "Parse Android device artifacts from adb pulls, full file system, and Cellebrite extractions."
   },
   {
     "title": "RLEAPP — Returns Logs Events and Plists Parser",
@@ -63,7 +63,7 @@
     "title": "Batch LEAPP — batch processing for LEAPP tools",
     "url": "https://leapps.org/releases#section-batch-leapp",
     "page": "Releases",
-    "excerpt": "Run iLEAPP, ALEAPP, RLEAPP, or VLEAPP across a whole folder of extractions with one report index, SHA-256 manifest, and GUI or CLI."
+    "excerpt": "Run iLEAPP, ALEAPP, RLEAPP, VLEAPP or DLEAPP across a whole folder of extractions with one report index, SHA-256 manifest, and GUI or CLI."
   },
   {
     "title": "KDL (Known-data logger): known data from test phones",
@@ -114,7 +114,7 @@
     "excerpt": "Recovers images, video, audio and, when asked, SQLite databases, binary plists, ZIP archives and PDFs from any stream of bytes by signature, with each length parsed from the file's own structure. MIT, standard library only."
   },
   {
-    "title": "Readers: the format readers the LEAPPs carry",
+    "title": "Readers: the format readers the LEAPPs carry, and cblite-parser",
     "url": "https://leapps.org/probes#readers",
     "page": "Probes",
     "excerpt": "c2pareader, cblite-parser, hive-parser, mmkv-parser, sqlite-wal, cimreader, dpapiprobe and heicreader: read-only, free and open source, each also a command line tool."
@@ -183,7 +183,7 @@
     "title": "Probes — standalone forensic readers",
     "url": "https://leapps.org/probes",
     "page": "Probes",
-    "excerpt": "Single-purpose readers that sit beside the LEAPPs: qnxprobe, ewfprobe, exoprobe, chromiumcacheprobe, mediacarve, regfprobe and pstprobe. One Python file each, built on the standard library, never writing to the evidence they read."
+    "excerpt": "Single-purpose readers that sit beside the LEAPPs: qnxprobe, ewfprobe, exoprobe, chromiumcacheprobe, mediacarve, regfprobe and pstprobe. One core Python file each, built on the standard library, never writing to the evidence they read."
   },
   {
     "title": "Install with Homebrew (macOS)",
