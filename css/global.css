@@ -412,3 +412,5 @@ main:focus { outline: none; }
 [data-theme="light"] .pos-num.pos-3 { color: #8B471B; }
 /* Inline links need more than color to stand out from light theme body text. */
 [data-theme="light"] main :is(p, li, td, .lp-faq-answer, .lp-install-note, .post-subscribe-alt) > a:not([class]):not(nav a, .lp-sidebar-links a, .breadcrumb a) { text-decoration: underline !important; }
+/* A selected control needs a visible edge, not only a change of hue. */
+[data-theme="light"] :is(.lp-filter-btn.active, .lp-os-btn.active, .lp-sb-tool-btn.active, .lp-tab.active, .lp-tool-btn.active) { border-color: currentColor !important; }
