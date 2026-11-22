@@ -20,7 +20,7 @@ The two clients name the same event differently.
 
 That sounds like trivia until you are reading an iLEAPP report and an ALEAPP report side by side. A user being added to a group is `addedMembers` on iOS and `ChatAddUser` on Android. A screenshot in a secret chat is `historyScreenshot` on one and `ScreenshotTaken` on the other. Content protection is `copyProtectionToggle` here and `NoForwardsToggle` there.
 
-I checked how bad it is. Of roughly seventy distinct events, **matching the two lists by name alone pairs only 27 of them.** The rest are the same concept wearing different clothes. So if you work both platforms, and most of us do, you need a translation table, and as far as I can tell nobody had published one.
+I checked how bad it is. Of roughly seventy distinct events, **matching the two lists by name, ignoring capitalization, pairs only 27 of them.** The rest are the same concept wearing different clothes. So if you work both platforms, and most of us do, you need a translation table, and as far as I can tell nobody had published one.
 
 ## How this was built, and how far to trust it
 
@@ -30,7 +30,7 @@ The two per-platform lists are extracted from the clients' own published source,
 
 Those links are pinned to a specific commit rather than to `main`, on purpose. Line numbers move with every upstream edit, so a link to `main` would keep working while quietly pointing at the wrong line, which is worse than a broken link. The iOS side is pinned at `3344a18d3cdc` and the Android side at `9bcf3d2769c6`. When this reference is refreshed, the script re-pins both and every line number is re-derived.
 
-The cross-platform pairing is the part a machine cannot do. String matching gets you 27. The remaining pairs were mapped by hand and reviewed. Where I could not find a counterpart, the row says so with a dash rather than guessing.
+The cross-platform pairing is the part a machine cannot do. Matching names while ignoring capitalization gets you 27. An exact match gets you none, because iOS writes `gameScore` where Android writes `GameScore`. The remaining pairs were mapped by hand and reviewed. Where I could not find a counterpart, the row says so with a dash rather than guessing.
 
 As of the source on August 4, 2026: **iOS defines 64 event types** with ordinals up to 65, and **Android defines 68**, spread across 107 constructors because Android versions each event per protocol layer. 62 pair across platforms.
 
