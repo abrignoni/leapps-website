@@ -419,3 +419,7 @@ main:focus { outline: none; }
 [data-theme="light"] :is(.lp-tab.active, .lp-page-nav-inner a.active) { border-bottom-color: currentColor !important; }
 [data-theme="light"] .lp-show-more:hover { opacity: 1; text-decoration: underline; }
 [data-theme="light"] .lp-footer-col a[aria-current="page"] { text-decoration: underline; }
+/* Small controls keep a 24px touch target on phones. */
+@media (max-width: 768px) {
+  body :is(.lp-paths-toggle, .lp-show-more, .lp-drill-btn, .lp-share-btn, .lp-cl-link) { min-height: 24px; min-width: 24px; }
+}
