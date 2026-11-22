@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261122" />
+  <link rel="stylesheet" href="/css/global.css?v=20261123" />
   <style>
 img { max-width: 100%; display: block; }
 .blog-wrap {
@@ -54,7 +54,7 @@ img { max-width: 100%; display: block; }
       letter-spacing: .04em;
       text-transform: uppercase;
       line-height: 1;
-      color: var(--gold);
+      color: var(--gold-text);
     }
 .blog-header p {
       margin-top: .75rem;
@@ -83,7 +83,7 @@ img { max-width: 100%; display: block; }
       transition: border-color .2s, color .2s;
       font-family: var(--font-head);
     }
-.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold-text); }
 .post-list {
       display: flex;
       flex-direction: column;
@@ -111,7 +111,7 @@ img { max-width: 100%; display: block; }
       color: var(--muted);
       margin-bottom: .6rem;
     }
-.post-card-meta .date { color: var(--gold); }
+.post-card-meta .date { color: var(--gold-text); }
 .post-card h2 {
       font-family: var(--font-head);
       font-size: 1.5rem;
@@ -143,12 +143,12 @@ img { max-width: 100%; display: block; }
     }
 .post-card:hover .tag { border-color: #3a3a3a; }
 .card-author { cursor: pointer; transition: color .2s; }
-.card-author:hover { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+.card-author:hover { color: var(--gold-text); text-decoration: underline; text-underline-offset: 3px; }
 .pin-badge {
       font-family: var(--font-mono);
       font-size: .75rem;
       letter-spacing: .1em;
-      color: var(--gold);
+      color: var(--gold-text);
       border: 1px solid var(--gold);
       padding: .1rem .45rem;
       text-transform: uppercase;
@@ -156,7 +156,7 @@ img { max-width: 100%; display: block; }
 .lp-filter-select { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; background: var(--surface); color: var(--text); border: 1px solid var(--border); padding: .4rem 2rem .4rem .75rem; cursor: pointer; outline: none; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .5rem center; transition: border-color .2s; }
 .lp-filter-select:hover, .lp-filter-select:focus { border-color: var(--gold); }
 .lp-load-more { display: block; width: 100%; margin-top: 2rem; padding: .75rem; border: 1px solid var(--border); background: none; color: var(--muted); font-family: var(--font-mono); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; transition: border-color .2s, color .2s; }
-.lp-load-more:hover { border-color: var(--gold); color: var(--gold); }
+.lp-load-more:hover { border-color: var(--gold); color: var(--gold-text); }
 .state-msg {
       text-align: center;
       padding: 4rem 0;
@@ -164,7 +164,7 @@ img { max-width: 100%; display: block; }
       font-family: var(--font-mono);
       font-size: .875rem;
     }
-.state-msg .icon { font-size: 2rem; margin-bottom: 1rem; color: var(--gold); }
+.state-msg .icon { font-size: 2rem; margin-bottom: 1rem; color: var(--gold-text); }
 .lp-page { min-height: 100vh; background: var(--off-black); }
 [data-theme="light"] .lp-page { background: #F5F2EC; }
 [data-theme="light"] .post-card { background: #EAE6DE; border-color: #C8C3B8; }
@@ -889,7 +889,7 @@ img { max-width: 100%; display: block; }
         container.innerHTML = `
           <div class="state-msg">
             <div class="icon"><i class="ti ti-alert-triangle"></i></div>
-            Failed to load posts. <a href="https://github.com/abrignoni/leapps-website/tree/main/blog/posts" target="_blank" rel="noopener noreferrer" style="color:var(--gold)">View on GitHub</a>
+            Failed to load posts. <a href="https://github.com/abrignoni/leapps-website/tree/main/blog/posts" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text)">View on GitHub</a>
           </div>`;
         console.error('Blog index error:', err);
       }
@@ -924,7 +924,7 @@ img { max-width: 100%; display: block; }
       document.querySelectorAll('.lp-footer-col a').forEach(function(a) {
         var href = a.getAttribute('href') || '';
         var ap = href.replace(/https:\/\/leapps\.org/, '').replace(/\/+$/, '') || '/';
-        if (ap === path) { a.style.color = '#F5C020'; }
+        if (ap === path) { a.style.color = 'var(--gold-text)'; a.setAttribute('aria-current', 'page'); }
       });
     })();
   </script>

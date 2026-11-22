@@ -34,6 +34,21 @@
   --rank-4: #F5C020;
   --rank-5: #E8762D;
   --rank-6: #E0405E;
+  /* Text colors. They match the brand colors here and darken in the light theme. */
+  --gold-text: var(--gold);
+  --color-ileapp-text: var(--color-ileapp);
+  --color-aleapp-text: var(--color-aleapp);
+  --color-rleapp-text: var(--color-rleapp);
+  --color-vleapp-text: var(--color-vleapp);
+  --color-dleapp-text: var(--color-dleapp);
+  --color-gleapp-text: var(--color-gleapp);
+  --color-probes-text: var(--color-probes);
+  --rank-1-text: var(--rank-1);
+  --rank-2-text: var(--rank-2);
+  --rank-3-text: var(--rank-3);
+  --rank-4-text: var(--rank-4);
+  --rank-5-text: var(--rank-5);
+  --rank-6-text: var(--rank-6);
 }
 html { scroll-behavior: smooth; }
 body {
@@ -79,7 +94,7 @@ a { color: inherit; }
       font-weight: 500;
       transition: color .2s;
     }
-.lp-nav-links a:hover { color: var(--gold); }
+.lp-nav-links a:hover { color: var(--gold-text); }
 .lp-nav-cta {
       background: var(--gold);
       color: var(--on-gold) !important;
@@ -100,7 +115,7 @@ a { color: inherit; }
       user-select: none; transition: color .2s;
     }
 .lp-nav-dropdown-trigger i.lp-chev { font-size: .75rem; transition: transform .2s; }
-.lp-nav-dropdown:hover .lp-nav-dropdown-trigger { color: var(--gold); }
+.lp-nav-dropdown:hover .lp-nav-dropdown-trigger { color: var(--gold-text); }
 .lp-nav-dropdown:hover .lp-nav-dropdown-trigger i.lp-chev { transform: rotate(180deg); }
 .lp-nav-dropdown-menu {
       display: none; position: absolute; top: 100%; left: 50%;
@@ -121,8 +136,8 @@ a { color: inherit; }
       gap: .5rem; transition: color .2s, background .2s;
     }
 .lp-nav-dropdown-menu a:last-child { border-bottom: none; }
-.lp-nav-dropdown-menu a:hover { color: var(--gold) !important; background: var(--surface); }
-.lp-nav-dropdown-menu i { font-size: .9rem; color: var(--gold); }
+.lp-nav-dropdown-menu a:hover { color: var(--gold-text) !important; background: var(--surface); }
+.lp-nav-dropdown-menu i { font-size: .9rem; color: var(--gold-text); }
 .lp-footer {
       border-top: 1px solid var(--border);
       padding: 3rem 2rem 2rem;
@@ -151,7 +166,7 @@ a { color: inherit; }
       font-size: .75rem;
       letter-spacing: .22em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-text);
       margin: 1.4rem 0 .65rem;
     }
 .lp-footer-social { display: flex; gap: .5rem; flex-wrap: wrap; }
@@ -165,7 +180,7 @@ a { color: inherit; }
       text-decoration: none;
       transition: color .2s, border-color .2s;
     }
-.lp-footer-social a:hover { color: var(--gold); border-color: var(--gold); }
+.lp-footer-social a:hover { color: var(--gold-text); border-color: var(--gold); }
 .lp-footer-social i { font-size: 1.05rem; }
 .lp-footer-cols { display: flex; gap: 4rem; flex-wrap: wrap; }
 .lp-footer-col-head {
@@ -173,7 +188,7 @@ a { color: inherit; }
       font-size: .75rem;
       letter-spacing: .22em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-text);
       margin-bottom: 1rem;
     }
 .lp-footer-col a {
@@ -185,7 +200,7 @@ a { color: inherit; }
       padding: .3rem 0;
       transition: color .2s;
     }
-.lp-footer-col a:hover { color: var(--gold); }
+.lp-footer-col a:hover { color: var(--gold-text); }
 .lp-footer-bottom {
       max-width: 1100px;
       margin: 2.5rem auto 0;
@@ -201,7 +216,7 @@ a { color: inherit; }
       color: #666666;
     }
 .lp-footer-bottom a { color: #666666; text-decoration: none; transition: color .2s; }
-.lp-footer-bottom a:hover { color: var(--gold); }
+.lp-footer-bottom a:hover { color: var(--gold-text); }
 @media (max-width: 768px) {
   .lp-footer { padding: 2.5rem 1.5rem 1.5rem; text-align: center; }
   .lp-footer-inner { flex-direction: column; align-items: center; gap: 2rem; }
@@ -261,7 +276,7 @@ a { color: inherit; }
       transition: color .2s;
     }
 .lp-mobile-menu a:last-child { border-bottom: none; }
-.lp-mobile-menu a:hover { color: var(--gold); }
+.lp-mobile-menu a:hover { color: var(--gold-text); }
 /* Mobile menu groups mirror the desktop dropdowns, folded so the menu fits a phone screen. */
 .lp-mm-group { border-bottom: 1px solid var(--border); }
 .lp-mm-group > summary {
@@ -278,7 +293,7 @@ a { color: inherit; }
     }
 .lp-mm-group[open] > summary { color: var(--text); }
 .lp-mm-group[open] > summary::after { transform: rotate(-135deg); }
-.lp-mm-group > summary:hover { color: var(--gold); }
+.lp-mm-group > summary:hover { color: var(--gold-text); }
 .lp-mm-group > a { display: block; padding-left: 1rem; font-size: .9rem; }
 .lp-mm-group > a:last-child { border-bottom: none; }
 /* The desktop nav is 1047px of fixed-width children, so with the 2rem side
@@ -300,8 +315,22 @@ a { color: inherit; }
 [data-theme="light"] { --off-black: #F5F2EC; --surface: #EAE6DE; --border: #C8C3B8; --text: #1C1A14; --muted: #6B6458; }
 /* On the light ground each tool uses the darker member of its palette. */
 [data-theme="light"] {
-  --color-lava-text: #0F6CA4;
-  --color-kdl-text: #B52F2B;
+  --color-lava-text: #0D5F90;
+  --color-kdl-text: #A82C28;
+  --gold-text: #6E560E;
+  --color-ileapp-text: #B70005;
+  --color-aleapp-text: #2A660D;
+  --color-rleapp-text: #79510A;
+  --color-vleapp-text: #545A65;
+  --color-dleapp-text: #7B34B9;
+  --color-gleapp-text: #8D470D;
+  --color-probes-text: #425D74;
+  --rank-1-text: #385E77;
+  --rank-2-text: #2F5C8B;
+  --rank-3-text: #79458E;
+  --rank-4-text: #6E560E;
+  --rank-5-text: #8B471B;
+  --rank-6-text: #A12E44;
   --color-ileapp: #C90005; --color-ileapp-rgb: 201,0,5;
   --color-aleapp: #398A11; --color-aleapp-rgb: 57,138,17;
   --color-rleapp: #FDA915; --color-rleapp-rgb: 253,169,21;
@@ -317,7 +346,7 @@ a { color: inherit; }
 [data-theme="light"] .lp-nav-dropdown-menu { background: rgba(245,242,236,.98); }
 [data-theme="light"] .lp-mobile-menu { background: rgba(245,242,236,.98); }
 .lp-theme-toggle { background: none; border: 1px solid var(--border); color: var(--muted); width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: color .2s, border-color .2s; font-size: 1rem; flex-shrink: 0; }
-.lp-theme-toggle:hover { color: var(--gold); border-color: var(--gold); }
+.lp-theme-toggle:hover { color: var(--gold-text); border-color: var(--gold); }
 .lp-search-wrap { position: relative; display: flex; align-items: center; }
 .lp-search-input { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .05em; background: var(--surface); color: var(--text); border: 1px solid var(--border); padding: .4rem .75rem .4rem 2rem; width: 200px; outline: none; transition: border-color .2s, width .2s; }
 .lp-search-input:focus { border-color: var(--gold); width: 260px; }
@@ -326,7 +355,7 @@ a { color: inherit; }
 .lp-search-group { padding: .35rem .75rem; color: var(--muted); font-family: var(--font-mono); font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; border-bottom: 1px solid var(--border); background: var(--off-black); }
 .lp-search-item { display: flex; align-items: center; justify-content: space-between; padding: .5rem .75rem; color: var(--text); text-decoration: none; font-size: .8rem; transition: background .15s; border-bottom: 1px solid rgba(44,44,44,.5); }
 .lp-search-item:last-child { border-bottom: none; }
-.lp-search-item:hover { background: rgba(245,192,32,.06); color: var(--gold); }
+.lp-search-item:hover { background: rgba(245,192,32,.06); color: var(--gold-text); }
 .lp-search-badge { font-family: var(--font-mono); font-size: .75rem; color: var(--muted); letter-spacing: .05em; margin-left: .75rem; white-space: nowrap; }
 .lp-search-empty { padding: .75rem; color: var(--muted); font-family: var(--font-mono); font-size: .75rem; text-align: center; }
 @media (max-width: 1120px) {
@@ -340,7 +369,7 @@ a { color: inherit; }
 .lp-mobile-search-results .lp-search-group { padding: .3rem .75rem; color: var(--muted); font-family: var(--font-mono); font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; border-bottom: 1px solid var(--border); background: var(--off-black); }
 .lp-mobile-search-results .lp-search-item { display: flex; align-items: center; justify-content: space-between; padding: .5rem .75rem; color: var(--text); text-decoration: none; font-size: .78rem; border-bottom: 1px solid rgba(44,44,44,.5); transition: background .15s; }
 .lp-mobile-search-results .lp-search-item:last-child { border-bottom: none; }
-.lp-mobile-search-results .lp-search-item:hover { background: rgba(245,192,32,.06); color: var(--gold); }
+.lp-mobile-search-results .lp-search-item:hover { background: rgba(245,192,32,.06); color: var(--gold-text); }
 
 /* Accessibility floor shared by every page. */
 .lp-skip-link { position: fixed; top: .5rem; left: .5rem; z-index: 100000; padding: .6rem 1rem; background: var(--gold); color: #0E0E0E; font-weight: 700; text-decoration: none; transform: translateY(-200%); }
@@ -353,3 +382,38 @@ main:focus { outline: none; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
+
+/* Readable tool accents on the light theme. */
+[data-theme="light"] :where(.lp-tool-section, .lp-tool-pill, .lp-sidebar-links a) { --accent-ink: var(--gold-text); }
+[data-theme="light"] [data-tool="ileapp"] { --accent-ink: var(--color-ileapp-text); }
+[data-theme="light"] [data-tool="aleapp"] { --accent-ink: var(--color-aleapp-text); }
+[data-theme="light"] [data-tool="rleapp"] { --accent-ink: var(--color-rleapp-text); }
+[data-theme="light"] [data-tool="vleapp"] { --accent-ink: var(--color-vleapp-text); }
+[data-theme="light"] [data-tool="dleapp"] { --accent-ink: var(--color-dleapp-text); }
+[data-theme="light"] [data-tool="gleapp"] { --accent-ink: var(--color-gleapp-text); }
+[data-theme="light"] [data-tool="batch"] { --accent-ink: #11655B; }
+[data-theme="light"] [data-tool="kdl"] { --accent-ink: var(--color-kdl-text); }
+[data-theme="light"] [data-tool="appwalk"] { --accent-ink: #13645C; }
+
+/* Page colors that are too light on the light theme. */
+[data-theme="light"] .lp-output-badge.html { color: #2C6075; }
+[data-theme="light"] .lp-output-badge.tsv { color: #4F5F1B; }
+[data-theme="light"] .lp-output-badge.kml { color: #8B471B; }
+[data-theme="light"] .lp-code span.st { color: #4F5F1B; }
+[data-theme="light"] .lp-cl-tool.batch, [data-theme="light"] .lp-latest-chip-tool.batch,
+[data-theme="light"] .lp-tool-card-batch .lp-tool-tag, [data-theme="light"] .lp-tool-card-batch .lp-tool-name { color: #11655B; }
+[data-theme="light"] .lp-tool-card-batch .lp-tool-link, [data-theme="light"] .lp-dl-btn-batch { color: #11655B !important; }
+[data-theme="light"] .lp-cl-tool.appwalk, [data-theme="light"] .lp-latest-chip-tool.appwalk { color: #13645C; }
+[data-theme="light"] .lp-tool-desc, [data-theme="light"] .lp-prose-section p,
+[data-theme="light"] .breadcrumb .sep, [data-theme="light"] .lp-status-sep { color: var(--muted); }
+[data-theme="light"] .lp-dl-daily, [data-theme="light"] .lp-dl-summary-num { color: var(--text) !important; }
+[data-theme="light"] .pos-num.pos-1 { color: #6E560E; }
+[data-theme="light"] .pos-num.pos-2 { color: #5F5F5F; }
+[data-theme="light"] .pos-num.pos-3 { color: #8B471B; }
+/* Inline links need more than color to stand out from light theme body text. */
+[data-theme="light"] main :is(p, li, td, .lp-faq-answer, .lp-install-note, .post-subscribe-alt) > a:not([class]):not(nav a, .lp-sidebar-links a, .breadcrumb a) { text-decoration: underline !important; }
+/* A selected control needs a visible edge, not only a change of hue. */
+[data-theme="light"] :is(.lp-filter-btn.active, .lp-os-btn.active, .lp-sb-tool-btn.active, .lp-tool-btn.active, .lp-dl-toggle button.active, .lp-picker button.active) { border-color: currentColor !important; }
+[data-theme="light"] :is(.lp-tab.active, .lp-page-nav-inner a.active) { border-bottom-color: currentColor !important; }
+[data-theme="light"] .lp-show-more:hover { opacity: 1; text-decoration: underline; }
+[data-theme="light"] .lp-footer-col a[aria-current="page"] { text-decoration: underline; }

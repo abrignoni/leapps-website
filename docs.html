@@ -34,19 +34,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261122" />
+  <link rel="stylesheet" href="/css/global.css?v=20261123" />
   <style>
 .lp-header { padding: 3.5rem 2rem 3rem; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
 .lp-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(245,192,32,.06) 0%, transparent 70%); pointer-events: none; }
 .lp-header-inner { max-width: 900px; margin: 0 auto; }
-.lp-eyebrow { display: inline-block; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.lp-eyebrow { display: inline-block; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-text); margin-bottom: 1rem; }
 .lp-header h1 { font-family: var(--font-head); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; text-transform: uppercase; line-height: .95; margin-bottom: 1rem; }
-.lp-header h1 span { color: var(--gold); }
+.lp-header h1 span { color: var(--gold-text); }
 .lp-header p { color: var(--muted); font-size: 1rem; max-width: 560px; line-height: 1.7; }
 .lp-docs-wrap { max-width: 900px; margin: 0 auto; padding: 4rem 2rem 6rem; }
 .lp-step { display: grid; grid-template-columns: 48px 1fr; gap: 0 1.75rem; margin-bottom: 3.5rem; position: relative; }
 .lp-step:not(:last-child)::before { content: ''; position: absolute; left: 23px; top: 48px; bottom: -3.5rem; width: 2px; background: var(--border); }
-.lp-step-num { width: 48px; height: 48px; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: .9rem; color: var(--gold); font-weight: 500; flex-shrink: 0; }
+.lp-step-num { width: 48px; height: 48px; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: .9rem; color: var(--gold-text); font-weight: 500; flex-shrink: 0; }
 .lp-step-body { padding-top: .6rem; min-width: 0; } /* min-width:0 lets wide code blocks scroll inside the grid column instead of overflowing the page */
 .lp-step-title { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: .5rem; letter-spacing: .04em; }
 .lp-step-desc { color: var(--muted); font-size: .9rem; line-height: 1.7; margin-bottom: 1.25rem; max-width: 640px; }
@@ -54,39 +54,39 @@
 .lp-decision-card { background: var(--surface); border: 1px solid var(--border); padding: .9rem 1rem; text-decoration: none !important; transition: border-color .2s; }
 .lp-decision-card:hover { border-color: var(--gold); }
 .lp-decision-card-tag { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: .35rem; }
-.lp-decision-card-tag.ileapp { color: var(--color-ileapp); }
-.lp-decision-card-tag.aleapp { color: var(--color-aleapp); }
-.lp-decision-card-tag.rleapp { color: var(--color-rleapp); }
-.lp-decision-card-tag.vleapp { color: var(--color-vleapp); }
-.lp-decision-card-tag.dleapp { color: var(--color-dleapp); }
-.lp-decision-card-tag.gleapp { color: var(--color-gleapp); }
+.lp-decision-card-tag.ileapp { color: var(--color-ileapp-text); }
+.lp-decision-card-tag.aleapp { color: var(--color-aleapp-text); }
+.lp-decision-card-tag.rleapp { color: var(--color-rleapp-text); }
+.lp-decision-card-tag.vleapp { color: var(--color-vleapp-text); }
+.lp-decision-card-tag.dleapp { color: var(--color-dleapp-text); }
+.lp-decision-card-tag.gleapp { color: var(--color-gleapp-text); }
 .lp-decision-card-title { font-family: var(--font-head); font-size: 1rem; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: .2rem; }
 .lp-decision-card-sub { font-size: .78rem; color: var(--muted); }
 .lp-table-scroll { max-width: 100%; overflow-x: auto; }
 .lp-code { background: #0a0a0a; border: 1px solid var(--border); border-left: 3px solid var(--gold); padding: 1rem 1.25rem; font-family: var(--font-mono); font-size: .8rem; color: #c8c3b8; line-height: 1.8; overflow-x: auto; margin-bottom: .75rem; position: relative; }
 .lp-code-label { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: .4rem; }
 .lp-code span.cm { color: var(--muted); }
-.lp-code span.kw { color: var(--gold); }
+.lp-code span.kw { color: var(--gold-text); }
 .lp-code span.st { color: #A4C639; }
 .lp-tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 1rem; }
 .lp-tab { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; padding: .5rem 1rem; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color .2s, border-color .2s; user-select: none; }
-.lp-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+.lp-tab.active { color: var(--gold-text); border-bottom-color: var(--gold); }
 .lp-pill { display: inline-block; font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; padding: .2rem .55rem; border: 1px solid; margin-right: .3rem; }
-.lp-pill.ileapp { color: var(--color-ileapp); border-color: rgba(var(--color-ileapp-rgb),.4); }
-.lp-pill.aleapp { color: var(--color-aleapp); border-color: rgba(var(--color-aleapp-rgb),.4); }
-.lp-pill.rleapp { color: var(--color-rleapp); border-color: rgba(var(--color-rleapp-rgb),.4); }
-.lp-pill.vleapp { color: var(--color-vleapp); border-color: rgba(var(--color-vleapp-rgb),.4); }
-.lp-pill.gleapp { color: var(--color-gleapp); border-color: rgba(var(--color-gleapp-rgb),.4); }
+.lp-pill.ileapp { color: var(--color-ileapp-text); border-color: rgba(var(--color-ileapp-rgb),.4); }
+.lp-pill.aleapp { color: var(--color-aleapp-text); border-color: rgba(var(--color-aleapp-rgb),.4); }
+.lp-pill.rleapp { color: var(--color-rleapp-text); border-color: rgba(var(--color-rleapp-rgb),.4); }
+.lp-pill.vleapp { color: var(--color-vleapp-text); border-color: rgba(var(--color-vleapp-rgb),.4); }
+.lp-pill.gleapp { color: var(--color-gleapp-text); border-color: rgba(var(--color-gleapp-rgb),.4); }
 .lp-pill.lava { color: var(--color-lava-text);  border-color: rgba(var(--color-lava-rgb),.4); }
 .lp-lava-callout { background: var(--surface); border: 1px solid rgba(245,192,32,.3); border-left: 3px solid var(--gold); padding: 1.5rem; margin-top: 1.25rem; }
-.lp-lava-callout-head { display: flex; align-items: center; gap: .6rem; font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; }
+.lp-lava-callout-head { display: flex; align-items: center; gap: .6rem; font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; color: var(--gold-text); margin-bottom: .6rem; }
 .lp-lava-callout p { font-size: .88rem; color: var(--muted); line-height: 1.7; margin-bottom: .75rem; }
 .lp-lava-callout p:last-child { margin-bottom: 0; }
-.lp-lava-callout a { color: var(--gold); text-decoration: none; }
+.lp-lava-callout a { color: var(--gold-text); text-decoration: none; }
 .lp-lava-callout a:hover { text-decoration: underline; }
 .lp-checklist { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
 .lp-checklist li { display: flex; align-items: flex-start; gap: .6rem; font-size: .88rem; color: var(--muted); line-height: 1.6; }
-.lp-checklist li i { color: var(--gold); font-size: .9rem; margin-top: .15rem; flex-shrink: 0; }
+.lp-checklist li i { color: var(--gold-text); font-size: .9rem; margin-top: .15rem; flex-shrink: 0; }
 .lp-table { width: 100%; border-collapse: collapse; font-size: .82rem; margin-bottom: .75rem; }
 .lp-table th { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--border); }
 .lp-table td { padding: .65rem .75rem; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; }
@@ -99,7 +99,7 @@
 .lp-btn-primary { background: var(--gold); color: var(--on-gold) !important; padding: .6rem 1.4rem; font-family: var(--font-head); font-weight: 700; font-size: .9rem; letter-spacing: .1em; text-transform: uppercase; text-decoration: none !important; white-space: nowrap; transition: background .2s; }
 .lp-btn-primary:hover { background: var(--gold-dk) !important; }
 .lp-btn-outline { background: transparent; color: var(--text) !important; padding: .6rem 1.4rem; font-family: var(--font-head); font-weight: 700; font-size: .9rem; letter-spacing: .1em; text-transform: uppercase; border: 1px solid var(--border); text-decoration: none !important; white-space: nowrap; transition: border-color .2s, color .2s; }
-.lp-btn-outline:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
+.lp-btn-outline:hover { border-color: var(--gold) !important; color: var(--gold-text) !important; }
 @media (max-width: 768px) {
   .lp-step { grid-template-columns: 36px 1fr; gap: 0 1.25rem; }
   .lp-step:not(:last-child)::before { left: 17px; }
@@ -271,7 +271,7 @@
             <div class="lp-decision-card-sub">Triage large media sets: hashing, de-duplication, known-hash matching &amp; a review gallery</div>
           </a>
         </div>
-        <p style="font-size:.78rem;color:var(--muted);font-family:var(--font-mono);">Not sure? Check the <a href="https://leapps.org/artifacts" style="color:var(--gold);text-decoration:none;">Artifacts page</a> to see which tool covers the data you need. Prefer a PDF? Browse the <a href="https://leapps.org/guides" style="color:var(--gold);text-decoration:none;">downloadable guides</a>.</p>
+        <p style="font-size:.78rem;color:var(--muted);font-family:var(--font-mono);">Not sure? Check the <a href="https://leapps.org/artifacts" style="color: var(--gold-text);text-decoration:none;">Artifacts page</a> to see which tool covers the data you need. Prefer a PDF? Browse the <a href="https://leapps.org/guides" style="color: var(--gold-text);text-decoration:none;">downloadable guides</a>.</p>
       </div>
     </div>
 
@@ -347,7 +347,7 @@
       <div class="lp-step-body">
         <div class="lp-step-title">Install &amp; Run</div>
         <p class="lp-step-desc">LEAPPs tools run on Python 3.11+. Download the latest release, install dependencies, and run against your extraction folder.</p>
-        <p style="font-size:.85rem;margin-bottom:1rem;padding:.6rem .9rem;background:var(--surface);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;">💡 <strong>Prefer not to run Python scripts directly?</strong> The <a href="https://leapps.org/releases" style="color:var(--gold);text-decoration:none;">Releases page</a> provides pre-built downloads for Windows, macOS and Linux, so no Python installation is needed. For iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP each download is one program: started with no arguments it opens the window, and given arguments it runs as the command line.</p>
+        <p style="font-size:.85rem;margin-bottom:1rem;padding:.6rem .9rem;background:var(--surface);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;">💡 <strong>Prefer not to run Python scripts directly?</strong> The <a href="https://leapps.org/releases" style="color: var(--gold-text);text-decoration:none;">Releases page</a> provides pre-built downloads for Windows, macOS and Linux, so no Python installation is needed. For iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP each download is one program: started with no arguments it opens the window, and given arguments it runs as the command line.</p>
 
         <div class="lp-code-label">Fastest install — macOS (Homebrew)</div>
         <div class="lp-code" style="white-space:pre;"><span class="kw">brew</span> trust leapps-org/leapps      <span class="cm"># trust the tap before adding it</span>
@@ -356,7 +356,7 @@
 <span class="kw">brew</span> install --cask aleapp        <span class="cm"># same for rleapp, vleapp, dleapp</span>
 <span class="kw">brew</span> install --cask gleapp        <span class="cm"># GLEAPP: app and gleapp command</span>
 <span class="kw">brew</span> install --cask lava          <span class="cm"># LAVA</span></div>
-        <p style="font-size:.82rem;color:var(--muted);margin:.5rem 0 1.25rem;">A Homebrew install handles Python and dependencies for you, so skip the pip steps below and run the tool directly. Current Homebrew may require you to trust the tap first; an older Homebrew that has no <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">brew trust</code> command can skip that line. For iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP the cask installs the app and links its command line (<code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">ileapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">aleapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">rleapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">vleapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">dleapp</code>): started with no arguments it opens the window, and given arguments it runs as the command line. Full walkthrough in the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew" style="color:var(--gold);text-decoration:none;">Homebrew guide</a>. On Windows, use the pre-built executables or the manual steps below.</p>
+        <p style="font-size:.82rem;color:var(--muted);margin:.5rem 0 1.25rem;">A Homebrew install handles Python and dependencies for you, so skip the pip steps below and run the tool directly. Current Homebrew may require you to trust the tap first; an older Homebrew that has no <code style="font-family:var(--font-mono);font-size:.8rem;color: var(--gold-text);">brew trust</code> command can skip that line. For iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP the cask installs the app and links its command line (<code style="font-family:var(--font-mono);font-size:.8rem;color: var(--gold-text);">ileapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color: var(--gold-text);">aleapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color: var(--gold-text);">rleapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color: var(--gold-text);">vleapp</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color: var(--gold-text);">dleapp</code>): started with no arguments it opens the window, and given arguments it runs as the command line. Full walkthrough in the <a href="https://leapps.org/blog-post?post=installing-leapps-with-homebrew" style="color: var(--gold-text);text-decoration:none;">Homebrew guide</a>. On Windows, use the pre-built executables or the manual steps below.</p>
 
         <div class="lp-tabs" id="run-tabs">
           <div class="lp-tab active" data-tab="gui">GUI</div>
@@ -369,7 +369,7 @@
           <div class="lp-code-label">Step 2 — Launch the GUI</div>
           <div class="lp-code"><span class="kw">python</span> ileappGUI.py  <span class="cm"># or aleappGUI.py / rleappGUI.py / vleappGUI.py / dleappGUI.py</span></div>
           <p style="font-size:.82rem;color:var(--muted);margin-top:.5rem;">Select your input folder (extraction source) and output folder, then click <strong style="color:var(--text);">Process</strong>. The GUI will show progress per module.</p>
-          <p style="font-size:.78rem;color:var(--muted);margin-top:.5rem;">GLEAPP does not share this command line. It opens with <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">python gleappGUI.py</code> for the desktop window, or <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">python gleapp.py web</code> for the same interface in a browser.</p>
+          <p style="font-size:.78rem;color:var(--muted);margin-top:.5rem;">GLEAPP does not share this command line. It opens with <code style="font-family:var(--font-mono);font-size:.8rem;color: var(--gold-text);">python gleappGUI.py</code> for the desktop window, or <code style="font-family:var(--font-mono);font-size:.8rem;color: var(--gold-text);">python gleapp.py web</code> for the same interface in a browser.</p>
         </div>
 
         <div id="tab-cli" style="display:none;">
@@ -387,13 +387,13 @@
                                   <span class="cm">#   These are iLEAPP's values. They differ per tool.</span>
 <span class="kw">-o</span>, <span class="kw">--output_path</span> <span class="st">OUTPUT_PATH</span>     <span class="cm"># path to base output folder (must exist)</span>
 <span class="kw">-i</span>, <span class="kw">--input_path</span>  <span class="st">INPUT_PATH</span>      <span class="cm"># path to extraction source</span></div>
-          <p style="font-size:.78rem;color:var(--muted);margin-top:.75rem;">Each tool may have additional options. Run <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">python ileapp.py -h</code> (or <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">aleapp.py</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">rleapp.py</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">vleapp.py</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">dleapp.py</code>) to see the full list of options for that tool.</p>
-          <p style="font-size:.78rem;color:var(--muted);margin-top:.5rem;">GLEAPP does not share this command line. It opens with <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">python gleappGUI.py</code> for the desktop window, or <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">python gleapp.py web</code> for the same interface in a browser.</p>
+          <p style="font-size:.78rem;color:var(--muted);margin-top:.75rem;">Each tool may have additional options. Run <code style="font-family:var(--font-mono);font-size:.8rem;color: var(--gold-text);">python ileapp.py -h</code> (or <code style="font-family:var(--font-mono);font-size:.8rem;color: var(--gold-text);">aleapp.py</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color: var(--gold-text);">rleapp.py</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color: var(--gold-text);">vleapp.py</code>, <code style="font-family:var(--font-mono);font-size:.8rem;color: var(--gold-text);">dleapp.py</code>) to see the full list of options for that tool.</p>
+          <p style="font-size:.78rem;color:var(--muted);margin-top:.5rem;">GLEAPP does not share this command line. It opens with <code style="font-family:var(--font-mono);font-size:.8rem;color: var(--gold-text);">python gleappGUI.py</code> for the desktop window, or <code style="font-family:var(--font-mono);font-size:.8rem;color: var(--gold-text);">python gleapp.py web</code> for the same interface in a browser.</p>
         </div>
 
         <ul class="lp-checklist" style="margin-top:1rem;">
-          <li><i class="ti ti-download"></i>Download the latest release from <a href="https://leapps.org/releases" style="color:var(--gold);text-decoration:none;">leapps.org/releases</a></li>
-          <li><i class="ti ti-brand-python"></i>Requires Python 3.11 or later — <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:none;">python.org/downloads</a></li>
+          <li><i class="ti ti-download"></i>Download the latest release from <a href="https://leapps.org/releases" style="color: var(--gold-text);text-decoration:none;">leapps.org/releases</a></li>
+          <li><i class="ti ti-brand-python"></i>Requires Python 3.11 or later — <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text);text-decoration:none;">python.org/downloads</a></li>
           <li><i class="ti ti-folder"></i>Point the tool at the whole extraction unless you are parsing one file with <code>-t file</code> (iLEAPP and VLEAPP)</li>
           <li><i class="ti ti-clock"></i>Runtime depends on extraction size</li>
         </ul>
@@ -403,7 +403,7 @@
 <span class="kw">mkdir</span> <span class="kw">-p</span> <span class="st">~/Cases/reports</span>
 <span class="kw">ileapp</span> <span class="kw">-t</span> <span class="st">zip</span> <span class="kw">-i</span> <span class="st">~/Cases/ios_extraction.zip</span> <span class="kw">-o</span> <span class="st">~/Cases/reports</span>
 <span class="kw">open</span> <span class="st">~/Cases/reports</span>    <span class="cm"># open index.html in the newest folder, or load the LAVA project</span></div>
-        <p style="font-size:.82rem;color:var(--muted);margin-top:.5rem;">Four commands: install, make the report folder, parse, review. No extraction to test with yet? Explore a pre-processed report in the <a href="https://github.com/leapps-org/LAVA-sample-projects" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:none;">LAVA sample projects</a> to see what the output looks like.</p>
+        <p style="font-size:.82rem;color:var(--muted);margin-top:.5rem;">Four commands: install, make the report folder, parse, review. No extraction to test with yet? Explore a pre-processed report in the <a href="https://github.com/leapps-org/LAVA-sample-projects" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text);text-decoration:none;">LAVA sample projects</a> to see what the output looks like.</p>
       </div>
     </div>
 
@@ -415,7 +415,7 @@
         <p class="lp-step-desc">When processing completes, LEAPPs writes an HTML report to your output folder. You have two ways to review it.</p>
 
         <ul class="lp-checklist" style="margin-bottom:1.25rem;">
-          <li><i class="ti ti-file-type-html"></i><div><strong style="color:var(--text);">Direct HTML</strong> — open <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">index.html</code> in your output folder in any browser. Artifacts are organized into categories with search and filtering built in.</div></li>
+          <li><i class="ti ti-file-type-html"></i><div><strong style="color:var(--text);">Direct HTML</strong> — open <code style="font-family:var(--font-mono);font-size:.8rem;color: var(--gold-text);">index.html</code> in your output folder in any browser. Artifacts are organized into categories with search and filtering built in.</div></li>
           <li><i class="ti ti-eye"></i><div><strong style="color:var(--text);">LAVA viewer</strong> — for a richer, structured experience load the report into LAVA (see below).</div></li>
         </ul>
 
@@ -443,11 +443,11 @@
         <p class="lp-step-desc">Found an artifact that isn't parsed yet? LEAPPs is open-source and built by the community. Adding a parser is straightforward.</p>
         <ul class="lp-checklist" style="margin-bottom:1rem;">
           <li><i class="ti ti-brand-github"></i>Fork the relevant repo on GitHub</li>
-          <li><i class="ti ti-file-code"></i>Add a new Python file to the <code style="font-family:var(--font-mono);font-size:.8rem;color:var(--gold);">scripts/artifacts/</code> folder following the existing module pattern</li>
+          <li><i class="ti ti-file-code"></i>Add a new Python file to the <code style="font-family:var(--font-mono);font-size:.8rem;color: var(--gold-text);">scripts/artifacts/</code> folder following the existing module pattern</li>
           <li><i class="ti ti-git-pull-request"></i>Open a pull request. A maintainer reviews it</li>
-          <li><i class="ti ti-trophy"></i>Your GitHub handle appears on the <a href="https://leapps.org/scoreboard" style="color:var(--gold);text-decoration:none;">Scoreboard</a> once your parser ships</li>
+          <li><i class="ti ti-trophy"></i>Your GitHub handle appears on the <a href="https://leapps.org/scoreboard" style="color: var(--gold-text);text-decoration:none;">Scoreboard</a> once your parser ships</li>
         </ul>
-        <p style="font-size:.82rem;color:var(--muted);">Questions? Ask in <a href="https://discord.gg/XaZaknENUR" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:none;">Discord</a> — the community is active and happy to help new contributors get started.</p>
+        <p style="font-size:.82rem;color:var(--muted);">Questions? Ask in <a href="https://discord.gg/XaZaknENUR" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text);text-decoration:none;">Discord</a> — the community is active and happy to help new contributors get started.</p>
       </div>
     </div>
 
@@ -466,7 +466,7 @@
     <!-- CONTRIBUTE TEASER -->
     <div style="margin-top:1.5rem;border:1px solid var(--border);padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
       <div>
-        <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;text-transform:uppercase;color:var(--text);margin-bottom:.25rem;"><i class="ti ti-puzzle" style="color:var(--gold);margin-right:.4rem;"></i>Want to add a parser?</div>
+        <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;text-transform:uppercase;color:var(--text);margin-bottom:.25rem;"><i class="ti ti-puzzle" style="color: var(--gold-text);margin-right:.4rem;"></i>Want to add a parser?</div>
         <div style="font-size:.82rem;color:var(--muted);">The contributor guide walks through module structure, SQLite and plist parsing, timestamps, media, LAVA conversation view, the checks pull requests run, and submitting a pull request.</div>
       </div>
       <a href="https://leapps.org/blog-post?post=2026-06-14-how-to-write-an-ileapp-module" style="font-family:var(--font-head);font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color: var(--on-gold);background:var(--gold);padding:.6rem 1.4rem;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:background .2s;" onmouseover="this.style.background='var(--gold-dk)'" onmouseout="this.style.background='var(--gold)'">Read the Guide <i class="ti ti-arrow-up-right"></i></a>
@@ -561,7 +561,7 @@
       document.querySelectorAll('.lp-footer-col a').forEach(function(a) {
         var href = a.getAttribute('href') || '';
         var ap = href.replace(/https:\/\/leapps\.org/, '').replace(/\/+$/, '') || '/';
-        if (ap === path) { a.style.color = '#F5C020'; }
+        if (ap === path) { a.style.color = 'var(--gold-text)'; a.setAttribute('aria-current', 'page'); }
       });
     })();
   </script>

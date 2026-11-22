@@ -33,19 +33,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261122" />
+  <link rel="stylesheet" href="/css/global.css?v=20261123" />
   <style>
 .lp-header { padding: 3.5rem 2rem 3rem; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
 .lp-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(245,192,32,.06) 0%, transparent 70%); pointer-events: none; }
 .lp-header-inner { max-width: 1100px; margin: 0 auto; }
-.lp-eyebrow { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
+.lp-eyebrow { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-text); margin-bottom: 1rem; display: block; }
 .lp-header h1 { font-family: var(--font-head); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; text-transform: uppercase; line-height: .95; margin-bottom: 1rem; }
-.lp-header h1 span { color: var(--gold); }
+.lp-header h1 span { color: var(--gold-text); }
 .lp-header p { color: var(--muted); font-size: 1rem; max-width: 520px; line-height: 1.7; }
 .lp-updated { font-family: var(--font-mono); font-size: .75rem; color: var(--muted); margin-top: 1rem; letter-spacing: .08em; }
 .lp-main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
 .lp-section { margin-bottom: 3rem; }
-.lp-section-label { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: .75rem; display: block; }
+.lp-section-label { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-text); margin-bottom: .75rem; display: block; }
 .lp-section-title { font-family: var(--font-head); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; text-transform: uppercase; margin-bottom: 1.5rem; color: var(--text); }
 .rank-legend { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
 .rank-card { background: var(--off-black); padding: 1.25rem 1.5rem; transition: background .2s; }
@@ -67,26 +67,26 @@
 .contrib-cell { display: flex; align-items: center; gap: .75rem; }
 .contrib-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; background: var(--surface); flex-shrink: 0; }
 .contrib-login { font-family: var(--font-head); font-size: 1rem; font-weight: 700; text-transform: none; letter-spacing: .02em; color: var(--text); text-decoration: none; transition: color .2s; }
-.contrib-login:hover { color: var(--gold); }
+.contrib-login:hover { color: var(--gold-text); }
 .pr-count { font-family: var(--font-mono); font-size: .85rem; color: var(--text); text-align: right; }
 #sb-count-head { white-space: nowrap; }
 .repo-badges { display: flex; gap: .35rem; flex-wrap: wrap; justify-content: flex-end; }
 .repo-badge { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; padding: .2rem .5rem; border-radius: 2px; line-height: 1.4; }
-.badge-ileapp { background: rgba(var(--color-ileapp-rgb),.15); color: var(--color-ileapp); border: 1px solid rgba(var(--color-ileapp-rgb),.3); }
-.badge-aleapp { background: rgba(var(--color-aleapp-rgb),.15);  color: var(--color-aleapp); border: 1px solid rgba(var(--color-aleapp-rgb),.3); }
-.badge-rleapp { background: rgba(var(--color-rleapp-rgb),.15); color: var(--color-rleapp); border: 1px solid rgba(var(--color-rleapp-rgb),.3); }
-.badge-vleapp { background: rgba(var(--color-vleapp-rgb),.15); color: var(--color-vleapp); border: 1px solid rgba(var(--color-vleapp-rgb),.3); }
+.badge-ileapp { background: rgba(var(--color-ileapp-rgb),.15); color: var(--color-ileapp-text); border: 1px solid rgba(var(--color-ileapp-rgb),.3); }
+.badge-aleapp { background: rgba(var(--color-aleapp-rgb),.15);  color: var(--color-aleapp-text); border: 1px solid rgba(var(--color-aleapp-rgb),.3); }
+.badge-rleapp { background: rgba(var(--color-rleapp-rgb),.15); color: var(--color-rleapp-text); border: 1px solid rgba(var(--color-rleapp-rgb),.3); }
+.badge-vleapp { background: rgba(var(--color-vleapp-rgb),.15); color: var(--color-vleapp-text); border: 1px solid rgba(var(--color-vleapp-rgb),.3); }
 .badge-batch { background: rgba(31,184,166,.15); color: #1FB8A6; border: 1px solid rgba(31,184,166,.3); }
-.badge-dleapp { background: rgba(var(--color-dleapp-rgb),.15); color: var(--color-dleapp); border: 1px solid rgba(var(--color-dleapp-rgb),.3); }
-.badge-gleapp { background: rgba(var(--color-gleapp-rgb),.15); color: var(--color-gleapp); border: 1px solid rgba(var(--color-gleapp-rgb),.3); }
+.badge-dleapp { background: rgba(var(--color-dleapp-rgb),.15); color: var(--color-dleapp-text); border: 1px solid rgba(var(--color-dleapp-rgb),.3); }
+.badge-gleapp { background: rgba(var(--color-gleapp-rgb),.15); color: var(--color-gleapp-text); border: 1px solid rgba(var(--color-gleapp-rgb),.3); }
 .rank-badge { display: inline-flex; align-items: center; gap: .35rem; font-family: var(--font-head); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: .25rem .65rem; border-radius: 2px; white-space: nowrap; }
 .rank-badge i { font-size: .85rem; }
-.rank-badge.rank-1 { background: rgba(108,180,228,.12); color: var(--rank-1); border: 1px solid rgba(108,180,228,.3); }
-.rank-badge.rank-2 { background: rgba(74,144,217,.12);  color: var(--rank-2); border: 1px solid rgba(74,144,217,.3); }
-.rank-badge.rank-3 { background: rgba(83,29,171,.12);  color: var(--rank-3); border: 1px solid rgba(83,29,171,.3); }
-.rank-badge.rank-4 { background: rgba(245,192,32,.12);  color: var(--rank-4); border: 1px solid rgba(245,192,32,.3); }
-.rank-badge.rank-5 { background: rgba(75,163,199,.12);  color: var(--rank-5); border: 1px solid rgba(75,163,199,.3); }
-.rank-badge.rank-6 { background: rgba(224,64,94,.12);  color: var(--rank-6); border: 1px solid rgba(224,64,94,.3); }
+.rank-badge.rank-1 { background: rgba(108,180,228,.12); color: var(--rank-1-text); border: 1px solid rgba(108,180,228,.3); }
+.rank-badge.rank-2 { background: rgba(74,144,217,.12);  color: var(--rank-2-text); border: 1px solid rgba(74,144,217,.3); }
+.rank-badge.rank-3 { background: rgba(83,29,171,.12);  color: var(--rank-3-text); border: 1px solid rgba(83,29,171,.3); }
+.rank-badge.rank-4 { background: rgba(245,192,32,.12);  color: var(--rank-4-text); border: 1px solid rgba(245,192,32,.3); }
+.rank-badge.rank-5 { background: rgba(75,163,199,.12);  color: var(--rank-5-text); border: 1px solid rgba(75,163,199,.3); }
+.rank-badge.rank-6 { background: rgba(224,64,94,.12);  color: var(--rank-6-text); border: 1px solid rgba(224,64,94,.3); }
 .lp-sb-controls { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 1rem; }
 .lp-sb-search-wrap { flex: 1; min-width: 200px; position: relative; }
 .lp-sb-search-wrap i { position: absolute; left: .75rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 1rem; pointer-events: none; }
@@ -96,16 +96,16 @@
 .lp-sb-tool-filter { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
 .lp-sb-tool-btn { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; padding: .35rem .85rem; border: 1px solid var(--border); color: var(--muted); background: none; cursor: pointer; transition: border-color .2s, color .2s, background .2s; }
 .lp-sb-tool-btn:hover { border-color: #444; color: var(--text); }
-.lp-sb-tool-btn.active { border-color: var(--gold); color: var(--gold); background: rgba(245,192,32,.08); }
-.lp-sb-tool-btn[data-tool="iLEAPP"].active { border-color: var(--color-ileapp); color: var(--color-ileapp); background: rgba(var(--color-ileapp-rgb),.08); }
-.lp-sb-tool-btn[data-tool="ALEAPP"].active { border-color: var(--color-aleapp); color: var(--color-aleapp); background: rgba(var(--color-aleapp-rgb),.08); }
-.lp-sb-tool-btn[data-tool="RLEAPP"].active { border-color: var(--color-rleapp); color: var(--color-rleapp); background: rgba(var(--color-rleapp-rgb),.08); }
-.lp-sb-tool-btn[data-tool="VLEAPP"].active { border-color: var(--color-vleapp); color: var(--color-vleapp); background: rgba(var(--color-vleapp-rgb),.08); }
+.lp-sb-tool-btn.active { border-color: var(--gold); color: var(--gold-text); background: rgba(245,192,32,.08); }
+.lp-sb-tool-btn[data-tool="iLEAPP"].active { border-color: var(--color-ileapp); color: var(--color-ileapp-text); background: rgba(var(--color-ileapp-rgb),.08); }
+.lp-sb-tool-btn[data-tool="ALEAPP"].active { border-color: var(--color-aleapp); color: var(--color-aleapp-text); background: rgba(var(--color-aleapp-rgb),.08); }
+.lp-sb-tool-btn[data-tool="RLEAPP"].active { border-color: var(--color-rleapp); color: var(--color-rleapp-text); background: rgba(var(--color-rleapp-rgb),.08); }
+.lp-sb-tool-btn[data-tool="VLEAPP"].active { border-color: var(--color-vleapp); color: var(--color-vleapp-text); background: rgba(var(--color-vleapp-rgb),.08); }
 .lp-sb-tool-btn[data-tool="Batch LEAPP"].active { border-color: #1FB8A6; color: #1FB8A6; background: rgba(31,184,166,.08); }
-.lp-sb-tool-btn[data-tool="DLEAPP"].active { border-color: var(--color-dleapp); color: var(--color-dleapp); background: rgba(var(--color-dleapp-rgb),.08); }
-.lp-sb-tool-btn[data-tool="GLEAPP"].active { border-color: var(--color-gleapp); color: var(--color-gleapp); background: rgba(var(--color-gleapp-rgb),.08); }
+.lp-sb-tool-btn[data-tool="DLEAPP"].active { border-color: var(--color-dleapp); color: var(--color-dleapp-text); background: rgba(var(--color-dleapp-rgb),.08); }
+.lp-sb-tool-btn[data-tool="GLEAPP"].active { border-color: var(--color-gleapp); color: var(--color-gleapp-text); background: rgba(var(--color-gleapp-rgb),.08); }
 .lp-sb-results { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em; color: var(--muted); margin-bottom: .75rem; min-height: 1.2rem; }
-.lp-sb-results span { color: var(--gold); }
+.lp-sb-results span { color: var(--gold-text); }
 .lp-loading-row td { color: var(--muted); font-family: var(--font-mono); font-size: .75rem; text-align: center !important; padding: 3rem; }
 /* Loading skeletons — placeholder shapes that mirror a real row while PR data loads */
 @keyframes lp-sk-shimmer { 100% { transform: translateX(100%); } }
@@ -120,7 +120,7 @@
 .sk-row td { vertical-align: middle; }
 @media (prefers-reduced-motion: reduce) { .sk::after { animation: none; } }
 .lp-progress { font-family: var(--font-mono); font-size: .75rem; color: var(--muted); margin-bottom: 1rem; letter-spacing: .06em; }
-.lp-progress span { color: var(--gold); }
+.lp-progress span { color: var(--gold-text); }
 @media (max-width: 768px) {
   .lp-table th:nth-child(4), .lp-table td:nth-child(4) { display: none; }
   #sb-count-head { white-space: normal; }
@@ -252,33 +252,33 @@
       <h2 class="lp-section-title">Titles &amp; Ranks</h2>
       <div class="rank-legend">
         <div class="rank-card">
-          <span class="rank-card-icon" style="color:var(--rank-1)"><i class="ti ti-shield" aria-hidden="true"></i></span>
-          <div class="rank-card-title" style="color:var(--rank-1)">First Responder</div>
+          <span class="rank-card-icon" style="color: var(--rank-1-text)"><i class="ti ti-shield" aria-hidden="true"></i></span>
+          <div class="rank-card-title" style="color: var(--rank-1-text)">First Responder</div>
           <div class="rank-card-threshold">1 – 4 merged PRs</div>
         </div>
         <div class="rank-card">
-          <span class="rank-card-icon" style="color:var(--rank-2)"><i class="ti ti-search" aria-hidden="true"></i></span>
-          <div class="rank-card-title" style="color:var(--rank-2)">Digital Analyst</div>
+          <span class="rank-card-icon" style="color: var(--rank-2-text)"><i class="ti ti-search" aria-hidden="true"></i></span>
+          <div class="rank-card-title" style="color: var(--rank-2-text)">Digital Analyst</div>
           <div class="rank-card-threshold">5 – 14 merged PRs</div>
         </div>
         <div class="rank-card">
-          <span class="rank-card-icon" style="color:var(--rank-3)"><i class="ti ti-microscope" aria-hidden="true"></i></span>
-          <div class="rank-card-title" style="color:var(--rank-3)">Forensic Examiner</div>
+          <span class="rank-card-icon" style="color: var(--rank-3-text)"><i class="ti ti-microscope" aria-hidden="true"></i></span>
+          <div class="rank-card-title" style="color: var(--rank-3-text)">Forensic Examiner</div>
           <div class="rank-card-threshold">15 – 34 merged PRs</div>
         </div>
         <div class="rank-card">
-          <span class="rank-card-icon" style="color:var(--rank-4)"><i class="ti ti-star-filled" aria-hidden="true"></i></span>
-          <div class="rank-card-title" style="color:var(--rank-4)">Senior Investigator</div>
+          <span class="rank-card-icon" style="color: var(--rank-4-text)"><i class="ti ti-star-filled" aria-hidden="true"></i></span>
+          <div class="rank-card-title" style="color: var(--rank-4-text)">Senior Investigator</div>
           <div class="rank-card-threshold">35 – 74 merged PRs</div>
         </div>
         <div class="rank-card">
-          <span class="rank-card-icon" style="color:var(--rank-5)"><i class="ti ti-crown" aria-hidden="true"></i></span>
-          <div class="rank-card-title" style="color:var(--rank-5)">Lead Examiner</div>
+          <span class="rank-card-icon" style="color: var(--rank-5-text)"><i class="ti ti-crown" aria-hidden="true"></i></span>
+          <div class="rank-card-title" style="color: var(--rank-5-text)">Lead Examiner</div>
           <div class="rank-card-threshold">75 – 109 merged PRs</div>
         </div>
         <div class="rank-card">
-          <span class="rank-card-icon" style="color:var(--rank-6)"><i class="ti ti-diamond" aria-hidden="true"></i></span>
-          <div class="rank-card-title" style="color:var(--rank-6)">Forensic Legend</div>
+          <span class="rank-card-icon" style="color: var(--rank-6-text)"><i class="ti ti-diamond" aria-hidden="true"></i></span>
+          <div class="rank-card-title" style="color: var(--rank-6-text)">Forensic Legend</div>
           <div class="rank-card-threshold">110+ merged PRs</div>
         </div>
       </div>
@@ -523,7 +523,7 @@
       } catch (e) {
         progressEl.textContent = '';
         updatedEl.textContent = 'Could not load data. Please try again later.';
-        tbody.innerHTML = '<tr class="lp-loading-row"><td colspan="5">Could not load GitHub data. <a href="https://github.com/abrignoni" style="color:var(--gold)">View on GitHub →</a></td></tr>';
+        tbody.innerHTML = '<tr class="lp-loading-row"><td colspan="5">Could not load GitHub data. <a href="https://github.com/abrignoni" style="color: var(--gold-text)">View on GitHub →</a></td></tr>';
       }
     }
 
@@ -662,7 +662,7 @@
       document.querySelectorAll('.lp-footer-col a').forEach(function(a) {
         var href = a.getAttribute('href') || '';
         var ap = href.replace(/https:\/\/leapps\.org/, '').replace(/\/+$/, '') || '/';
-        if (ap === path) { a.style.color = '#F5C020'; }
+        if (ap === path) { a.style.color = 'var(--gold-text)'; a.setAttribute('aria-current', 'page'); }
       });
     })();
   </script>

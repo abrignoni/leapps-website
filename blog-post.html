@@ -36,7 +36,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="/css/global.css?v=20261122" />
+  <link rel="stylesheet" href="/css/global.css?v=20261123" />
   <style>
 img { max-width: 100%; display: block; }
 .post-wrap {
@@ -60,7 +60,7 @@ img { max-width: 100%; display: block; }
       gap: .5rem;
     }
 .breadcrumb a { color: var(--muted); text-decoration: none; transition: color .2s; }
-.breadcrumb a:hover { color: var(--gold); }
+.breadcrumb a:hover { color: var(--gold-text); }
 .breadcrumb .sep { color: var(--border); }
 /* Keep the trail to one line: the post title sits right below as the h1,
    so the breadcrumb copy truncates instead of wrapping. */
@@ -81,9 +81,9 @@ img { max-width: 100%; display: block; }
       color: var(--muted);
       margin-bottom: 1rem;
     }
-.post-header-meta .date { color: var(--gold); }
+.post-header-meta .date { color: var(--gold-text); }
 .byline-author { color: inherit; text-decoration: none; transition: color .2s; }
-.byline-author:hover { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+.byline-author:hover { color: var(--gold-text); text-decoration: underline; text-underline-offset: 3px; }
 .post-header h1 {
       font-family: var(--font-head);
       font-size: 2.8rem;
@@ -125,14 +125,14 @@ img { max-width: 100%; display: block; }
       margin: 2rem 0 .75rem;
       line-height: 1.2;
     }
-.post-body h1 { font-size: 2rem; color: var(--gold); }
+.post-body h1 { font-size: 2rem; color: var(--gold-text); }
 .post-body h2 { font-size: 1.5rem; }
 .post-body h3 { font-size: 1.2rem; }
 .post-body p { margin-bottom: 1.25rem; }
 .post-body ul,
     .post-body ol { margin: 0 0 1.25rem 1.5rem; }
 .post-body li { margin-bottom: .4rem; }
-.post-body a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+.post-body a { color: var(--gold-text); text-decoration: underline; text-underline-offset: 3px; }
 .post-body a:hover { color: var(--gold-dk); }
 .post-body code {
       font-family: var(--font-mono);
@@ -140,7 +140,7 @@ img { max-width: 100%; display: block; }
       background: var(--surface);
       border: 1px solid var(--border);
       padding: .15em .4em;
-      color: var(--gold);
+      color: var(--gold-text);
     }
 .post-body pre {
       background: var(--surface);
@@ -157,7 +157,7 @@ img { max-width: 100%; display: block; }
       cursor: pointer; border-radius: 4px; opacity: 0; transition: opacity .15s, color .2s, border-color .2s;
     }
 .post-body pre:hover .post-code-copy, .post-code-copy:focus-visible, .post-code-copy.copied { opacity: 1; }
-.post-code-copy:hover, .post-code-copy.copied { color: var(--gold); border-color: var(--gold); }
+.post-code-copy:hover, .post-code-copy.copied { color: var(--gold-text); border-color: var(--gold); }
 @media (hover: none) { .post-code-copy { opacity: 1; } } /* always visible on touch devices */
 .post-body pre code {
       background: none;
@@ -197,7 +197,7 @@ img { max-width: 100%; display: block; }
       text-transform: uppercase;
       font-size: .8rem;
       letter-spacing: .06em;
-      color: var(--gold);
+      color: var(--gold-text);
     }
 .post-body img {
       max-width: 100%;
@@ -222,7 +222,7 @@ img { max-width: 100%; display: block; }
       font-weight: 600;
       transition: color .2s;
     }
-.back-link:hover { color: var(--gold); }
+.back-link:hover { color: var(--gold-text); }
 .post-subscribe {
       margin-top: 3rem; padding: 1.75rem;
       background: var(--surface); border: 1px solid var(--border);
@@ -232,11 +232,11 @@ img { max-width: 100%; display: block; }
       font-family: var(--font-head); font-size: 1.25rem; font-weight: 700;
       text-transform: uppercase; letter-spacing: .04em; margin-bottom: .35rem;
     }
-.post-subscribe h3 span { color: var(--gold); }
+.post-subscribe h3 span { color: var(--gold-text); }
 .post-subscribe p { font-size: .88rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.6; }
 .post-subscribe iframe { display: block; width: 100%; border: none; height: 0; min-height: 140px; }
 .post-subscribe-alt { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .05em; color: var(--muted); margin-top: .75rem; }
-.post-subscribe-alt a { color: var(--gold); text-decoration: none; }
+.post-subscribe-alt a { color: var(--gold-text); text-decoration: none; }
 .post-share {
       margin-top: 3rem;
       padding-top: 2rem;
@@ -269,7 +269,7 @@ img { max-width: 100%; display: block; }
       cursor: pointer;
       transition: color .2s, border-color .2s;
     }
-.share-btn:hover { color: var(--gold); border-color: var(--gold); }
+.share-btn:hover { color: var(--gold-text); border-color: var(--gold); }
 .share-btn i { font-size: .9rem; }
 .related-posts { margin-top: 3.5rem; }
 .related-posts-label {
@@ -277,7 +277,7 @@ img { max-width: 100%; display: block; }
       font-size: .75rem;
       letter-spacing: .2em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-text);
       margin-bottom: 1.25rem;
       display: flex;
       align-items: center;
@@ -345,7 +345,7 @@ img { max-width: 100%; display: block; }
       font-size: .75rem;
       letter-spacing: .1em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-text);
     }
 .prevnext-title {
       font-family: var(--font-head);
@@ -366,10 +366,10 @@ img { max-width: 100%; display: block; }
       font-family: var(--font-mono);
       font-size: .875rem;
     }
-.state-msg .icon { font-size: 2rem; margin-bottom: 1rem; color: var(--gold); }
+.state-msg .icon { font-size: 2rem; margin-bottom: 1rem; color: var(--gold-text); }
 .lp-page { min-height: 100vh; background: var(--off-black); }
 [data-theme="light"] .lp-page { background: #F5F2EC; }
-[data-theme="light"] .post-body code { background: #D8D3C8; color: #8B6914; border-color: #C8C3B8; }
+[data-theme="light"] .post-body code { background: #D8D3C8; color: #6E560E; border-color: #C8C3B8; }
 [data-theme="light"] .post-body pre { background: #D8D3C8; border-color: #C8C3B8; }
 [data-theme="light"] .post-body pre code { background: none; color: #1C1A14; }
 [data-theme="light"] .post-body blockquote { background: #E4DFD5; border-color: #F5C020; color: #6B6458; }
@@ -614,7 +614,7 @@ img { max-width: 100%; display: block; }
         container.innerHTML = `
           <div class="state-msg">
             <div class="icon"><i class="ti ti-alert-triangle"></i></div>
-            Post not found. <a href="https://leapps.org/blog" style="color:var(--gold)">Back to Blog</a>
+            Post not found. <a href="https://leapps.org/blog" style="color: var(--gold-text)">Back to Blog</a>
           </div>`;
         return;
       }
@@ -821,7 +821,7 @@ img { max-width: 100%; display: block; }
         container.innerHTML = `
           <div class="state-msg">
             <div class="icon"><i class="ti ti-alert-triangle"></i></div>
-            Failed to load post. <a href="https://leapps.org/blog" style="color:var(--gold)">Back to Blog</a>
+            Failed to load post. <a href="https://leapps.org/blog" style="color: var(--gold-text)">Back to Blog</a>
           </div>`;
         console.error('Post load error:', err);
       }
@@ -926,7 +926,7 @@ img { max-width: 100%; display: block; }
       document.querySelectorAll('.lp-footer-col a').forEach(function(a) {
         var href = a.getAttribute('href') || '';
         var ap = href.replace(/https:\/\/leapps\.org/, '').replace(/\/+$/, '') || '/';
-        if (ap === path) { a.style.color = '#F5C020'; }
+        if (ap === path) { a.style.color = 'var(--gold-text)'; a.setAttribute('aria-current', 'page'); }
       });
     })();
   </script>
