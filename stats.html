@@ -638,6 +638,29 @@
       { attributes: true, attributeFilter: ['data-theme'] }
     );
 
+    // Reads every contributor page. complete is false when a page failed or the page
+    // limit was reached, so the table can mark the count as partial.
+    async function fetchContributorPages(repo) {
+      const contributors = [];
+      let loaded = false;
+      for (let p = 1; p <= 10; p++) {
+        const res = await fetch(`https://leapps-api.4n6-198.workers.dev/repos/${repo}/contributors?per_page=100&page=${p}`);
+        if (!res.ok) return { contributors, loaded, complete: false };
+        const data = await res.json().catch(() => null);
+        if (!Array.isArray(data)) return { contributors, loaded, complete: false };
+        loaded = true;
+        contributors.push(...data);
+        if (data.length < 100) return { contributors, loaded, complete: true };
+      }
+      return { contributors, loaded, complete: false };
+    }
+
+    // No count when nothing loaded, and a + when only part of the list loaded.
+    function contribCell(r, value) {
+      if (!r.openSource || !r.contribLoaded) return '—';
+      return fmt(value) + (r.contribComplete ? '' : '+');
+    }
+
     async function fetchStats() {
       try {
         const results = await Promise.all(tools.map(async t => {
@@ -651,17 +674,12 @@
           const downloads = Array.isArray(releases) ? releases.reduce((sum, r) =>
             sum + (r.assets || []).reduce((s, a) => s + (a.download_count || 0), 0), 0) : 0;
 
-          let commits = 0, contributors = 0;
+          let commits = 0, contributors = 0, contribLoaded = false, contribComplete = false;
           if (t.openSource) {
-            const contribs = [];
-            for (let p = 1; p <= 3; p++) {
-              const contrRes = await fetch(`https://leapps-api.4n6-198.workers.dev/repos/${t.repo}/contributors?per_page=100&page=${p}`);
-              if (!contrRes.ok) break;
-              const data = await contrRes.json().catch(() => []);
-              if (!Array.isArray(data) || data.length === 0) break;
-              contribs.push(...data);
-              if (data.length < 100) break;
-            }
+            const pages = await fetchContributorPages(t.repo);
+            const contribs = pages.contributors;
+            contribLoaded = pages.loaded;
+            contribComplete = pages.complete;
             commits = contribs.reduce((s, c) => s + (c.contributions || 0), 0);
             contributors = contribs.filter(c => c.type !== 'Bot' && !c.login.toLowerCase().includes('bot') && c.login !== 'actions-user').length;
           }
@@ -672,7 +690,7 @@
             forks: repo.forks_count || 0,
             openIssues: repo.open_issues_count || 0,
             releases: Array.isArray(releases) ? releases.length : 0,
-            downloads, commits, contributors
+            downloads, commits, contributors, contribLoaded, contribComplete
           };
         }));
 
@@ -704,7 +722,7 @@
         document.getElementById('m-contributors').classList.remove('loading');
         document.getElementById('m-releases').textContent = fmt(totRel);
         document.getElementById('m-releases').classList.remove('loading');
-        document.getElementById('m-commits').textContent = fmt(totCom);
+        document.getElementById('m-commits').textContent = fmt(totCom) + (results.some(r => r.openSource && !r.contribComplete) ? '+' : '');
         document.getElementById('m-commits').classList.remove('loading');
 
         // Updated timestamp
@@ -739,9 +757,9 @@
             </td>
             <td>${fmt(r.forks)}</td>
             <td>${fmt(r.openIssues)}</td>
-            <td>${r.openSource ? fmt(r.contributors) : '—'}</td>
+            <td>${contribCell(r, r.contributors)}</td>
             <td>${fmt(r.releases)}</td>
-            <td>${r.openSource ? fmt(r.commits) : '—'}</td>
+            <td>${contribCell(r, r.commits)}</td>
           </tr>
           <tr class="lp-drill" id="drill-${toolKey(r.name)}" hidden><td colspan="8"></td></tr>`).join('');
 
