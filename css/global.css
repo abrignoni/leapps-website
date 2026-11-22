@@ -411,4 +411,4 @@ main:focus { outline: none; }
 [data-theme="light"] .pos-num.pos-2 { color: #5F5F5F; }
 [data-theme="light"] .pos-num.pos-3 { color: #8B471B; }
 /* Inline links need more than color to stand out from light theme body text. */
-[data-theme="light"] :is(p, li, td) > a[style*="--gold-text"][style*="text-decoration:none"] { text-decoration: underline !important; }
+[data-theme="light"] main :is(p, li, td, .lp-faq-answer, .lp-install-note, .post-subscribe-alt) > a:not([class]):not(nav a, .lp-sidebar-links a, .breadcrumb a) { text-decoration: underline !important; }
