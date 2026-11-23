@@ -1062,8 +1062,11 @@
           toggleWrap.style.display = 'block';
         }
       } catch(e) {
+        const links = repos.map(r => `<a href="https://github.com/${r.repo}/graphs/contributors" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text)">${r.name}</a>`).join(', ');
         showContribPanel('lp-contrib-top',
-          '<div class="lp-contrib-loading">Could not load contributors. <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text)">View on GitHub →</a></div>');
+          `<div class="lp-contrib-loading">Could not load contributors. View them on GitHub: ${links}.</div>`);
+        // The message carries the same links, so one set of tab stops is enough.
+        removeContribFallback('lp-contrib-fallback');
       } finally {
         keepContribAnchor();
       }
