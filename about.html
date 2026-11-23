@@ -242,6 +242,7 @@
 .lp-contrib-loading { padding: 2rem; text-align: center; font-family: var(--font-mono); font-size: .8rem; color: var(--muted); background: var(--surface); border: 1px solid var(--border); }
 .lp-contrib-toggle {
       display: flex; align-items: center; justify-content: space-between;
+      width: 100%; text-align: left;
       padding: .75rem 1rem; border: 1px solid var(--border);
       background: var(--surface); cursor: pointer;
       font-family: var(--font-mono); font-size: .75rem; color: var(--muted);
@@ -637,10 +638,10 @@
         <div class="lp-contrib-loading"><span style="color: var(--gold-text)">Fetching contributors…</span></div>
       </div>
       <div id="lp-contrib-toggle-wrap" style="display:none">
-        <div class="lp-contrib-toggle" id="lp-contrib-toggle" onclick="toggleContribExtra()">
+        <button type="button" class="lp-contrib-toggle" id="lp-contrib-toggle" aria-expanded="false" aria-controls="lp-contrib-extra" onclick="toggleContribExtra()">
           <span id="lp-contrib-toggle-label"><i class="ti ti-users" aria-hidden="true"></i> Show more contributors</span>
           <i class="ti ti-chevron-down lp-chevron" aria-hidden="true"></i>
-        </div>
+        </button>
         <div class="lp-contrib-extra" id="lp-contrib-extra"></div>
       </div>
     </div>
@@ -653,10 +654,10 @@
         <div class="lp-contrib-loading"><span style="color: var(--gold-text)">Fetching contributors…</span></div>
       </div>
       <div id="lp-trans-toggle-wrap" style="display:none">
-        <div class="lp-contrib-toggle" id="lp-trans-toggle" onclick="toggleTransExtra()">
+        <button type="button" class="lp-contrib-toggle" id="lp-trans-toggle" aria-expanded="false" aria-controls="lp-trans-extra" onclick="toggleTransExtra()">
           <span id="lp-trans-toggle-label"><i class="ti ti-language" aria-hidden="true"></i> Show more contributors</span>
           <i class="ti ti-chevron-down lp-chevron" aria-hidden="true"></i>
-        </div>
+        </button>
         <div class="lp-contrib-extra" id="lp-trans-extra"></div>
       </div>
     </div>
@@ -934,7 +935,7 @@
     // The lists load after the page does, so a link to the second one lands
     // short unless it is re-aimed. Stop as soon as the reader takes over.
     var contribReaderMoved = false;
-    ['wheel', 'touchstart', 'keydown'].forEach(function(type) {
+    ['wheel', 'touchstart', 'keydown', 'pointerdown', 'mousedown'].forEach(function(type) {
       window.addEventListener(type, function() { contribReaderMoved = true; }, { once: true, passive: true });
     });
     function keepContribAnchor() {
@@ -1099,6 +1100,7 @@
       const extra = document.getElementById('lp-trans-extra');
       const label = document.getElementById('lp-trans-toggle-label');
       const isOpen = toggle.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
       extra.classList.toggle('open');
       const count = extra.querySelectorAll('.lp-contrib-row').length;
       if (isOpen) {
@@ -1113,6 +1115,7 @@
       const extra = document.getElementById('lp-contrib-extra');
       const label = document.getElementById('lp-contrib-toggle-label');
       const isOpen = toggle.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
       extra.classList.toggle('open');
       const count = extra.querySelectorAll('.lp-contrib-row').length;
       if (isOpen) {
