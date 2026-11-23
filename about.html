@@ -953,6 +953,18 @@
       panel.innerHTML = html;
       panel.style.display = '';
     }
+    // A keyboard user may be on one of the links, so wait until focus leaves them.
+    function removeContribFallback(id) {
+      var fallback = document.getElementById(id);
+      if (!fallback.contains(document.activeElement)) { fallback.remove(); return; }
+      fallback.addEventListener('focusout', function onFocusOut() {
+        setTimeout(function() {
+          if (fallback.contains(document.activeElement)) return;
+          fallback.removeEventListener('focusout', onFocusOut);
+          fallback.remove();
+        }, 0);
+      });
+    }
 
     // Contributors section
     (async function() {
@@ -1039,7 +1051,7 @@
         const rest = sorted.slice(5);
 
         showContribPanel('lp-contrib-top', top5.map(c => buildRow(c)).join(''));
-        document.getElementById('lp-contrib-fallback').remove();
+        removeContribFallback('lp-contrib-fallback');
 
         if (rest.length > 0) {
           const toggleWrap = document.getElementById('lp-contrib-toggle-wrap');
@@ -1095,7 +1107,7 @@
         const rest = sorted.slice(5);
 
         showContribPanel('lp-trans-top', top5.map(buildRow).join(''));
-        document.getElementById('lp-trans-fallback').remove();
+        removeContribFallback('lp-trans-fallback');
 
         if (rest.length > 0) {
           const toggleWrap = document.getElementById('lp-trans-toggle-wrap');
@@ -1108,6 +1120,8 @@
       } catch(e) {
         showContribPanel('lp-trans-top',
           '<div class="lp-contrib-loading">Could not load contributors. <a href="https://github.com/leapps-org/leapps-language-resources/graphs/contributors" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text)">View on GitHub →</a></div>');
+        // The message carries the same link, so one tab stop is enough.
+        removeContribFallback('lp-trans-fallback');
       } finally {
         keepContribAnchor();
       }
