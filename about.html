@@ -203,7 +203,66 @@
   .lp-principles { grid-template-columns: minmax(0, 1fr); }
   .lp-principle { min-width: 0; overflow-wrap: anywhere; }
 }
+#contributors, #translators { scroll-margin-top: 5rem; }
+.lp-contrib-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: .75rem; }
+.lp-contrib-row {
+      background: var(--off-black);
+      padding: .9rem 1.25rem;
+      display: flex; align-items: center; gap: 1rem;
+      text-decoration: none !important;
+      transition: background .2s;
+    }
+.lp-contrib-row:hover { background: var(--surface); }
+.lp-contrib-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--surface); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .9rem; font-weight: 700; color: var(--gold-text);
+      font-family: var(--font-mono); flex-shrink: 0; overflow: hidden;
+    }
+.lp-contrib-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.lp-contrib-info { flex: 1; min-width: 0; }
+.lp-contrib-name { font-size: .875rem; font-weight: 600; color: var(--text); }
+.lp-contrib-role { font-size: .75rem; color: var(--muted); margin-top: .1rem; }
+.lp-contrib-right { display: flex; flex-direction: column; align-items: flex-end; gap: .3rem; flex-shrink: 0; }
+.lp-contrib-commits { font-family: var(--font-mono); font-size: .75rem; color: var(--muted); }
+.lp-contrib-tools { display: flex; gap: .3rem; flex-wrap: wrap; justify-content: flex-end; }
+.lp-contrib-tag { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .08em; padding: .15rem .45rem; border: 1px solid var(--border); color: var(--muted); }
+.lp-contrib-tag-ileapp { background: rgba(var(--color-ileapp-rgb),.15); color: var(--color-ileapp-text); border: 1px solid rgba(var(--color-ileapp-rgb),.3); }
+.lp-contrib-tag-aleapp { background: rgba(var(--color-aleapp-rgb),.15); color: var(--color-aleapp-text); border: 1px solid rgba(var(--color-aleapp-rgb),.3); }
+.lp-contrib-tag-rleapp { background: rgba(var(--color-rleapp-rgb),.15); color: var(--color-rleapp-text); border: 1px solid rgba(var(--color-rleapp-rgb),.3); }
+.lp-contrib-tag-vleapp { background: rgba(var(--color-vleapp-rgb),.15); color: var(--color-vleapp-text); border: 1px solid rgba(var(--color-vleapp-rgb),.3); }
+.lp-contrib-tag-lava { background: rgba(var(--color-lava-rgb),.15); color: var(--color-lava-text); border: 1px solid rgba(var(--color-lava-rgb),.3); }
+.lp-contrib-tag-batch { background: rgba(31,184,166,.15); color: #1FB8A6; border: 1px solid rgba(31,184,166,.3); }
+[data-theme="light"] .lp-contrib-tag-batch { color: #11655B; }
+.lp-contrib-tag-dleapp { background: rgba(var(--color-dleapp-rgb),.15); color: var(--color-dleapp-text); border: 1px solid rgba(var(--color-dleapp-rgb),.3); }
+.lp-contrib-tag-gleapp { background: rgba(var(--color-gleapp-rgb),.15); color: var(--color-gleapp-text); border: 1px solid rgba(var(--color-gleapp-rgb),.3); }
+.lp-contrib-tag-lang { background: rgba(48,58,106,.25); color: #6b7fd4; border: 1px solid rgba(48,58,106,.6); }
+[data-theme="light"] .lp-contrib-tag-lang { color: var(--color-lang-text); }
+.lp-contrib-loading { padding: 2rem; text-align: center; font-family: var(--font-mono); font-size: .8rem; color: var(--muted); background: var(--surface); border: 1px solid var(--border); }
+.lp-contrib-toggle {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; text-align: left;
+      padding: .75rem 1rem; border: 1px solid var(--border);
+      background: var(--surface); cursor: pointer;
+      font-family: var(--font-mono); font-size: .75rem; color: var(--muted);
+      transition: border-color .2s, color .2s;
+      user-select: none;
+    }
+.lp-contrib-toggle:hover { border-color: #444; color: var(--text); }
+.lp-contrib-toggle.open { border-color: rgba(245,192,32,.3); color: var(--gold-text); }
+.lp-contrib-toggle .lp-chevron { transition: transform .25s; }
+.lp-contrib-toggle.open .lp-chevron { transform: rotate(180deg); }
+.lp-contrib-extra { display: none; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-top: none; margin-top: -1px; }
+.lp-contrib-extra.open { display: flex; }
+@media (max-width: 480px) {
+  .lp-contrib-row { flex-wrap: wrap; gap: .75rem; }
+  .lp-contrib-right { display: none; }
+  .lp-contrib-role { font-size: .75rem; }
+  .lp-contrib-name { font-size: .875rem; }
+}
   </style>
+  <noscript><style>#lp-contrib-top, #lp-trans-top { display: none; }</style></noscript>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>
   <script type="application/ld+json">
   {
@@ -247,7 +306,7 @@
         <div class="lp-nav-dropdown-menu">
           <a href="https://leapps.org#faq"><i class="ti ti-help-circle" aria-hidden="true"></i>FAQ</a>
           <a href="https://leapps.org#mentions"><i class="ti ti-award" aria-hidden="true"></i>Featured</a>
-          <a href="https://leapps.org#contributors"><i class="ti ti-users" aria-hidden="true"></i>Contributors</a>
+          <a href="https://leapps.org/about#contributors"><i class="ti ti-users" aria-hidden="true"></i>Contributors</a>
           <a href="https://leapps.org/scoreboard"><i class="ti ti-trophy" aria-hidden="true"></i>Scoreboard</a>
           <a href="https://leapps.org/mailing"><i class="ti ti-mail" aria-hidden="true"></i>Mailing List</a>
           <a href="https://leapps.org/designs"><i class="ti ti-notes" aria-hidden="true"></i>Design Reviews</a>
@@ -294,7 +353,7 @@
       <summary>Community</summary>
       <a href="https://leapps.org#faq" onclick="closeMobileMenu()">FAQ</a>
       <a href="https://leapps.org#mentions" onclick="closeMobileMenu()">Featured</a>
-      <a href="https://leapps.org#contributors" onclick="closeMobileMenu()">Contributors</a>
+      <a href="https://leapps.org/about#contributors" onclick="closeMobileMenu()">Contributors</a>
       <a href="https://leapps.org/scoreboard" onclick="closeMobileMenu()">Scoreboard</a>
       <a href="https://leapps.org/mailing" onclick="closeMobileMenu()">Mailing List</a>
       <a href="https://leapps.org/designs" onclick="closeMobileMenu()">Design Reviews</a>
@@ -572,6 +631,40 @@
       </div>
     </div>
 
+    <div class="lp-prose-section" id="contributors">
+      <div class="lp-section-label"><i class="ti ti-users"></i> The People</div>
+      <h2>Contributors</h2>
+      <p>The forensics practitioners and developers who build and maintain the LEAPPs tools. All data pulled live from GitHub.</p>
+      <noscript><p>This list needs JavaScript. View the contributors on GitHub: <a href="https://github.com/abrignoni/iLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">iLEAPP</a>, <a href="https://github.com/abrignoni/ALEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">ALEAPP</a>, <a href="https://github.com/abrignoni/RLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">RLEAPP</a>, <a href="https://github.com/abrignoni/VLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">VLEAPP</a>, <a href="https://github.com/abrignoni/DLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">DLEAPP</a>, <a href="https://github.com/abrignoni/GLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">GLEAPP</a>, <a href="https://github.com/abrignoni/batch-leapp/graphs/contributors" target="_blank" rel="noopener noreferrer">Batch LEAPP</a>.</p></noscript>
+      <div id="lp-contrib-top" class="lp-contrib-list">
+        <div class="lp-contrib-loading"><span style="color: var(--gold-text)">Fetching contributors…</span></div>
+      </div>
+      <div id="lp-contrib-toggle-wrap" style="display:none">
+        <button type="button" class="lp-contrib-toggle" id="lp-contrib-toggle" aria-expanded="false" aria-controls="lp-contrib-extra" onclick="toggleContribExtra()">
+          <span id="lp-contrib-toggle-label"><i class="ti ti-users" aria-hidden="true"></i> Show more contributors</span>
+          <i class="ti ti-chevron-down lp-chevron" aria-hidden="true"></i>
+        </button>
+        <div class="lp-contrib-extra" id="lp-contrib-extra"></div>
+      </div>
+    </div>
+
+    <div class="lp-prose-section" id="translators">
+      <div class="lp-section-label"><i class="ti ti-language"></i> The People</div>
+      <h2>Language Contributors</h2>
+      <p>People who contributed to the LEAPPs language resources. All data pulled live from GitHub.</p>
+      <noscript><p>This list needs JavaScript. View the <a href="https://github.com/leapps-org/leapps-language-resources/graphs/contributors" target="_blank" rel="noopener noreferrer">language contributors on GitHub</a>.</p></noscript>
+      <div id="lp-trans-top" class="lp-contrib-list">
+        <div class="lp-contrib-loading"><span style="color: var(--gold-text)">Fetching contributors…</span></div>
+      </div>
+      <div id="lp-trans-toggle-wrap" style="display:none">
+        <button type="button" class="lp-contrib-toggle" id="lp-trans-toggle" aria-expanded="false" aria-controls="lp-trans-extra" onclick="toggleTransExtra()">
+          <span id="lp-trans-toggle-label"><i class="ti ti-language" aria-hidden="true"></i> Show more contributors</span>
+          <i class="ti ti-chevron-down lp-chevron" aria-hidden="true"></i>
+        </button>
+        <div class="lp-contrib-extra" id="lp-trans-extra"></div>
+      </div>
+    </div>
+
     <!-- CTA -->
     <div class="lp-cta-strip">
       <div class="lp-cta-strip-text">
@@ -840,6 +933,209 @@
         results.style.display = 'block';
       }
     })();
+  </script>
+  <script>
+    // The lists load after the page does, so a link to the second one lands
+    // short unless it is re-aimed. Stop as soon as the reader takes over.
+    var contribReaderMoved = false;
+    ['wheel', 'touchstart', 'pointerdown', 'mousedown'].forEach(function(type) {
+      window.addEventListener(type, function() { contribReaderMoved = true; }, { passive: true });
+    });
+    // Following a link to a list is a new target, so earlier input no longer counts.
+    window.addEventListener('hashchange', function() { contribReaderMoved = false; });
+    window.addEventListener('keydown', function(event) {
+      if (/^(Tab|PageUp|PageDown|Home|End|ArrowUp|ArrowDown|ArrowLeft|ArrowRight| |Spacebar)$/.test(event.key)) contribReaderMoved = true;
+    }, { passive: true });
+    function keepContribAnchor() {
+      if (contribReaderMoved) return;
+      var id;
+      try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
+      if (id === 'contributors' || id === 'translators') document.getElementById(id).scrollIntoView();
+    }
+
+    // Contributors section
+    (async function() {
+      const repos = [
+        { name: 'iLEAPP',  repo: 'abrignoni/iLEAPP' },
+        { name: 'ALEAPP',  repo: 'abrignoni/ALEAPP' },
+        { name: 'RLEAPP',  repo: 'abrignoni/RLEAPP' },
+        { name: 'VLEAPP',  repo: 'abrignoni/VLEAPP' },
+        { name: 'DLEAPP',  repo: 'abrignoni/DLEAPP' },
+        { name: 'GLEAPP',  repo: 'abrignoni/GLEAPP' },
+        { name: 'Batch LEAPP', repo: 'abrignoni/batch-leapp' },
+      ];
+
+      function getInitials(login) {
+        return login.slice(0, 2).toUpperCase();
+      }
+
+      function getRole(contributions, isFirst) {
+        if (isFirst) return 'Creator & Lead Developer';
+        if (contributions >= 500) return 'Core Maintainer';
+        if (contributions >= 100) return 'Major Contributor';
+        return 'Contributor';
+      }
+
+      function buildRow(c) {
+        const toolClass = { 'iLEAPP': 'ileapp', 'ALEAPP': 'aleapp', 'RLEAPP': 'rleapp', 'VLEAPP': 'vleapp', 'DLEAPP': 'dleapp', 'GLEAPP': 'gleapp', 'LAVA': 'lava', 'Batch LEAPP': 'batch' };
+        const tools = c.tools.map(t => {
+          const cls = toolClass[t];
+          return `<span class="lp-contrib-tag${cls ? ' lp-contrib-tag-' + cls : ''}">${t}</span>`;
+        }).join('');
+        const avatar = c.avatar
+          ? `<img src="${c.avatar}" alt="${c.login}" width="40" height="40" loading="lazy" />`
+          : getInitials(c.login);
+        return `<a href="https://github.com/${c.login}" class="lp-contrib-row" target="_blank" rel="noopener noreferrer">
+          <div class="lp-contrib-avatar">${avatar}</div>
+          <div class="lp-contrib-info">
+            <div class="lp-contrib-name">${c.login}</div>
+            <div class="lp-contrib-role">${c.role}</div>
+          </div>
+          <div class="lp-contrib-right">
+            <div class="lp-contrib-commits">${c.contributions.toLocaleString()} commits</div>
+            <div class="lp-contrib-tools">${tools}</div>
+          </div>
+        </a>`;
+      }
+
+      try {
+        const allResults = await Promise.all(repos.map(async r => {
+          const pages = await Promise.all([1,2,3].map(p =>
+            fetch(`https://leapps-api.4n6-198.workers.dev/repos/${r.repo}/contributors?per_page=100&page=${p}&anon=false`)
+              .then(res => {
+                if (!res.ok) return [];
+                return res.json().catch(() => []);
+              })
+              .catch(() => [])
+          ));
+          const flat = pages.flat().filter(c => c && c.login);
+          console.log(`${r.name}: ${flat.length} contributors fetched`);
+          return { name: r.name, contributors: flat };
+        }));
+
+        // Merge contributors across repos
+        const map = {};
+        allResults.forEach(({ name, contributors }) => {
+          contributors.forEach(c => {
+            if (c.type === 'Bot' || c.login.toLowerCase().includes('bot') || c.login === 'actions-user') return;
+            if (!map[c.login]) {
+              map[c.login] = { login: c.login, avatar: c.avatar_url, contributions: 0, tools: [] };
+            }
+            map[c.login].contributions += c.contributions;
+            if (!map[c.login].tools.includes(name)) map[c.login].tools.push(name);
+          });
+        });
+
+        const sorted = Object.values(map).sort((a, b) => b.contributions - a.contributions);
+        const topLogin = sorted[0]?.login;
+        sorted.forEach((c, i) => {
+          c.role = getRole(c.contributions, c.login === topLogin);
+        });
+
+        const top5 = sorted.slice(0, 5);
+        const rest = sorted.slice(5);
+
+        const topContainer = document.getElementById('lp-contrib-top');
+        topContainer.innerHTML = top5.map(c => buildRow(c)).join('');
+
+        if (rest.length > 0) {
+          const toggleWrap = document.getElementById('lp-contrib-toggle-wrap');
+          const extra = document.getElementById('lp-contrib-extra');
+          const label = document.getElementById('lp-contrib-toggle-label');
+          label.innerHTML = `<i class="ti ti-users" aria-hidden="true"></i> Show ${rest.length} more contributor${rest.length > 1 ? 's' : ''}`;
+          extra.innerHTML = rest.map(c => buildRow(c)).join('');
+          toggleWrap.style.display = 'block';
+        }
+      } catch(e) {
+        document.getElementById('lp-contrib-top').innerHTML =
+          '<div class="lp-contrib-loading">Could not load contributors. <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text)">View on GitHub →</a></div>';
+      } finally {
+        keepContribAnchor();
+      }
+    })();
+
+    // Language Contributors section
+    (async function() {
+      function getInitials(login) { return login.slice(0, 2).toUpperCase(); }
+
+      function buildRow(c) {
+        const avatar = c.avatar
+          ? `<img src="${c.avatar}" alt="${c.login}" width="40" height="40" loading="lazy" />`
+          : getInitials(c.login);
+        return `<a href="https://github.com/${c.login}" class="lp-contrib-row" target="_blank" rel="noopener noreferrer">
+          <div class="lp-contrib-avatar">${avatar}</div>
+          <div class="lp-contrib-info">
+            <div class="lp-contrib-name">${c.login}</div>
+            <div class="lp-contrib-role">Language Contributor</div>
+          </div>
+          <div class="lp-contrib-right">
+            <div class="lp-contrib-commits">${c.contributions.toLocaleString()} commits</div>
+            <div class="lp-contrib-tools"><span class="lp-contrib-tag lp-contrib-tag-lang">leapps-language-resources</span></div>
+          </div>
+        </a>`;
+      }
+
+      try {
+        const pages = await Promise.all([1,2,3].map(p =>
+          fetch(`https://leapps-api.4n6-198.workers.dev/repos/leapps-org/leapps-language-resources/contributors?per_page=100&page=${p}&anon=false`)
+            .then(res => res.ok ? res.json().catch(() => []) : [])
+            .catch(() => [])
+        ));
+        const flat = pages.flat().filter(c => c && c.login && c.type !== 'Bot' && !c.login.toLowerCase().includes('bot') && c.login !== 'actions-user');
+        const sorted = flat.sort((a, b) => b.contributions - a.contributions).map(c => ({
+          login: c.login, avatar: c.avatar_url, contributions: c.contributions
+        }));
+
+        const top5 = sorted.slice(0, 5);
+        const rest = sorted.slice(5);
+
+        document.getElementById('lp-trans-top').innerHTML = top5.map(buildRow).join('');
+
+        if (rest.length > 0) {
+          const toggleWrap = document.getElementById('lp-trans-toggle-wrap');
+          const extra = document.getElementById('lp-trans-extra');
+          const label = document.getElementById('lp-trans-toggle-label');
+          label.innerHTML = `<i class="ti ti-language" aria-hidden="true"></i> Show ${rest.length} more contributor${rest.length > 1 ? 's' : ''}`;
+          extra.innerHTML = rest.map(buildRow).join('');
+          toggleWrap.style.display = 'block';
+        }
+      } catch(e) {
+        document.getElementById('lp-trans-top').innerHTML =
+          '<div class="lp-contrib-loading">Could not load contributors. <a href="https://github.com/abrignoni/leapps-website" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text)">View on GitHub →</a></div>';
+      } finally {
+        keepContribAnchor();
+      }
+    })();
+
+    function toggleTransExtra() {
+      const toggle = document.getElementById('lp-trans-toggle');
+      const extra = document.getElementById('lp-trans-extra');
+      const label = document.getElementById('lp-trans-toggle-label');
+      const isOpen = toggle.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      extra.classList.toggle('open');
+      const count = extra.querySelectorAll('.lp-contrib-row').length;
+      if (isOpen) {
+        label.innerHTML = `<i class="ti ti-language" aria-hidden="true"></i> Hide ${count} contributor${count > 1 ? 's' : ''}`;
+      } else {
+        label.innerHTML = `<i class="ti ti-language" aria-hidden="true"></i> Show ${count} more contributor${count > 1 ? 's' : ''}`;
+      }
+    }
+
+    function toggleContribExtra() {
+      const toggle = document.getElementById('lp-contrib-toggle');
+      const extra = document.getElementById('lp-contrib-extra');
+      const label = document.getElementById('lp-contrib-toggle-label');
+      const isOpen = toggle.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      extra.classList.toggle('open');
+      const count = extra.querySelectorAll('.lp-contrib-row').length;
+      if (isOpen) {
+        label.innerHTML = `<i class="ti ti-users" aria-hidden="true"></i> Hide ${count} contributor${count > 1 ? 's' : ''}`;
+      } else {
+        label.innerHTML = `<i class="ti ti-users" aria-hidden="true"></i> Show ${count} more contributor${count > 1 ? 's' : ''}`;
+      }
+    }
   </script>
   <script src="/analytics.js?v=20261123" defer></script>
 </body>
