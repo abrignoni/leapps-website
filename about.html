@@ -262,6 +262,7 @@
   .lp-contrib-name { font-size: .875rem; }
 }
   </style>
+  <noscript><style>#lp-contrib-top, #lp-trans-top { display: none; }</style></noscript>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>
   <script type="application/ld+json">
   {
@@ -634,6 +635,7 @@
       <div class="lp-section-label"><i class="ti ti-users"></i> The People</div>
       <h2>Contributors</h2>
       <p>The forensics practitioners and developers who build and maintain the LEAPPs tools. All data pulled live from GitHub.</p>
+      <noscript><p>This list needs JavaScript. View the contributors on GitHub: <a href="https://github.com/abrignoni/iLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">iLEAPP</a>, <a href="https://github.com/abrignoni/ALEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">ALEAPP</a>, <a href="https://github.com/abrignoni/RLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">RLEAPP</a>, <a href="https://github.com/abrignoni/VLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">VLEAPP</a>, <a href="https://github.com/abrignoni/DLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">DLEAPP</a>, <a href="https://github.com/abrignoni/GLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">GLEAPP</a>, <a href="https://github.com/abrignoni/batch-leapp/graphs/contributors" target="_blank" rel="noopener noreferrer">Batch LEAPP</a>.</p></noscript>
       <div id="lp-contrib-top" class="lp-contrib-list">
         <div class="lp-contrib-loading"><span style="color: var(--gold-text)">Fetching contributors…</span></div>
       </div>
@@ -650,6 +652,7 @@
       <div class="lp-section-label"><i class="ti ti-language"></i> The People</div>
       <h2>Language Contributors</h2>
       <p>People who contributed to the LEAPPs language resources. All data pulled live from GitHub.</p>
+      <noscript><p>This list needs JavaScript. View the <a href="https://github.com/leapps-org/leapps-language-resources/graphs/contributors" target="_blank" rel="noopener noreferrer">language contributors on GitHub</a>.</p></noscript>
       <div id="lp-trans-top" class="lp-contrib-list">
         <div class="lp-contrib-loading"><span style="color: var(--gold-text)">Fetching contributors…</span></div>
       </div>
@@ -936,8 +939,10 @@
     // short unless it is re-aimed. Stop as soon as the reader takes over.
     var contribReaderMoved = false;
     ['wheel', 'touchstart', 'pointerdown', 'mousedown'].forEach(function(type) {
-      window.addEventListener(type, function() { contribReaderMoved = true; }, { once: true, passive: true });
+      window.addEventListener(type, function() { contribReaderMoved = true; }, { passive: true });
     });
+    // Following a link to a list is a new target, so earlier input no longer counts.
+    window.addEventListener('hashchange', function() { contribReaderMoved = false; });
     window.addEventListener('keydown', function(event) {
       if (/^(Tab|PageUp|PageDown|Home|End|ArrowUp|ArrowDown|ArrowLeft|ArrowRight| |Spacebar)$/.test(event.key)) contribReaderMoved = true;
     }, { passive: true });
