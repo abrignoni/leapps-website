@@ -776,6 +776,20 @@ img { max-width: 100%; display: block; }
 .lp-video-close { background: none; border: 1px solid var(--border); color: var(--text); cursor: pointer; width: 2rem; height: 2rem; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; }
 .lp-video-close:hover { border-color: var(--gold); color: var(--gold-text); }
 .lp-video-dialog video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; }
+/* Phone layout: same content, less empty space. */
+@media (max-width: 600px) {
+  .lp-hero-bar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 1rem; margin-top: 1.5rem; padding-top: 1.25rem; }
+  .lp-hero-bar > p { grid-column: 1 / -1; }
+  .lp-stat-num { font-size: 1.6rem; }
+  .lp-tool-card { padding: 1rem; }
+  .lp-tool-tag { margin-bottom: .35rem; }
+  .lp-tool-name { font-size: 1.35rem; margin-bottom: .2rem; }
+  .lp-tool-logo { width: 1.6rem; height: 1.6rem; }
+  .lp-tool-full { margin-bottom: .45rem; }
+  .lp-tool-desc { line-height: 1.5; margin-bottom: .65rem; }
+  .lp-features { padding: 2rem 1rem; }
+  .lp-features-inner { gap: 1.25rem; }
+}
 </style>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>
   <script type="application/ld+json">
