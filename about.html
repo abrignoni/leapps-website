@@ -935,9 +935,12 @@
     // The lists load after the page does, so a link to the second one lands
     // short unless it is re-aimed. Stop as soon as the reader takes over.
     var contribReaderMoved = false;
-    ['wheel', 'touchstart', 'keydown', 'pointerdown', 'mousedown'].forEach(function(type) {
+    ['wheel', 'touchstart', 'pointerdown', 'mousedown'].forEach(function(type) {
       window.addEventListener(type, function() { contribReaderMoved = true; }, { once: true, passive: true });
     });
+    window.addEventListener('keydown', function(event) {
+      if (/^(Tab|PageUp|PageDown|Home|End|ArrowUp|ArrowDown|ArrowLeft|ArrowRight| |Spacebar)$/.test(event.key)) contribReaderMoved = true;
+    }, { passive: true });
     function keepContribAnchor() {
       if (contribReaderMoved || !/^#(contributors|translators)$/.test(location.hash)) return;
       document.querySelector(location.hash).scrollIntoView();
