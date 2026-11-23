@@ -1046,10 +1046,11 @@
           extra.innerHTML = rest.map(c => buildRow(c)).join('');
           toggleWrap.style.display = 'block';
         }
-        keepContribAnchor();
       } catch(e) {
         document.getElementById('lp-contrib-top').innerHTML =
           '<div class="lp-contrib-loading">Could not load contributors. <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text)">View on GitHub →</a></div>';
+      } finally {
+        keepContribAnchor();
       }
     })();
 
@@ -1098,10 +1099,11 @@
           extra.innerHTML = rest.map(buildRow).join('');
           toggleWrap.style.display = 'block';
         }
-        keepContribAnchor();
       } catch(e) {
         document.getElementById('lp-trans-top').innerHTML =
           '<div class="lp-contrib-loading">Could not load contributors. <a href="https://github.com/abrignoni/leapps-website" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text)">View on GitHub →</a></div>';
+      } finally {
+        keepContribAnchor();
       }
     })();
 
