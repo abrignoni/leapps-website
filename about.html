@@ -947,8 +947,10 @@
       if (/^(Tab|PageUp|PageDown|Home|End|ArrowUp|ArrowDown|ArrowLeft|ArrowRight| |Spacebar)$/.test(event.key)) contribReaderMoved = true;
     }, { passive: true });
     function keepContribAnchor() {
-      if (contribReaderMoved || !/^#(contributors|translators)$/.test(location.hash)) return;
-      document.querySelector(location.hash).scrollIntoView();
+      if (contribReaderMoved) return;
+      var id;
+      try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
+      if (id === 'contributors' || id === 'translators') document.getElementById(id).scrollIntoView();
     }
 
     // Contributors section
