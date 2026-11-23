@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-22",
+  "generated": "2026-11-23",
   "window_days": 45,
   "items": [
     {
@@ -69,10 +69,10 @@
       "date": "2026-11-21"
     },
     {
-      "name": "googleContactKeys",
-      "query": "googleContactKeys",
-      "tool": "ALEAPP",
-      "date": "2026-11-21"
+      "name": "pidginOtr",
+      "query": "pidginOtr",
+      "tool": "DLEAPP",
+      "date": "2026-11-22"
     }
   ]
 }
