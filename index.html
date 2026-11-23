@@ -765,7 +765,7 @@ img { max-width: 100%; display: block; }
 .lp-video-dialog video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; }
 .lp-dl-compact { grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
 .lp-dl-compact .lp-dl-os { margin-top: 0; }
-.lp-faq-short .lp-faq-item:nth-child(n+7) { display: none; }
+.lp-faq-item[hidden="until-found"] { position: absolute; width: 1px; height: 1px; overflow: hidden; }
 .lp-faq-more { display: inline-flex; align-items: center; gap: .5rem; min-height: 36px; margin-top: 1rem; padding: .4rem .9rem; background: none; border: 1px solid var(--border); color: var(--text); font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em; cursor: pointer; }
 .lp-faq-more[hidden] { display: none; }
 .lp-faq-more:hover { border-color: var(--gold); color: var(--gold-text); }
@@ -1251,15 +1251,28 @@ img { max-width: 100%; display: block; }
           var grid = document.getElementById('lp-faq-grid');
           var more = document.getElementById('lp-faq-more');
           var label = document.getElementById('lp-faq-more-label');
-          grid.classList.add('lp-faq-short');
+          var later = Array.prototype.slice.call(grid.querySelectorAll('.lp-faq-item:nth-child(n+7)'));
+          var expanded = false;
+          function setExpanded(open) {
+            expanded = open;
+            later.forEach(function(item) {
+              if (open) item.removeAttribute('hidden');
+              else item.setAttribute('hidden', 'until-found');
+            });
+            more.setAttribute('aria-expanded', String(open));
+            more.classList.toggle('open', open);
+            label.textContent = open ? 'Show fewer questions' : 'Show all 12 questions';
+          }
+          // Browser Find can still reach a collapsed question and opens the list.
+          later.forEach(function(item) {
+            item.addEventListener('beforematch', function() { setExpanded(true); });
+          });
+          setExpanded(false);
           more.hidden = false;
           more.addEventListener('click', function() {
-            var opening = grid.classList.contains('lp-faq-short');
-            grid.classList.toggle('lp-faq-short');
-            more.setAttribute('aria-expanded', String(opening));
-            more.classList.toggle('open', opening);
-            label.textContent = opening ? 'Show fewer questions' : 'Show all 12 questions';
-            if (opening) grid.querySelector('.lp-faq-item:nth-child(7) .lp-faq-trigger').focus();
+            var opening = !expanded;
+            setExpanded(opening);
+            if (opening) later[0].querySelector('.lp-faq-trigger').focus();
           });
         })();
       </script>
