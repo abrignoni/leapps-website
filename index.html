@@ -508,19 +508,6 @@ img { max-width: 100%; display: block; }
       transition: border-color .2s, color .2s;
     }
 .lp-dl-btn:hover { border-color: var(--gold) !important; color: var(--gold-text) !important; }
-.lp-dl-side { display: grid; gap: .75rem; min-width: 160px; }
-.lp-dl-side .lp-dl-btn { justify-content: center; }
-.lp-dl-btn-ileapp { border-color: rgba(var(--color-ileapp-rgb),.4) !important; color: var(--color-ileapp-text) !important; }
-.lp-dl-btn-aleapp { border-color: rgba(var(--color-aleapp-rgb),.4) !important; color: var(--color-aleapp-text) !important; }
-.lp-dl-btn-rleapp { border-color: rgba(var(--color-rleapp-rgb),.4) !important; color: var(--color-rleapp-text) !important; }
-.lp-dl-btn-vleapp { border-color: rgba(var(--color-vleapp-rgb),.4) !important; color: var(--color-vleapp-text) !important; }
-.lp-dl-btn-batch { border-color: rgba(31,184,166,.4) !important; color: #1FB8A6 !important; }
-.lp-dl-btn-dleapp { border-color: rgba(var(--color-dleapp-rgb),.4) !important; color: var(--color-dleapp-text) !important; }
-.lp-dl-btn-gleapp { border-color: rgba(var(--color-gleapp-rgb),.4) !important; color: var(--color-gleapp-text) !important; }
-.lp-dl-btn-lava {
-      border-color: rgba(var(--color-lava-rgb),.4) !important;
-      color: var(--color-lava-text) !important;
-    }
 .lp-mailing {
       padding: 5rem 2rem;
       text-align: center;
@@ -776,6 +763,13 @@ img { max-width: 100%; display: block; }
 .lp-video-close { background: none; border: 1px solid var(--border); color: var(--text); cursor: pointer; width: 2rem; height: 2rem; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; }
 .lp-video-close:hover { border-color: var(--gold); color: var(--gold-text); }
 .lp-video-dialog video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; }
+.lp-dl-compact { grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+.lp-dl-compact .lp-dl-os { margin-top: 0; }
+.lp-faq-short .lp-faq-item:nth-child(n+7) { display: none; }
+.lp-faq-more { display: inline-flex; align-items: center; gap: .5rem; min-height: 36px; margin-top: 1rem; padding: .4rem .9rem; background: none; border: 1px solid var(--border); color: var(--text); font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em; cursor: pointer; }
+.lp-faq-more[hidden] { display: none; }
+.lp-faq-more:hover { border-color: var(--gold); color: var(--gold-text); }
+.lp-faq-more.open i { transform: rotate(180deg); }
 /* Phone layout: same content, less empty space. */
 @media (max-width: 600px) {
   .lp-hero-bar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 1rem; margin-top: 1.5rem; padding-top: 1.25rem; }
@@ -789,6 +783,10 @@ img { max-width: 100%; display: block; }
   .lp-tool-desc { line-height: 1.5; margin-bottom: .65rem; }
   .lp-features { padding: 2rem 1rem; }
   .lp-features-inner { gap: 1.25rem; }
+  .lp-dl-compact { grid-template-columns: minmax(0, 1fr); }
+  .lp-mentions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lp-mention-card { padding: .85rem; }
+  .lp-mention-ext { display: none; }
 }
 </style>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>
@@ -992,7 +990,7 @@ img { max-width: 100%; display: block; }
         <div class="lp-tool-desc">Parse artifacts from iOS and iPadOS device extractions. Supports full file system, logical, and backup formats.</div>
         <div class="lp-tool-links">
           <a href="https://github.com/abrignoni/iLEAPP" class="lp-tool-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a>
-          <a href="https://leapps.org/releases" class="lp-tool-link"><i class="ti ti-download"></i>Download</a>
+          <a href="https://leapps.org/releases#section-ileapp" class="lp-tool-link"><i class="ti ti-download"></i>Download</a>
         </div>
       </div>
       <div class="lp-tool-card lp-tool-card-aleapp">
@@ -1002,7 +1000,7 @@ img { max-width: 100%; display: block; }
         <div class="lp-tool-desc">Comprehensive artifact parsing for Android devices including databases, logs, and application data.</div>
         <div class="lp-tool-links">
           <a href="https://github.com/abrignoni/ALEAPP" class="lp-tool-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a>
-          <a href="https://leapps.org/releases" class="lp-tool-link"><i class="ti ti-download"></i>Download</a>
+          <a href="https://leapps.org/releases#section-aleapp" class="lp-tool-link"><i class="ti ti-download"></i>Download</a>
         </div>
       </div>
       <div class="lp-tool-card lp-tool-card-rleapp">
@@ -1012,7 +1010,7 @@ img { max-width: 100%; display: block; }
         <div class="lp-tool-desc">ISP returns artifact parsing. Supports user generated data stores and ISP provided data from social media sites.</div>
         <div class="lp-tool-links">
           <a href="https://github.com/abrignoni/RLEAPP" class="lp-tool-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a>
-          <a href="https://leapps.org/releases" class="lp-tool-link"><i class="ti ti-download"></i>Download</a>
+          <a href="https://leapps.org/releases#section-rleapp" class="lp-tool-link"><i class="ti ti-download"></i>Download</a>
         </div>
       </div>
       <div class="lp-tool-card lp-tool-card-vleapp">
@@ -1022,7 +1020,7 @@ img { max-width: 100%; display: block; }
         <div class="lp-tool-desc">Emerging vehicle infotainment and telematics forensics. Parse data from connected car systems and IVI units.</div>
         <div class="lp-tool-links">
           <a href="https://github.com/abrignoni/VLEAPP" class="lp-tool-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a>
-          <a href="https://leapps.org/releases" class="lp-tool-link"><i class="ti ti-download"></i>Download</a>
+          <a href="https://leapps.org/releases#section-vleapp" class="lp-tool-link"><i class="ti ti-download"></i>Download</a>
         </div>
       </div>
       <div class="lp-tool-card lp-tool-card-dleapp">
@@ -1053,7 +1051,7 @@ img { max-width: 100%; display: block; }
         <div class="lp-tool-full">LEAPP Artifact Viewer App</div>
         <div class="lp-tool-desc">Turn parsed data into clear visual reports.</div>
         <div class="lp-tool-links">
-          <a href="https://leapps.org/releases" class="lp-tool-link"><i class="ti ti-download"></i>Download</a>
+          <a href="https://leapps.org/releases#section-lava" class="lp-tool-link"><i class="ti ti-download"></i>Download</a>
           <a href="/videos/lava-intro.mp4?v=20261015" class="lp-tool-link lp-video-open" data-video="lava" data-title="LAVA in under a minute"><i class="ti ti-player-play"></i>Watch</a>
         </div>
       </div>
@@ -1131,25 +1129,11 @@ img { max-width: 100%; display: block; }
   <section class="lp-section" id="download">
     <span class="lp-section-label">Releases</span>
     <h2 class="lp-section-title">Download the Tools</h2>
-    <div class="lp-dl-card">
-      <div>
-        <div class="lp-version-badge">Latest Release</div>
-        <h3>Full LEAPP Suite</h3>
-        <p>The full suite in one place. Visit the releases page for the latest stable versions of iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP.</p>
-        <div class="lp-dl-os">
-          <a href="https://leapps.org/releases" class="lp-dl-btn"><i class="ti ti-download"></i>All Releases</a>
-          <a href="https://github.com/abrignoni" class="lp-dl-btn" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a>
-        </div>
-      </div>
-      <div class="lp-dl-side">
-        <a href="https://github.com/abrignoni/iLEAPP" class="lp-dl-btn lp-dl-btn-ileapp" target="_blank" rel="noopener noreferrer">iLEAPP ↗</a>
-        <a href="https://github.com/abrignoni/ALEAPP" class="lp-dl-btn lp-dl-btn-aleapp" target="_blank" rel="noopener noreferrer">ALEAPP ↗</a>
-        <a href="https://github.com/abrignoni/RLEAPP" class="lp-dl-btn lp-dl-btn-rleapp" target="_blank" rel="noopener noreferrer">RLEAPP ↗</a>
-        <a href="https://github.com/abrignoni/VLEAPP" class="lp-dl-btn lp-dl-btn-vleapp" target="_blank" rel="noopener noreferrer">VLEAPP ↗</a>
-        <a href="https://github.com/abrignoni/DLEAPP" class="lp-dl-btn lp-dl-btn-dleapp" target="_blank" rel="noopener noreferrer">DLEAPP ↗</a>
-        <a href="https://github.com/abrignoni/GLEAPP" class="lp-dl-btn lp-dl-btn-gleapp" target="_blank" rel="noopener noreferrer">GLEAPP ↗</a>
-        <a href="https://leapps.org/releases" class="lp-dl-btn lp-dl-btn-lava">LAVA ↗</a>
-        <a href="https://leapps.org/releases#section-batch-leapp" class="lp-dl-btn lp-dl-btn-batch">Batch LEAPP ↗</a>
+    <div class="lp-dl-card lp-dl-compact">
+      <p>Get the latest stable version of every tool from the Releases page.</p>
+      <div class="lp-dl-os">
+        <a href="https://leapps.org/releases" class="lp-dl-btn"><i class="ti ti-download"></i>All Releases</a>
+        <a href="https://github.com/abrignoni" class="lp-dl-btn" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i>GitHub</a>
       </div>
     </div>
   </section>
@@ -1160,7 +1144,7 @@ img { max-width: 100%; display: block; }
       <span class="lp-section-label">Got Questions?</span>
       <h2 class="lp-section-title">FAQ</h2>
       <p style="color:var(--muted);font-size:.95rem;margin-bottom:2rem;max-width:560px;line-height:1.6">Common questions about the LEAPPs tools. Can&#39;t find what you&#39;re looking for? Reach out via the mailing list.</p>
-      <div class="lp-faq-grid">
+      <div class="lp-faq-grid" id="lp-faq-grid">
 
         <div class="lp-faq-item">
           <button class="lp-faq-trigger" onclick="lpFaqToggle(this)">
@@ -1259,6 +1243,26 @@ img { max-width: 100%; display: block; }
         </div>
 
       </div>
+      <button type="button" class="lp-faq-more" id="lp-faq-more" aria-expanded="false" aria-controls="lp-faq-grid" hidden>
+        <span id="lp-faq-more-label">Show all 12 questions</span><i class="ti ti-chevron-down" aria-hidden="true"></i>
+      </button>
+      <script>
+        (function() {
+          var grid = document.getElementById('lp-faq-grid');
+          var more = document.getElementById('lp-faq-more');
+          var label = document.getElementById('lp-faq-more-label');
+          grid.classList.add('lp-faq-short');
+          more.hidden = false;
+          more.addEventListener('click', function() {
+            var opening = grid.classList.contains('lp-faq-short');
+            grid.classList.toggle('lp-faq-short');
+            more.setAttribute('aria-expanded', String(opening));
+            more.classList.toggle('open', opening);
+            label.textContent = opening ? 'Show fewer questions' : 'Show all 12 questions';
+            if (opening) grid.querySelector('.lp-faq-item:nth-child(7) .lp-faq-trigger').focus();
+          });
+        })();
+      </script>
     </div>
   </section>
 
