@@ -262,7 +262,6 @@
   .lp-contrib-name { font-size: .875rem; }
 }
   </style>
-  <noscript><style>#lp-contrib-top, #lp-trans-top { display: none; }</style></noscript>
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('lp-theme')||'dark');</script>
   <script type="application/ld+json">
   {
@@ -635,10 +634,8 @@
       <div class="lp-section-label"><i class="ti ti-users"></i> The People</div>
       <h2>Contributors</h2>
       <p>The forensics practitioners and developers who build and maintain the LEAPPs tools. All data pulled live from GitHub.</p>
-      <noscript><p>This list needs JavaScript. View the contributors on GitHub: <a href="https://github.com/abrignoni/iLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">iLEAPP</a>, <a href="https://github.com/abrignoni/ALEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">ALEAPP</a>, <a href="https://github.com/abrignoni/RLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">RLEAPP</a>, <a href="https://github.com/abrignoni/VLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">VLEAPP</a>, <a href="https://github.com/abrignoni/DLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">DLEAPP</a>, <a href="https://github.com/abrignoni/GLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">GLEAPP</a>, <a href="https://github.com/abrignoni/batch-leapp/graphs/contributors" target="_blank" rel="noopener noreferrer">Batch LEAPP</a>.</p></noscript>
-      <div id="lp-contrib-top" class="lp-contrib-list">
-        <div class="lp-contrib-loading"><span style="color: var(--gold-text)">Fetching contributors…</span></div>
-      </div>
+      <p id="lp-contrib-fallback">View the contributors on GitHub: <a href="https://github.com/abrignoni/iLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">iLEAPP</a>, <a href="https://github.com/abrignoni/ALEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">ALEAPP</a>, <a href="https://github.com/abrignoni/RLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">RLEAPP</a>, <a href="https://github.com/abrignoni/VLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">VLEAPP</a>, <a href="https://github.com/abrignoni/DLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">DLEAPP</a>, <a href="https://github.com/abrignoni/GLEAPP/graphs/contributors" target="_blank" rel="noopener noreferrer">GLEAPP</a>, <a href="https://github.com/abrignoni/batch-leapp/graphs/contributors" target="_blank" rel="noopener noreferrer">Batch LEAPP</a>.</p>
+      <div id="lp-contrib-top" class="lp-contrib-list" style="display:none"></div>
       <div id="lp-contrib-toggle-wrap" style="display:none">
         <button type="button" class="lp-contrib-toggle" id="lp-contrib-toggle" aria-expanded="false" aria-controls="lp-contrib-extra" onclick="toggleContribExtra()">
           <span id="lp-contrib-toggle-label"><i class="ti ti-users" aria-hidden="true"></i> Show more contributors</span>
@@ -652,10 +649,8 @@
       <div class="lp-section-label"><i class="ti ti-language"></i> The People</div>
       <h2>Language Contributors</h2>
       <p>People who contributed to the LEAPPs language resources. All data pulled live from GitHub.</p>
-      <noscript><p>This list needs JavaScript. View the <a href="https://github.com/leapps-org/leapps-language-resources/graphs/contributors" target="_blank" rel="noopener noreferrer">language contributors on GitHub</a>.</p></noscript>
-      <div id="lp-trans-top" class="lp-contrib-list">
-        <div class="lp-contrib-loading"><span style="color: var(--gold-text)">Fetching contributors…</span></div>
-      </div>
+      <p id="lp-trans-fallback">View the <a href="https://github.com/leapps-org/leapps-language-resources/graphs/contributors" target="_blank" rel="noopener noreferrer">language contributors on GitHub</a>.</p>
+      <div id="lp-trans-top" class="lp-contrib-list" style="display:none"></div>
       <div id="lp-trans-toggle-wrap" style="display:none">
         <button type="button" class="lp-contrib-toggle" id="lp-trans-toggle" aria-expanded="false" aria-controls="lp-trans-extra" onclick="toggleTransExtra()">
           <span id="lp-trans-toggle-label"><i class="ti ti-language" aria-hidden="true"></i> Show more contributors</span>
@@ -952,6 +947,12 @@
       try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
       if (id === 'contributors' || id === 'translators') document.getElementById(id).scrollIntoView();
     }
+    // The GitHub links stay on the page until a list has rows to replace them.
+    function showContribPanel(id, html) {
+      var panel = document.getElementById(id);
+      panel.innerHTML = html;
+      panel.style.display = '';
+    }
 
     // Contributors section
     (async function() {
@@ -1032,11 +1033,13 @@
           c.role = getRole(c.contributions, c.login === topLogin);
         });
 
+        if (sorted.length === 0) throw new Error('No contributors returned');
+
         const top5 = sorted.slice(0, 5);
         const rest = sorted.slice(5);
 
-        const topContainer = document.getElementById('lp-contrib-top');
-        topContainer.innerHTML = top5.map(c => buildRow(c)).join('');
+        showContribPanel('lp-contrib-top', top5.map(c => buildRow(c)).join(''));
+        document.getElementById('lp-contrib-fallback').remove();
 
         if (rest.length > 0) {
           const toggleWrap = document.getElementById('lp-contrib-toggle-wrap');
@@ -1047,8 +1050,8 @@
           toggleWrap.style.display = 'block';
         }
       } catch(e) {
-        document.getElementById('lp-contrib-top').innerHTML =
-          '<div class="lp-contrib-loading">Could not load contributors. <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text)">View on GitHub →</a></div>';
+        showContribPanel('lp-contrib-top',
+          '<div class="lp-contrib-loading">Could not load contributors. <a href="https://github.com/abrignoni" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text)">View on GitHub →</a></div>');
       } finally {
         keepContribAnchor();
       }
@@ -1086,10 +1089,13 @@
           login: c.login, avatar: c.avatar_url, contributions: c.contributions
         }));
 
+        if (sorted.length === 0) throw new Error('No contributors returned');
+
         const top5 = sorted.slice(0, 5);
         const rest = sorted.slice(5);
 
-        document.getElementById('lp-trans-top').innerHTML = top5.map(buildRow).join('');
+        showContribPanel('lp-trans-top', top5.map(buildRow).join(''));
+        document.getElementById('lp-trans-fallback').remove();
 
         if (rest.length > 0) {
           const toggleWrap = document.getElementById('lp-trans-toggle-wrap');
@@ -1100,8 +1106,8 @@
           toggleWrap.style.display = 'block';
         }
       } catch(e) {
-        document.getElementById('lp-trans-top').innerHTML =
-          '<div class="lp-contrib-loading">Could not load contributors. <a href="https://github.com/abrignoni/leapps-website" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text)">View on GitHub →</a></div>';
+        showContribPanel('lp-trans-top',
+          '<div class="lp-contrib-loading">Could not load contributors. <a href="https://github.com/leapps-org/leapps-language-resources/graphs/contributors" target="_blank" rel="noopener noreferrer" style="color: var(--gold-text)">View on GitHub →</a></div>');
       } finally {
         keepContribAnchor();
       }
