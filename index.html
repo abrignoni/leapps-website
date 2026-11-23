@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <script>(function() { var id; try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; } if (id === 'contributors' || id === 'translators') location.replace('/about' + location.search + '#' + id); })();</script>
+  <script>(function() { function redirectOldFragment() { var id; try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; } if (id === 'contributors' || id === 'translators') location.replace('/about' + location.search + '#' + id); } redirectOldFragment(); window.addEventListener('hashchange', redirectOldFragment); })();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LEAPPs — Digital Forensics Tools</title>
   <meta name="description" content="Free digital forensics tools. iLEAPP, ALEAPP, RLEAPP, VLEAPP, DLEAPP, GLEAPP, LAVA, and Batch LEAPP — parse and visualize artifacts from iOS, Android, Windows, and more." />
