@@ -2254,6 +2254,28 @@
         "regfprobe": 132,
         "pstprobe": 165
       }
+    },
+    {
+      "date": "2026-11-24",
+      "totals": {
+        "ileapp": 106440,
+        "aleapp": 83160,
+        "rleapp": 7414,
+        "vleapp": 4075,
+        "lava": 6201,
+        "dleapp": 2870,
+        "gleapp": 1791,
+        "batchleapp": 1052
+      },
+      "probes": {
+        "qnxprobe": 1218,
+        "ewfprobe": 562,
+        "exoprobe": 185,
+        "chromiumcacheprobe": 72,
+        "mediacarve": 110,
+        "regfprobe": 133,
+        "pstprobe": 166
+      }
     }
   ]
 }
