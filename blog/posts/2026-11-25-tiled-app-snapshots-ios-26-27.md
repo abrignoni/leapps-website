@@ -94,7 +94,7 @@ Widget snapshots and the Messages preview cache use the same reader. All the wid
 - **Re-run reports made before the fix if their snapshots look streaky.** Tiled snapshots did not decode correctly in older iLEAPP builds. Snapshots stored in rows were always fine. A build that includes #2887 and #2893 puts tiled App Snapshots back together, for both zig-zags. A build with only #2887 still gets the `@2x` ones wrong.
 - **A re-run that still looks scrambled is not a corrected image.** The `@2x` rule comes from a single device, so a 2x snapshot that still looks wrong may be a limit of the decoder, not what the file holds. The same goes for the cases listed under "What we have not tested".
 - **Plain snapshots were not the problem.** In the files we tested, every snapshot that came out as a single colour before the fix came out exactly the same after it, because a picture of one colour looks the same whatever order its pieces are in. The failures showed up as streaks. That is what we measured on these files, not a guarantee for every device.
-- **The rows, paths and dates were never affected.** Only the pictures were.
+- **For tiled snapshots, the rows, paths and dates were never affected.** Only the pictures were. Cut-short files are the exception described above.
 - **A missing row does not mean a missing file.** With a current build, a snapshot file that is cut short gets no row in App Snapshots or Widgets. Check the iLEAPP log for "Left out" lines before concluding a snapshot was not on the device.
 - **A snapshot shows a screen iOS saved, nothing more.** Apps can hide or replace their content before the snapshot is taken, so a snapshot does not by itself show that someone viewed what is in it.
 
@@ -124,7 +124,7 @@ Despite the `.ktx` extension, these files are not Khronos KTX. They start with `
 **Is a file tiled?** First, the texture chunk has to hold all the bytes its length field declares; a chunk that ends early is refused. Then `untile_astc_4x4` decides from the block count:
 
 1. Work out the blocks the image needs, rounding each side up to whole 4-pixel blocks (293 x 633 for 1170x2532), and the padded count, rounding those up to whole 32-block tiles (320 x 640).
-2. Exactly the blocks the image needs: the older row layout. Passed on as it is.
+2. Exactly the blocks the image needs, when that is fewer than the padded count: the older row layout. Passed on as it is. When the two counts are equal, step 4 decides instead.
 3. Exactly the padded count plus one block: tiled.
 4. When the image is already a whole number of tiles, the padded count equals the blocks the image needs, and the count cannot tell the layouts apart. Then `HEAD` word 12, the 13th 32-bit word, decides: 1 means tiled, anything else means rows. That word was 1 in every tiled file and 0 in every older file we compared, but its meaning is not known. A file holding exactly the padded count with word 12 set to 1 is also read as tiled. No real snapshot we have needed this step.
 5. Any other size, or a size that is not a whole number of 16-byte blocks, is refused. Every one of 10,628 snapshot files in 24 images, iOS 15 to 27, had the size in step 2 or step 3.
