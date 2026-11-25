@@ -82,7 +82,7 @@ The output is in plain raster order with exactly one block per 4x4 pixels, which
 
 ### The old layout still works
 
-This was a hard requirement: snapshots from iOS 17 and 18 should come out exactly as they did before. Because the decision is made from the block count, an older file never reaches the reordering code. The reader returns the very same bytes it was given, and a test checks for that. Standard Khronos KTX files go through a separate path that was not touched.
+This was a hard requirement: snapshots from iOS 17 and 18 should come out exactly as they did before. Because the decision is made from the block count, an older-layout file does not reach the reordering code. The one exception is the case covered below: a file whose block grid is already a whole number of tiles is reordered only if `HEAD` word 12 is 1, and no older-layout file we compared had that. Otherwise the reader returns the very same bytes it was given, and a test checks for that. Standard Khronos KTX files go through a separate path that was not touched.
 
 ### One case the block count cannot decide
 
