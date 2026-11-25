@@ -97,6 +97,7 @@ Widget snapshots and the Messages preview cache use the same reader. All the wid
 - Tiled snapshots under `Library/Caches/Snapshots`, and tiled snapshots whose names have no `@2x` or `@3x`.
 - Widget snapshots and Messages previews from a 2x phone. Those artifacts always use the across-first order.
 - What decides between the two zig-zags, and which iOS release first used tiles. Other models and releases may differ again.
+- Damaged files. A truncated snapshot still decodes to a full-size picture without any warning, part of it missing or scrambled ([abrignoni/iLEAPP#2894](https://github.com/abrignoni/iLEAPP/issues/2894)). No truncated snapshot has turned up in a real extraction so far.
 - Some header fields in the file. One is used as a tie-breaker in a rare case (see below); we do not know what Apple calls it.
 
 If you have iOS 26 or 27 extractions where App Snapshots still look wrong with a current build, please open an issue on [iLEAPP](https://github.com/abrignoni/iLEAPP/issues). The file counts and sizes are enough to start; we do not need the pictures.
@@ -117,7 +118,7 @@ Despite the `.ktx` extension, these files are not Khronos KTX. They start with `
 **Is a file tiled?** `untile_astc_4x4` decides from the block count:
 
 1. Work out the blocks the image needs, rounding each side up to whole 4-pixel blocks (293 x 633 for 1170x2532), and the padded count, rounding those up to whole 32-block tiles (320 x 640).
-2. Fewer blocks than the image needs: the file is incomplete, which is a separate problem from the layout. It is passed on as it is, and the decoder still produces a picture from it, so part of that picture will be missing or wrong.
+2. Fewer blocks than the image needs: the file is incomplete, which is a separate problem from the layout. It is passed on as it is, and the decoder still produces a picture from it with no error, so part of that picture will be missing or wrong. A truncated tiled file that still holds more blocks than the image needs falls into step 3 and comes out scrambled. Neither case is flagged in the report yet; that is tracked in [abrignoni/iLEAPP#2894](https://github.com/abrignoni/iLEAPP/issues/2894).
 3. Fewer blocks than the padded count: the older row layout. Passed on as it is.
 4. Exactly the blocks the image needs, when that also equals the padded count (the image is already a whole number of tiles): the count cannot tell the layouts apart. Passed on as it is unless `HEAD` word 12, the 13th 32-bit word, is 1. That word was 1 in every tiled file and 0 in every older file we compared, but its meaning is not known. No real snapshot we have needed this step.
 5. Anything else is tiled: each block is copied from tile `(y // 32) * tiles_across + (x // 32)`, at the Morton position of `(x % 32, y % 32)` inside it.
