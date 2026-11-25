@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
   <rect width="760" height="360" fill="#ffffff"/>
   <text x="190" y="30" text-anchor="middle" font-size="18" font-weight="600" fill="#1f2937">Older snapshots: raster order</text>
-  <text x="570" y="30" text-anchor="middle" font-size="18" font-weight="600" fill="#1f2937">iOS 27: Morton order in each tile</text>
+  <text x="570" y="30" text-anchor="middle" font-size="18" font-weight="600" fill="#1f2937">Tiled snapshots: Morton order in each tile</text>
   <g id="raster" transform="translate(70,50)">
     <g font-size="15" text-anchor="middle" fill="#1f2937">
       <rect x="0" y="0" width="240" height="240" fill="#eef2ff" stroke="#6366f1"/>

@@ -1,18 +1,18 @@
 ---
-title: iOS 27 App Snapshots and the Tiled KTX Layout
+title: Tiled App Snapshots in iOS 26 and 27
 date: 2026-11-25
 author: charpy4n6
 tags: [iLEAPP, iOS, images, artifacts, snapshots, research]
-excerpt: On an iOS 27 extraction every App Snapshot in iLEAPP came out as streaks or a flat colour. The image data was now stored uncompressed, and its blocks were in a different order. Here is what changed and how iLEAPP now reads both layouts.
+excerpt: On an iOS 27.2 extraction every App Snapshot in iLEAPP came out as streaks or a flat colour, and iOS 26 images turned out to share the cause. The image data was now stored uncompressed, and its blocks were in a different order. Here is what changed and how iLEAPP now reads both layouts.
 ---
 
-# iOS 27 App Snapshots and the Tiled KTX Layout
+# Tiled App Snapshots in iOS 26 and 27
 
 App snapshots are the images iOS keeps of an app's screen for the app switcher and for the launch transition. iLEAPP has parsed them for years in the **App Snapshots** artifact, converting Apple's KTX files to PNG so they can be viewed in the report and in LAVA.
 
 On a full file system extraction of an iPhone on iOS 27.2, all 324 of them were wrong. Some were horizontal streaks of colour. More than half were a single flat colour, which is worse: they looked like plain launch screens, and nothing on the page said they had failed.
 
-A note on versions before going further: iOS 27.2 is simply the only iOS 27 extraction we had. The change could have arrived with iOS 27.0 or any release since, and we have no 27.0 or 27.1 files to say which. Where this post says "iOS 27.2", read it as "the version we tested", not "the version that changed".
+A note on versions before going further. This work started from one iOS 27.2 extraction, and the measurements in this post come from it. When the fix was reviewed against a wider set of images, the same tiled layout turned up on iPhone 14 and iPhone 15 Pro images running iOS 26.3 and 26.5, which the fix also decodes; iOS 18 images were unaffected. So this is not an iOS 27 change, and the version alone does not say which layout a snapshot uses. Where this post says "iOS 27.2", read it as "the extraction we measured".
 
 This post covers what was going on, what Apple changed, and how iLEAPP now handles it. The fix is [abrignoni/iLEAPP#2887](https://github.com/abrignoni/iLEAPP/pull/2887).
 
@@ -63,9 +63,9 @@ Two things gave it away.
 
 **A second decoder disagreed about the "blank" ones.** iLEAPP's decoder rendered 193 of the 324 files as one flat colour. Running the same bytes through [texture2ddecoder](https://github.com/K0lb3/texture2ddecoder), an independent ASTC decoder, gave streaky images with rows of decoder error blocks instead. That did not show the images held hidden detail: both decoders were being fed blocks in the wrong order, so neither output could be trusted. What it did show was that the flat rendering was not a reliable answer either way. Whether those files really were plain screens could only be settled after the blocks were put back in order (see Results).
 
-Trying a few common GPU layouts settled it. The blocks are stored in **tiles of 32x32 blocks** (128x128 pixels). Tiles run left to right, top to bottom, across the padded surface. Inside each tile, the 1,024 blocks are in **Morton order**, also called Z-order, where the bits of the x and y block positions are interleaved. Counting bits from 0, **x supplies the even-numbered bits and y the odd-numbered ones**: for x = 3 (`011`) and y = 5 (`101`), the position in the tile is `100111` = 39. Swapping the two would flip every tile along its diagonal.
+Trying a few common GPU layouts settled it. The blocks are stored in **tiles of 32x32 blocks** (128x128 pixels). Tiles run left to right, top to bottom, across the padded surface. Inside each tile, the 1,024 blocks are in **Morton order**, also called Z-order, where the bits of the x and y block positions are interleaved. Counting bits from 0, **x supplies the even-numbered bits and y the odd-numbered ones**: for x = 3 (`011`) and y = 5 (`101`), the position in the tile is `100111` = 39. Getting this backwards flips every tile along its diagonal, and that is not hypothetical: in review, an iPhone 11 image on iOS 26.2.1 turned out to use the same tiles with the x and y bits swapped. That variant is not handled yet (see below).
 
-![Raster order compared with Morton order inside a tile](/blog/images/2026-11-25-ios-27-tiled-app-snapshots/block-order.svg)
+![Raster order compared with Morton order inside a tile](/blog/images/2026-11-25-tiled-app-snapshots-ios-26-27/block-order.svg)
 
 Morton order keeps blocks that are close together on screen close together in memory, which is how GPUs like to read textures. It is a common layout for GPU textures; we have not seen Apple document it for these files. What is described here was worked out from the files themselves.
 
@@ -106,14 +106,15 @@ One more thing about those 193 flat images. After the fix, they are still a sing
 
 ## What examiners should take from this
 
-- If you processed an iOS 27 extraction with an iLEAPP build from before this change, the App Snapshots images in that report are not usable. The rows, paths and dates are fine. Re-run the artifact with a build that includes the fix to get the pictures.
+- Snapshots stored in the tiled layout did not decode correctly in iLEAPP builds from before this change, and those images are not usable. Snapshots in the older raster layout decoded correctly then and still do, whatever the iOS version. The tiled ones seen so far come from iOS 26 and 27; a tiled file carries an uncompressed `astc` chunk holding more blocks than its image needs. If a report from an older build has streaky or flat snapshots from such a device, re-run App Snapshots with a build that includes the fix. The rows, paths and dates were never affected.
 - A flat image is not proof that a decode failed, and it is not proof that it worked. The second-decoder check is what told the two apart here.
 - Snapshots are still what they always were: an image iOS saved of an app's screen. An app can hide or replace its content before the snapshot is taken, so a snapshot does not by itself show that someone viewed what is in it.
 
 ## What we have not covered
 
-- We have one iOS 27 device, on iOS 27.2. We do not know which iOS 27 release introduced the tiled layout, and other models, screen sizes and releases may differ.
+- **The swapped-bit variant.** On the iPhone 11 / iOS 26.2.1 image, the tiles have the x and y bits the other way round. No field in the file has been found that says which order applies, so those snapshots with visible content still come out scrambled. A follow-up change will handle it.
+- We do not know which release first used the tiled layout, or what decides between the layouts. Models, screen sizes and releases not yet tested may differ again.
 - The Messages preview cache path is untested on tiled data.
 - The meaning of the `HEAD` field used as the tie-breaker is not established.
 
-If you have iOS 27 extractions where App Snapshots still look wrong after this change, or examples of tiled files outside SplashBoard, please open an issue on [iLEAPP](https://github.com/abrignoni/iLEAPP/issues). Counts and file shapes are enough to start; we do not need the images themselves.
+If you have iOS 26 or 27 extractions where App Snapshots still look wrong after this change, or examples of tiled files outside SplashBoard, please open an issue on [iLEAPP](https://github.com/abrignoni/iLEAPP/issues). Counts and file shapes are enough to start; we do not need the images themselves.
