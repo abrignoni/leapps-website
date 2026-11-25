@@ -61,9 +61,9 @@ Two things gave it away.
 
 **There are too many blocks.** A 1170x2532 snapshot on iOS 27.2 holds 204,801 blocks, not 185,469. 204,800 is exactly 320 x 640, which is the image rounded up to a whole number of 32-block tiles in each direction (293 → 320, 633 → 640), and then there is one extra block on the end. Every snapshot in the extraction followed the same rule, portrait and landscape. On three older extractions the block count matched the image exactly, every time.
 
-**A second decoder disagreed about the "blank" ones.** iLEAPP's decoder rendered 193 of the 324 files as one flat colour. Running the same bytes through [texture2ddecoder](https://github.com/K0lb3/texture2ddecoder), an independent ASTC decoder, gave streaky images with rows of decoder error blocks instead. A truly blank screenshot would be flat in both. The data was not empty; it was out of order.
+**A second decoder disagreed about the "blank" ones.** iLEAPP's decoder rendered 193 of the 324 files as one flat colour. Running the same bytes through [texture2ddecoder](https://github.com/K0lb3/texture2ddecoder), an independent ASTC decoder, gave streaky images with rows of decoder error blocks instead. That did not show the images held hidden detail: both decoders were being fed blocks in the wrong order, so neither output could be trusted. What it did show was that the flat rendering was not a reliable answer either way. Whether those files really were plain screens could only be settled after the blocks were put back in order (see Results).
 
-Trying a few common GPU layouts settled it. The blocks are stored in **tiles of 32x32 blocks** (128x128 pixels). Tiles run left to right, top to bottom, across the padded surface. Inside each tile, the 1,024 blocks are in **Morton order**, also called Z-order, where the bits of the x and y block positions are interleaved:
+Trying a few common GPU layouts settled it. The blocks are stored in **tiles of 32x32 blocks** (128x128 pixels). Tiles run left to right, top to bottom, across the padded surface. Inside each tile, the 1,024 blocks are in **Morton order**, also called Z-order, where the bits of the x and y block positions are interleaved. Counting bits from 0, **x supplies the even-numbered bits and y the odd-numbered ones**: for x = 3 (`011`) and y = 5 (`101`), the position in the tile is `100111` = 39. Swapping the two would flip every tile along its diagonal.
 
 ![Raster order compared with Morton order inside a tile](/blog/images/2026-11-25-ios-27-tiled-app-snapshots/block-order.svg)
 
@@ -73,9 +73,10 @@ Morton order keeps blocks that are close together on screen close together in me
 
 The reader that all of this goes through is `KTX_reader` in [`scripts/ktx/ios_ktx2png.py`](https://github.com/charpy4n6/iLEAPP/blob/72ad64d485cdc403947934b9dcd756b9083d2487/scripts/ktx/ios_ktx2png.py#L198), originally written by Yogesh Khatri. It now has one new step, `untile_astc_4x4`, which runs on the texture data of every `AAPL` file before it goes to the decoder:
 
-1. Work out the block grid from the image size (293 x 633 for a 1170x2532 snapshot), and the padded grid rounded up to whole 32-block tiles (320 x 640).
+1. Work out the block grid from the image size, rounding each side up to whole 4-pixel blocks (293 x 633 for a 1170x2532 snapshot), and the padded grid, rounding the block grid up to whole 32-block tiles (320 x 640).
 2. If the file holds fewer blocks than the padded grid needs, return the data as it is. This is the old layout.
-3. Otherwise, walk the image block by block in raster order. For each block, find its tile from `x // 32` and `y // 32`, find its place inside the tile by interleaving the bits of `x % 32` and `y % 32`, and copy that block into the output.
+3. If the file holds exactly as many blocks as the image needs, and that equals the padded count (the block grid is already a whole number of tiles), the count cannot tell the layouts apart. Return the data as it is unless `HEAD` word 12 is 1 (see below).
+4. Otherwise, walk the image block by block in raster order. For each block, find its tile from `x // 32` and `y // 32`, find its place inside the tile by interleaving the bits of `x % 32` and `y % 32`, and copy that block into the output.
 
 The output is in plain raster order with exactly one block per 4x4 pixels, which is what the decoder has always expected. Nothing after that point changed.
 
@@ -85,7 +86,7 @@ This was a hard requirement: snapshots from iOS 17 and 18 should come out exactl
 
 ### One case the block count cannot decide
 
-If an image happened to be an exact multiple of 128 pixels in both directions, the padded and unpadded block counts would be the same, and the size alone would not say which layout it is. For that case only, the reader looks at the 13th 32-bit word of the `HEAD` chunk. It was 1 in every tiled file we have and 0 in every older file. We do not know what Apple calls that field or what else might set it, so it is used as a tie-breaker and nothing more. No real snapshot we have needed it; this path is covered by a synthetic test.
+If an image's block grid is already a whole number of 32-block tiles in both directions, the padded and unpadded block counts are the same, and the count alone does not say which layout it is. That is a condition on blocks, not pixels: because each side is first rounded up to whole 4-pixel blocks, a width of 1,021 to 1,024 pixels all give 256 blocks, which is 8 whole tiles. For that case only (step 3), the reader looks at word 12, the 13th 32-bit word, of the `HEAD` chunk. It was 1 in every tiled file we have and 0 in every older file. We do not know what Apple calls that field or what else might set it, so it is used as a tie-breaker and nothing more. No real snapshot we have needed it; this path is covered by a synthetic test.
 
 ## Results
 
@@ -101,7 +102,7 @@ Widget snapshots (`com.apple.chrono/snapshot-cache`) use the same reader, so the
 
 The Messages preview cache artifact shares the reader as well and gets the same handling. We had no tiled Messages previews to test against, so that path is unexercised.
 
-One more thing about those 193 flat images. After the fix, they are still a single colour, and now both decoders agree. They are real plain launch and placeholder screens; the earlier disagreement between decoders came from the scrambled order, not from the content. If you see plain white or black snapshots in a report, that is what the device stored.
+One more thing about those 193 flat images. After the fix, they are still a single colour, and now both decoders agree on them. That comparison, after reordering, is what shows they are plain launch and placeholder screens in the files themselves; the earlier disagreement between decoders came from the scrambled order. This holds for these snapshots, decoded with the fix. A plain snapshot in a report made before the fix, or in a layout nobody has checked yet, may still be a failed decode: re-run it with a fixed build before reading anything into it.
 
 ## What examiners should take from this
 
