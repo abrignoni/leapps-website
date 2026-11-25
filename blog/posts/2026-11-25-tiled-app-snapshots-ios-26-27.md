@@ -3,118 +3,126 @@ title: Tiled App Snapshots in iOS 26 and 27
 date: 2026-11-25
 author: charpy4n6
 tags: [iLEAPP, iOS, images, artifacts, snapshots, research]
-excerpt: On an iOS 27.2 extraction every App Snapshot in iLEAPP came out as streaks or a flat colour, and iOS 26 images turned out to share the cause. The image data was now stored uncompressed, and its blocks were in a different order. Here is what changed and how iLEAPP now reads both layouts.
+excerpt: On recent iPhones, App Snapshots in iLEAPP came out as streaks or plain colour. Apple had changed how the images are stored inside the files. Here is what changed, in plain terms, and how iLEAPP now puts the pictures back together.
 ---
 
 # Tiled App Snapshots in iOS 26 and 27
 
-App snapshots are the images iOS keeps of an app's screen for the app switcher and for the launch transition. iLEAPP has parsed them for years in the **App Snapshots** artifact, converting Apple's KTX files to PNG so they can be viewed in the report and in LAVA.
+When you leave an app on an iPhone, iOS saves a picture of its screen. That picture is what you see in the app switcher, and while the app is starting up again. These **App Snapshots** can show what was on screen in an app at some point, and iLEAPP has reported them for years in the **App Snapshots** artifact, turning Apple's `.ktx` image files into ordinary PNGs you can view in the report and in LAVA.
 
-On a full file system extraction of an iPhone on iOS 27.2, all 324 of them were wrong. Some were horizontal streaks of colour. More than half were a single flat colour, which is worse: they looked like plain launch screens, and nothing on the page said they had failed.
+On a recent extraction, every one of those pictures was wrong.
 
-A note on versions before going further. This work started from one iOS 27.2 extraction, and the measurements in this post come from it. When the fix was reviewed against a wider set of images, the same tiled layout turned up on iPhone 14 and iPhone 15 Pro images running iOS 26.3 and 26.5, which the fix also decodes; iOS 18 images were unaffected. So this is not an iOS 27 change, and the version alone does not say which layout a snapshot uses. Where this post says "iOS 27.2", read it as "the extraction we measured".
+## What went wrong
 
-This post covers what was going on, what Apple changed, and how iLEAPP now handles it. The fix is [abrignoni/iLEAPP#2887](https://github.com/abrignoni/iLEAPP/pull/2887).
+The extraction was a full file system extraction of an iPhone on iOS 27.2. iLEAPP found all 324 snapshots, in the usual place (`Library/SplashBoard/Snapshots/`), and listed every one with its app, path and dates. Only the pictures were broken:
 
-## Where the snapshots live
+- some came out as horizontal streaks of colour;
+- more than half came out as a **single flat colour**.
 
-Nothing moved. The App Snapshots artifact looks in the same places it always has:
+The flat ones were the more dangerous. A plain white or black snapshot looks like an ordinary launch screen, and nothing in the report said anything had failed.
 
-```text
-*/Library/Caches/Snapshots/*.ktx
-*/SplashBoard/Snapshots/*.ktx
-*/mobile/Library/FrontBoard/applicationState.db
-```
+When Alexis Brignoni later tested the fix described below against his own collection of test images, the same problem turned up on iPhone 14 and iPhone 15 Pro images on **iOS 26.3 and 26.5**. iOS 18 images were fine. So this is not an iOS 27 change, and the iOS version alone does not tell you which kind of file you have. The numbers in this post come from the iOS 27.2 extraction the work started on.
 
-On the iOS 27.2 extraction the files are under `Library/SplashBoard/Snapshots/sceneID:<bundle id>-default/`, each with a `downscaled/` copy, which is the same shape as iOS 17 and 18. The seeker found all of them and the artifact reported every row. Only the pictures were broken.
+## What Apple changed
 
-## A quick refresher on the format
+Two things changed inside the snapshot files.
 
-Despite the `.ktx` extension, these are not Khronos KTX files. They start with an Apple magic, `AAPL\r\n\x1a\n`, followed by a run of chunks, each a 4-byte little-endian length and a 4-byte tag:
+**The image is no longer compressed.** Older snapshots were squeezed down to a few kilobytes. The new ones are stored uncompressed, at about 3.2 MB each. That on its own did no harm: iLEAPP already knew how to read both kinds.
 
-| chunk | holds |
-| --- | --- |
-| `HEAD` | the texture description: format, base format, width, height and further fields |
-| `FILL` | padding |
-| `astc` / `LZFS` | the texture data, raw or LZFSE-compressed |
-| `END ` | end marker |
+**The pieces of the image are stored in a different order.** This is what broke the pictures.
 
-The texture data is ASTC with 4x4-pixel blocks (`glInternalFormat` 0x93B0). Every block is 16 bytes and describes one 4x4 square of pixels, so a 1170x2532 screenshot is 293 x 633 = 185,469 blocks. To make a PNG, iLEAPP hands those blocks to an ASTC decoder and asks for an image of that width and height.
+Think of the snapshot as a jigsaw puzzle. The picture is cut into small square pieces, each 4x4 pixels, and the file stores the pieces one after another. In the older files the pieces are stored the way you read a page: the whole top row, left to right, then the next row, and so on. iLEAPP's image decoder expects exactly that.
 
-The decoder assumes the blocks are in **raster order**: the first row of blocks left to right, then the second row, and so on. That was true of every snapshot we had looked at before.
+The new files store the pieces in **tiles** instead. The image is first divided into large squares, each 32 pieces wide and 32 pieces high (128x128 pixels). Each tile is stored complete before the next one starts. Inside a tile, the pieces follow a zig-zag path called **Morton order** or **Z-order**: two pieces across, then two below them, then the next pair of pairs, and so on.
 
-Comparing an iOS 27.2 snapshot with the iOS 17 ones, the magic, the `HEAD` layout, the format value and the image sizes are all the same. The chunk list is not:
+![Row-by-row order compared with Morton order](/blog/images/2026-11-25-tiled-app-snapshots-ios-26-27/block-order.svg)
 
-| | iOS 17 (compared) | iOS 27.2 |
-| --- | --- | --- |
-| chunks | `HEAD`, `FILL`, `LZFS`, `END ` | `HEAD`, `FILL`, `astc`, `END ` |
-| texture data | LZFSE-compressed | uncompressed |
-| `FILL` size | 136 bytes | 16,264 bytes |
-| texture data starts at | 0x100 | 0x4000 |
-| typical file size | a few KB | about 3.2 MB |
+Graphics chips like this layout because pieces that are close together on screen are close together in memory. It is a common way to store textures, but we have not seen Apple document it for these files. Everything here was worked out from the files themselves.
 
-None of that broke anything. iLEAPP's reader already accepted both an `LZFS` and an uncompressed `astc` chunk, so it read the iOS 27.2 files without an error, decompressed nothing, and passed the blocks to the decoder. What it could not know was that the blocks were in a new order.
+Hand the decoder a tiled file while it expects rows, and it lays every piece in the wrong place. That is where the streaks came from. And because snapshots have large areas of one colour, many came out as a single colour.
 
-## What changed: the blocks are tiled
+## How the change was spotted
 
-Two things gave it away.
+**There were too many pieces.** A 1170x2532 snapshot needs 185,469 pieces. The iOS 27.2 files held 204,801. Rounding the picture up to whole tiles explains it exactly, plus one extra piece at the end. Older files always held exactly as many pieces as the picture needs.
 
-**There are too many blocks.** A 1170x2532 snapshot on iOS 27.2 holds 204,801 blocks, not 185,469. 204,800 is exactly 320 x 640, which is the image rounded up to a whole number of 32-block tiles in each direction (293 → 320, 633 → 640), and then there is one extra block on the end. Every snapshot in the extraction followed the same rule, portrait and landscape. On three older extractions the block count matched the image exactly, every time.
+**A second decoder disagreed.** Running the same files through an independent decoder, [texture2ddecoder](https://github.com/K0lb3/texture2ddecoder), gave streaks full of error marks where iLEAPP showed flat colour. That did not mean there was hidden detail behind the flat images; both decoders were reading the pieces in the wrong order, so neither could be trusted. It did mean the flat colour was not a reliable answer. Whether those images really were plain could only be settled once the pieces were back in order.
 
-**A second decoder disagreed about the "blank" ones.** iLEAPP's decoder rendered 193 of the 324 files as one flat colour. Running the same bytes through [texture2ddecoder](https://github.com/K0lb3/texture2ddecoder), an independent ASTC decoder, gave streaky images with rows of decoder error blocks instead. That did not show the images held hidden detail: both decoders were being fed blocks in the wrong order, so neither output could be trusted. What it did show was that the flat rendering was not a reliable answer either way. Whether those files really were plain screens could only be settled after the blocks were put back in order (see Results).
+## Two zig-zags, not one
 
-Trying a few common GPU layouts settled it. The blocks are stored in **tiles of 32x32 blocks** (128x128 pixels). Tiles run left to right, top to bottom, across the padded surface. Inside each tile, the 1,024 blocks are in **Morton order**, also called Z-order, where the bits of the x and y block positions are interleaved. Counting bits from 0, **x supplies the even-numbered bits and y the odd-numbered ones**: for x = 3 (`011`) and y = 5 (`101`), the position in the tile is `100111` = 39. Getting this backwards flips every tile along its diagonal, and that is not hypothetical: in review, an iPhone 11 image on iOS 26.2.1 turned out to use the same tiles with the x and y bits swapped. That variant is not handled yet (see below).
+The zig-zag inside each tile can go two ways: across first, then down, or down first, then across. Get it backwards and every tile comes out flipped along its diagonal.
 
-![Raster order compared with Morton order inside a tile](/blog/images/2026-11-25-tiled-app-snapshots-ios-26-27/block-order.svg)
+The iOS 27.2 phone and the iOS 26 phones above all went across first. While reviewing the fix, **Alexis found an iPhone 11 on iOS 26.2.1 whose snapshots go down first**, and fixed it in a follow-up change ([abrignoni/iLEAPP#2893](https://github.com/abrignoni/iLEAPP/pull/2893)).
 
-Morton order keeps blocks that are close together on screen close together in memory, which is how GPUs like to read textures. It is a common layout for GPU textures; we have not seen Apple document it for these files. What is described here was worked out from the files themselves.
+Nothing inside the file was found that says which order it uses. What he did find is that the snapshot's file name does. Snapshot names end in `@2x` or `@3x`, the screen's scale, and the `@2x` snapshots were the ones going down first. The scale in the name matched the scale iOS records for each snapshot in every record he checked, so iLEAPP now uses it: a name ending in `@2x` gets the down-first order, and every other name gets across-first.
+
+That rule rests on one 2x device. Whether the order really follows the screen scale, or something else such as the phone's chip, is not established yet.
 
 ## How iLEAPP handles it now
 
-The reader that all of this goes through is `KTX_reader` in [`scripts/ktx/ios_ktx2png.py`](https://github.com/charpy4n6/iLEAPP/blob/72ad64d485cdc403947934b9dcd756b9083d2487/scripts/ktx/ios_ktx2png.py#L198), originally written by Yogesh Khatri. It now has one new step, `untile_astc_4x4`, which runs on the texture data of every `AAPL` file before it goes to the decoder:
+Before the picture goes to the decoder, iLEAPP now checks whether the file is tiled. If it is, iLEAPP puts every piece back in row order, using the zig-zag that matches the file name. The decoder then gets exactly what it always expected. If the file is not tiled, iLEAPP passes it on untouched, so snapshots from older iPhones come out exactly as they did before.
 
-1. Work out the block grid from the image size, rounding each side up to whole 4-pixel blocks (293 x 633 for a 1170x2532 snapshot), and the padded grid, rounding the block grid up to whole 32-block tiles (320 x 640).
-2. If the file holds fewer blocks than the padded grid needs, return the data as it is. This is the old layout.
-3. If the file holds exactly as many blocks as the image needs, and that equals the padded count (the block grid is already a whole number of tiles), the count cannot tell the layouts apart. Return the data as it is unless `HEAD` word 12 is 1 (see below).
-4. Otherwise, walk the image block by block in raster order. For each block, find its tile from `x // 32` and `y // 32`, find its place inside the tile by interleaving the bits of `x % 32` and `y % 32`, and copy that block into the output.
+Two changes, both merged into iLEAPP:
 
-The output is in plain raster order with exactly one block per 4x4 pixels, which is what the decoder has always expected. Nothing after that point changed.
+- [abrignoni/iLEAPP#2887](https://github.com/abrignoni/iLEAPP/pull/2887) recognises tiled files and puts them back in order.
+- [abrignoni/iLEAPP#2893](https://github.com/abrignoni/iLEAPP/pull/2893), from Alexis, adds the second zig-zag for `@2x` snapshots.
 
-### The old layout still works
-
-This was a hard requirement: snapshots from iOS 17 and 18 should come out exactly as they did before. Because the decision is made from the block count, an older-layout file does not reach the reordering code. The one exception is the case covered below: a file whose block grid is already a whole number of tiles is reordered only if `HEAD` word 12 is 1, and no older-layout file we compared had that. Otherwise the reader returns the very same bytes it was given, and a test checks for that. Standard Khronos KTX files go through a separate path that was not touched.
-
-### One case the block count cannot decide
-
-If an image's block grid is already a whole number of 32-block tiles in both directions, the padded and unpadded block counts are the same, and the count alone does not say which layout it is. That is a condition on blocks, not pixels: because each side is first rounded up to whole 4-pixel blocks, a width of 1,021 to 1,024 pixels all give 256 blocks, which is 8 whole tiles. For that case only (step 3), the reader looks at word 12, the 13th 32-bit word, of the `HEAD` chunk. It was 1 in every tiled file we have and 0 in every older file. We do not know what Apple calls that field or what else might set it, so it is used as a tie-breaker and nothing more. No real snapshot we have needed it; this path is covered by a synthetic test.
+The code is in `KTX_reader`, in [`scripts/ktx/ios_ktx2png.py`](https://github.com/abrignoni/iLEAPP/blob/a6d7456133c4f3e7a219ee94390534de9a264b2c/scripts/ktx/ios_ktx2png.py#L202), a reader originally written by Yogesh Khatri.
 
 ## Results
 
-Every file was decoded twice, once by iLEAPP and once by texture2ddecoder, and the two outputs compared:
+Every snapshot was decoded twice, once by iLEAPP and once by the independent decoder, and the two pictures compared:
 
-| extraction | snapshots | layout | result |
+| extraction | snapshots | stored as | result |
 | --- | --- | --- | --- |
-| iOS 27.2 | 324 | tiled | no decoder error blocks; both decoders agree |
-| iOS 17 | 106 | raster | unchanged; both decoders agree |
-| older iOS extraction | 262 | raster | unchanged; both decoders agree |
+| iOS 27.2 | 324 | tiles | correct pictures; both decoders agree |
+| iOS 17 | 106 | rows | unchanged; both decoders agree |
+| an older iOS extraction | 262 | rows | unchanged; both decoders agree |
 
-Widget snapshots (`com.apple.chrono/snapshot-cache`) use the same reader, so they were checked too: 41 across the three extractions, including 24 on iOS 27.2. All of them are still in raster order, so the widget artifact was never affected.
+Alexis also ran App Snapshots with both changes against four iOS 26 images, from iOS 26.2.1 to 26.5.2, and an iOS 18.7 image, whose snapshots stayed unchanged.
 
-The Messages preview cache artifact shares the reader as well and gets the same handling. We had no tiled Messages previews to test against, so that path is unexercised.
+About those flat images: after the fix, 193 of the iOS 27.2 snapshots are still a single colour, and now both decoders agree. Comparing them after the pieces were put back in order is what shows they really are plain launch and placeholder screens.
 
-One more thing about those 193 flat images. After the fix, they are still a single colour, and now both decoders agree on them. That comparison, after reordering, is what shows they are plain launch and placeholder screens in the files themselves; the earlier disagreement between decoders came from the scrambled order. This holds for these snapshots, decoded with the fix. A plain snapshot in a report made before the fix, or in a layout nobody has checked yet, may still be a failed decode: re-run it with a fixed build before reading anything into it.
+Widget snapshots and the Messages preview cache use the same reader. All the widget snapshots we checked, including the iOS 27.2 ones, were stored in rows, so the widget artifact was not affected on those devices. We had no tiled Messages previews to test.
 
-## What examiners should take from this
+## What examiners should know
 
-- Snapshots stored in the tiled layout did not decode correctly in iLEAPP builds from before this change, and those images are not usable. Snapshots in the older raster layout decoded correctly then and still do, whatever the iOS version. The tiled ones seen so far come from iOS 26 and 27. A useful clue is an uncompressed `astc` chunk holding more blocks than the image needs; every tiled file we have seen had that. It is not a sure test: a tiled image whose block grid is already a whole number of tiles, with no extra block, would have the same count as a raster one, which is the case the `HEAD` tie-breaker covers (see "One case the block count cannot decide"). If a report from an older build has streaky or flat snapshots from such a device, re-run App Snapshots with a build that includes the fix. That corrects the tiled layout described here, not the swapped-bit variant: snapshots in that layout still come out scrambled after a re-run (see "What we have not covered"), so a re-run image that still looks scrambled is not a corrected one. The rows, paths and dates were never affected.
-- A flat image is not proof that a decode failed, and it is not proof that it worked. The second-decoder check is what told the two apart here.
-- Snapshots are still what they always were: an image iOS saved of an app's screen. An app can hide or replace its content before the snapshot is taken, so a snapshot does not by itself show that someone viewed what is in it.
+- **Re-run reports made before the fix if their snapshots look streaky or flat.** Tiled snapshots did not decode correctly in older iLEAPP builds. Snapshots stored in rows were always fine. A build that includes both changes above puts tiled App Snapshots back together, for both zig-zags.
+- **A re-run that still looks scrambled is not a corrected image.** The `@2x` rule comes from a single device, so a 2x snapshot that still looks wrong may be a limit of the decoder, not what the file holds. The same goes for the cases listed under "What we have not tested".
+- **A plain image is not proof either way.** In older reports, a flat snapshot may be a failed decode. Only after the fix, on a file like the ones tested, does a flat snapshot mean the screen really was plain.
+- **The rows, paths and dates were never affected.** Only the pictures were.
+- **A snapshot shows a screen iOS saved, nothing more.** Apps can hide or replace their content before the snapshot is taken, so a snapshot does not by itself show that someone viewed what is in it.
 
-## What we have not covered
+## What we have not tested
 
-- **The swapped-bit variant.** On the iPhone 11 / iOS 26.2.1 image, the tiles have the x and y bits the other way round. No field in the file has been found that says which order applies, so those snapshots with visible content still come out scrambled. A follow-up change will handle it.
-- We do not know which release first used the tiled layout, or what decides between the layouts. Models, screen sizes and releases not yet tested may differ again.
-- The Messages preview cache path is untested on tiled data.
-- The meaning of the `HEAD` field used as the tie-breaker is not established.
+- Tiled snapshots under `Library/Caches/Snapshots`, and tiled snapshots whose names have no `@2x` or `@3x`.
+- Widget snapshots and Messages previews from a 2x phone. Those artifacts always use the across-first order.
+- What decides between the two zig-zags, and which iOS release first used tiles. Other models and releases may differ again.
+- Some header fields in the file. One is used as a tie-breaker in a rare case (see below); we do not know what Apple calls it.
 
-If you have iOS 26 or 27 extractions where App Snapshots still look wrong after this change, or examples of tiled files outside SplashBoard, please open an issue on [iLEAPP](https://github.com/abrignoni/iLEAPP/issues). Counts and file shapes are enough to start; we do not need the images themselves.
+If you have iOS 26 or 27 extractions where App Snapshots still look wrong with a current build, please open an issue on [iLEAPP](https://github.com/abrignoni/iLEAPP/issues). The file counts and sizes are enough to start; we do not need the pictures.
+
+## For the technically curious
+
+Despite the `.ktx` extension, these files are not Khronos KTX. They start with `AAPL\r\n\x1a\n`, followed by chunks, each a 4-byte little-endian length and a 4-byte tag. The pieces are 16-byte ASTC blocks, each covering 4x4 pixels.
+
+| | older (iOS 17 compared) | tiled (iOS 27.2) |
+| --- | --- | --- |
+| chunks | `HEAD`, `FILL`, `LZFS`, `END ` | `HEAD`, `FILL`, `astc`, `END ` |
+| texture data | LZFSE-compressed | uncompressed |
+| data starts at | 0x100 | 0x4000 |
+| blocks | one per 4x4 pixels | rounded up to whole 32x32-block tiles, plus one |
+
+**Morton order.** Inside a tile, a block's position comes from interleaving the bits of its x and y block coordinates. With bits numbered from 0, the across-first order puts **x in the even bits and y in the odd bits**: x = 3 (`011`) and y = 5 (`101`) give `100111`, position 39. The `@2x` order swaps them, with y in the even bits.
+
+**Is a file tiled?** `untile_astc_4x4` decides from the block count:
+
+1. Work out the blocks the image needs, rounding each side up to whole 4-pixel blocks (293 x 633 for 1170x2532), and the padded count, rounding those up to whole 32-block tiles (320 x 640).
+2. Fewer blocks than the image needs: the file is incomplete, which is a separate problem from the layout. It is passed on as it is, and the decoder still produces a picture from it, so part of that picture will be missing or wrong.
+3. Fewer blocks than the padded count: the older row layout. Passed on as it is.
+4. Exactly the blocks the image needs, when that also equals the padded count (the image is already a whole number of tiles): the count cannot tell the layouts apart. Passed on as it is unless `HEAD` word 12, the 13th 32-bit word, is 1. That word was 1 in every tiled file and 0 in every older file we compared, but its meaning is not known. No real snapshot we have needed this step.
+5. Anything else is tiled: each block is copied from tile `(y // 32) * tiles_across + (x // 32)`, at the Morton position of `(x % 32, y % 32)` inside it.
+
+## Credits
+
+- **Alexis Brignoni** tested the fix across his corpus of images, found the same layout on iOS 26, and found and fixed the second zig-zag order for `@2x` snapshots in [abrignoni/iLEAPP#2893](https://github.com/abrignoni/iLEAPP/pull/2893).
+- **Yogesh Khatri** wrote the original iOS KTX-to-PNG reader that iLEAPP builds on.
