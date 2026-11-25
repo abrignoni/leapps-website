@@ -1,5 +1,20 @@
 [
   {
+    "slug": "2026-11-25-tiled-app-snapshots-ios-26-27",
+    "title": "Tiled App Snapshots in iOS 26 and 27",
+    "date": "2026-11-25",
+    "author": "charpy4n6",
+    "tags": [
+      "iLEAPP",
+      "iOS",
+      "images",
+      "artifacts",
+      "snapshots",
+      "research"
+    ],
+    "excerpt": "On recent iPhones, many App Snapshots in iLEAPP came out as horizontal streaks. Apple had changed how the images are stored inside the files. Here is what changed, in plain terms, and how iLEAPP now puts the pictures back together."
+  },
+  {
     "slug": "2026-11-13-kdl-and-appwalk",
     "title": "KDL and AppWalk, two tools that work with the phone itself",
     "date": "2026-11-13",
