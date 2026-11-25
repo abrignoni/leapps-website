@@ -3,23 +3,23 @@ title: Tiled App Snapshots in iOS 26 and 27
 date: 2026-11-25
 author: charpy4n6
 tags: [iLEAPP, iOS, images, artifacts, snapshots, research]
-excerpt: On recent iPhones, App Snapshots in iLEAPP came out as streaks or plain colour. Apple had changed how the images are stored inside the files. Here is what changed, in plain terms, and how iLEAPP now puts the pictures back together.
+excerpt: On recent iPhones, many App Snapshots in iLEAPP came out as horizontal streaks. Apple had changed how the images are stored inside the files. Here is what changed, in plain terms, and how iLEAPP now puts the pictures back together.
 ---
 
 # Tiled App Snapshots in iOS 26 and 27
 
 When you leave an app on an iPhone, iOS saves a picture of its screen. That picture is what you see in the app switcher, and while the app is starting up again. These **App Snapshots** can show what was on screen in an app at some point, and iLEAPP has reported them for years in the **App Snapshots** artifact, turning Apple's `.ktx` image files into ordinary PNGs you can view in the report and in LAVA.
 
-On a recent extraction, every one of those pictures was wrong.
+On a recent extraction, many of those pictures came out scrambled.
 
 ## What went wrong
 
-The extraction was a full file system extraction of an iPhone on iOS 27.2. iLEAPP found all 324 snapshots, in the usual place (`Library/SplashBoard/Snapshots/`), and listed every one with its app, path and dates. Only the pictures were broken:
+The extraction was a full file system extraction of an iPhone on iOS 27.2. iLEAPP found all 324 snapshots, in the usual place (`Library/SplashBoard/Snapshots/`), and listed every one with its app, path and dates. The pictures were another matter:
 
-- some came out as horizontal streaks of colour;
-- more than half came out as a **single flat colour**.
+- **131** came out as horizontal streaks of colour, with nothing recognisable in them;
+- the other **193** came out as a single plain colour, mostly white or black.
 
-The flat ones were the more dangerous. A plain white or black snapshot looks like an ordinary launch screen, and nothing in the report said anything had failed.
+At first it looked as if all 324 had failed, the plain ones included. They had not. As it turned out, the 193 plain ones really are plain launch and placeholder screens, and iLEAPP was showing them correctly all along (more on how we know under Results). The 131 streaky ones, the snapshots with real content, are the ones that were broken, and nothing in the report said so.
 
 When Alexis Brignoni later tested the fix described below against his own collection of test images, the same problem turned up on iPhone 14 and iPhone 15 Pro images on **iOS 26.3 and 26.5**. iOS 18 images were fine. So this is not an iOS 27 change, and the iOS version alone does not tell you which kind of file you have. The numbers in this post come from the iOS 27.2 extraction the work started on.
 
@@ -39,13 +39,13 @@ The new files store the pieces in **tiles** instead. The image is first divided 
 
 Graphics chips like this layout because pieces that are close together on screen are close together in memory. It is a common way to store textures, but we have not seen Apple document it for these files. Everything here was worked out from the files themselves.
 
-Hand the decoder a tiled file while it expects rows, and it lays every piece in the wrong place. That is where the streaks came from. And because snapshots have large areas of one colour, many came out as a single colour.
+Hand the decoder a tiled file while it expects rows, and it lays every piece in the wrong place. That is where the streaks came from. A snapshot that is one colour all over is the exception: every piece looks the same, so putting them in the wrong place changes nothing, and it still comes out right.
 
 ## How the change was spotted
 
 **There were too many pieces.** A 1170x2532 snapshot needs 185,469 pieces. The iOS 27.2 files held 204,801. Rounding the picture up to whole tiles explains it exactly, plus one extra piece at the end. Older files always held exactly as many pieces as the picture needs.
 
-**A second decoder disagreed.** Running the same files through an independent decoder, [texture2ddecoder](https://github.com/K0lb3/texture2ddecoder), gave streaks full of error marks where iLEAPP showed flat colour. That did not mean there was hidden detail behind the flat images; both decoders were reading the pieces in the wrong order, so neither could be trusted. It did mean the flat colour was not a reliable answer. Whether those images really were plain could only be settled once the pieces were back in order.
+**A second decoder complained.** Running the same files through an independent decoder, [texture2ddecoder](https://github.com/K0lb3/texture2ddecoder), put error marks into many of the pictures, including ones iLEAPP showed as plain colour. That was a sign the pieces were not in the order either decoder expected. It did not mean the plain-looking snapshots were hiding anything: once the pieces were back in order, they were still plain, pixel for pixel the same as before.
 
 ## Two zig-zags, not one
 
@@ -74,21 +74,21 @@ Every snapshot was decoded twice, once by iLEAPP and once by the independent dec
 
 | extraction | snapshots | stored as | result |
 | --- | --- | --- | --- |
-| iOS 27.2 | 324 | tiles | correct pictures; both decoders agree |
+| iOS 27.2 | 324 | tiles | 131 corrected; 193 plain screens identical before and after; both decoders agree |
 | iOS 17 | 106 | rows | unchanged; both decoders agree |
 | an older iOS extraction | 262 | rows | unchanged; both decoders agree |
 
 Alexis also ran App Snapshots with both changes against four iOS 26 images, from iOS 26.2.1 to 26.5.2, and an iOS 18.7 image, whose snapshots stayed unchanged.
 
-About those flat images: after the fix, 193 of the iOS 27.2 snapshots are still a single colour, and now both decoders agree. Comparing them after the pieces were put back in order is what shows they really are plain launch and placeholder screens.
+About the plain images: 193 of the 324 iOS 27.2 snapshots are a single colour, and they come out pixel for pixel identical before and after the fix. So iLEAPP showed them correctly all along; they are plain launch and placeholder screens. The 131 with real content are the ones the fix corrects.
 
 Widget snapshots and the Messages preview cache use the same reader. All the widget snapshots we checked, including the iOS 27.2 ones, were stored in rows, so the widget artifact was not affected on those devices. We had no tiled Messages previews to test.
 
 ## What examiners should know
 
-- **Re-run reports made before the fix if their snapshots look streaky or flat.** Tiled snapshots did not decode correctly in older iLEAPP builds. Snapshots stored in rows were always fine. A build that includes both changes above puts tiled App Snapshots back together, for both zig-zags.
+- **Re-run reports made before the fix if their snapshots look streaky.** Tiled snapshots did not decode correctly in older iLEAPP builds. Snapshots stored in rows were always fine. A build that includes both changes above puts tiled App Snapshots back together, for both zig-zags.
 - **A re-run that still looks scrambled is not a corrected image.** The `@2x` rule comes from a single device, so a 2x snapshot that still looks wrong may be a limit of the decoder, not what the file holds. The same goes for the cases listed under "What we have not tested".
-- **A plain image is not proof either way.** In older reports, a flat snapshot may be a failed decode. Only after the fix, on a file like the ones tested, does a flat snapshot mean the screen really was plain.
+- **Plain snapshots were not the problem.** In the files we tested, every snapshot that came out as a single colour before the fix came out exactly the same after it, because a picture of one colour looks the same whatever order its pieces are in. The failures showed up as streaks. That is what we measured on these files, not a guarantee for every device.
 - **The rows, paths and dates were never affected.** Only the pictures were.
 - **A snapshot shows a screen iOS saved, nothing more.** Apps can hide or replace their content before the snapshot is taken, so a snapshot does not by itself show that someone viewed what is in it.
 
@@ -118,7 +118,7 @@ Despite the `.ktx` extension, these files are not Khronos KTX. They start with `
 **Is a file tiled?** `untile_astc_4x4` decides from the block count:
 
 1. Work out the blocks the image needs, rounding each side up to whole 4-pixel blocks (293 x 633 for 1170x2532), and the padded count, rounding those up to whole 32-block tiles (320 x 640).
-2. Fewer blocks than the image needs: the file is incomplete, which is a separate problem from the layout. It is passed on as it is, and the decoder still produces a picture from it with no error, so part of that picture will be missing or wrong. A truncated tiled file that still holds more blocks than the image needs falls into step 3 and comes out scrambled. Neither case is flagged in the report yet; that is tracked in [abrignoni/iLEAPP#2894](https://github.com/abrignoni/iLEAPP/issues/2894).
+2. Fewer blocks than the image needs: the file is incomplete, which is a separate problem from the layout. It is passed on as it is, and the decoder still produces a picture from it with no error, so part of that picture will be missing or wrong. A truncated tiled file that holds more blocks than the image needs but fewer than the full tiled count falls into step 3: it is passed through as rows without its layout being confirmed, and comes out scrambled. One that loses only its final extra block still reaches the full count and is put back in order correctly. Neither case is flagged in the report yet; that is tracked in [abrignoni/iLEAPP#2894](https://github.com/abrignoni/iLEAPP/issues/2894).
 3. Fewer blocks than the padded count: the older row layout. Passed on as it is.
 4. Exactly the blocks the image needs, when that also equals the padded count (the image is already a whole number of tiles): the count cannot tell the layouts apart. Passed on as it is unless `HEAD` word 12, the 13th 32-bit word, is 1. That word was 1 in every tiled file and 0 in every older file we compared, but its meaning is not known. No real snapshot we have needed this step.
 5. Anything else is tiled: each block is copied from tile `(y // 32) * tiles_across + (x // 32)`, at the Morton position of `(x % 32, y % 32)` inside it.
