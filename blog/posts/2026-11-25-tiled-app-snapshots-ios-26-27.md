@@ -37,6 +37,8 @@ The new files store the pieces in **tiles** instead. The image is first divided 
 
 ![Row-by-row order compared with Morton order](/blog/images/2026-11-25-tiled-app-snapshots-ios-26-27/block-order.svg)
 
+In words, counting pieces as (across, down) from the top-left corner: row by row, the first pieces stored are (0,0), (1,0), (2,0) and (3,0), and only then (0,1) at the start of the second row. Inside a tile they go (0,0), (1,0), (0,1), (1,1), and then (2,0), (3,0), (2,1), (3,1): two across, two below, then on to the next square of four.
+
 Graphics chips like this layout because pieces that are close together on screen are close together in memory. It is a common way to store textures, but we have not seen Apple document it for these files. Everything here was worked out from the files themselves.
 
 Hand the decoder a tiled file while it expects rows, and it lays every piece in the wrong place. That is where the streaks came from. A snapshot that is one colour all over is the exception: every piece looks the same, so putting them in the wrong place changes nothing, and it still comes out right.
@@ -118,7 +120,7 @@ Despite the `.ktx` extension, these files are not Khronos KTX. They start with `
 **Is a file tiled?** `untile_astc_4x4` decides from the block count:
 
 1. Work out the blocks the image needs, rounding each side up to whole 4-pixel blocks (293 x 633 for 1170x2532), and the padded count, rounding those up to whole 32-block tiles (320 x 640).
-2. Fewer blocks than the image needs: the file is incomplete, which is a separate problem from the layout. It is passed on as it is, and the decoder still produces a picture from it with no error, so part of that picture will be missing or wrong. A truncated tiled file that holds more blocks than the image needs but fewer than the full tiled count falls into step 3: it is passed through as rows without its layout being confirmed, and comes out scrambled. One that loses only its final extra block still reaches the full count and is put back in order correctly. Neither case is flagged in the report yet; that is tracked in [abrignoni/iLEAPP#2894](https://github.com/abrignoni/iLEAPP/issues/2894).
+2. Fewer blocks than the image needs: the file is incomplete, which is a separate problem from the layout. It is passed on as it is, and the decoder still produces a picture from it with no error, so part of that picture will be missing or wrong. A truncated tiled file that holds at least as many blocks as the image needs but fewer than the full tiled count falls into step 3: it is passed through as rows without its layout being confirmed, and comes out scrambled. One that loses only its final extra block still reaches the full count and is put back in order correctly. Neither case is flagged in the report yet; that is tracked in [abrignoni/iLEAPP#2894](https://github.com/abrignoni/iLEAPP/issues/2894).
 3. Fewer blocks than the padded count: the older row layout. Passed on as it is.
 4. Exactly the blocks the image needs, when that also equals the padded count (the image is already a whole number of tiles): the count cannot tell the layouts apart. Passed on as it is unless `HEAD` word 12, the 13th 32-bit word, is 1. That word was 1 in every tiled file and 0 in every older file we compared, but its meaning is not known. No real snapshot we have needed this step.
 5. Anything else is tiled: each block is copied from tile `(y // 32) * tiles_across + (x // 32)`, at the Morton position of `(x % 32, y % 32)` inside it.
