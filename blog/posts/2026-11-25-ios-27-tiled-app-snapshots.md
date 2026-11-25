@@ -3,7 +3,7 @@ title: iOS 27 App Snapshots and the Tiled KTX Layout
 date: 2026-11-25
 author: charpy4n6
 tags: [iLEAPP, iOS, images, artifacts, snapshots, research]
-excerpt: On an iOS 27 extraction every App Snapshot in iLEAPP came out as streaks or a flat colour. The container had not changed; the order of the image blocks inside it had. Here is what changed and how iLEAPP now reads both layouts.
+excerpt: On an iOS 27 extraction every App Snapshot in iLEAPP came out as streaks or a flat colour. The image data was now stored uncompressed, and its blocks were in a different order. Here is what changed and how iLEAPP now reads both layouts.
 ---
 
 # iOS 27 App Snapshots and the Tiled KTX Layout
@@ -43,7 +43,17 @@ The texture data is ASTC with 4x4-pixel blocks (`glInternalFormat` 0x93B0). Ever
 
 The decoder assumes the blocks are in **raster order**: the first row of blocks left to right, then the second row, and so on. That was true of every snapshot we had looked at before.
 
-On iOS 27.2 the chunk list, the format value and the image sizes are all the same as on iOS 17. Comparing the files side by side, the container looks identical. That is why the reader accepted them without an error.
+Comparing an iOS 27.2 snapshot with the iOS 17 ones, the magic, the `HEAD` layout, the format value and the image sizes are all the same. The chunk list is not:
+
+| | iOS 17 (compared) | iOS 27.2 |
+| --- | --- | --- |
+| chunks | `HEAD`, `FILL`, `LZFS`, `END ` | `HEAD`, `FILL`, `astc`, `END ` |
+| texture data | LZFSE-compressed | uncompressed |
+| `FILL` size | 136 bytes | 16,264 bytes |
+| texture data starts at | 0x100 | 0x4000 |
+| typical file size | a few KB | about 3.2 MB |
+
+None of that broke anything. iLEAPP's reader already accepted both an `LZFS` and an uncompressed `astc` chunk, so it read the iOS 27.2 files without an error, decompressed nothing, and passed the blocks to the decoder. What it could not know was that the blocks were in a new order.
 
 ## What changed: the blocks are tiled
 
