@@ -1,18 +1,12 @@
 {
-  "generated": "2026-11-24",
+  "generated": "2026-11-25",
   "window_days": 45,
   "items": [
     {
-      "name": "chromeShortcuts",
-      "query": "chromeShortcuts",
+      "name": "googleKeep",
+      "query": "googleKeep",
       "tool": "iLEAPP",
-      "date": "2026-11-22"
-    },
-    {
-      "name": "whatsAppStatus",
-      "query": "whatsAppStatus",
-      "tool": "ALEAPP",
-      "date": "2026-11-22"
+      "date": "2026-11-25"
     },
     {
       "name": "exodusWallet",
@@ -33,16 +27,10 @@
       "date": "2026-10-30"
     },
     {
-      "name": "whatsAppMessageReceipts",
-      "query": "whatsAppMessageReceipts",
+      "name": "snapchatFriending",
+      "query": "snapchatFriending",
       "tool": "iLEAPP",
-      "date": "2026-11-22"
-    },
-    {
-      "name": "whatsAppBusinessTools",
-      "query": "whatsAppBusinessTools",
-      "tool": "ALEAPP",
-      "date": "2026-11-22"
+      "date": "2026-11-25"
     },
     {
       "name": "windowsDefenderHistoryStore",
@@ -57,10 +45,10 @@
       "date": "2026-11-14"
     },
     {
-      "name": "knowledgeCAppStreams",
-      "query": "knowledgeCAppStreams",
+      "name": "tikTokPlayedVideos",
+      "query": "tikTokPlayedVideos",
       "tool": "iLEAPP",
-      "date": "2026-11-21"
+      "date": "2026-11-25"
     },
     {
       "name": "pidginOtr",
@@ -73,6 +61,18 @@
       "query": "grokReturns",
       "tool": "RLEAPP",
       "date": "2026-10-27"
+    },
+    {
+      "name": "googleMapsRecentSearches",
+      "query": "googleMapsRecentSearches",
+      "tool": "iLEAPP",
+      "date": "2026-11-24"
+    },
+    {
+      "name": "utorrent",
+      "query": "utorrent",
+      "tool": "DLEAPP",
+      "date": "2026-11-22"
     }
   ]
 }
