@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+  <rect width="760" height="360" fill="#ffffff"/>
+  <text x="190" y="30" text-anchor="middle" font-size="18" font-weight="600" fill="#1f2937">Older files: row by row</text>
+  <text x="570" y="30" text-anchor="middle" font-size="18" font-weight="600" fill="#1f2937">Tiled files: Morton order in a tile</text>
+  <g id="raster" transform="translate(70,50)">
+    <g font-size="15" text-anchor="middle" fill="#1f2937">
+      <rect x="0" y="0" width="240" height="240" fill="#eef2ff" stroke="#6366f1"/>
+      <g stroke="#c7d2fe"><line x1="60" y1="0" x2="60" y2="240"/><line x1="120" y1="0" x2="120" y2="240"/><line x1="180" y1="0" x2="180" y2="240"/><line x1="0" y1="60" x2="240" y2="60"/><line x1="0" y1="120" x2="240" y2="120"/><line x1="0" y1="180" x2="240" y2="180"/></g>
+      <text x="30" y="36">0</text><text x="90" y="36">1</text><text x="150" y="36">2</text><text x="210" y="36">3</text>
+      <text x="30" y="96">4</text><text x="90" y="96">5</text><text x="150" y="96">6</text><text x="210" y="96">7</text>
+      <text x="30" y="156">8</text><text x="90" y="156">9</text><text x="150" y="156">10</text><text x="210" y="156">11</text>
+      <text x="30" y="216">12</text><text x="90" y="216">13</text><text x="150" y="216">14</text><text x="210" y="216">15</text>
+    </g>
+    <polyline points="30,24 210,24 30,84 210,84 30,144 210,144 30,204 210,204" fill="none" stroke="#6366f1" stroke-width="2" opacity="0.45"/>
+  </g>
+  <g id="morton" transform="translate(450,50)">
+    <g font-size="15" text-anchor="middle" fill="#1f2937">
+      <rect x="0" y="0" width="240" height="240" fill="#ecfdf5" stroke="#10b981"/>
+      <g stroke="#a7f3d0"><line x1="60" y1="0" x2="60" y2="240"/><line x1="180" y1="0" x2="180" y2="240"/><line x1="0" y1="60" x2="240" y2="60"/><line x1="0" y1="180" x2="240" y2="180"/></g>
+      <g stroke="#10b981" stroke-width="2"><line x1="120" y1="0" x2="120" y2="240"/><line x1="0" y1="120" x2="240" y2="120"/></g>
+      <text x="30" y="36">0</text><text x="90" y="36">1</text><text x="150" y="36">4</text><text x="210" y="36">5</text>
+      <text x="30" y="96">2</text><text x="90" y="96">3</text><text x="150" y="96">6</text><text x="210" y="96">7</text>
+      <text x="30" y="156">8</text><text x="90" y="156">9</text><text x="150" y="156">12</text><text x="210" y="156">13</text>
+      <text x="30" y="216">10</text><text x="90" y="216">11</text><text x="150" y="216">14</text><text x="210" y="216">15</text>
+    </g>
+    <polyline points="30,24 90,24 30,84 90,84 150,24 210,24 150,84 210,84 30,144 90,144 30,204 90,204 150,144 210,144 150,204 210,204" fill="none" stroke="#10b981" stroke-width="2" opacity="0.45"/>
+  </g>
+  <text x="380" y="325" text-anchor="middle" font-size="14" fill="#4b5563">Each square is one 4x4-pixel piece; the number is the order it is stored in.</text>
+  <text x="380" y="347" text-anchor="middle" font-size="14" fill="#4b5563">Left: a whole image 4 pieces wide. Right: one corner of a tile, which is really 32x32 pieces.</text>
+</svg>
