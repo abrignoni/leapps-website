@@ -19,7 +19,7 @@ The extraction was a full file system extraction of an iPhone on iOS 27.2. iLEAP
 - **131** came out as horizontal streaks of colour, with nothing recognisable in them;
 - the other **193** came out as a single plain colour, mostly white or black.
 
-At first it looked as if all 324 had failed, the plain ones included. They had not. As it turned out, the 193 plain ones really are plain launch and placeholder screens, and iLEAPP was showing them correctly all along (more on how we know under Results). The 131 streaky ones, the snapshots with real content, are the ones that were broken, and nothing in the report said so.
+At first it looked as if all 324 had failed, the plain ones included. They had not. As it turned out, the 193 plain ones really are a single colour, and iLEAPP was showing them correctly all along (more on how we know under Results). The 131 streaky ones, the snapshots with real content, are the ones that were broken, and nothing in the report said so.
 
 When Alexis Brignoni later tested the fix described below against his own collection of test images, the same problem turned up on iPhone 14 and iPhone 15 Pro images on **iOS 26.3 and 26.5**. iOS 18 images were fine. So this is not an iOS 27 change, and the iOS version alone does not tell you which kind of file you have. The numbers in this post come from the iOS 27.2 extraction the work started on.
 
@@ -27,7 +27,7 @@ When Alexis Brignoni later tested the fix described below against his own collec
 
 Two things changed inside the snapshot files.
 
-**The image is no longer compressed.** Older snapshots were squeezed down to a few kilobytes. The new ones are stored uncompressed, at about 3.2 MB each. That on its own did no harm: iLEAPP already knew how to read both kinds.
+**The extra compression layer is gone.** Older snapshots wrapped the image in a second layer of compression (LZFSE) that squeezed it down to a few kilobytes. The new ones drop that layer and are about 3.2 MB each. The image itself is still stored in the same compressed texture format (ASTC) as before, so the bytes are not raw pixels. That on its own did no harm: iLEAPP already knew how to read both kinds.
 
 **The pieces of the image are stored in a different order.** This is what broke the pictures.
 
@@ -37,7 +37,7 @@ The new files store the pieces in **tiles** instead. The image is first divided 
 
 ![Row-by-row order compared with Morton order](/blog/images/2026-11-25-tiled-app-snapshots-ios-26-27/block-order.svg)
 
-In words, counting pieces as (across, down) from the top-left corner: row by row, the first pieces stored are (0,0), (1,0), (2,0) and (3,0), and only then (0,1) at the start of the second row. Inside a tile they go (0,0), (1,0), (0,1), (1,1), and then (2,0), (3,0), (2,1), (3,1): two across, two below, then on to the next square of four.
+In words, counting pieces as (across, down) from the top-left corner: row by row, in the four-piece-wide image on the left of the diagram, the first pieces stored are (0,0), (1,0), (2,0) and (3,0), and only then (0,1) at the start of the second row. In a real 1170-pixel-wide snapshot the first row is 293 pieces long, so (0,1) comes only after all of them. Inside a tile they go (0,0), (1,0), (0,1), (1,1), and then (2,0), (3,0), (2,1), (3,1): two across, two below, then on to the next square of four.
 
 Graphics chips like this layout because pieces that are close together on screen are close together in memory. It is a common way to store textures, but we have not seen Apple document it for these files. Everything here was worked out from the files themselves.
 
@@ -45,7 +45,7 @@ Hand the decoder a tiled file while it expects rows, and it lays every piece in 
 
 ## How the change was spotted
 
-**There were too many pieces.** A 1170x2532 snapshot needs 185,469 pieces. The iOS 27.2 files held 204,801. Rounding the picture up to whole tiles explains it exactly, plus one extra piece at the end. Older files always held exactly as many pieces as the picture needs.
+**There were too many pieces.** A 1170x2532 snapshot needs 185,469 pieces. The iOS 27.2 files held 204,801. Rounding the picture up to whole tiles explains it exactly, plus one extra piece at the end. The older files we compared held exactly as many pieces as the picture needs.
 
 **A second decoder complained.** Running the same files through an independent decoder, [texture2ddecoder](https://github.com/K0lb3/texture2ddecoder), put error marks into many of the pictures, including ones iLEAPP showed as plain colour. That was a sign the pieces were not in the order either decoder expected. It did not mean the plain-looking snapshots were hiding anything: once the pieces were back in order, they were still plain, pixel for pixel the same as before.
 
@@ -82,7 +82,7 @@ Every snapshot was decoded twice, once by iLEAPP and once by the independent dec
 
 Alexis also ran App Snapshots with both changes against four iOS 26 images, from iOS 26.2.1 to 26.5.2, and an iOS 18.7 image, whose snapshots stayed unchanged.
 
-About the plain images: 193 of the 324 iOS 27.2 snapshots are a single colour, and they come out pixel for pixel identical before and after the fix. So iLEAPP showed them correctly all along; they are plain launch and placeholder screens. The 131 with real content are the ones the fix corrects.
+About the plain images: 193 of the 324 iOS 27.2 snapshots are a single colour, and they come out pixel for pixel identical before and after the fix. So iLEAPP showed them correctly all along. They may be launch or placeholder screens, but the files do not say what put them on screen; all we measured is that they are one colour. The 131 with real content are the ones the fix corrects.
 
 Widget snapshots and the Messages preview cache use the same reader. All the widget snapshots we checked, including the iOS 27.2 ones, were stored in rows, so the widget artifact was not affected on those devices. We had no tiled Messages previews to test.
 
@@ -111,7 +111,7 @@ Despite the `.ktx` extension, these files are not Khronos KTX. They start with `
 | | older (iOS 17 compared) | tiled (iOS 27.2) |
 | --- | --- | --- |
 | chunks | `HEAD`, `FILL`, `LZFS`, `END ` | `HEAD`, `FILL`, `astc`, `END ` |
-| texture data | LZFSE-compressed | uncompressed |
+| texture data | ASTC blocks inside LZFSE | ASTC blocks, no LZFSE |
 | data starts at | 0x100 | 0x4000 |
 | blocks | one per 4x4 pixels | rounded up to whole 32x32-block tiles, plus one |
 
