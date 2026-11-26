@@ -1,5 +1,22 @@
 [
   {
+    "slug": "2026-11-26-find-my-searchpartyd-in-ileapp",
+    "title": "Find My in iLEAPP, building on Josh Hickman's Lost Apples",
+    "date": "2026-11-26",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "iLEAPP",
+      "iOS",
+      "Find My",
+      "searchpartyd",
+      "AirTag",
+      "Lost Apples",
+      "DFIR",
+      "open source"
+    ],
+    "excerpt": "Josh Hickman worked out how the encrypted Find My files in searchpartyd fit together. We checked the findings we could test against nine extractions, and they held. iLEAPP now reads those stores too, with a few more artifacts, the write-ahead log read state by state, and the daily addresses each item broadcasts."
+  },
+  {
     "slug": "2026-11-25-tiled-app-snapshots-ios-26-27",
     "title": "Tiled App Snapshots in iOS 26 and 27",
     "date": "2026-11-25",
