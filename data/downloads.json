@@ -2302,14 +2302,14 @@
     {
       "date": "2026-11-26",
       "totals": {
-        "ileapp": 107332,
-        "aleapp": 84025,
-        "rleapp": 7664,
-        "vleapp": 4183,
-        "lava": 6338,
-        "dleapp": 3099,
-        "gleapp": 1895,
-        "batchleapp": 1080
+        "ileapp": 107422,
+        "aleapp": 84161,
+        "rleapp": 7675,
+        "vleapp": 4193,
+        "lava": 6358,
+        "dleapp": 3113,
+        "gleapp": 1906,
+        "batchleapp": 1088
       },
       "probes": {
         "qnxprobe": 1232,
