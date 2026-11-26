@@ -126,8 +126,9 @@ Despite the `.ktx` extension, these files are not Khronos KTX. They start with `
 1. Work out the blocks the image needs, rounding each side up to whole 4-pixel blocks (293 x 633 for 1170x2532), and the padded count, rounding those up to whole 32-block tiles (320 x 640).
 2. Exactly the blocks the image needs, when that is fewer than the padded count: the older row layout. Passed on as it is. When the two counts are equal, step 4 decides instead.
 3. Exactly the padded count plus one block: tiled.
-4. When the image is already a whole number of tiles, the padded count equals the blocks the image needs. A file holding exactly that many blocks could be either layout, and the count cannot tell them apart. Then `HEAD` word 12, the 13th 32-bit word, decides: 1 means tiled, anything else means rows. That word was 1 in every tiled file and 0 in every older file we compared, but its meaning is not known. A file holding exactly the padded count with word 12 set to 1 is also read as tiled. No real snapshot we have needed this step.
-5. Any other size, or a size that is not a whole number of 16-byte blocks, is refused. Every one of 10,628 snapshot files in 24 images, iOS 15 to 27, had the size in step 2 or step 3.
+4. When the image is already a whole number of tiles, the padded count equals the blocks the image needs. A file holding exactly that many blocks could be either layout, and the count cannot tell them apart. Then `HEAD` word 12, the 13th 32-bit word, decides: 1 means tiled, anything else means rows. That word was 1 in every tiled file and 0 in every older file we compared, but its meaning is not known. No real snapshot we have needed this step.
+5. Exactly the padded count, with word 12 set to 1, whatever the image size: tiled. No real snapshot we have had this size.
+6. Any other size, or a size that is not a whole number of 16-byte blocks, is refused. Every one of 10,628 snapshot files in 24 images, iOS 15 to 27, had the size in step 2 or step 3.
 
 A tiled file is put back in order by copying each block from tile `(y // 32) * tiles_across + (x // 32)`, at the Morton position of `(x % 32, y % 32)` inside it.
 
