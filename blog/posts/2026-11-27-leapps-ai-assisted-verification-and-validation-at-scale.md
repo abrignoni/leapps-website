@@ -85,7 +85,7 @@ Each registry entry holds a key, the file and its SHA-256, the platform and vers
 
 On an emulator or test phone with test accounts, I do the actions while the Known-data logger app (`abrignoni/known-data-logger`) records taps, typed text and screens, each with its time, in a hash-chained log. Then I extract the app folder, register it as a new key, run the artifact and compare each logged action with the report. In ALEAPP #2124, on one capture of Private Photo Vault 7.6.2 (`emu_a16_ppv_known_20261126`), favouriting a photo set its favourite date and left its favourite flag at 0, so the Favourite column was blank until the fix. That result is stated for that capture and that version, not as a rule for the app.
 
-> **For examiners.** The line is the action log, not the image. A notes sentence that says doing something set a value has to trace back to a logged action on a named capture, and it holds only as far as that log goes: two actions with no capture between them do not say which one set a value. Notes about an image with no log say what is present and on which image, never what the user did. An absence on such an image is not a negative finding either.
+> **For examiners.** The line is the action log, not the image. A notes sentence that says doing something set a value has to trace back to a logged action on a named capture, and it holds only as far as that log goes: two actions with no capture between them do not say which one set a value. Notes about an image with no log say what is present and on which image, never what the user did. An empty field on such an image is a measured result for that image, but it does not show that the action never happened.
 
 ## 3. Checks on every PR
 
