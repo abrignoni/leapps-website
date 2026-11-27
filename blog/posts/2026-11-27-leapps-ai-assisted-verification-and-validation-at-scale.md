@@ -192,15 +192,15 @@ Each of the five cores has an `audit-queue` label. (GLEAPP is left out on purpos
 
 ![The board's Queue view](/blog/images/2026-11-27-leapps-ai-assisted-verification-and-validation-at-scale/11-board-queue.webp)
 
-*Figure 11. The Queue view.*
+*Figure 10. The Queue view.*
 
 ![The board's All items view](/blog/images/2026-11-27-leapps-ai-assisted-verification-and-validation-at-scale/12-board-all-items.webp)
 
-*Figure 12. The All items view, with the Layer and Kind fields. Cropped to the first nine rows.*
+*Figure 11. The All items view, with the Layer and Kind fields. Cropped to the first nine rows.*
 
 ![The Insights chart](/blog/images/2026-11-27-leapps-ai-assisted-verification-and-validation-at-scale/13-board-chart.webp)
 
-*Figure 13. Open items by layer and kind.*
+*Figure 12. Open items by layer and kind.*
 
 > **For examiners.** The board is private, but the issues are not. The `audit-queue` label in each repo shows the public part of what is known to be missing from an artifact. Items that point at private corpus material are kept off GitHub.
 
@@ -208,7 +208,7 @@ Each of the five cores has an `audit-queue` label. (GLEAPP is left out on purpos
 
 ![Person and automation, side by side](/blog/images/2026-11-27-leapps-ai-assisted-verification-and-validation-at-scale/10-swimlane.webp)
 
-*Figure 10. The two lanes.*
+*Figure 13. The two lanes.*
 
 | Step | Who or what | Can it block a merge? |
 |---|---|---|
