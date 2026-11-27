@@ -823,7 +823,7 @@ img { max-width: 100%; display: block; }
           // or keyboard users cannot reach the columns off screen.
           box.tabIndex = 0;
           box.setAttribute('role', 'region');
-          box.setAttribute('aria-label', 'Table');
+          if (!box.hasAttribute('aria-label')) box.setAttribute('aria-label', 'Table');
         });
 
         // Analytics — delegate clicks for share / related / prev-next
