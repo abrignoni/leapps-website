@@ -77,7 +77,7 @@ Much of that corpus starts with public images: CTF challenges, published test im
 
 Each registry entry holds a key, the file and its SHA-256, the platform and versions, and four privacy fields: whether the content is private, whether it may become a test fixture, whether the key and row counts may be named in public, and who decided that. A key and a count can be public while the content never is, and `validate_sample_data.py` refuses a cited key whose public metadata is not allowed.
 
-**Known data** has a narrow meaning here: a capture I made for the test, where each action was written down with its time as I did it, before the extraction. An image without that record, which is most public images, is observed data. It shows what is present, not what the user did to produce it. **Known-data rounds** answer "does the artifact report what the log says was done?" I run them by hand.
+**Known data** has a narrow meaning here: data whose making was recorded at the time. For the filesystem images that record is the manifest. For a device or app capture it is an action log, where each action was written down with its time as I did it, before the extraction. An image without such a record, which is most public images, is observed data. It shows what is present, not what the user did to produce it. **Known-data rounds** answer "does the artifact report what the log says was done?" I run them by hand.
 
 ![A known-data round](/blog/images/2026-11-27-leapps-ai-assisted-verification-and-validation-at-scale/03-known-data.webp)
 
