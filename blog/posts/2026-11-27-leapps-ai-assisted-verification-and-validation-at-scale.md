@@ -53,7 +53,7 @@ Artifact work follows a skill: a written procedure, `leapp-new-artifact`, that a
 
 **Record what you measured.** Each artifact's `sample_data` lists the corpus images it was run on and the rows each gave. `validate_sample_data.py --emit` produces those lines from a finished run and flags every zero for a person to confirm. Before the PR, re-derive every number in the text from that run, label each claim as proven, sourced or untested, and say what the module does not do.
 
-> **For examiners.** The `sample_data` lines tell you which images an artifact was run against and how many rows each gave. A notes sentence that names a column and says it was empty is a measured result.
+> **For examiners.** The `sample_data` lines tell you which images an artifact was run against and how many rows each gave. A notes sentence that names a column and says it was empty is a measured result on the images it names.
 
 ## 2. The corpus and known data
 
@@ -71,21 +71,21 @@ As of 27 November 2026 the registries list 686 corpus keys:
 | IoT | 10 | IP cameras 4, smart TVs 2, smart display, smart plug, video doorbell, Wi-Fi chime |
 | Drones | 2 | 1 aircraft, 1 iOS controller |
 
-The filesystem known-data keys are small disk images built with known content to test the filesystem readers. The rest are device extractions and desktop images.
+The filesystem known-data keys are small disk images built to test the filesystem readers, each with a manifest of what was written into it when it was made. The rest are device extractions and desktop images, and most of those have no record of what was done on the device.
 
 Much of that corpus starts with public images: CTF challenges, published test images and other evidence files the community has shared. Kevin Pagano gathers those in one place, with their hashes and passwords, in [The Evidence Locker](https://theevidencelocker.github.io/). If you are building a test set for your own tool, start there.
 
 Each registry entry holds a key, the file and its SHA-256, the platform and versions, and four privacy fields: whether the content is private, whether it may become a test fixture, whether the key and row counts may be named in public, and who decided that. A key and a count can be public while the content never is, and `validate_sample_data.py` refuses a cited key whose public metadata is not allowed.
 
-**Known-data rounds** answer "does the artifact report what actually happened?" I run them by hand.
+**Known data** has a narrow meaning here: data whose making was recorded at the time. For the filesystem images that record is the manifest. For a device or app capture it is an action log, where each action was written down with its time as I did it, before the extraction. An image without such a record, which is most public images, is observed data. It shows what is present, not what the user did to produce it. **Known-data rounds** answer "does the artifact report what the log says was done?" I run them by hand.
 
 ![A known-data round](/blog/images/2026-11-27-leapps-ai-assisted-verification-and-validation-at-scale/03-known-data.webp)
 
 *Figure 3. A known-data round, from the question to a new `sample_data` line.*
 
-On an emulator or test phone with test accounts, I do the actions while the Known-data logger app (`abrignoni/known-data-logger`) records taps, typed text and screens. Then I extract the app folder, register it as a new key, run the artifact and compare each logged action with the report. In ALEAPP #2124, a round showed a photo vault app recording favourites only by date, so the Favourite column was blank until the fix.
+On an emulator or test phone with test accounts, I do the actions while the Known-data logger app (`abrignoni/known-data-logger`) records taps, typed text and screens, each with its time, in a hash-chained log. Then I extract the app folder, register it as a new key, run the artifact and compare each logged action with the report. In ALEAPP #2124, on one capture of Private Photo Vault 7.6.2 (`emu_a16_ppv_known_20261126`), favouriting a photo set its favourite date and left its favourite flag at 0, so the Favourite column was blank until the fix. That result is stated for that capture and that version, not as a rule for the app.
 
-> **For examiners.** When an artifact's notes cite a known-data capture, its rows were compared with a record of what was actually done on the device. A count from an ordinary image can only be compared with what the tool found.
+> **For examiners.** The line is the action log, not the image. A notes sentence that says doing something set a value has to trace back to a logged action on a named capture, and it holds only as far as that log goes: two actions with no capture between them do not say which one set a value. Notes about an image with no log say what is present and on which image, never what the user did. An empty field on such an image is a measured result for that image, but it does not show that the action never happened.
 
 ## 3. Checks on every PR
 
@@ -174,7 +174,7 @@ These four run beside the per-PR path. They follow four rules: nothing new block
 
 **Unread-column list.** `unread-columns/unread_columns.py` runs during the corpus run an artifact PR already gets. SQLite itself reports every column each statement reads, so no SQL is parsed. The tool then lists the columns of each store that nothing read, with counts only. The person working the PR decides what to do with each one (skip it with a reason, build it as stored, or ask me) and records one line per decision in the PR body.
 
-**Auditor spot-check.** `auditor-spot-check/spotcheck.py` checks the checker. About one module in ten, chosen by a hash so nobody can pick it, gets a copy with one false sentence planted in its notes. A fresh auditor reads the copy, and the result (caught or missed) goes into a ledger that becomes the auditor's catch rate. The first four plants were all caught, alongside one control run with nothing planted. That proves the loop works; four runs are not a rate yet.
+**Auditor spot-check.** `auditor-spot-check/spotcheck.py` checks the checker. About one module in ten, chosen by a hash so nobody can pick it, gets a copy with one false sentence planted in its notes. A fresh auditor reads the copy, and the result (caught or missed) goes into a ledger that becomes the auditor's catch rate. The first four plants were all caught, alongside one control run with nothing planted. That shows the loop runs end to end; four runs are not a rate yet.
 
 **Schema watch.** `schema-watch/schema_watch.py` runs every morning. For each new corpus key it lists the table, column and preference names of the app stores an artifact reads, compares them with the keys that artifact cites in `sample_data`, and files an issue when a store gains a name or loses one the module's code uses. Its first ALEAPP run found three changed modules on one new emulator key.
 
