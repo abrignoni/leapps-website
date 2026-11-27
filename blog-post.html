@@ -808,19 +808,22 @@ img { max-width: 100%; display: block; }
 
         // A table grows to fit its widest cell, so on a phone a long code name
         // widened the whole page. Each table scrolls inside its own box instead.
-        // Tables a post already wraps in a scrolling div are left alone.
+        // A table a post already wraps in its own scrolling div keeps that div
+        // as its box rather than getting a second one.
         document.querySelectorAll('.post-body table').forEach(table => {
           const parent = table.parentElement;
-          if (parent && getComputedStyle(parent).overflowX === 'auto') return;
-          const wrap = document.createElement('div');
-          wrap.className = 'post-table-scroll';
+          let box = parent;
+          if (!parent || getComputedStyle(parent).overflowX !== 'auto') {
+            box = document.createElement('div');
+            table.before(box);
+            box.appendChild(table);
+          }
+          box.classList.add('post-table-scroll');
           // A scroll box with nothing focusable inside needs its own tab stop,
           // or keyboard users cannot reach the columns off screen.
-          wrap.tabIndex = 0;
-          wrap.setAttribute('role', 'region');
-          wrap.setAttribute('aria-label', 'Table');
-          table.before(wrap);
-          wrap.appendChild(table);
+          box.tabIndex = 0;
+          box.setAttribute('role', 'region');
+          box.setAttribute('aria-label', 'Table');
         });
 
         // Analytics — delegate clicks for share / related / prev-next
