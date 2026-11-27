@@ -184,6 +184,15 @@ img { max-width: 100%; display: block; }
       margin-bottom: 1.5rem;
       font-size: .9rem;
     }
+.post-table-scroll {
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+    }
+.post-table-scroll > table { margin-bottom: 0; }
+/* A long path or name in inline code breaks onto the next line rather than
+   widening the page. Inside a table it stays whole; the table scrolls. */
+.post-body :not(pre) > code { overflow-wrap: anywhere; }
+.post-body .post-table-scroll code { overflow-wrap: normal; }
 .post-body th,
     .post-body td {
       border: 1px solid var(--border);
@@ -794,6 +803,18 @@ img { max-width: 100%; display: block; }
             if (window.gtag) window.gtag('event', 'code_copy', { post: slug, link_text: text.slice(0, 100) });
           });
           pre.appendChild(btn);
+        });
+
+        // A table grows to fit its widest cell, so on a phone a long code name
+        // widened the whole page. Each table scrolls inside its own box instead.
+        // Tables a post already wraps in a scrolling div are left alone.
+        document.querySelectorAll('.post-body table').forEach(table => {
+          const parent = table.parentElement;
+          if (parent && getComputedStyle(parent).overflowX === 'auto') return;
+          const wrap = document.createElement('div');
+          wrap.className = 'post-table-scroll';
+          table.before(wrap);
+          wrap.appendChild(table);
         });
 
         // Analytics — delegate clicks for share / related / prev-next
