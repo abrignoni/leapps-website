@@ -1,5 +1,21 @@
 [
   {
+    "slug": "2026-11-27-leapps-ai-assisted-verification-and-validation-at-scale",
+    "title": "LEAPPs: AI-assisted verification & validation at scale",
+    "date": "2026-11-27",
+    "author": "Alexis Brignoni",
+    "tags": [
+      "LEAPPs",
+      "verification",
+      "validation",
+      "AI",
+      "leapp-quality-kit",
+      "DFIR",
+      "open source"
+    ],
+    "excerpt": "Every artifact in the LEAPPs ends up in someone's report. So I have built a set of checks around artifact work. This post follows a piece of work through all of them, so you can copy what helps your own tool."
+  },
+  {
     "slug": "2026-11-26-find-my-searchpartyd-in-ileapp",
     "title": "Find My in iLEAPP, building on Josh Hickman's Lost Apples",
     "date": "2026-11-26",
