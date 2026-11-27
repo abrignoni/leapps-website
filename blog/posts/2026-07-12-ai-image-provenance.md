@@ -10,7 +10,7 @@ excerpt: iLEAPP and ALEAPP can now flag AI generated images by reading content p
 
 **Short version:**
 
-- [iLEAPP](https://leapps.org/releases#section-ileapp) and [ALEAPP](https://leapps.org/releases#section-aleapp) can now read content provenance from images and flag AI generated media.
+- [iLEAPP](https://github.com/abrignoni/iLEAPP) and [ALEAPP](https://github.com/abrignoni/ALEAPP) can now read content provenance from images and flag AI generated media.
 - It covers two sources: C2PA Content Credentials manifests and IPTC Digital Source Type in XMP.
 - Pure Python. No new dependencies. It runs on the images already in your extraction.
 - It is not in a packaged release yet. It is merged into the code, it will ship in the next release, and you can use it today if you run from the scripts.
