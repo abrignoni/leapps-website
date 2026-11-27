@@ -189,6 +189,7 @@ img { max-width: 100%; display: block; }
       margin-bottom: 1.5rem;
     }
 .post-table-scroll > table { margin-bottom: 0; }
+.post-table-scroll:focus-visible { outline: 2px solid var(--gold-text); outline-offset: 2px; }
 /* A long path or name in inline code breaks onto the next line rather than
    widening the page. Inside a table it stays whole; the table scrolls. */
 .post-body :not(pre) > code { overflow-wrap: anywhere; }
@@ -813,6 +814,11 @@ img { max-width: 100%; display: block; }
           if (parent && getComputedStyle(parent).overflowX === 'auto') return;
           const wrap = document.createElement('div');
           wrap.className = 'post-table-scroll';
+          // A scroll box with nothing focusable inside needs its own tab stop,
+          // or keyboard users cannot reach the columns off screen.
+          wrap.tabIndex = 0;
+          wrap.setAttribute('role', 'region');
+          wrap.setAttribute('aria-label', 'Table');
           table.before(wrap);
           wrap.appendChild(table);
         });
