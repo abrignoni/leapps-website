@@ -14,7 +14,7 @@ If you use a Mac for forensic work, you probably already have a small pile of to
 
 The LEAPPs tools now fit into that workflow too.
 
-There is an official Homebrew tap for the project at [leapps-org/homebrew-leapps](https://github.com/leapps-org/homebrew-leapps). Once the tap is added, macOS users can install the LEAPPs command line tools, the GUI apps, and LAVA with normal `brew` commands.
+There is an official Homebrew tap for the project at [leapps-org/homebrew-leapps](https://github.com/leapps-org/homebrew-leapps). Once the tap is added, macOS users can install the LEAPPs command line tools, the GUI apps, and [LAVA](https://leapps.org/releases#section-lava) with normal `brew` commands.
 
 One quick reality check before the commands: a lot of forensic workstations are intentionally kept offline. Homebrew is happiest on a machine that can reach the internet. If your lab machine is air-gapped, this may not be all that helpful, but maybe you have a research system or a connected staging machine that can benefit from this.
 

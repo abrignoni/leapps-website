@@ -18,7 +18,7 @@ Yesterday, during the Digital Forensics Now Podcast (S3E3), we highlighted the w
 
 During the show we discussed how Charlie noticed that recent iOS hardware and software versions now keep SQLite databases inside the Biome directory. Any examiner worth their salt knows there is nothing more exciting than a new data structure in a known operating system. Lots of relevant data might be living in there. Being the expert examiner that he is, Charlie promised an article explaining the artifacts and their relevance. A well-placed Happy Gilmore reference on the show motivated him to publish the very next day. Read his research here: [Ready, Sets, Go](https://northloopconsulting.com/blog/f/ready-sets-go).
 
-Earlier today I was doing app coverage research on iLEAPP (which apps get parsed versus which don't) using Batch LEAPP. Batch LEAPP was coded with Claude.
+Earlier today I was doing app coverage research on iLEAPP (which apps get parsed versus which don't) using [Batch LEAPP](https://leapps.org/releases#section-batch-leapp). Batch LEAPP was coded with Claude.
 
 What? Brigs using an LLM? Yes. From the beginning I have said these technologies will have a place in our workflows, as long as:
 

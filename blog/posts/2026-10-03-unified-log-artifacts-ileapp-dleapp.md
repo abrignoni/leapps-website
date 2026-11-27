@@ -34,7 +34,7 @@ All six read the unified log that iLEAPP already imports, from the tracev3 data 
 - **Biometric match results.** The kernel's match result entries for Face ID and Touch ID, plus the coreauthd no-match entry.
 - **Passcode field input.** The passcode text field becoming, and ceasing to be, the keyboard input target, with the process that showed it. That process separates the lock screen from a passcode prompt shown for another authentication.
 - **Hardware button presses.** Button events with the HID usage and how long the button was held, side button press counts, and the button combination recognizer's press type.
-- **Device orientation and pick-up.** Orientation changes and wake gesture notifications. High volume, so it goes to LAVA only.
+- **Device orientation and pick-up.** Orientation changes and wake gesture notifications. High volume, so it goes to [LAVA](https://leapps.org/releases#section-lava) only.
 - **System edge gestures.** Touches taken over by a system gesture, and the recognizers for the app switcher, Control Center and the Cover Sheet.
 - **USB host connections.** Entries that separate a cable to a computer from a cable to a power source.
 

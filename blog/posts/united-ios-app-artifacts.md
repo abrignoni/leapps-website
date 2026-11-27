@@ -26,7 +26,7 @@ In this case, the United customer app shows up under the bundle name:
 com.united.UnitedCustomerFacingIPhone
 ```
 
-That is easy enough to confirm in LAVA by filtering the iLEAPP installed apps output.
+That is easy enough to confirm in [LAVA](https://leapps.org/releases#section-lava) by filtering the iLEAPP installed apps output.
 
 ![LAVA installed apps output filtered to the United iOS app](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/united-ios-app-artifacts/lava-united-installed.png)
 *Figure 1: United app metadata in LAVA's installed apps output*

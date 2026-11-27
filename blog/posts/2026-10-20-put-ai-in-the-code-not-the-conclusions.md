@@ -112,7 +112,7 @@ It also saves money in the long run. Instead of burning tokens asking the same q
 
 ### 4. Use continuous integration (CI) rules to flag problems in the code and in any AI generated descriptions
 
-As I said before, AI is at its weakest with narrative text. AI likes strong words. It will say a record shows "the user viewed" a message, or that a table holds "all" the user's searches, when the data only shows that a row exists. So in iLEAPP, ALEAPP, RLEAPP, VLEAPP and DLEAPP, CI runs a check on every pull request (PR) that touches Python code. It reads the name, description and notes of every artifact and fails the build when it finds that kind of wording.
+As I said before, AI is at its weakest with narrative text. AI likes strong words. It will say a record shows "the user viewed" a message, or that a table holds "all" the user's searches, when the data only shows that a row exists. So in [iLEAPP](https://leapps.org/releases#section-ileapp), [ALEAPP](https://leapps.org/releases#section-aleapp), [RLEAPP](https://leapps.org/releases#section-rleapp), [VLEAPP](https://leapps.org/releases#section-vleapp) and [DLEAPP](https://leapps.org/releases#section-dleapp), CI runs a check on every pull request (PR) that touches Python code. It reads the name, description and notes of every artifact and fails the build when it finds that kind of wording.
 
 Here's an example. Say an AI drafts a note that a message was "viewed by user." CI flags it, the build goes red, and we don't merge the PR until someone either rewrites it to say what the data actually shows or adds it to an allowlist with a written reason.
 

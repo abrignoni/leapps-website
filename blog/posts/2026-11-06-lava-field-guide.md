@@ -10,7 +10,7 @@ excerpt: LAVA is the LEAPPs viewer. It opens the case that iLEAPP, ALEAPP and th
 
 The LEAPPs have always been good at getting artifacts out of an extraction. The problem was what came next. An HTML report is fine for a few hundred rows. It is useless for thirty million Unified Log records, or for a messaging database where you need to read one thread in order and then hand only part of it to a reviewer.
 
-That is the job LAVA does. The extractor writes the case. LAVA reads it and gives you the tools to work it.
+That is the job [LAVA](https://leapps.org/releases#section-lava) does. The extractor writes the case. LAVA reads it and gives you the tools to work it.
 
 **Short version:** process the extraction with a current LEAPP, open the resulting `_lava_data.lava` file in LAVA, set your time zone, narrow with filters and the time window, read conversations in context, tag what matters, and export either a quick report or a subset project with provenance attached.
 

@@ -128,7 +128,7 @@ The LEAPPs are free and open source under the MIT license, and they stay that wa
 
 ## Thank you
 
-Thank you to JaysonU25 for the 2024 Chrysler and Ford parsers that closed out the last active stretch,<sup><a href="#note-1">[1]</a></sup> and to Johann-PLW for the LAVA output support and the steady maintenance work that kept VLEAPP's plumbing modern while the parsing side stood still. Thank you to the Netherlands Forensic Institute for publishing qnxmount with its format specifications and test images under Apache-2.0; that work turned ETFS and EFS from a reverse engineering project into an engineering one.<sup><a href="#note-4">[4]</a></sup> The QNX4 reader stands on the Linux kernel's qnx4 driver, and the IFS work stands on the open QNX sources and Markus Oberhumer's UCL.<sup><a href="#note-5">[5]</a></sup>
+Thank you to JaysonU25 for the 2024 Chrysler and Ford parsers that closed out the last active stretch,<sup><a href="#note-1">[1]</a></sup> and to Johann-PLW for the [LAVA](https://leapps.org/releases#section-lava) output support and the steady maintenance work that kept VLEAPP's plumbing modern while the parsing side stood still. Thank you to the Netherlands Forensic Institute for publishing qnxmount with its format specifications and test images under Apache-2.0; that work turned ETFS and EFS from a reverse engineering project into an engineering one.<sup><a href="#note-4">[4]</a></sup> The QNX4 reader stands on the Linux kernel's qnx4 driver, and the IFS work stands on the open QNX sources and Markus Oberhumer's UCL.<sup><a href="#note-5">[5]</a></sup>
 
 A tool comes back when people give it something to work with. The head unit was always holding the data. Now the tools in your hands can read it.
 

@@ -11,7 +11,7 @@ excerpt: A powerlog row does not store the time. It stores a stopwatch, and a se
 ![A wall clock and a stopwatch side by side, with a plus offset arrow running from the stopwatch to the clock and the equation stopwatch value plus offset equals real time below them.](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/2026-09-01-powerlog-timestamps-and-the-1971-clock/powerlog-timestamps-header.webp)
 *Figure 1: A powerlog timestamp is a stopwatch reading. The offset table turns it into real time.*
 
-A collaborator was looking at powerlog data in iLEAPP this week and asked a fair question: the Time Offset column on their extraction held a number with ten digits in it. Ten digits of seconds. What is that about?
+A collaborator was looking at powerlog data in [iLEAPP](https://leapps.org/releases#section-ileapp) this week and asked a fair question: the Time Offset column on their extraction held a number with ten digits in it. Ten digits of seconds. What is that about?
 
 Here is the short version, and I promise it is simpler than it looks.
 

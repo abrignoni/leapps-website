@@ -8,7 +8,7 @@ excerpt: A quick research note on extracting older iOS wallpaper files from Spri
 
 # Recovering Pre-iOS 16 Wallpaper from SpringBoard
 
-This started from a Discord conversation about SpringBoard artifacts in iLEAPP.
+This started from a Discord conversation about SpringBoard artifacts in [iLEAPP](https://leapps.org/releases#section-ileapp).
 
 We already had an icon parser that recovered the home screen layout: apps, folders, widgets, stacks, and the dock. Brigs then updated that work so iLEAPP could draw a visual representation of how the screen would have looked. That raised the next obvious question: if we can show the icons, what about the wallpaper behind them?
 
@@ -83,7 +83,7 @@ None of that is glamorous, but it is the kind of boring work that makes a parser
 
 ## What it looks like
 
-In LAVA, the converted wallpaper images show up alongside the source filename, type, variant, status, and location. For this iOS 15 sample, the artifact recovered the current, dark, original, and original dark lock screen backgrounds from SpringBoard.
+In [LAVA](https://leapps.org/releases#section-lava), the converted wallpaper images show up alongside the source filename, type, variant, status, and location. For this iOS 15 sample, the artifact recovered the current, dark, original, and original dark lock screen backgrounds from SpringBoard.
 
 ![LAVA table showing converted iOS 15 SpringBoard wallpaper artifacts](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/2026-06-24-ios-wallpaper-springboard/lava-ios15-wallpaper.png)
 *Figure 3: LAVA showing converted wallpaper images*

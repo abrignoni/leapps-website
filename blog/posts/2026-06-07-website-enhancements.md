@@ -17,7 +17,7 @@ Over the past few days the LEAPPs website received a large set of improvements. 
 The biggest addition is search. Every page now has a search bar in the navigation. Type anything and you will get results grouped into three categories:
 
 - **Blog posts** from this blog
-- **Artifacts** from the iLEAPP, ALEAPP, RLEAPP, and VLEAPP repositories
+- **Artifacts** from the [iLEAPP](https://leapps.org/releases#section-ileapp), [ALEAPP](https://leapps.org/releases#section-aleapp), [RLEAPP](https://leapps.org/releases#section-rleapp), and [VLEAPP](https://leapps.org/releases#section-vleapp) repositories
 - **Pages** from across the site
 
 Search works on both desktop and mobile. On mobile, open the menu and the search bar is right at the top.

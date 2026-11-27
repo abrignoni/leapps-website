@@ -14,7 +14,7 @@ That reputation is doing a lot of work. For regular chats, the message history s
 
 So we went and learned the format. Both formats, because iOS Telegram and Android Telegram share almost nothing structurally. Same app, same icon, two completely different storage designs.
 
-**Short version:** current iLEAPP source now has six Telegram artifacts for iOS and current ALEAPP source has nine for Android. Accounts, chats, contacts, cached profile details, and the app settings that tell you how media was handled. ALEAPP had no Telegram support at all before this. Not outdated support. None.
+**Short version:** current [iLEAPP](https://leapps.org/releases#section-ileapp) source now has six Telegram artifacts for iOS and current [ALEAPP](https://leapps.org/releases#section-aleapp) source has nine for Android. Accounts, chats, contacts, cached profile details, and the app settings that tell you how media was handled. ALEAPP had no Telegram support at all before this. Not outdated support. None.
 
 **Long version:** keep reading. The interesting parts are the settings and the things we deliberately did not ship.
 

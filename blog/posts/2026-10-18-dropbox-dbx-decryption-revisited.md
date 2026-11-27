@@ -42,7 +42,7 @@ What it means for you: **no DPAPI, no Windows password, no master keys.** If the
 
 ## What you get
 
-All of these show up under the Dropbox category in the DLEAPP report and in LAVA.
+All of these show up under the Dropbox category in the DLEAPP report and in [LAVA](https://leapps.org/releases#section-lava).
 
 **Dropbox Linked Account** (the decrypted `config.dbx`). The account the client is linked to: email, display name, account ID, user ID, the device's display name, the local Dropbox folder and the client version, plus when the client was first linked and last started. The database also holds an OAuth refresh token and a client key pair. Those are credentials, so DLEAPP leaves them out of the report and says so in the log.
 

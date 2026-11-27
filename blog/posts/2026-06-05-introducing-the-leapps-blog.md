@@ -15,7 +15,7 @@ That's what this blog is for.
 ## What you'll find here
 
 - **Artifact deep dives** — detailed breakdowns of what a specific artifact contains, where it lives on the device, and what it reveals during an investigation
-- **Tool updates** — when a major feature lands in iLEAPP, ALEAPP, RLEAPP, VLEAPP, or LAVA, we'll explain the context behind it
+- **Tool updates** — when a major feature lands in [iLEAPP](https://leapps.org/releases#section-ileapp), [ALEAPP](https://leapps.org/releases#section-aleapp), [RLEAPP](https://leapps.org/releases#section-rleapp), [VLEAPP](https://leapps.org/releases#section-vleapp), or [LAVA](https://leapps.org/releases#section-lava), we'll explain the context behind it
 - **How-to guides** — walkthroughs for parsing, filtering, and interpreting output from the tools
 - **Community write-ups** — forensic researchers sharing their own findings and workflows
 

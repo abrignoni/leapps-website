@@ -8,7 +8,7 @@ excerpt: On recent iPhones, many App Snapshots in iLEAPP came out as horizontal 
 
 # Tiled App Snapshots in iOS 26 and 27
 
-When you leave an app on an iPhone, iOS saves a picture of its screen. That picture is what you see in the app switcher, and while the app is starting up again. These **App Snapshots** can show what was on screen in an app at some point, and iLEAPP has reported them for years in the **App Snapshots** artifact, turning Apple's `.ktx` image files into ordinary PNGs you can view in the report and in LAVA.
+When you leave an app on an iPhone, iOS saves a picture of its screen. That picture is what you see in the app switcher, and while the app is starting up again. These **App Snapshots** can show what was on screen in an app at some point, and iLEAPP has reported them for years in the **App Snapshots** artifact, turning Apple's `.ktx` image files into ordinary PNGs you can view in the report and in [LAVA](https://leapps.org/releases#section-lava).
 
 On a recent extraction, many of those pictures came out scrambled.
 

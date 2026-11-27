@@ -14,7 +14,7 @@ While digging through SpringBoard and PosterBoard files, I kept running into ima
 
 They were not just wallpaper files either. I started seeing ATX files around PosterBoard snapshots, runtime snapshots, avatar and Animoji resources, contact poster caches, and other Apple UI image caches. At that point it felt wrong to bury the work inside a SpringBoard parser. ATX needed to become its own thing.
 
-So iLEAPP now has a new artifact:
+So [iLEAPP](https://leapps.org/releases#section-ileapp) now has a new artifact:
 
 - **Artifact:** Apple ATX Images
 - **Category:** Images
@@ -119,7 +119,7 @@ I wrote the parser module so it would be usable in both iLEAPP and Crush. After 
 
 There was also a small iLEAPP framework issue hiding in the middle of this.
 
-Some decoded ATX files were generating PNGs correctly, but the images did not show up in LAVA. The parser was not the problem. The issue was path resolution during media check-in when filenames contained glob metacharacters, especially brackets.
+Some decoded ATX files were generating PNGs correctly, but the images did not show up in [LAVA](https://leapps.org/releases#section-lava). The parser was not the problem. The issue was path resolution during media check-in when filenames contained glob metacharacters, especially brackets.
 
 For example:
 
