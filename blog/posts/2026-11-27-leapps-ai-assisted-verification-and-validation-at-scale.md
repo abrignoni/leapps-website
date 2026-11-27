@@ -10,7 +10,7 @@ excerpt: Every artifact in the LEAPPs ends up in someone's report. So I have bui
 
 ![A document breaks into pieces, falls through three sieves that each catch something, and is rebuilt below them](/blog/images/2026-11-27-leapps-ai-assisted-verification-and-validation-at-scale/00-hero-notext.webp)
 
-Every artifact in the LEAPPs ends up in someone's report. The description and notes go into the HTML report and the LAVA manifest, and examiners quote them in casework and in court. If a notes sentence says a table holds "all searches" and it holds the last ten, that is a false statement in someone else's report, with my tool's name on it.
+Every artifact in the LEAPPs ends up in someone's report. The description and notes go into the HTML report and the [LAVA](https://leapps.org/releases#section-lava) manifest, and examiners quote them in casework and in court. If a notes sentence says a table holds "all searches" and it holds the last ten, that is a false statement in someone else's report, with my tool's name on it.
 
 So I have built a set of checks around artifact work. These are key. Verification and validation at scale are necessary in order to keep up with automated artifact generation and analysis. No layer is trusted alone: each checks the one before it, and the last feeds work back to the first. This post follows a piece of work through all of them, so you can copy what helps your own tool. Everything here is built as of 26 November 2026.
 
@@ -23,7 +23,7 @@ The tools that run outside the LEAPP repositories are public in [leapps-org/leap
 | Each LEAPP core | The `check_*.py` scripts and `validate_sample_data.py` in `admin/scripts/`, the test-case harness in `admin/test/scripts/`, the synced `leapp-new-artifact` skill |
 | `leapps-org/leapps-parity` | The canonical copy of the `leapp-new-artifact` skill |
 | `leapps-org/leapp-quality-kit` | `review-gate/`, `mac-pr-reviewer/` (the five cores' route), `notes-audit/`, `number-recheck/`, `unread-columns/`, `auditor-spot-check/`, `schema-watch/`, `agents/leapp-notes-auditor.md`, `deploy/` |
-| `abrignoni/known-data-logger` | The Known-data logger app |
+| `abrignoni/known-data-logger` | The [Known-data logger](https://leapps.org/device-tools#section-kdl) app |
 | The `audit-queue` label in each core | The public part of the work queue |
 | Only on my Mac | The Mac reviewer's route for the apps, probes, readers and website, its private inbox delivery, the corpus and its registries, the private queue list |
 
@@ -33,7 +33,7 @@ The tools that run outside the LEAPP repositories are public in [leapps-org/leap
 
 ## 1. Building the artifact
 
-Artifact work follows a skill: a written procedure, `leapp-new-artifact`, that an agent or a person follows step by step. The canonical copy lives in `leapps-parity` and is synced into all five cores. The field reference for the metadata block is `admin/docs/artifact_info_block.md` in iLEAPP.
+Artifact work follows a skill: a written procedure, `leapp-new-artifact`, that an agent or a person follows step by step. The canonical copy lives in `leapps-parity` and is synced into all five cores. The field reference for the metadata block is [`admin/docs/artifact_info_block.md`](https://github.com/abrignoni/iLEAPP/blob/main/admin/docs/artifact_info_block.md) in iLEAPP.
 
 ![From a file in an extraction to a written module](/blog/images/2026-11-27-leapps-ai-assisted-verification-and-validation-at-scale/02-build.webp)
 
@@ -45,7 +45,7 @@ Artifact work follows a skill: a written procedure, `leapp-new-artifact`, that a
 
 **Check the siblings.** Grep the other cores for the same app first.
 
-**Write the module.** One file under `scripts/artifacts/`, with an `__artifacts_v2__` block whose key matches the function name. Watch the fields most often wrong: `paths` (stock `fnmatch`, where `*` crosses `/`), an unversioned `author`, a `category` from the agreed list, and in DLEAPP, `platforms`. The third return value is the source path, and it must be real paths, because the framework turns it into the report's "located at" line.
+**Write the module.** One file under `scripts/artifacts/`, with an `__artifacts_v2__` block whose key matches the function name. Watch the fields most often wrong: `paths` (stock `fnmatch`, where `*` crosses `/`), an unversioned `author`, a `category` from the agreed list, and in [DLEAPP](https://leapps.org/releases#section-dleapp), `platforms`. The third return value is the source path, and it must be real paths, because the framework turns it into the report's "located at" line.
 
 **Run it against real data.** Check row counts, columns and timestamp epochs on a real image. Then run one multi-container test: the same app under two folder spellings (must collapse to one), a second Android user (must add exactly its rows) and a decoy package (must add nothing). Twice plus the known extra rows is right; anything else is a bug.
 
@@ -83,7 +83,7 @@ Each registry entry holds a key, the file and its SHA-256, the platform and vers
 
 *Figure 3. A known-data round, from the question to a new `sample_data` line.*
 
-On an emulator or test phone with test accounts, I do the actions while the Known-data logger app (`abrignoni/known-data-logger`) records taps, typed text and screens, each with its time, in a hash-chained log. Then I extract the app folder, register it as a new key, run the artifact and compare each logged action with the report. In ALEAPP #2124, on one capture of Private Photo Vault 7.6.2 (`emu_a16_ppv_known_20261126`), favouriting a photo set its favourite date and left its favourite flag at 0, so the Favourite column was blank until the fix. That result is stated for that capture and that version, not as a rule for the app.
+On an emulator or test phone with test accounts, I do the actions while the Known-data logger app (`abrignoni/known-data-logger`) records taps, typed text and screens, each with its time, in a hash-chained log. Then I extract the app folder, register it as a new key, run the artifact and compare each logged action with the report. In [ALEAPP #2124](https://github.com/abrignoni/ALEAPP/pull/2124), on one capture of Private Photo Vault 7.6.2 (`emu_a16_ppv_known_20261126`), favouriting a photo set its favourite date and left its favourite flag at 0, so the Favourite column was blank until the fix. That result is stated for that capture and that version, not as a rule for the app.
 
 > **For examiners.** The line is the action log, not the image. A notes sentence that says doing something set a value has to trace back to a logged action on a named capture, and it holds only as far as that log goes: two actions with no capture between them do not say which one set a value. Notes about an image with no log say what is present and on which image, never what the user did. An empty field on such an image is a measured result for that image, but it does not show that the action never happened.
 
@@ -107,7 +107,7 @@ Once a PR is open, the repository's own checks run. This is ALEAPP; the other co
 
 ## 4. Review and merge
 
-Two reviewers cover the LEAPP PRs. **Greptile** is a hosted AI code-review service: it reads each pull request against the rest of the repository and posts its findings as review comments on GitHub. It reviews my own PRs in iLEAPP, ALEAPP, RLEAPP and VLEAPP. **The Mac PR reviewer** is a review job I run on my own Mac: a model reviews the PR, and checks against the private corpus run locally, so the corpus never leaves the machine. It covers contributor PRs in the five cores, my own DLEAPP PRs, and every PR in GLEAPP and the probe and reader repositories. Every five minutes it runs the Codex command-line client in a macOS sandbox, with the PR passed as data, not instructions, posts shareable findings on the PR and keeps the full report private.
+Two reviewers cover the LEAPP PRs. **Greptile** is a hosted AI code-review service: it reads each pull request against the rest of the repository and posts its findings as review comments on GitHub. It reviews my own PRs in iLEAPP, ALEAPP, [RLEAPP](https://leapps.org/releases#section-rleapp) and [VLEAPP](https://leapps.org/releases#section-vleapp). **The Mac PR reviewer** is a review job I run on my own Mac: a model reviews the PR, and checks against the private corpus run locally, so the corpus never leaves the machine. It covers contributor PRs in the five cores, my own DLEAPP PRs, and every PR in [GLEAPP](https://leapps.org/releases#section-gleapp) and the probe and reader repositories. Every five minutes it runs the Codex command-line client in a macOS sandbox, with the PR passed as data, not instructions, posts shareable findings on the PR and keeps the full report private.
 
 **The merge bar** is written down. A finding blocks a merge only if:
 

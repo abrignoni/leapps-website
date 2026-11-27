@@ -8,7 +8,7 @@ excerpt: A quick look at the new opt-in LEAPPs recent run history feature and ho
 
 # Feature Highlight: Recent Run History in LAVA
 
-This is the first in what I hope becomes a small series of LEAPPs and LAVA feature highlights. Not every useful update is a brand-new artifact parser. Sometimes the nice stuff is a workflow improvement that quietly removes a few clicks from your day.
+This is the first in what I hope becomes a small series of LEAPPs and [LAVA](https://leapps.org/releases#section-lava) feature highlights. Not every useful update is a brand-new artifact parser. Sometimes the nice stuff is a workflow improvement that quietly removes a few clicks from your day.
 
 Recent run history is one of those. The short version: the LEAPP runners can now save recent run information, and LAVA can read that shared history so recent LEAPP outputs show up on the welcome screen. It is a LAVA feature from the user's point of view, but it is powered by the LEAPP tools doing a little extra bookkeeping after a successful run.
 
@@ -17,7 +17,7 @@ Recent run history is one of those. The short version: the LEAPP runners can now
 
 ## The welcome screen gets smarter
 
-When LAVA starts, the welcome screen already gives you a place to open a project. With recent run history, it can also show LEAPP outputs that were recently created by iLEAPP, ALEAPP, RLEAPP, or VLEAPP. Those entries appear in the **Watched Folders** section with tool labels, so a recent iLEAPP run can sit next to a recent ALEAPP or VLEAPP run without you needing to remember exactly where the report landed.
+When LAVA starts, the welcome screen already gives you a place to open a project. With recent run history, it can also show LEAPP outputs that were recently created by [iLEAPP](https://leapps.org/releases#section-ileapp), [ALEAPP](https://leapps.org/releases#section-aleapp), [RLEAPP](https://leapps.org/releases#section-rleapp), or [VLEAPP](https://leapps.org/releases#section-vleapp). Those entries appear in the **Watched Folders** section with tool labels, so a recent iLEAPP run can sit next to a recent ALEAPP or VLEAPP run without you needing to remember exactly where the report landed.
 
 That matters because report folders are easy to lose track of during normal casework. You run a parser, check something else, come back later, and suddenly you are spelunking through output folders trying to find the right output. LAVA can now do more of that remembering for you.
 

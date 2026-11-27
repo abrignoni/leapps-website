@@ -75,7 +75,7 @@ The report draws its own maps from the same offline basemap, an overview near th
 
 Blurring is on by default. Thumbnails open blurred, and you hover over one when you need to see it clearly. Anyone who has done this work knows why that matters, and it should not be something you have to go looking for.
 
-Beyond HTML, GLEAPP writes CSV and JSON, a KMZ of geolocated media for Google Earth with thumbnails embedded, an MD5 list, the Project VIC round trip, and a LAVA project so the case opens in the same viewer the rest of the LEAPP family uses.
+Beyond HTML, GLEAPP writes CSV and JSON, a KMZ of geolocated media for Google Earth with thumbnails embedded, an MD5 list, the Project VIC round trip, and a [LAVA](https://leapps.org/releases#section-lava) project so the case opens in the same viewer the rest of the LEAPP family uses.
 
 ## Give it a try
 

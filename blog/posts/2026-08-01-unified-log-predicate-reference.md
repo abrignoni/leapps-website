@@ -31,7 +31,7 @@ The verbatim, always-current predicate list lives in the [iLEAPP source module](
 
 Two artifacts do the heavy lifting, and everything else filters their output:
 
-- **logarchive** imports every record into the LAVA database. On the iPhone 12 image that is 20.5 million rows. LAVA-only, for obvious reasons.
+- **logarchive** imports every record into the [LAVA](https://leapps.org/releases#section-lava) database. On the iPhone 12 image that is 20.5 million rows. LAVA-only, for obvious reasons.
 - **logarchive artifacts** runs every predicate in a single pass over that table and materializes the matches. Also LAVA-only.
 
 The remaining 33 artifacts each carve their slice out of that filtered set. Thirty produce standard reports; the three highest-volume ones (keyboard activity, biometric sensor events, touchscreen events) are LAVA-only because a two-hundred-thousand-row HTML file helps nobody.

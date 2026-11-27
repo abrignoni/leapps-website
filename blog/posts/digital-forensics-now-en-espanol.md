@@ -14,7 +14,7 @@ Para mi gente de habla hispana: el podcast Digital Forensics Now ya tiene su ver
 
 For everybody else: the Digital Forensics Now podcast now has a Spanish edition, and both of us sound like ourselves. If you have ever wondered how Heather Charpentier would sound if she spoke Spanish, well, today is your lucky day.
 
-You can listen right now at [digitalforensicsnowespanol.buzzsprout.com](https://digitalforensicsnowespanol.buzzsprout.com). The first episode is "Organizando Nuestras Herramientas," the Spanish edition of our episode on the new tooling, the latest LEAPPs and LAVA updates, and Batch LEAPP.
+You can listen right now at [digitalforensicsnowespanol.buzzsprout.com](https://digitalforensicsnowespanol.buzzsprout.com). The first episode is "Organizando Nuestras Herramientas," the Spanish edition of our episode on the new tooling, the latest LEAPPs and [LAVA](https://leapps.org/releases#section-lava) updates, and [Batch LEAPP](https://leapps.org/releases#section-batch-leapp).
 
 ## How the salchicha gets made
 

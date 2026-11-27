@@ -17,7 +17,7 @@ If you have looked at an AirTag case on an iPhone, you have probably read Josh H
 - [Endtroducing Lost Apples](https://thebinaryhick.blog/2025/11/30/endtroducing-lost-apples/) (2025)
 - [Old Dog, New Tricks, Lost Apples 2.0](https://thebinaryhick.blog/2026/03/22/old-dog-new-tricks-lost-apples-2-0/) (2026)
 
-This post does two things. It says what we found when we checked Josh's work against our own extractions, and it walks through what iLEAPP now reports from the same files, with a focus on what you can do with each one.
+This post does two things. It says what we found when we checked Josh's work against our own extractions, and it walks through what [iLEAPP](https://leapps.org/releases#section-ileapp) now reports from the same files, with a focus on what you can do with each one.
 
 ## What we checked, and what held
 

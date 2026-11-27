@@ -154,7 +154,7 @@ Careful and wrong. That's the one that worries me.
 
 Let me ask you about another alternative. Have you heard about the LEAPPs project? If you did, does it have some way of getting your sticky notes out?
 
-**MMKV:** Heard of them. They've been reading my walls since the Discord and Coinbase artifacts on iOS, and JusTalk and Xiaohongshu on Android. All four go through one small shared reader that lives inside iLEAPP and ALEAPP.
+**MMKV:** Heard of them. They've been reading my walls since the Discord and Coinbase artifacts on iOS, and JusTalk and Xiaohongshu on Android. All four go through one small shared reader that lives inside [iLEAPP](https://leapps.org/releases#section-ileapp) and [ALEAPP](https://leapps.org/releases#section-aleapp).
 
 It reads the wall top to bottom, gives you every note including the old versions and the blank ones, and can also give you just what the app sees. It checks my neighbor for the lock and refuses to read a locked wall instead of handing you gibberish.
 

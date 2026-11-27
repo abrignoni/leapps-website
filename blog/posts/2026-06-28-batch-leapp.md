@@ -8,9 +8,9 @@ excerpt: Batch LEAPP runs any LEAPP tool across an entire folder of extractions 
 
 # Introducing Batch LEAPP
 
-If you have ever had a folder full of extractions and needed to run them through iLEAPP one at a time, this is for you. Batch LEAPP takes a directory, finds every extraction inside it, and runs the LEAPP tool of your choice against each one. You walk away and come back to a set of finished reports ready for review.
+If you have ever had a folder full of extractions and needed to run them through [iLEAPP](https://leapps.org/releases#section-ileapp) one at a time, this is for you. Batch LEAPP takes a directory, finds every extraction inside it, and runs the LEAPP tool of your choice against each one. You walk away and come back to a set of finished reports ready for review.
 
-It works with iLEAPP, ALEAPP, RLEAPP, and VLEAPP. They share the same command line, so the same tool drives any of them.
+It works with iLEAPP, [ALEAPP](https://leapps.org/releases#section-aleapp), [RLEAPP](https://leapps.org/releases#section-rleapp), and [VLEAPP](https://leapps.org/releases#section-vleapp). They share the same command line, so the same tool drives any of them.
 
 ![Batch LEAPP running a batch of extractions](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/2026-06-28-batch-leapp/batch-leapp-gui.webp)
 *Figure 1: Batch LEAPP processing a folder of iOS extractions*
@@ -26,7 +26,7 @@ It works with iLEAPP, ALEAPP, RLEAPP, and VLEAPP. They share the same command li
 
 ## One index for everything
 
-When the batch finishes you get a single index.html at the root of the output folder. One row per extraction, with links to the report, the LAVA project, and the input hash. It is styled to match the LEAPPs reports, and every link is relative so you can zip the whole output folder and hand it off.
+When the batch finishes you get a single index.html at the root of the output folder. One row per extraction, with links to the report, the [LAVA](https://leapps.org/releases#section-lava) project, and the input hash. It is styled to match the LEAPPs reports, and every link is relative so you can zip the whole output folder and hand it off.
 
 ![The master report index](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/2026-06-28-batch-leapp/report-index.png)
 *Figure 2: The master index, one row per extraction*

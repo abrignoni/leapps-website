@@ -12,7 +12,7 @@ Here is a question I have wanted a real answer to for years: **out of all the ap
 
 We all have a feel for it. Everybody knows there is no Snapchat module. But a feel is not a list, and a list is what you need when you are deciding what to build next. So Batch LEAPP can now produce that list, measured against real test images instead of guesses.
 
-**Short version:** run your test images through Batch LEAPP with one new flag, get a database of every installed app, every file each app owns, and every file the LEAPP modules actually touched. Open it in LAVA, sort the "Apps Not Parsed" report, and there is your module-writing roadmap, ranked by how much evidence is sitting on disk unread.
+**Short version:** run your test images through Batch LEAPP with one new flag, get a database of every installed app, every file each app owns, and every file the LEAPP modules actually touched. Open it in [LAVA](https://leapps.org/releases#section-lava), sort the "Apps Not Parsed" report, and there is your module-writing roadmap, ranked by how much evidence is sitting on disk unread.
 
 **Long version:** keep reading.
 
@@ -22,7 +22,7 @@ We all have a feel for it. Everybody knows there is no Snapchat module. But a fe
 python3 batch_leapp.py ~/test_images ~/reports --leapp ~/iLEAPP/ileapp.py --coverage
 ```
 
-The `--coverage` flag does two things. First, it turns on a set of developer-only App Inventory artifacts that now ship with iLEAPP and ALEAPP. They inventory the installed apps and every file in the extraction, and they never run for regular users. Second, when the batch finishes it aggregates everything into a single `batch_apps.sqlite` at the output root, next to a `batch_apps.lava` project file so the whole analysis opens in LAVA like any other case.
+The `--coverage` flag does two things. First, it turns on a set of developer-only App Inventory artifacts that now ship with [iLEAPP](https://leapps.org/releases#section-ileapp) and [ALEAPP](https://leapps.org/releases#section-aleapp). They inventory the installed apps and every file in the extraction, and they never run for regular users. Second, when the batch finishes it aggregates everything into a single `batch_apps.sqlite` at the output root, next to a `batch_apps.lava` project file so the whole analysis opens in LAVA like any other case.
 
 The master index gets a new button at the top, so the analysis is one click away from the reports:
 

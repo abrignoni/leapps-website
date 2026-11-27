@@ -10,7 +10,7 @@ excerpt: iLEAPP and ALEAPP can now flag AI generated images by reading content p
 
 **Short version:**
 
-- iLEAPP and ALEAPP can now read content provenance from images and flag AI generated media.
+- [iLEAPP](https://github.com/abrignoni/iLEAPP) and [ALEAPP](https://github.com/abrignoni/ALEAPP) can now read content provenance from images and flag AI generated media.
 - It covers two sources: C2PA Content Credentials manifests and IPTC Digital Source Type in XMP.
 - Pure Python. No new dependencies. It runs on the images already in your extraction.
 - It is not in a packaged release yet. It is merged into the code, it will ship in the next release, and you can use it today if you run from the scripts.
@@ -51,7 +51,7 @@ A closer look at the moment the report switches from C2PA to IPTC/XMP. Same AI a
 ![Close up of a C2PA row above the XMP/IPTC row, showing the Bing Image Creator credit](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/2026-07-12-ai-image-provenance/report-html-iptc-row.webp)
 *Figure 2: The moment the report switches from C2PA to IPTC/XMP. Same AI answer, different source.*
 
-The same data opens in LAVA too. Here are the C2PA images from Google's tooling.
+The same data opens in [LAVA](https://leapps.org/releases#section-lava) too. Here are the C2PA images from Google's tooling.
 
 ![The C2PA Content Provenance artifact open in the LAVA viewer, showing the C2PA rows](https://cdn.jsdelivr.net/gh/abrignoni/leapps-website@main/blog/images/2026-07-12-ai-image-provenance/lava-c2pa.webp)
 *Figure 3: The C2PA Content Provenance artifact open in LAVA, showing the images made with Google's tooling.*
