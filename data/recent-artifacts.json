@@ -1,17 +1,17 @@
 {
-  "generated": "2026-11-27",
+  "generated": "2026-11-28",
   "window_days": 45,
   "items": [
+    {
+      "name": "okTamTam",
+      "query": "okTamTam",
+      "tool": "ALEAPP",
+      "date": "2026-11-28"
+    },
     {
       "name": "findMySearchpartyd",
       "query": "findMySearchpartyd",
       "tool": "iLEAPP",
-      "date": "2026-11-26"
-    },
-    {
-      "name": "whatsAppUnreferencedMedia",
-      "query": "whatsAppUnreferencedMedia",
-      "tool": "ALEAPP",
       "date": "2026-11-26"
     },
     {
@@ -33,15 +33,15 @@
       "date": "2026-10-30"
     },
     {
+      "name": "telekomMail",
+      "query": "telekomMail",
+      "tool": "ALEAPP",
+      "date": "2026-11-28"
+    },
+    {
       "name": "chromeFavicons",
       "query": "chromeFavicons",
       "tool": "iLEAPP",
-      "date": "2026-11-26"
-    },
-    {
-      "name": "contentQuery",
-      "query": "contentQuery",
-      "tool": "ALEAPP",
       "date": "2026-11-26"
     },
     {
@@ -57,16 +57,16 @@
       "date": "2026-11-14"
     },
     {
+      "name": "mailRu",
+      "query": "mailRu",
+      "tool": "ALEAPP",
+      "date": "2026-11-28"
+    },
+    {
       "name": "googleTasks",
       "query": "googleTasks",
       "tool": "iLEAPP",
       "date": "2026-11-25"
-    },
-    {
-      "name": "whatsAppBusiness",
-      "query": "whatsAppBusiness",
-      "tool": "ALEAPP",
-      "date": "2026-11-26"
     },
     {
       "name": "pidginOtr",
